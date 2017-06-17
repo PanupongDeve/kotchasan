@@ -1,0 +1,8 @@
+# Kotchasan
+
+.htaccess
+robots.txt
+/datas/*
+/settings/*
+/doc/*
+/projects/test/*
