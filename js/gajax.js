@@ -1091,9 +1091,11 @@ window.$K = (function () {
             xhr.setRequestHeader('Content-Type', option.contentType + '; charset=' + option.encoding);
           }
         }
+        temp.showLoading();
         xhr.send(parameters);
         xhr.onreadystatechange = function () {
           if (xhr.readyState == 4 && xhr.status == 200) {
+            temp.hideLoading();
             if (temp.callback) {
               temp.callback(xhr);
             }

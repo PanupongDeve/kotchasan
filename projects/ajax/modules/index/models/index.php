@@ -50,7 +50,6 @@ class Model
    */
   public function save(Request $request)
   {
-
     // ตรวจสอบว่าเรียกมาจากภายในไซต์
     if ($request->isReferer()) {
       // ดูค่าที่ส่งมา
@@ -60,20 +59,34 @@ class Model
       // ข้อมูลที่จะบันทึกใส่ลงใน $save
       $save = array(
         'id' => $request->post('id')->toInt(),
-        'datas' => $request->post('txt')->topic()
+        'name' => $request->post('name')->topic()
       );
-      if ($save['datas'] == '') {
+      if ($save['name'] == '') {
         $json = array('error' => 'กรุณากรอกข้อความ');
       } else {
         // query INSERT
-        $query = $model->db()->createQuery()->insert('table_name', $save);
+        $query = $model->db()->createQuery()->insert('world', $save);
         // ประมวลผลคำสั่ง SQL ในตอนใช้งานจริง
         //$query->execute();
-        // ตัวอย่างคำสั่ง SQL ที่ได้ (ใช้ในการทดสอบ)
-        $json = array('sql' => $query->text());
+        // ข้อมูล JSON สำหรับส่งกลับไปแสดงผล
+        $json = array(
+          // คืนค่าคำสั่ง SQL ที่สร้าง
+          'sql' => $query->text()
+        );
       }
       // คืนค่าเป็น JSON
       echo json_encode($json);
     }
+  }
+
+  /**
+   * อ่านเวลาจาก Server
+   *
+   * @param Request $request
+   */
+  public function time(Request $request)
+  {
+    // คืนค่าเวลาปัจจุบันจาก Server
+    echo date('H:i:s');
   }
 }

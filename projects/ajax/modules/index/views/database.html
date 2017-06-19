@@ -8,22 +8,27 @@
     <link rel=stylesheet href="https://www.kotchasan.com/skin/gcss.css">
   </head>
   <body>
-    <h1>ส่งข้อมูลไปบันทึกยังฐานข้อมูลด้วย Ajax</h1>
-    <!-- ฟอร์มสำหรับรับค่า เพื่อส่งไปโดย Ajax -->
-    <div>
-      <label for="demo_txt">ข้อมูลที่จะส่ง</label>
-      <input type="text" id="demo_txt" value="">
-      <input type="hidden" id="demo_id" value="0">
-      <button id="demo_send">Save</button>
-    </div>
+    <header>
+      <h1 class="center margin-top-bottom">ส่งข้อมูลไปบันทึกยังฐานข้อมูลด้วย Ajax</h1>
+      <!-- ฟอร์มสำหรับรับค่า เพื่อส่งไปโดย Ajax -->
+      <div class="center margin-top-bottom">
+        <label for="demo_txt">ข้อมูลที่จะส่ง</label>
+        <input type="text" id="demo_txt" value="">
+        <button id="demo_send" class="button send">Save</button>
+      </div>
+      <div class="center margin-bottom">
+        <label><input type="checkbox" id="demo_check"> อัปเดทอัตโนมัติเมื่อมีการคลิก Checkbox</label>
+      </div>
+    </header>
     <!-- แสดงผลลัพท์ -->
-    <div id="demo_result"></div>
-    <div class='message'>ตัวอย่างนี้ต้องมีการกำหนดค่าฐานข้อมูลด้วย ดังนั้นก่อนการทดสอบตัวอย่างจะต้องแก้ไข settings/database.php ให้ตรงตามฐานข้อมูลที่มีอยู่ด้วย (ใช้ฐานข้อมุลใดก็ได้เนื่องจากสคริปต์ต้องการแค่การเชื่อมต่อฐานข้อมูล)</div>
+    <div id="demo_result" class="center"></div>
+    <aside class='message'>ตัวอย่างนี้ต้องมีการกำหนดค่าฐานข้อมูลด้วย ดังนั้นก่อนการทดสอบตัวอย่างจะต้องแก้ไข settings/database.php ให้ตรงตามฐานข้อมูลที่มีอยู่ด้วย (ใช้ฐานข้อมุลใดก็ได้เนื่องจากสคริปต์ต้องการแค่การเชื่อมต่อฐานข้อมูล)</aside>
     <script>
-      // button click
-      $G('demo_send').addEvent('click', function () {
+      // ฟังก์ชั่นรับค่าจากการคลิก
+      var doUpdate = function (e) {
         // ข้อมูลสำหรับส่งไป
-        var q = 'id=' + $E('demo_id').value + '&txt=' + $E('demo_txt').value;
+        var q = 'id=' + ($E('demo_check').checked ? 1 : 0);
+        q += '&name=' + $E('demo_txt').value;
         // create GAjax
         var req = new GAjax();
         // กำหนดการแสดงรูปรอโหลดไปที่ปุ่มกด
@@ -39,14 +44,20 @@
               // highlight input ที่ error และส่งโฟกัสไปยัง input
               $G('demo_txt').invalid().focus();
             } else if (ds.sql) {
-              $E('demo_result').innerHTML = ds.sql;
+              // เขียนคำสั่งเพื่อจัดการแสดงผล
+              var p = document.createElement('p');
+              p.innerHTML = ds.sql;
+              $E('demo_result').appendChild(p);
             }
           } else if (xhr.responseText != '') {
             // ถ้าข้อมูลที่ส่งค่ากลับไม่ใช่ JSON และ ไม่ได้เป็นข้อมูลว่าง
             alert(xhr.responseText)
           }
         });
-      });
+      };
+      // ตรวจจับการคลิกปุ่มหรือ Checkbox
+      $G('demo_send').addEvent('click', doUpdate);
+      $G('demo_check').addEvent('click', doUpdate);
     </script>
   </body>
 </html>
