@@ -56,12 +56,18 @@ class Model
       //print_r($_POST);
       // create Model
       $model = new \Kotchasan\Model;
-      // ข้อมูลที่จะบันทึกใส่ลงใน $save
-      $save = array(
-        'id' => $request->post('id')->toInt(),
-        'name' => $request->post('name')->topic()
-      );
-      if ($save['name'] == '') {
+      // วนลูปค่าที่ส่งมาจาก $_POST
+      foreach ($_POST AS $key => $value) {
+        if ($key == 'test') {
+          // test รับค่าเป็นตัวเลข
+          $save['test'] = $request->post($key)->toInt();
+        } else {
+          // name รับค่าเป็นข้อความบรรทัดเดียว
+          $save['name'] = $request->post($key)->topic();
+        }
+      }
+     if (!empty($save)){
+      if (isset($save['name']) && $save['name'] == '') {
         $json = array('error' => 'กรุณากรอกข้อความ');
       } else {
         // query INSERT
@@ -76,6 +82,7 @@ class Model
       }
       // คืนค่าเป็น JSON
       echo json_encode($json);
+    }
     }
   }
 

@@ -33,12 +33,11 @@
       </div>
     </header>
     <script>
-      var getRequest = function () {
-        return 'time=' + $E('demo_txt').value;
-      };
-      new GAjax().initLoading('demo_txt').autoupdate('index.php/index/model/index/time', 60, getRequest, function (xhr) {
+      // ฟังก์ชั่น Ajax อ่านข้อมูลจาก Server เป็นระยะ
+      new GAjax().initLoading('demo_txt').autoupdate('index.php/index/model/index/time', 60, null, function (xhr) {
         $E('demo_txt').value = xhr.responseText;
       });
+      // เริ่มต้นจับเวลาด้วย Javascript
       new Clock('demo_txt');
     </script>
   </body>
