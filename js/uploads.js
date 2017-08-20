@@ -16,7 +16,7 @@
         form: '',
         input: '',
         fileprogress: '',
-        fileext: ['jpg', 'gif', 'png'],
+        fileext: ['jpg', 'jpeg', 'gif', 'png'],
         iconpath: WEB_URL + 'skin/ext/',
         onupload: $K.emptyFunction,
         oncomplete: $K.emptyFunction,
