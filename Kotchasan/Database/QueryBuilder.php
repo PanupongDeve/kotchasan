@@ -265,7 +265,12 @@ class QueryBuilder extends \Kotchasan\Database\Query
       $this->values = ArrayTool::replace($this->values, $ret[1]);
       $ret = $ret[0];
     }
-    $this->sqls['where'] .= (empty($this->sqls['where']) ? ' ' : ' AND ').'EXISTS (SELECT * FROM '.$this->getFullTableName($table).' WHERE '.$ret.')';
+    if (empty($this->sqls['where'])) {
+      $this->sqls['where'] = '';
+    } else {
+      $this->sqls['where'] = ' AND';
+    }
+    $this->sqls['where'] .= ' EXISTS (SELECT * FROM '.$this->getFullTableName($table).' WHERE '.$ret.')';
     return $this;
   }
 

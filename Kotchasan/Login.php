@@ -159,8 +159,8 @@ class Login extends \Kotchasan\KBase implements LoginInterface
     } elseif (isset($_SESSION['login']) && isset($_SESSION['login'][$name])) {
       return (string)$_SESSION['login'][$name];
     }
+    $datas = self::$request->getCookieParams();
     if ($pw instanceof Password) {
-      $datas = self::$request->getCookieParams();
       return isset($datas['login_'.$name]) ? $pw->decode($datas['login_'.$name]) : null;
     } else {
       return isset($datas['login_'.$name]) ? $datas['login_'.$name] : null;

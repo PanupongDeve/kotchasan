@@ -26,8 +26,8 @@
 โดยสามารถดาวน์โหลด source code ทั้งหมดจาก GitHub ไปใช้งานได้ทันทีโดยไม่ต้องติดตั้งหรือตั้งค่าใดๆ
 หรือสามารถติดตั้งผ่าน Composer ได้ ```composer require goragod/kotchasan``` https://packagist.org/packages/goragod/kotchasan
 
-## เงื่อนไขการใช้งาน
-* เป็น Open Source สามารถนำไปใช้งานได้ฟรี ไม่มีเงื่อนไข
+## เงื่อนไขการใช้งาน (License)
+* สามารถนำไปใช้งานได้ฟรี ไม่มีเงื่อนไข
 * สามารถนำไปพัฒนาต่อยอดเป็นลิขสิทธิ์ของตัวเองได้ (เฉพาะส่วนที่พัฒนาเพิ่มเติมเอง)
 
 ## ตัวอย่าง
@@ -43,3 +43,10 @@
 * http://projects.kotchasan.com/api/ ตัวอย่างการสร้างและเรียกใช้ API ด้วยคชสาร
 * http://www.kotchasan.com/projects/pdf/ ตัวอย่างการแปลง HTML เป็น PDF
 * http://workshop.kotchasan.com/office/admin/ ตัวอย่างการสร้างแอพพลิเคชั่นอย่างง่าย มีระบบสมาชิกและการ Login
+
+## ขอขอบคุณ
+* CKEditor https://ckeditor.com/
+* PHPMailer https://github.com/PHPMailer/PHPMailer
+* FPDF http://www.fpdf.org/
+* IcoMoon https://icomoon.io/
+* คุณ ชลสิทธิ์ จักรศรีพร สำหรับโลโกสวยๆของคชสาร
