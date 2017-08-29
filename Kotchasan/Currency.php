@@ -66,6 +66,10 @@ class Currency
    */
   public static function bahtEng($thb)
   {
+    if (preg_match('/(\-?[0-9]+)(\.([0-9]+))/', (string)$thb, $match)) {
+      $thb = $match[1];
+      $ths = substr($match[3].'00', 0, 2);
+    }
     list($thb, $ths) = explode('.', (string)$thb);
     $ths = substr($ths.'00', 0, 2);
     $thb = self::engFormat((int)$thb).' Baht';
@@ -167,7 +171,7 @@ class Currency
    * @param int $number
    * @return string
    */
-  private function engFormat($number)
+  private static function engFormat($number)
   {
     if (is_int($number) && $number < abs(pow(10, 18))) {
       switch ($number) {
