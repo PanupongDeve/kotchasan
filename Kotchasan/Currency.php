@@ -70,8 +70,6 @@ class Currency
       $thb = $match[1];
       $ths = substr($match[3].'00', 0, 2);
     }
-    list($thb, $ths) = explode('.', (string)$thb);
-    $ths = substr($ths.'00', 0, 2);
     $thb = self::engFormat((int)$thb).' Baht';
     if ((int)$ths > 0) {
       $thb .= ' and '.self::engFormat((int)$ths).' Satang';
