@@ -304,6 +304,15 @@ class Form extends \Kotchasan\KBase
     return $obj;
   }
 
+  public static function tel($attributes = array())
+  {
+    $obj = new static;
+    $obj->tag = 'input';
+    $attributes['type'] = 'tel';
+    $obj->attributes = $attributes;
+    return $obj;
+  }
+
   public static function antispam($attributes = array())
   {
     $obj = new static;

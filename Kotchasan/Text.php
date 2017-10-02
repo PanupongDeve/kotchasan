@@ -39,6 +39,20 @@ class Text
   }
 
   /**
+   * ลบตัวอักษรที่ไม่สามารถพิมพ์ได้ออก
+   * ตั้งแต่ chr(128)-chr(255) หรือ \x80-\xFF ขึ้นไปจะถูกลบออก
+   *
+   * @param string $text
+   * @return string
+   *
+   * @assert (chr(0).chr(127).chr(128).chr(255)) [==] chr(0).chr(127)
+   */
+  public static function removeNonCharacters($text)
+  {
+    return preg_replace('/((?:[\x00-\x7F]|[\xC0-\xDF][\x80-\xBF]|[\xE0-\xEF][\x80-\xBF]{2}|[\xF0-\xF7][\x80-\xBF]{3}){1,100})|./x', '\\1', $text);
+  }
+
+  /**
    * แปลง tag และ ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
    * เช่นหัวข้อของบทความ
    *

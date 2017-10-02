@@ -169,16 +169,19 @@
           changed = true;
         }
         if (changed) {
-          if (options.type == 'line') {
-            self.drawLine();
-          } else if (options.type == 'pie') {
-            self.drawPie();
-          } else if (options.type == 'donut') {
-            self.drawDonut();
-          } else if (options.type == 'hchart') {
-            self.drawHChart();
-          } else {
-            self.drawVChart();
+          try {
+            if (options.type == 'line') {
+              self.drawLine();
+            } else if (options.type == 'pie') {
+              self.drawPie();
+            } else if (options.type == 'donut') {
+              self.drawDonut();
+            } else if (options.type == 'hchart') {
+              self.drawHChart();
+            } else {
+              self.drawVChart();
+            }
+          } catch (err) {
           }
         }
         if (self.loading) {
