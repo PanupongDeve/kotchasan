@@ -2470,6 +2470,9 @@ table.fullwidth,
 .ggrid.collapse > [class*="block"] {
   margin-left: 0;
 }
+.ggrid.collapse > [class*="block"] {
+  margin-bottom: 0;
+}
 /* layout */
 .error,
 .message,
@@ -3080,6 +3083,11 @@ td.buttons .button:last-child {
 }
 /* phone, tablet */
 @media only screen and (max-width: 960px) {
+  body.responsive .tablet-block {
+    width: auto !important;
+    float: none;
+    display: block;
+  }
   body.responsive .menu_wrapper {
     background-image: url();
     padding: 0;
@@ -3607,11 +3615,6 @@ td.buttons .button:last-child {
   body.responsive .document-list .col6 {
     width: 32.66%;
   }
-  body.responsive .tablet-block {
-    clear: both;
-    width: 100%;
-    float: none;
-  }
   body.responsive .tablet-group {
     display: table;
   }
@@ -3651,7 +3654,11 @@ td.buttons .button:last-child {
   body.responsive .input-groups-table > .row > [class*="width"] {
     margin-top: 5px;
   }
-  body.responsive .mobile-block,
+  body.responsive .mobile-block {
+    width: auto !important;
+    float: none;
+    display: block;
+  }
   body.responsive .document-list > .col2,
   body.responsive .document-list > .row > .col2,
   body.responsive .ggrid > [class*="block"] {

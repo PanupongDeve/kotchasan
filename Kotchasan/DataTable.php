@@ -926,9 +926,11 @@ class DataTable extends \Kotchasan\KBase
   private function addFilter($item)
   {
     $row = '<fieldset><label>'.$item['text'].' <select name="'.$item['name'].'">';
-    foreach ($item['options'] as $key => $text) {
-      $sel = (string)$key == $item['value'] ? ' selected' : '';
-      $row .= '<option value="'.$key.'"'.$sel.'>'.$text.'</option>';
+    if (!empty($item['options'])) {
+      foreach ($item['options'] as $key => $text) {
+        $sel = (string)$key == $item['value'] ? ' selected' : '';
+        $row .= '<option value="'.$key.'"'.$sel.'>'.$text.'</option>';
+      }
     }
     $row .= '</select></label></fieldset>';
     return $row;

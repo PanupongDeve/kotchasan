@@ -117,48 +117,6 @@
             callClick(this, doAction);
           }
         });
-        var doButton = function () {
-          var action = '',
-            patt = /^([a-z_\-]+)_([0-9]+)(_([0-9]+))?$/;
-          if (temp.options.actionConfirm) {
-            var fn = window[temp.options.actionConfirm];
-            hs = patt.exec(this.id);
-            if (hs && Object.isFunction(fn)) {
-              var t = this.getText();
-              t = t ? t.strip_tags() : null;
-              action = fn(t, hs[1], hs[2], hs[4]);
-            } else {
-              action = 'action=' + this.id;
-            }
-          } else {
-            hs = patt.exec(this.id);
-            if (hs) {
-              if (hs[1] == 'delete') {
-                if (confirm(trans('You want to XXX ?').replace(/XXX/, trans('delete')))) {
-                  action = 'action=delete&id=' + hs[2];
-                }
-              } else if (hs[4]) {
-                action = 'action=' + hs[1] + '_' + hs[2] + '&id=' + hs[4];
-              } else {
-                action = 'action=' + hs[1] + '&id=' + hs[2];
-              }
-            } else {
-              action = 'action=' + this.id;
-            }
-          }
-          if (action != '') {
-            temp.callAction(this, action);
-          }
-        };
-        if (this.options.action) {
-          var move = /(check|move)_([0-9]+)/;
-          forEach(this.table.elems('a'), function () {
-            var id = this.id;
-            if (id && !move.test(id)) {
-              callClick(this, doButton);
-            }
-          });
-        }
         if (this.options.dragColumn > -1) {
           new GSortTable(this.table, {
             'endDrag': function () {
@@ -230,6 +188,42 @@
     initTBODY: function (tbody, tr) {
       var row = 0,
         temp = this;
+      var doButton = function () {
+        var action = '',
+          patt = /^([a-z_\-]+)_([0-9]+)(_([0-9]+))?$/;
+        if (temp.options.actionConfirm) {
+          var fn = window[temp.options.actionConfirm],
+            hs = patt.exec(this.id);
+          if (hs && Object.isFunction(fn)) {
+            var t = this.getText();
+            t = t ? t.strip_tags() : null;
+            action = fn(t, hs[1], hs[2], hs[4]);
+          } else {
+            action = 'action=' + this.id;
+          }
+        } else {
+          hs = patt.exec(this.id);
+          if (hs) {
+            if (hs[1] == 'delete') {
+              if (confirm(trans('You want to XXX ?').replace(/XXX/, trans('delete')))) {
+                action = 'action=delete&id=' + hs[2];
+              }
+            } else if (hs[4]) {
+              action = 'action=' + hs[1] + '_' + hs[2] + '&id=' + hs[4];
+            } else {
+              action = 'action=' + hs[1] + '&id=' + hs[2];
+            }
+          } else {
+            action = 'action=' + this.id;
+          }
+        }
+        if (action != '') {
+          temp.callAction(this, action);
+        }
+      };
+      var doSelect = function () {
+        temp.callAction(this, 'action=' + this.id + '&value=' + this.value);
+      };
       forEach($G(tbody).elems('tr'), function () {
         if (temp.options.pmButton) {
           this.id = temp.table.id + '_' + row;
@@ -237,8 +231,22 @@
             this.id = this.name.replace(/([\[\]_]+)/g, '_') + row;
           });
         }
-        if ((tr === null || tr === this) && temp.options.onInitRow) {
-          temp.options.onInitRow.call(temp, this, row);
+        if (tr === null || tr === this) {
+          if (temp.options.onInitRow) {
+            temp.options.onInitRow.call(temp, this, row);
+          }
+          if (temp.options.action) {
+            var move = /(check|move)_([0-9]+)/;
+            forEach($G(this).elems('a'), function () {
+              var id = this.id;
+              if (id && !move.test(id)) {
+                callClick(this, doButton);
+              }
+            });
+            forEach(this.elems('select'), function () {
+              $G(this).addEvent('change', doSelect);
+            });
+          }
         }
         row++;
       });
