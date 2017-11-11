@@ -227,3 +227,86 @@
     }
   };
 }());
+function initGUploads(form_id, id, model) {
+  var patt = /^(preview|delete|cover)_([0-9]+)(_([0-9]+))?$/,
+    form = $G(form_id);
+  if (G_Lightbox === null) {
+    G_Lightbox = new GLightbox();
+  } else {
+    G_Lightbox.clear();
+  }
+  var _doDelete = function () {
+    var cs = new Array();
+    forEach(form.elems('a'), function () {
+      if (this.className == 'icon-check') {
+        var hs = patt.exec(this.id);
+        cs.push(hs[2]);
+      }
+    });
+    if (cs.length == 0) {
+      alert(trans('Please select at least one item'));
+    } else if (confirm(trans('You want to XXX the selected items ?').replace(/XXX/, this.innerHTML))) {
+      _action('action=deletep&mid=' + $E('module_id').value + '&aid=' + id + '&id=' + cs.join(','));
+    }
+  };
+  var _doAction = function () {
+    var hs = patt.exec(this.id);
+    if (hs[1] == 'delete') {
+      this.className = this.className == 'icon-check' ? 'icon-uncheck' : 'icon-check';
+    } else if (hs[1] == 'cover' && confirm(trans('You want to XXX ?').replace(/XXX/, this.title))) {
+      _action('action=cover&mid=' + $E('module_id').value + '&aid=' + id + '&id=' + hs[2]);
+    }
+    return false;
+  };
+  function _action(q) {
+    send('index.php/' + model, q, doFormSubmit);
+  }
+  forEach(form.elems('a'), function () {
+    var hs = patt.exec(this.id);
+    if (hs) {
+      if (hs[1] == 'preview') {
+        G_Lightbox.add(this);
+      } else {
+        callClick(this, _doAction);
+      }
+    }
+  });
+  var _setSel = function () {
+    var chk = this.id == 'selectAll' ? 'icon-check' : 'icon-uncheck';
+    forEach(form.elems('a'), function () {
+      var hs = patt.exec(this.id);
+      if (hs && hs[1] == 'delete') {
+        this.className = chk;
+      }
+    });
+  };
+  var galleryUploadResult = function (error, count) {
+    if (error != "") {
+      alert(error);
+    }
+    if (count > 0) {
+      alert(trans('Successfully uploaded XXX files').replace('XXX', count));
+    }
+    if (loader) {
+      loader.reload();
+    } else {
+      window.location.reload();
+    }
+  };
+  var upload = new GUploads({
+    form: form_id,
+    input: "fileupload",
+    fileprogress: "fsUploadProgress",
+    oncomplete: galleryUploadResult,
+    onupload: function () {
+      $E("btnCancel").disabled = false;
+    },
+    customSettings: {albumId: id}
+  });
+  callClick("btnCancel", function () {
+    upload.cancle()
+  });
+  callClick('btnDelete', _doDelete);
+  callClick("selectAll", _setSel);
+  callClick("clearSelected", _setSel);
+}

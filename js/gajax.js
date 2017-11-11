@@ -292,7 +292,7 @@ window.$K = (function () {
   String.prototype.currFormat = function () {
     return floatval(this).toFixed(2);
   };
-  String.prototype.escapeRegExp = function () {
+  String.prototype.preg_quote = function () {
     return this.replace(/([-.*+?^${}()|[\]\/\\])/g, '\\$1');
   };
   String.prototype.capitalize = function () {
@@ -939,23 +939,26 @@ window.$K = (function () {
       }, 1);
       return this;
     },
-    fadeTo: function (v, o) {
-      if (!this._fade) {
-        this._fade = new GFade(this);
-      }
-      this._fade.play({
-        'from': this.getStyle('opacity'),
-        'to': v,
-        'onComplete': o || $K.emptyFunction
-      });
+    fadeIn: function (oncomplete) {
+      this.addClass('fadein');
+      var self = this;
+      window.setTimeout(function () {
+        self.removeClass('fadein');
+        if (Object.isFunction(oncomplete)) {
+          oncomplete.call(this);
+        }
+      }, 1000);
       return this;
     },
-    fadeIn: function (o) {
-      this.fadeTo(100, o);
-      return this;
-    },
-    fadeOut: function (o) {
-      this.fadeTo(0, o);
+    fadeOut: function (oncomplete) {
+      this.addClass('fadeout');
+      var self = this;
+      window.setTimeout(function () {
+        self.removeClass('fadeout');
+        if (Object.isFunction(oncomplete)) {
+          oncomplete.call(this);
+        }
+      }, 1000);
       return this;
     },
     setValue: function (v) {
@@ -1048,7 +1051,6 @@ window.$K = (function () {
       if (!this.tooltip) {
         this.tooltip = new GTooltip({
           id: 'GElelment_Tooltip_' + this.id,
-          opacity: 70,
           autohide: false
         });
         var self = this;
@@ -1424,9 +1426,9 @@ window.$K = (function () {
         var val = this.value;
         var key = GEvent.keyCode(e);
         if (!((key > 36 && key < 41) || key == 8 || key == 9 || key == 13 || GEvent.isCtrlKey(e))) {
-          if (data.maxlength !== null && val.length >= data.maxlength) {
+          if (data.maxlength > 0 && val.length >= data.maxlength) {
             GEvent.stop(e);
-          } else if (data.pattern !== null && data.type == 'text') {
+          } else if (data.pattern && data.type == 'text') {
             val = String.fromCharCode(key);
             if (val !== '' && !data.pattern.test(val)) {
               GEvent.stop(e);
@@ -1438,12 +1440,12 @@ window.$K = (function () {
         var val = this.value;
         var data = this.data;
         if (e && val !== '' && data.type == 'number' && e.type == 'change') {
-          val = floatval(val);
-          if (data.min !== null) {
-            val = Math.max(data.min, val);
+          val = val.replace(/[^0-9]+/, '');
+          if (data.min) {
+            val = Math.max(data.min, floatval(val));
           }
-          if (data.max !== null) {
-            val = Math.min(data.max, val);
+          if (data.max) {
+            val = Math.min(data.max, floatval(val));
           }
           this.value = val;
         } else if (data.required !== null) {
@@ -1456,7 +1458,7 @@ window.$K = (function () {
           } else {
             this.reset();
           }
-        } else if (data.pattern !== null && val !== '') {
+        } else if (data.pattern && val !== '') {
           if (data.pattern.test(val)) {
             this.reset();
           } else {
@@ -1495,8 +1497,7 @@ window.$K = (function () {
           obj.title = $G(elem).title;
           obj.required = elem.get('required');
           obj.disabled = elem.get('disabled') !== null;
-          obj.maxlength = null;
-          obj.pattern = elem.get('pattern');
+          obj.maxlength = floatval(elem.get('maxlength'));
           obj.dataset = elem.dataset;
           if (typeof obj.dataset == 'undefined') {
             obj.dataset = {};
@@ -1507,26 +1508,33 @@ window.$K = (function () {
               }
             });
           }
-          if (obj.tagName == 'textarea') {
-            obj.maxlength = elem.get('maxlength');
-            if (obj.maxlength !== null) {
-              obj.maxlength = floatval(obj.maxlength);
-            }
-          } else if (obj.tagName == 'input') {
+          if (obj.tagName == 'input') {
             var c = elem.hasClass('currency number integer color');
             if (c !== false) {
               obj.type = c;
             } else {
               obj.type = elem.get('type').toLowerCase();
             }
-          }
-          if (obj.pattern !== null) {
-            elem.setAttribute('pattern', '(.*){0,}');
-            obj.pattern = new RegExp('^(?:' + obj.pattern + ')$');
-          }
-          if (obj.type == 'currency' || obj.type == 'number' || obj.type == 'integer' || obj.type == 'date') {
-            obj.min = elem.min;
-            obj.max = elem.max;
+            if (obj.type == 'number' && !obj.dataset['keyboard']) {
+              obj.dataset['keyboard'] = '1234567890';
+            } else if (obj.type == 'integer' && !obj.dataset['keyboard']) {
+              obj.dataset['keyboard'] = '1234567890-';
+            } else if (obj.type == 'tel' && !obj.dataset['keyboard']) {
+              obj.dataset['keyboard'] = '1234567890';
+            }
+            if (obj.type == 'currency' || obj.type == 'number' || obj.type == 'integer' || obj.type == 'date') {
+              if (elem.min) {
+                obj.min = elem.min;
+              }
+              if (elem.max) {
+                obj.max = elem.max;
+              }
+            }
+            obj.pattern = elem.get('pattern');
+            if (obj.pattern !== null) {
+              elem.setAttribute('pattern', '(.*){0,}');
+              obj.pattern = new RegExp('^(?:' + obj.pattern + ')$');
+            }
           }
           var autofocus = elem.get('autofocus');
           var text = elem;
@@ -1559,7 +1567,10 @@ window.$K = (function () {
             if (obj.max) {
               src.maxDate(obj.max);
             }
-            hidden.value = elem.value;
+            if (elem.placeholder) {
+              text.placeholder = elem.placeholder;
+            }
+            hidden.value = elem.get('value');
             window.setInterval(function () {
               if (hidden.value != src.old) {
                 src.old = hidden.value;
@@ -1587,11 +1598,14 @@ window.$K = (function () {
             if (obj.title != '') {
               text.title = obj.title;
             }
-            if (obj.maxlength !== null) {
-              text.maxlength = obj.maxlength;
-            }
             if (elem.size) {
               text.size = elem.size;
+            }
+            if (elem.placeholder) {
+              text.placeholder = elem.placeholder;
+            }
+            if (elem.maxlength > 0) {
+              text.maxlength = elem.maxlength;
             }
             text.className = elem.className;
             elem.replace(text);
@@ -1604,20 +1618,25 @@ window.$K = (function () {
               });
             } else if (obj.type == 'time') {
               new GTime(text);
-            } else if (obj.type == 'number' || obj.type == 'tel') {
-              var keyboard = obj.dataset['keyboard'] ? obj.dataset['keyboard'] : '1234567890';
-              delete(obj.dataset['keyboard']);
-              new GInput(text, keyboard);
-            } else if (obj.type == 'integer') {
-              var keyboard = obj.dataset['keyboard'] ? obj.dataset['keyboard'] : '-1234567890';
-              delete(obj.dataset['keyboard']);
-              new GInput(text, keyboard);
             } else if (obj.type == 'currency') {
               var keyboard = obj.dataset['keyboard'] ? obj.dataset['keyboard'] : '1234567890.';
-              delete(obj.dataset['keyboard']);
+              obj.dataset['keyboard'] = null;
               new GInput(text, keyboard, function () {
-                this.value = this.value.currFormat();
+                var val = floatval(this.value);
+                if (obj.min) {
+                  val = Math.max(obj.min, val);
+                }
+                if (obj.max) {
+                  val = Math.min(obj.max, val);
+                }
+                this.value = val.toFixed(2);
               });
+            } else if (obj.dataset['keyboard']) {
+              if (!obj.pattern) {
+                obj.pattern = new RegExp('^(?:[' + obj.dataset['keyboard'].preg_quote() + ']+)$');
+              }
+              new GInput(text, obj.dataset['keyboard']);
+              obj.dataset['keyboard'] = null;
             } else if (obj.type == 'email') {
               if (obj.pattern == null) {
                 obj.pattern = /^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/;
@@ -1644,6 +1663,12 @@ window.$K = (function () {
               elem.style.zIndex = text.style.zIndex + 1;
               elem.style.height = text.getHeight() + 'px';
             }
+          } else if (obj.dataset['keyboard']) {
+            if (!obj.pattern) {
+              obj.pattern = new RegExp('^(?:[' + obj.dataset['keyboard'].preg_quote() + ']+)$');
+            }
+            new GInput(text, obj.dataset['keyboard']);
+            obj.dataset['keyboard'] = null;
           }
           obj.element = text;
           text.data = obj;
@@ -1655,13 +1680,13 @@ window.$K = (function () {
               }
             }
           }
-          if (obj.pattern !== null || obj.type == 'number' || obj.type == 'integer') {
+          if (obj.pattern !== null || obj.type == 'number' || obj.type == 'tel' || obj.type == 'integer') {
             text.addEvent('change', _docheck);
           }
           if (obj.pattern !== null || obj.required !== null) {
             text.addEvent('keyup', _docheck);
           }
-          if (obj.pattern !== null || (obj.maxlength !== null && obj.tagName == 'textarea')) {
+          if (obj.pattern !== null || (obj.maxlength > 0 && obj.tagName == 'textarea')) {
             text.addEvent('keypress', _dokeypress);
           }
           if (autofocus !== null) {
@@ -1691,7 +1716,7 @@ window.$K = (function () {
               this.element.addClass('required').highlight().focus();
               ret = false;
               return true;
-            } else if (this.pattern !== null && val !== '' && !this.pattern.test(val)) {
+            } else if (this.pattern && val !== '' && !this.pattern.test(val)) {
               title = this.title !== '' ? this.title : trans('Invalid data');
               this.element.invalid(title);
               alert(title);
@@ -1851,7 +1876,6 @@ window.$K = (function () {
       this.id = 'modaldiv';
       this.btnclose = 'btnclose';
       this.backgroundClass = 'modalbg';
-      this.opacity = 0.8;
       this.onhide = $K.emptyFunction;
       this.onclose = $K.emptyFunction;
       for (var property in options) {
@@ -1889,33 +1913,15 @@ window.$K = (function () {
       this.div = $G(container_div);
       this.body = $G(this.div.firstChild);
       this.body.style.overflow = 'auto';
-      this.div.setStyle('opacity', 0);
     },
     show: function (value) {
       this.body.style.height = 'auto';
+      this.body.style.width = 'auto';
       this.body.setHTML(value);
+      this.overlay();
+      this.div.style.display = 'block';
       var self = this;
       window.setTimeout(function () {
-        var imgs = self.body.getElementsByTagName('img');
-        var viewport_width = document.viewport.getWidth();
-        var viewport_height = document.viewport.getHeight();
-        forEach(imgs, function () {
-          new preload(this, function () {
-            dm = self.body.getDimensions();
-            hOffset = dm.height - self.body.getClientHeight() + parseInt(self.body.getStyle('marginTop')) + parseInt(self.body.getStyle('marginBottom')) + 20;
-            wOffset = dm.width - self.body.getClientWidth() + parseInt(self.body.getStyle('marginLeft')) + parseInt(self.body.getStyle('marginRight')) + 20;
-            h = viewport_height - hOffset;
-            if (dm.height > h) {
-              self.body.style.height = h + 'px';
-            }
-            w = viewport_width - wOffset;
-            if (dm.width > w) {
-              self.body.style.width = w + 'px';
-            }
-            self.div.center();
-          });
-        });
-        self.div.style.display = 'block';
         var dm = self.body.getDimensions();
         var hOffset = dm.height - self.body.getClientHeight() + parseInt(self.body.getStyle('marginTop')) + parseInt(self.body.getStyle('marginBottom')) + 40;
         var wOffset = dm.width - self.body.getClientWidth() + parseInt(self.body.getStyle('marginLeft')) + parseInt(self.body.getStyle('marginRight')) + 20;
@@ -1927,62 +1933,49 @@ window.$K = (function () {
         if (dm.width > w) {
           self.body.style.width = w + 'px';
         }
-        self.div.center();
-        self.overlay();
-        var _modalComplete = function () {
-          if (window.ActiveXObject) {
-            self.style.filter = "none";
-          }
-        };
-        new GFade(self.div).play({
-          'from': 0,
-          'to': 100,
-          'speed': 1,
-          'duration': 20,
-          'onComplete': _modalComplete
-        });
         self.div.style.zIndex = 1000;
         var size = self.div.getDimensions();
         self.div.style.width = size.width + 'px';
+        self.div.center();
+        self.div.fadeIn();
       }, 1);
       return this;
     },
     hide: function () {
-      if (Object.isFunction(this.onhide)) {
-        this.onhide.call(this);
-      }
-      new GFade(this.div).play({
-        'from': 100,
-        'to': 0,
-        'speed': 1,
-        'duration': 20,
-        'onComplete': this._hide.bind(this)
+      var self = this;
+      this.div.fadeOut();
+      this.iframe.fadeOut(function () {
+        self._hide.call(self);
       });
       return this;
     },
     overlay: function () {
-      var frameId = 'iframe_' + this.div.id;
+      var frameId = 'iframe_' + this.div.id,
+        self = this;
       if (!$E(frameId)) {
-        var io = $G(document.body).create('div', {
+        var io = $G(document.body).create('iframe', {
           id: frameId,
-          height: '100%'
+          height: '100%',
+          frameBorder: 0
         });
         io.setStyle('position', 'fixed');
         io.setStyle('zIndex', 999);
         io.className = this.backgroundClass;
+        io.style.display = 'none';
       }
       this.iframe = $G(frameId);
-      this.iframe.style.left = '0px';
-      this.iframe.style.top = '0px';
-      this.iframe.setStyle('opacity', this.opacity);
-      this.iframe.style.display = 'block';
-      var d = $G(document).getDimensions();
-      this.iframe.style.height = d.height + 'px';
-      this.iframe.style.width = d.width + 'px';
-      var self = this;
-      this.iframe.addEvent('click', function () {
-        self.hide();
-      });
+      if (this.iframe.style.display == 'none') {
+        this.iframe.style.left = '0px';
+        this.iframe.style.top = '0px';
+        this.iframe.style.display = 'block';
+        this.iframe.fadeIn();
+        $G(self.iframe.contentWindow.document).addEvent('click', function (e) {
+          self.hide();
+        });
+        var d = $G(document).getDimensions();
+        this.iframe.style.height = d.height + 'px';
+        this.iframe.style.width = '100%';
+      }
       return this;
     },
     _hide: function () {
@@ -2006,57 +1999,6 @@ window.$K = (function () {
       this.options.onComplete.call(this.Element);
     }
   };
-  window.GFade = GClass.create();
-  GFade.prototype = Object.extend(new GFx(), {
-    initialize: function (el) {
-      this.options = {
-        from: 0,
-        to: 100,
-        speed: 50,
-        duration: 5,
-        unit: '',
-        onComplete: $K.emptyFunction
-      };
-      this.Element = $G(el);
-      this.playing = false;
-      this.timer = 0;
-    },
-    play: function (options) {
-      for (var property in options) {
-        this.options[property] = options[property];
-      }
-      if (this.options.to > this.options.from) {
-        this.name = 'fadeIn';
-        this.to = (this.options.to > 100) ? 100 : this.options.to;
-        this.from = (this.options.from < 0) ? 0 : this.options.from;
-      } else {
-        this.name = 'fadeOut';
-        this.to = (this.options.to < 0) ? 0 : this.options.to;
-        this.from = (this.options.from > 100) ? 100 : this.options.from;
-      }
-      if (!this.playing) {
-        this.now = this.from;
-        this._run();
-      }
-      return this;
-    },
-    step: function () {
-      try {
-        if (this.playing) {
-          this.Element.setStyle('opacity', this.now / 100);
-        }
-        var now = (this.name == 'fadeIn') ? this.now + this.options.duration : this.now - this.options.duration;
-        if (this.playing && ((this.name == 'fadeOut' && now >= this.to) || (this.name == 'fadeIn' && now <= this.to))) {
-          this.now = now;
-          var temp = this;
-          this.timer = window.setTimeout(temp.step.bind(temp), temp.options.speed);
-        } else {
-          this.stop();
-        }
-      } catch (e) {
-      }
-    }
-  });
   window.GScroll = GClass.create();
   GScroll.prototype = Object.extend(new GFx(), {
     initialize: function (container, scroller) {
@@ -2193,7 +2135,7 @@ window.$K = (function () {
   };
   window.Cookie = {
     get: function (k) {
-      var v = document.cookie.match('(?:^|;)\\s*' + k.escapeRegExp() + '=([^;]*)');
+      var v = document.cookie.match('(?:^|;)\\s*' + k.preg_quote() + '=([^;]*)');
       return (v) ? decodeURIComponent(v[1]) : null;
     },
     set: function (k, v, options) {
@@ -2695,6 +2637,7 @@ window.$K = (function () {
       this.keyboard.push('&crarr;');
       this.keyboard.push('&lArr;');
       this.onchanged = onchanged || $K.emptyFunction;
+      this.maxlength = floatval(this.input.get('maxlength'));
       var self = this;
       if ($K.isMobile()) {
         if (!$E('ginput_div')) {
@@ -2715,6 +2658,13 @@ window.$K = (function () {
         $G(document.body).addEvent('click', function (e) {
           if (!$G(GEvent.element(e)).hasClass('ginput')) {
             self.panel.style.display = 'none';
+            self._dochanged();
+            if (self.panel.input) {
+              if (self.panel.input_value != self.panel.input.value) {
+                self.panel.input.callEvent('change');
+              }
+              self.panel.input = null;
+            }
           }
         });
       } else {
@@ -2754,11 +2704,7 @@ window.$K = (function () {
         panel.appendChild(a);
         $G(a).addEvent('click', function (e) {
           var elem = GEvent.element(e);
-          if (elem.className == 'enter') {
-            self.panel.style.display = 'none';
-            self._dochanged();
-            self.input.select();
-          } else if (elem.className == 'backspace') {
+          if (elem.className == 'backspace') {
             if (document.selection) {
               self.input.focus();
               document.selection.empty();
@@ -2776,22 +2722,29 @@ window.$K = (function () {
               self.input.focus();
             }
             GEvent.stop(e);
-          } else {
+          } else if (elem.className != 'enter') {
             var text = this.innerHTML;
             self.input.focus();
             if (document.selection) {
               var sel = document.selection.createRange();
               sel.text = text;
             } else if (self.input.selectionStart || self.input.selectionStart === 0) {
-              var startPos = self.input.selectionStart;
-              var endPos = self.input.selectionEnd;
-              self.input.value = self.input.value.substring(0, startPos) +
-                text +
-                self.input.value.substring(endPos, self.input.value.length);
-              self.input.selectionStart = startPos + text.length;
-              self.input.selectionEnd = startPos + text.length;
+              var startPos = self.input.selectionStart,
+                endPos = self.input.selectionEnd,
+                value = self.input.value.substring(0, startPos) + text + self.input.value.substring(endPos, self.input.value.length);
+              if (self.maxlength == 0 || value.length <= self.maxlength) {
+                self.input.value = value;
+                self.input.selectionStart = startPos + text.length;
+                self.input.selectionEnd = startPos + text.length;
+              } else {
+                self.input.selectionStart = startPos;
+                self.input.selectionEnd = endPos;
+              }
             } else {
-              self.input.value += text;
+              text = self.input.value + text;
+              if (self.maxlength == 0 || text.length <= self.maxlength) {
+                self.input.value = text;
+              }
             }
             GEvent.stop(e);
           }
@@ -2808,6 +2761,8 @@ window.$K = (function () {
       var l = Math.max(vpo.left + dm.width > document.viewport.getWidth() ? vpo.left + this.input.getWidth() - dm.width : vpo.left, document.viewport.getscrollLeft() + 5);
       this.panel.style.left = l + 'px';
       this.panel.style.display = 'block';
+      this.panel.input = this.input;
+      this.panel.input_value = this.input.value;
     }
   };
   window.GCalendar = GClass.create();
@@ -3607,8 +3562,6 @@ window.$K = (function () {
       this.backgroundClass = 'modalbg';
       this.previewClass = 'gallery_preview';
       this.loadingClass = 'spinner';
-      this.btnnav = 'btnnav';
-      this.opacity = 0.9;
       this.onshow = null;
       this.onhide = null;
       this.onclose = null;
@@ -3654,6 +3607,9 @@ window.$K = (function () {
         div.appendChild(s);
         s.className = this.btnclose;
         s.title = trans('Close');
+        callClick(s, function () {
+          self.hide();
+        });
         var a = doc.createElement('a');
         div.appendChild(a);
         a.id = 'GLightbox_zoom';
@@ -3661,33 +3617,29 @@ window.$K = (function () {
           self._fullScreen(e);
         });
         this.zoom = a;
-        a = doc.createElement('a');
-        div.appendChild(a);
-        a.className = this.btnnav + ' prev';
-        a.title = trans('Prev');
-        callClick(a, function (e) {
-          self.showPrev(e);
+        this.prev = doc.createElement('a');
+        div.appendChild(this.prev);
+        this.prev.className = 'hidden';
+        this.prev.title = trans('Prev');
+        callClick(this.prev, function () {
+          self.showPrev();
         });
-        a = doc.createElement('a');
-        div.appendChild(a);
-        a.className = this.btnnav + ' next';
-        a.title = trans('Next');
-        callClick(a, function (e) {
-          self.showNext(e);
+        this.next = doc.createElement('a');
+        div.appendChild(this.next);
+        this.next.className = 'hidden';
+        this.next.title = trans('Next');
+        callClick(this.next, function () {
+          self.showNext();
         });
       }
       this.zoom = $E('GLightbox_zoom');
       this.div = $G(container_div);
       this.body = $G(this.div.firstChild);
       this.preview = $G(this.body.firstChild);
-      this.body.nextSibling.onclick = function () {
-        self.hide();
-      };
       this.img = this.preview.firstChild;
       this.caption = this.img.nextSibling.firstChild;
       this.loading = this.img.nextSibling.nextSibling;
       this.body.style.overflow = 'hidden';
-      this.div.setStyle('opacity', 0);
       this.currentId = 0;
       this.imgs = new Array();
     },
@@ -3706,7 +3658,7 @@ window.$K = (function () {
         return false;
       });
     },
-    showNext: function (e) {
+    showNext: function () {
       if (this.div.style.display == 'block' && this.imgs.length > 0) {
         this.currentId++;
         if (this.currentId >= this.imgs.length) {
@@ -3716,7 +3668,7 @@ window.$K = (function () {
         this.show(img, false);
       }
     },
-    showPrev: function (e) {
+    showPrev: function () {
       if (this.div.style.display == 'block' && this.imgs.length > 0) {
         this.currentId--;
         if (this.currentId < 0) {
@@ -3726,17 +3678,20 @@ window.$K = (function () {
         this.show(img, false);
       }
     },
-    _fullScreen: function (e) {
+    _fullScreen: function () {
       if (this.div.style.display == 'block' && this.imgs.length > 0) {
         var img = this.imgs[this.currentId];
-        this.show(img, this.zoom.className == this.btnnav + ' zoomout');
+        this.show(img, this.zoom.className == 'btnnav zoomout');
       }
     },
     show: function (obj, fullscreen) {
-      this.zoom.className = this.btnnav + (fullscreen ? ' zoomin' : ' zoomout');
+      this.overlay();
+      this.zoom.className = fullscreen ? 'btnnav zoomin' : 'btnnav zoomout';
       this.zoom.title = trans(fullscreen ? 'fit screen' : 'full image');
       var img, title, self = this;
       this.loading.className = this.loadingClass + ' show';
+      this.prev.className = this.currentId == 0 ? 'hidden' : 'btnnav prev';
+      this.next.className = this.currentId == this.imgs.length - 1 ? 'hidden' : 'btnnav next';
       if (obj.href) {
         img = obj.href;
         title = obj.title;
@@ -3788,15 +3743,10 @@ window.$K = (function () {
         }
         self.div.style.display = 'block';
         self.div.center();
-        self.overlay();
-        new GFade(self.div).play({
-          'from': 0,
-          'to': 100,
-          'speed': 1,
-          'duration': 20,
-          'onComplete': self._show.bind(self)
-        });
         self.div.style.zIndex = 1000;
+        self.div.fadeIn(function () {
+          self._show.call(self);
+        });
       });
       return this;
     },
@@ -3804,17 +3754,16 @@ window.$K = (function () {
       if (Object.isFunction(this.onhide)) {
         this.onhide.call(this);
       }
-      new GFade(this.div).play({
-        'from': 100,
-        'to': 0,
-        'speed': 1,
-        'duration': 20,
-        'onComplete': this._hide.bind(this)
+      var self = this;
+      this.div.fadeOut();
+      this.iframe.fadeOut(function () {
+        self._hide.call(self);
       });
       return this;
     },
     overlay: function () {
-      var frameId = 'iframe_' + this.div.id;
+      var frameId = 'iframe_' + this.div.id,
+        self = this;
       if (!$E(frameId)) {
         var io = $G(document.body).create('iframe', {
           id: frameId, height: '100%', frameBorder: 0
@@ -3822,19 +3771,21 @@ window.$K = (function () {
         io.setStyle('position', 'absolute');
         io.setStyle('zIndex', 999);
         io.className = this.backgroundClass;
+        io.style.display = 'none';
       }
       this.iframe = $G(frameId);
-      this.iframe.style.left = '0px';
-      this.iframe.style.top = '0px';
-      this.iframe.setStyle('opacity', this.opacity);
-      this.iframe.style.display = 'block';
-      var self = this;
-      $G(self.iframe.contentWindow.document).addEvent('click', function (e) {
-        self.hide();
-      });
-      var d = $G(document).getDimensions();
-      this.iframe.style.height = d.height + 'px';
-      this.iframe.style.width = '100%';
+      if (this.iframe.style.display == 'none') {
+        this.iframe.style.left = '0px';
+        this.iframe.style.top = '0px';
+        this.iframe.style.display = 'block';
+        this.iframe.fadeIn();
+        $G(self.iframe.contentWindow.document).addEvent('click', function (e) {
+          self.hide();
+        });
+        var d = $G(document).getDimensions();
+        this.iframe.style.height = d.height + 'px';
+        this.iframe.style.width = '100%';
+      }
       return this;
     },
     _show: function () {

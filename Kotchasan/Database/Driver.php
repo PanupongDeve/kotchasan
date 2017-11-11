@@ -348,6 +348,20 @@ abstract class Driver extends Query
   }
 
   /**
+   * ตรวจสอบว่ามี $index ในตารางหรือไม่
+   *
+   * @param string $database_name
+   * @param string $table_name
+   * @param string $index
+   * @return boolean คืนค่า true ถ้ามี คืนค่า false ถ้าไม่มี
+   */
+  public function indexExists($database_name, $table_name, $index)
+  {
+    $result = $this->customQuery("SELECT * FROM information_schema.statistics WHERE table_schema='$database_name' AND table_name = '$table_name' AND column_name = '$index'");
+    return empty($result) ? false : true;
+  }
+
+  /**
    * ฟังก์ชั่นลบข้อมูลทั้งหมดในตาราง
    *
    * @param  string $table_name table name
