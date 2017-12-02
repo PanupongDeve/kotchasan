@@ -231,34 +231,6 @@ window.$K = (function () {
   Date.longDayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   Date.dayNames = ["Su.", "Mo.", "We.", "Tu.", "Th.", "Fr.", "Sa."];
   Date.yearOffset = 0;
-  String.prototype.hexToRgb = function (a) {
-    var h = this.match(new RegExp('^[#]{0,1}([\\w]{1,2})([\\w]{1,2})([\\w]{1,2})$'));
-    var rgb = [];
-    if (!h) {
-      rgb = [255, 255, 255];
-    } else {
-      for (var i = 1; i < h.length; i++) {
-        if (h[i].length == 1) {
-          h[i] += h[i];
-        }
-        rgb.push(parseInt(h[i], 16));
-      }
-    }
-    if (a) {
-      return [parseFloat(rgb[0]), parseFloat(rgb[1]), parseFloat(rgb[2])];
-    } else {
-      return 'rgb(' + rgb.join(',') + ')';
-    }
-  };
-  String.prototype.toRgb = function () {
-    if (this.match(/^#[0-9a-f]{3,6}$/i)) {
-      return this.hexToRgb(true);
-    } else if (value = this.match(/(\d+),\s*(\d+),\s*(\d+),\s*(\d+)/)) {
-      return (parseFloat(value[4]) < 1) ? 'transparent' : [parseFloat(value[1]), parseFloat(value[2]), parseFloat(value[3])];
-    } else {
-      return ((value = this.match(/(\d+),\s*(\d+),\s*(\d+)/))) ? [parseFloat(value[1]), parseFloat(value[2]), parseFloat(value[3])] : this.toLowerCase();
-    }
-  };
   String.prototype.entityify = function () {
     return this.replace(/</g, '&lt;').
       replace(/>/g, '&gt;').
@@ -907,17 +879,21 @@ window.$K = (function () {
       return this;
     },
     addEvent: function (t, f, c) {
-      if (this.addEventListener) {
-        c = !c ? false : c;
-        this.addEventListener(t, f, c);
-      } else if (this.attachEvent) {
-        var tmp = this;
-        tmp["e" + t + f] = f;
-        tmp[t + f] = function () {
-          tmp["e" + t + f](window.event);
-        };
-        tmp.attachEvent("on" + t, tmp[t + f]);
-      }
+      var ts = t.split(' '),
+        input = this;
+      forEach(ts, function (e) {
+        if (input.addEventListener) {
+          c = !c ? false : c;
+          input.addEventListener(e, f, c);
+        } else if (input.attachEvent) {
+          tmp = input;
+          tmp["e" + e + f] = f;
+          tmp[e + f] = function () {
+            tmp["e" + e + f](window.event);
+          };
+          tmp.attachEvent("on" + e, tmp[e + f]);
+        }
+      });
       return this;
     },
     removeEvent: function (t, f) {
@@ -1239,7 +1215,7 @@ window.$K = (function () {
           url += '?' + parameters;
           parameters = null;
         } else {
-          parameters = parameters == null ? '' : parameters;
+          parameters = parameters === null ? '' : parameters;
         }
         if (option.cache == false) {
           var match = /\?/;
@@ -2018,9 +1994,6 @@ window.$K = (function () {
       });
       this.container.rel = 'play';
       this.playing = false;
-      var size = this.container.getDimensions();
-      this.containerHeight = size.height;
-      this.containerWidth = size.width;
     },
     play: function (options) {
       for (var property in options) {
@@ -2033,17 +2006,18 @@ window.$K = (function () {
     },
     step: function () {
       if (this.container.rel == 'play' || this.options.pauseit != 1) {
+        var size = this.container.getDimensions();
         if (this.options.scrollto == 'bottom') {
-          this.scrollerTop = this.scrollerTop > this.containerHeight ? 0 - this.scroller.getHeight() : this.scrollerTop + this.options.duration;
+          this.scrollerTop = this.scrollerTop > size.height ? 0 - this.scroller.getHeight() : this.scrollerTop + this.options.duration;
           this.scroller.style.top = this.scrollerTop + 'px';
         } else if (this.options.scrollto == 'left') {
-          this.scrollerLeft = this.scrollerLeft + this.scroller.getWidth() < 0 ? this.containerWidth : this.scrollerLeft - this.options.duration;
+          this.scrollerLeft = this.scrollerLeft + this.scroller.getWidth() < 0 ? size.width : this.scrollerLeft - this.options.duration;
           this.scroller.style.left = this.scrollerLeft + 'px';
         } else if (this.options.scrollto == 'right') {
-          this.scrollerLeft = this.scrollerLeft > this.containerWidth ? 0 - this.scrollerWidth : this.scrollerLeft + this.options.duration;
+          this.scrollerLeft = this.scrollerLeft > size.width ? 0 - this.scroller.getWidth() : this.scrollerLeft + this.options.duration;
           this.scroller.style.left = this.scrollerLeft + 'px';
         } else {
-          this.scrollerTop = this.scrollerTop + this.scroller.getHeight() < 0 ? this.containerHeight : this.scrollerTop - this.options.duration;
+          this.scrollerTop = this.scrollerTop + this.scroller.getHeight() < 0 ? size.height : this.scrollerTop - this.options.duration;
           this.scroller.style.top = this.scrollerTop + 'px';
         }
       }
@@ -2378,10 +2352,9 @@ window.$K = (function () {
       var Hinstance = this;
       function _beginDrag() {
         if (Hinstance.options.beginDrag.call(Hinstance.moveObj)) {
-          var elemPos = Hinstance.moveObj.viewportOffset();
           Hinstance.mouseOffset = {
-            x: this.mousePos.x - elemPos.left,
-            y: this.mousePos.y - elemPos.top
+            x: this.mousePos.x - Hinstance.moveObj.getStyle('left').toInt(),
+            y: this.mousePos.y - Hinstance.moveObj.getStyle('top').toInt(),
           };
         }
       }
@@ -3260,6 +3233,69 @@ window.$K = (function () {
       this.options.onComplete.call(this);
     }
   });
+  window.Color = GClass.create();
+  Color.prototype = {
+    initialize: function (value) {
+      if (Array.isArray(value)) {
+        this.r = value[0];
+        this.g = value[1];
+        this.b = value[2];
+        this.a = value.length > 3 ? value[3] : null;
+      } else {
+        var rgb = /#?([a-zA-Z0-9]{1,2})([a-zA-Z0-9]{1,2})([a-zA-Z0-9]{1,2})([a-zA-Z0-9]{0,2})$/.exec(value);
+        if (rgb) {
+          this.r = rgb[1].length == 2 ? parseInt(rgb[1], 16) : parseInt(rgb[1] + rgb[1], 16);
+          this.g = rgb[2].length == 2 ? parseInt(rgb[2], 16) : parseInt(rgb[2] + rgb[2], 16);
+          this.b = rgb[3].length == 2 ? parseInt(rgb[3], 16) : parseInt(rgb[3] + rgb[3], 16);
+          this.a = rgb[4] == '' ? null : (rgb[4].length == 2 ? parseInt(rgb[4], 16) : parseInt(rgb[4] + rgb[4], 16));
+        } else {
+          this.r = 0;
+          this.g = 0;
+          this.b = 0;
+          this.a = null;
+        }
+      }
+    },
+    darken: function (amount) {
+      return new Color([
+        Math.max(0, Math.round(this.r - amount)),
+        Math.max(0, Math.round(this.g - amount)),
+        Math.max(0, Math.round(this.b - amount)),
+        this.a
+      ]);
+    },
+    lighten: function (amount) {
+      return new Color([
+        Math.min(255, Math.round(this.r + amount)),
+        Math.min(255, Math.round(this.g + amount)),
+        Math.min(255, Math.round(this.b + amount)),
+        this.a
+      ]);
+    },
+    invert: function () {
+      return new Color([
+        this.r > 128 ? 0 : 255,
+        this.g > 128 ? 0 : 255,
+        this.b > 128 ? 0 : 255,
+        this.a
+      ]);
+    },
+    toString: function () {
+      return '#' +
+        this.r.toString(16).toUpperCase().leftPad(2, '0') +
+        this.g.toString(16).toUpperCase().leftPad(2, '0') +
+        this.b.toString(16).toUpperCase().leftPad(2, '0') +
+        (this.a !== null && this.a !== 1 ? this.a.toString(16).toUpperCase().leftPad(2, '0') : '')
+    },
+    toRGB: function () {
+      return this.a !== null && this.a !== 1 ?
+        'rgba(' + this.r + ', ' + this.g + ', ' + this.b + ', ' + this.a + ')' :
+        'rgb(' + this.r + ', ' + this.g + ', ' + this.b + ')';
+    },
+    toArray: function () {
+      return [this.r, this.g, this.b, this.a];
+    }
+  };
   window.GDDColor = GClass.create();
   GDDColor.prototype = {
     initialize: function (id, onchanged) {
@@ -3498,17 +3534,15 @@ window.$K = (function () {
     },
     pickColor: function (c) {
       var n,
-        self = this,
-        rgb = c.hexToRgb(true),
+        c = new Color(c),
+        rgb = c.toArray(),
         m = Math.min(rgb[0], rgb[1], rgb[2]),
-        c = Math.floor((255 - m) / this.cols);
-      forEach(this.customColor.elems('a'), function () {
-        n = self.rgbToHex(rgb);
-        this.title = n;
-        this.style.backgroundColor = n;
-        rgb[0] = Math.min(255, rgb[0] + c);
-        rgb[1] = Math.min(255, rgb[1] + c);
-        rgb[2] = Math.min(255, rgb[2] + c);
+        o = Math.floor((255 - m) / this.cols);
+      forEach(this.customColor.elems('a'), function (item, index) {
+        n = c.lighten(o * index);
+        item.title = n.toString();
+        item.style.backgroundColor = n.toString();
+        item.style.color = n.invert().toString();
       });
       $E('color_' + (this.cols - 1) + '_0').focus();
     },
@@ -3539,19 +3573,8 @@ window.$K = (function () {
       if (c.toLowerCase() == 'transparent') {
         return this.ddcolor.style.color;
       } else {
-        var rgb = c.hexToRgb(true);
-        rgb[0] = 255 - rgb[0];
-        rgb[1] = 255 - rgb[1];
-        rgb[2] = 255 - rgb[2];
-        return this.rgbToHex(rgb);
+        return new Color(c).invert().toString();
       }
-    },
-    rgbToHex: function (rgb) {
-      function toHex(c) {
-        var c = c.toString(16).toUpperCase();
-        return c.leftPad(2, '0');
-      }
-      return '#' + toHex(rgb[0]) + toHex(rgb[1]) + toHex(rgb[2]);
     }
   };
   window.GLightbox = GClass.create();

@@ -86,7 +86,7 @@ class View extends \Kotchasan\View
     // submit
     $fieldset->add('submit', array(
       'class' => 'button ok large wide',
-      'value' => Language::get('Sign In')
+      'value' => Language::get('Sign in')
     ));
     // คืนค่า form
     return $form->render();

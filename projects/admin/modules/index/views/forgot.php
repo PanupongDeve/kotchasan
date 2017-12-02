@@ -66,8 +66,8 @@ class View extends \Kotchasan\View
     $group->add('a', array(
       'href' => self::$request->getUri()->withParams(array('action' => 'login'), true),
       'class' => 'td',
-      'title' => Language::get('Administrator Area'),
-      'innerHTML' => ''.Language::get('Sign In').' ?'
+      'title' => Language::get('Administrator area'),
+      'innerHTML' => ''.Language::get('Sign in').' ?'
     ));
     // submit
     $fieldset->add('submit', array(

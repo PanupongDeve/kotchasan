@@ -91,10 +91,8 @@ class Form extends \Kotchasan\KBase
         case 'text':
         case 'validator':
         case 'result':
+        case 'checked':
           $$k = $v;
-          break;
-        case 'result':
-          $prop[$k] = 'data-'.$k.'="'.$v.'"';
           break;
         case 'title':
           $prop['title'] = 'title="'.strip_tags($v).'"';
@@ -202,6 +200,9 @@ class Form extends \Kotchasan\KBase
     }
     if (isset($multiple)) {
       $prop['multiple'] = 'multiple';
+    }
+    if (isset($checked) && isset($value) && $checked == $value) {
+      $prop['checked'] = 'checked';
     }
     $prop = implode(' ', $prop);
     if ($this->tag == 'input') {
