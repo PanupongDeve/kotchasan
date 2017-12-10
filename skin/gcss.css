@@ -440,7 +440,6 @@ input[type="color"] {
   -o-transition: border-color linear .2s, width linear .2s;
   transition: border-color linear .2s, width linear .2s;
 }
-input.ginput[readonly],
 fieldset.search,
 .g-file ~ input[type="text"],
 select,
@@ -593,7 +592,8 @@ optgroup > option {
 }
 label,
 .label,
-.g-input[class*="icon"],
+.g-input[class*=" icon-"],
+.g-input[class^="icon-"],
 fieldset fieldset > legend {
   position: relative;
   display: inline-block;
@@ -637,20 +637,29 @@ td > .wlabel {
   float: left;
   border: none;
 }
-.g-input[class*="icon"] > textarea,
-.g-input[class*="icon"] > input[type="text"],
-.g-input[class*="icon"] > input[type="password"],
-.g-input[class*="icon"] > input[type="date"],
-.g-input[class*="icon"] > input[type="time"],
-.g-input[class*="icon"] > input[type="number"],
-.g-input[class*="icon"] > input[type="email"],
-.g-input[class*="icon"] > input[type="url"] {
+.g-input[class*=" icon-"] > textarea,
+.g-input[class^="icon-"] > textarea,
+.g-input[class*=" icon-"] > input[type="text"],
+.g-input[class^="icon-"] > input[type="text"],
+.g-input[class*=" icon-"] > input[type="password"],
+.g-input[class^="icon-"] > input[type="password"],
+.g-input[class*=" icon-"] > input[type="date"],
+.g-input[class^="icon-"] > input[type="date"],
+.g-input[class*=" icon-"] > input[type="time"],
+.g-input[class^="icon-"] > input[type="time"],
+.g-input[class*=" icon-"] > input[type="number"],
+.g-input[class^="icon-"] > input[type="number"],
+.g-input[class*=" icon-"] > input[type="email"],
+.g-input[class^="icon-"] > input[type="email"],
+.g-input[class*=" icon-"] > input[type="url"],
+.g-input[class^="icon-"] > input[type="url"] {
   padding-left: 2.8em;
   min-width: 6em;
   -webkit-appearance: none;
   -webkit-border-radius: 0;
 }
-.g-input[class*="icon"] > select {
+.g-input[class*=" icon-"] > select,
+.g-input[class^="icon-"] > select {
   padding-left: 2.5em;
   min-width: 6em;
   -webkit-appearance: none;
@@ -1269,6 +1278,9 @@ form .comment {
   overflow: hidden;
 }
 .radiogroups > label, .checkboxgroups > label {
+  padding: 0 1em;
+}
+.radiogroups.g-input > label, .checkboxgroups.g-input > label {
   padding: 0.25em 1em 0.25em 0.25em;
   cursor: pointer;
   float: left;
@@ -1277,14 +1289,17 @@ form .comment {
   float: none;
   display: block;
 }
-.radiogroups > label > input, .checkboxgroups > label > input {
+.radiogroups.g-input > label > input, .checkboxgroups.g-input > label > input {
   height: 1.65em;
 }
-.radiogroups > label:hover, .checkboxgroups > label:hover {
+.radiogroups.g-input > label:hover, .checkboxgroups.g-input > label:hover {
   background-color: #3297FD;
   color: #FFF;
 }
-.radiogroups.g-input[class*="icon"], .checkboxgroups.g-input[class*="icon"] {
+.radiogroups.g-input[class*=" icon-"],
+.radiogroups.g-input[class^="icon-"],
+.checkboxgroups.g-input[class*=" icon-"],
+.checkboxgroups.g-input[class^="icon-"] {
   padding-left: 2.5em;
 }
 /* dropdown panel */
@@ -1460,13 +1475,15 @@ html[dir="rtl"] .topmenu > ul > li > a.menu-arrow > span {
   display: block;
   padding: 0.75em 10px;
 }
-.sidemenu > ul > li[class*="icon"]:before {
+.sidemenu > ul > li[class*=" icon-"]:before,
+.sidemenu > ul > li[class^="icon-"]:before {
   z-index: 1;
   position: absolute;
   top: 0.75em;
   left: 10px;
 }
-.sidemenu > ul > li[class*="icon"] > a {
+.sidemenu > ul > li[class*=" icon-"] > a,
+.sidemenu > ul > li[class^="icon-"] > a {
   padding-left: 1.5em;
 }
 .imagemenu > a {
@@ -3166,11 +3183,13 @@ td.buttons .button:last-child {
 .document-list .icon {
   display: inline;
 }
-.listview [class*="col"] {
+.listview [class*=" col"],
+.listview [class^="col"] {
   padding: 1%;
   margin: 0;
 }
-.listview [class*="col"] * {
+.listview [class*=" col"] *,
+.listview [class^="col"] * {
   margin: 0;
   display: inline;
 }
