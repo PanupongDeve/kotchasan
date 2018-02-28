@@ -447,37 +447,6 @@ class QueryBuilder extends \Kotchasan\Database\Query
   }
 
   /**
-   * ฟังก์ชั่นสร้างคำสั่ง IFNULL
-   *
-   * @param string|array|QueryBuilder $q1
-   * @param string|array|QueryBuilder $q2
-   * @param string|null $alias ถ้าระบุจะมีการเติม alias ให้กับคำสั่ง
-   * @return string
-   *
-   * @assert ('(SELECT x FROM a)', 0) [==] "IFNULL((SELECT x FROM a), 0)"
-   * @assert ('0', '(SELECT x FROM a)', 'test') [==] "IFNULL('0', (SELECT x FROM a)) AS `test`"
-   * @assert ($this->object->select('x')->from('a'), 0) [==] "IFNULL((SELECT `x` FROM `a`), 0)"
-   */
-  public function ifNull($q1, $q2, $alias = null)
-  {
-    if (is_string($q1)) {
-      if (strpos($q1, '(') === false) {
-        $q1 = "'".$q1."'";
-      }
-    } elseif (!is_int($q1)) {
-      $q1 = $this->buildSelect($q1);
-    }
-    if (is_string($q2)) {
-      if (strpos($q2, '(') === false) {
-        $q2 = "'".$q2."'";
-      }
-    } elseif (!is_int($q2)) {
-      $q2 = $this->buildSelect($q2);
-    }
-    return 'IFNULL('.$q1.', '.$q2.')'.($alias ? ' AS `'.$alias.'`' : '');
-  }
-
-  /**
    * สร้าง query สำหรับการนับจำนวน record
    *
    * @param mixed $fileds (option) 'field alias'

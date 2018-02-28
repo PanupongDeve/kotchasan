@@ -23,8 +23,8 @@ class View extends \Kotchasan\View
     echo '<!DOCTYPE html><html><head>';
     echo '<title>ตัวอย่างการแปลง HTML เป็นไฟล์ PDF</title>';
     echo '<meta charset=utf-8>';
-    echo '<link href="../../skin/gcss.css" rel="stylesheet" type="text/css">';
-    echo '<link href="../../skin/fonts.css" rel="stylesheet" type="text/css">';
+    echo '<link href="https://www.kotchasan.com/skin/gcss.css" rel="stylesheet" type="text/css">';
+    echo '<link href="https://www.kotchasan.comskin/fonts.css" rel="stylesheet" type="text/css">';
     echo '<meta name=viewport content="width=device-width, initial-scale=1.0">';
     echo '<style>';
     echo '.warper{display:inline-block;text-align:center;height:50%;}';
