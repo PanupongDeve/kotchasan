@@ -118,7 +118,7 @@ class QueryBuilder extends \Kotchasan\Database\Query
   public function delete($table, $condition)
   {
     $this->sqls['function'] = 'query';
-    $this->sqls['delete'] = $this->getFullTableName($table);
+    $this->sqls['delete'] = $this->quoteTableName($table);
     $this->where($condition);
     return $this;
   }
@@ -270,7 +270,7 @@ class QueryBuilder extends \Kotchasan\Database\Query
     } else {
       $this->sqls['where'] = ' AND';
     }
-    $this->sqls['where'] .= ' EXISTS (SELECT * FROM '.$this->getFullTableName($table).' WHERE '.$ret.')';
+    $this->sqls['where'] .= ' EXISTS (SELECT * FROM '.$this->quoteTableName($table).' WHERE '.$ret.')';
     return $this;
   }
 
@@ -288,7 +288,7 @@ class QueryBuilder extends \Kotchasan\Database\Query
       $this->values = ArrayTool::replace($this->values, $ret[1]);
       $ret = $ret[0];
     }
-    $this->sqls['where'] .= (empty($this->sqls['where']) ? ' ' : ' AND ').'NOT EXISTS (SELECT * FROM '.$this->getFullTableName($table).' WHERE '.$ret.')';
+    $this->sqls['where'] .= (empty($this->sqls['where']) ? ' ' : ' AND ').'NOT EXISTS (SELECT * FROM '.$this->quoteTableName($table).' WHERE '.$ret.')';
     return $this;
   }
 
