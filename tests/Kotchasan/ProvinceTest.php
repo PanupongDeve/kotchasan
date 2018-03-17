@@ -41,16 +41,4 @@ class ProvinceTest extends \PHPUnit_Framework_TestCase
         'กรุงเทพมหานคร', \Kotchasan\Province::get(102)
         );
     }
-
-    /**
-     * @covers Kotchasan\Province::all
-     * @todo   Implement testAll().
-     */
-    public function testAll()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-        );
-    }
 }

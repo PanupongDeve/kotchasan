@@ -210,16 +210,4 @@ class RouterTest extends \PHPUnit_Framework_TestCase
       array('_action' => 'one', 'module' => 'admin_index'), $this->object->parseRoutes('/admin_index.php', array('_action' => 'one'))
     );
   }
-
-  /**
-   * @covers Kotchasan\Router::init
-   * @todo   Implement testInit().
-   */
-  public function testInit()
-  {
-    // Remove the following lines when you implement this test.
-    $this->markTestIncomplete(
-      'This test has not been implemented yet.'
-    );
-  }
 }

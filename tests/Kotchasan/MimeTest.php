@@ -81,16 +81,4 @@ class MimeTest extends \PHPUnit_Framework_TestCase
       "image/jpeg,image/gif,image/png", \Kotchasan\Mime::getAccept(array('jpg', 'gif', 'png'))
     );
   }
-
-  /**
-   * @covers Kotchasan\Mime::typies
-   * @todo   Implement testTypies().
-   */
-  public function testTypies()
-  {
-    // Remove the following lines when you implement this test.
-    $this->markTestIncomplete(
-      'This test has not been implemented yet.'
-    );
-  }
 }

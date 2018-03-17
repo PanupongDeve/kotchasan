@@ -253,16 +253,4 @@ class CurrencyTest extends \PHPUnit_Framework_TestCase
       , \Kotchasan\Currency::bahtThai(10000000050.25)
     );
   }
-
-  /**
-   * @covers Kotchasan\Currency::format
-   * @todo   Implement testFormat().
-   */
-  public function testFormat()
-  {
-    // Remove the following lines when you implement this test.
-    $this->markTestIncomplete(
-      'This test has not been implemented yet.'
-    );
-  }
 }

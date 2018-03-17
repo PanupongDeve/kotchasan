@@ -54,16 +54,4 @@ class PasswordTest extends \PHPUnit_Framework_TestCase
         1234, $this->object->decode($this->object->encode(1234))
         );
     }
-
-    /**
-     * @covers Kotchasan\Password::encode
-     * @todo   Implement testEncode().
-     */
-    public function testEncode()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-        );
-    }
 }

@@ -276,40 +276,4 @@ class TextTest extends \PHPUnit_Framework_TestCase
       '0000000000', \Kotchasan\Text::repeat('0', 10)
     );
   }
-
-  /**
-   * @covers Kotchasan\Text::rndname
-   * @todo   Implement testRndname().
-   */
-  public function testRndname()
-  {
-    // Remove the following lines when you implement this test.
-    $this->markTestIncomplete(
-      'This test has not been implemented yet.'
-    );
-  }
-
-  /**
-   * @covers Kotchasan\Text::highlighter
-   * @todo   Implement testHighlighter().
-   */
-  public function testHighlighter()
-  {
-    // Remove the following lines when you implement this test.
-    $this->markTestIncomplete(
-      'This test has not been implemented yet.'
-    );
-  }
-
-  /**
-   * @covers Kotchasan\Text::htmlspecialchars
-   * @todo   Implement testHtmlspecialchars().
-   */
-  public function testHtmlspecialchars()
-  {
-    // Remove the following lines when you implement this test.
-    $this->markTestIncomplete(
-      'This test has not been implemented yet.'
-    );
-  }
 }

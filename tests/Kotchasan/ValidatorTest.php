@@ -93,16 +93,4 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
             \Kotchasan\Validator::idCard('0123456789015')
         );
     }
-
-    /**
-     * @covers Kotchasan\Validator::isImage
-     * @todo   Implement testIsImage().
-     */
-    public function testIsImage()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
 }

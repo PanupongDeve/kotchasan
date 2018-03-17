@@ -224,16 +224,4 @@ class DateTest extends \PHPUnit_Framework_TestCase
       1454259600, \Kotchasan\Date::sqlDateTimeToMktime('2016-02-01 00:00:00')
     );
   }
-
-  /**
-   * @covers Kotchasan\Date::i18nYear
-   * @todo   Implement testI18nYear().
-   */
-  public function testI18nYear()
-  {
-    // Remove the following lines when you implement this test.
-    $this->markTestIncomplete(
-      'This test has not been implemented yet.'
-    );
-  }
 }

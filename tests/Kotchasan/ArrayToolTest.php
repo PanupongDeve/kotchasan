@@ -314,28 +314,4 @@ class ArrayToolTest extends \PHPUnit_Framework_TestCase
       array('one' => 1, 'two' => 2, 'three' => 3), \Kotchasan\ArrayTool::shift(array('one' => 1, 'two' => 2, 'three' => 3), 1)
     );
   }
-
-  /**
-   * @covers Kotchasan\ArrayTool::extract
-   * @todo   Implement testExtract().
-   */
-  public function testExtract()
-  {
-    // Remove the following lines when you implement this test.
-    $this->markTestIncomplete(
-      'This test has not been implemented yet.'
-    );
-  }
-
-  /**
-   * @covers Kotchasan\ArrayTool::getFirstKey
-   * @todo   Implement testGetFirstKey().
-   */
-  public function testGetFirstKey()
-  {
-    // Remove the following lines when you implement this test.
-    $this->markTestIncomplete(
-      'This test has not been implemented yet.'
-    );
-  }
 }
