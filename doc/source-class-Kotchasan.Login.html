@@ -358,8 +358,8 @@
 </span><span id="91" class="l"><a href="#91"> 91: </a>      <span class="php-comment">// logout ลบ session และ cookie</span>
 </span><span id="92" class="l"><a href="#92"> 92: </a>      <span class="php-keyword1">unset</span>(<span class="php-var">$_SESSION</span>[<span class="php-quote">'login'</span>]);
 </span><span id="93" class="l"><a href="#93"> 93: </a>      <span class="php-var">$time</span> = <span class="php-keyword2">time</span>();
-</span><span id="94" class="l"><a href="#94"> 94: </a>      <span class="php-keyword2">setCookie</span>(<span class="php-quote">'login_username'</span>, <span class="php-quote">''</span>, <span class="php-var">$time</span>, <span class="php-quote">'/'</span>);
-</span><span id="95" class="l"><a href="#95"> 95: </a>      <span class="php-keyword2">setCookie</span>(<span class="php-quote">'login_password'</span>, <span class="php-quote">''</span>, <span class="php-var">$time</span>, <span class="php-quote">'/'</span>);
+</span><span id="94" class="l"><a href="#94"> 94: </a>      <span class="php-keyword2">setCookie</span>(<span class="php-quote">'login_username'</span>, <span class="php-quote">''</span>, <span class="php-var">$time</span>, <span class="php-quote">'/'</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">true</span>);
+</span><span id="95" class="l"><a href="#95"> 95: </a>      <span class="php-keyword2">setCookie</span>(<span class="php-quote">'login_password'</span>, <span class="php-quote">''</span>, <span class="php-var">$time</span>, <span class="php-quote">'/'</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">true</span>);
 </span><span id="96" class="l"><a href="#96"> 96: </a>      self::<span class="php-var">$login_message</span> = Language::get(<span class="php-quote">'Logout successful'</span>);
 </span><span id="97" class="l"><a href="#97"> 97: </a>    } <span class="php-keyword1">elseif</span> (self::<span class="php-var">$request</span>-&gt;post(<span class="php-quote">'action'</span>)-&gt;toString() === <span class="php-quote">'forgot'</span>) {
 </span><span id="98" class="l"><a href="#98"> 98: </a>      <span class="php-comment">// ขอรหัสผ่านใหม่</span>
@@ -386,8 +386,8 @@
 </span><span id="119" class="l"><a href="#119">119: </a>          <span class="php-comment">// logout ลบ session และ cookie</span>
 </span><span id="120" class="l"><a href="#120">120: </a>          <span class="php-keyword1">unset</span>(<span class="php-var">$_SESSION</span>[<span class="php-quote">'login'</span>]);
 </span><span id="121" class="l"><a href="#121">121: </a>          <span class="php-var">$time</span> = <span class="php-keyword2">time</span>();
-</span><span id="122" class="l"><a href="#122">122: </a>          <span class="php-keyword2">setCookie</span>(<span class="php-quote">'login_username'</span>, <span class="php-quote">''</span>, <span class="php-var">$time</span>, <span class="php-quote">'/'</span>);
-</span><span id="123" class="l"><a href="#123">123: </a>          <span class="php-keyword2">setCookie</span>(<span class="php-quote">'login_password'</span>, <span class="php-quote">''</span>, <span class="php-var">$time</span>, <span class="php-quote">'/'</span>);
+</span><span id="122" class="l"><a href="#122">122: </a>          <span class="php-keyword2">setCookie</span>(<span class="php-quote">'login_username'</span>, <span class="php-quote">''</span>, <span class="php-var">$time</span>, <span class="php-quote">'/'</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">true</span>);
+</span><span id="123" class="l"><a href="#123">123: </a>          <span class="php-keyword2">setCookie</span>(<span class="php-quote">'login_password'</span>, <span class="php-quote">''</span>, <span class="php-var">$time</span>, <span class="php-quote">'/'</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">true</span>);
 </span><span id="124" class="l"><a href="#124">124: </a>        } <span class="php-keyword1">else</span> {
 </span><span id="125" class="l"><a href="#125">125: </a>          <span class="php-comment">// save login session</span>
 </span><span id="126" class="l"><a href="#126">126: </a>          <span class="php-var">$login_result</span>[<span class="php-quote">'password'</span>] = self::<span class="php-var">$login_params</span>[<span class="php-quote">'password'</span>];
@@ -395,11 +395,11 @@
 </span><span id="128" class="l"><a href="#128">128: </a>          <span class="php-comment">// save login cookie</span>
 </span><span id="129" class="l"><a href="#129">129: </a>          <span class="php-var">$time</span> = <span class="php-keyword2">time</span>() + <span class="php-num">2592000</span>;
 </span><span id="130" class="l"><a href="#130">130: </a>          <span class="php-keyword1">if</span> (<span class="php-var">$login_remember</span> == <span class="php-num">1</span>) {
-</span><span id="131" class="l"><a href="#131">131: </a>            <span class="php-keyword2">setcookie</span>(<span class="php-quote">'login_username'</span>, <span class="php-var">$pw</span>-&gt;encode(self::<span class="php-var">$login_params</span>[<span class="php-quote">'username'</span>]), <span class="php-var">$time</span>, <span class="php-quote">'/'</span>);
-</span><span id="132" class="l"><a href="#132">132: </a>            <span class="php-keyword2">setcookie</span>(<span class="php-quote">'login_password'</span>, <span class="php-var">$pw</span>-&gt;encode(self::<span class="php-var">$login_params</span>[<span class="php-quote">'password'</span>]), <span class="php-var">$time</span>, <span class="php-quote">'/'</span>);
-</span><span id="133" class="l"><a href="#133">133: </a>            <span class="php-keyword2">setcookie</span>(<span class="php-quote">'login_remember'</span>, <span class="php-var">$login_remember</span>, <span class="php-var">$time</span>, <span class="php-quote">'/'</span>);
+</span><span id="131" class="l"><a href="#131">131: </a>            <span class="php-keyword2">setcookie</span>(<span class="php-quote">'login_username'</span>, <span class="php-var">$pw</span>-&gt;encode(self::<span class="php-var">$login_params</span>[<span class="php-quote">'username'</span>]), <span class="php-var">$time</span>, <span class="php-quote">'/'</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">true</span>);
+</span><span id="132" class="l"><a href="#132">132: </a>            <span class="php-keyword2">setcookie</span>(<span class="php-quote">'login_password'</span>, <span class="php-var">$pw</span>-&gt;encode(self::<span class="php-var">$login_params</span>[<span class="php-quote">'password'</span>]), <span class="php-var">$time</span>, <span class="php-quote">'/'</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">true</span>);
+</span><span id="133" class="l"><a href="#133">133: </a>            <span class="php-keyword2">setcookie</span>(<span class="php-quote">'login_remember'</span>, <span class="php-var">$login_remember</span>, <span class="php-var">$time</span>, <span class="php-quote">'/'</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">true</span>);
 </span><span id="134" class="l"><a href="#134">134: </a>          }
-</span><span id="135" class="l"><a href="#135">135: </a>          <span class="php-keyword2">setcookie</span>(<span class="php-quote">'login_id'</span>, <span class="php-var">$login_result</span>[<span class="php-quote">'id'</span>], <span class="php-var">$time</span>, <span class="php-quote">'/'</span>);
+</span><span id="135" class="l"><a href="#135">135: </a>          <span class="php-keyword2">setcookie</span>(<span class="php-quote">'login_id'</span>, <span class="php-var">$login_result</span>[<span class="php-quote">'id'</span>], <span class="php-var">$time</span>, <span class="php-quote">'/'</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">true</span>);
 </span><span id="136" class="l"><a href="#136">136: </a>        }
 </span><span id="137" class="l"><a href="#137">137: </a>      }
 </span><span id="138" class="l"><a href="#138">138: </a>      <span class="php-keyword1">return</span> <span class="php-var">$login</span>;
@@ -458,7 +458,7 @@
 </span><span id="191" class="l"><a href="#191">191: </a>  }
 </span><span id="192" class="l"><a href="#192">192: </a>
 </span><span id="193" class="l"><a href="#193">193: </a>  <span class="php-comment">/**
-</span></span><span id="194" class="l"><a href="#194">194: </a><span class="php-comment">   * ฟังก์ชั่นส่งอีเมล์ลืมรหัสผ่าน
+</span></span><span id="194" class="l"><a href="#194">194: </a><span class="php-comment">   * ฟังก์ชั่นส่งอีเมลลืมรหัสผ่าน
 </span></span><span id="195" class="l"><a href="#195">195: </a><span class="php-comment">   */</span>
 </span><span id="196" class="l"><a href="#196">196: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> forgot(Request <span class="php-var">$request</span>)
 </span><span id="197" class="l"><a href="#197">197: </a>  {
@@ -485,8 +485,7 @@
 </span><span id="218" class="l"><a href="#218">218: </a>    <span class="php-var">$login</span> = self::isMember();
 </span><span id="219" class="l"><a href="#219">219: </a>    <span class="php-keyword1">return</span> <span class="php-keyword1">isset</span>(<span class="php-var">$login</span>[<span class="php-quote">'status'</span>]) &amp;&amp; <span class="php-var">$login</span>[<span class="php-quote">'status'</span>] == <span class="php-num">1</span> ? <span class="php-var">$login</span> : <span class="php-keyword1">null</span>;
 </span><span id="220" class="l"><a href="#220">220: </a>  }
-</span><span id="221" class="l"><a href="#221">221: </a>}
-</span><span id="222" class="l"><a href="#222">222: </a></span></code></pre>
+</span><span id="221" class="l"><a href="#221">221: </a>}</span></code></pre>
 
 	<div id="footer">
 		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
