@@ -343,30 +343,32 @@
 </span><span id="76" class="l"><a href="#76"> 76: </a>            <span class="php-var">$prop</span>[] = <span class="php-quote">'href=&quot;'</span>.<span class="php-var">$this</span>-&gt;urls[<span class="php-num">0</span>].<span class="php-quote">'?'</span>.<span class="php-var">$this</span>-&gt;urls[<span class="php-num">1</span>].<span class="php-quote">'&amp;amp;tab='</span>.<span class="php-var">$item</span>[<span class="php-quote">'id'</span>].<span class="php-quote">'&quot;'</span>;
 </span><span id="77" class="l"><a href="#77"> 77: </a>          }
 </span><span id="78" class="l"><a href="#78"> 78: </a>          <span class="php-var">$prop</span>[] = <span class="php-quote">'id=&quot;tab_'</span>.<span class="php-var">$item</span>[<span class="php-quote">'id'</span>].<span class="php-quote">'&quot;'</span>;
-</span><span id="79" class="l"><a href="#79"> 79: </a>          <span class="php-var">$prop</span>[] = <span class="php-quote">'target=&quot;_self&quot;'</span>;
-</span><span id="80" class="l"><a href="#80"> 80: </a>        }
-</span><span id="81" class="l"><a href="#81"> 81: </a>      } <span class="php-keyword1">else</span> {
-</span><span id="82" class="l"><a href="#82"> 82: </a>        <span class="php-var">$prop</span>[] = <span class="php-quote">'href=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'url'</span>].<span class="php-quote">'&quot;'</span>;
-</span><span id="83" class="l"><a href="#83"> 83: </a>      }
-</span><span id="84" class="l"><a href="#84"> 84: </a>      <span class="php-keyword1">if</span> (<span class="php-var">$select</span> == <span class="php-var">$item</span>[<span class="php-quote">'id'</span>] || (<span class="php-var">$i</span> == <span class="php-num">0</span> &amp;&amp; <span class="php-var">$select</span> == <span class="php-quote">''</span>)) {
-</span><span id="85" class="l"><a href="#85"> 85: </a>        <span class="php-var">$prop</span>[] = <span class="php-quote">'class=&quot;select&quot;'</span>;
-</span><span id="86" class="l"><a href="#86"> 86: </a>        <span class="php-var">$this</span>-&gt;select = <span class="php-var">$item</span>[<span class="php-quote">'id'</span>];
-</span><span id="87" class="l"><a href="#87"> 87: </a>      }
-</span><span id="88" class="l"><a href="#88"> 88: </a>      <span class="php-var">$html</span> .= <span class="php-quote">'&lt;li&gt;&lt;a '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'title'</span>].<span class="php-quote">'&lt;/a&gt;&lt;/li&gt;'</span>;
-</span><span id="89" class="l"><a href="#89"> 89: </a>    }
-</span><span id="90" class="l"><a href="#90"> 90: </a>    <span class="php-keyword1">return</span> <span class="php-var">$html</span>.<span class="php-quote">'&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;'</span>;
-</span><span id="91" class="l"><a href="#91"> 91: </a>  }
-</span><span id="92" class="l"><a href="#92"> 92: </a>
-</span><span id="93" class="l"><a href="#93"> 93: </a>  <span class="php-comment">/**
-</span></span><span id="94" class="l"><a href="#94"> 94: </a><span class="php-comment">   * คืนค่าชื่อแท็บที่ถูกเลือก
-</span></span><span id="95" class="l"><a href="#95"> 95: </a><span class="php-comment">   *
-</span></span><span id="96" class="l"><a href="#96"> 96: </a><span class="php-comment">   * @return string
-</span></span><span id="97" class="l"><a href="#97"> 97: </a><span class="php-comment">   */</span>
-</span><span id="98" class="l"><a href="#98"> 98: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> getSelect()
-</span><span id="99" class="l"><a href="#99"> 99: </a>  {
-</span><span id="100" class="l"><a href="#100">100: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;select;
-</span><span id="101" class="l"><a href="#101">101: </a>  }
-</span><span id="102" class="l"><a href="#102">102: </a>}</span></code></pre>
+</span><span id="79" class="l"><a href="#79"> 79: </a>        }
+</span><span id="80" class="l"><a href="#80"> 80: </a>      } <span class="php-keyword1">else</span> {
+</span><span id="81" class="l"><a href="#81"> 81: </a>        <span class="php-var">$prop</span>[] = <span class="php-quote">'href=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'url'</span>].<span class="php-quote">'&quot;'</span>;
+</span><span id="82" class="l"><a href="#82"> 82: </a>      }
+</span><span id="83" class="l"><a href="#83"> 83: </a>      <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'target'</span>])) {
+</span><span id="84" class="l"><a href="#84"> 84: </a>        <span class="php-var">$prop</span>[] = <span class="php-quote">'target=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'target'</span>].<span class="php-quote">'&quot;'</span>;
+</span><span id="85" class="l"><a href="#85"> 85: </a>      }
+</span><span id="86" class="l"><a href="#86"> 86: </a>      <span class="php-keyword1">if</span> (<span class="php-var">$select</span> == <span class="php-var">$item</span>[<span class="php-quote">'id'</span>] || (<span class="php-var">$i</span> == <span class="php-num">0</span> &amp;&amp; <span class="php-var">$select</span> == <span class="php-quote">''</span>)) {
+</span><span id="87" class="l"><a href="#87"> 87: </a>        <span class="php-var">$prop</span>[] = <span class="php-quote">'class=&quot;select&quot;'</span>;
+</span><span id="88" class="l"><a href="#88"> 88: </a>        <span class="php-var">$this</span>-&gt;select = <span class="php-var">$item</span>[<span class="php-quote">'id'</span>];
+</span><span id="89" class="l"><a href="#89"> 89: </a>      }
+</span><span id="90" class="l"><a href="#90"> 90: </a>      <span class="php-var">$html</span> .= <span class="php-quote">'&lt;li&gt;&lt;a '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'title'</span>].<span class="php-quote">'&lt;/a&gt;&lt;/li&gt;'</span>;
+</span><span id="91" class="l"><a href="#91"> 91: </a>    }
+</span><span id="92" class="l"><a href="#92"> 92: </a>    <span class="php-keyword1">return</span> <span class="php-var">$html</span>.<span class="php-quote">'&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;'</span>;
+</span><span id="93" class="l"><a href="#93"> 93: </a>  }
+</span><span id="94" class="l"><a href="#94"> 94: </a>
+</span><span id="95" class="l"><a href="#95"> 95: </a>  <span class="php-comment">/**
+</span></span><span id="96" class="l"><a href="#96"> 96: </a><span class="php-comment">   * คืนค่าชื่อแท็บที่ถูกเลือก
+</span></span><span id="97" class="l"><a href="#97"> 97: </a><span class="php-comment">   *
+</span></span><span id="98" class="l"><a href="#98"> 98: </a><span class="php-comment">   * @return string
+</span></span><span id="99" class="l"><a href="#99"> 99: </a><span class="php-comment">   */</span>
+</span><span id="100" class="l"><a href="#100">100: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> getSelect()
+</span><span id="101" class="l"><a href="#101">101: </a>  {
+</span><span id="102" class="l"><a href="#102">102: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;select;
+</span><span id="103" class="l"><a href="#103">103: </a>  }
+</span><span id="104" class="l"><a href="#104">104: </a>}</span></code></pre>
 
 	<div id="footer">
 		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
