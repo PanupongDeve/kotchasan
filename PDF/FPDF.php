@@ -13,7 +13,7 @@ define('FPDF_VERSION', '1.81');
 
 class FPDF
 {
-    protected $page; // current page number
+  protected $page; // current page number
   protected $n; // current object number
   protected $offsets; // array of object offsets
   protected $buffer; // buffer holding in-memory PDF
@@ -29,16 +29,16 @@ class FPDF
   protected $CurRotation; // current page rotation
   protected $PageInfo; // page-related data
   protected $wPt;
-    protected $hPt; // dimensions of current page in points
-    protected $w;
-    protected $h; // dimensions of current page in user unit
+  protected $hPt; // dimensions of current page in points
+  protected $w;
+  protected $h; // dimensions of current page in user unit
   protected $lMargin; // left margin
   protected $tMargin; // top margin
   protected $rMargin; // right margin
   protected $bMargin; // page break margin
   protected $cMargin; // cell margin
   protected $x;
-    protected $y; // current position in user unit
+  protected $y; // current position in user unit
   protected $lasth; // height of last printed cell
   protected $LineWidth; // line width in user unit
   protected $fontpath; // path containing fonts
