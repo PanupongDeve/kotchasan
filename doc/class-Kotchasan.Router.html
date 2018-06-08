@@ -198,7 +198,7 @@
 
 
 	<div class="description">
-	<p>Router class</p>
+	<p>Router class.</p>
 	</div>
 
 	<dl class="tree">
@@ -233,7 +233,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Router.html#11-126" title="Go to source code">Kotchasan/Router.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Router.html#13-133" title="Go to source code">Kotchasan/Router.php</a>
 		<br>
 	</div>
 
@@ -253,14 +253,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_init">#</a>
-		<code><a href="source-class-Kotchasan.Router.html#40-75" title="Go to source code">init</a>( <span>string <var>$className</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Router.html#42-80" title="Go to source code">init</a>( <span>string <var>$className</var></span> )</code>
 
 		<div class="description short">
-			<p>Initial Router</p>
+			<p>Initial Router.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Initial Router</p>
+			<p>Initial Router.</p>
 
 
 				<h4>Parameters</h4>
@@ -296,14 +296,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_parseRoutes">#</a>
-		<code><a href="source-class-Kotchasan.Router.html#77-125" title="Go to source code">parseRoutes</a>( <span>string <var>$path</var></span>, <span>array <var>$modules</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Router.html#82-132" title="Go to source code">parseRoutes</a>( <span>string <var>$path</var></span>, <span>array <var>$modules</var></span> )</code>
 
 		<div class="description short">
-			<p>แยก path คืนค่าเป็น query string</p>
+			<p>แยก path คืนค่าเป็น query string.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>แยก path คืนค่าเป็น query string</p>
+			<p>แยก path คืนค่าเป็น query string.</p>
 
 
 				<h4>Parameters</h4>
@@ -364,14 +364,14 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Router.html#20-38" title="Go to source code"><var>$rules</var></a>
+				<a href="source-class-Kotchasan.Router.html#22-40" title="Go to source code"><var>$rules</var></a>
 
 			<div class="description short">
-				<p>กฏของ Router สำหรับการแยกหน้าเว็บไซต์</p>
+				<p>กฏของ Router สำหรับการแยกหน้าเว็บไซต์.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>กฏของ Router สำหรับการแยกหน้าเว็บไซต์</p>
+				<p>กฏของ Router สำหรับการแยกหน้าเว็บไซต์.</p>
 
 			</div>
 		</td>
@@ -379,19 +379,19 @@
 			<div>
 				<a href="#$rules" class="anchor">#</a>
 				<code><span class="php-keyword1">array</span>(
-<span class="php-comment">// index.php/module/model/folder/_dir/_method</span>
-<span class="php-quote">'/^[a-z0-9]+\.php\/([a-z]+)\/(model)(\/([\/a-z0-9_]+)\/([a-z0-9_]+))?$/i'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'module'</span>, <span class="php-quote">'_mvc'</span>, <span class="php-quote">''</span>, <span class="php-quote">'_dir'</span>, <span class="php-quote">'_method'</span>),
-<span class="php-comment">// index/model/_dir</span>
-<span class="php-quote">'/([a-z]+)\/(model|controller|view)\/([a-z0-9_]+)/i'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'module'</span>, <span class="php-quote">'_mvc'</span>, <span class="php-quote">'_dir'</span>),
-<span class="php-comment">// module/cat/id</span>
-<span class="php-quote">'/^([a-z]+)\/([0-9]+)\/([0-9]+)$/'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'module'</span>, <span class="php-quote">'cat'</span>, <span class="php-quote">'id'</span>),
-<span class="php-comment">// module/cat module/alias, module/cat/alias</span>
-<span class="php-quote">'/^([a-z]+)(\/([0-9]+))?(\/(.*))?$/'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'module'</span>, <span class="php-quote">''</span>, <span class="php-quote">'cat'</span>, <span class="php-quote">''</span>, <span class="php-quote">'alias'</span>),
-<span class="php-comment">// module, module.php</span>
-<span class="php-quote">'/^([a-z0-9_]+)(\.php)?$/'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'module'</span>),
-<span class="php-comment">// alias</span>
-<span class="php-quote">'/^(.*)$/'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'alias'</span>)
-  )</code>
+    <span class="php-comment">// index.php/module/model/folder/_dir/_method</span>
+    <span class="php-quote">'/^[a-z0-9]+\.php\/([a-z]+)\/(model)(\/([\/a-z0-9_]+)\/([a-z0-9_]+))?$/i'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'module'</span>, <span class="php-quote">'_mvc'</span>, <span class="php-quote">''</span>, <span class="php-quote">'_dir'</span>, <span class="php-quote">'_method'</span>),
+    <span class="php-comment">// index/model/_dir</span>
+    <span class="php-quote">'/([a-z]+)\/(model|controller|view)\/([a-z0-9_]+)/i'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'module'</span>, <span class="php-quote">'_mvc'</span>, <span class="php-quote">'_dir'</span>),
+    <span class="php-comment">// module/cat/id</span>
+    <span class="php-quote">'/^([a-z]+)\/([0-9]+)\/([0-9]+)$/'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'module'</span>, <span class="php-quote">'cat'</span>, <span class="php-quote">'id'</span>),
+    <span class="php-comment">// module/cat module/alias, module/cat/alias</span>
+    <span class="php-quote">'/^([a-z]+)(\/([0-9]+))?(\/(.*))?$/'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'module'</span>, <span class="php-quote">''</span>, <span class="php-quote">'cat'</span>, <span class="php-quote">''</span>, <span class="php-quote">'alias'</span>),
+    <span class="php-comment">// module, module.php</span>
+    <span class="php-quote">'/^([a-z0-9_]+)(\.php)?$/'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'module'</span>),
+    <span class="php-comment">// alias</span>
+    <span class="php-quote">'/^(.*)$/'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'alias'</span>),
+)</code>
 			</div>
 		</td>
 	</tr>

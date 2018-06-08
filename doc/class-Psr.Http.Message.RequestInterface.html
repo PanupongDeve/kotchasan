@@ -205,7 +205,7 @@ message and return an instance that contains the changed state.</p>
 		<b>Namespace:</b> <a href="namespace-Psr.html">Psr</a>\<a href="namespace-Psr.Http.html">Http</a>\<a href="namespace-Psr.Http.Message.html">Message</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Psr.Http.Message.RequestInterface.html#4-129" title="Go to source code">Kotchasan/Psr/Http/Message/RequestInterface.php</a>
+			<b>Located at</b> <a href="source-class-Psr.Http.Message.RequestInterface.html#5-136" title="Go to source code">Kotchasan/Psr/Http/Message/RequestInterface.php</a>
 		<br>
 	</div>
 
@@ -270,7 +270,7 @@ provided, this method MUST return the string "/".</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withRequestTarget">#</a>
-		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#44-61" title="Go to source code">withRequestTarget</a>( <span>mixed <var>$requestTarget</var></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#44-63" title="Go to source code">withRequestTarget</a>( <span>mixed <var>$requestTarget</var></span> )</code>
 
 		<div class="description short">
 			<p>Return an instance with the specific request-target.</p>
@@ -301,10 +301,10 @@ changed request target.</p>
 				</div>
 
 
-				<h4>Link</h4>
+				<h4>See</h4>
 				<div class="list">
-						<a href="http://tools.ietf.org/html/rfc7230#section-2.7">(for the various
-    request-target forms allowed in request messages)</a><br>
+						<p>http://tools.ietf.org/html/rfc7230#section-2.7 (for the various
+    request-target forms allowed in request messages)</p><br>
 				</div>
 
 
@@ -323,7 +323,7 @@ changed request target.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getMethod">#</a>
-		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#63-68" title="Go to source code">getMethod</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#65-70" title="Go to source code">getMethod</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieves the HTTP method of the request.</p>
@@ -336,7 +336,7 @@ changed request target.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					string<br>Returns the request method.
+					string<br>returns the request method
 				</div>
 
 
@@ -357,7 +357,7 @@ changed request target.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withMethod">#</a>
-		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#70-85" title="Go to source code">withMethod</a>( <span>string <var>$method</var></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#72-89" title="Go to source code">withMethod</a>( <span>string <var>$method</var></span> )</code>
 
 		<div class="description short">
 			<p>Return an instance with the provided HTTP method.</p>
@@ -378,7 +378,7 @@ changed request method.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$method</var></dt>
-					<dd>Case-sensitive method.</dd>
+					<dd>case-sensitive method</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -388,7 +388,7 @@ changed request method.</p>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>for invalid HTTP methods.
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>for invalid HTTP methods
 				</div>
 
 
@@ -408,7 +408,7 @@ changed request method.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getUri">#</a>
-		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#87-96" title="Go to source code">getUri</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#91-101" title="Go to source code">getUri</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieves the URI instance.</p>
@@ -423,14 +423,14 @@ changed request method.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br><p>Returns a UriInterface instance
-    representing the URI of the request.</p>
+					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br><p>returns a UriInterface instance
+                     representing the URI of the request</p>
 				</div>
 
 
-				<h4>Link</h4>
+				<h4>See</h4>
 				<div class="list">
-						<a href="http://tools.ietf.org/html/rfc3986#section-4.3">http://tools.ietf.org/html/rfc3986#section-4.3</a><br>
+						http://tools.ietf.org/html/rfc3986#section-4.3<br>
 				</div>
 
 
@@ -449,7 +449,7 @@ changed request method.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withUri">#</a>
-		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#98-128" title="Go to source code">withUri</a>( <span><code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code> <var>$uri</var></span>, <span>boolean <var>$preserveHost</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#103-135" title="Go to source code">withUri</a>( <span><code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code> <var>$uri</var></span>, <span>boolean <var>$preserveHost</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			<p>Returns an instance with the provided URI.</p>
@@ -481,9 +481,9 @@ new UriInterface instance.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$uri</var></dt>
-					<dd>New request URI to use.</dd>
+					<dd>new request URI to use</dd>
 					<dt><var>$preserveHost</var></dt>
-					<dd>Preserve the original state of the Host header.</dd>
+					<dd>preserve the original state of the Host header</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -492,9 +492,9 @@ new UriInterface instance.</p>
 				</div>
 
 
-				<h4>Link</h4>
+				<h4>See</h4>
 				<div class="list">
-						<a href="http://tools.ietf.org/html/rfc3986#section-4.3">http://tools.ietf.org/html/rfc3986#section-4.3</a><br>
+						http://tools.ietf.org/html/rfc3986#section-4.3<br>
 				</div>
 
 

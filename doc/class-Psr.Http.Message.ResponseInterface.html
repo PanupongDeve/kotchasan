@@ -203,7 +203,7 @@ message and return an instance that contains the changed state.</p>
 		<b>Namespace:</b> <a href="namespace-Psr.html">Psr</a>\<a href="namespace-Psr.Http.html">Http</a>\<a href="namespace-Psr.Http.Message.html">Message</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Psr.Http.Message.ResponseInterface.html#4-68" title="Go to source code">Kotchasan/Psr/Http/Message/ResponseInterface.php</a>
+			<b>Located at</b> <a href="source-class-Psr.Http.Message.ResponseInterface.html#5-72" title="Go to source code">Kotchasan/Psr/Http/Message/ResponseInterface.php</a>
 		<br>
 	</div>
 
@@ -239,7 +239,7 @@ to understand and satisfy the request.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					integer<br>Status code.
+					integer<br>status code
 				</div>
 
 
@@ -260,7 +260,7 @@ to understand and satisfy the request.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withStatus">#</a>
-		<code><a href="source-class-Psr.Http.Message.ResponseInterface.html#32-52" title="Go to source code">withStatus</a>( <span>integer <var>$code</var></span>, <span>string <var>$reasonPhrase</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.ResponseInterface.html#32-55" title="Go to source code">withStatus</a>( <span>integer <var>$code</var></span>, <span>string <var>$reasonPhrase</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			<p>Return an instance with the specified status code and, optionally, reason phrase.</p>
@@ -281,11 +281,11 @@ updated status and reason phrase.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$code</var></dt>
-					<dd>The 3-digit integer result code to set.</dd>
+					<dd>the 3-digit integer result code to set</dd>
 					<dt><var>$reasonPhrase</var></dt>
-					<dd><p>The reason phrase to use with the
-    provided status code; if none is provided, implementations MAY
-    use the defaults as suggested in the HTTP specification.</p></dd>
+					<dd><p>the reason phrase to use with the
+                            provided status code; if none is provided, implementations MAY
+                            use the defaults as suggested in the HTTP specification</p></dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -295,13 +295,13 @@ updated status and reason phrase.</p>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>For invalid status code arguments.
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>for invalid status code arguments
 				</div>
 
-				<h4>Link</h4>
+				<h4>See</h4>
 				<div class="list">
-						<a href="http://tools.ietf.org/html/rfc7231#section-6">http://tools.ietf.org/html/rfc7231#section-6</a><br>
-						<a href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml">http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml</a><br>
+						http://tools.ietf.org/html/rfc7231#section-6<br>
+						http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml<br>
 				</div>
 
 
@@ -320,7 +320,7 @@ updated status and reason phrase.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getReasonPhrase">#</a>
-		<code><a href="source-class-Psr.Http.Message.ResponseInterface.html#54-67" title="Go to source code">getReasonPhrase</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.ResponseInterface.html#57-71" title="Go to source code">getReasonPhrase</a>( )</code>
 
 		<div class="description short">
 			<p>Gets the response reason phrase associated with the status code.</p>
@@ -339,14 +339,14 @@ status code.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					string<br>Reason phrase; must return an empty string if none present.
+					string<br>reason phrase; must return an empty string if none present
 				</div>
 
 
-				<h4>Link</h4>
+				<h4>See</h4>
 				<div class="list">
-						<a href="http://tools.ietf.org/html/rfc7231#section-6">http://tools.ietf.org/html/rfc7231#section-6</a><br>
-						<a href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml">http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml</a><br>
+						http://tools.ietf.org/html/rfc7231#section-6<br>
+						http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml<br>
 				</div>
 
 

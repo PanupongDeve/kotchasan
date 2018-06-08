@@ -172,7 +172,13 @@ ul.list-style-none {
 }
 .border {
   border-width: 1px;
+}
+.border:not(table) {
   border-style: solid;
+}
+table.border {
+  border-top-style: solid;
+  border-right-style: solid;
 }
 /* Font Style */
 del {
@@ -3043,15 +3049,18 @@ table.collapse > tfoot > tr > td,
   padding: 0;
 }
 .border > caption,
+.table.border .td,
+.table.border .th {
+  border-style: solid;
+}
 .border > thead > tr > th,
 .border > tbody > tr > th,
 .border > tfoot > tr > th,
 .border > thead > tr > td,
 .border > tbody > tr > td,
-.border > tfoot > tr > td,
-.table.border .td,
-.table.border .th {
-  border-style: solid;
+.border > tfoot > tr > td {
+  border-bottom-style: solid;
+  border-left-style: solid;
 }
 caption,
 thead > tr,

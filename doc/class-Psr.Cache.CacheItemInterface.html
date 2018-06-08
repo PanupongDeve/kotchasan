@@ -171,7 +171,7 @@
 		<b>Namespace:</b> <a href="namespace-Psr.html">Psr</a>\<a href="namespace-Psr.Cache.html">Cache</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Psr.Cache.CacheItemInterface.html#4-89" title="Go to source code">Kotchasan/Psr/Cache/CacheItemInterface.php</a>
+			<b>Located at</b> <a href="source-class-Psr.Cache.CacheItemInterface.html#5-89" title="Go to source code">Kotchasan/Psr/Cache/CacheItemInterface.php</a>
 		<br>
 	</div>
 
@@ -207,7 +207,7 @@ the higher level callers when needed.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					string<br>The key string for this cache item.
+					string<br>The key string for this cache item
 				</div>
 
 
@@ -247,7 +247,7 @@ differentiate between "null value was found" and "no value was found."</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					mixed<br>The value corresponding to this cache item's key, or null if not found.
+					mixed<br>The value corresponding to this cache item's key, or null if not found
 				</div>
 
 
@@ -322,12 +322,12 @@ Library.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$value</var></dt>
-					<dd>The serializable value to be stored.</dd>
+					<dd>The serializable value to be stored</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					static<br>The invoked object.
+					static<br>The invoked object
 				</div>
 
 
@@ -362,14 +362,14 @@ Library.</p>
 				<div class="list"><dl>
 					<dt><var>$expiration</var></dt>
 					<dd><p>The point in time after which the item MUST be considered expired.
-  If null is passed explicitly, a default value MAY be used. If none is set,
-  the value should be stored permanently or for as long as the
-  implementation allows.</p></dd>
+                                      If null is passed explicitly, a default value MAY be used. If none is set,
+                                      the value should be stored permanently or for as long as the
+                                      implementation allows.</p></dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					static<br>The called object.
+					static<br>The called object
 				</div>
 
 
@@ -404,15 +404,15 @@ Library.</p>
 				<div class="list"><dl>
 					<dt><var>$time</var></dt>
 					<dd><p>The period of time from the present after which the item MUST be considered
-  expired. An integer parameter is understood to be the time in seconds until
-  expiration. If null is passed explicitly, a default value MAY be used.
-  If none is set, the value should be stored permanently or for as long as the
-  implementation allows.</p></dd>
+                               expired. An integer parameter is understood to be the time in seconds until
+                               expiration. If null is passed explicitly, a default value MAY be used.
+                               If none is set, the value should be stored permanently or for as long as the
+                               implementation allows.</p></dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					static<br>The called object.
+					static<br>The called object
 				</div>
 
 

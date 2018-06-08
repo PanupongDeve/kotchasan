@@ -176,7 +176,7 @@
 		<b>Namespace:</b> <a href="namespace-Psr.html">Psr</a>\<a href="namespace-Psr.Cache.html">Cache</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Psr.Cache.CacheItemPoolInterface.html#4-132" title="Go to source code">Kotchasan/Psr/Cache/CacheItemPoolInterface.php</a>
+			<b>Located at</b> <a href="source-class-Psr.Cache.CacheItemPoolInterface.html#5-133" title="Go to source code">Kotchasan/Psr/Cache/CacheItemPoolInterface.php</a>
 		<br>
 	</div>
 
@@ -189,7 +189,7 @@
 		<td class="attributes"><code>
 			 public 
 
-			<code><a href="class-Psr.Cache.CacheItemInterface.html">Psr\Cache\CacheItemInterface</a></code>
+			cacheItemInterface
 			
 			</code>
 		</td>
@@ -212,18 +212,18 @@ a cache miss. It MUST NOT return null.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$key</var></dt>
-					<dd>The key for which to return the corresponding Cache Item.</dd>
+					<dd>The key for which to return the corresponding Cache Item</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Psr.Cache.CacheItemInterface.html">Psr\Cache\CacheItemInterface</a></code><br>The corresponding Cache Item.
+					cacheItemInterface<br>The corresponding Cache Item
 				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br><p>If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
-  MUST be thrown.</p>
+					invalidArgumentException<br><p>If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
+                                 MUST be thrown</p>
 				</div>
 
 
@@ -256,21 +256,21 @@ a cache miss. It MUST NOT return null.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$keys</var></dt>
-					<dd>An indexed array of keys of items to retrieve.</dd>
+					<dd>An indexed array of keys of items to retrieve</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
 					array|<code><a href="class-Traversable.html">Traversable</a></code><br><p>A traversable collection of Cache Items keyed by the cache keys of
-  each item. A Cache item will be returned for each key, even if that
-  key is not found. However, if no keys are specified then an empty
-  traversable MUST be returned instead.</p>
+                           each item. A Cache item will be returned for each key, even if that
+                           key is not found. However, if no keys are specified then an empty
+                           traversable MUST be returned instead.</p>
 				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br><p>If any of the keys in $keys are not a legal value a \Psr\Cache\InvalidArgumentException
-  MUST be thrown.</p>
+					invalidArgumentException<br><p>If any of the keys in $keys are not a legal value a \Psr\Cache\InvalidArgumentException
+                                 MUST be thrown</p>
 				</div>
 
 
@@ -307,18 +307,18 @@ such situation use CacheItemInterface::isHit() instead.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$key</var></dt>
-					<dd>The key for which to check existence.</dd>
+					<dd>The key for which to check existence</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>True if item exists in the cache, false otherwise.
+					boolean<br>True if item exists in the cache, false otherwise
 				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br><p>If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
-  MUST be thrown.</p>
+					invalidArgumentException<br><p>If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
+                                 MUST be thrown</p>
 				</div>
 
 
@@ -395,8 +395,8 @@ such situation use CacheItemInterface::isHit() instead.</p>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br><p>If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
-  MUST be thrown.</p>
+					invalidArgumentException<br><p>If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
+                                 MUST be thrown</p>
 				</div>
 
 
@@ -416,7 +416,7 @@ such situation use CacheItemInterface::isHit() instead.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_deleteItems">#</a>
-		<code><a href="source-class-Psr.Cache.CacheItemPoolInterface.html#88-101" title="Go to source code">deleteItems</a>( <span>array <var>$keys</var></span> )</code>
+		<code><a href="source-class-Psr.Cache.CacheItemPoolInterface.html#88-102" title="Go to source code">deleteItems</a>( <span>array <var>$keys</var></span> )</code>
 
 		<div class="description short">
 			<p>Removes multiple items from the pool.</p>
@@ -439,8 +439,8 @@ such situation use CacheItemInterface::isHit() instead.</p>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br><p>If any of the keys in $keys are not a legal value a \Psr\Cache\InvalidArgumentException
-  MUST be thrown.</p>
+					invalidArgumentException<br><p>If any of the keys in $keys are not a legal value a \Psr\Cache\InvalidArgumentException
+                                 MUST be thrown</p>
 				</div>
 
 
@@ -460,7 +460,7 @@ such situation use CacheItemInterface::isHit() instead.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save">#</a>
-		<code><a href="source-class-Psr.Cache.CacheItemPoolInterface.html#103-112" title="Go to source code">save</a>( <span><code><a href="class-Psr.Cache.CacheItemInterface.html">Psr\Cache\CacheItemInterface</a></code> <var>$item</var></span> )</code>
+		<code><a href="source-class-Psr.Cache.CacheItemPoolInterface.html#104-113" title="Go to source code">save</a>( <span><code><a href="class-Psr.Cache.CacheItemInterface.html">Psr\Cache\CacheItemInterface</a></code> <var>$item</var></span> )</code>
 
 		<div class="description short">
 			<p>Persists a cache item immediately.</p>
@@ -473,7 +473,7 @@ such situation use CacheItemInterface::isHit() instead.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$item</var></dt>
-					<dd>The cache item to save.</dd>
+					<dd>The cache item to save</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -499,7 +499,7 @@ such situation use CacheItemInterface::isHit() instead.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_saveDeferred">#</a>
-		<code><a href="source-class-Psr.Cache.CacheItemPoolInterface.html#114-123" title="Go to source code">saveDeferred</a>( <span><code><a href="class-Psr.Cache.CacheItemInterface.html">Psr\Cache\CacheItemInterface</a></code> <var>$item</var></span> )</code>
+		<code><a href="source-class-Psr.Cache.CacheItemPoolInterface.html#115-124" title="Go to source code">saveDeferred</a>( <span><code><a href="class-Psr.Cache.CacheItemInterface.html">Psr\Cache\CacheItemInterface</a></code> <var>$item</var></span> )</code>
 
 		<div class="description short">
 			<p>Sets a cache item to be persisted later.</p>
@@ -512,7 +512,7 @@ such situation use CacheItemInterface::isHit() instead.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$item</var></dt>
-					<dd>The cache item to save.</dd>
+					<dd>The cache item to save</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -538,7 +538,7 @@ such situation use CacheItemInterface::isHit() instead.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_commit">#</a>
-		<code><a href="source-class-Psr.Cache.CacheItemPoolInterface.html#125-131" title="Go to source code">commit</a>( )</code>
+		<code><a href="source-class-Psr.Cache.CacheItemPoolInterface.html#126-132" title="Go to source code">commit</a>( )</code>
 
 		<div class="description short">
 			<p>Persists any deferred cache items.</p>
