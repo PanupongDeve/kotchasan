@@ -598,7 +598,7 @@
 </span><span id="331" class="l"><a href="#331"> 331: </a>        }
 </span><span id="332" class="l"><a href="#332"> 332: </a>        <span class="php-comment">// รายการต่อหน้า มาจากการเลือกภายในตาราง</span>
 </span><span id="333" class="l"><a href="#333"> 333: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;perPage !== <span class="php-keyword1">null</span>) {
-</span><span id="334" class="l"><a href="#334"> 334: </a>            <span class="php-var">$count</span> = self::<span class="php-var">$request</span>-&gt;globals(<span class="php-keyword1">array</span>(<span class="php-quote">'POST'</span>, <span class="php-quote">'GET'</span>), <span class="php-quote">'count'</span>)-&gt;toInt();
+</span><span id="334" class="l"><a href="#334"> 334: </a>            <span class="php-var">$count</span> = self::<span class="php-var">$request</span>-&gt;globals(<span class="php-keyword1">array</span>(<span class="php-quote">'POST'</span>, <span class="php-quote">'GET'</span>), <span class="php-quote">'count'</span>, <span class="php-var">$this</span>-&gt;perPage)-&gt;toInt();
 </span><span id="335" class="l"><a href="#335"> 335: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">in_array</span>(<span class="php-var">$count</span>, <span class="php-var">$this</span>-&gt;entriesList)) {
 </span><span id="336" class="l"><a href="#336"> 336: </a>                <span class="php-var">$this</span>-&gt;perPage = <span class="php-var">$count</span>;
 </span><span id="337" class="l"><a href="#337"> 337: </a>                <span class="php-var">$this</span>-&gt;uri = <span class="php-var">$this</span>-&gt;uri-&gt;withParams(<span class="php-keyword1">array</span>(<span class="php-quote">'count'</span> =&gt; <span class="php-var">$count</span>));
@@ -698,47 +698,47 @@
 </span><span id="431" class="l"><a href="#431"> 431: </a>        <span class="php-var">$url_query</span> = <span class="php-keyword1">array</span>();
 </span><span id="432" class="l"><a href="#432"> 432: </a>        <span class="php-var">$hidden_fields</span> = <span class="php-keyword1">array</span>();
 </span><span id="433" class="l"><a href="#433"> 433: </a>        <span class="php-keyword2">parse_str</span>(<span class="php-var">$this</span>-&gt;uri-&gt;getQuery(), <span class="php-var">$query_string</span>);
-</span><span id="434" class="l"><a href="#434"> 434: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$query_string</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
-</span><span id="435" class="l"><a href="#435"> 435: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$value</span> != <span class="php-quote">''</span>) {
-</span><span id="436" class="l"><a href="#436"> 436: </a>                <span class="php-var">$url_query</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'='</span>.<span class="php-var">$value</span>;
-</span><span id="437" class="l"><a href="#437"> 437: </a>                <span class="php-comment">// แอเรย์เก็บรายการ input ที่ไม่ต้องสร้าง</span>
-</span><span id="438" class="l"><a href="#438"> 438: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$key</span> !== <span class="php-quote">'search'</span> &amp;&amp; <span class="php-var">$key</span> !== <span class="php-quote">'count'</span> &amp;&amp; <span class="php-var">$key</span> !== <span class="php-quote">'page'</span> &amp;&amp; <span class="php-var">$key</span> !== <span class="php-quote">'action'</span>) {
-</span><span id="439" class="l"><a href="#439"> 439: </a>                    <span class="php-var">$hidden_fields</span>[<span class="php-var">$key</span>] = <span class="php-quote">'&lt;input type=&quot;hidden&quot; name=&quot;'</span>.<span class="php-var">$key</span>.<span class="php-quote">'&quot; value=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;&gt;'</span>;
-</span><span id="440" class="l"><a href="#440"> 440: </a>                }
-</span><span id="441" class="l"><a href="#441"> 441: </a>            }
-</span><span id="442" class="l"><a href="#442"> 442: </a>        }
-</span><span id="443" class="l"><a href="#443"> 443: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;model)) {
-</span><span id="444" class="l"><a href="#444"> 444: </a>            <span class="php-comment">// รายการ Query หลัก (AND)</span>
-</span><span id="445" class="l"><a href="#445"> 445: </a>            <span class="php-var">$qs</span> = <span class="php-keyword1">array</span>();
-</span><span id="446" class="l"><a href="#446"> 446: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$this</span>-&gt;defaultFilters <span class="php-keyword1">as</span> <span class="php-var">$array</span>) {
-</span><span id="447" class="l"><a href="#447"> 447: </a>                <span class="php-var">$qs</span>[] = <span class="php-var">$array</span>;
-</span><span id="448" class="l"><a href="#448"> 448: </a>            }
-</span><span id="449" class="l"><a href="#449"> 449: </a>        }
-</span><span id="450" class="l"><a href="#450"> 450: </a>        <span class="php-comment">// create HTML</span>
-</span><span id="451" class="l"><a href="#451"> 451: </a>        <span class="php-var">$content</span> = <span class="php-keyword1">array</span>(<span class="php-quote">'&lt;div class=&quot;datatable&quot; id=&quot;'</span>.<span class="php-var">$this</span>-&gt;id.<span class="php-quote">'&quot;&gt;'</span>);
-</span><span id="452" class="l"><a href="#452"> 452: </a>        <span class="php-comment">// form</span>
-</span><span id="453" class="l"><a href="#453"> 453: </a>        <span class="php-var">$form</span> = <span class="php-keyword1">array</span>();
-</span><span id="454" class="l"><a href="#454"> 454: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;perPage !== <span class="php-keyword1">null</span>) {
-</span><span id="455" class="l"><a href="#455"> 455: </a>            <span class="php-var">$entries</span> = Language::get(<span class="php-quote">'entries'</span>);
-</span><span id="456" class="l"><a href="#456"> 456: </a>            <span class="php-var">$options</span> = <span class="php-keyword1">array</span>();
-</span><span id="457" class="l"><a href="#457"> 457: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$this</span>-&gt;entriesList <span class="php-keyword1">as</span> <span class="php-var">$c</span>) {
-</span><span id="458" class="l"><a href="#458"> 458: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$c</span> == <span class="php-num">0</span>) {
-</span><span id="459" class="l"><a href="#459"> 459: </a>                    <span class="php-var">$options</span>[<span class="php-num">0</span>] = Language::get(<span class="php-quote">'all items'</span>);
-</span><span id="460" class="l"><a href="#460"> 460: </a>                } <span class="php-keyword1">else</span> {
-</span><span id="461" class="l"><a href="#461"> 461: </a>                    <span class="php-var">$options</span>[<span class="php-var">$c</span>] = <span class="php-var">$c</span>.<span class="php-quote">' '</span>.<span class="php-var">$entries</span>;
-</span><span id="462" class="l"><a href="#462"> 462: </a>                }
-</span><span id="463" class="l"><a href="#463"> 463: </a>            }
-</span><span id="464" class="l"><a href="#464"> 464: </a>            <span class="php-var">$form</span>[] = <span class="php-var">$this</span>-&gt;addFilter(<span class="php-keyword1">array</span>(
-</span><span id="465" class="l"><a href="#465"> 465: </a>        <span class="php-quote">'name'</span> =&gt; <span class="php-quote">'count'</span>,
-</span><span id="466" class="l"><a href="#466"> 466: </a>        <span class="php-quote">'text'</span> =&gt; Language::get(<span class="php-quote">'Show'</span>),
-</span><span id="467" class="l"><a href="#467"> 467: </a>        <span class="php-quote">'value'</span> =&gt; <span class="php-var">$this</span>-&gt;perPage,
-</span><span id="468" class="l"><a href="#468"> 468: </a>        <span class="php-quote">'options'</span> =&gt; <span class="php-var">$options</span>,
-</span><span id="469" class="l"><a href="#469"> 469: </a>      ));
-</span><span id="470" class="l"><a href="#470"> 470: </a>        }
-</span><span id="471" class="l"><a href="#471"> 471: </a>        <span class="php-comment">// รายการ Query กำหนดโดย User (AND)</span>
-</span><span id="472" class="l"><a href="#472"> 472: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$this</span>-&gt;filters <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$items</span>) {
-</span><span id="473" class="l"><a href="#473"> 473: </a>            <span class="php-var">$form</span>[] = <span class="php-var">$this</span>-&gt;addFilter(<span class="php-var">$items</span>);
-</span><span id="474" class="l"><a href="#474"> 474: </a>            <span class="php-keyword1">unset</span>(<span class="php-var">$hidden_fields</span>[<span class="php-var">$items</span>[<span class="php-quote">'name'</span>]]);
+</span><span id="434" class="l"><a href="#434"> 434: </a>        self::<span class="php-var">$request</span>-&gt;map(<span class="php-var">$url_query</span>, <span class="php-var">$query_string</span>);
+</span><span id="435" class="l"><a href="#435"> 435: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$url_query</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
+</span><span id="436" class="l"><a href="#436"> 436: </a>            <span class="php-comment">// แอเรย์เก็บรายการ input ที่ไม่ต้องสร้าง</span>
+</span><span id="437" class="l"><a href="#437"> 437: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$key</span> !== <span class="php-quote">'search'</span> &amp;&amp; <span class="php-var">$key</span> !== <span class="php-quote">'count'</span> &amp;&amp; <span class="php-var">$key</span> !== <span class="php-quote">'page'</span> &amp;&amp; <span class="php-var">$key</span> !== <span class="php-quote">'action'</span>) {
+</span><span id="438" class="l"><a href="#438"> 438: </a>                <span class="php-var">$hidden_fields</span>[<span class="php-var">$key</span>] = <span class="php-quote">'&lt;input type=&quot;hidden&quot; name=&quot;'</span>.<span class="php-var">$key</span>.<span class="php-quote">'&quot; value=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;&gt;'</span>;
+</span><span id="439" class="l"><a href="#439"> 439: </a>            }
+</span><span id="440" class="l"><a href="#440"> 440: </a>        }
+</span><span id="441" class="l"><a href="#441"> 441: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;model)) {
+</span><span id="442" class="l"><a href="#442"> 442: </a>            <span class="php-comment">// รายการ Query หลัก (AND)</span>
+</span><span id="443" class="l"><a href="#443"> 443: </a>            <span class="php-var">$qs</span> = <span class="php-keyword1">array</span>();
+</span><span id="444" class="l"><a href="#444"> 444: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$this</span>-&gt;defaultFilters <span class="php-keyword1">as</span> <span class="php-var">$array</span>) {
+</span><span id="445" class="l"><a href="#445"> 445: </a>                <span class="php-var">$qs</span>[] = <span class="php-var">$array</span>;
+</span><span id="446" class="l"><a href="#446"> 446: </a>            }
+</span><span id="447" class="l"><a href="#447"> 447: </a>        }
+</span><span id="448" class="l"><a href="#448"> 448: </a>        <span class="php-comment">// create HTML</span>
+</span><span id="449" class="l"><a href="#449"> 449: </a>        <span class="php-var">$content</span> = <span class="php-keyword1">array</span>(<span class="php-quote">'&lt;div class=&quot;datatable&quot; id=&quot;'</span>.<span class="php-var">$this</span>-&gt;id.<span class="php-quote">'&quot;&gt;'</span>);
+</span><span id="450" class="l"><a href="#450"> 450: </a>        <span class="php-comment">// form</span>
+</span><span id="451" class="l"><a href="#451"> 451: </a>        <span class="php-var">$form</span> = <span class="php-keyword1">array</span>();
+</span><span id="452" class="l"><a href="#452"> 452: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;perPage !== <span class="php-keyword1">null</span>) {
+</span><span id="453" class="l"><a href="#453"> 453: </a>            <span class="php-var">$entries</span> = Language::get(<span class="php-quote">'entries'</span>);
+</span><span id="454" class="l"><a href="#454"> 454: </a>            <span class="php-var">$options</span> = <span class="php-keyword1">array</span>();
+</span><span id="455" class="l"><a href="#455"> 455: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$this</span>-&gt;entriesList <span class="php-keyword1">as</span> <span class="php-var">$c</span>) {
+</span><span id="456" class="l"><a href="#456"> 456: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$c</span> == <span class="php-num">0</span>) {
+</span><span id="457" class="l"><a href="#457"> 457: </a>                    <span class="php-var">$options</span>[<span class="php-num">0</span>] = Language::get(<span class="php-quote">'all items'</span>);
+</span><span id="458" class="l"><a href="#458"> 458: </a>                } <span class="php-keyword1">else</span> {
+</span><span id="459" class="l"><a href="#459"> 459: </a>                    <span class="php-var">$options</span>[<span class="php-var">$c</span>] = <span class="php-var">$c</span>.<span class="php-quote">' '</span>.<span class="php-var">$entries</span>;
+</span><span id="460" class="l"><a href="#460"> 460: </a>                }
+</span><span id="461" class="l"><a href="#461"> 461: </a>            }
+</span><span id="462" class="l"><a href="#462"> 462: </a>            <span class="php-var">$form</span>[] = <span class="php-var">$this</span>-&gt;addFilter(<span class="php-keyword1">array</span>(
+</span><span id="463" class="l"><a href="#463"> 463: </a>        <span class="php-quote">'name'</span> =&gt; <span class="php-quote">'count'</span>,
+</span><span id="464" class="l"><a href="#464"> 464: </a>        <span class="php-quote">'text'</span> =&gt; Language::get(<span class="php-quote">'Show'</span>),
+</span><span id="465" class="l"><a href="#465"> 465: </a>        <span class="php-quote">'value'</span> =&gt; <span class="php-var">$this</span>-&gt;perPage,
+</span><span id="466" class="l"><a href="#466"> 466: </a>        <span class="php-quote">'options'</span> =&gt; <span class="php-var">$options</span>,
+</span><span id="467" class="l"><a href="#467"> 467: </a>      ));
+</span><span id="468" class="l"><a href="#468"> 468: </a>        }
+</span><span id="469" class="l"><a href="#469"> 469: </a>        <span class="php-comment">// รายการ Query กำหนดโดย User (AND)</span>
+</span><span id="470" class="l"><a href="#470"> 470: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$this</span>-&gt;filters <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$items</span>) {
+</span><span id="471" class="l"><a href="#471"> 471: </a>            <span class="php-var">$form</span>[] = <span class="php-var">$this</span>-&gt;addFilter(<span class="php-var">$items</span>);
+</span><span id="472" class="l"><a href="#472"> 472: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$items</span>[<span class="php-quote">'name'</span>])) {
+</span><span id="473" class="l"><a href="#473"> 473: </a>                <span class="php-keyword1">unset</span>(<span class="php-var">$hidden_fields</span>[<span class="php-var">$items</span>[<span class="php-quote">'name'</span>]]);
+</span><span id="474" class="l"><a href="#474"> 474: </a>            }
 </span><span id="475" class="l"><a href="#475"> 475: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword1">isset</span>(<span class="php-var">$items</span>[<span class="php-quote">'default'</span>])) {
 </span><span id="476" class="l"><a href="#476"> 476: </a>                <span class="php-var">$items</span>[<span class="php-quote">'default'</span>] = <span class="php-quote">''</span>;
 </span><span id="477" class="l"><a href="#477"> 477: </a>            }
