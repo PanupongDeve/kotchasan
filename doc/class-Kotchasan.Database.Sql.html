@@ -181,7 +181,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Database.Sql.html#13-795" title="Go to source code">Kotchasan/Database/Sql.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Database.Sql.html#13-801" title="Go to source code">Kotchasan/Database/Sql.php</a>
 		<br>
 	</div>
 
@@ -1491,7 +1491,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_CONCAT">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#662-683" title="Go to source code">CONCAT</a>( <span>array <var>$fields</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$separator</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#662-689" title="Go to source code">CONCAT</a>( <span>array <var>$fields</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$separator</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>สร้างคำสั่ง CONCAT หรือ CONCAT_WS.</p>
@@ -1516,6 +1516,10 @@
 					static
 				</div>
 
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>ถ้ารูปแบบของ $fields ไม่ใช่แอเรย์
+				</div>
 
 				<h4>Assert</h4>
 				<div class="list">
@@ -1540,7 +1544,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_GROUP_CONCAT">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#685-713" title="Go to source code">GROUP_CONCAT</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$separator</var> = <span class="php-quote">','</span></span>, <span>boolean <var>$distinct</var> = <span class="php-keyword1">false</span></span>, <span>string|array <var>$order</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#691-719" title="Go to source code">GROUP_CONCAT</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$separator</var> = <span class="php-quote">','</span></span>, <span>boolean <var>$distinct</var> = <span class="php-keyword1">false</span></span>, <span>string|array <var>$order</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>สร้างคำสั่ง GROUP_CONCAT.</p>
@@ -1591,7 +1595,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_POSITION">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#715-733" title="Go to source code">POSITION</a>( <span>string <var>$substr</var></span>, <span>string <var>$str</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$pos</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#721-739" title="Go to source code">POSITION</a>( <span>string <var>$substr</var></span>, <span>string <var>$str</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$pos</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			<p>ค้นหาข้อความ ไม่พบคืนค่า 0, ตัวแรกคือ 1.</p>
@@ -1640,7 +1644,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_BETWEEN">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#735-750" title="Go to source code">BETWEEN</a>( <span>string <var>$column_name1</var></span>, <span>string <var>$column_name2</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#741-756" title="Go to source code">BETWEEN</a>( <span>string <var>$column_name1</var></span>, <span>string <var>$column_name2</var></span> )</code>
 
 		<div class="description short">
 			<p>สร้างคำสั่ง BETWEEN ... AND ...</p>
@@ -1687,7 +1691,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_IFNULL">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#752-767" title="Go to source code">IFNULL</a>( <span>string <var>$column_name1</var></span>, <span>string <var>$column_name2</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#758-773" title="Go to source code">IFNULL</a>( <span>string <var>$column_name1</var></span>, <span>string <var>$column_name2</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสร้างคำสั่ง IFNULL.</p>
@@ -1735,7 +1739,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ISNULL">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#769-781" title="Go to source code">ISNULL</a>( <span>string <var>$column_name</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#775-787" title="Go to source code">ISNULL</a>( <span>string <var>$column_name</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสร้างคำสั่ง IS NULL.</p>
@@ -1778,7 +1782,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_strValue">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#783-794" title="Go to source code">strValue</a>( <span>string <var>$value</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#789-800" title="Go to source code">strValue</a>( <span>string <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสำหรับรับค่าเป็นสตริงค์เท่านั้น
