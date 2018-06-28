@@ -1054,19 +1054,33 @@
 </span><span id="787" class="l"><a href="#787">787: </a>    }
 </span><span id="788" class="l"><a href="#788">788: </a>
 </span><span id="789" class="l"><a href="#789">789: </a>    <span class="php-comment">/**
-</span></span><span id="790" class="l"><a href="#790">790: </a><span class="php-comment">     * ฟังก์ชั่นสำหรับรับค่าเป็นสตริงค์เท่านั้น
-</span></span><span id="791" class="l"><a href="#791">791: </a><span class="php-comment">     * ผลลัพท์จะถูกครอบด้วย '' (ฟันหนู).
-</span></span><span id="792" class="l"><a href="#792">792: </a><span class="php-comment">     *
-</span></span><span id="793" class="l"><a href="#793">793: </a><span class="php-comment">     * @param string $value
-</span></span><span id="794" class="l"><a href="#794">794: </a><span class="php-comment">     *
-</span></span><span id="795" class="l"><a href="#795">795: </a><span class="php-comment">     * @return \self
-</span></span><span id="796" class="l"><a href="#796">796: </a><span class="php-comment">     */</span>
-</span><span id="797" class="l"><a href="#797">797: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> strValue(<span class="php-var">$value</span>)
-</span><span id="798" class="l"><a href="#798">798: </a>    {
-</span><span id="799" class="l"><a href="#799">799: </a>        <span class="php-keyword1">return</span> self::create(<span class="php-quote">&quot;'</span><span class="php-var">$value</span><span class="php-quote">'&quot;</span>);
-</span><span id="800" class="l"><a href="#800">800: </a>    }
-</span><span id="801" class="l"><a href="#801">801: </a>}
-</span><span id="802" class="l"><a href="#802">802: </a></span></code></pre>
+</span></span><span id="790" class="l"><a href="#790">790: </a><span class="php-comment">     * ฟังก์ชั่นสร้างคำสั่ง IS NOT NULL.
+</span></span><span id="791" class="l"><a href="#791">791: </a><span class="php-comment">     *
+</span></span><span id="792" class="l"><a href="#792">792: </a><span class="php-comment">     * @param string $column_name
+</span></span><span id="793" class="l"><a href="#793">793: </a><span class="php-comment">     *
+</span></span><span id="794" class="l"><a href="#794">794: </a><span class="php-comment">     * @return \self
+</span></span><span id="795" class="l"><a href="#795">795: </a><span class="php-comment">     *
+</span></span><span id="796" class="l"><a href="#796">796: </a><span class="php-comment">     * @assert ('U.id')-&gt;text() [==] &quot;U.`id` IS NOT NULL&quot;
+</span></span><span id="797" class="l"><a href="#797">797: </a><span class="php-comment">     */</span>
+</span><span id="798" class="l"><a href="#798">798: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> ISNOTNULL(<span class="php-var">$column_name</span>)
+</span><span id="799" class="l"><a href="#799">799: </a>    {
+</span><span id="800" class="l"><a href="#800">800: </a>        <span class="php-keyword1">return</span> self::create(self::fieldName(<span class="php-var">$column_name</span>).<span class="php-quote">' IS NOT NULL'</span>);
+</span><span id="801" class="l"><a href="#801">801: </a>    }
+</span><span id="802" class="l"><a href="#802">802: </a>
+</span><span id="803" class="l"><a href="#803">803: </a>    <span class="php-comment">/**
+</span></span><span id="804" class="l"><a href="#804">804: </a><span class="php-comment">     * ฟังก์ชั่นสำหรับรับค่าเป็นสตริงค์เท่านั้น
+</span></span><span id="805" class="l"><a href="#805">805: </a><span class="php-comment">     * ผลลัพท์จะถูกครอบด้วย '' (ฟันหนู).
+</span></span><span id="806" class="l"><a href="#806">806: </a><span class="php-comment">     *
+</span></span><span id="807" class="l"><a href="#807">807: </a><span class="php-comment">     * @param string $value
+</span></span><span id="808" class="l"><a href="#808">808: </a><span class="php-comment">     *
+</span></span><span id="809" class="l"><a href="#809">809: </a><span class="php-comment">     * @return \self
+</span></span><span id="810" class="l"><a href="#810">810: </a><span class="php-comment">     */</span>
+</span><span id="811" class="l"><a href="#811">811: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> strValue(<span class="php-var">$value</span>)
+</span><span id="812" class="l"><a href="#812">812: </a>    {
+</span><span id="813" class="l"><a href="#813">813: </a>        <span class="php-keyword1">return</span> self::create(<span class="php-quote">&quot;'</span><span class="php-var">$value</span><span class="php-quote">'&quot;</span>);
+</span><span id="814" class="l"><a href="#814">814: </a>    }
+</span><span id="815" class="l"><a href="#815">815: </a>}
+</span><span id="816" class="l"><a href="#816">816: </a></span></code></pre>
 
 	<div id="footer">
 		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
