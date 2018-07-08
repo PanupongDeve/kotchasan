@@ -219,7 +219,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Object.html#13-97" title="Go to source code">Kotchasan/Object.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Object.html#13-98" title="Go to source code">Kotchasan/Object.php</a>
 		<br>
 	</div>
 
@@ -275,56 +275,6 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="search" id="_search">
-
-		<td class="attributes"><code>
-			 public static
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_search">#</a>
-		<code><a href="source-class-Kotchasan.Object.html#54-77" title="Go to source code">search</a>( <span>array <var>$input</var></span>, <span>mixed <var>$key</var></span>, <span>mixed <var>$search</var></span> )</code>
-
-		<div class="description short">
-			<p>ค้นหา object จาก property
-คืนค่า index ตาม array ของ object ต้นฉบับ.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ค้นหา object จาก property
-คืนค่า index ตาม array ของ object ต้นฉบับ.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$input</var></dt>
-					<dd>ข้อมูลแอเรย์ ของ object</dd>
-					<dt><var>$key</var></dt>
-					<dd>property ที่ต้องการค้นหา</dd>
-					<dt><var>$search</var></dt>
-					<dd>ข้อความค้นหา</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					array<br>คืนค่าทุกรายการที่พบ และ คืนค่าแอเรย์ว่างถ้าไม่พบ
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						(array((object)array('id' => 1, 'name' => 'one'), (object)array('id' => 2, 'name' => 'two'), (object)array('id' => 3, 'name' => 'one')), 'name', 'one') [==] array(0 => (object)array('id' => 1, 'name' => 'one'), 2 => (object)array('id' => 3, 'name' => 'one'))<br>
-						(array((object)array('id' => 1, 'name' => 'one'), (object)array('id' => 2, 'name' => 'two'), (object)array('id' => 3, 'name' => 'one')), 'id', 'one') [==] array()<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="replace" id="_replace">
 
 		<td class="attributes"><code>
@@ -337,7 +287,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_replace">#</a>
-		<code><a href="source-class-Kotchasan.Object.html#79-96" title="Go to source code">replace</a>( <span>object <var>$a</var></span>, <span>array|object <var>$b</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Object.html#54-72" title="Go to source code">replace</a>( <span>object <var>$a</var></span>, <span>array|object <var>$b</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นรวม object แทนที่คีย์เดิม</p>
@@ -365,6 +315,56 @@
 				<div class="list">
 						((object)array('one' => 1), array('two' => 2)) [==] (object)array('one' => 1, 'two' => 2)<br>
 						((object)array('one' => 1), (object)array('two' => 2)) [==] (object)array('one' => 1, 'two' => 2)<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="search" id="_search">
+
+		<td class="attributes"><code>
+			 public static
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_search">#</a>
+		<code><a href="source-class-Kotchasan.Object.html#74-97" title="Go to source code">search</a>( <span>array <var>$input</var></span>, <span>mixed <var>$key</var></span>, <span>mixed <var>$search</var></span> )</code>
+
+		<div class="description short">
+			<p>ค้นหา object จาก property
+คืนค่าทุกรายการที่พบ รักษา index ตาม array ของ object ต้นฉบับ และ คืนค่าแอเรย์ว่างถ้าไม่พบ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ค้นหา object จาก property
+คืนค่าทุกรายการที่พบ รักษา index ตาม array ของ object ต้นฉบับ และ คืนค่าแอเรย์ว่างถ้าไม่พบ.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$input</var></dt>
+					<dd>ข้อมูลแอเรย์ ของ object</dd>
+					<dt><var>$key</var></dt>
+					<dd>property ที่ต้องการค้นหา</dd>
+					<dt><var>$search</var></dt>
+					<dd>ข้อความค้นหา</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						(array((object)array('id' => 1, 'name' => 'one'), (object)array('id' => 2, 'name' => 'two'), (object)array('id' => 3, 'name' => 'one')), 'name', 'one') [==] array(0 => (object)array('id' => 1, 'name' => 'one'), 2 => (object)array('id' => 3, 'name' => 'one'))<br>
+						(array((object)array('id' => 1, 'name' => 'one'), (object)array('id' => 2, 'name' => 'two'), (object)array('id' => 3, 'name' => 'one')), 'id', 'one') [==] array()<br>
 				</div>
 
 

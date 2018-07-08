@@ -219,7 +219,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Text.html#13-310" title="Go to source code">Kotchasan/Text.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Text.html#13-313" title="Go to source code">Kotchasan/Text.php</a>
 		<br>
 	</div>
 
@@ -227,7 +227,7 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="replace" id="_replace">
+	<tr data-order="cut" id="_cut">
 
 		<td class="attributes"><code>
 			 public static
@@ -238,23 +238,25 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_replace">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#22-42" title="Go to source code">replace</a>( <span>string <var>$source</var></span>, <span>array <var>$replace</var></span> )</code>
+		<a class="anchor" href="#_cut">#</a>
+		<code><a href="source-class-Kotchasan.Text.html#22-42" title="Go to source code">cut</a>( <span>string <var>$source</var></span>, <span>integer <var>$len</var></span> )</code>
 
 		<div class="description short">
-			<p>แทนที่ข้อความด้วยข้อมูลจากแอเรย์ รองรับข้อมูลรูปแบบแอเรย์ย่อยๆ.</p>
+			<p>ฟังก์ชั่น ตัดสตริงค์ตามความยาวที่กำหนด
+หากข้อความที่นำมาตัดยาวกว่าที่กำหนด จะตัดข้อความที่เกินออก และเติม .. ข้างท้าย.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>แทนที่ข้อความด้วยข้อมูลจากแอเรย์ รองรับข้อมูลรูปแบบแอเรย์ย่อยๆ.</p>
+			<p>ฟังก์ชั่น ตัดสตริงค์ตามความยาวที่กำหนด
+หากข้อความที่นำมาตัดยาวกว่าที่กำหนด จะตัดข้อความที่เกินออก และเติม .. ข้างท้าย.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$source</var></dt>
-					<dd>ข้อความต้นฉบับ</dd>
-					<dt><var>$replace</var></dt>
-					<dd>ข้อความที่จะนำมาแทนที่ รูปแบบ array($key1 => $value1, $key2 => $value2) ข้อความใน $source ที่ตรงกับ $key จะถูกแทนที่ด้วย $value</dd>
+					<dd>ข้อความ</dd>
+					<dt><var>$len</var></dt>
+					<dd>ความยาวของข้อความที่ต้องการ (จำนวนตัวอักษรรวมจุด)</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -265,7 +267,235 @@
 
 				<h4>Assert</h4>
 				<div class="list">
-						("SELECT * FROM table WHERE id=:id AND lang IN (:lang, '')", array(':id' => 1, array(':lang' => 'th'))) [==] "SELECT * FROM table WHERE id=1 AND lang IN (th, '')"<br>
+						('สวัสดี ประเทศไทย', 8) [==] 'สวัสดี..'<br>
+						('123456789', 8) [==] '123456..'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="formatFileSize" id="_formatFileSize">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_formatFileSize">#</a>
+		<code><a href="source-class-Kotchasan.Text.html#44-72" title="Go to source code">formatFileSize</a>( <span>integer <var>$bytes</var></span>, <span>integer <var>$precision</var> = <span class="php-num">2</span></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่น แปลงขนาดของไฟล์จาก byte เป็น kb mb
+คืนค่าขนาดของไฟล์เป็น KB MB.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่น แปลงขนาดของไฟล์จาก byte เป็น kb mb
+คืนค่าขนาดของไฟล์เป็น KB MB.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$bytes</var></dt>
+					<dd>ขนาดของไฟล์ เป็น byte</dd>
+					<dt><var>$precision</var></dt>
+					<dd>จำนวนหลักหลังจุดทศนิยม (default 2)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						(256) [==] '256 Bytes'<br>
+						(1024) [==] '1 KB'<br>
+						(1024 * 1024) [==] '1 MB'<br>
+						(1024 * 1024 * 1024) [==] '1 GB'<br>
+						(1024 * 1024 * 1024 * 1024) [==] '1 TB'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="highlighter" id="_highlighter">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_highlighter">#</a>
+		<code><a href="source-class-Kotchasan.Text.html#74-111" title="Go to source code">highlighter</a>( <span>string <var>$detail</var></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่น HTML highlighter
+แปลง BBCode
+แปลงข้อความ http เป็นลิงค์
+คืนค่าข้อความ</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่น HTML highlighter
+แปลง BBCode
+แปลงข้อความ http เป็นลิงค์
+คืนค่าข้อความ</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$detail</var></dt>
+					<dd>ข้อความ</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="htmlspecialchars" id="_htmlspecialchars">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_htmlspecialchars">#</a>
+		<code><a href="source-class-Kotchasan.Text.html#113-129" title="Go to source code">htmlspecialchars</a>( <span>string <var>$text</var></span>, <span>boolean <var>$double_encode</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			<p>แปลง &amp; " ' &lt; > \ { } เป็น HTML entities ใช้แทน htmlspecialchars() ของ PHP.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>แปลง &amp; " ' &lt; > \ { } เป็น HTML entities ใช้แทน htmlspecialchars() ของ PHP.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$text</var></dt>
+					<dd></dd>
+					<dt><var>$double_encode</var></dt>
+					<dd>true (default) แปลง รหัส HTML เช่น &amp; เป็น &amp;amp;, false ไม่แปลง</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="oneLine" id="_oneLine">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_oneLine">#</a>
+		<code><a href="source-class-Kotchasan.Text.html#131-145" title="Go to source code">oneLine</a>( <span>string <var>$text</var></span>, <span>integer <var>$len</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่น ลบช่องว่าง และ ตัวอักษรขึ้นบรรทัดใหม่ ที่ติดกันเกินกว่า 1 ตัว
+คืนค่าข้อความที่ไม่มีตัวอักษรขึ้นบรรทัดใหม่.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่น ลบช่องว่าง และ ตัวอักษรขึ้นบรรทัดใหม่ ที่ติดกันเกินกว่า 1 ตัว
+คืนค่าข้อความที่ไม่มีตัวอักษรขึ้นบรรทัดใหม่.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$text</var></dt>
+					<dd>ข้อความ</dd>
+					<dt><var>$len</var></dt>
+					<dd>จำนวนตัวอักษรสูงสุดที่ต้องการ, (default) คืนค่าทั้งหมด</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						(" \tทดสอบ\r\nภาษาไทย") [==] 'ทดสอบ ภาษาไทย'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="password" id="_password">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_password">#</a>
+		<code><a href="source-class-Kotchasan.Text.html#147-159" title="Go to source code">password</a>( <span>string <var>$text</var></span> )</code>
+
+		<div class="description short">
+			<p>รับค่าสำหรับ password อักขระทุกตัวไม่มีช่องว่าง.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>รับค่าสำหรับ password อักขระทุกตัวไม่มีช่องว่าง.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$text</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						(" 0\n12   34\r\r6\t5 ") [==] '0123465'<br>
 				</div>
 
 
@@ -284,7 +514,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_removeNonCharacters">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#44-57" title="Go to source code">removeNonCharacters</a>( <span>string <var>$text</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Text.html#161-174" title="Go to source code">removeNonCharacters</a>( <span>string <var>$text</var></span> )</code>
 
 		<div class="description short">
 			<p>ลบตัวอักษรที่ไม่สามารถพิมพ์ได้ออก
@@ -317,6 +547,182 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="repeat" id="_repeat">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_repeat">#</a>
+		<code><a href="source-class-Kotchasan.Text.html#176-194" title="Go to source code">repeat</a>( <span>string <var>$text</var></span>, <span>integer <var>$count</var></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นคืนค่าข้อความซ้ำๆตามจำนวนที่กำหนด.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นคืนค่าข้อความซ้ำๆตามจำนวนที่กำหนด.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$text</var></dt>
+					<dd>ข้อความหรือตัวอักษรที่ต้องการทำซ้ำ</dd>
+					<dt><var>$count</var></dt>
+					<dd>จำนวนที่ต้องการ</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						('0', 10) [==] '0000000000'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="replace" id="_replace">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_replace">#</a>
+		<code><a href="source-class-Kotchasan.Text.html#196-216" title="Go to source code">replace</a>( <span>string <var>$source</var></span>, <span>array <var>$replace</var></span> )</code>
+
+		<div class="description short">
+			<p>แทนที่ข้อความด้วยข้อมูลจากแอเรย์ รองรับข้อมูลรูปแบบแอเรย์ย่อยๆ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>แทนที่ข้อความด้วยข้อมูลจากแอเรย์ รองรับข้อมูลรูปแบบแอเรย์ย่อยๆ.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$source</var></dt>
+					<dd>ข้อความต้นฉบับ</dd>
+					<dt><var>$replace</var></dt>
+					<dd>ข้อความที่จะนำมาแทนที่ รูปแบบ array($key1 => $value1, $key2 => $value2) ข้อความใน $source ที่ตรงกับ $key จะถูกแทนที่ด้วย $value</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						("SELECT * FROM table WHERE id=:id AND lang IN (:lang, '')", array(':id' => 1, array(':lang' => 'th'))) [==] "SELECT * FROM table WHERE id=1 AND lang IN (th, '')"<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="rndname" id="_rndname">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_rndname">#</a>
+		<code><a href="source-class-Kotchasan.Text.html#218-236" title="Go to source code">rndname</a>( <span>integer <var>$count</var></span>, <span>string <var>$chars</var> = <span class="php-quote">'abcdefghjkmnpqrstuvwxyz'</span></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่น สุ่มตัวอักษร.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่น สุ่มตัวอักษร.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$count</var></dt>
+					<dd>จำนวนหลักที่ต้องการ</dd>
+					<dt><var>$chars</var></dt>
+					<dd>(optional) ตัวอักษรที่ใช้ในการสุ่ม default abcdefghjkmnpqrstuvwxyz</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="toEditor" id="_toEditor">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_toEditor">#</a>
+		<code><a href="source-class-Kotchasan.Text.html#238-251" title="Go to source code">toEditor</a>( <span>string <var>$text</var></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่น เข้ารหัส อักขระพิเศษ และ {} ก่อนจะส่งให้กับ textarea หรือ editor ตอนแก้ไข
+&amp; " ' &lt; > { } ไม่แปลง รหัส HTML เช่น &amp; &#38;.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่น เข้ารหัส อักขระพิเศษ และ {} ก่อนจะส่งให้กับ textarea หรือ editor ตอนแก้ไข
+&amp; " ' &lt; > { } ไม่แปลง รหัส HTML เช่น &amp; &#38;.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$text</var></dt>
+					<dd>ข้อความ</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						('&amp;"'."'&lt;>{}&amp;&#38;") [==] "&amp;&quot;&#039;&lt;&gt;&#x007B;&#x007D;&amp;&#38;"<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="topic" id="_topic">
 
 		<td class="attributes"><code>
@@ -329,7 +735,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_topic">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#59-72" title="Go to source code">topic</a>( <span>string <var>$text</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Text.html#253-266" title="Go to source code">topic</a>( <span>string <var>$text</var></span> )</code>
 
 		<div class="description short">
 			<p>แปลง tag และ ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
@@ -362,6 +768,45 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="unhtmlspecialchars" id="_unhtmlspecialchars">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_unhtmlspecialchars">#</a>
+		<code><a href="source-class-Kotchasan.Text.html#268-278" title="Go to source code">unhtmlspecialchars</a>( <span>string <var>$text</var></span> )</code>
+
+		<div class="description short">
+			<p>แปลง htmlspecialchars กลับเป็นอักขระปกติ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>แปลง htmlspecialchars กลับเป็นอักขระปกติ.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$text</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="url" id="_url">
 
 		<td class="attributes"><code>
@@ -374,7 +819,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_url">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#74-90" title="Go to source code">url</a>( <span> <var>$text</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Text.html#280-296" title="Go to source code">url</a>( <span> <var>$text</var></span> )</code>
 
 		<div class="description short">
 			<p>แปลง tag ไม่แปลง &amp;
@@ -418,7 +863,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_username">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#92-106" title="Go to source code">username</a>( <span>string <var>$text</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Text.html#298-312" title="Go to source code">username</a>( <span>string <var>$text</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นรับค่าสำหรับใช้เป็น username
@@ -447,445 +892,6 @@
 						(' ad_min@demo.com') [==] 'ad_min@demo.com'<br>
 						('012 3465') [==] '0123465'<br>
 				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="password" id="_password">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_password">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#108-120" title="Go to source code">password</a>( <span>string <var>$text</var></span> )</code>
-
-		<div class="description short">
-			<p>รับค่าสำหรับ password อักขระทุกตัวไม่มีช่องว่าง.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>รับค่าสำหรับ password อักขระทุกตัวไม่มีช่องว่าง.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$text</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						(" 0\n12   34\r\r6\t5 ") [==] '0123465'<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="toEditor" id="_toEditor">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_toEditor">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#122-135" title="Go to source code">toEditor</a>( <span>string <var>$text</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่น เข้ารหัส อักขระพิเศษ และ {} ก่อนจะส่งให้กับ textarea หรือ editor ตอนแก้ไข
-&amp; " ' &lt; > { } ไม่แปลง รหัส HTML เช่น &amp; &#38;.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น เข้ารหัส อักขระพิเศษ และ {} ก่อนจะส่งให้กับ textarea หรือ editor ตอนแก้ไข
-&amp; " ' &lt; > { } ไม่แปลง รหัส HTML เช่น &amp; &#38;.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$text</var></dt>
-					<dd>ข้อความ</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						('&amp;"'."'&lt;>{}&amp;&#38;") [==] "&amp;&quot;&#039;&lt;&gt;&#x007B;&#x007D;&amp;&#38;"<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="oneLine" id="_oneLine">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_oneLine">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#137-150" title="Go to source code">oneLine</a>( <span>string <var>$text</var></span>, <span>integer <var>$len</var> = <span class="php-num">0</span></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่น ลบช่องว่าง และ ตัวอักษรขึ้นบรรทัดใหม่ ที่ติดกันเกินกว่า 1 ตัว.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น ลบช่องว่าง และ ตัวอักษรขึ้นบรรทัดใหม่ ที่ติดกันเกินกว่า 1 ตัว.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$text</var></dt>
-					<dd>ข้อความ</dd>
-					<dt><var>$len</var></dt>
-					<dd>จำนวนตัวอักษรสูงสุดที่ต้องการ, 0 (default) คืนค่าทั้งหมด</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string<br>คืนค่าข้อความที่ไม่มีตัวอักษรขึ้นบรรทัดใหม่
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						(" \tทดสอบ\r\nภาษาไทย") [==] 'ทดสอบ ภาษาไทย'<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="cut" id="_cut">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_cut">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#152-172" title="Go to source code">cut</a>( <span>string <var>$source</var></span>, <span>integer <var>$len</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่น ตัดสตริงค์ตามความยาวที่กำหนด
-หากข้อความที่นำมาตัดยาวกว่าที่กำหนด จะตัดข้อความที่เกินออก และเติม .. ข้างท้าย.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น ตัดสตริงค์ตามความยาวที่กำหนด
-หากข้อความที่นำมาตัดยาวกว่าที่กำหนด จะตัดข้อความที่เกินออก และเติม .. ข้างท้าย.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$source</var></dt>
-					<dd>ข้อความ</dd>
-					<dt><var>$len</var></dt>
-					<dd>ความยาวของข้อความที่ต้องการ  (จำนวนตัวอักษรรวมจุด)</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						('สวัสดี ประเทศไทย', 8) [==] 'สวัสดี..'<br>
-						('123456789', 8) [==] '123456..'<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="formatFileSize" id="_formatFileSize">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_formatFileSize">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#174-201" title="Go to source code">formatFileSize</a>( <span>integer <var>$bytes</var></span>, <span>integer <var>$precision</var> = <span class="php-num">2</span></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่น แปลงขนาดของไฟล์จาก byte เป็น kb mb.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น แปลงขนาดของไฟล์จาก byte เป็น kb mb.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$bytes</var></dt>
-					<dd>ขนาดของไฟล์ เป็น byte</dd>
-					<dt><var>$precision</var></dt>
-					<dd>จำนวนหลักหลังจุดทศนิยม (default 2)</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string<br>คืนค่าขนาดของไฟล์เป็น KB MB
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						(256) [==] '256 Bytes'<br>
-						(1024) [==] '1 KB'<br>
-						(1024 * 1024) [==] '1 MB'<br>
-						(1024 * 1024 * 1024) [==] '1 GB'<br>
-						(1024 * 1024 * 1024 * 1024) [==] '1 TB'<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="rndname" id="_rndname">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_rndname">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#203-221" title="Go to source code">rndname</a>( <span>integer <var>$count</var></span>, <span>string <var>$chars</var> = <span class="php-quote">'abcdefghjkmnpqrstuvwxyz'</span></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่น สุ่มตัวอักษร.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น สุ่มตัวอักษร.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$count</var></dt>
-					<dd>จำนวนหลักที่ต้องการ</dd>
-					<dt><var>$chars</var></dt>
-					<dd>(optional) ตัวอักษรที่ใช้ในการสุ่ม default abcdefghjkmnpqrstuvwxyz</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="highlighter" id="_highlighter">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_highlighter">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#223-259" title="Go to source code">highlighter</a>( <span>string <var>$detail</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่น HTML highlighter
-แปลง BBCode
-แปลงข้อความ http เป็นลิงค์.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น HTML highlighter
-แปลง BBCode
-แปลงข้อความ http เป็นลิงค์.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$detail</var></dt>
-					<dd>ข้อความ</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string<br>คืนค่าข้อความ
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="repeat" id="_repeat">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_repeat">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#261-279" title="Go to source code">repeat</a>( <span>string <var>$text</var></span>, <span>integer <var>$count</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นคืนค่าข้อความซ้ำๆตามจำนวนที่กำหนด.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นคืนค่าข้อความซ้ำๆตามจำนวนที่กำหนด.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$text</var></dt>
-					<dd>ข้อความหรือตัวอักษรที่ต้องการทำซ้ำ</dd>
-					<dt><var>$count</var></dt>
-					<dd>จำนวนที่ต้องการ</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						('0', 10) [==] '0000000000'<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="htmlspecialchars" id="_htmlspecialchars">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_htmlspecialchars">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#281-297" title="Go to source code">htmlspecialchars</a>( <span>string <var>$text</var></span>, <span>boolean <var>$double_encode</var> = <span class="php-keyword1">true</span></span> )</code>
-
-		<div class="description short">
-			<p>แปลง &amp; " ' &lt; > \ { } เป็น HTML entities ใช้แทน htmlspecialchars() ของ PHP.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>แปลง &amp; " ' &lt; > \ { } เป็น HTML entities ใช้แทน htmlspecialchars() ของ PHP.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$text</var></dt>
-					<dd></dd>
-					<dt><var>$double_encode</var></dt>
-					<dd>true (default) แปลง รหัส HTML เช่น &amp; เป็น &amp;amp;, false ไม่แปลง</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="unhtmlspecialchars" id="_unhtmlspecialchars">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_unhtmlspecialchars">#</a>
-		<code><a href="source-class-Kotchasan.Text.html#299-309" title="Go to source code">unhtmlspecialchars</a>( <span>string <var>$text</var></span> )</code>
-
-		<div class="description short">
-			<p>แปลง htmlspecialchars กลับเป็นอักขระปกติ.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>แปลง htmlspecialchars กลับเป็นอักขระปกติ.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$text</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
 
 
 		</div>

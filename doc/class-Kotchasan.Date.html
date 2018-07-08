@@ -219,7 +219,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Date.html#13-355" title="Go to source code">Kotchasan/Date.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Date.html#13-376" title="Go to source code">Kotchasan/Date.php</a>
 		<br>
 	</div>
 
@@ -239,7 +239,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Kotchasan.Date.html#24-37" title="Go to source code">__construct</a>( )</code>
+		<code><a href="source-class-Kotchasan.Date.html#27-40" title="Go to source code">__construct</a>( )</code>
 
 		<div class="description short">
 			<p>class constructer.</p>
@@ -257,46 +257,48 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="monthName" id="_monthName">
+	<tr data-order="compare" id="_compare">
 
 		<td class="attributes"><code>
 			 public static
 
-			string
+			array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_monthName">#</a>
-		<code><a href="source-class-Kotchasan.Date.html#39-58" title="Go to source code">monthName</a>( <span>integer <var>$month</var></span>, <span>boolean <var>$short_month</var> = <span class="php-keyword1">true</span></span> )</code>
+		<a class="anchor" href="#_compare">#</a>
+		<code><a href="source-class-Kotchasan.Date.html#42-127" title="Go to source code">compare</a>( <span>string|integer <var>$begin_date</var></span>, <span>istring|integer <var>$end_date</var></span> )</code>
 
 		<div class="description short">
-			<p>แปลงตัวเลขเป็นชื่อเดือนตามภาษาที่ใช้งานอยู่.</p>
+			<p>ฟังก์ชั่น คำนวนความแตกต่างของวัน (เช่น อายุ)
+คืนค่า จำนวนวัน(ติดลบได้) ปี เดือน วัน [days, year, month, day] ที่แตกต่าง.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>แปลงตัวเลขเป็นชื่อเดือนตามภาษาที่ใช้งานอยู่.</p>
+			<p>ฟังก์ชั่น คำนวนความแตกต่างของวัน (เช่น อายุ)
+คืนค่า จำนวนวัน(ติดลบได้) ปี เดือน วัน [days, year, month, day] ที่แตกต่าง.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$month</var></dt>
-					<dd>1-12</dd>
-					<dt><var>$short_month</var></dt>
-					<dd>true (default) ชื่อเดือนแบบสั้น เช่น มค., false ชื่อเดือนแบบเต็ม เช่น มกราคม</dd>
+					<dt><var>$begin_date</var></dt>
+					<dd>วันที่เริ่มต้นหรือวันเกิด (Unix timestamp หรือ วันที่ รูปแบบ YYYY-m-d)</dd>
+					<dt><var>$end_date</var></dt>
+					<dd>วันที่สิ้นสุดหรือวันนี้ (Unix timestamp หรือ วันที่ รูปแบบ YYYY-m-d)</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					string<br>1 มกราคม...12 ธันวาคม
+					array
 				</div>
 
 
 				<h4>Assert</h4>
 				<div class="list">
-						(1) [==] 'ม.ค.'<br>
-						(1, false) [==] 'มกราคม'<br>
+						(mktime(0, 0, 0, 2, 1, 2016), mktime(0, 0, 0, 3, 1, 2016)) [==]  array('days' => 29, 'year' => 0,'month' => 1, 'day' => 0)<br>
+						('2016-3-1', '2016-2-1') [==]  array('days' => -29, 'year' => 0,'month' => 1, 'day' => 0)<br>
 				</div>
 
 
@@ -315,14 +317,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_dateName">#</a>
-		<code><a href="source-class-Kotchasan.Date.html#60-79" title="Go to source code">dateName</a>( <span>integer <var>$date</var></span>, <span>boolean <var>$short_date</var> = <span class="php-keyword1">true</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Date.html#129-150" title="Go to source code">dateName</a>( <span>integer <var>$date</var></span>, <span>boolean <var>$short_date</var> = <span class="php-keyword1">true</span></span> )</code>
 
 		<div class="description short">
-			<p>แปลงตัวเลขเป็นชื่อวันตามภาษาที่ใช้งานอยู่.</p>
+			<p>แปลงตัวเลขเป็นชื่อวันตามภาษาที่ใช้งานอยู่
+คืนค่า อาทิตย์...6 เสาร์.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>แปลงตัวเลขเป็นชื่อวันตามภาษาที่ใช้งานอยู่.</p>
+			<p>แปลงตัวเลขเป็นชื่อวันตามภาษาที่ใช้งานอยู่
+คืนค่า อาทิตย์...6 เสาร์.</p>
 
 
 				<h4>Parameters</h4>
@@ -335,7 +339,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					string<br>0 อาทิตย์...6 เสาร์
+					string
 				</div>
 
 
@@ -344,47 +348,6 @@
 						(0) [==] 'อา.'<br>
 						(0, false) [==] 'อาทิตย์'<br>
 				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="i18nYear" id="_i18nYear">
-
-		<td class="attributes"><code>
-			 public static
-
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_i18nYear">#</a>
-		<code><a href="source-class-Kotchasan.Date.html#81-97" title="Go to source code">i18nYear</a>( <span>integer <var>$year</var></span> )</code>
-
-		<div class="description short">
-			<p>แปลงเป็นปีที่อ่านได้จากฐานข้อมูลหรือ PHP เป็นปีตามภาษาที่ใช้งานอยู่
-เช่น ภาษาไทยใช้ พศ. ($year + 543) ภาษาอังกฤษ ใช้ คศ. ($year).</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>แปลงเป็นปีที่อ่านได้จากฐานข้อมูลหรือ PHP เป็นปีตามภาษาที่ใช้งานอยู่
-เช่น ภาษาไทยใช้ พศ. ($year + 543) ภาษาอังกฤษ ใช้ คศ. ($year).</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$year</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer
-				</div>
-
-
 
 
 		</div>
@@ -402,7 +365,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_day">#</a>
-		<code><a href="source-class-Kotchasan.Date.html#99-110" title="Go to source code">day</a>( <span>integer <var>$mktime</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Date.html#152-164" title="Go to source code">day</a>( <span>integer <var>$mktime</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			<p>อ่านวันที่.</p>
@@ -433,6 +396,186 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="format" id="_format">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_format">#</a>
+		<code><a href="source-class-Kotchasan.Date.html#166-236" title="Go to source code">format</a>( <span>integer|string <var>$time</var> = <span class="php-num">0</span></span>, <span>string <var>$format</var> = <span class="php-quote">''</span></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นแปลงเวลาเป็นวันที่ตามรูปแบบที่กำหนด สามารถคืนค่าวันเดือนปี พศ. ได้ ขึ้นกับไฟล์ภาษา
+คืนค่า วันที่และเวลาตามรูปแบบที่กำหนดโดย $format.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นแปลงเวลาเป็นวันที่ตามรูปแบบที่กำหนด สามารถคืนค่าวันเดือนปี พศ. ได้ ขึ้นกับไฟล์ภาษา
+คืนค่า วันที่และเวลาตามรูปแบบที่กำหนดโดย $format.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$time</var></dt>
+					<dd>int เวลารูปแบบ Unix timestamp, string เวลารูปแบบ Y-m-d หรือ Y-m-d H:i:s ถ้าไม่ระบุหรือระบุ หมายถึงวันนี้</dd>
+					<dt><var>$format</var></dt>
+					<dd>รูปแบบของวันที่ที่ต้องการ (ถ้าไม่ระบุจะใช้รูปแบบที่มาจากระบบภาษา DATE_FORMAT)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						(0) [!=]  ''<br>
+						(null) [==]  ''<br>
+						(1454259600, 'Y-m-d H:i:s') [==] '2559-02-01 00:00:00'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="i18nYear" id="_i18nYear">
+
+		<td class="attributes"><code>
+			 public static
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_i18nYear">#</a>
+		<code><a href="source-class-Kotchasan.Date.html#238-254" title="Go to source code">i18nYear</a>( <span>integer <var>$year</var></span> )</code>
+
+		<div class="description short">
+			<p>แปลงเป็นปีที่อ่านได้จากฐานข้อมูลหรือ PHP เป็นปีตามภาษาที่ใช้งานอยู่
+เช่น ภาษาไทยใช้ พศ. ($year + 543) ภาษาอังกฤษ ใช้ คศ. ($year).</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>แปลงเป็นปีที่อ่านได้จากฐานข้อมูลหรือ PHP เป็นปีตามภาษาที่ใช้งานอยู่
+เช่น ภาษาไทยใช้ พศ. ($year + 543) ภาษาอังกฤษ ใช้ คศ. ($year).</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$year</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="mktimeToSqlDate" id="_mktimeToSqlDate">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_mktimeToSqlDate">#</a>
+		<code><a href="source-class-Kotchasan.Date.html#256-269" title="Go to source code">mktimeToSqlDate</a>( <span>integer <var>$mktime</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			<p>แปลงวันที่ จาก mktime เป็น Y-m-d สามารถบันทึกลงฐานข้อมูลได้ทันที
+คืนค่าวันที่รูป Y-m-d.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>แปลงวันที่ จาก mktime เป็น Y-m-d สามารถบันทึกลงฐานข้อมูลได้ทันที
+คืนค่าวันที่รูป Y-m-d.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$mktime</var></dt>
+					<dd>เวลารูปแบบ Unix timestamp, ไม่ระบุ เป็นวันนี้</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						(1453522271) [==]  date('Y-m-d', 1453522271)<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="mktimeToSqlDateTime" id="_mktimeToSqlDateTime">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_mktimeToSqlDateTime">#</a>
+		<code><a href="source-class-Kotchasan.Date.html#271-284" title="Go to source code">mktimeToSqlDateTime</a>( <span>integer <var>$mktime</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			<p>แปลงวันที่ จาก mktime เป็น Y-m-d H:i:s สามารถบันทึกลงฐานข้อมูลได้ทันที
+คืนค่า วันที่และเวลาของ mysql เช่น Y-m-d H:i:s.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>แปลงวันที่ จาก mktime เป็น Y-m-d H:i:s สามารถบันทึกลงฐานข้อมูลได้ทันที
+คืนค่า วันที่และเวลาของ mysql เช่น Y-m-d H:i:s.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$mktime</var></dt>
+					<dd>เวลารูปแบบ Unix timestamp, ไม่ระบุ เป็นวันนี้</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						(1454259600) [==] '2016-02-01 00:00:00'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="month" id="_month">
 
 		<td class="attributes"><code>
@@ -445,7 +588,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_month">#</a>
-		<code><a href="source-class-Kotchasan.Date.html#112-123" title="Go to source code">month</a>( <span>integer <var>$mktime</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Date.html#286-298" title="Go to source code">month</a>( <span>integer <var>$mktime</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			<p>อ่านเดือน.</p>
@@ -476,6 +619,140 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="monthName" id="_monthName">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_monthName">#</a>
+		<code><a href="source-class-Kotchasan.Date.html#300-321" title="Go to source code">monthName</a>( <span>integer <var>$month</var></span>, <span>boolean <var>$short_month</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			<p>แปลงตัวเลขเป็นชื่อเดือนตามภาษาที่ใช้งานอยู่
+คืนค่า 1 มกราคม...12 ธันวาคม</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>แปลงตัวเลขเป็นชื่อเดือนตามภาษาที่ใช้งานอยู่
+คืนค่า 1 มกราคม...12 ธันวาคม</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$month</var></dt>
+					<dd>1-12</dd>
+					<dt><var>$short_month</var></dt>
+					<dd>true (default) ชื่อเดือนแบบสั้น เช่น มค., false ชื่อเดือนแบบเต็ม เช่น มกราคม</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						(1) [==] 'ม.ค.'<br>
+						(1, false) [==] 'มกราคม'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="parse" id="_parse">
+
+		<td class="attributes"><code>
+			 public static
+
+			array|boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_parse">#</a>
+		<code><a href="source-class-Kotchasan.Date.html#323-342" title="Go to source code">parse</a>( <span>string <var>$date</var></span> )</code>
+
+		<div class="description short">
+			<p>แยกวันที่ออกเป็น array
+คืนค่า array(y, m, d, h, i, s) หรือ array(y, m, d) หากเป้นวันที่อย่างเดียว หรือ false หากไม่ใช่วันที่.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>แยกวันที่ออกเป็น array
+คืนค่า array(y, m, d, h, i, s) หรือ array(y, m, d) หากเป้นวันที่อย่างเดียว หรือ false หากไม่ใช่วันที่.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$date</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array|boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sqlDateTimeToMktime" id="_sqlDateTimeToMktime">
+
+		<td class="attributes"><code>
+			 public static
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sqlDateTimeToMktime">#</a>
+		<code><a href="source-class-Kotchasan.Date.html#344-361" title="Go to source code">sqlDateTimeToMktime</a>( <span>string <var>$date</var></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่น แปลงวันที่และเวลาของ sql เป็น mktime
+คืนค่าเวลาในรูป mktime.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่น แปลงวันที่และเวลาของ sql เป็น mktime
+คืนค่าเวลาในรูป mktime.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$date</var></dt>
+					<dd>วันที่ในรูปแบบ Y-m-d H:i:s</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						('2016-02-01 00:00:00') [==] 1454259600<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="year" id="_year">
 
 		<td class="attributes"><code>
@@ -488,7 +765,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_year">#</a>
-		<code><a href="source-class-Kotchasan.Date.html#125-136" title="Go to source code">year</a>( <span>integer <var>$mktime</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Date.html#363-375" title="Go to source code">year</a>( <span>integer <var>$mktime</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			<p>อ่านปี คศ.</p>
@@ -514,267 +791,6 @@
 				<div class="list">
 						(mktime(0, 0, 0, 2, 29, 2016)) [==]  2016<br>
 				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="format" id="_format">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_format">#</a>
-		<code><a href="source-class-Kotchasan.Date.html#138-206" title="Go to source code">format</a>( <span>integer|string <var>$time</var> = <span class="php-num">0</span></span>, <span>string <var>$format</var> = <span class="php-quote">''</span></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นแปลงเวลาเป็นวันที่ตามรูปแบบที่กำหนด สามารถคืนค่าวันเดือนปี พศ. ได้ ขึ้นกับไฟล์ภาษา.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นแปลงเวลาเป็นวันที่ตามรูปแบบที่กำหนด สามารถคืนค่าวันเดือนปี พศ. ได้ ขึ้นกับไฟล์ภาษา.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$time</var></dt>
-					<dd>int เวลารูปแบบ Unix timestamp, string เวลารูปแบบ Y-m-d หรือ Y-m-d H:i:s ถ้าไม่ระบุหรือระบุ 0 หมายถึงวันนี้</dd>
-					<dt><var>$format</var></dt>
-					<dd>รูปแบบของวันที่ที่ต้องการ (ถ้าไม่ระบุจะใช้รูปแบบที่มาจากระบบภาษา DATE_FORMAT)</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string<br>วันที่และเวลาตามรูปแบบที่กำหนดโดย $format
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						(0) [!=]  ''<br>
-						(null) [==]  ''<br>
-						(1454259600, 'Y-m-d H:i:s') [==] '2559-02-01 00:00:00'<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="compare" id="_compare">
-
-		<td class="attributes"><code>
-			 public static
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_compare">#</a>
-		<code><a href="source-class-Kotchasan.Date.html#208-291" title="Go to source code">compare</a>( <span>string|integer <var>$begin_date</var></span>, <span>istring|integer <var>$end_date</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่น คำนวนความแตกต่างของวัน (เช่น อายุ).</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น คำนวนความแตกต่างของวัน (เช่น อายุ).</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$begin_date</var></dt>
-					<dd>วันที่เริ่มต้นหรือวันเกิด (Unix timestamp หรือ วันที่ รูปแบบ YYYY-m-d)</dd>
-					<dt><var>$end_date</var></dt>
-					<dd>วันที่สิ้นสุดหรือวันนี้ (Unix timestamp หรือ วันที่ รูปแบบ YYYY-m-d)</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					array<br>คืนค่า จำนวนวัน(ติดลบได้) ปี เดือน วัน [days, year, month, day] ที่แตกต่าง
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						(mktime(0, 0, 0, 2, 1, 2016), mktime(0, 0, 0, 3, 1, 2016)) [==]  array('days' => 29, 'year' => 0,'month' => 1, 'day' => 0)<br>
-						('2016-3-1', '2016-2-1') [==]  array('days' => -29, 'year' => 0,'month' => 1, 'day' => 0)<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="mktimeToSqlDate" id="_mktimeToSqlDate">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_mktimeToSqlDate">#</a>
-		<code><a href="source-class-Kotchasan.Date.html#293-304" title="Go to source code">mktimeToSqlDate</a>( <span>integer <var>$mktime</var> = <span class="php-num">0</span></span> )</code>
-
-		<div class="description short">
-			<p>แปลงวันที่ จาก mktime เป็น Y-m-d สามารถบันทึกลงฐานข้อมูลได้ทันที.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>แปลงวันที่ จาก mktime เป็น Y-m-d สามารถบันทึกลงฐานข้อมูลได้ทันที.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$mktime</var></dt>
-					<dd>เวลารูปแบบ Unix timestamp, ไม่ระบุ เป็นวันนี้</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string<br>คืนค่าวันที่รูป Y-m-d
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						(1453522271) [==]  date('Y-m-d', 1453522271)<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="mktimeToSqlDateTime" id="_mktimeToSqlDateTime">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_mktimeToSqlDateTime">#</a>
-		<code><a href="source-class-Kotchasan.Date.html#306-317" title="Go to source code">mktimeToSqlDateTime</a>( <span>integer <var>$mktime</var> = <span class="php-num">0</span></span> )</code>
-
-		<div class="description short">
-			<p>แปลงวันที่ จาก mktime เป็น Y-m-d H:i:s สามารถบันทึกลงฐานข้อมูลได้ทันที.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>แปลงวันที่ จาก mktime เป็น Y-m-d H:i:s สามารถบันทึกลงฐานข้อมูลได้ทันที.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$mktime</var></dt>
-					<dd>เวลารูปแบบ Unix timestamp, ไม่ระบุ เป็นวันนี้</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string<br>คืนค่า วันที่และเวลาของ mysql เช่น Y-m-d H:i:s
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						(1454259600) [==] '2016-02-01 00:00:00'<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="sqlDateTimeToMktime" id="_sqlDateTimeToMktime">
-
-		<td class="attributes"><code>
-			 public static
-
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_sqlDateTimeToMktime">#</a>
-		<code><a href="source-class-Kotchasan.Date.html#319-334" title="Go to source code">sqlDateTimeToMktime</a>( <span>string <var>$date</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่น แปลงวันที่และเวลาของ sql เป็น mktime.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น แปลงวันที่และเวลาของ sql เป็น mktime.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$date</var></dt>
-					<dd>วันที่ในรูปแบบ Y-m-d H:i:s</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer<br>คืนค่าเวลาในรูป mktime
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						('2016-02-01 00:00:00') [==] 1454259600<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="parse" id="_parse">
-
-		<td class="attributes"><code>
-			 public static
-
-			array|boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_parse">#</a>
-		<code><a href="source-class-Kotchasan.Date.html#336-354" title="Go to source code">parse</a>( <span>string <var>$date</var></span> )</code>
-
-		<div class="description short">
-			<p>แยกวันที่ออกเป็น array.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>แยกวันที่ออกเป็น array.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$date</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					array|boolean<br>array(y, m, d, h, i, s) หรือ array(y, m, d) หากเป้นวันที่อย่างเดียว หรือ false หากไม่ใช่วันที่
-				</div>
-
-
 
 
 		</div>

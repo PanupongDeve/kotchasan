@@ -233,7 +233,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Validator.html#13-99" title="Go to source code">Kotchasan/Validator.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Validator.html#13-101" title="Go to source code">Kotchasan/Validator.php</a>
 		<br>
 	</div>
 
@@ -253,14 +253,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_email">#</a>
-		<code><a href="source-class-Kotchasan.Validator.html#22-44" title="Go to source code">email</a>( <span>string <var>$email</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Validator.html#22-45" title="Go to source code">email</a>( <span>string <var>$email</var></span> )</code>
 
 		<div class="description short">
-			<p>ตรวจสอบความถูกของอีเมล.</p>
+			<p>ตรวจสอบความถูกของอีเมล
+คืนค่า true ถ้ารูปแบบอีเมลถูกต้อง.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ตรวจสอบความถูกของอีเมล.</p>
+			<p>ตรวจสอบความถูกของอีเมล
+คืนค่า true ถ้ารูปแบบอีเมลถูกต้อง.</p>
 
 
 				<h4>Parameters</h4>
@@ -271,7 +273,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>คืนค่า true ถ้ารูปแบบอีเมลถูกต้อง
+					boolean
 				</div>
 
 
@@ -281,47 +283,6 @@
 						('admin@localhost') [==] true<br>
 						('ทดสอบ@localhost') [==] false<br>
 				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="isImage" id="_isImage">
-
-		<td class="attributes"><code>
-			 public static
-
-			array|boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_isImage">#</a>
-		<code><a href="source-class-Kotchasan.Validator.html#46-74" title="Go to source code">isImage</a>( <span>array <var>$excepts</var></span>, <span>array <var>$file_upload</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นตรวจสอบไฟล์อัปโหลดว่าเป็นรูปภาพหรือไม่.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นตรวจสอบไฟล์อัปโหลดว่าเป็นรูปภาพหรือไม่.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$excepts</var></dt>
-					<dd>ชนิดของไฟล์ที่ยอมรับเช่น array('jpg', 'gif', 'png')</dd>
-					<dt><var>$file_upload</var></dt>
-					<dd>รับค่ามาจาก $_FILES</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					array|boolean<br>คืนค่าแอเรย์ [width, height, mime] ของรูปภาพ หรือ  false ถ้าไม่ใช่รูปภาพ
-				</div>
-
-
 
 
 		</div>
@@ -339,7 +300,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_idCard">#</a>
-		<code><a href="source-class-Kotchasan.Validator.html#76-98" title="Go to source code">idCard</a>( <span>string <var>$id</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Validator.html#47-69" title="Go to source code">idCard</a>( <span>string <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสำหรับตรวจสอบความถูกต้องของเลขประชาชน.</p>
@@ -366,6 +327,49 @@
 						('0123456789016') [==] true<br>
 						('0123456789015') [==] false<br>
 				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isImage" id="_isImage">
+
+		<td class="attributes"><code>
+			 public static
+
+			array|boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isImage">#</a>
+		<code><a href="source-class-Kotchasan.Validator.html#71-100" title="Go to source code">isImage</a>( <span>array <var>$excepts</var></span>, <span>array <var>$file_upload</var></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นตรวจสอบไฟล์อัปโหลดว่าเป็นรูปภาพหรือไม่
+คืนค่าแอเรย์ [width, height, mime] ของรูปภาพ หรือ  false ถ้าไม่ใช่รูปภาพ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นตรวจสอบไฟล์อัปโหลดว่าเป็นรูปภาพหรือไม่
+คืนค่าแอเรย์ [width, height, mime] ของรูปภาพ หรือ  false ถ้าไม่ใช่รูปภาพ.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$excepts</var></dt>
+					<dd>ชนิดของไฟล์ที่ยอมรับเช่น array('jpg', 'gif', 'png')</dd>
+					<dt><var>$file_upload</var></dt>
+					<dd>รับค่ามาจาก $_FILES</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array|boolean
+				</div>
+
+
 
 
 		</div>

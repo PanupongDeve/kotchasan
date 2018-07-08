@@ -507,7 +507,7 @@
 </span><span id="240" class="l"><a href="#240"> 240: </a>        <span class="php-comment">//Normalize line breaks</span>
 </span><span id="241" class="l"><a href="#241"> 241: </a>        <span class="php-var">$str</span> = <span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/(\r\n|\r|\n)/ms'</span>, <span class="php-quote">&quot;\n&quot;</span>, <span class="php-var">$str</span>);
 </span><span id="242" class="l"><a href="#242"> 242: </a>        <span class="php-keyword1">echo</span> <span class="php-keyword2">gmdate</span>(<span class="php-quote">'Y-m-d H:i:s'</span>).<span class="php-quote">&quot;\t&quot;</span>.<span class="php-keyword2">str_replace</span>(
-</span><span id="243" class="l"><a href="#243"> 243: </a>          <span class="php-quote">&quot;\n&quot;</span>, <span class="php-quote">&quot;\n                   \t                  &quot;</span>, <span class="php-keyword2">trim</span>(<span class="php-var">$str</span>)
+</span><span id="243" class="l"><a href="#243"> 243: </a>          <span class="php-quote">&quot;\n&quot;</span>, <span class="php-quote">&quot;\n  \t &quot;</span>, <span class="php-keyword2">trim</span>(<span class="php-var">$str</span>)
 </span><span id="244" class="l"><a href="#244"> 244: </a>        ).<span class="php-quote">&quot;\n&quot;</span>;
 </span><span id="245" class="l"><a href="#245"> 245: </a>    }
 </span><span id="246" class="l"><a href="#246"> 246: </a>    }

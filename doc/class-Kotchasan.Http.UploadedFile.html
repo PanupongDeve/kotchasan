@@ -187,7 +187,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Http.UploadedFile.html#17-440" title="Go to source code">Kotchasan/Http/UploadedFile.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Http.UploadedFile.html#17-457" title="Go to source code">Kotchasan/Http/UploadedFile.php</a>
 		<br>
 	</div>
 
@@ -207,7 +207,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#81-99" title="Go to source code">__construct</a>( <span>string <var>$path</var></span>, <span>string <var>$originalName</var></span>, <span>string <var>$mimeType</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$size</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$error</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$sapi</var> = <span class="php-keyword1">true</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#89-107" title="Go to source code">__construct</a>( <span>string <var>$path</var></span>, <span>string <var>$originalName</var></span>, <span>string <var>$mimeType</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$size</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$error</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$sapi</var> = <span class="php-keyword1">true</span></span> )</code>
 
 		<div class="description short">
 			<p>ไฟล์อัปโหลด.</p>
@@ -240,47 +240,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getStream" id="_getStream">
-
-		<td class="attributes"><code>
-			 public 
-
-			StreamInterface
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getStream">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#101-118" title="Go to source code">getStream</a>( )</code>
-
-		<div class="description short">
-			<p>ส่งออกไฟล์อัปโหลดเป็น Stream.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ส่งออกไฟล์อัปโหลดเป็น Stream.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					StreamInterface
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>ถ้าไม่พบไฟล์
-				</div>
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Http.Message.UploadedFileInterface.html#_getStream">Psr\Http\Message\UploadedFileInterface::getStream()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="moveTo" id="_moveTo">
+	<tr data-order="copyTo" id="_copyTo">
 
 		<td class="attributes"><code>
 			 public 
@@ -291,15 +251,17 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_moveTo">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#120-157" title="Go to source code">moveTo</a>( <span>string <var>$targetPath</var></span> )</code>
+		<a class="anchor" href="#_copyTo">#</a>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#109-133" title="Go to source code">copyTo</a>( <span>string <var>$targetPath</var></span> )</code>
 
 		<div class="description short">
-			<p>ย้ายไฟล์อัปโหลดไปยังที่อยู่ใหม่.</p>
+			<p>สำเนาไฟล์อัปโหลดไปยังที่อยู่ใหม่
+คืนค่า true ถ้าอัปโหลดเรียบร้อย.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ย้ายไฟล์อัปโหลดไปยังที่อยู่ใหม่.</p>
+			<p>สำเนาไฟล์อัปโหลดไปยังที่อยู่ใหม่
+คืนค่า true ถ้าอัปโหลดเรียบร้อย.</p>
 
 
 				<h4>Parameters</h4>
@@ -310,265 +272,75 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>true ถ้าอัปโหลดเรียบร้อย
+					boolean
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>ข้อผิดพลาดการอัปโหลด<br>
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>ไดเรคทอรี่ไม่สามารถเขียนได้
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="cropImage" id="_cropImage">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean|string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_cropImage">#</a>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#135-161" title="Go to source code">cropImage</a>( <span>array <var>$exts</var></span>, <span>string <var>$targetPath</var></span>, <span>integer <var>$width</var></span>, <span>integer <var>$height</var></span>, <span>string <var>$watermark</var> = <span class="php-quote">''</span></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่น ตัดรูปภาพ ตามขนาดที่กำหนด และย้ายไปยังปลายทาง
+รูปภาพปลายทางจะมีขนาดเท่าที่กำหนด หากรูปภาพต้นฉบับมีขนาดหรืออัตราส่วนไม่พอดีกับขนาดของภาพปลายทาง
+รูปภาพจะถูกตัดขอบออกหรือจะถูกขยาย เพื่อให้พอดีกับรูปภาพปลายทางที่ต้องการ
+สำเร็จคืนค่า true ไม่สำเร็จคืนค่าข้อความผิดพลาด.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่น ตัดรูปภาพ ตามขนาดที่กำหนด และย้ายไปยังปลายทาง
+รูปภาพปลายทางจะมีขนาดเท่าที่กำหนด หากรูปภาพต้นฉบับมีขนาดหรืออัตราส่วนไม่พอดีกับขนาดของภาพปลายทาง
+รูปภาพจะถูกตัดขอบออกหรือจะถูกขยาย เพื่อให้พอดีกับรูปภาพปลายทางที่ต้องการ
+สำเร็จคืนค่า true ไม่สำเร็จคืนค่าข้อความผิดพลาด.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$exts</var></dt>
+					<dd>นามสกุลของไฟล์รูปภาพที่ยอมรับ เช่น [jpg, gif, png]</dd>
+					<dt><var>$targetPath</var></dt>
+					<dd>path และชื่อไฟล์ของไฟล์รูปภาพปลายทาง</dd>
+					<dt><var>$width</var></dt>
+					<dd>ความกว้างของรูปภาพที่ต้องการ</dd>
+					<dt><var>$height</var></dt>
+					<dd>ความสูงของรูปภาพที่ต้องการ</dd>
+					<dt><var>$watermark</var></dt>
+					<dd>(optional) ข้อความลายน้ำ</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean|string
 				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
 					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>ข้อผิดพลาดหากที่อยู่ปลายทางไม่สามารถเขียนได้<br>
-					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>ข้อผิดพลาดการอัปโหลด
+					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>ข้อผิดพลาดไม่สามารถสร้างรูปภาพได้
 				</div>
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Http.Message.UploadedFileInterface.html#_moveTo">Psr\Http\Message\UploadedFileInterface::moveTo()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getSize" id="_getSize">
-
-		<td class="attributes"><code>
-			 public 
-
-			integer|null
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getSize">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#159-167" title="Go to source code">getSize</a>( )</code>
-
-		<div class="description short">
-			<p>อ่านขนาดของไฟล์อัปโหลด.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่านขนาดของไฟล์อัปโหลด.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer|null
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Http.Message.UploadedFileInterface.html#_getSize">Psr\Http\Message\UploadedFileInterface::getSize()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getError" id="_getError">
-
-		<td class="attributes"><code>
-			 public 
-
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getError">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#169-177" title="Go to source code">getError</a>( )</code>
-
-		<div class="description short">
-			<p>อ่านข้อผิดพลาดของไฟล์อัปโหลด.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่านข้อผิดพลาดของไฟล์อัปโหลด.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer<br>คืนค่า UPLOAD_ERR_XXX
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Http.Message.UploadedFileInterface.html#_getError">Psr\Http\Message\UploadedFileInterface::getError()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="hasError" id="_hasError">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_hasError">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#179-191" title="Go to source code">hasError</a>( )</code>
-
-		<div class="description short">
-			<p>ตรวจสอบว่ามีข้อผิดพลาดการอัปโหลดหรือไม่.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ตรวจสอบว่ามีข้อผิดพลาดการอัปโหลดหรือไม่.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>คืนค่า false ถ้าไม่มีไฟล์อัปโหลดหรืออัปโหลดสำเร็จ, คืนค่า true ถ้ามีข้อผิดพลาด
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getErrorMessage" id="_getErrorMessage">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getErrorMessage">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#193-229" title="Go to source code">getErrorMessage</a>( )</code>
-
-		<div class="description short">
-			<p>อ่านข้อผิดพลาดของไฟล์อัปโหลด เป็นข้อความ</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่านข้อผิดพลาดของไฟล์อัปโหลด เป็นข้อความ</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getTempFileName" id="_getTempFileName">
-
-		<td class="attributes"><code>
-			 public 
-
-			string|null
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getTempFileName">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#231-239" title="Go to source code">getTempFileName</a>( )</code>
-
-		<div class="description short">
-			<p>อ่านไฟล์รวม path จากตัวแปร tmp_name.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่านไฟล์รวม path จากตัวแปร tmp_name.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string|null
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getClientFilename" id="_getClientFilename">
-
-		<td class="attributes"><code>
-			 public 
-
-			string|null
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getClientFilename">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#241-249" title="Go to source code">getClientFilename</a>( )</code>
-
-		<div class="description short">
-			<p>อ่านชื่อไฟล์ (ต้นฉบับ) ของไฟล์ที่อัปโหลด.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่านชื่อไฟล์ (ต้นฉบับ) ของไฟล์ที่อัปโหลด.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string|null
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Http.Message.UploadedFileInterface.html#_getClientFilename">Psr\Http\Message\UploadedFileInterface::getClientFilename()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getClientMediaType" id="_getClientMediaType">
-
-		<td class="attributes"><code>
-			 public 
-
-			string|null
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getClientMediaType">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#251-259" title="Go to source code">getClientMediaType</a>( )</code>
-
-		<div class="description short">
-			<p>อ่าน MIME Type ของไฟล์.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่าน MIME Type ของไฟล์.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string|null
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Http.Message.UploadedFileInterface.html#_getClientMediaType">Psr\Http\Message\UploadedFileInterface::getClientMediaType()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -584,7 +356,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getCleanFilename">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#261-273" title="Go to source code">getCleanFilename</a>( <span>string <var>$replace</var> = <span class="php-quote">'_'</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#163-175" title="Go to source code">getCleanFilename</a>( <span>string <var>$replace</var> = <span class="php-quote">'_'</span></span> )</code>
 
 		<div class="description short">
 			<p>อ่านชื่อไฟล์จากไฟล์ที่อัปโหลดและตัดตัวอักษที่ไม่สามารถใช้เป็นชื่อไฟล์ได้ออก
@@ -627,20 +399,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getClientFileExt">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#275-288" title="Go to source code">getClientFileExt</a>( )</code>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#177-190" title="Go to source code">getClientFileExt</a>( )</code>
 
 		<div class="description short">
-			<p>อ่านนามสกุลของไฟล์อัปโหลด.</p>
+			<p>คืนค่านามสกุลของไฟล์อัปโหลด ตัวพิมพ์เล็ก เช่น jpg.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>อ่านนามสกุลของไฟล์อัปโหลด.</p>
+			<p>คืนค่านามสกุลของไฟล์อัปโหลด ตัวพิมพ์เล็ก เช่น jpg.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					string<br>คืนค่าตัวพิมพ์เล็ก เช่น jpg
+					string
 				</div>
 
 
@@ -649,37 +421,142 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="validFileExt" id="_validFileExt">
+	<tr data-order="getClientFilename" id="_getClientFilename">
 
 		<td class="attributes"><code>
 			 public 
 
-			boolean
+			string|null
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_validFileExt">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#290-300" title="Go to source code">validFileExt</a>( <span>array <var>$exts</var></span> )</code>
+		<a class="anchor" href="#_getClientFilename">#</a>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#192-200" title="Go to source code">getClientFilename</a>( )</code>
 
 		<div class="description short">
-			<p>ตรวจสอบนามสกุลของไฟล์อัปโหลด.</p>
+			<p>อ่านชื่อไฟล์ (ต้นฉบับ) ของไฟล์ที่อัปโหลด.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ตรวจสอบนามสกุลของไฟล์อัปโหลด.</p>
+			<p>อ่านชื่อไฟล์ (ต้นฉบับ) ของไฟล์ที่อัปโหลด.</p>
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$exts</var></dt>
-					<dd>รายการนามสกุลของไฟล์อัปโหลดที่ยอมรับ เช่น [jpg, gif, png]</dd>
-				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>คืนค่า true ถ้านามสกุลของไฟล์อัปโหลดอยู่ใน $exts
+					string|null
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Http.Message.UploadedFileInterface.html#_getClientFilename">Psr\Http\Message\UploadedFileInterface::getClientFilename()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getClientMediaType" id="_getClientMediaType">
+
+		<td class="attributes"><code>
+			 public 
+
+			string|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getClientMediaType">#</a>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#202-210" title="Go to source code">getClientMediaType</a>( )</code>
+
+		<div class="description short">
+			<p>อ่าน MIME Type ของไฟล์.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>อ่าน MIME Type ของไฟล์.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string|null
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Http.Message.UploadedFileInterface.html#_getClientMediaType">Psr\Http\Message\UploadedFileInterface::getClientMediaType()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getError" id="_getError">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getError">#</a>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#212-221" title="Go to source code">getError</a>( )</code>
+
+		<div class="description short">
+			<p>อ่านข้อผิดพลาดของไฟล์อัปโหลด
+คืนค่า UPLOAD_ERR_XXX.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>อ่านข้อผิดพลาดของไฟล์อัปโหลด
+คืนค่า UPLOAD_ERR_XXX.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Http.Message.UploadedFileInterface.html#_getError">Psr\Http\Message\UploadedFileInterface::getError()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getErrorMessage" id="_getErrorMessage">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getErrorMessage">#</a>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#223-259" title="Go to source code">getErrorMessage</a>( )</code>
+
+		<div class="description short">
+			<p>อ่านข้อผิดพลาดของไฟล์อัปโหลด เป็นข้อความ</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>อ่านข้อผิดพลาดของไฟล์อัปโหลด เป็นข้อความ</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
 				</div>
 
 
@@ -688,32 +565,108 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="hasUploadFile" id="_hasUploadFile">
+	<tr data-order="getSize" id="_getSize">
 
 		<td class="attributes"><code>
 			 public 
 
-			boolean
+			integer|null
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_hasUploadFile">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#302-310" title="Go to source code">hasUploadFile</a>( )</code>
+		<a class="anchor" href="#_getSize">#</a>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#261-269" title="Go to source code">getSize</a>( )</code>
 
 		<div class="description short">
-			<p>ตรวจสอบไฟล์อัปโหลด.</p>
+			<p>อ่านขนาดของไฟล์อัปโหลด.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ตรวจสอบไฟล์อัปโหลด.</p>
+			<p>อ่านขนาดของไฟล์อัปโหลด.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>คืนค่า true ถ้ามีไฟล์อัปโหลด
+					integer|null
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Http.Message.UploadedFileInterface.html#_getSize">Psr\Http\Message\UploadedFileInterface::getSize()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getStream" id="_getStream">
+
+		<td class="attributes"><code>
+			 public 
+
+			StreamInterface
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getStream">#</a>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#271-288" title="Go to source code">getStream</a>( )</code>
+
+		<div class="description short">
+			<p>ส่งออกไฟล์อัปโหลดเป็น Stream.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ส่งออกไฟล์อัปโหลดเป็น Stream.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					StreamInterface
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>ถ้าไม่พบไฟล์
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Http.Message.UploadedFileInterface.html#_getStream">Psr\Http\Message\UploadedFileInterface::getStream()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTempFileName" id="_getTempFileName">
+
+		<td class="attributes"><code>
+			 public 
+
+			string|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTempFileName">#</a>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#290-298" title="Go to source code">getTempFileName</a>( )</code>
+
+		<div class="description short">
+			<p>อ่านไฟล์รวม path จากตัวแปร tmp_name.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>อ่านไฟล์รวม path จากตัวแปร tmp_name.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string|null
 				</div>
 
 
@@ -734,7 +687,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getUploadSize">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#312-338" title="Go to source code">getUploadSize</a>( <span>boolean <var>$return_byte</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#300-326" title="Go to source code">getUploadSize</a>( <span>boolean <var>$return_byte</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			<p>อ่านการตั้งค่าขนาดของไฟลอัปโหลด.</p>
@@ -761,7 +714,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="copyTo" id="_copyTo">
+	<tr data-order="hasError" id="_hasError">
 
 		<td class="attributes"><code>
 			 public 
@@ -772,15 +725,89 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_copyTo">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#340-363" title="Go to source code">copyTo</a>( <span>string <var>$targetPath</var></span> )</code>
+		<a class="anchor" href="#_hasError">#</a>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#328-341" title="Go to source code">hasError</a>( )</code>
 
 		<div class="description short">
-			<p>สำเนาไฟล์อัปโหลดไปยังที่อยู่ใหม่.</p>
+			<p>ตรวจสอบว่ามีข้อผิดพลาดการอัปโหลดหรือไม่
+คืนค่า false ถ้าไม่มีไฟล์อัปโหลดหรืออัปโหลดสำเร็จ, คืนค่า true ถ้ามีข้อผิดพลาด.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>สำเนาไฟล์อัปโหลดไปยังที่อยู่ใหม่.</p>
+			<p>ตรวจสอบว่ามีข้อผิดพลาดการอัปโหลดหรือไม่
+คืนค่า false ถ้าไม่มีไฟล์อัปโหลดหรืออัปโหลดสำเร็จ, คืนค่า true ถ้ามีข้อผิดพลาด.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hasUploadFile" id="_hasUploadFile">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hasUploadFile">#</a>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#343-352" title="Go to source code">hasUploadFile</a>( )</code>
+
+		<div class="description short">
+			<p>ตรวจสอบไฟล์อัปโหลด
+คืนค่า true ถ้ามีไฟล์อัปโหลด.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ตรวจสอบไฟล์อัปโหลด
+คืนค่า true ถ้ามีไฟล์อัปโหลด.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="moveTo" id="_moveTo">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_moveTo">#</a>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#354-392" title="Go to source code">moveTo</a>( <span>string <var>$targetPath</var></span> )</code>
+
+		<div class="description short">
+			<p>ย้ายไฟล์อัปโหลดไปยังที่อยู่ใหม่
+คืนค่า true ถ้าอัปโหลดเรียบร้อย.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ย้ายไฟล์อัปโหลดไปยังที่อยู่ใหม่
+คืนค่า true ถ้าอัปโหลดเรียบร้อย.</p>
 
 
 				<h4>Parameters</h4>
@@ -791,73 +818,19 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>true ถ้าอัปโหลดเรียบร้อย
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>ข้อผิดพลาดการอัปโหลด<br>
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>ไดเรคทอรี่ไม่สามารถเขียนได้
-				</div>
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="cropImage" id="_cropImage">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean|string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_cropImage">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#365-390" title="Go to source code">cropImage</a>( <span>array <var>$exts</var></span>, <span>string <var>$targetPath</var></span>, <span>integer <var>$width</var></span>, <span>integer <var>$height</var></span>, <span>string <var>$watermark</var> = <span class="php-quote">''</span></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่น ตัดรูปภาพ ตามขนาดที่กำหนด และย้ายไปยังปลายทาง
-รูปภาพปลายทางจะมีขนาดเท่าที่กำหนด หากรูปภาพต้นฉบับมีขนาดหรืออัตราส่วนไม่พอดีกับขนาดของภาพปลายทาง
-รูปภาพจะถูกตัดขอบออกหรือจะถูกขยาย เพื่อให้พอดีกับรูปภาพปลายทางที่ต้องการ.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น ตัดรูปภาพ ตามขนาดที่กำหนด และย้ายไปยังปลายทาง
-รูปภาพปลายทางจะมีขนาดเท่าที่กำหนด หากรูปภาพต้นฉบับมีขนาดหรืออัตราส่วนไม่พอดีกับขนาดของภาพปลายทาง
-รูปภาพจะถูกตัดขอบออกหรือจะถูกขยาย เพื่อให้พอดีกับรูปภาพปลายทางที่ต้องการ.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$exts</var></dt>
-					<dd>นามสกุลของไฟล์รูปภาพที่ยอมรับ เช่น [jpg, gif, png]</dd>
-					<dt><var>$targetPath</var></dt>
-					<dd>path และชื่อไฟล์ของไฟล์รูปภาพปลายทาง</dd>
-					<dt><var>$width</var></dt>
-					<dd>ความกว้างของรูปภาพที่ต้องการ</dd>
-					<dt><var>$height</var></dt>
-					<dd>ความสูงของรูปภาพที่ต้องการ</dd>
-					<dt><var>$watermark</var></dt>
-					<dd>(optional) ข้อความลายน้ำ</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean|string<br>สำเร็จคืนค่า true ไม่สำเร็จคืนค่าข้อความผิดพลาด
+					boolean
 				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
 					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>ข้อผิดพลาดหากที่อยู่ปลายทางไม่สามารถเขียนได้<br>
-					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>ข้อผิดพลาดไม่สามารถสร้างรูปภาพได้
+					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>ข้อผิดพลาดการอัปโหลด
 				</div>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Http.Message.UploadedFileInterface.html#_moveTo">Psr\Http\Message\UploadedFileInterface::moveTo()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -873,14 +846,15 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_resizeImage">#</a>
-		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#392-416" title="Go to source code">resizeImage</a>( <span>array <var>$exts</var></span>, <span>string <var>$target</var></span>, <span>string <var>$name</var></span>, <span>integer <var>$width</var></span>, <span>string <var>$watermark</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#394-419" title="Go to source code">resizeImage</a>( <span>array <var>$exts</var></span>, <span>string <var>$target</var></span>, <span>string <var>$name</var></span>, <span>integer <var>$width</var></span>, <span>string <var>$watermark</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			<p>ปรับขนาดของรูปภาพอัปโหลด โดยรักษาอัตราส่วนของภาพตามความกว้างที่ต้องการ
 หากรูปภาพมีขนาดเล็กกว่าที่กำหนด จะเป็นการ copy file
 หากรูปภาพมีความสูง หรือความกว้างมากกว่า $width
 จะถูกปรับขนาดให้มีขนาดไม่เกิน $width (ทั้งความสูงและความกว้าง)
-และเปลี่ยนชนิดของภาพเป็น jpg.</p>
+และเปลี่ยนชนิดของภาพเป็น jpg
+คืนค่าแอเรย์ [name, width, height, mime] ของรูปภาพปลายทาง หรือ false ถ้าไม่สามารถดำเนินการได้.</p>
 		</div>
 
 		<div class="description detailed hidden">
@@ -888,7 +862,8 @@
 หากรูปภาพมีขนาดเล็กกว่าที่กำหนด จะเป็นการ copy file
 หากรูปภาพมีความสูง หรือความกว้างมากกว่า $width
 จะถูกปรับขนาดให้มีขนาดไม่เกิน $width (ทั้งความสูงและความกว้าง)
-และเปลี่ยนชนิดของภาพเป็น jpg.</p>
+และเปลี่ยนชนิดของภาพเป็น jpg
+คืนค่าแอเรย์ [name, width, height, mime] ของรูปภาพปลายทาง หรือ false ถ้าไม่สามารถดำเนินการได้.</p>
 
 
 				<h4>Parameters</h4>
@@ -907,7 +882,48 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					array|boolean<br>คืนค่าแอเรย์ [name, width, height, mime] ของรูปภาพปลายทาง หรือ false ถ้าไม่สามารถดำเนินการได้
+					array|boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validFileExt" id="_validFileExt">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validFileExt">#</a>
+		<code><a href="source-class-Kotchasan.Http.UploadedFile.html#421-432" title="Go to source code">validFileExt</a>( <span>array <var>$exts</var></span> )</code>
+
+		<div class="description short">
+			<p>ตรวจสอบนามสกุลของไฟล์อัปโหลด
+คืนค่า true ถ้านามสกุลของไฟล์อัปโหลดอยู่ใน $exts.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ตรวจสอบนามสกุลของไฟล์อัปโหลด
+คืนค่า true ถ้านามสกุลของไฟล์อัปโหลดอยู่ใน $exts.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$exts</var></dt>
+					<dd>รายการนามสกุลของไฟล์อัปโหลดที่ยอมรับ เช่น [jpg, gif, png]</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
 				</div>
 
 

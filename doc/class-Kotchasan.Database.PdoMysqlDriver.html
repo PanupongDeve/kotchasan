@@ -216,7 +216,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#15-420" title="Go to source code">Kotchasan/Database/PdoMysqlDriver.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#15-433" title="Go to source code">Kotchasan/Database/PdoMysqlDriver.php</a>
 		<br>
 	</div>
 
@@ -224,6 +224,38 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="close" id="_close">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_close">#</a>
+		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#24-30" title="Go to source code">close</a>( )</code>
+
+		<div class="description short">
+			<p>close database.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>close database.</p>
+
+
+
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-Kotchasan.Database.Driver.html#_close">Kotchasan\Database\Driver::close()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="connect" id="_connect">
 
 		<td class="attributes"><code>
@@ -236,7 +268,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_connect">#</a>
-		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#24-60" title="Go to source code">connect</a>( <span>array <var>$param</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#32-68" title="Go to source code">connect</a>( <span>array <var>$param</var></span> )</code>
 
 		<div class="description short">
 			<p>เชื่อมต่อ database.</p>
@@ -263,88 +295,6 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="doCustomQuery" id="_doCustomQuery">
-
-		<td class="attributes"><code>
-			 protected 
-
-			array|boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_doCustomQuery">#</a>
-		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#62-105" title="Go to source code">doCustomQuery</a>( <span>string <var>$sql</var></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
-
-		<div class="description short">
-			<p>ประมวลผลคำสั่ง SQL สำหรับสอบถามข้อมูล คืนค่าผลลัพท์เป็นแอเรย์ของข้อมูลที่ตรงตามเงื่อนไข.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ประมวลผลคำสั่ง SQL สำหรับสอบถามข้อมูล คืนค่าผลลัพท์เป็นแอเรย์ของข้อมูลที่ตรงตามเงื่อนไข.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$sql</var></dt>
-					<dd>query string</dd>
-					<dt><var>$values</var></dt>
-					<dd>ถ้าระบุตัวแปรนี้จะเป็นการบังคับใช้คำสั่ง prepare แทน query</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					array|boolean<br>คืนค่าผลการทำงานเป็น record ของข้อมูลทั้งหมดที่ตรงตามเงื่อนไข หรือคืนค่า false หามีข้อผิดพลาด
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="doQuery" id="_doQuery">
-
-		<td class="attributes"><code>
-			 protected 
-
-			integer|boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_doQuery">#</a>
-		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#107-131" title="Go to source code">doQuery</a>( <span>string <var>$sql</var></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
-
-		<div class="description short">
-			<p>ประมวลผลคำสั่ง SQL ที่ไม่ต้องการผลลัพท์ เช่น CREATE INSERT UPDATE.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ประมวลผลคำสั่ง SQL ที่ไม่ต้องการผลลัพท์ เช่น CREATE INSERT UPDATE.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$sql</var></dt>
-					<dd></dd>
-					<dt><var>$values</var></dt>
-					<dd>ถ้าระบุตัวแปรนี้จะเป็นการบังคับใช้คำสั่ง prepare แทน query</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer|boolean<br>สำเร็จคืนค่าจำนวนแถวที่มีผล ไม่สำเร็จคืนค่า false
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="fieldCount" id="_fieldCount">
 
 		<td class="attributes"><code>
@@ -357,7 +307,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_fieldCount">#</a>
-		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#133-145" title="Go to source code">fieldCount</a>( <span>resource <var>$res</var>,…</span> )</code>
+		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#70-82" title="Go to source code">fieldCount</a>( <span>resource <var>$res</var>,…</span> )</code>
 
 		<div class="description short">
 			<p>จำนวนฟิลด์ทั้งหมดในผลลัพท์จากการ query.</p>
@@ -396,7 +346,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getFields">#</a>
-		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#147-163" title="Go to source code">getFields</a>( )</code>
+		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#84-100" title="Go to source code">getFields</a>( )</code>
 
 		<div class="description short">
 			<p>รายชื่อฟิลด์ทั้งหมดจากผลัพท์จองการ query.</p>
@@ -430,14 +380,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_insert">#</a>
-		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#196-218" title="Go to source code">insert</a>( <span>string <var>$table_name</var></span>, <span>array|object <var>$save</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#102-125" title="Go to source code">insert</a>( <span>string <var>$table_name</var></span>, <span>array|object <var>$save</var></span> )</code>
 
 		<div class="description short">
-			<p>ฟังก์ชั่นเพิ่มข้อมูลใหม่ลงในตาราง.</p>
+			<p>ฟังก์ชั่นเพิ่มข้อมูลใหม่ลงในตาราง
+สำเร็จ คืนค่า id ที่เพิ่ม ผิดพลาด คืนค่า null.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นเพิ่มข้อมูลใหม่ลงในตาราง.</p>
+			<p>ฟังก์ชั่นเพิ่มข้อมูลใหม่ลงในตาราง
+สำเร็จ คืนค่า id ที่เพิ่ม ผิดพลาด คืนค่า null.</p>
 
 
 				<h4>Parameters</h4>
@@ -450,7 +402,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					integer|null<br>สำเร็จ คืนค่า id ที่เพิ่ม ผิดพลาด คืนค่า null
+					integer|null
 				</div>
 
 
@@ -471,18 +423,24 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_insertOrUpdate">#</a>
-		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#220-250" title="Go to source code">insertOrUpdate</a>( <span>string <var>$table_name</var></span>, <span>array|object <var>$save</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#127-160" title="Go to source code">insertOrUpdate</a>( <span>string <var>$table_name</var></span>, <span>array|object <var>$save</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นเพิ่มข้อมูลใหม่ลงในตาราง
 ถ้ามีข้อมูลเดิมอยู่แล้วจะเป็นการอัปเดท
-(ข้อมูลเดิมตาม KEY ที่เป็น UNIQUE).</p>
+(ข้อมูลเดิมตาม KEY ที่เป็น UNIQUE)
+insert คืนค่า id ที่เพิ่ม
+update คืนค่า 0
+ผิดพลาด คืนค่า null.</p>
 		</div>
 
 		<div class="description detailed hidden">
 			<p>ฟังก์ชั่นเพิ่มข้อมูลใหม่ลงในตาราง
 ถ้ามีข้อมูลเดิมอยู่แล้วจะเป็นการอัปเดท
-(ข้อมูลเดิมตาม KEY ที่เป็น UNIQUE).</p>
+(ข้อมูลเดิมตาม KEY ที่เป็น UNIQUE)
+insert คืนค่า id ที่เพิ่ม
+update คืนค่า 0
+ผิดพลาด คืนค่า null.</p>
 
 
 				<h4>Parameters</h4>
@@ -495,7 +453,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					integer|null<br>insert คืนค่า id ที่เพิ่ม, update คืนค่า 0, ผิดพลาด คืนค่า null
+					integer|null
 				</div>
 
 
@@ -516,14 +474,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_makeQuery">#</a>
-		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#252-318" title="Go to source code">makeQuery</a>( <span>array <var>$sqls</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#162-232" title="Go to source code">makeQuery</a>( <span>array <var>$sqls</var></span> )</code>
 
 		<div class="description short">
-			<p>ฟังก์ชั่นสร้างคำสั่ง sql query.</p>
+			<p>ฟังก์ชั่นสร้างคำสั่ง sql query
+คืนค่า sql command.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นสร้างคำสั่ง sql query.</p>
+			<p>ฟังก์ชั่นสร้างคำสั่ง sql query
+คืนค่า sql command.</p>
 
 
 				<h4>Parameters</h4>
@@ -534,7 +494,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					string<br>sql command
+					string
 				</div>
 
 
@@ -564,14 +524,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_select">#</a>
-		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#320-355" title="Go to source code">select</a>( <span>string <var>$table_name</var></span>, <span>mixed <var>$condition</var></span>, <span>array <var>$sort</var> = <span class="php-keyword1">array</span>()</span>, <span>integer <var>$limit</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#234-270" title="Go to source code">select</a>( <span>string <var>$table_name</var></span>, <span>mixed <var>$condition</var></span>, <span>array <var>$sort</var> = <span class="php-keyword1">array</span>()</span>, <span>integer <var>$limit</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
-			<p>เรียกดูข้อมูล.</p>
+			<p>เรียกดูข้อมูล
+คืนค่าผลลัพท์ในรูป array ถ้าไม่สำเร็จ คืนค่าแอเรย์ว่าง.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>เรียกดูข้อมูล.</p>
+			<p>เรียกดูข้อมูล
+คืนค่าผลลัพท์ในรูป array ถ้าไม่สำเร็จ คืนค่าแอเรย์ว่าง.</p>
 
 
 				<h4>Parameters</h4>
@@ -588,7 +550,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					array<br>ผลลัพท์ในรูป array ถ้าไม่สำเร็จ คืนค่าแอเรย์ว่าง
+					array
 				</div>
 
 
@@ -609,14 +571,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_selectDB">#</a>
-		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#357-371" title="Go to source code">selectDB</a>( <span>string <var>$database</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#272-287" title="Go to source code">selectDB</a>( <span>string <var>$database</var></span> )</code>
 
 		<div class="description short">
-			<p>เลือกฐานข้อมูล.</p>
+			<p>เลือกฐานข้อมูล
+คืนค่า false หากไม่สำเร็จ.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>เลือกฐานข้อมูล.</p>
+			<p>เลือกฐานข้อมูล
+คืนค่า false หากไม่สำเร็จ.</p>
 
 
 				<h4>Parameters</h4>
@@ -627,7 +591,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>false หากไม่สำเร็จ
+					boolean
 				</div>
 
 
@@ -648,14 +612,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#373-411" title="Go to source code">update</a>( <span>string <var>$table_name</var></span>, <span>mixed <var>$condition</var></span>, <span>array|object <var>$save</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#289-328" title="Go to source code">update</a>( <span>string <var>$table_name</var></span>, <span>mixed <var>$condition</var></span>, <span>array|object <var>$save</var></span> )</code>
 
 		<div class="description short">
-			<p>ฟังก์ชั่นแก้ไขข้อมูล.</p>
+			<p>ฟังก์ชั่นแก้ไขข้อมูล
+สำเร็จ คืนค่า true, ผิดพลาด คืนค่า false.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นแก้ไขข้อมูล.</p>
+			<p>ฟังก์ชั่นแก้ไขข้อมูล
+สำเร็จ คืนค่า true, ผิดพลาด คืนค่า false.</p>
 
 
 				<h4>Parameters</h4>
@@ -670,7 +636,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>สำเร็จ คืนค่า true, ผิดพลาด คืนค่า false
+					boolean
 				</div>
 
 
@@ -679,34 +645,88 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="close" id="_close">
+	<tr data-order="doCustomQuery" id="_doCustomQuery">
 
 		<td class="attributes"><code>
-			 public 
+			 protected 
 
-			
+			array|boolean
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_close">#</a>
-		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#413-419" title="Go to source code">close</a>( )</code>
+		<a class="anchor" href="#_doCustomQuery">#</a>
+		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#330-374" title="Go to source code">doCustomQuery</a>( <span>string <var>$sql</var></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
-			<p>close database.</p>
+			<p>ประมวลผลคำสั่ง SQL สำหรับสอบถามข้อมูล คืนค่าผลลัพท์เป็นแอเรย์ของข้อมูลที่ตรงตามเงื่อนไข
+คืนค่าผลการทำงานเป็น record ของข้อมูลทั้งหมดที่ตรงตามเงื่อนไข หรือคืนค่า false หามีข้อผิดพลาด.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>close database.</p>
+			<p>ประมวลผลคำสั่ง SQL สำหรับสอบถามข้อมูล คืนค่าผลลัพท์เป็นแอเรย์ของข้อมูลที่ตรงตามเงื่อนไข
+คืนค่าผลการทำงานเป็น record ของข้อมูลทั้งหมดที่ตรงตามเงื่อนไข หรือคืนค่า false หามีข้อผิดพลาด.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd>query string</dd>
+					<dt><var>$values</var></dt>
+					<dd>ถ้าระบุตัวแปรนี้จะเป็นการบังคับใช้คำสั่ง prepare แทน query</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array|boolean
+				</div>
 
 
 
 
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="doQuery" id="_doQuery">
+
+		<td class="attributes"><code>
+			 protected 
+
+			integer|boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_doQuery">#</a>
+		<code><a href="source-class-Kotchasan.Database.PdoMysqlDriver.html#376-401" title="Go to source code">doQuery</a>( <span>string <var>$sql</var></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			<p>ประมวลผลคำสั่ง SQL ที่ไม่ต้องการผลลัพท์ เช่น CREATE INSERT UPDATE
+สำเร็จคืนค่าจำนวนแถวที่มีผล ไม่สำเร็จคืนค่า false.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ประมวลผลคำสั่ง SQL ที่ไม่ต้องการผลลัพท์ เช่น CREATE INSERT UPDATE
+สำเร็จคืนค่าจำนวนแถวที่มีผล ไม่สำเร็จคืนค่า false.</p>
 
 
-				<h4>Overrides</h4>
-				<div class="list"><code><a href="class-Kotchasan.Database.Driver.html#_close">Kotchasan\Database\Driver::close()</a></code></div>
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd></dd>
+					<dt><var>$values</var></dt>
+					<dd>ถ้าระบุตัวแปรนี้จะเป็นการบังคับใช้คำสั่ง prepare แทน query</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer|boolean
+				</div>
+
+
+
 
 		</div>
 		</div></td>

@@ -236,43 +236,6 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="__construct" id="___construct">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Kotchasan.Inputs.html#29-46" title="Go to source code">__construct</a>( <span>array <var>$items</var> = <span class="php-keyword1">array</span>()</span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
-
-		<div class="description short">
-			<p>Class Constructer.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Class Constructer.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$items</var></dt>
-					<dd>รายการ input</dd>
-					<dt><var>$type</var></dt>
-					<dd>ประเภท Input เช่น GET POST SESSION COOKIE หรือ null ถ้าไม่ได้มาจากรายการข้างต้น</dd>
-				</dl></div>
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="__call" id="___call">
 
 		<td class="attributes"><code>
@@ -285,7 +248,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___call">#</a>
-		<code><a href="source-class-Kotchasan.Inputs.html#48-70" title="Go to source code">__call</a>( <span>string <var>$name</var></span>, <span>array <var>$arguments</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Inputs.html#29-51" title="Go to source code">__call</a>( <span>string <var>$name</var></span>, <span>array <var>$arguments</var></span> )</code>
 
 		<div class="description short">
 			<p>magic method คืนค่าข้อมูลสำหรับ input ชนิด array.</p>
@@ -318,6 +281,79 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Kotchasan.Inputs.html#53-70" title="Go to source code">__construct</a>( <span>array <var>$items</var> = <span class="php-keyword1">array</span>()</span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Class Constructer.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Class Constructer.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$items</var></dt>
+					<dd>รายการ input</dd>
+					<dt><var>$type</var></dt>
+					<dd>ประเภท Input เช่น GET POST SESSION COOKIE หรือ null ถ้าไม่ได้มาจากรายการข้างต้น</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="current" id="_current">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Kotchasan.InputItem.html">Kotchasan\InputItem</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_current">#</a>
+		<code><a href="source-class-Kotchasan.Inputs.html#72-80" title="Go to source code">current</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Kotchasan.InputItem.html">Kotchasan\InputItem</a></code>
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Iterator.html#_current">Iterator::current()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="get" id="_get">
 
 		<td class="attributes"><code>
@@ -330,7 +366,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-Kotchasan.Inputs.html#100-110" title="Go to source code">get</a>( <span>string|integer <var>$key</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Inputs.html#82-92" title="Go to source code">get</a>( <span>string|integer <var>$key</var></span> )</code>
 
 		<div class="description short">
 			<p>อ่าน Input ที่ต้องการ.</p>
@@ -357,74 +393,6 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="rewind" id="_rewind">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_rewind">#</a>
-		<code><a href="source-class-Kotchasan.Inputs.html#112-118" title="Go to source code">rewind</a>( )</code>
-
-		<div class="description short">
-			<p>inherited from Iterator.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>inherited from Iterator.</p>
-
-
-
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Iterator.html#_rewind">Iterator::rewind()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="current" id="_current">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-Kotchasan.InputItem.html">Kotchasan\InputItem</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_current">#</a>
-		<code><a href="source-class-Kotchasan.Inputs.html#120-128" title="Go to source code">current</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-Kotchasan.InputItem.html">Kotchasan\InputItem</a></code>
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Iterator.html#_current">Iterator::current()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="key" id="_key">
 
 		<td class="attributes"><code>
@@ -437,7 +405,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_key">#</a>
-		<code><a href="source-class-Kotchasan.Inputs.html#130-138" title="Go to source code">key</a>( )</code>
+		<code><a href="source-class-Kotchasan.Inputs.html#94-102" title="Go to source code">key</a>( )</code>
 
 		<div class="description short">
 			
@@ -473,7 +441,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_next">#</a>
-		<code><a href="source-class-Kotchasan.Inputs.html#140-148" title="Go to source code">next</a>( )</code>
+		<code><a href="source-class-Kotchasan.Inputs.html#104-112" title="Go to source code">next</a>( )</code>
 
 		<div class="description short">
 			
@@ -497,6 +465,38 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="rewind" id="_rewind">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_rewind">#</a>
+		<code><a href="source-class-Kotchasan.Inputs.html#114-120" title="Go to source code">rewind</a>( )</code>
+
+		<div class="description short">
+			<p>inherited from Iterator.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>inherited from Iterator.</p>
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Iterator.html#_rewind">Iterator::rewind()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="valid" id="_valid">
 
 		<td class="attributes"><code>
@@ -509,7 +509,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_valid">#</a>
-		<code><a href="source-class-Kotchasan.Inputs.html#150-158" title="Go to source code">valid</a>( )</code>
+		<code><a href="source-class-Kotchasan.Inputs.html#122-130" title="Go to source code">valid</a>( )</code>
 
 		<div class="description short">
 			

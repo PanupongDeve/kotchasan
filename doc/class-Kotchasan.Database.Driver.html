@@ -213,7 +213,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Database.Driver.html#19-514" title="Go to source code">Kotchasan/Database/Driver.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Database.Driver.html#19-544" title="Go to source code">Kotchasan/Database/Driver.php</a>
 		<br>
 	</div>
 
@@ -233,7 +233,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#71-77" title="Go to source code">__construct</a>( )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#77-83" title="Go to source code">__construct</a>( )</code>
 
 		<div class="description short">
 			<p>Class constructor.</p>
@@ -253,6 +253,46 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="cacheGetAction" id="_cacheGetAction">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_cacheGetAction">#</a>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#85-96" title="Go to source code">cacheGetAction</a>( )</code>
+
+		<div class="description short">
+			<p>อ่านสถานะของแคช
+0 ไม่ใช้แคช
+1 โหลดและบันทึกแคชอัตโนมัติ
+2 โหลดข้อมูลจากแคชได้ แต่ไม่บันทึกแคชอัตโนมัติ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>อ่านสถานะของแคช
+0 ไม่ใช้แคช
+1 โหลดและบันทึกแคชอัตโนมัติ
+2 โหลดข้อมูลจากแคชได้ แต่ไม่บันทึกแคชอัตโนมัติ.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="cacheOn" id="_cacheOn">
 
 		<td class="attributes"><code>
@@ -265,7 +305,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_cacheOn">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#79-92" title="Go to source code">cacheOn</a>( <span>boolean <var>$auto_save</var> = <span class="php-keyword1">true</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#98-111" title="Go to source code">cacheOn</a>( <span>boolean <var>$auto_save</var> = <span class="php-keyword1">true</span></span> )</code>
 
 		<div class="description short">
 			<p>เปิดการใช้งานแคช
@@ -306,14 +346,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_cacheSave">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#94-108" title="Go to source code">cacheSave</a>( <span>array <var>$datas</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#113-128" title="Go to source code">cacheSave</a>( <span>array <var>$datas</var></span> )</code>
 
 		<div class="description short">
-			<p>ฟังก์ชั่นบันทึก Cache.</p>
+			<p>ฟังก์ชั่นบันทึก Cache
+สำเร็จคืนค่า true ไม่สำเร็จคืนค่า false.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นบันทึก Cache.</p>
+			<p>ฟังก์ชั่นบันทึก Cache
+สำเร็จคืนค่า true ไม่สำเร็จคืนค่า false.</p>
 
 
 				<h4>Parameters</h4>
@@ -324,47 +366,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>สำเร็จคืนค่า true ไม่สำเร็จคืนค่า false
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="cacheGetAction" id="_cacheGetAction">
-
-		<td class="attributes"><code>
-			 public 
-
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_cacheGetAction">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#110-121" title="Go to source code">cacheGetAction</a>( )</code>
-
-		<div class="description short">
-			<p>อ่านสถานะของแคช
-0 ไม่ใช้แคช
-1 โหลดและบันทึกแคชอัตโนมัติ
-2 โหลดข้อมูลจากแคชได้ แต่ไม่บันทึกแคชอัตโนมัติ.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่านสถานะของแคช
-0 ไม่ใช้แคช
-1 โหลดและบันทึกแคชอัตโนมัติ
-2 โหลดข้อมูลจากแคชได้ แต่ไม่บันทึกแคชอัตโนมัติ.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer
+					boolean
 				</div>
 
 
@@ -385,7 +387,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_close">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#123-129" title="Go to source code">close</a>( )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#130-136" title="Go to source code">close</a>( )</code>
 
 		<div class="description short">
 			<p>close database.</p>
@@ -415,7 +417,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_connection">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#131-139" title="Go to source code">connection</a>( )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#138-146" title="Go to source code">connection</a>( )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นอ่านค่า resource ID ของการเชื่อมต่อปัจจุบัน.</p>
@@ -449,7 +451,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createQuery">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#141-149" title="Go to source code">createQuery</a>( )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#148-156" title="Go to source code">createQuery</a>( )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสร้าง query builder.</p>
@@ -483,14 +485,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_customQuery">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#151-170" title="Go to source code">customQuery</a>( <span>string <var>$sql</var></span>, <span>boolean <var>$toArray</var> = <span class="php-keyword1">false</span></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#158-179" title="Go to source code">customQuery</a>( <span>string <var>$sql</var></span>, <span>boolean <var>$toArray</var> = <span class="php-keyword1">false</span></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
-			<p>ฟังก์ชั่นประมวลผลคำสั่ง SQL สำหรับสอบถามข้อมูล คืนค่าผลลัพท์เป็นแอเรย์ของข้อมูลที่ตรงตามเงื่อนไข.</p>
+			<p>ฟังก์ชั่นประมวลผลคำสั่ง SQL สำหรับสอบถามข้อมูล คืนค่าผลลัพท์เป็นแอเรย์ของข้อมูลที่ตรงตามเงื่อนไข
+คืนค่าผลการทำงานเป็น record ของข้อมูลทั้งหมดที่ตรงตามเงื่อนไข ไม่พบคืนค่าแอเรย์ว่าง.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นประมวลผลคำสั่ง SQL สำหรับสอบถามข้อมูล คืนค่าผลลัพท์เป็นแอเรย์ของข้อมูลที่ตรงตามเงื่อนไข.</p>
+			<p>ฟังก์ชั่นประมวลผลคำสั่ง SQL สำหรับสอบถามข้อมูล คืนค่าผลลัพท์เป็นแอเรย์ของข้อมูลที่ตรงตามเงื่อนไข
+คืนค่าผลการทำงานเป็น record ของข้อมูลทั้งหมดที่ตรงตามเงื่อนไข ไม่พบคืนค่าแอเรย์ว่าง.</p>
 
 
 				<h4>Parameters</h4>
@@ -498,14 +502,14 @@
 					<dt><var>$sql</var></dt>
 					<dd>query string</dd>
 					<dt><var>$toArray</var></dt>
-					<dd>default  false คืนค่าผลลัทเป็น Object, true คืนค่าเป็น Array</dd>
+					<dd>default false คืนค่าผลลัทเป็น Object, true คืนค่าเป็น Array</dd>
 					<dt><var>$values</var></dt>
 					<dd>ถ้าระบุตัวแปรนี้จะเป็นการบังคับใช้คำสั่ง prepare แทน query</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					array<br>คืนค่าผลการทำงานเป็น record ของข้อมูลทั้งหมดที่ตรงตามเงื่อนไข ไม่พบคืนค่าแอเรย์ว่าง
+					array
 				</div>
 
 
@@ -526,14 +530,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_databaseExists">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#172-184" title="Go to source code">databaseExists</a>( <span>string <var>$database</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#181-194" title="Go to source code">databaseExists</a>( <span>string <var>$database</var></span> )</code>
 
 		<div class="description short">
-			<p>ฟังก์ชั่นตรวจสอบว่ามี database หรือไม่.</p>
+			<p>ฟังก์ชั่นตรวจสอบว่ามี database หรือไม่
+คืนค่า true หากมีฐานข้อมูลนี้อยู่ ไม่พบคืนค่า false.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นตรวจสอบว่ามี database หรือไม่.</p>
+			<p>ฟังก์ชั่นตรวจสอบว่ามี database หรือไม่
+คืนค่า true หากมีฐานข้อมูลนี้อยู่ ไม่พบคืนค่า false.</p>
 
 
 				<h4>Parameters</h4>
@@ -544,7 +550,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>คืนค่า true หากมีฐานข้อมูลนี้อยู่ ไม่พบคืนค่า false
+					boolean
 				</div>
 
 
@@ -565,14 +571,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#186-211" title="Go to source code">delete</a>( <span>string <var>$table_name</var></span>, <span>mixed <var>$condition</var></span>, <span>integer <var>$limit</var> = <span class="php-num">1</span></span>, <span>string <var>$operator</var> = <span class="php-quote">'AND'</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#196-222" title="Go to source code">delete</a>( <span>string <var>$table_name</var></span>, <span>mixed <var>$condition</var></span>, <span>integer <var>$limit</var> = <span class="php-num">1</span></span>, <span>string <var>$operator</var> = <span class="php-quote">'AND'</span></span> )</code>
 
 		<div class="description short">
-			<p>ฟังก์ชั่นลบ record.</p>
+			<p>ฟังก์ชั่นลบ record
+สำเร็จคืนค่าจำนวนแถวที่มีผล ไม่สำเร็จคืนค่า false.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นลบ record.</p>
+			<p>ฟังก์ชั่นลบ record
+สำเร็จคืนค่าจำนวนแถวที่มีผล ไม่สำเร็จคืนค่า false.</p>
 
 
 				<h4>Parameters</h4>
@@ -582,14 +590,55 @@
 					<dt><var>$condition</var></dt>
 					<dd>query WHERE</dd>
 					<dt><var>$limit</var></dt>
-					<dd>จำนวนรายการที่ต้องการลบ 1 (default) รายการแรกที่เจอ, 0 หมายถึงลบทุกรายการ</dd>
+					<dd>จำนวนรายการที่ต้องการลบ 1 (default) รายการแรกที่เจอ, หมายถึงลบทุกรายการ</dd>
 					<dt><var>$operator</var></dt>
 					<dd>AND (default) หรือ OR</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					integer|boolean<br>สำเร็จคืนค่าจำนวนแถวที่มีผล ไม่สำเร็จคืนค่า false
+					integer|boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="emptyTable" id="_emptyTable">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_emptyTable">#</a>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#224-235" title="Go to source code">emptyTable</a>( <span>string <var>$table_name</var></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นลบข้อมูลทั้งหมดในตาราง
+คืนค่า true ถ้าสำเร็จ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นลบข้อมูลทั้งหมดในตาราง
+คืนค่า true ถ้าสำเร็จ.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table_name</var></dt>
+					<dd>table name</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
 				</div>
 
 
@@ -610,7 +659,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_execQuery">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#213-234" title="Go to source code">execQuery</a>( <span>array <var>$sqls</var></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#237-258" title="Go to source code">execQuery</a>( <span>array <var>$sqls</var></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นประมวลผลคำสั่ง SQL จาก query builder.</p>
@@ -639,6 +688,83 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="fieldCount" id="_fieldCount">
+
+		<td class="attributes"><code>
+			abstract public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_fieldCount">#</a>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#260-265" title="Go to source code">fieldCount</a>( )</code>
+
+		<div class="description short">
+			<p>จำนวนฟิลด์ทั้งหมดในผลลัพท์จากการ query.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>จำนวนฟิลด์ทั้งหมดในผลลัพท์จากการ query.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="fieldExists" id="_fieldExists">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_fieldExists">#</a>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#267-281" title="Go to source code">fieldExists</a>( <span>string <var>$table_name</var></span>, <span>string <var>$column_name</var></span> )</code>
+
+		<div class="description short">
+			<p>ตรวจสอบคอลัมน์ของตารางว่ามีหรือไม่
+คืนค่า true ถ้ามี คืนค่า false ถ้าไม่มี.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ตรวจสอบคอลัมน์ของตารางว่ามีหรือไม่
+คืนค่า true ถ้ามี คืนค่า false ถ้าไม่มี.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table_name</var></dt>
+					<dd>ชื่อตาราง</dd>
+					<dt><var>$column_name</var></dt>
+					<dd>ชื่อคอลัมน์</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="find" id="_find">
 
 		<td class="attributes"><code>
@@ -651,14 +777,15 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_find">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#236-253" title="Go to source code">find</a>( <span>string <var>$table_name</var></span>, <span>mixed <var>$condition</var></span>, <span>array <var>$sort</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#283-301" title="Go to source code">find</a>( <span>string <var>$table_name</var></span>, <span>mixed <var>$condition</var></span>, <span>array <var>$sort</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
-			<p>ฟังก์ชั่น query ข้อมูล คืนค่าข้อมูลทุกรายการที่ตรงตามเงื่อนไข</p>
+			<p>ฟังก์ชั่น query ข้อมูล คืนค่าข้อมูลทุกรายการที่ตรงตามเงื่อนไข
+ คืนค่า แอเรย์ของ object ไม่พบคืนค่าแอรย์ว่าง.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น query ข้อมูล คืนค่าข้อมูลทุกรายการที่ตรงตามเงื่อนไข</p>
+			<p>ฟังก์ชั่น query ข้อมูล คืนค่าข้อมูลทุกรายการที่ตรงตามเงื่อนไข คืนค่า แอเรย์ของ object ไม่พบคืนค่าแอรย์ว่าง.</p>
 
 
 				<h4>Parameters</h4>
@@ -673,7 +800,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					array<br>คืนค่า แอเรย์ของ object ไม่พบคืนค่าแอรย์ว่าง
+					array
 				</div>
 
 
@@ -694,14 +821,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_first">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#255-268" title="Go to source code">first</a>( <span>string <var>$table_name</var></span>, <span>mixed <var>$condition</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#303-317" title="Go to source code">first</a>( <span>string <var>$table_name</var></span>, <span>mixed <var>$condition</var></span> )</code>
 
 		<div class="description short">
-			<p>ฟังก์ชั่น query ข้อมูล คืนค่าข้อมูลรายการเดียว.</p>
+			<p>ฟังก์ชั่น query ข้อมูล คืนค่าข้อมูลรายการเดียว
+คืนค่า object ของข้อมูล ไม่พบคืนค่า false.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น query ข้อมูล คืนค่าข้อมูลรายการเดียว.</p>
+			<p>ฟังก์ชั่น query ข้อมูล คืนค่าข้อมูลรายการเดียว
+คืนค่า object ของข้อมูล ไม่พบคืนค่า false.</p>
 
 
 				<h4>Parameters</h4>
@@ -714,7 +843,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					object|boolean<br>คืนค่า object ของข้อมูล ไม่พบคืนค่า false
+					object|boolean
 				</div>
 
 
@@ -735,7 +864,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getError">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#270-278" title="Go to source code">getError</a>( )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#319-327" title="Go to source code">getError</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าข้อความผิดพลาดของฐานข้อมูล.</p>
@@ -757,474 +886,6 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getNextId" id="_getNextId">
-
-		<td class="attributes"><code>
-			 public 
-
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getNextId">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#280-295" title="Go to source code">getNextId</a>( <span>string <var>$table_name</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นอ่าน ID ล่าสุดของตาราง สำหรับตารางที่มีการกำหนด Auto_increment ไว้.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นอ่าน ID ล่าสุดของตาราง สำหรับตารางที่มีการกำหนด Auto_increment ไว้.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$table_name</var></dt>
-					<dd>ชื่อตาราง</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer<br>คืนค่า id ล่าสุดของตาราง
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="log" id="_log">
-
-		<td class="attributes"><code>
-			 protected 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_log">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#297-319" title="Go to source code">log</a>( <span>string <var>$type</var></span>, <span>string <var>$sql</var></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นบันทึกการ query sql.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นบันทึกการ query sql.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$type</var></dt>
-					<dd></dd>
-					<dt><var>$sql</var></dt>
-					<dd></dd>
-					<dt><var>$values</var></dt>
-					<dd>(options)</dd>
-				</dl></div>
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="query" id="_query">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_query">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#321-332" title="Go to source code">query</a>( <span>string <var>$sql</var></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นประมวลผลคำสั่ง SQL ที่ไม่ต้องการผลลัพท์ เช่น CREATE INSERT UPDATE.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นประมวลผลคำสั่ง SQL ที่ไม่ต้องการผลลัพท์ เช่น CREATE INSERT UPDATE.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$sql</var></dt>
-					<dd></dd>
-					<dt><var>$values</var></dt>
-					<dd>ถ้าระบุตัวแปรนี้จะเป็นการบังคับใช้คำสั่ง prepare แทน query</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>สำเร็จคืนค่า true ไม่สำเร็จคืนค่า false
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="queryCount" id="_queryCount">
-
-		<td class="attributes"><code>
-			 public static
-
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_queryCount">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#334-342" title="Go to source code">queryCount</a>( )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นอ่านจำนวน query ทั้งหมดที่ทำงาน.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นอ่านจำนวน query ทั้งหมดที่ทำงาน.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="tableExists" id="_tableExists">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_tableExists">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#344-356" title="Go to source code">tableExists</a>( <span>string <var>$table_name</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นตรวจสอบว่ามีตาราง หรือไม่.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นตรวจสอบว่ามีตาราง หรือไม่.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$table_name</var></dt>
-					<dd>ชื่อตาราง</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>คืนค่า true หากมีตารางนี้อยู่ ไม่พบคืนค่า false
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="fieldExists" id="_fieldExists">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_fieldExists">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#358-371" title="Go to source code">fieldExists</a>( <span>string <var>$table_name</var></span>, <span>string <var>$column_name</var></span> )</code>
-
-		<div class="description short">
-			<p>ตรวจสอบคอลัมน์ของตารางว่ามีหรือไม่.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ตรวจสอบคอลัมน์ของตารางว่ามีหรือไม่.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$table_name</var></dt>
-					<dd>ชื่อตาราง</dd>
-					<dt><var>$column_name</var></dt>
-					<dd>ชื่อคอลัมน์</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>คืนค่า true ถ้ามี คืนค่า false ถ้าไม่มี
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="indexExists" id="_indexExists">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_indexExists">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#373-387" title="Go to source code">indexExists</a>( <span>string <var>$database_name</var></span>, <span>string <var>$table_name</var></span>, <span>string <var>$index</var></span> )</code>
-
-		<div class="description short">
-			<p>ตรวจสอบว่ามี $index ในตารางหรือไม่.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ตรวจสอบว่ามี $index ในตารางหรือไม่.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$database_name</var></dt>
-					<dd></dd>
-					<dt><var>$table_name</var></dt>
-					<dd></dd>
-					<dt><var>$index</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>คืนค่า true ถ้ามี คืนค่า false ถ้าไม่มี
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="emptyTable" id="_emptyTable">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_emptyTable">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#389-399" title="Go to source code">emptyTable</a>( <span>string <var>$table_name</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นลบข้อมูลทั้งหมดในตาราง.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นลบข้อมูลทั้งหมดในตาราง.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$table_name</var></dt>
-					<dd>table name</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>คืนค่า true ถ้าสำเร็จ
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="repairTable" id="_repairTable">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_repairTable">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#401-411" title="Go to source code">repairTable</a>( <span>string <var>$table_name</var></span> )</code>
-
-		<div class="description short">
-			<p>ซ่อมแซมตาราง.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ซ่อมแซมตาราง.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$table_name</var></dt>
-					<dd>table name</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>คืนค่า true ถ้าสำเร็จ
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="optimizeTable" id="_optimizeTable">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_optimizeTable">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#413-423" title="Go to source code">optimizeTable</a>( <span>string <var>$table_name</var></span> )</code>
-
-		<div class="description short">
-			<p>ปรับปรุงตาราง.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ปรับปรุงตาราง.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$table_name</var></dt>
-					<dd>table name</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>คืนค่า true ถ้าสำเร็จ
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="updateAll" id="_updateAll">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_updateAll">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#425-436" title="Go to source code">updateAll</a>( <span>string <var>$table_name</var></span>, <span>array <var>$save</var></span> )</code>
-
-		<div class="description short">
-			<p>อัปเดทข้อมูลทุก record.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อัปเดทข้อมูลทุก record.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$table_name</var></dt>
-					<dd>table name</dd>
-					<dt><var>$save</var></dt>
-					<dd>ข้อมูลที่ต้องการบันทึก array('key1'=>'value1', 'key2'=>'value2', ...)</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>สำเร็จ คืนค่า true, ผิดพลาด คืนค่า false
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="fieldCount" id="_fieldCount">
-
-		<td class="attributes"><code>
-			abstract public 
-
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_fieldCount">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#438-443" title="Go to source code">fieldCount</a>( )</code>
-
-		<div class="description short">
-			<p>จำนวนฟิลด์ทั้งหมดในผลลัพท์จากการ query.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>จำนวนฟิลด์ทั้งหมดในผลลัพท์จากการ query.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="getFields" id="_getFields">
 
 		<td class="attributes"><code>
@@ -1237,7 +898,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getFields">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#445-450" title="Go to source code">getFields</a>( )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#329-334" title="Go to source code">getFields</a>( )</code>
 
 		<div class="description short">
 			<p>รายชื่อฟิลด์ทั้งหมดจากผลัพท์จองการ query.</p>
@@ -1259,6 +920,92 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="getNextId" id="_getNextId">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getNextId">#</a>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#336-352" title="Go to source code">getNextId</a>( <span>string <var>$table_name</var></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นอ่าน ID ล่าสุดของตาราง สำหรับตารางที่มีการกำหนด Auto_increment ไว้
+คืนค่า id ล่าสุดของตาราง.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นอ่าน ID ล่าสุดของตาราง สำหรับตารางที่มีการกำหนด Auto_increment ไว้
+คืนค่า id ล่าสุดของตาราง.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table_name</var></dt>
+					<dd>ชื่อตาราง</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="indexExists" id="_indexExists">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_indexExists">#</a>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#354-369" title="Go to source code">indexExists</a>( <span>string <var>$database_name</var></span>, <span>string <var>$table_name</var></span>, <span>string <var>$index</var></span> )</code>
+
+		<div class="description short">
+			<p>ตรวจสอบว่ามี $index ในตารางหรือไม่
+คืนค่า true ถ้ามี คืนค่า false ถ้าไม่มี.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ตรวจสอบว่ามี $index ในตารางหรือไม่
+คืนค่า true ถ้ามี คืนค่า false ถ้าไม่มี.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$database_name</var></dt>
+					<dd></dd>
+					<dt><var>$table_name</var></dt>
+					<dd></dd>
+					<dt><var>$index</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="insert" id="_insert">
 
 		<td class="attributes"><code>
@@ -1271,14 +1018,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_insert">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#452-460" title="Go to source code">insert</a>( <span>string <var>$table_name</var></span>, <span>array <var>$save</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#371-380" title="Go to source code">insert</a>( <span>string <var>$table_name</var></span>, <span>array <var>$save</var></span> )</code>
 
 		<div class="description short">
-			<p>ฟังก์ชั่นเพิ่มข้อมูลใหม่ลงในตาราง.</p>
+			<p>ฟังก์ชั่นเพิ่มข้อมูลใหม่ลงในตาราง
+สำเร็จ คืนค่า id ที่เพิ่ม ผิดพลาด คืนค่า false.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นเพิ่มข้อมูลใหม่ลงในตาราง.</p>
+			<p>ฟังก์ชั่นเพิ่มข้อมูลใหม่ลงในตาราง
+สำเร็จ คืนค่า id ที่เพิ่ม ผิดพลาด คืนค่า false.</p>
 
 
 				<h4>Parameters</h4>
@@ -1291,134 +1040,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					integer|boolean<br>สำเร็จ คืนค่า id ที่เพิ่ม ผิดพลาด คืนค่า false
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="makeQuery" id="_makeQuery">
-
-		<td class="attributes"><code>
-			abstract public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_makeQuery">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#462-469" title="Go to source code">makeQuery</a>( <span>array <var>$sqls</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นสร้างคำสั่ง sql query.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นสร้างคำสั่ง sql query.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$sqls</var></dt>
-					<dd>คำสั่ง sql จาก query builder</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string<br>sql command
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="select" id="_select">
-
-		<td class="attributes"><code>
-			abstract public 
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_select">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#471-481" title="Go to source code">select</a>( <span>string <var>$table_name</var></span>, <span>mixed <var>$condition</var></span>, <span>array <var>$sort</var> = <span class="php-keyword1">array</span>()</span>, <span>integer <var>$limit</var> = <span class="php-num">0</span></span> )</code>
-
-		<div class="description short">
-			<p>เรียกดูข้อมูล.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>เรียกดูข้อมูล.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$table_name</var></dt>
-					<dd>ชื่อตาราง</dd>
-					<dt><var>$condition</var></dt>
-					<dd>query WHERE</dd>
-					<dt><var>$sort</var></dt>
-					<dd>เรียงลำดับ</dd>
-					<dt><var>$limit</var></dt>
-					<dd>จำนวนข้อมูลที่ต้องการ</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					array<br>ผลลัพท์ในรูป array ถ้าไม่สำเร็จ คืนค่าแอเรย์ว่าง
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="update" id="_update">
-
-		<td class="attributes"><code>
-			abstract public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#483-492" title="Go to source code">update</a>( <span>string <var>$table_name</var></span>, <span>mixed <var>$condition</var></span>, <span>array <var>$save</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นแก้ไขข้อมูล.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นแก้ไขข้อมูล.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$table_name</var></dt>
-					<dd>ชื่อตาราง</dd>
-					<dt><var>$condition</var></dt>
-					<dd>query WHERE</dd>
-					<dt><var>$save</var></dt>
-					<dd>ข้อมูลที่ต้องการบันทึก รูปแบบ array('key1'=>'value1', 'key2'=>'value2', ...)</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>สำเร็จ คืนค่า true, ผิดพลาด คืนค่า false
+					integer|boolean
 				</div>
 
 
@@ -1439,18 +1061,24 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_insertOrUpdate">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#494-504" title="Go to source code">insertOrUpdate</a>( <span>string <var>$table_name</var></span>, <span>array|object <var>$save</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#382-395" title="Go to source code">insertOrUpdate</a>( <span>string <var>$table_name</var></span>, <span>array|object <var>$save</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นเพิ่มข้อมูลใหม่ลงในตาราง
 ถ้ามีข้อมูลเดิมอยู่แล้วจะเป็นการอัปเดท
-(ข้อมูลเดิมตาม KEY ที่เป็น UNIQUE).</p>
+(ข้อมูลเดิมตาม KEY ที่เป็น UNIQUE)
+insert คืนค่า id ที่เพิ่ม
+update คืนค่า 0
+ผิดพลาด คืนค่า null.</p>
 		</div>
 
 		<div class="description detailed hidden">
 			<p>ฟังก์ชั่นเพิ่มข้อมูลใหม่ลงในตาราง
 ถ้ามีข้อมูลเดิมอยู่แล้วจะเป็นการอัปเดท
-(ข้อมูลเดิมตาม KEY ที่เป็น UNIQUE).</p>
+(ข้อมูลเดิมตาม KEY ที่เป็น UNIQUE)
+insert คืนค่า id ที่เพิ่ม
+update คืนค่า 0
+ผิดพลาด คืนค่า null.</p>
 
 
 				<h4>Parameters</h4>
@@ -1463,7 +1091,254 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					integer|null<br>insert คืนค่า id ที่เพิ่ม, update คืนค่า 0, ผิดพลาด คืนค่า null
+					integer|null
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="makeQuery" id="_makeQuery">
+
+		<td class="attributes"><code>
+			abstract public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_makeQuery">#</a>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#397-405" title="Go to source code">makeQuery</a>( <span>array <var>$sqls</var></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นสร้างคำสั่ง sql query
+คืนค่า sql command.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นสร้างคำสั่ง sql query
+คืนค่า sql command.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sqls</var></dt>
+					<dd>คำสั่ง sql จาก query builder</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="optimizeTable" id="_optimizeTable">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_optimizeTable">#</a>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#407-418" title="Go to source code">optimizeTable</a>( <span>string <var>$table_name</var></span> )</code>
+
+		<div class="description short">
+			<p>ปรับปรุงตาราง
+คืนค่า true ถ้าสำเร็จ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ปรับปรุงตาราง
+คืนค่า true ถ้าสำเร็จ.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table_name</var></dt>
+					<dd>table name</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="query" id="_query">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_query">#</a>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#420-432" title="Go to source code">query</a>( <span>string <var>$sql</var></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นประมวลผลคำสั่ง SQL ที่ไม่ต้องการผลลัพท์ เช่น CREATE INSERT UPDATE
+สำเร็จคืนค่า true ไม่สำเร็จคืนค่า false.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นประมวลผลคำสั่ง SQL ที่ไม่ต้องการผลลัพท์ เช่น CREATE INSERT UPDATE
+สำเร็จคืนค่า true ไม่สำเร็จคืนค่า false.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd></dd>
+					<dt><var>$values</var></dt>
+					<dd>ถ้าระบุตัวแปรนี้จะเป็นการบังคับใช้คำสั่ง prepare แทน query</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="queryCount" id="_queryCount">
+
+		<td class="attributes"><code>
+			 public static
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_queryCount">#</a>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#434-442" title="Go to source code">queryCount</a>( )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นอ่านจำนวน query ทั้งหมดที่ทำงาน.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นอ่านจำนวน query ทั้งหมดที่ทำงาน.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="repairTable" id="_repairTable">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_repairTable">#</a>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#444-455" title="Go to source code">repairTable</a>( <span>string <var>$table_name</var></span> )</code>
+
+		<div class="description short">
+			<p>ซ่อมแซมตาราง
+คืนค่า true ถ้าสำเร็จ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ซ่อมแซมตาราง
+คืนค่า true ถ้าสำเร็จ.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table_name</var></dt>
+					<dd>table name</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="select" id="_select">
+
+		<td class="attributes"><code>
+			abstract public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_select">#</a>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#457-468" title="Go to source code">select</a>( <span>string <var>$table_name</var></span>, <span>mixed <var>$condition</var></span>, <span>array <var>$sort</var> = <span class="php-keyword1">array</span>()</span>, <span>integer <var>$limit</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			<p>เรียกดูข้อมูล
+คืนค่าผลลัพท์ในรูป array ถ้าไม่สำเร็จ คืนค่าแอเรย์ว่าง.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>เรียกดูข้อมูล
+คืนค่าผลลัพท์ในรูป array ถ้าไม่สำเร็จ คืนค่าแอเรย์ว่าง.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table_name</var></dt>
+					<dd>ชื่อตาราง</dd>
+					<dt><var>$condition</var></dt>
+					<dd>query WHERE</dd>
+					<dt><var>$sort</var></dt>
+					<dd>เรียงลำดับ</dd>
+					<dt><var>$limit</var></dt>
+					<dd>จำนวนข้อมูลที่ต้องการ</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
 				</div>
 
 
@@ -1484,14 +1359,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_selectDB">#</a>
-		<code><a href="source-class-Kotchasan.Database.Driver.html#506-513" title="Go to source code">selectDB</a>( <span>string <var>$database</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#470-478" title="Go to source code">selectDB</a>( <span>string <var>$database</var></span> )</code>
 
 		<div class="description short">
-			<p>เลือกฐานข้อมูล.</p>
+			<p>เลือกฐานข้อมูล
+คืนค่า false หากไม่สำเร็จ.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>เลือกฐานข้อมูล.</p>
+			<p>เลือกฐานข้อมูล
+คืนค่า false หากไม่สำเร็จ.</p>
 
 
 				<h4>Parameters</h4>
@@ -1502,8 +1379,176 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>false หากไม่สำเร็จ
+					boolean
 				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="tableExists" id="_tableExists">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_tableExists">#</a>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#480-493" title="Go to source code">tableExists</a>( <span>string <var>$table_name</var></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นตรวจสอบว่ามีตาราง หรือไม่
+คืนค่า true หากมีตารางนี้อยู่ ไม่พบคืนค่า false.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นตรวจสอบว่ามีตาราง หรือไม่
+คืนค่า true หากมีตารางนี้อยู่ ไม่พบคืนค่า false.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table_name</var></dt>
+					<dd>ชื่อตาราง</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="update" id="_update">
+
+		<td class="attributes"><code>
+			abstract public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_update">#</a>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#495-505" title="Go to source code">update</a>( <span>string <var>$table_name</var></span>, <span>mixed <var>$condition</var></span>, <span>array <var>$save</var></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นแก้ไขข้อมูล
+สำเร็จ คืนค่า true, ผิดพลาด คืนค่า false.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นแก้ไขข้อมูล
+สำเร็จ คืนค่า true, ผิดพลาด คืนค่า false.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table_name</var></dt>
+					<dd>ชื่อตาราง</dd>
+					<dt><var>$condition</var></dt>
+					<dd>query WHERE</dd>
+					<dt><var>$save</var></dt>
+					<dd>ข้อมูลที่ต้องการบันทึก รูปแบบ array('key1'=>'value1', 'key2'=>'value2', ...)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="updateAll" id="_updateAll">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_updateAll">#</a>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#507-519" title="Go to source code">updateAll</a>( <span>string <var>$table_name</var></span>, <span>array <var>$save</var></span> )</code>
+
+		<div class="description short">
+			<p>อัปเดทข้อมูลทุก record
+สำเร็จ คืนค่า true, ผิดพลาด คืนค่า false.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>อัปเดทข้อมูลทุก record
+สำเร็จ คืนค่า true, ผิดพลาด คืนค่า false.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table_name</var></dt>
+					<dd>table name</dd>
+					<dt><var>$save</var></dt>
+					<dd>ข้อมูลที่ต้องการบันทึก array('key1'=>'value1', 'key2'=>'value2', ...)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="log" id="_log">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_log">#</a>
+		<code><a href="source-class-Kotchasan.Database.Driver.html#521-543" title="Go to source code">log</a>( <span>string <var>$type</var></span>, <span>string <var>$sql</var></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นบันทึกการ query sql.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นบันทึกการ query sql.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd></dd>
+					<dt><var>$sql</var></dt>
+					<dd></dd>
+					<dt><var>$values</var></dt>
+					<dd>(options)</dd>
+				</dl></div>
+
 
 
 
@@ -1559,131 +1604,6 @@
 
 	<table class="summary properties" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="connection" id="$connection">
-		<td class="attributes"><code>
-			protected  
-			resource
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Database.Driver.html#28-33" title="Go to source code"><var>$connection</var></a>
-
-			<div class="description short">
-				<p>database connection.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>database connection.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$connection" class="anchor">#</a>
-				<code><span class="php-keyword1">null</span></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="error_message" id="$error_message">
-		<td class="attributes"><code>
-			protected  
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Database.Driver.html#34-39" title="Go to source code"><var>$error_message</var></a>
-
-			<div class="description short">
-				<p>database error message.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>database error message.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$error_message" class="anchor">#</a>
-				<code><span class="php-quote">''</span></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="query_count" id="$query_count">
-		<td class="attributes"><code>
-			protected static 
-			integer
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Database.Driver.html#40-45" title="Go to source code"><var>$query_count</var></a>
-
-			<div class="description short">
-				<p>นับจำนวนการ query.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>นับจำนวนการ query.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$query_count" class="anchor">#</a>
-				<code><span class="php-num">0</span></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="result_id" id="$result_id">
-		<td class="attributes"><code>
-			protected  
-			resource|object
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Database.Driver.html#46-51" title="Go to source code"><var>$result_id</var></a>
-
-			<div class="description short">
-				<p>เก็บ Object ที่เป็นผลลัพท์จากการ query.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>เก็บ Object ที่เป็นผลลัพท์จากการ query.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$result_id" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="sqls" id="$sqls">
-		<td class="attributes"><code>
-			protected  
-			array
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Database.Driver.html#52-57" title="Go to source code"><var>$sqls</var></a>
-
-			<div class="description short">
-				<p>ตัวแปรเก็บ query สำหรับการ execute.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>ตัวแปรเก็บ query สำหรับการ execute.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$sqls" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
 	<tr data-order="cache" id="$cache">
 		<td class="attributes"><code>
 			protected  
@@ -1691,7 +1611,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Database.Driver.html#58-63" title="Go to source code"><var>$cache</var></a>
+				<a href="source-class-Kotchasan.Database.Driver.html#28-33" title="Go to source code"><var>$cache</var></a>
 
 			<div class="description short">
 				<p>cache class.</p>
@@ -1716,7 +1636,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Database.Driver.html#64-69" title="Go to source code"><var>$cache_item</var></a>
+				<a href="source-class-Kotchasan.Database.Driver.html#35-40" title="Go to source code"><var>$cache_item</var></a>
 
 			<div class="description short">
 				<p>Cacheitem.</p>
@@ -1730,6 +1650,131 @@
 		<td class="value">
 			<div>
 				<a href="#$cache_item" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="connection" id="$connection">
+		<td class="attributes"><code>
+			protected  
+			resource
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Database.Driver.html#42-47" title="Go to source code"><var>$connection</var></a>
+
+			<div class="description short">
+				<p>database connection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>database connection.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$connection" class="anchor">#</a>
+				<code><span class="php-keyword1">null</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="error_message" id="$error_message">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Database.Driver.html#49-54" title="Go to source code"><var>$error_message</var></a>
+
+			<div class="description short">
+				<p>database error message.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>database error message.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$error_message" class="anchor">#</a>
+				<code><span class="php-quote">''</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="query_count" id="$query_count">
+		<td class="attributes"><code>
+			protected static 
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Database.Driver.html#56-61" title="Go to source code"><var>$query_count</var></a>
+
+			<div class="description short">
+				<p>นับจำนวนการ query.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>นับจำนวนการ query.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$query_count" class="anchor">#</a>
+				<code><span class="php-num">0</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="result_id" id="$result_id">
+		<td class="attributes"><code>
+			protected  
+			resource|object
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Database.Driver.html#63-68" title="Go to source code"><var>$result_id</var></a>
+
+			<div class="description short">
+				<p>เก็บ Object ที่เป็นผลลัพท์จากการ query.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>เก็บ Object ที่เป็นผลลัพท์จากการ query.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$result_id" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="sqls" id="$sqls">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Database.Driver.html#70-75" title="Go to source code"><var>$sqls</var></a>
+
+			<div class="description short">
+				<p>ตัวแปรเก็บ query สำหรับการ execute.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>ตัวแปรเก็บ query สำหรับการ execute.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$sqls" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>

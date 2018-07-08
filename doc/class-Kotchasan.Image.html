@@ -219,7 +219,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Image.html#13-303" title="Go to source code">Kotchasan/Image.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Image.html#13-309" title="Go to source code">Kotchasan/Image.php</a>
 		<br>
 	</div>
 
@@ -239,18 +239,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_crop">#</a>
-		<code><a href="source-class-Kotchasan.Image.html#29-104" title="Go to source code">crop</a>( <span>string <var>$source</var></span>, <span>string <var>$target</var></span>, <span>integer <var>$thumbwidth</var></span>, <span>integer <var>$thumbheight</var></span>, <span>string <var>$watermark</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Image.html#29-105" title="Go to source code">crop</a>( <span>string <var>$source</var></span>, <span>string <var>$target</var></span>, <span>integer <var>$thumbwidth</var></span>, <span>integer <var>$thumbheight</var></span>, <span>string <var>$watermark</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่น ตัดรูปภาพ ตามขนาดที่กำหนด
 รูปภาพปลายทางจะมีขนาดเท่าที่กำหนด หากรูปภาพต้นฉบับมีขนาดหรืออัตราส่วนไม่พอดีกับขนาดของภาพปลายทาง
-รูปภาพจะถูกตัดขอบออกหรือจะถูกขยาย เพื่อให้พอดีกับรูปภาพปลายทางที่ต้องการ.</p>
+รูปภาพจะถูกตัดขอบออกหรือจะถูกขยาย เพื่อให้พอดีกับรูปภาพปลายทางที่ต้องการ
+สำเร็จคืนค่า true.</p>
 		</div>
 
 		<div class="description detailed hidden">
 			<p>ฟังก์ชั่น ตัดรูปภาพ ตามขนาดที่กำหนด
 รูปภาพปลายทางจะมีขนาดเท่าที่กำหนด หากรูปภาพต้นฉบับมีขนาดหรืออัตราส่วนไม่พอดีกับขนาดของภาพปลายทาง
-รูปภาพจะถูกตัดขอบออกหรือจะถูกขยาย เพื่อให้พอดีกับรูปภาพปลายทางที่ต้องการ.</p>
+รูปภาพจะถูกตัดขอบออกหรือจะถูกขยาย เพื่อให้พอดีกับรูปภาพปลายทางที่ต้องการ
+สำเร็จคืนค่า true.</p>
 
 
 				<h4>Parameters</h4>
@@ -269,101 +271,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>สำเร็จคืนค่า true
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="resize" id="_resize">
-
-		<td class="attributes"><code>
-			 public static
-
-			array|boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_resize">#</a>
-		<code><a href="source-class-Kotchasan.Image.html#106-176" title="Go to source code">resize</a>( <span>string <var>$source</var></span>, <span>string <var>$target</var></span>, <span>string <var>$name</var></span>, <span>integer <var>$width</var></span>, <span>string <var>$watermark</var> = <span class="php-quote">''</span></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นปรับขนาดของภาพ โดยรักษาอัตราส่วนของภาพตามความกว้างที่ต้องการ
-หากรูปภาพมีขนาดเล็กกว่าที่กำหนด จะเป็นการ copy file
-หากรูปภาพมาความสูง หรือความกว้างมากกว่า $width
-จะถูกปรับขนาดให้มีขนาดไม่เกิน $width (ทั้งความสูงและความกว้าง)
-และเปลี่ยนชนิดของภาพเป็น jpg.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นปรับขนาดของภาพ โดยรักษาอัตราส่วนของภาพตามความกว้างที่ต้องการ
-หากรูปภาพมีขนาดเล็กกว่าที่กำหนด จะเป็นการ copy file
-หากรูปภาพมาความสูง หรือความกว้างมากกว่า $width
-จะถูกปรับขนาดให้มีขนาดไม่เกิน $width (ทั้งความสูงและความกว้าง)
-และเปลี่ยนชนิดของภาพเป็น jpg.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$source</var></dt>
-					<dd>path และชื่อไฟล์ของไฟล์รูปภาพต้นฉบับ</dd>
-					<dt><var>$target</var></dt>
-					<dd>path ของไฟล์รูปภาพปลายทาง</dd>
-					<dt><var>$name</var></dt>
-					<dd>ชื่อไฟล์ของรูปภาพปลายทาง</dd>
-					<dt><var>$width</var></dt>
-					<dd>ขนาดสูงสุดของรูปภาพที่ต้องการ</dd>
-					<dt><var>$watermark</var></dt>
-					<dd>(optional) ข้อความลายน้ำ</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					array|boolean<br>คืนค่าแอเรย์ [name, width, height, mime] ของรูปภาพปลายทาง หรือ false ถ้าไม่สามารถดำเนินการได้
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="orient" id="_orient">
-
-		<td class="attributes"><code>
-			 public static
-
-			resource
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_orient">#</a>
-		<code><a href="source-class-Kotchasan.Image.html#178-220" title="Go to source code">orient</a>( <span>resource <var>$source</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่น โหลดภาพ jpg และหมุนภาพอัตโนมัติจากข้อมูลของ Exif.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น โหลดภาพ jpg และหมุนภาพอัตโนมัติจากข้อมูลของ Exif.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$source</var></dt>
-					<dd>resource ของรูปภาพต้นฉบับ</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					resource<br>คืนค่า resource ของรูปภาพหลังจากหมุนแล้ว ถ้าไม่สนับสนุนคืนค่า resource เดิม
+					boolean
 				</div>
 
 
@@ -384,14 +292,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_flip">#</a>
-		<code><a href="source-class-Kotchasan.Image.html#222-243" title="Go to source code">flip</a>( <span>resource <var>$imgsrc</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Image.html#107-129" title="Go to source code">flip</a>( <span>resource <var>$imgsrc</var></span> )</code>
 
 		<div class="description short">
-			<p>ฟังก์ชั่น พลิกรูปภาพ (ซ้าย-ขวา คล้ายกระจกเงา).</p>
+			<p>ฟังก์ชั่น พลิกรูปภาพ (ซ้าย-ขวา คล้ายกระจกเงา)
+คืนค่า resource ของรูปภาพหลังจากพลิกรูปภาพแล้ว ไม่สำเร็จคืนค่า resource ของรูปภาพต้นฉบับ.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น พลิกรูปภาพ (ซ้าย-ขวา คล้ายกระจกเงา).</p>
+			<p>ฟังก์ชั่น พลิกรูปภาพ (ซ้าย-ขวา คล้ายกระจกเงา)
+คืนค่า resource ของรูปภาพหลังจากพลิกรูปภาพแล้ว ไม่สำเร็จคืนค่า resource ของรูปภาพต้นฉบับ.</p>
 
 
 				<h4>Parameters</h4>
@@ -402,56 +312,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					resource<br>คืนค่า resource ของรูปภาพหลังจากพลิกรูปภาพแล้ว ไม่สำเร็จคืนค่า resource ของรูปภาพต้นฉบับ
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="watermarkText" id="_watermarkText">
-
-		<td class="attributes"><code>
-			 public static
-
-			resource
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_watermarkText">#</a>
-		<code><a href="source-class-Kotchasan.Image.html#245-280" title="Go to source code">watermarkText</a>( <span>resource <var>$imgsrc</var></span>, <span>string <var>$text</var></span>, <span>string <var>$pos</var> = <span class="php-quote">''</span></span>, <span>string <var>$color</var> = <span class="php-quote">'CCCCCC'</span></span>, <span>integer <var>$font_size</var> = <span class="php-num">20</span></span>, <span>integer <var>$opacity</var> = <span class="php-num">50</span></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่น วาดลายน้ำที่เป็นตัวอักษรลงบนรูปภาพ.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น วาดลายน้ำที่เป็นตัวอักษรลงบนรูปภาพ.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$imgsrc</var></dt>
-					<dd>resource ของรูปภาพต้นฉบับ</dd>
-					<dt><var>$text</var></dt>
-					<dd>ข้อความที่จะใช้เป็นลายน้ำ</dd>
-					<dt><var>$pos</var></dt>
-					<dd>(optional) ตำแหน่งของลายน้ำเช่น center top bottom right left (default 'top left')</dd>
-					<dt><var>$color</var></dt>
-					<dd>(optional) สีของตัวอักษร เป็น hex เท่านั้น ไม่ต้องมี # (default CCCCCC)</dd>
-					<dt><var>$font_size</var></dt>
-					<dd>(optional) ขนาดตัวอักษรของลายน้ำเป็นพิกเซล (default 20px)</dd>
-					<dt><var>$opacity</var></dt>
-					<dd>(optional) กำหนดค่าตัวอักษรโปร่งใส 0-50 (default 50)</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					resource<br>ของรูปภาพต้นฉบับ
+					resource
 				</div>
 
 
@@ -472,14 +333,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_info">#</a>
-		<code><a href="source-class-Kotchasan.Image.html#282-302" title="Go to source code">info</a>( <span>string <var>$src</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Image.html#131-152" title="Go to source code">info</a>( <span>string <var>$src</var></span> )</code>
 
 		<div class="description short">
-			<p>อ่านข้อมูล Exif ของรูปภาพ.</p>
+			<p>อ่านข้อมูล Exif ของรูปภาพ
+คืนค่า array(width, height, mime) ของรูปภาพ, false ถ้าไม่สามารถอ่านได้.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>อ่านข้อมูล Exif ของรูปภาพ.</p>
+			<p>อ่านข้อมูล Exif ของรูปภาพ
+คืนค่า array(width, height, mime) ของรูปภาพ, false ถ้าไม่สามารถอ่านได้.</p>
 
 
 				<h4>Parameters</h4>
@@ -490,7 +353,156 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					array|boolean<br>array(width, height, mime) ของรูปภาพ, false ถ้าไม่สามารถอ่านได้
+					array|boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="orient" id="_orient">
+
+		<td class="attributes"><code>
+			 public static
+
+			resource
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_orient">#</a>
+		<code><a href="source-class-Kotchasan.Image.html#154-197" title="Go to source code">orient</a>( <span>resource <var>$source</var></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่น โหลดภาพ jpg และหมุนภาพอัตโนมัติจากข้อมูลของ Exif
+คืนค่า resource ของรูปภาพหลังจากหมุนแล้ว ถ้าไม่สนับสนุนคืนค่า resource เดิม</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่น โหลดภาพ jpg และหมุนภาพอัตโนมัติจากข้อมูลของ Exif
+คืนค่า resource ของรูปภาพหลังจากหมุนแล้ว ถ้าไม่สนับสนุนคืนค่า resource เดิม</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$source</var></dt>
+					<dd>resource ของรูปภาพต้นฉบับ</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					resource
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="resize" id="_resize">
+
+		<td class="attributes"><code>
+			 public static
+
+			array|boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_resize">#</a>
+		<code><a href="source-class-Kotchasan.Image.html#199-270" title="Go to source code">resize</a>( <span>string <var>$source</var></span>, <span>string <var>$target</var></span>, <span>string <var>$name</var></span>, <span>integer <var>$width</var></span>, <span>string <var>$watermark</var> = <span class="php-quote">''</span></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นปรับขนาดของภาพ โดยรักษาอัตราส่วนของภาพตามความกว้างที่ต้องการ
+หากรูปภาพมีขนาดเล็กกว่าที่กำหนด จะเป็นการ copy file
+หากรูปภาพมาความสูง หรือความกว้างมากกว่า $width
+จะถูกปรับขนาดให้มีขนาดไม่เกิน $width (ทั้งความสูงและความกว้าง)
+และเปลี่ยนชนิดของภาพเป็น jpg
+คืนค่าแอเรย์ [name, width, height, mime] ของรูปภาพปลายทาง หรือ false ถ้าไม่สามารถดำเนินการได้.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นปรับขนาดของภาพ โดยรักษาอัตราส่วนของภาพตามความกว้างที่ต้องการ
+หากรูปภาพมีขนาดเล็กกว่าที่กำหนด จะเป็นการ copy file
+หากรูปภาพมาความสูง หรือความกว้างมากกว่า $width
+จะถูกปรับขนาดให้มีขนาดไม่เกิน $width (ทั้งความสูงและความกว้าง)
+และเปลี่ยนชนิดของภาพเป็น jpg
+คืนค่าแอเรย์ [name, width, height, mime] ของรูปภาพปลายทาง หรือ false ถ้าไม่สามารถดำเนินการได้.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$source</var></dt>
+					<dd>path และชื่อไฟล์ของไฟล์รูปภาพต้นฉบับ</dd>
+					<dt><var>$target</var></dt>
+					<dd>path ของไฟล์รูปภาพปลายทาง</dd>
+					<dt><var>$name</var></dt>
+					<dd>ชื่อไฟล์ของรูปภาพปลายทาง</dd>
+					<dt><var>$width</var></dt>
+					<dd>ขนาดสูงสุดของรูปภาพที่ต้องการ</dd>
+					<dt><var>$watermark</var></dt>
+					<dd>(optional) ข้อความลายน้ำ</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array|boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="watermarkText" id="_watermarkText">
+
+		<td class="attributes"><code>
+			 public static
+
+			resource
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_watermarkText">#</a>
+		<code><a href="source-class-Kotchasan.Image.html#272-308" title="Go to source code">watermarkText</a>( <span>resource <var>$imgsrc</var></span>, <span>string <var>$text</var></span>, <span>string <var>$pos</var> = <span class="php-quote">''</span></span>, <span>string <var>$color</var> = <span class="php-quote">'CCCCCC'</span></span>, <span>integer <var>$font_size</var> = <span class="php-num">20</span></span>, <span>integer <var>$opacity</var> = <span class="php-num">50</span></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่น วาดลายน้ำที่เป็นตัวอักษรลงบนรูปภาพ
+คืนค่า resource ของรูปภาพต้นฉบับ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่น วาดลายน้ำที่เป็นตัวอักษรลงบนรูปภาพ
+คืนค่า resource ของรูปภาพต้นฉบับ.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$imgsrc</var></dt>
+					<dd>resource ของรูปภาพต้นฉบับ</dd>
+					<dt><var>$text</var></dt>
+					<dd>ข้อความที่จะใช้เป็นลายน้ำ</dd>
+					<dt><var>$pos</var></dt>
+					<dd>(optional) ตำแหน่งของลายน้ำเช่น center top bottom right left (default 'top left')</dd>
+					<dt><var>$color</var></dt>
+					<dd>(optional) สีของตัวอักษร เป็น hex เท่านั้น ไม่ต้องมี # (default CCCCCC)</dd>
+					<dt><var>$font_size</var></dt>
+					<dd>(optional) ขนาดตัวอักษรของลายน้ำเป็นพิกเซล (default 20px)</dd>
+					<dt><var>$opacity</var></dt>
+					<dd>(optional) กำหนดค่าตัวอักษรโปร่งใส 0-50 (default 50)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					resource
 				</div>
 
 

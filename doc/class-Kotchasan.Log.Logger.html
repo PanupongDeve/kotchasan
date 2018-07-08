@@ -187,7 +187,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Log.Logger.html#18-137" title="Go to source code">Kotchasan/Log/Logger.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Log.Logger.html#18-141" title="Go to source code">Kotchasan/Log/Logger.php</a>
 		<br>
 	</div>
 
@@ -207,7 +207,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Kotchasan.Log.Logger.html#69-83" title="Go to source code">create</a>( <span>array <var>$options</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Kotchasan.Log.Logger.html#60-74" title="Go to source code">create</a>( <span>array <var>$options</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			<p>create Logger instance (Singleton).</p>
@@ -239,14 +239,14 @@
 		<td class="attributes"><code>
 			 public 
 
-			null
+			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_log">#</a>
-		<code><a href="source-class-Kotchasan.Log.Logger.html#85-136" title="Go to source code">log</a>( <span>mixed <var>$level</var></span>, <span>string <var>$message</var></span>, <span>array <var>$context</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Kotchasan.Log.Logger.html#76-127" title="Go to source code">log</a>( <span>mixed <var>$level</var></span>, <span>string <var>$message</var></span>, <span>array <var>$context</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			<p>Logs with an arbitrary level.</p>
@@ -266,10 +266,6 @@
 					<dd></dd>
 				</dl></div>
 
-				<h4>Returns</h4>
-				<div class="list">
-					null
-				</div>
 
 
 
@@ -334,36 +330,6 @@
 			</div>
 		</td>
 	</tr>
-	<tr data-order="options" id="$options">
-		<td class="attributes"><code>
-			protected  
-			array
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Log.Logger.html#31-41" title="Go to source code"><var>$options</var></a>
-
-			<div class="description short">
-				<p>รูปแบบของ log.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>รูปแบบของ log.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$options" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(
-    <span class="php-quote">'dateFormat'</span> =&gt; <span class="php-quote">'Y-m-d H:i:s'</span>,
-    <span class="php-quote">'logFormat'</span> =&gt; <span class="php-quote">'[{datetime}] {level}: {message} {context}'</span>,
-    <span class="php-quote">'logFilePath'</span> =&gt; <span class="php-quote">'logs/'</span>,
-    <span class="php-quote">'extension'</span> =&gt; <span class="php-quote">'php'</span>,
-)</code>
-			</div>
-		</td>
-	</tr>
 	<tr data-order="logLevels" id="$logLevels">
 		<td class="attributes"><code>
 			protected  
@@ -371,7 +337,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Log.Logger.html#42-56" title="Go to source code"><var>$logLevels</var></a>
+				<a href="source-class-Kotchasan.Log.Logger.html#32-46" title="Go to source code"><var>$logLevels</var></a>
 
 			<div class="description short">
 				<p>Log Levels.</p>
@@ -394,6 +360,36 @@
     LogLevel::NOTICE =&gt; <span class="php-num">5</span>,
     LogLevel::INFO =&gt; <span class="php-num">6</span>,
     LogLevel::DEBUG =&gt; <span class="php-num">7</span>,
+)</code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="options" id="$options">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Log.Logger.html#48-58" title="Go to source code"><var>$options</var></a>
+
+			<div class="description short">
+				<p>รูปแบบของ log.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>รูปแบบของ log.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$options" class="anchor">#</a>
+				<code><span class="php-keyword1">array</span>(
+    <span class="php-quote">'dateFormat'</span> =&gt; <span class="php-quote">'Y-m-d H:i:s'</span>,
+    <span class="php-quote">'logFormat'</span> =&gt; <span class="php-quote">'[{datetime}] {level}: {message} {context}'</span>,
+    <span class="php-quote">'logFilePath'</span> =&gt; <span class="php-quote">'logs/'</span>,
+    <span class="php-quote">'extension'</span> =&gt; <span class="php-quote">'php'</span>,
 )</code>
 			</div>
 		</td>

@@ -235,7 +235,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Login.html#15-228" title="Go to source code">Kotchasan/Login.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Login.html#15-235" title="Go to source code">Kotchasan/Login.php</a>
 		<br>
 	</div>
 
@@ -243,6 +243,49 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="checkLogin" id="_checkLogin">
+
+		<td class="attributes"><code>
+			 public 
+
+			string|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_checkLogin">#</a>
+		<code><a href="source-class-Kotchasan.Login.html#56-85" title="Go to source code">checkLogin</a>( <span>array <var>$params</var></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นตรวจสอบการ login
+เข้าระบบสำเร็จคืนค่าแอเรย์ข้อมูลสมาชิก, ไม่สำเร็จ คืนค่าข้อความผิดพลาด.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นตรวจสอบการ login
+เข้าระบบสำเร็จคืนค่าแอเรย์ข้อมูลสมาชิก, ไม่สำเร็จ คืนค่าข้อความผิดพลาด.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$params</var></dt>
+					<dd>ข้อมูลการ login ที่ส่งมา $params = array('username' => '', 'password' => '');</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string|array
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Kotchasan.LoginInterface.html#_checkLogin">Kotchasan\LoginInterface::checkLogin()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="create" id="_create">
 
 		<td class="attributes"><code>
@@ -255,7 +298,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Kotchasan.Login.html#53-140" title="Go to source code">create</a>( )</code>
+		<code><a href="source-class-Kotchasan.Login.html#87-174" title="Go to source code">create</a>( )</code>
 
 		<div class="description short">
 			<p>ตรวจสอบการ login เมื่อมีการเรียกใช้ class new Login
@@ -283,90 +326,6 @@ action=logout ออกจากระบบ
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="get" id="_get">
-
-		<td class="attributes"><code>
-			 protected static
-
-			string|null
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-Kotchasan.Login.html#142-167" title="Go to source code">get</a>( <span>string <var>$name</var></span>, <span>null|<code><a href="class-Kotchasan.Password.html">Kotchasan\Password</a></code> <var>$pw</var> = <span class="php-keyword1">null</span></span> )</code>
-
-		<div class="description short">
-			<p>อ่านข้อมูลจาก POST, SESSION และ COOKIE ตามลำดับ
-เจออันไหนก่อนใช้อันนั้น.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่านข้อมูลจาก POST, SESSION และ COOKIE ตามลำดับ
-เจออันไหนก่อนใช้อันนั้น.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$name</var></dt>
-					<dd></dd>
-					<dt><var>$pw</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string|null<br>คืนค่าข้อความ ไม่พบคืนค่า null
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="checkLogin" id="_checkLogin">
-
-		<td class="attributes"><code>
-			 public 
-
-			string|array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_checkLogin">#</a>
-		<code><a href="source-class-Kotchasan.Login.html#169-197" title="Go to source code">checkLogin</a>( <span>array <var>$params</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นตรวจสอบการ login.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นตรวจสอบการ login.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$params</var></dt>
-					<dd>ข้อมูลการ login ที่ส่งมา $params = array('username' => '', 'password' => '');</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string|array<br>เข้าระบบสำเร็จคืนค่าแอเรย์ข้อมูลสมาชิก, ไม่สำเร็จ คืนค่าข้อความผิดพลาด
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Kotchasan.LoginInterface.html#_checkLogin">Kotchasan\LoginInterface::checkLogin()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="forgot" id="_forgot">
 
 		<td class="attributes"><code>
@@ -379,7 +338,7 @@ action=logout ออกจากระบบ
 
 		<td class="name"><div>
 		<a class="anchor" href="#_forgot">#</a>
-		<code><a href="source-class-Kotchasan.Login.html#199-205" title="Go to source code">forgot</a>( <span><code><a href="class-Kotchasan.Http.Request.html">Kotchasan\Http\Request</a></code> <var>$request</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Login.html#176-182" title="Go to source code">forgot</a>( <span><code><a href="class-Kotchasan.Http.Request.html">Kotchasan\Http\Request</a></code> <var>$request</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นส่งอีเมลลืมรหัสผ่าน.</p>
@@ -390,40 +349,6 @@ action=logout ออกจากระบบ
 
 
 
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="isMember" id="_isMember">
-
-		<td class="attributes"><code>
-			 public static
-
-			array|null
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_isMember">#</a>
-		<code><a href="source-class-Kotchasan.Login.html#207-215" title="Go to source code">isMember</a>( )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นตรวจสอบการเข้าระบบ.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นตรวจสอบการเข้าระบบ.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					array|null<br>คืนค่าข้อมูลสมาชิก (แอเรย์) ถ้าเป็นสมาชิกและเข้าระบบแล้ว ไม่ใช่คืนค่า null
-				</div>
 
 
 
@@ -443,20 +368,103 @@ action=logout ออกจากระบบ
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isAdmin">#</a>
-		<code><a href="source-class-Kotchasan.Login.html#217-227" title="Go to source code">isAdmin</a>( )</code>
+		<code><a href="source-class-Kotchasan.Login.html#184-195" title="Go to source code">isAdmin</a>( )</code>
 
 		<div class="description short">
-			<p>ฟังก์ชั่นตรวจสอบสถานะแอดมิน.</p>
+			<p>ฟังก์ชั่นตรวจสอบสถานะแอดมิน
+คืนค่าข้อมูลสมาชิก (แอเรย์) ถ้าเป็นผู้ดูแลระบบและเข้าระบบแล้ว ไม่ใช่คืนค่า null.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นตรวจสอบสถานะแอดมิน.</p>
+			<p>ฟังก์ชั่นตรวจสอบสถานะแอดมิน
+คืนค่าข้อมูลสมาชิก (แอเรย์) ถ้าเป็นผู้ดูแลระบบและเข้าระบบแล้ว ไม่ใช่คืนค่า null.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					array|null<br>คืนค่าข้อมูลสมาชิก (แอเรย์) ถ้าเป็นผู้ดูแลระบบและเข้าระบบแล้ว ไม่ใช่คืนค่า null
+					array|null
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isMember" id="_isMember">
+
+		<td class="attributes"><code>
+			 public static
+
+			array|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isMember">#</a>
+		<code><a href="source-class-Kotchasan.Login.html#197-206" title="Go to source code">isMember</a>( )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นตรวจสอบการเข้าระบบ
+คืนค่าข้อมูลสมาชิก (แอเรย์) ถ้าเป็นสมาชิกและเข้าระบบแล้ว ไม่ใช่คืนค่า null.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นตรวจสอบการเข้าระบบ
+คืนค่าข้อมูลสมาชิก (แอเรย์) ถ้าเป็นสมาชิกและเข้าระบบแล้ว ไม่ใช่คืนค่า null.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array|null
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get" id="_get">
+
+		<td class="attributes"><code>
+			 protected static
+
+			string|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get">#</a>
+		<code><a href="source-class-Kotchasan.Login.html#208-234" title="Go to source code">get</a>( <span>string <var>$name</var></span>, <span>null|<code><a href="class-Kotchasan.Password.html">Kotchasan\Password</a></code> <var>$pw</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>อ่านข้อมูลจาก POST, SESSION และ COOKIE ตามลำดับ
+เจออันไหนก่อนใช้อันนั้น
+คืนค่าข้อความ ไม่พบคืนค่า null.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>อ่านข้อมูลจาก POST, SESSION และ COOKIE ตามลำดับ
+เจออันไหนก่อนใช้อันนั้น
+คืนค่าข้อความ ไม่พบคืนค่า null.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd></dd>
+					<dt><var>$pw</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string|null
 				</div>
 
 
@@ -480,28 +488,32 @@ action=logout ออกจากระบบ
 
 	<table class="summary properties" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="login_message" id="$login_message">
+	<tr data-order="from_submit" id="$from_submit">
 		<td class="attributes"><code>
 			public static 
-			string
+			boolean
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Login.html#24-29" title="Go to source code"><var>$login_message</var></a>
+				<a href="source-class-Kotchasan.Login.html#24-31" title="Go to source code"><var>$from_submit</var></a>
 
 			<div class="description short">
-				<p>ข้อความจาก Login Class.</p>
+				<p>ตัวแปรบอกว่ามาจากการ submit
+true มาจากการ submit
+false default.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>ข้อความจาก Login Class.</p>
+				<p>ตัวแปรบอกว่ามาจากการ submit
+true มาจากการ submit
+false default.</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$login_message" class="anchor">#</a>
-				<code></code>
+				<a href="#$from_submit" class="anchor">#</a>
+				<code><span class="php-keyword1">false</span></code>
 			</div>
 		</td>
 	</tr>
@@ -512,7 +524,7 @@ action=logout ออกจากระบบ
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Login.html#30-36" title="Go to source code"><var>$login_input</var></a>
+				<a href="source-class-Kotchasan.Login.html#33-39" title="Go to source code"><var>$login_input</var></a>
 
 			<div class="description short">
 				<p>ชื่อ Input ที่ต้องการให้ active
@@ -532,6 +544,31 @@ login_username หรือ login_password.</p>
 			</div>
 		</td>
 	</tr>
+	<tr data-order="login_message" id="$login_message">
+		<td class="attributes"><code>
+			public static 
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Login.html#41-46" title="Go to source code"><var>$login_message</var></a>
+
+			<div class="description short">
+				<p>ข้อความจาก Login Class.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>ข้อความจาก Login Class.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$login_message" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
 	<tr data-order="login_params" id="$login_params">
 		<td class="attributes"><code>
 			public static 
@@ -539,7 +576,7 @@ login_username หรือ login_password.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Login.html#37-43" title="Go to source code"><var>$login_params</var></a>
+				<a href="source-class-Kotchasan.Login.html#48-54" title="Go to source code"><var>$login_params</var></a>
 
 			<div class="description short">
 				<p>ตัวแปรเก็บข้อมูลที่ส่งมา
@@ -556,35 +593,6 @@ login_username หรือ login_password.</p>
 			<div>
 				<a href="#$login_params" class="anchor">#</a>
 				<code><span class="php-keyword1">array</span>()</code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="from_submit" id="$from_submit">
-		<td class="attributes"><code>
-			public static 
-			boolean
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Login.html#44-51" title="Go to source code"><var>$from_submit</var></a>
-
-			<div class="description short">
-				<p>ตัวแปรบอกว่ามาจากการ submit
-true มาจากการ submit
-false default.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>ตัวแปรบอกว่ามาจากการ submit
-true มาจากการ submit
-false default.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$from_submit" class="anchor">#</a>
-				<code><span class="php-keyword1">false</span></code>
 			</div>
 		</td>
 	</tr>

@@ -187,7 +187,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Http.Stream.html#15-327" title="Go to source code">Kotchasan/Http/Stream.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Http.Stream.html#15-339" title="Go to source code">Kotchasan/Http/Stream.php</a>
 		<br>
 	</div>
 
@@ -207,7 +207,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Kotchasan.Http.Stream.html#61-82" title="Go to source code">__construct</a>( <span>resource <var>$stream</var></span>, <span>string <var>$mode</var> = <span class="php-quote">'r'</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.Stream.html#66-87" title="Go to source code">__construct</a>( <span>resource <var>$stream</var></span>, <span>string <var>$mode</var> = <span class="php-quote">'r'</span></span> )</code>
 
 		<div class="description short">
 			<p>Create a new Stream.</p>
@@ -248,7 +248,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___toString">#</a>
-		<code><a href="source-class-Kotchasan.Http.Stream.html#84-101" title="Go to source code">__toString</a>( )</code>
+		<code><a href="source-class-Kotchasan.Http.Stream.html#89-106" title="Go to source code">__toString</a>( )</code>
 
 		<div class="description short">
 			<p>อ่านข้อมูลทั้งหมดของ stream ส่งออกเป็น string.</p>
@@ -284,7 +284,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_close">#</a>
-		<code><a href="source-class-Kotchasan.Http.Stream.html#103-114" title="Go to source code">close</a>( )</code>
+		<code><a href="source-class-Kotchasan.Http.Stream.html#108-119" title="Go to source code">close</a>( )</code>
 
 		<div class="description short">
 			<p>ยกเลิก stream คืนหน่วยความจำ.</p>
@@ -316,20 +316,22 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_detach">#</a>
-		<code><a href="source-class-Kotchasan.Http.Stream.html#116-132" title="Go to source code">detach</a>( )</code>
+		<code><a href="source-class-Kotchasan.Http.Stream.html#121-138" title="Go to source code">detach</a>( )</code>
 
 		<div class="description short">
-			<p>reset ข้อมูลของ Class กลับเป็นค่าเริ่มต้น.</p>
+			<p>reset ข้อมูลของ Class กลับเป็นค่าเริ่มต้น
+คืนค่า resource เดิม</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>reset ข้อมูลของ Class กลับเป็นค่าเริ่มต้น.</p>
+			<p>reset ข้อมูลของ Class กลับเป็นค่าเริ่มต้น
+คืนค่า resource เดิม</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					resource|null<br>คืนค่า resource เดิม
+					resource|null
 				</div>
 
 
@@ -337,82 +339,6 @@
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_detach">Psr\Http\Message\StreamInterface::detach()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getSize" id="_getSize">
-
-		<td class="attributes"><code>
-			 public 
-
-			integer|null
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getSize">#</a>
-		<code><a href="source-class-Kotchasan.Http.Stream.html#134-151" title="Go to source code">getSize</a>( )</code>
-
-		<div class="description short">
-			<p>อ่านขนาดของ stream.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่านขนาดของ stream.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer|null<br>ขนาดเป็น byte หรือ null ถ้าไม่รู้ขนาด
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_getSize">Psr\Http\Message\StreamInterface::getSize()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="tell" id="_tell">
-
-		<td class="attributes"><code>
-			 public 
-
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_tell">#</a>
-		<code><a href="source-class-Kotchasan.Http.Stream.html#153-168" title="Go to source code">tell</a>( )</code>
-
-		<div class="description short">
-			<p>อ่านค่าตำแหน่งของ pointer ปัจจุบัน.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่านค่าตำแหน่งของ pointer ปัจจุบัน.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer<br>ตำแหน่งของ pointer
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>on error
-				</div>
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_tell">Psr\Http\Message\StreamInterface::tell()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -428,20 +354,22 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_eof">#</a>
-		<code><a href="source-class-Kotchasan.Http.Stream.html#170-178" title="Go to source code">eof</a>( )</code>
+		<code><a href="source-class-Kotchasan.Http.Stream.html#140-149" title="Go to source code">eof</a>( )</code>
 
 		<div class="description short">
-			<p>ตรวจสอบว่า pointer อยู่ที่จุดสุดท้ายของ stream หรือยัง.</p>
+			<p>ตรวจสอบว่า pointer อยู่ที่จุดสุดท้ายของ stream หรือยัง
+คืนค่า true ถ้าอยู่ที่จุดสิ้นสุดของไฟล์.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ตรวจสอบว่า pointer อยู่ที่จุดสุดท้ายของ stream หรือยัง.</p>
+			<p>ตรวจสอบว่า pointer อยู่ที่จุดสุดท้ายของ stream หรือยัง
+คืนค่า true ถ้าอยู่ที่จุดสิ้นสุดของไฟล์.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>true ถ้าอยู่ที่จุดสิ้นสุดของไฟล์
+					boolean
 				</div>
 
 
@@ -449,283 +377,6 @@
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_eof">Psr\Http\Message\StreamInterface::eof()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="isSeekable" id="_isSeekable">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_isSeekable">#</a>
-		<code><a href="source-class-Kotchasan.Http.Stream.html#180-192" title="Go to source code">isSeekable</a>( )</code>
-
-		<div class="description short">
-			<p>อ่านความสามารถในการกำหนดตำแหน่งของ pointer.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่านความสามารถในการกำหนดตำแหน่งของ pointer.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>true ถ้าสามารถ seek ได้
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_isSeekable">Psr\Http\Message\StreamInterface::isSeekable()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="seek" id="_seek">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_seek">#</a>
-		<code><a href="source-class-Kotchasan.Http.Stream.html#194-207" title="Go to source code">seek</a>( <span>integer <var>$offset</var></span>, <span>integer <var>$whence</var> = SEEK_SET</span> )</code>
-
-		<div class="description short">
-			<p>เลื่อน pointer ไปยังตำแหน่งที่กำหนด.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>เลื่อน pointer ไปยังตำแหน่งที่กำหนด.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$offset</var></dt>
-					<dd>ตำแหน่งของ pointer</dd>
-					<dt><var>$whence</var></dt>
-					<dd></dd>
-				</dl></div>
-
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>on failure
-				</div>
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_seek">Psr\Http\Message\StreamInterface::seek()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="rewind" id="_rewind">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_rewind">#</a>
-		<code><a href="source-class-Kotchasan.Http.Stream.html#209-217" title="Go to source code">rewind</a>( )</code>
-
-		<div class="description short">
-			<p>เลื่อน pointer ไปยังจุดเริ่มต้นของ stream.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>เลื่อน pointer ไปยังจุดเริ่มต้นของ stream.</p>
-
-
-
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>on failure
-				</div>
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_rewind">Psr\Http\Message\StreamInterface::rewind()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="isWritable" id="_isWritable">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_isWritable">#</a>
-		<code><a href="source-class-Kotchasan.Http.Stream.html#219-232" title="Go to source code">isWritable</a>( )</code>
-
-		<div class="description short">
-			<p>ตรวจสอบว่าสามารถเขียน stream ได้หรือไม่.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ตรวจสอบว่าสามารถเขียน stream ได้หรือไม่.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>ถ้าเขียนได้
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_isWritable">Psr\Http\Message\StreamInterface::isWritable()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="write" id="_write">
-
-		<td class="attributes"><code>
-			 public 
-
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_write">#</a>
-		<code><a href="source-class-Kotchasan.Http.Stream.html#234-253" title="Go to source code">write</a>( <span>string <var>$string</var></span> )</code>
-
-		<div class="description short">
-			<p>เขียนข้อมูลลงบน stream.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>เขียนข้อมูลลงบน stream.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$string</var></dt>
-					<dd>ข้อมูลที่เขียน</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer<br>คืนค่าจำนวน byte ที่เขียน
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>on failure
-				</div>
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_write">Psr\Http\Message\StreamInterface::write()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="isReadable" id="_isReadable">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_isReadable">#</a>
-		<code><a href="source-class-Kotchasan.Http.Stream.html#255-268" title="Go to source code">isReadable</a>( )</code>
-
-		<div class="description short">
-			<p>ตรวจสอบว่าสามารถอ่านข้อมูล stream ได้หรือไม่.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ตรวจสอบว่าสามารถอ่านข้อมูล stream ได้หรือไม่.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>true ถ้าอ่านได้
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_isReadable">Psr\Http\Message\StreamInterface::isReadable()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="read" id="_read">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_read">#</a>
-		<code><a href="source-class-Kotchasan.Http.Stream.html#270-287" title="Go to source code">read</a>( <span>integer <var>$length</var></span> )</code>
-
-		<div class="description short">
-			<p>อ่านข้อมูล stream ตามจำนวนที่กำหนด.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่านข้อมูล stream ตามจำนวนที่กำหนด.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$length</var></dt>
-					<dd>จำนวนที่ต้องการ</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>ถ้าไม่สามารถอ่านได้
-				</div>
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_read">Psr\Http\Message\StreamInterface::read()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -741,7 +392,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getContents">#</a>
-		<code><a href="source-class-Kotchasan.Http.Stream.html#289-304" title="Go to source code">getContents</a>( )</code>
+		<code><a href="source-class-Kotchasan.Http.Stream.html#151-166" title="Go to source code">getContents</a>( )</code>
 
 		<div class="description short">
 			<p>อ่านข้อมูลทั้งหมดจาก stream.</p>
@@ -781,14 +432,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getMetadata">#</a>
-		<code><a href="source-class-Kotchasan.Http.Stream.html#306-326" title="Go to source code">getMetadata</a>( <span>string <var>$key</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.Stream.html#168-188" title="Go to source code">getMetadata</a>( <span>string <var>$key</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
-			<p>อ่านข้อมูลประจำตัวของ stream.</p>
+			<p>อ่านข้อมูลประจำตัวของ stream
+array คืนค่าข้อมูลทั้งหมด ถ้าไม่ระบุ $key
+mixed คืนค่าข้อมูลจาก $key ที่กำหนด
+null ไม่พบ $key หรือไม่ใช่ stream.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>อ่านข้อมูลประจำตัวของ stream.</p>
+			<p>อ่านข้อมูลประจำตัวของ stream
+array คืนค่าข้อมูลทั้งหมด ถ้าไม่ระบุ $key
+mixed คืนค่าข้อมูลจาก $key ที่กำหนด
+null ไม่พบ $key หรือไม่ใช่ stream.</p>
 
 
 				<h4>Parameters</h4>
@@ -799,9 +456,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					array|mixed|null<br><p>array คืนค่าข้อมูลทั้งหมด ถ้าไม่ระบุ $key
-                         mixed คืนค่าข้อมูลจาก $key ที่กำหนด
-                         null ไม่พบ $key หรือไม่ใช่ stream</p>
+					array|mixed|null
 				</div>
 
 
@@ -809,6 +464,369 @@
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_getMetadata">Psr\Http\Message\StreamInterface::getMetadata()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getSize" id="_getSize">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getSize">#</a>
+		<code><a href="source-class-Kotchasan.Http.Stream.html#190-208" title="Go to source code">getSize</a>( )</code>
+
+		<div class="description short">
+			<p>อ่านขนาดของ stream
+คืนค่าขนาดเป็น byte หรือ null ถ้าไม่รู้ขนาด.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>อ่านขนาดของ stream
+คืนค่าขนาดเป็น byte หรือ null ถ้าไม่รู้ขนาด.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer|null
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_getSize">Psr\Http\Message\StreamInterface::getSize()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isReadable" id="_isReadable">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isReadable">#</a>
+		<code><a href="source-class-Kotchasan.Http.Stream.html#210-224" title="Go to source code">isReadable</a>( )</code>
+
+		<div class="description short">
+			<p>ตรวจสอบว่าสามารถอ่านข้อมูล stream ได้หรือไม่
+คืนค่า true ถ้าอ่านได้.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ตรวจสอบว่าสามารถอ่านข้อมูล stream ได้หรือไม่
+คืนค่า true ถ้าอ่านได้.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_isReadable">Psr\Http\Message\StreamInterface::isReadable()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isSeekable" id="_isSeekable">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isSeekable">#</a>
+		<code><a href="source-class-Kotchasan.Http.Stream.html#226-239" title="Go to source code">isSeekable</a>( )</code>
+
+		<div class="description short">
+			<p>อ่านความสามารถในการกำหนดตำแหน่งของ pointer
+คืนค่า true ถ้าสามารถ seek ได้.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>อ่านความสามารถในการกำหนดตำแหน่งของ pointer
+คืนค่า true ถ้าสามารถ seek ได้.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_isSeekable">Psr\Http\Message\StreamInterface::isSeekable()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isWritable" id="_isWritable">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isWritable">#</a>
+		<code><a href="source-class-Kotchasan.Http.Stream.html#241-255" title="Go to source code">isWritable</a>( )</code>
+
+		<div class="description short">
+			<p>ตรวจสอบว่าสามารถเขียน stream ได้หรือไม่
+คืนค่า true ถ้าเขียนได้.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ตรวจสอบว่าสามารถเขียน stream ได้หรือไม่
+คืนค่า true ถ้าเขียนได้.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_isWritable">Psr\Http\Message\StreamInterface::isWritable()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="read" id="_read">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_read">#</a>
+		<code><a href="source-class-Kotchasan.Http.Stream.html#257-274" title="Go to source code">read</a>( <span>integer <var>$length</var></span> )</code>
+
+		<div class="description short">
+			<p>อ่านข้อมูล stream ตามจำนวนที่กำหนด.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>อ่านข้อมูล stream ตามจำนวนที่กำหนด.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$length</var></dt>
+					<dd>จำนวนที่ต้องการ</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>ถ้าไม่สามารถอ่านได้
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_read">Psr\Http\Message\StreamInterface::read()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="rewind" id="_rewind">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_rewind">#</a>
+		<code><a href="source-class-Kotchasan.Http.Stream.html#276-284" title="Go to source code">rewind</a>( )</code>
+
+		<div class="description short">
+			<p>เลื่อน pointer ไปยังจุดเริ่มต้นของ stream.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>เลื่อน pointer ไปยังจุดเริ่มต้นของ stream.</p>
+
+
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>on failure
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_rewind">Psr\Http\Message\StreamInterface::rewind()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="seek" id="_seek">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_seek">#</a>
+		<code><a href="source-class-Kotchasan.Http.Stream.html#286-299" title="Go to source code">seek</a>( <span>integer <var>$offset</var></span>, <span>integer <var>$whence</var> = SEEK_SET</span> )</code>
+
+		<div class="description short">
+			<p>เลื่อน pointer ไปยังตำแหน่งที่กำหนด.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>เลื่อน pointer ไปยังตำแหน่งที่กำหนด.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$offset</var></dt>
+					<dd>ตำแหน่งของ pointer</dd>
+					<dt><var>$whence</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>on failure
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_seek">Psr\Http\Message\StreamInterface::seek()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="tell" id="_tell">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_tell">#</a>
+		<code><a href="source-class-Kotchasan.Http.Stream.html#301-316" title="Go to source code">tell</a>( )</code>
+
+		<div class="description short">
+			<p>คืนค่าตำแหน่งของ pointer ปัจจุบัน.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>คืนค่าตำแหน่งของ pointer ปัจจุบัน.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>on error
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_tell">Psr\Http\Message\StreamInterface::tell()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="write" id="_write">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_write">#</a>
+		<code><a href="source-class-Kotchasan.Http.Stream.html#318-338" title="Go to source code">write</a>( <span>string <var>$string</var></span> )</code>
+
+		<div class="description short">
+			<p>เขียนข้อมูลลงบน stream
+คืนค่าจำนวน byte ที่เขียน.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>เขียนข้อมูลลงบน stream
+คืนค่าจำนวน byte ที่เขียน.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$string</var></dt>
+					<dd>ข้อมูลที่เขียน</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>on failure
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Http.Message.StreamInterface.html#_write">Psr\Http\Message\StreamInterface::write()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -827,31 +845,6 @@
 
 	<table class="summary properties" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="stream" id="$stream">
-		<td class="attributes"><code>
-			protected  
-			resource
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Http.Stream.html#24-29" title="Go to source code"><var>$stream</var></a>
-
-			<div class="description short">
-				<p>stream resource.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>stream resource.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$stream" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
 	<tr data-order="meta" id="$meta">
 		<td class="attributes"><code>
 			protected  
@@ -859,7 +852,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Http.Stream.html#30-35" title="Go to source code"><var>$meta</var></a>
+				<a href="source-class-Kotchasan.Http.Stream.html#24-29" title="Go to source code"><var>$meta</var></a>
 
 			<div class="description short">
 				<p>stream metadata.</p>
@@ -877,31 +870,6 @@
 			</div>
 		</td>
 	</tr>
-	<tr data-order="seekable" id="$seekable">
-		<td class="attributes"><code>
-			protected  
-			boolean
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Http.Stream.html#36-41" title="Go to source code"><var>$seekable</var></a>
-
-			<div class="description short">
-				<p>stream seekable.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>stream seekable.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$seekable" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
 	<tr data-order="readable" id="$readable">
 		<td class="attributes"><code>
 			protected  
@@ -909,7 +877,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Http.Stream.html#42-47" title="Go to source code"><var>$readable</var></a>
+				<a href="source-class-Kotchasan.Http.Stream.html#31-36" title="Go to source code"><var>$readable</var></a>
 
 			<div class="description short">
 				<p>stream readable.</p>
@@ -927,27 +895,27 @@
 			</div>
 		</td>
 	</tr>
-	<tr data-order="writable" id="$writable">
+	<tr data-order="seekable" id="$seekable">
 		<td class="attributes"><code>
 			protected  
 			boolean
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Http.Stream.html#48-53" title="Go to source code"><var>$writable</var></a>
+				<a href="source-class-Kotchasan.Http.Stream.html#38-43" title="Go to source code"><var>$seekable</var></a>
 
 			<div class="description short">
-				<p>stream writable.</p>
+				<p>stream seekable.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>stream writable.</p>
+				<p>stream seekable.</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$writable" class="anchor">#</a>
+				<a href="#$seekable" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>
@@ -959,7 +927,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Http.Stream.html#54-59" title="Go to source code"><var>$size</var></a>
+				<a href="source-class-Kotchasan.Http.Stream.html#45-50" title="Go to source code"><var>$size</var></a>
 
 			<div class="description short">
 				<p>stream size.</p>
@@ -973,6 +941,56 @@
 		<td class="value">
 			<div>
 				<a href="#$size" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="stream" id="$stream">
+		<td class="attributes"><code>
+			protected  
+			resource
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Http.Stream.html#52-57" title="Go to source code"><var>$stream</var></a>
+
+			<div class="description short">
+				<p>stream resource.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>stream resource.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$stream" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="writable" id="$writable">
+		<td class="attributes"><code>
+			protected  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Http.Stream.html#59-64" title="Go to source code"><var>$writable</var></a>
+
+			<div class="description short">
+				<p>stream writable.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>stream writable.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$writable" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>

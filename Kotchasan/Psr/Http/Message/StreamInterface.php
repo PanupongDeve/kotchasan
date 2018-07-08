@@ -43,6 +43,41 @@ interface StreamInterface
     public function detach();
 
     /**
+     * Returns true if the stream is at the end of the stream.
+     *
+     * @return bool
+     */
+    public function eof();
+
+    /**
+     * Returns the remaining contents in a string.
+     *
+     *                           reading
+     *
+     * @throws \RuntimeException if unable to read or an error occurs while
+     *
+     * @return string
+     */
+    public function getContents();
+
+    /**
+     * Get stream metadata as an associative array or retrieve a specific key.
+     *
+     * The keys returned are identical to the keys returned from PHP's
+     * stream_get_meta_data() function.
+     *
+     *                          provided. Returns a specific key value if a key is provided and the
+     *                          value is found, or null if the key is not found.
+     *
+     * @see http://php.net/manual/en/function.stream-get-meta-data.php
+     *
+     * @param string $key specific metadata to retrieve
+     *
+     * @return array|mixed|null Returns an associative array if no key is
+     */
+    public function getMetadata($key = null);
+
+    /**
      * Get the size of the stream if known.
      *
      * @return int|null returns the size in bytes if known, or null if unknown
@@ -50,20 +85,11 @@ interface StreamInterface
     public function getSize();
 
     /**
-     * Returns the current position of the file read/write pointer.
-     *
-     * @return int Position of the file pointer
-     *
-     * @throws \RuntimeException on error
-     */
-    public function tell();
-
-    /**
-     * Returns true if the stream is at the end of the stream.
+     * Returns whether or not the stream is readable.
      *
      * @return bool
      */
-    public function eof();
+    public function isReadable();
 
     /**
      * Returns whether or not the stream is seekable.
@@ -73,20 +99,26 @@ interface StreamInterface
     public function isSeekable();
 
     /**
-     * Seek to a position in the stream.
+     * Returns whether or not the stream is writable.
      *
-     * @see http://www.php.net/manual/en/function.fseek.php
-     *
-     * @param int $offset Stream offset
-     * @param int $whence Specifies how the cursor position will be calculated
-     *                    based on the seek offset. Valid values are identical to the built-in
-     *                    PHP $whence values for `fseek()`.  SEEK_SET: Set position equal to
-     *                    offset bytes SEEK_CUR: Set position to current location plus offset
-     *                    SEEK_END: Set position to end-of-stream plus offset.
-     *
-     * @throws \RuntimeException on failure
+     * @return bool
      */
-    public function seek($offset, $whence = SEEK_SET);
+    public function isWritable();
+
+    /**
+     * Read data from the stream.
+     *
+     *                    them. Fewer than $length bytes may be returned if underlying stream
+     *                    call returns fewer bytes.
+     *                if no bytes are available
+     *
+     * @param int $length Read up to $length bytes from the object and return
+     *
+     * @throws \RuntimeException if an error occurs
+     *
+     * @return string returns the data read from the stream, or an empty string
+     */
+    public function read($length);
 
     /**
      * Seek to the beginning of the stream.
@@ -102,67 +134,39 @@ interface StreamInterface
     public function rewind();
 
     /**
-     * Returns whether or not the stream is writable.
+     * Seek to a position in the stream.
      *
-     * @return bool
+     *                    based on the seek offset. Valid values are identical to the built-in
+     *                    PHP $whence values for `fseek()`.  SEEK_SET: Set position equal to
+     *                    offset bytes SEEK_CUR: Set position to current location plus offset
+     *                    SEEK_END: Set position to end-of-stream plus offset.
+     *
+     * @see http://www.php.net/manual/en/function.fseek.php
+     *
+     * @param int $offset Stream offset
+     * @param int $whence Specifies how the cursor position will be calculated
+     *
+     * @throws \RuntimeException on failure
      */
-    public function isWritable();
+    public function seek($offset, $whence = SEEK_SET);
+
+    /**
+     * Returns the current position of the file read/write pointer.
+     *
+     * @throws \RuntimeException on error
+     *
+     * @return int Position of the file pointer
+     */
+    public function tell();
 
     /**
      * Write data to the stream.
      *
      * @param string $string the string that is to be written
      *
-     * @return int returns the number of bytes written to the stream
-     *
      * @throws \RuntimeException on failure
+     *
+     * @return int returns the number of bytes written to the stream
      */
     public function write($string);
-
-    /**
-     * Returns whether or not the stream is readable.
-     *
-     * @return bool
-     */
-    public function isReadable();
-
-    /**
-     * Read data from the stream.
-     *
-     * @param int $length Read up to $length bytes from the object and return
-     *                    them. Fewer than $length bytes may be returned if underlying stream
-     *                    call returns fewer bytes.
-     *
-     * @return string returns the data read from the stream, or an empty string
-     *                if no bytes are available
-     *
-     * @throws \RuntimeException if an error occurs
-     */
-    public function read($length);
-
-    /**
-     * Returns the remaining contents in a string.
-     *
-     * @return string
-     *
-     * @throws \RuntimeException if unable to read or an error occurs while
-     *                           reading
-     */
-    public function getContents();
-
-    /**
-     * Get stream metadata as an associative array or retrieve a specific key.
-     *
-     * The keys returned are identical to the keys returned from PHP's
-     * stream_get_meta_data() function.
-     *
-     * @see http://php.net/manual/en/function.stream-get-meta-data.php
-     *
-     * @param string $key specific metadata to retrieve
-     *
-     * @return array|mixed|null Returns an associative array if no key is
-     *                          provided. Returns a specific key value if a key is provided and the
-     *                          value is found, or null if the key is not found.
-     */
-    public function getMetadata($key = null);
 }

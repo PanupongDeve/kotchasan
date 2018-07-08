@@ -219,7 +219,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.InputItem.html#13-448" title="Go to source code">Kotchasan/InputItem.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.InputItem.html#13-454" title="Go to source code">Kotchasan/InputItem.php</a>
 		<br>
 	</div>
 
@@ -239,7 +239,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#35-45" title="Go to source code">__construct</a>( <span>mixed <var>$value</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#36-46" title="Go to source code">__construct</a>( <span>mixed <var>$value</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Class Constructer.</p>
@@ -264,6 +264,79 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="all" id="_all">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_all">#</a>
+		<code><a href="source-class-Kotchasan.InputItem.html#48-56" title="Go to source code">all</a>( )</code>
+
+		<div class="description short">
+			<p>คืนค่าตามข้อมูลที่ส่งมา.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>คืนค่าตามข้อมูลที่ส่งมา.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="color" id="_color">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_color">#</a>
+		<code><a href="source-class-Kotchasan.InputItem.html#58-69" title="Go to source code">color</a>( )</code>
+
+		<div class="description short">
+			<p>ค่าสี.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ค่าสี.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						create('#000')->color() [==] '#000'<br>
+						create('red')->color() [==] 'red'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="create" id="_create">
 
 		<td class="attributes"><code>
@@ -276,7 +349,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#47-58" title="Go to source code">create</a>( <span>mixed <var>$value</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#71-82" title="Go to source code">create</a>( <span>mixed <var>$value</var></span>, <span>string|null <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>สร้าง Object.</p>
@@ -305,32 +378,256 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="all" id="_all">
+	<tr data-order="date" id="_date">
 
 		<td class="attributes"><code>
 			 public 
 
-			mixed
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_all">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#60-68" title="Go to source code">all</a>( )</code>
+		<a class="anchor" href="#_date">#</a>
+		<code><a href="source-class-Kotchasan.InputItem.html#84-99" title="Go to source code">date</a>( )</code>
 
 		<div class="description short">
-			<p>คืนค่าตามข้อมูลที่ส่งมา.</p>
+			<p>วันที่และเวลา
+คืนค่า null ถ้าข้อมูลวันที่ว่างเปล่า.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>คืนค่าตามข้อมูลที่ส่งมา.</p>
+			<p>วันที่และเวลา
+คืนค่า null ถ้าข้อมูลวันที่ว่างเปล่า.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					mixed
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						create('2016-01-01 20:20:20')->date() [==] '2016-01-01 20:20:20'<br>
+						create('')->date() [==] null<br>
+						create(null)->date() [==] null<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="description" id="_description">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_description">#</a>
+		<code><a href="source-class-Kotchasan.InputItem.html#101-142" title="Go to source code">description</a>( <span>integer <var>$len</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			<p>ลบ tag, BBCode ออก ให้เหลือแต่ข้อความล้วน
+ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
+และลบช่องว่างหัวท้าย
+ใช้เป็น description.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ลบ tag, BBCode ออก ให้เหลือแต่ข้อความล้วน
+ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
+และลบช่องว่างหัวท้าย
+ใช้เป็น description.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$len</var></dt>
+					<dd>ความยาวของ description หมายถึงคืนค่าทั้งหมด</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						create("ท.ด(ส     )อ\"บ'\r\n\t<?php echo '555'?>")->description() [==] 'ท.ด(ส )อ บ'<br>
+						create('ทดสอบ<style>body {color: red}</style>')->description() [==] 'ทดสอบ'<br>
+						create('ทดสอบ<b>ตัวหนา</b>')->description() [==] 'ทดสอบตัวหนา'<br>
+						create('ทดสอบ{LNG_Language name}')->description() [==] 'ทดสอบ'<br>
+						create('ทดสอบ[code]ตัวหนา[/code]')->description() [==] 'ทดสอบ'<br>
+						create('ทดสอบ[b]ตัวหนา[/b]')->description() [==] 'ทดสอบตัวหนา'<br>
+						create('2 > 1 &lt; 3 > 2{WIDGET_XXX}')->description() [==] '2 > 1 &lt; 3 > 2'<br>
+						create('ทดสอบ<!--WIDGET_XXX-->')->description() [==] 'ทดสอบ'<br>
+						create('ท&amp;ด&quot;\&nbsp;/<strong>ส-อ+บ')->description() [==] 'ท ด \ /</strong>ส-อ+บ'<br>
+						create('ภาคภูมิ')->description(2) [==] 'ภา'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="detail" id="_detail">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_detail">#</a>
+		<code><a href="source-class-Kotchasan.InputItem.html#144-155" title="Go to source code">detail</a>( )</code>
+
+		<div class="description short">
+			<p>ลบ PHP tag และแปลง \ เป็น $#92; ใช้รับข้อมูลจาก editor
+เช่นเนื้อหาของบทความ</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ลบ PHP tag และแปลง \ เป็น $#92; ใช้รับข้อมูลจาก editor
+เช่นเนื้อหาของบทความ</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						create('ทด\/สอบ<?php echo "555"?>')->detail() [==] 'ทด&#92;/สอบ'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="exists" id="_exists">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_exists">#</a>
+		<code><a href="source-class-Kotchasan.InputItem.html#157-166" title="Go to source code">exists</a>( )</code>
+
+		<div class="description short">
+			<p>ตรวจสอบว่ามีตัวแปรส่งมาหรือไม่
+คืนค่า true ถ้ามีตัวแปรส่งมา.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ตรวจสอบว่ามีตัวแปรส่งมาหรือไม่
+คืนค่า true ถ้ามีตัวแปรส่งมา.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="filter" id="_filter">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_filter">#</a>
+		<code><a href="source-class-Kotchasan.InputItem.html#168-182" title="Go to source code">filter</a>( <span>string <var>$format</var></span>, <span>string <var>$replace</var> = <span class="php-quote">''</span></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นแทนที่อักขระที่ไม่ต้องการ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นแทนที่อักขระที่ไม่ต้องการ.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$format</var></dt>
+					<dd>Regular Expression อักขระที่ยอมรับ เช่น \d\s&#45;:</dd>
+					<dt><var>$replace</var></dt>
+					<dd>ข้อความแทนที่</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						create('admin,1234')->filter('0-9a-zA-Z,') [==] 'admin,1234'<br>
+						create('adminกข,12ฟ34')->filter('0-9a-zA-Z,') [==] 'admin,1234'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isCookie" id="_isCookie">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isCookie">#</a>
+		<code><a href="source-class-Kotchasan.InputItem.html#184-193" title="Go to source code">isCookie</a>( )</code>
+
+		<div class="description short">
+			<p>ตรวจสอบว่ามาจาก $_COOKIE หรือไม่
+คืนค่า true ถ้ามาจาก $_COOKIE.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ตรวจสอบว่ามาจาก $_COOKIE หรือไม่
+คืนค่า true ถ้ามาจาก $_COOKIE.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
 				</div>
 
 
@@ -351,20 +648,22 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isGet">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#70-78" title="Go to source code">isGet</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#195-204" title="Go to source code">isGet</a>( )</code>
 
 		<div class="description short">
-			<p>ตรวจสอบว่ามาจาก $_GET หรือไม่.</p>
+			<p>ตรวจสอบว่ามาจาก $_GET หรือไม่
+คืนค่า true ถ้ามาจาก $_GET.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ตรวจสอบว่ามาจาก $_GET หรือไม่.</p>
+			<p>ตรวจสอบว่ามาจาก $_GET หรือไม่
+คืนค่า true ถ้ามาจาก $_GET.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>คืนค่า true ถ้ามาจาก $_GET
+					boolean
 				</div>
 
 
@@ -385,20 +684,22 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isPost">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#80-88" title="Go to source code">isPost</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#206-215" title="Go to source code">isPost</a>( )</code>
 
 		<div class="description short">
-			<p>ตรวจสอบว่ามาจาก $_POST หรือไม่.</p>
+			<p>ตรวจสอบว่ามาจาก $_POST หรือไม่
+คืนค่า true ถ้ามาจาก $_POST.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ตรวจสอบว่ามาจาก $_POST หรือไม่.</p>
+			<p>ตรวจสอบว่ามาจาก $_POST หรือไม่
+คืนค่า true ถ้ามาจาก $_POST.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>คืนค่า true ถ้ามาจาก $_POST
+					boolean
 				</div>
 
 
@@ -419,20 +720,22 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isSession">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#90-98" title="Go to source code">isSession</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#217-226" title="Go to source code">isSession</a>( )</code>
 
 		<div class="description short">
-			<p>ตรวจสอบว่ามาจาก $_SESSION หรือไม่.</p>
+			<p>ตรวจสอบว่ามาจาก $_SESSION หรือไม่
+คืนค่า true ถ้ามาจาก $_SESSION.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ตรวจสอบว่ามาจาก $_SESSION หรือไม่.</p>
+			<p>ตรวจสอบว่ามาจาก $_SESSION หรือไม่
+คืนค่า true ถ้ามาจาก $_SESSION.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>คืนค่า true ถ้ามาจาก $_SESSION
+					boolean
 				</div>
 
 
@@ -441,69 +744,252 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="isCookie" id="_isCookie">
+	<tr data-order="keywords" id="_keywords">
 
 		<td class="attributes"><code>
 			 public 
 
-			boolean
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_isCookie">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#100-108" title="Go to source code">isCookie</a>( )</code>
+		<a class="anchor" href="#_keywords">#</a>
+		<code><a href="source-class-Kotchasan.InputItem.html#228-244" title="Go to source code">keywords</a>( <span>integer <var>$len</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
-			<p>ตรวจสอบว่ามาจาก $_COOKIE หรือไม่.</p>
+			<p>ลบ tags และ ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
+และลบช่องว่างหัวท้าย
+ใช้เป็น tags หรือ keywords.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ตรวจสอบว่ามาจาก $_COOKIE หรือไม่.</p>
+			<p>ลบ tags และ ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
+และลบช่องว่างหัวท้าย
+ใช้เป็น tags หรือ keywords.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$len</var></dt>
+					<dd>ความยาวของ keywords หมายถึงคืนค่าทั้งหมด</dd>
+				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>คืนค่า true ถ้ามาจาก $_COOKIE
+					string
 				</div>
 
 
+				<h4>Assert</h4>
+				<div class="list">
+						create("<b>ทด</b>   \r\nสอบ")->keywords() [==] 'ทด สอบ'<br>
+				</div>
 
 
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="exists" id="_exists">
+	<tr data-order="number" id="_number">
 
 		<td class="attributes"><code>
 			 public 
 
-			boolean
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_exists">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#110-118" title="Go to source code">exists</a>( )</code>
+		<a class="anchor" href="#_number">#</a>
+		<code><a href="source-class-Kotchasan.InputItem.html#246-258" title="Go to source code">number</a>( )</code>
 
 		<div class="description short">
-			<p>ตรวจสอบว่ามีตัวแปรส่งมาหรือไม่.</p>
+			<p>ตัวเลข</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ตรวจสอบว่ามีตัวแปรส่งมาหรือไม่.</p>
+			<p>ตัวเลข</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>คืนค่า true ถ้ามีตัวแปรส่งมา
+					string
 				</div>
 
 
+				<h4>Assert</h4>
+				<div class="list">
+						create(12345)->number() [==] '12345'<br>
+						create(0.12345)->number() [==] '012345'<br>
+						create('ทด0123สอ4บ5')->number() [==] '012345'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="password" id="_password">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_password">#</a>
+		<code><a href="source-class-Kotchasan.InputItem.html#260-270" title="Go to source code">password</a>( )</code>
+
+		<div class="description short">
+			<p>รับค่าสำหรับ password อักขระทุกตัวไม่มีช่องว่าง.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>รับค่าสำหรับ password อักขระทุกตัวไม่มีช่องว่าง.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						create(" 0\n12   34\r\r6\t5 ")->password() [==] '0123465'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="quote" id="_quote">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_quote">#</a>
+		<code><a href="source-class-Kotchasan.InputItem.html#272-284" title="Go to source code">quote</a>( )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นรับข้อความ ยอมรับอักขระทั้งหมด
+และแปลง ' เป็น &#39;
+และลบช่องว่างหัวท้าย.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นรับข้อความ ยอมรับอักขระทั้งหมด
+และแปลง ' เป็น &#39;
+และลบช่องว่างหัวท้าย.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						create("ทด'สอบ")->quote() [==] "ทด&#39;สอบ"<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="text" id="_text">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_text">#</a>
+		<code><a href="source-class-Kotchasan.InputItem.html#286-298" title="Go to source code">text</a>( )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่น แปลง &amp; " ' &lt; > \ เป็น HTML entities
+และลบช่องว่างหัวท้าย
+ใช้แปลงค่าที่รับจาก input ที่ไม่ยอมรับ tag.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่น แปลง &amp; " ' &lt; > \ เป็น HTML entities
+และลบช่องว่างหัวท้าย
+ใช้แปลงค่าที่รับจาก input ที่ไม่ยอมรับ tag.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						create(" ทด\/สอบ<?php echo '555'?> ")->text() [==] 'ทด&#92;/สอบ&lt;?php echo &#039;555&#039;?&gt;'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="textarea" id="_textarea">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_textarea">#</a>
+		<code><a href="source-class-Kotchasan.InputItem.html#300-312" title="Go to source code">textarea</a>( )</code>
+
+		<div class="description short">
+			<p>แปลง &lt; > \ { } เป็น HTML entities และแปลง \n เป็น <br>
+และลบช่องว่างหัวท้าย
+ใช้รับข้อมูลที่มาจาก textarea.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>แปลง &lt; > \ { } เป็น HTML entities และแปลง \n เป็น <br>
+และลบช่องว่างหัวท้าย
+ใช้รับข้อมูลที่มาจาก textarea.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						create("ทด\/สอบ\n<?php echo '555'?>")->textarea() [==] "ทด&#92;/สอบ\n&lt;?php echo '555'?&gt;"<br>
+				</div>
 
 
 		</div>
@@ -521,7 +1007,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toBoolean">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#120-134" title="Go to source code">toBoolean</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#314-328" title="Go to source code">toBoolean</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น boolean.</p>
@@ -563,7 +1049,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toDouble">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#136-147" title="Go to source code">toDouble</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#330-341" title="Go to source code">toDouble</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น double.</p>
@@ -602,7 +1088,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toFloat">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#149-160" title="Go to source code">toFloat</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#343-354" title="Go to source code">toFloat</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น float.</p>
@@ -641,7 +1127,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toInt">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#162-173" title="Go to source code">toInt</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#356-367" title="Go to source code">toInt</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น integer.</p>
@@ -680,7 +1166,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toObject">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#175-185" title="Go to source code">toObject</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#369-379" title="Go to source code">toObject</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น Object.</p>
@@ -718,20 +1204,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toString">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#187-200" title="Go to source code">toString</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#381-394" title="Go to source code">toString</a>( )</code>
 
 		<div class="description short">
-			<p>คืนค่าเป็น String.</p>
+			<p>คืนค่าเป็น string หรือ null.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>คืนค่าเป็น String.</p>
+			<p>คืนค่าเป็น string หรือ null.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					string|null<br>คืนค่าเป็น string หรือ null
+					string|null
 				</div>
 
 
@@ -759,7 +1245,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_topic">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#202-213" title="Go to source code">topic</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#396-407" title="Go to source code">topic</a>( )</code>
 
 		<div class="description short">
 			<p>แปลง tag และ ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
@@ -799,7 +1285,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_url">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#215-229" title="Go to source code">url</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#409-423" title="Go to source code">url</a>( )</code>
 
 		<div class="description short">
 			<p>แปลง tag ไม่แปลง &amp;
@@ -843,7 +1329,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_username">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#231-242" title="Go to source code">username</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#425-436" title="Go to source code">username</a>( )</code>
 
 		<div class="description short">
 			<p>รับค่าอีเมลและหมายเลขโทรศัพท์เท่านั้น.</p>
@@ -870,482 +1356,6 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="password" id="_password">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_password">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#244-254" title="Go to source code">password</a>( )</code>
-
-		<div class="description short">
-			<p>รับค่าสำหรับ password อักขระทุกตัวไม่มีช่องว่าง.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>รับค่าสำหรับ password อักขระทุกตัวไม่มีช่องว่าง.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						create(" 0\n12   34\r\r6\t5 ")->password() [==] '0123465'<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="text" id="_text">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_text">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#256-268" title="Go to source code">text</a>( )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่น แปลง &amp; " ' &lt; > \ เป็น HTML entities
-และลบช่องว่างหัวท้าย
-ใช้แปลงค่าที่รับจาก input ที่ไม่ยอมรับ tag.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น แปลง &amp; " ' &lt; > \ เป็น HTML entities
-และลบช่องว่างหัวท้าย
-ใช้แปลงค่าที่รับจาก input ที่ไม่ยอมรับ tag.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						create(" ทด\/สอบ<?php echo '555'?> ")->text() [==] 'ทด&#92;/สอบ&lt;?php echo &#039;555&#039;?&gt;'<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="textarea" id="_textarea">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_textarea">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#270-282" title="Go to source code">textarea</a>( )</code>
-
-		<div class="description short">
-			<p>แปลง &lt; > \ { } เป็น HTML entities และแปลง \n เป็น <br>
-และลบช่องว่างหัวท้าย
-ใช้รับข้อมูลที่มาจาก textarea.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>แปลง &lt; > \ { } เป็น HTML entities และแปลง \n เป็น <br>
-และลบช่องว่างหัวท้าย
-ใช้รับข้อมูลที่มาจาก textarea.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						create("ทด\/สอบ\n<?php echo '555'?>")->textarea() [==] "ทด&#92;/สอบ\n&lt;?php echo '555'?&gt;"<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="description" id="_description">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_description">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#284-325" title="Go to source code">description</a>( <span>integer <var>$len</var> = <span class="php-num">0</span></span> )</code>
-
-		<div class="description short">
-			<p>ลบ tag, BBCode ออก ให้เหลือแต่ข้อความล้วน
-ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
-และลบช่องว่างหัวท้าย
-ใช้เป็น description.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ลบ tag, BBCode ออก ให้เหลือแต่ข้อความล้วน
-ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
-และลบช่องว่างหัวท้าย
-ใช้เป็น description.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$len</var></dt>
-					<dd>ความยาวของ description 0 หมายถึงคืนค่าทั้งหมด</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						create("ท.ด(ส     )อ\"บ'\r\n\t<?php echo '555'?>")->description() [==] 'ท.ด(ส )อ บ'<br>
-						create('ทดสอบ<style>body {color: red}</style>')->description() [==] 'ทดสอบ'<br>
-						create('ทดสอบ<b>ตัวหนา</b>')->description() [==] 'ทดสอบตัวหนา'<br>
-						create('ทดสอบ{LNG_Language name}')->description() [==] 'ทดสอบ'<br>
-						create('ทดสอบ[code]ตัวหนา[/code]')->description() [==] 'ทดสอบ'<br>
-						create('ทดสอบ[b]ตัวหนา[/b]')->description() [==] 'ทดสอบตัวหนา'<br>
-						create('2 > 1 &lt; 3 > 2{WIDGET_XXX}')->description() [==] '2 > 1 &lt; 3 > 2'<br>
-						create('ทดสอบ<!--WIDGET_XXX-->')->description() [==] 'ทดสอบ'<br>
-						create('ท&amp;ด&quot;\&nbsp;/<strong>ส-อ+บ')->description() [==] 'ท ด \ /</strong>ส-อ+บ'<br>
-						create('ภาคภูมิ')->description(2) [==] 'ภา'<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="detail" id="_detail">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_detail">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#327-338" title="Go to source code">detail</a>( )</code>
-
-		<div class="description short">
-			<p>ลบ PHP tag และแปลง \ เป็น $#92; ใช้รับข้อมูลจาก editor
-เช่นเนื้อหาของบทความ</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ลบ PHP tag และแปลง \ เป็น $#92; ใช้รับข้อมูลจาก editor
-เช่นเนื้อหาของบทความ</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						create('ทด\/สอบ<?php echo "555"?>')->detail() [==] 'ทด&#92;/สอบ'<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="keywords" id="_keywords">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_keywords">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#340-356" title="Go to source code">keywords</a>( <span>integer <var>$len</var> = <span class="php-num">0</span></span> )</code>
-
-		<div class="description short">
-			<p>ลบ tags และ ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
-และลบช่องว่างหัวท้าย
-ใช้เป็น tags หรือ keywords.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ลบ tags และ ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
-และลบช่องว่างหัวท้าย
-ใช้เป็น tags หรือ keywords.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$len</var></dt>
-					<dd>ความยาวของ keywords 0 หมายถึงคืนค่าทั้งหมด</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						create("<b>ทด</b>   \r\nสอบ")->keywords() [==] 'ทด สอบ'<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="quote" id="_quote">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_quote">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#358-370" title="Go to source code">quote</a>( )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นรับข้อความ ยอมรับอักขระทั้งหมด
-และแปลง ' เป็น &#39;
-และลบช่องว่างหัวท้าย.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นรับข้อความ ยอมรับอักขระทั้งหมด
-และแปลง ' เป็น &#39;
-และลบช่องว่างหัวท้าย.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						create("ทด'สอบ")->quote() [==] "ทด&#39;สอบ"<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="filter" id="_filter">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_filter">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#372-386" title="Go to source code">filter</a>( <span>string <var>$format</var></span>, <span>string <var>$replace</var> = <span class="php-quote">''</span></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นแทนที่อักขระที่ไม่ต้องการ.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นแทนที่อักขระที่ไม่ต้องการ.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$format</var></dt>
-					<dd>Regular Expression อักขระที่ยอมรับ เช่น \d\s&#45;:</dd>
-					<dt><var>$replace</var></dt>
-					<dd>ข้อความแทนที่</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						create('admin,1234')->filter('0-9a-zA-Z,') [==] 'admin,1234'<br>
-						create('adminกข,12ฟ34')->filter('0-9a-zA-Z,') [==] 'admin,1234'<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="date" id="_date">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_date">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#388-403" title="Go to source code">date</a>( )</code>
-
-		<div class="description short">
-			<p>วันที่และเวลา
-คืนค่า null ถ้าข้อมูลวันที่ว่างเปล่า.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>วันที่และเวลา
-คืนค่า null ถ้าข้อมูลวันที่ว่างเปล่า.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						create('2016-01-01 20:20:20')->date() [==] '2016-01-01 20:20:20'<br>
-						create('')->date() [==] null<br>
-						create(null)->date() [==] null<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="color" id="_color">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_color">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#405-416" title="Go to source code">color</a>( )</code>
-
-		<div class="description short">
-			<p>ค่าสี.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ค่าสี.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						create('#000')->color() [==] '#000'<br>
-						create('red')->color() [==] 'red'<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="number" id="_number">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_number">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#418-430" title="Go to source code">number</a>( )</code>
-
-		<div class="description short">
-			<p>ตัวเลข</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ตัวเลข</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						create(12345)->number() [==] '12345'<br>
-						create(0.12345)->number() [==] '012345'<br>
-						create('ทด0123สอ4บ5')->number() [==] '012345'<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
 	</table>
 
 
@@ -1361,31 +1371,6 @@
 
 	<table class="summary properties" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="value" id="$value">
-		<td class="attributes"><code>
-			protected  
-			mixed
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.InputItem.html#22-27" title="Go to source code"><var>$value</var></a>
-
-			<div class="description short">
-				<p>ตัวแปรเก็บค่าของ Object.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>ตัวแปรเก็บค่าของ Object.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$value" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
 	<tr data-order="type" id="$type">
 		<td class="attributes"><code>
 			protected  
@@ -1393,7 +1378,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.InputItem.html#28-33" title="Go to source code"><var>$type</var></a>
+				<a href="source-class-Kotchasan.InputItem.html#22-27" title="Go to source code"><var>$type</var></a>
 
 			<div class="description short">
 				<p>ตัวแปรบอกประเภท Input เช่น GET POST SESSION COOKIE.</p>
@@ -1407,6 +1392,31 @@
 		<td class="value">
 			<div>
 				<a href="#$type" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="value" id="$value">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.InputItem.html#29-34" title="Go to source code"><var>$value</var></a>
+
+			<div class="description short">
+				<p>ตัวแปรเก็บค่าของ Object.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>ตัวแปรเก็บค่าของ Object.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$value" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>

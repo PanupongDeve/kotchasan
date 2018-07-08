@@ -240,7 +240,7 @@ class SMTP
         //Normalize line breaks
         $str = preg_replace('/(\r\n|\r|\n)/ms', "\n", $str);
         echo gmdate('Y-m-d H:i:s')."\t".str_replace(
-          "\n", "\n                   \t                  ", trim($str)
+          "\n", "\n  \t ", trim($str)
         )."\n";
     }
     }

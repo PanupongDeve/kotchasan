@@ -219,7 +219,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Config.html#13-251" title="Go to source code">Kotchasan/Config.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Config.html#13-271" title="Go to source code">Kotchasan/Config.php</a>
 		<br>
 	</div>
 
@@ -227,40 +227,6 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="__construct" id="___construct">
-
-		<td class="attributes"><code>
-			 protected 
-
-			static
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Kotchasan.Config.html#140-163" title="Go to source code">__construct</a>( )</code>
-
-		<div class="description short">
-			<p>เรียกใช้งาน Class แบบสามารถเรียกได้ครั้งเดียวเท่านั้น.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>เรียกใช้งาน Class แบบสามารถเรียกได้ครั้งเดียวเท่านั้น.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					static
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="create" id="_create">
 
 		<td class="attributes"><code>
@@ -273,7 +239,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Kotchasan.Config.html#165-177" title="Go to source code">create</a>( )</code>
+		<code><a href="source-class-Kotchasan.Config.html#158-170" title="Go to source code">create</a>( )</code>
 
 		<div class="description short">
 			<p>เรียกใช้งาน Class แบบสามารถเรียกได้ครั้งเดียวเท่านั้น.</p>
@@ -307,20 +273,22 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-Kotchasan.Config.html#179-209" title="Go to source code">get</a>( <span>string <var>$key</var></span>, <span>mixed <var>$default</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Config.html#172-203" title="Go to source code">get</a>( <span>string <var>$key</var></span>, <span>mixed <var>$default</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			<p>อ่านค่าตัวแปร และ แปลงผลลัพท์ตามชนิดของตัวแปรตามที่กำหนดโดย $default เช่น
 $default = 0 หรือ เลขจำนวนเต็ม ผลลัพท์จะถูกแปลงเป็น int
 $default = 0.0 หรือตัวเลขมีจุดทศนิยม จำนวนเงิน ผลลัพท์จะถูกแปลงเป็น double
-$default = true หรือ false ผลลัพท์จะถูกแปลงเป็น true หรือ false เท่านั้น.</p>
+$default = true หรือ false ผลลัพท์จะถูกแปลงเป็น true หรือ false เท่านั้น
+คืนค่า ค่าตัวแปร $key ถ้าไม่พบคืนค่า $default.</p>
 		</div>
 
 		<div class="description detailed hidden">
 			<p>อ่านค่าตัวแปร และ แปลงผลลัพท์ตามชนิดของตัวแปรตามที่กำหนดโดย $default เช่น
 $default = 0 หรือ เลขจำนวนเต็ม ผลลัพท์จะถูกแปลงเป็น int
 $default = 0.0 หรือตัวเลขมีจุดทศนิยม จำนวนเงิน ผลลัพท์จะถูกแปลงเป็น double
-$default = true หรือ false ผลลัพท์จะถูกแปลงเป็น true หรือ false เท่านั้น.</p>
+$default = true หรือ false ผลลัพท์จะถูกแปลงเป็น true หรือ false เท่านั้น
+คืนค่า ค่าตัวแปร $key ถ้าไม่พบคืนค่า $default.</p>
 
 
 				<h4>Parameters</h4>
@@ -333,7 +301,7 @@ $default = true หรือ false ผลลัพท์จะถูกแปล
 
 				<h4>Returns</h4>
 				<div class="list">
-					mixed<br>ค่าตัวแปร $key ถ้าไม่พบคืนค่า $default
+					mixed
 				</div>
 
 
@@ -354,7 +322,7 @@ $default = true หรือ false ผลลัพท์จะถูกแปล
 
 		<td class="name"><div>
 		<a class="anchor" href="#_load">#</a>
-		<code><a href="source-class-Kotchasan.Config.html#211-226" title="Go to source code">load</a>( <span>string <var>$file</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Config.html#205-220" title="Go to source code">load</a>( <span>string <var>$file</var></span> )</code>
 
 		<div class="description short">
 			<p>โหลดไฟล์ config.</p>
@@ -393,14 +361,16 @@ $default = true หรือ false ผลลัพท์จะถูกแปล
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save">#</a>
-		<code><a href="source-class-Kotchasan.Config.html#228-250" title="Go to source code">save</a>( <span>array <var>$config</var></span>, <span>string <var>$file</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Config.html#222-245" title="Go to source code">save</a>( <span>array <var>$config</var></span>, <span>string <var>$file</var></span> )</code>
 
 		<div class="description short">
-			<p>บันทึกไฟล์ config ของโปรเจ็ค.</p>
+			<p>บันทึกไฟล์ config ของโปรเจ็ค
+คืนค่า true ถ้าสำเร็จ.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>บันทึกไฟล์ config ของโปรเจ็ค.</p>
+			<p>บันทึกไฟล์ config ของโปรเจ็ค
+คืนค่า true ถ้าสำเร็จ.</p>
 
 
 				<h4>Parameters</h4>
@@ -413,7 +383,41 @@ $default = true หรือ false ผลลัพท์จะถูกแปล
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>คืนค่า true ถ้าสำเร็จ
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 protected 
+
+			static
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Kotchasan.Config.html#247-270" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			<p>เรียกใช้งาน Class แบบสามารถเรียกได้ครั้งเดียวเท่านั้น.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>เรียกใช้งาน Class แบบสามารถเรียกได้ครั้งเดียวเท่านั้น.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					static
 				</div>
 
 
@@ -437,137 +441,6 @@ $default = true หรือ false ผลลัพท์จะถูกแปล
 
 	<table class="summary properties" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="timezone" id="$timezone">
-		<td class="attributes"><code>
-			public  
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#26-32" title="Go to source code"><var>$timezone</var></a>
-
-			<div class="description short">
-				<p>ตั้งค่าเขตเวลาของ Server ให้ตรงกันกับเวลาท้องถิ่น
-สำหรับ Server ที่อยู่ในประเทศไทยใช้ Asia/Bankok.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>ตั้งค่าเขตเวลาของ Server ให้ตรงกันกับเวลาท้องถิ่น
-สำหรับ Server ที่อยู่ในประเทศไทยใช้ Asia/Bankok.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$timezone" class="anchor">#</a>
-				<code><span class="php-quote">'Asia/Bangkok'</span></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="languages" id="$languages">
-		<td class="attributes"><code>
-			public  
-			array
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#33-40" title="Go to source code"><var>$languages</var></a>
-
-			<div class="description short">
-				<p>รายชื่อภาษาที่รองรับ
-ตามที่มีในโฟลเดอร์ language/
-เริ่มต้นคือ en (ภาษาอังกฤษ).</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>รายชื่อภาษาที่รองรับ
-ตามที่มีในโฟลเดอร์ language/
-เริ่มต้นคือ en (ภาษาอังกฤษ).</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$languages" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(<span class="php-quote">'th'</span>)</code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="skin" id="$skin">
-		<td class="attributes"><code>
-			public  
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#41-46" title="Go to source code"><var>$skin</var></a>
-
-			<div class="description short">
-				<p>template ที่กำลังใช้งานอยู่ (ชื่อโฟลเดอร์).</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>template ที่กำลังใช้งานอยู่ (ชื่อโฟลเดอร์).</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$skin" class="anchor">#</a>
-				<code><span class="php-quote">'default'</span></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="web_title" id="$web_title">
-		<td class="attributes"><code>
-			public  
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#47-52" title="Go to source code"><var>$web_title</var></a>
-
-			<div class="description short">
-				<p>ชื่อเว็บไซต์.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>ชื่อเว็บไซต์.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$web_title" class="anchor">#</a>
-				<code><span class="php-quote">'Kotchasan PHP Framework'</span></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="web_description" id="$web_description">
-		<td class="attributes"><code>
-			public  
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#53-58" title="Go to source code"><var>$web_description</var></a>
-
-			<div class="description short">
-				<p>คำอธิบายเกี่ยวกับเว็บไซต์.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>คำอธิบายเกี่ยวกับเว็บไซต์.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$web_description" class="anchor">#</a>
-				<code><span class="php-quote">'PHP Framework พัฒนาโดยคนไทย'</span></code>
-			</div>
-		</td>
-	</tr>
 	<tr data-order="cache_expire" id="$cache_expire">
 		<td class="attributes"><code>
 			public  
@@ -575,7 +448,7 @@ $default = true หรือ false ผลลัพท์จะถูกแปล
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#59-65" title="Go to source code"><var>$cache_expire</var></a>
+				<a href="source-class-Kotchasan.Config.html#22-28" title="Go to source code"><var>$cache_expire</var></a>
 
 			<div class="description short">
 				<p>กำหนดอายุของแคช (วินาที)
@@ -595,78 +468,28 @@ $default = true หรือ false ผลลัพท์จะถูกแปล
 			</div>
 		</td>
 	</tr>
-	<tr data-order="noreply_email" id="$noreply_email">
+	<tr data-order="char_set" id="$char_set">
 		<td class="attributes"><code>
 			public  
 			string
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#66-71" title="Go to source code"><var>$noreply_email</var></a>
+				<a href="source-class-Kotchasan.Config.html#30-35" title="Go to source code"><var>$char_set</var></a>
 
 			<div class="description short">
-				<p>ทีอยู่อีเมลใช้เป็นผู้ส่งจดหมาย สำหรับจดหมายที่ไม่ต้องการตอบกลับ เช่น no-reply@domain.tld.</p>
+				<p>default charset.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>ทีอยู่อีเมลใช้เป็นผู้ส่งจดหมาย สำหรับจดหมายที่ไม่ต้องการตอบกลับ เช่น no-reply@domain.tld.</p>
+				<p>default charset.</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$noreply_email" class="anchor">#</a>
-				<code><span class="php-quote">'no-reply@locahost'</span></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="email_charset" id="$email_charset">
-		<td class="attributes"><code>
-			public  
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#72-77" title="Go to source code"><var>$email_charset</var></a>
-
-			<div class="description short">
-				<p>ระบุรหัสภาษาของอีเมลที่ส่ง เช่น tis-620.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>ระบุรหัสภาษาของอีเมลที่ส่ง เช่น tis-620.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$email_charset" class="anchor">#</a>
-				<code><span class="php-quote">'utf-8'</span></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="email_use_phpMailer" id="$email_use_phpMailer">
-		<td class="attributes"><code>
-			public  
-			boolean
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#78-83" title="Go to source code"><var>$email_use_phpMailer</var></a>
-
-			<div class="description short">
-				<p>เลือกโปรแกรมที่ใช้ในการส่งอีเมลเป็น PHPMailer.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>เลือกโปรแกรมที่ใช้ในการส่งอีเมลเป็น PHPMailer.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$email_use_phpMailer" class="anchor">#</a>
-				<code><span class="php-keyword1">true</span></code>
+				<a href="#$char_set" class="anchor">#</a>
+				<code><span class="php-quote">'UTF-8'</span></code>
 			</div>
 		</td>
 	</tr>
@@ -677,7 +500,7 @@ $default = true หรือ false ผลลัพท์จะถูกแปล
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#84-89" title="Go to source code"><var>$email_Host</var></a>
+				<a href="source-class-Kotchasan.Config.html#37-42" title="Go to source code"><var>$email_Host</var></a>
 
 			<div class="description short">
 				<p>ชื่อของเมล์เซิร์ฟเวอร์ เช่น localhost หรือ smtp.gmail.com.</p>
@@ -695,6 +518,31 @@ $default = true หรือ false ผลลัพท์จะถูกแปล
 			</div>
 		</td>
 	</tr>
+	<tr data-order="email_Password" id="$email_Password">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Config.html#44-49" title="Go to source code"><var>$email_Password</var></a>
+
+			<div class="description short">
+				<p>รหัสผ่าน mailserver.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>รหัสผ่าน mailserver.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$email_Password" class="anchor">#</a>
+				<code><span class="php-quote">''</span></code>
+			</div>
+		</td>
+	</tr>
 	<tr data-order="email_Port" id="$email_Port">
 		<td class="attributes"><code>
 			public  
@@ -702,7 +550,7 @@ $default = true หรือ false ผลลัพท์จะถูกแปล
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#90-95" title="Go to source code"><var>$email_Port</var></a>
+				<a href="source-class-Kotchasan.Config.html#51-56" title="Go to source code"><var>$email_Port</var></a>
 
 			<div class="description short">
 				<p>หมายเลขพอร์ตของเมล์เซิร์ฟเวอร์ (ค่าปกติคือ 25, สำหรับ gmail ใช้ 465, 587 สำหรับ DirectAdmin).</p>
@@ -727,7 +575,7 @@ $default = true หรือ false ผลลัพท์จะถูกแปล
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#96-102" title="Go to source code"><var>$email_SMTPAuth</var></a>
+				<a href="source-class-Kotchasan.Config.html#58-64" title="Go to source code"><var>$email_SMTPAuth</var></a>
 
 			<div class="description short">
 				<p>กำหนดวิธีการตรวจสอบผู้ใช้สำหรับเมล์เซิร์ฟเวอร์
@@ -754,7 +602,7 @@ $default = true หรือ false ผลลัพท์จะถูกแปล
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#103-108" title="Go to source code"><var>$email_SMTPSecure</var></a>
+				<a href="source-class-Kotchasan.Config.html#66-71" title="Go to source code"><var>$email_SMTPSecure</var></a>
 
 			<div class="description short">
 				<p>โปรโตคอลการเข้ารหัส SSL สำหรับการส่งอีเมล เช่น ssl.</p>
@@ -779,7 +627,7 @@ $default = true หรือ false ผลลัพท์จะถูกแปล
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#109-114" title="Go to source code"><var>$email_Username</var></a>
+				<a href="source-class-Kotchasan.Config.html#73-78" title="Go to source code"><var>$email_Username</var></a>
 
 			<div class="description short">
 				<p>ชื่อผู้ใช้ mailserver.</p>
@@ -797,28 +645,132 @@ $default = true หรือ false ผลลัพท์จะถูกแปล
 			</div>
 		</td>
 	</tr>
-	<tr data-order="email_Password" id="$email_Password">
+	<tr data-order="email_charset" id="$email_charset">
 		<td class="attributes"><code>
 			public  
 			string
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#115-120" title="Go to source code"><var>$email_Password</var></a>
+				<a href="source-class-Kotchasan.Config.html#80-85" title="Go to source code"><var>$email_charset</var></a>
 
 			<div class="description short">
-				<p>รหัสผ่าน mailserver.</p>
+				<p>ระบุรหัสภาษาของอีเมลที่ส่ง เช่น tis-620.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>รหัสผ่าน mailserver.</p>
+				<p>ระบุรหัสภาษาของอีเมลที่ส่ง เช่น tis-620.</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$email_Password" class="anchor">#</a>
-				<code><span class="php-quote">''</span></code>
+				<a href="#$email_charset" class="anchor">#</a>
+				<code><span class="php-quote">'utf-8'</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="email_use_phpMailer" id="$email_use_phpMailer">
+		<td class="attributes"><code>
+			public  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Config.html#87-92" title="Go to source code"><var>$email_use_phpMailer</var></a>
+
+			<div class="description short">
+				<p>เลือกโปรแกรมที่ใช้ในการส่งอีเมลเป็น PHPMailer.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>เลือกโปรแกรมที่ใช้ในการส่งอีเมลเป็น PHPMailer.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$email_use_phpMailer" class="anchor">#</a>
+				<code><span class="php-keyword1">true</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="languages" id="$languages">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Config.html#94-101" title="Go to source code"><var>$languages</var></a>
+
+			<div class="description short">
+				<p>รายชื่อภาษาที่รองรับ
+ตามที่มีในโฟลเดอร์ language/
+เริ่มต้นคือ en (ภาษาอังกฤษ).</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>รายชื่อภาษาที่รองรับ
+ตามที่มีในโฟลเดอร์ language/
+เริ่มต้นคือ en (ภาษาอังกฤษ).</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$languages" class="anchor">#</a>
+				<code><span class="php-keyword1">array</span>(<span class="php-quote">'th'</span>)</code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="login_fields" id="$login_fields">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Config.html#103-108" title="Go to source code"><var>$login_fields</var></a>
+
+			<div class="description short">
+				<p>รายชื่อฟิลด์จากตารางสมาชิก สำหรับตรวจสอบการ login.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>รายชื่อฟิลด์จากตารางสมาชิก สำหรับตรวจสอบการ login.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$login_fields" class="anchor">#</a>
+				<code><span class="php-keyword1">array</span>(<span class="php-quote">'username'</span>)</code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="noreply_email" id="$noreply_email">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Config.html#110-115" title="Go to source code"><var>$noreply_email</var></a>
+
+			<div class="description short">
+				<p>ทีอยู่อีเมลใช้เป็นผู้ส่งจดหมาย สำหรับจดหมายที่ไม่ต้องการตอบกลับ เช่น no-reply@domain.tld.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>ทีอยู่อีเมลใช้เป็นผู้ส่งจดหมาย สำหรับจดหมายที่ไม่ต้องการตอบกลับ เช่น no-reply@domain.tld.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$noreply_email" class="anchor">#</a>
+				<code><span class="php-quote">'no-reply@locahost'</span></code>
 			</div>
 		</td>
 	</tr>
@@ -829,7 +781,7 @@ $default = true หรือ false ผลลัพท์จะถูกแปล
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#121-126" title="Go to source code"><var>$password_key</var></a>
+				<a href="source-class-Kotchasan.Config.html#117-122" title="Go to source code"><var>$password_key</var></a>
 
 			<div class="description short">
 				<p>คีย์สำหรับการเข้ารหัสข้อความ</p>
@@ -847,53 +799,105 @@ $default = true หรือ false ผลลัพท์จะถูกแปล
 			</div>
 		</td>
 	</tr>
-	<tr data-order="char_set" id="$char_set">
+	<tr data-order="skin" id="$skin">
 		<td class="attributes"><code>
 			public  
 			string
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#127-132" title="Go to source code"><var>$char_set</var></a>
+				<a href="source-class-Kotchasan.Config.html#124-129" title="Go to source code"><var>$skin</var></a>
 
 			<div class="description short">
-				<p>default charset.</p>
+				<p>template ที่กำลังใช้งานอยู่ (ชื่อโฟลเดอร์).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>default charset.</p>
+				<p>template ที่กำลังใช้งานอยู่ (ชื่อโฟลเดอร์).</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$char_set" class="anchor">#</a>
-				<code><span class="php-quote">'UTF-8'</span></code>
+				<a href="#$skin" class="anchor">#</a>
+				<code><span class="php-quote">'default'</span></code>
 			</div>
 		</td>
 	</tr>
-	<tr data-order="login_fields" id="$login_fields">
+	<tr data-order="timezone" id="$timezone">
 		<td class="attributes"><code>
 			public  
-			array
+			string
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Config.html#133-138" title="Go to source code"><var>$login_fields</var></a>
+				<a href="source-class-Kotchasan.Config.html#131-137" title="Go to source code"><var>$timezone</var></a>
 
 			<div class="description short">
-				<p>รายชื่อฟิลด์จากตารางสมาชิก สำหรับตรวจสอบการ login.</p>
+				<p>ตั้งค่าเขตเวลาของ Server ให้ตรงกันกับเวลาท้องถิ่น
+สำหรับ Server ที่อยู่ในประเทศไทยใช้ Asia/Bankok.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>รายชื่อฟิลด์จากตารางสมาชิก สำหรับตรวจสอบการ login.</p>
+				<p>ตั้งค่าเขตเวลาของ Server ให้ตรงกันกับเวลาท้องถิ่น
+สำหรับ Server ที่อยู่ในประเทศไทยใช้ Asia/Bankok.</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$login_fields" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(<span class="php-quote">'username'</span>)</code>
+				<a href="#$timezone" class="anchor">#</a>
+				<code><span class="php-quote">'Asia/Bangkok'</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="web_description" id="$web_description">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Config.html#139-144" title="Go to source code"><var>$web_description</var></a>
+
+			<div class="description short">
+				<p>คำอธิบายเกี่ยวกับเว็บไซต์.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>คำอธิบายเกี่ยวกับเว็บไซต์.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$web_description" class="anchor">#</a>
+				<code><span class="php-quote">'PHP Framework พัฒนาโดยคนไทย'</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="web_title" id="$web_title">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Config.html#146-151" title="Go to source code"><var>$web_title</var></a>
+
+			<div class="description short">
+				<p>ชื่อเว็บไซต์.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>ชื่อเว็บไซต์.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$web_title" class="anchor">#</a>
+				<code><span class="php-quote">'Kotchasan PHP Framework'</span></code>
 			</div>
 		</td>
 	</tr>

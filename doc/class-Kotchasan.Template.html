@@ -223,7 +223,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Template.html#13-253" title="Go to source code">Kotchasan/Template.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Template.html#13-261" title="Go to source code">Kotchasan/Template.php</a>
 		<br>
 	</div>
 
@@ -231,34 +231,40 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="init" id="_init">
+	<tr data-order="add" id="_add">
 
 		<td class="attributes"><code>
-			 public static
+			 public 
 
-			
+			static
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_init">#</a>
-		<code><a href="source-class-Kotchasan.Template.html#54-62" title="Go to source code">init</a>( <span>string <var>$skin</var></span> )</code>
+		<a class="anchor" href="#_add">#</a>
+		<code><a href="source-class-Kotchasan.Template.html#58-76" title="Go to source code">add</a>( <span>array <var>$array</var></span> )</code>
 
 		<div class="description short">
-			<p>เรียกใช้งาน template ในครั้งแรก</p>
+			<p>ฟังก์ชั่นกำหนดค่าตัวแปรของ template
+ฟังก์ชั่นนี้จะแทนที่ตัวแปรที่ส่งทั้งหมดลงใน template ทันที.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>เรียกใช้งาน template ในครั้งแรก</p>
+			<p>ฟังก์ชั่นกำหนดค่าตัวแปรของ template
+ฟังก์ชั่นนี้จะแทนที่ตัวแปรที่ส่งทั้งหมดลงใน template ทันที.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$skin</var></dt>
-					<dd>ไดเร็คทอรี่ของ template ตั้งแต่ DOCUMENT_ROOT ไม่ต้องมี / ปิดท้าย เช่น skin/default</dd>
+					<dt><var>$array</var></dt>
+					<dd>ชื่อที่ปรากฏใน template รูปแบบ array(key1=>val1,key2=>val2)</dd>
 				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					static
+				</div>
 
 
 
@@ -278,7 +284,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Kotchasan.Template.html#64-79" title="Go to source code">create</a>( <span>string <var>$owner</var></span>, <span>string <var>$module</var></span>, <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Template.html#78-93" title="Go to source code">create</a>( <span>string <var>$owner</var></span>, <span>string <var>$module</var></span>, <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>โหลด template
@@ -327,7 +333,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createFromFile">#</a>
-		<code><a href="source-class-Kotchasan.Template.html#81-99" title="Go to source code">createFromFile</a>( <span>string <var>$filename</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Template.html#95-113" title="Go to source code">createFromFile</a>( <span>string <var>$filename</var></span> )</code>
 
 		<div class="description short">
 			<p>โหลด template จากไฟล์.</p>
@@ -374,7 +380,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createFromHTML">#</a>
-		<code><a href="source-class-Kotchasan.Template.html#101-116" title="Go to source code">createFromHTML</a>( <span>string <var>$html</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Template.html#115-130" title="Go to source code">createFromHTML</a>( <span>string <var>$html</var></span> )</code>
 
 		<div class="description short">
 			<p>สร้าง template จาก HTML.</p>
@@ -401,245 +407,6 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="add" id="_add">
-
-		<td class="attributes"><code>
-			 public 
-
-			static
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_add">#</a>
-		<code><a href="source-class-Kotchasan.Template.html#118-136" title="Go to source code">add</a>( <span>array <var>$array</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นกำหนดค่าตัวแปรของ template
-ฟังก์ชั่นนี้จะแทนที่ตัวแปรที่ส่งทั้งหมดลงใน template ทันที.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นกำหนดค่าตัวแปรของ template
-ฟังก์ชั่นนี้จะแทนที่ตัวแปรที่ส่งทั้งหมดลงใน template ทันที.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$array</var></dt>
-					<dd>ชื่อที่ปรากฏใน template รูปแบบ array(key1=>val1,key2=>val2)</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					static
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="insertHTML" id="_insertHTML">
-
-		<td class="attributes"><code>
-			 public 
-
-			static
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_insertHTML">#</a>
-		<code><a href="source-class-Kotchasan.Template.html#138-151" title="Go to source code">insertHTML</a>( <span>string <var>$html</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นใส่ HTML ลงใน template ตรงๆ
-ใช้สำหรับแทรก HTML ลงระหว่างแต่ละรายการ.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นใส่ HTML ลงใน template ตรงๆ
-ใช้สำหรับแทรก HTML ลงระหว่างแต่ละรายการ.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$html</var></dt>
-					<dd>โค้ด HTML</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					static
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="pregReplace" id="_pregReplace">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_pregReplace">#</a>
-		<code><a href="source-class-Kotchasan.Template.html#153-182" title="Go to source code">pregReplace</a>( <span>array <var>$patt</var></span>, <span>array <var>$replace</var></span>, <span>string <var>$skin</var></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่น preg_replace.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น preg_replace.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$patt</var></dt>
-					<dd>คีย์ใน template</dd>
-					<dt><var>$replace</var></dt>
-					<dd>ข้อความที่จะถูกแทนที่ลงในคีย์</dd>
-					<dt><var>$skin</var></dt>
-					<dd>template</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string<br>คืนค่า HTML template
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						('/{TITLE}/', 'Title', '<b>{TITLE}</b>') [==] '<b>Title</b>'<br>
-						('/{LNG_([\w\s&#46;&#45;\'&#40;&#41;,%\/:&amp;&#35;;]+)}/e', '\Kotchasan\Language::parse(array(1=>"$1"))', '<b>{LNG_Language test}</b>') [==] '<b>Language test</b>'<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="render" id="_render">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_render">#</a>
-		<code><a href="source-class-Kotchasan.Template.html#184-198" title="Go to source code">render</a>( )</code>
-
-		<div class="description short">
-			<p>แสดงผล เป็น HTML.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>แสดงผล เป็น HTML.</p>
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="load" id="_load">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_load">#</a>
-		<code><a href="source-class-Kotchasan.Template.html#200-222" title="Go to source code">load</a>( <span>string <var>$owner</var></span>, <span>string <var>$module</var></span>, <span>string <var>$name</var></span> )</code>
-
-		<div class="description short">
-			<p>โหลด template
-ครั้งแรกจะตรวจสอบไฟล์จาก $module ถ้าไม่พบ จะใช้ไฟล์จาก $owner.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>โหลด template
-ครั้งแรกจะตรวจสอบไฟล์จาก $module ถ้าไม่พบ จะใช้ไฟล์จาก $owner.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$owner</var></dt>
-					<dd>ชื่อโมดูลที่ติดตั้ง</dd>
-					<dt><var>$module</var></dt>
-					<dd>ชื่อโมดูลที่ลงทะเบียน</dd>
-					<dt><var>$name</var></dt>
-					<dd>ชื่อ template ไม่ต้องระบุนามสกุลของไฟล์</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string<br>ถ้าไม่พบคืนค่าว่าง
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="isEmpty" id="_isEmpty">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_isEmpty">#</a>
-		<code><a href="source-class-Kotchasan.Template.html#224-232" title="Go to source code">isEmpty</a>( )</code>
-
-		<div class="description short">
-			<p>ตรวจสอบว่ามีไฟล์ Template ถูกเลือกหรือไม่.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ตรวจสอบว่ามีไฟล์ Template ถูกเลือกหรือไม่.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>true ถ้าไม่พบไฟล์ Template หรือ Template ว่างเปล่า, อื่นๆคืนค่า False
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="get" id="_get">
 
 		<td class="attributes"><code>
@@ -652,7 +419,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-Kotchasan.Template.html#234-242" title="Go to source code">get</a>( )</code>
+		<code><a href="source-class-Kotchasan.Template.html#132-140" title="Go to source code">get</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าไดเร็คทอรี่ของ template ตั้งแต่ DOCUMENT_ROOT เช่น skin/default/.</p>
@@ -686,7 +453,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_hasItem">#</a>
-		<code><a href="source-class-Kotchasan.Template.html#244-252" title="Go to source code">hasItem</a>( )</code>
+		<code><a href="source-class-Kotchasan.Template.html#142-150" title="Go to source code">hasItem</a>( )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นตรวจสอบว่ามีการ add ข้อมูลมาหรือเปล่า.</p>
@@ -700,6 +467,247 @@
 				<h4>Returns</h4>
 				<div class="list">
 					boolean<br>คืนค่า true ถ้ามีการเรียกใช้คำสั่ง add มาก่อนหน้า, หรือ false ถ้าไม่ใช่
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="init" id="_init">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_init">#</a>
+		<code><a href="source-class-Kotchasan.Template.html#152-160" title="Go to source code">init</a>( <span>string <var>$skin</var></span> )</code>
+
+		<div class="description short">
+			<p>กำหนด template ที่ต้องการ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>กำหนด template ที่ต้องการ.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$skin</var></dt>
+					<dd>ไดเร็คทอรี่ของ template ตั้งแต่ DOCUMENT_ROOT ไม่ต้องมี / ปิดท้าย เช่น skin/default</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="insertHTML" id="_insertHTML">
+
+		<td class="attributes"><code>
+			 public 
+
+			static
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_insertHTML">#</a>
+		<code><a href="source-class-Kotchasan.Template.html#162-175" title="Go to source code">insertHTML</a>( <span>string <var>$html</var></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นใส่ HTML ลงใน template ตรงๆ
+ใช้สำหรับแทรก HTML ลงระหว่างแต่ละรายการ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นใส่ HTML ลงใน template ตรงๆ
+ใช้สำหรับแทรก HTML ลงระหว่างแต่ละรายการ.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$html</var></dt>
+					<dd>โค้ด HTML</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					static
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isEmpty" id="_isEmpty">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isEmpty">#</a>
+		<code><a href="source-class-Kotchasan.Template.html#177-186" title="Go to source code">isEmpty</a>( )</code>
+
+		<div class="description short">
+			<p>ตรวจสอบว่ามีไฟล์ Template ถูกเลือกหรือไม่
+คืนค่า true ถ้าไม่พบไฟล์ Template หรือ Template ว่างเปล่า, อื่นๆคืนค่า False.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ตรวจสอบว่ามีไฟล์ Template ถูกเลือกหรือไม่
+คืนค่า true ถ้าไม่พบไฟล์ Template หรือ Template ว่างเปล่า, อื่นๆคืนค่า False.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="load" id="_load">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_load">#</a>
+		<code><a href="source-class-Kotchasan.Template.html#188-211" title="Go to source code">load</a>( <span>string <var>$owner</var></span>, <span>string <var>$module</var></span>, <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>โหลด template
+ครั้งแรกจะตรวจสอบไฟล์จาก $module ถ้าไม่พบ จะใช้ไฟล์จาก $owner
+ถ้าไม่พบคืนค่าว่าง.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>โหลด template
+ครั้งแรกจะตรวจสอบไฟล์จาก $module ถ้าไม่พบ จะใช้ไฟล์จาก $owner
+ถ้าไม่พบคืนค่าว่าง.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$owner</var></dt>
+					<dd>ชื่อโมดูลที่ติดตั้ง</dd>
+					<dt><var>$module</var></dt>
+					<dd>ชื่อโมดูลที่ลงทะเบียน</dd>
+					<dt><var>$name</var></dt>
+					<dd>ชื่อ template ไม่ต้องระบุนามสกุลของไฟล์</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="pregReplace" id="_pregReplace">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_pregReplace">#</a>
+		<code><a href="source-class-Kotchasan.Template.html#213-242" title="Go to source code">pregReplace</a>( <span>array <var>$patt</var></span>, <span>array <var>$replace</var></span>, <span>string <var>$skin</var></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่น preg_replace รองรับถึง PHP7.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่น preg_replace รองรับถึง PHP7.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$patt</var></dt>
+					<dd>คีย์ใน template</dd>
+					<dt><var>$replace</var></dt>
+					<dd>ข้อความที่จะถูกแทนที่ลงในคีย์</dd>
+					<dt><var>$skin</var></dt>
+					<dd>template</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						('/{TITLE}/', 'Title', '<b>{TITLE}</b>') [==] '<b>Title</b>'<br>
+						('/{LNG_([\w\s&#46;&#45;\'&#40;&#41;,%\/:&amp;&#35;;]+)}/e', '\Kotchasan\Language::parse(array(1=>"$1"))', '<b>{LNG_Language test}</b>') [==] '<b>Language test</b>'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="render" id="_render">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_render">#</a>
+		<code><a href="source-class-Kotchasan.Template.html#244-260" title="Go to source code">render</a>( )</code>
+
+		<div class="description short">
+			<p>คืนค่า HTML.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>คืนค่า HTML.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
 				</div>
 
 
@@ -723,31 +731,6 @@
 
 	<table class="summary properties" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="items" id="$items">
-		<td class="attributes"><code>
-			protected  
-			array
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Template.html#28-33" title="Go to source code"><var>$items</var></a>
-
-			<div class="description short">
-				<p>แอเรย์ของข้อมูล.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>แอเรย์ของข้อมูล.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$items" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
 	<tr data-order="cols" id="$cols">
 		<td class="attributes"><code>
 			protected  
@@ -755,7 +738,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Template.html#34-39" title="Go to source code"><var>$cols</var></a>
+				<a href="source-class-Kotchasan.Template.html#22-27" title="Go to source code"><var>$cols</var></a>
 
 			<div class="description short">
 				<p>จำนวนคอลัมน์ สำหรับการแสดงผลด้วย Grid.</p>
@@ -773,6 +756,31 @@
 			</div>
 		</td>
 	</tr>
+	<tr data-order="items" id="$items">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Template.html#29-34" title="Go to source code"><var>$items</var></a>
+
+			<div class="description short">
+				<p>แอเรย์ของข้อมูล.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>แอเรย์ของข้อมูล.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$items" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
 	<tr data-order="num" id="$num">
 		<td class="attributes"><code>
 			protected  
@@ -780,7 +788,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Template.html#40-45" title="Go to source code"><var>$num</var></a>
+				<a href="source-class-Kotchasan.Template.html#36-41" title="Go to source code"><var>$num</var></a>
 
 			<div class="description short">
 				<p>ตัวแปรสำหรับการขึ้นแถวใหม่ (Grid).</p>
@@ -805,7 +813,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Template.html#46-52" title="Go to source code"><var>$src</var></a>
+				<a href="source-class-Kotchasan.Template.html#43-49" title="Go to source code"><var>$src</var></a>
 
 			<div class="description short">
 				<p>ชื่อ template ที่กำลังใช้งานอยู่ รวมโฟลเดอร์ที่เก็บ template ด้วย

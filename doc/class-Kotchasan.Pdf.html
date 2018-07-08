@@ -233,7 +233,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Pdf.html#13-1093" title="Go to source code">Kotchasan/Pdf.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Pdf.html#13-1134" title="Go to source code">Kotchasan/Pdf.php</a>
 		<br>
 	</div>
 
@@ -241,6 +241,270 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="Cell" id="_Cell">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_Cell">#</a>
+		<code><a href="source-class-Kotchasan.Pdf.html#72-172" title="Go to source code">Cell</a>( <span>integer <var>$w</var></span>, <span>integer <var>$h</var> = <span class="php-num">0</span></span>, <span>string <var>$txt</var> = <span class="php-quote">''</span></span>, <span>integer|string <var>$border</var> = <span class="php-num">0</span></span>, <span>integer <var>$ln</var> = <span class="php-num">0</span></span>, <span>string <var>$align</var> = <span class="php-quote">''</span></span>, <span>boolean <var>$fill</var> = <span class="php-keyword1">false</span></span>, <span>string <var>$link</var> = <span class="php-quote">''</span></span>, <span>integer <var>$tPadding</var> = <span class="php-num">0</span></span>, <span>integer <var>$rPadding</var> = <span class="php-num">0</span></span>, <span>integer <var>$bPadding</var> = <span class="php-num">0</span></span>, <span>integer <var>$lPadding</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			<p>Output a cell.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Output a cell.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$w</var></dt>
+					<dd>ความกว้าง, คำนวณอัตโนมัติ</dd>
+					<dt><var>$h</var></dt>
+					<dd>line-height</dd>
+					<dt><var>$txt</var></dt>
+					<dd>ข้อความที่แสดง</dd>
+					<dt><var>$border</var></dt>
+					<dd>ไม่แสดง, 1 แสดงทั้ง 4 ด้าน, LTRB กำหนดเอง</dd>
+					<dt><var>$ln</var></dt>
+					<dd>ตำแหน่งหลังจากวาดแล้ว (default) ไปทางขวา, 1 กลับไปจุดเริ่มต้น, 2 บรรทัดถัดไป</dd>
+					<dt><var>$align</var></dt>
+					<dd>L หรือค่าว่าง (default) ชิดซ้าย, R ชิดขวา, C ตรงกลาง, J justify (default)</dd>
+					<dt><var>$fill</var></dt>
+					<dd>true แสดงพื้นหลัง, false โปร่งใส</dd>
+					<dt><var>$link</var></dt>
+					<dd>URL</dd>
+					<dt><var>$tPadding</var></dt>
+					<dd>padding-top</dd>
+					<dt><var>$rPadding</var></dt>
+					<dd>padding-right</dd>
+					<dt><var>$bPadding</var></dt>
+					<dd>padding-bottom</dd>
+					<dt><var>$lPadding</var></dt>
+					<dd>padding-right</dd>
+				</dl></div>
+
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-PDF.FPDF.html#_Cell">PDF\FPDF::Cell()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="Ln" id="_Ln">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_Ln">#</a>
+		<code><a href="source-class-Kotchasan.Pdf.html#174-186" title="Go to source code">Ln</a>( <span>integer <var>$h</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>ขึ้นบรรทัดใหม่.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ขึ้นบรรทัดใหม่.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$h</var></dt>
+					<dd>line-height ถ้าไม่กำหนดจะใช้ค่าล่าสุด</dd>
+				</dl></div>
+
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-PDF.FPDF.html#_Ln">PDF\FPDF::Ln()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="MultiCell" id="_MultiCell">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_MultiCell">#</a>
+		<code><a href="source-class-Kotchasan.Pdf.html#188-310" title="Go to source code">MultiCell</a>( <span>integer <var>$w</var></span>, <span>integer <var>$h</var></span>, <span>string <var>$s</var></span>, <span>integer|string <var>$border</var> = <span class="php-num">0</span></span>, <span>string <var>$align</var> = <span class="php-quote">'J'</span></span>, <span>boolean <var>$fill</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$tPadding</var> = <span class="php-num">0</span></span>, <span>integer <var>$rPadding</var> = <span class="php-num">0</span></span>, <span>integer <var>$bPadding</var> = <span class="php-num">0</span></span>, <span>integer <var>$lPadding</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			<p>Output text with automatic or explicit line breaks.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Output text with automatic or explicit line breaks.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$w</var></dt>
+					<dd>ความกว้าง, คำนวณอัตโนมัติ</dd>
+					<dt><var>$h</var></dt>
+					<dd>line-height</dd>
+					<dt><var>$s</var></dt>
+					<dd>ข้อความที่แสดง</dd>
+					<dt><var>$border</var></dt>
+					<dd>ไม่แสดง, 1 แสดงทั้ง 4 ด้าน, LTRB กำหนดเอง</dd>
+					<dt><var>$align</var></dt>
+					<dd>L หรือค่าว่างชิดซ้าย, R ชิดขวา, C ตรงกลาง, J justify (default)</dd>
+					<dt><var>$fill</var></dt>
+					<dd>true แสดงพื้นหลัง, false โปร่งใส</dd>
+					<dt><var>$tPadding</var></dt>
+					<dd>padding-top</dd>
+					<dt><var>$rPadding</var></dt>
+					<dd>padding-right</dd>
+					<dt><var>$bPadding</var></dt>
+					<dd>padding-bottom</dd>
+					<dt><var>$lPadding</var></dt>
+					<dd>padding-right</dd>
+				</dl></div>
+
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-PDF.FPDF.html#_MultiCell">PDF\FPDF::MultiCell()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="SetCssClass" id="_SetCssClass">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_SetCssClass">#</a>
+		<code><a href="source-class-Kotchasan.Pdf.html#312-323" title="Go to source code">SetCssClass</a>( <span>string <var>$className</var></span>, <span>array <var>$attributes</var></span> )</code>
+
+		<div class="description short">
+			<p>กำหนดรูปแบบของ class.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>กำหนดรูปแบบของ class.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$className</var></dt>
+					<dd></dd>
+					<dt><var>$attributes</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="SetStyles" id="_SetStyles">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_SetStyles">#</a>
+		<code><a href="source-class-Kotchasan.Pdf.html#325-336" title="Go to source code">SetStyles</a>( <span>string <var>$tag</var></span>, <span>array <var>$attributes</var></span> )</code>
+
+		<div class="description short">
+			<p>กำหนดรูปแบบของ tag.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>กำหนดรูปแบบของ tag.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$tag</var></dt>
+					<dd></dd>
+					<dt><var>$attributes</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="WriteHTML" id="_WriteHTML">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_WriteHTML">#</a>
+		<code><a href="source-class-Kotchasan.Pdf.html#338-353" title="Go to source code">WriteHTML</a>( <span>string <var>$html</var></span>, <span>string <var>$charset</var> = <span class="php-quote">'cp874'</span></span> )</code>
+
+		<div class="description short">
+			<p>สร้าง PDF จาก HTML โค้ด
+แสดงผลตามรูปแบบที่กำหนดโดย คชสาร.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>สร้าง PDF จาก HTML โค้ด
+แสดงผลตามรูปแบบที่กำหนดโดย คชสาร.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$html</var></dt>
+					<dd>โค้ด HTML4</dd>
+					<dt><var>$charset</var></dt>
+					<dd>default cp874 (ภาษาไทย)</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="__construct" id="___construct">
 
 		<td class="attributes"><code>
@@ -253,7 +517,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#33-152" title="Go to source code">__construct</a>( <span>string <var>$orientation</var> = <span class="php-quote">'P'</span></span>, <span>string <var>$unit</var> = <span class="php-quote">'mm'</span></span>, <span>string <var>$size</var> = <span class="php-quote">'A4'</span></span>, <span>integer <var>$fontSize</var> = <span class="php-num">10</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Pdf.html#355-474" title="Go to source code">__construct</a>( <span>string <var>$orientation</var> = <span class="php-quote">'P'</span></span>, <span>string <var>$unit</var> = <span class="php-quote">'mm'</span></span>, <span>string <var>$size</var> = <span class="php-quote">'A4'</span></span>, <span>integer <var>$fontSize</var> = <span class="php-num">10</span></span> )</code>
 
 		<div class="description short">
 			<p>Create FPDF ภาษาไทย.</p>
@@ -284,256 +548,77 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="SetStyles" id="_SetStyles">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_SetStyles">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#154-165" title="Go to source code">SetStyles</a>( <span>string <var>$tag</var></span>, <span>array <var>$attributes</var></span> )</code>
-
-		<div class="description short">
-			<p>กำหนดรูปแบบของ tag.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>กำหนดรูปแบบของ tag.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$tag</var></dt>
-					<dd></dd>
-					<dt><var>$attributes</var></dt>
-					<dd></dd>
-				</dl></div>
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="SetCssClass" id="_SetCssClass">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_SetCssClass">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#167-178" title="Go to source code">SetCssClass</a>( <span>string <var>$className</var></span>, <span>array <var>$attributes</var></span> )</code>
-
-		<div class="description short">
-			<p>กำหนดรูปแบบของ class.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>กำหนดรูปแบบของ class.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$className</var></dt>
-					<dd></dd>
-					<dt><var>$attributes</var></dt>
-					<dd></dd>
-				</dl></div>
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="WriteHTML" id="_WriteHTML">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_WriteHTML">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#180-195" title="Go to source code">WriteHTML</a>( <span>string <var>$html</var></span>, <span>string <var>$charset</var> = <span class="php-quote">'cp874'</span></span> )</code>
-
-		<div class="description short">
-			<p>สร้าง PDF จาก HTML โค้ด
-แสดงผลตามรูปแบบที่กำหนดโดย คชสาร.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>สร้าง PDF จาก HTML โค้ด
-แสดงผลตามรูปแบบที่กำหนดโดย คชสาร.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$html</var></dt>
-					<dd>โค้ด HTML4</dd>
-					<dt><var>$charset</var></dt>
-					<dd>default cp874 (ภาษาไทย)</dd>
-				</dl></div>
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="render" id="_render">
+	<tr data-order="CheckPageBreak" id="_CheckPageBreak">
 
 		<td class="attributes"><code>
 			 protected 
 
-			string
+			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_render">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#197-269" title="Go to source code">render</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$node</var></span> )</code>
+		<a class="anchor" href="#_CheckPageBreak">#</a>
+		<code><a href="source-class-Kotchasan.Pdf.html#476-487" title="Go to source code">CheckPageBreak</a>( <span>integer <var>$h</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>ตรวจสอบความสูงของตาราง ถ้าความสูงของตารางเกินหน้า
+จะขึ้นหน้าใหม่.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>ตรวจสอบความสูงของตาราง ถ้าความสูงของตารางเกินหน้า
+จะขึ้นหน้าใหม่.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$node</var></dt>
+					<dt><var>$h</var></dt>
+					<dd>ความสูงของตาราง</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="NbLines" id="_NbLines">
+
+		<td class="attributes"><code>
+			 protected 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_NbLines">#</a>
+		<code><a href="source-class-Kotchasan.Pdf.html#489-545" title="Go to source code">NbLines</a>( <span>integer <var>$w</var></span>, <span>string <var>$s</var></span> )</code>
+
+		<div class="description short">
+			<p>คำนวณความสูงของเซล.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>คำนวณความสูงของเซล.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$w</var></dt>
+					<dd></dd>
+					<dt><var>$s</var></dt>
 					<dd></dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					string
+					integer
 				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="loadStyle" id="_loadStyle">
-
-		<td class="attributes"><code>
-			 protected 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_loadStyle">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#271-326" title="Go to source code">loadStyle</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$node</var></span> )</code>
-
-		<div class="description short">
-			<p>อ่าน CSS ของโหนด.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่าน CSS ของโหนด.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$node</var></dt>
-					<dd></dd>
-				</dl></div>
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="applyCSS" id="_applyCSS">
-
-		<td class="attributes"><code>
-			 protected 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_applyCSS">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#328-393" title="Go to source code">applyCSS</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$node</var></span> )</code>
-
-		<div class="description short">
-			<p>กำหนด CSS.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>กำหนด CSS.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$node</var></dt>
-					<dd></dd>
-				</dl></div>
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="restoredCSS" id="_restoredCSS">
-
-		<td class="attributes"><code>
-			 protected 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_restoredCSS">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#395-434" title="Go to source code">restoredCSS</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$node</var></span> )</code>
-
-		<div class="description short">
-			<p>คืนค่า CSS.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>คืนค่า CSS.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$node</var></dt>
-					<dd></dd>
-				</dl></div>
-
 
 
 
@@ -553,7 +638,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_SetStyle">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#436-452" title="Go to source code">SetStyle</a>( <span>string <var>$style</var></span>, <span>boolean <var>$enable</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Pdf.html#547-563" title="Go to source code">SetStyle</a>( <span>string <var>$style</var></span>, <span>boolean <var>$enable</var></span> )</code>
 
 		<div class="description short">
 			<p>แสดงผลตัวหนา ตัวเอียง ขีดเส้นใต้.</p>
@@ -578,6 +663,80 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="applyCSS" id="_applyCSS">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_applyCSS">#</a>
+		<code><a href="source-class-Kotchasan.Pdf.html#565-630" title="Go to source code">applyCSS</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$node</var></span> )</code>
+
+		<div class="description short">
+			<p>กำหนด CSS.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>กำหนด CSS.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$node</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="calculateColumnsWidth" id="_calculateColumnsWidth">
+
+		<td class="attributes"><code>
+			 protected 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_calculateColumnsWidth">#</a>
+		<code><a href="source-class-Kotchasan.Pdf.html#632-704" title="Go to source code">calculateColumnsWidth</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$table</var></span> )</code>
+
+		<div class="description short">
+			<p>คำนวนขนาดของคอลัมน์เป็น %.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>คำนวนขนาดของคอลัมน์เป็น %.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="calculateSize" id="_calculateSize">
 
 		<td class="attributes"><code>
@@ -590,7 +749,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_calculateSize">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#454-473" title="Go to source code">calculateSize</a>( <span>integer|string <var>$size</var></span>, <span>integer <var>$max_size</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Pdf.html#706-725" title="Go to source code">calculateSize</a>( <span>integer|string <var>$size</var></span>, <span>integer <var>$max_size</var></span> )</code>
 
 		<div class="description short">
 			<p>คำนวนขนาด.</p>
@@ -619,6 +778,47 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="colorToRGb" id="_colorToRGb">
+
+		<td class="attributes"><code>
+			 protected 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_colorToRGb">#</a>
+		<code><a href="source-class-Kotchasan.Pdf.html#727-742" title="Go to source code">colorToRGb</a>( <span>string <var>$color</var></span> )</code>
+
+		<div class="description short">
+			<p>แปลงค่าสี HTML hex เช่น #FF0000 เป็นค่าสี RGB
+คืนค่า array($r, $g, $b) เช่น #FF0000 = array(255, 0, 0).</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>แปลงค่าสี HTML hex เช่น #FF0000 เป็นค่าสี RGB
+คืนค่า array($r, $g, $b) เช่น #FF0000 = array(255, 0, 0).</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$color</var></dt>
+					<dd>ค่าสี HTML hex เช่น #FF0000</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="drawHr" id="_drawHr">
 
 		<td class="attributes"><code>
@@ -631,7 +831,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_drawHr">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#475-528" title="Go to source code">drawHr</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$node</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Pdf.html#744-797" title="Go to source code">drawHr</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$node</var></span> )</code>
 
 		<div class="description short">
 			<p>เส้นคั่น.</p>
@@ -666,7 +866,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_drawImg">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#530-558" title="Go to source code">drawImg</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$node</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Pdf.html#799-827" title="Go to source code">drawImg</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$node</var></span> )</code>
 
 		<div class="description short">
 			<p>แสดงรูปภาพ.</p>
@@ -682,88 +882,6 @@
 					<dd></dd>
 				</dl></div>
 
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="resizeImage" id="_resizeImage">
-
-		<td class="attributes"><code>
-			 protected 
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_resizeImage">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#560-603" title="Go to source code">resizeImage</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$node</var></span> )</code>
-
-		<div class="description short">
-			<p>คำนวนตำแหน่งและปรับขนาดของรูปภาพ คืนค่าขนาดและตำปหน่งของรูปภาพ
-ถ้ารูปภาพมีขนาดใหญ่กว่าพิ้นที่แสดงผลจะปรับขนาด
-ถ้ารูปภาพมีขนาดเล็กกว่าพิ้นที่แสดงผล จะแสดงขนาดเดิม ตามตำแหน่งที่กำหนด.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>คำนวนตำแหน่งและปรับขนาดของรูปภาพ คืนค่าขนาดและตำปหน่งของรูปภาพ
-ถ้ารูปภาพมีขนาดใหญ่กว่าพิ้นที่แสดงผลจะปรับขนาด
-ถ้ารูปภาพมีขนาดเล็กกว่าพิ้นที่แสดงผล จะแสดงขนาดเดิม ตามตำแหน่งที่กำหนด.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$node</var></dt>
-					<dd>tag IMG</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					array<br>array(left, top, width, height) top เป็น null เสมอ
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="colorToRGb" id="_colorToRGb">
-
-		<td class="attributes"><code>
-			 protected 
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_colorToRGb">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#605-619" title="Go to source code">colorToRGb</a>( <span>string <var>$color</var></span> )</code>
-
-		<div class="description short">
-			<p>แปลงค่าสี HTML hex เช่น #FF0000 เป็นค่าสี RGB.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>แปลงค่าสี HTML hex เช่น #FF0000 เป็นค่าสี RGB.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$color</var></dt>
-					<dd>ค่าสี HTML hex เช่น #FF0000</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					array<br>คืนค่า array($r, $g, $b) เช่น #FF0000 = array(255, 0, 0)
-				</div>
 
 
 
@@ -783,7 +901,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_drawTable">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#621-688" title="Go to source code">drawTable</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$table</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Pdf.html#829-896" title="Go to source code">drawTable</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$table</var></span> )</code>
 
 		<div class="description short">
 			<p>แสดงตาราง.</p>
@@ -806,7 +924,81 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="calculateColumnsWidth" id="_calculateColumnsWidth">
+	<tr data-order="loadStyle" id="_loadStyle">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadStyle">#</a>
+		<code><a href="source-class-Kotchasan.Pdf.html#898-953" title="Go to source code">loadStyle</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$node</var></span> )</code>
+
+		<div class="description short">
+			<p>อ่าน CSS ของโหนด.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>อ่าน CSS ของโหนด.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$node</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="render" id="_render">
+
+		<td class="attributes"><code>
+			 protected 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_render">#</a>
+		<code><a href="source-class-Kotchasan.Pdf.html#955-1027" title="Go to source code">render</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$node</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$node</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="resizeImage" id="_resizeImage">
 
 		<td class="attributes"><code>
 			 protected 
@@ -817,27 +1009,68 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_calculateColumnsWidth">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#690-762" title="Go to source code">calculateColumnsWidth</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$table</var></span> )</code>
+		<a class="anchor" href="#_resizeImage">#</a>
+		<code><a href="source-class-Kotchasan.Pdf.html#1029-1073" title="Go to source code">resizeImage</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$node</var></span> )</code>
 
 		<div class="description short">
-			<p>คำนวนขนาดของคอลัมน์เป็น %.</p>
+			<p>คำนวนตำแหน่งและปรับขนาดของรูปภาพ คืนค่าขนาดและตำปหน่งของรูปภาพ
+ถ้ารูปภาพมีขนาดใหญ่กว่าพิ้นที่แสดงผลจะปรับขนาด
+ถ้ารูปภาพมีขนาดเล็กกว่าพิ้นที่แสดงผล จะแสดงขนาดเดิม ตามตำแหน่งที่กำหนด
+คืนค่า array(left, top, width, height) top เป็น null เสมอ.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>คำนวนขนาดของคอลัมน์เป็น %.</p>
+			<p>คำนวนตำแหน่งและปรับขนาดของรูปภาพ คืนค่าขนาดและตำปหน่งของรูปภาพ
+ถ้ารูปภาพมีขนาดใหญ่กว่าพิ้นที่แสดงผลจะปรับขนาด
+ถ้ารูปภาพมีขนาดเล็กกว่าพิ้นที่แสดงผล จะแสดงขนาดเดิม ตามตำแหน่งที่กำหนด
+คืนค่า array(left, top, width, height) top เป็น null เสมอ.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$table</var></dt>
-					<dd></dd>
+					<dt><var>$node</var></dt>
+					<dd>tag IMG</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
 					array
 				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="restoredCSS" id="_restoredCSS">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_restoredCSS">#</a>
+		<code><a href="source-class-Kotchasan.Pdf.html#1075-1114" title="Go to source code">restoredCSS</a>( <span><code><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></code> <var>$node</var></span> )</code>
+
+		<div class="description short">
+			<p>คืนค่า CSS.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>คืนค่า CSS.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$node</var></dt>
+					<dd></dd>
+				</dl></div>
+
 
 
 
@@ -857,7 +1090,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_sd">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#764-781" title="Go to source code">sd</a>( <span> <var>$array</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Pdf.html#1116-1133" title="Go to source code">sd</a>( <span> <var>$array</var></span> )</code>
 
 		<div class="description short">
 			<p>calculate standard deviation.</p>
@@ -880,235 +1113,6 @@
 
 
 
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="Cell" id="_Cell">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_Cell">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#783-883" title="Go to source code">Cell</a>( <span>integer <var>$w</var></span>, <span>integer <var>$h</var> = <span class="php-num">0</span></span>, <span>string <var>$txt</var> = <span class="php-quote">''</span></span>, <span>integer|string <var>$border</var> = <span class="php-num">0</span></span>, <span>integer <var>$ln</var> = <span class="php-num">0</span></span>, <span>string <var>$align</var> = <span class="php-quote">''</span></span>, <span>boolean <var>$fill</var> = <span class="php-keyword1">false</span></span>, <span>string <var>$link</var> = <span class="php-quote">''</span></span>, <span>integer <var>$tPadding</var> = <span class="php-num">0</span></span>, <span>integer <var>$rPadding</var> = <span class="php-num">0</span></span>, <span>integer <var>$bPadding</var> = <span class="php-num">0</span></span>, <span>integer <var>$lPadding</var> = <span class="php-num">0</span></span> )</code>
-
-		<div class="description short">
-			<p>Output a cell.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Output a cell.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$w</var></dt>
-					<dd>ความกว้าง, 0 คำนวณอัตโนมัติ</dd>
-					<dt><var>$h</var></dt>
-					<dd>line-height</dd>
-					<dt><var>$txt</var></dt>
-					<dd>ข้อความที่แสดง</dd>
-					<dt><var>$border</var></dt>
-					<dd>0 ไม่แสดง, 1 แสดงทั้ง 4 ด้าน, LTRB กำหนดเอง</dd>
-					<dt><var>$ln</var></dt>
-					<dd>ตำแหน่งหลังจากวาดแล้ว 0 (default) ไปทางขวา, 1 กลับไปจุดเริ่มต้น, 2 บรรทัดถัดไป</dd>
-					<dt><var>$align</var></dt>
-					<dd>L หรือค่าว่าง (default) ชิดซ้าย, R ชิดขวา, C ตรงกลาง, J justify (default)</dd>
-					<dt><var>$fill</var></dt>
-					<dd>true แสดงพื้นหลัง, false โปร่งใส</dd>
-					<dt><var>$link</var></dt>
-					<dd>URL</dd>
-					<dt><var>$tPadding</var></dt>
-					<dd>padding-top</dd>
-					<dt><var>$rPadding</var></dt>
-					<dd>padding-right</dd>
-					<dt><var>$bPadding</var></dt>
-					<dd>padding-bottom</dd>
-					<dt><var>$lPadding</var></dt>
-					<dd>padding-right</dd>
-				</dl></div>
-
-
-
-
-				<h4>Overrides</h4>
-				<div class="list"><code><a href="class-PDF.FPDF.html#_Cell">PDF\FPDF::Cell()</a></code></div>
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="MultiCell" id="_MultiCell">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_MultiCell">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#885-1007" title="Go to source code">MultiCell</a>( <span>integer <var>$w</var></span>, <span>integer <var>$h</var></span>, <span>string <var>$s</var></span>, <span>integer|string <var>$border</var> = <span class="php-num">0</span></span>, <span>string <var>$align</var> = <span class="php-quote">'J'</span></span>, <span>boolean <var>$fill</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$tPadding</var> = <span class="php-num">0</span></span>, <span>integer <var>$rPadding</var> = <span class="php-num">0</span></span>, <span>integer <var>$bPadding</var> = <span class="php-num">0</span></span>, <span>integer <var>$lPadding</var> = <span class="php-num">0</span></span> )</code>
-
-		<div class="description short">
-			<p>Output text with automatic or explicit line breaks.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Output text with automatic or explicit line breaks.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$w</var></dt>
-					<dd>ความกว้าง, 0 คำนวณอัตโนมัติ</dd>
-					<dt><var>$h</var></dt>
-					<dd>line-height</dd>
-					<dt><var>$s</var></dt>
-					<dd>ข้อความที่แสดง</dd>
-					<dt><var>$border</var></dt>
-					<dd>0 ไม่แสดง, 1 แสดงทั้ง 4 ด้าน, LTRB กำหนดเอง</dd>
-					<dt><var>$align</var></dt>
-					<dd>L หรือค่าว่างชิดซ้าย, R ชิดขวา, C ตรงกลาง, J justify (default)</dd>
-					<dt><var>$fill</var></dt>
-					<dd>true แสดงพื้นหลัง, false โปร่งใส</dd>
-					<dt><var>$tPadding</var></dt>
-					<dd>padding-top</dd>
-					<dt><var>$rPadding</var></dt>
-					<dd>padding-right</dd>
-					<dt><var>$bPadding</var></dt>
-					<dd>padding-bottom</dd>
-					<dt><var>$lPadding</var></dt>
-					<dd>padding-right</dd>
-				</dl></div>
-
-
-
-
-				<h4>Overrides</h4>
-				<div class="list"><code><a href="class-PDF.FPDF.html#_MultiCell">PDF\FPDF::MultiCell()</a></code></div>
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="NbLines" id="_NbLines">
-
-		<td class="attributes"><code>
-			 protected 
-
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_NbLines">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#1009-1065" title="Go to source code">NbLines</a>( <span>integer <var>$w</var></span>, <span>string <var>$s</var></span> )</code>
-
-		<div class="description short">
-			<p>คำนวณความสูงของเซล.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>คำนวณความสูงของเซล.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$w</var></dt>
-					<dd></dd>
-					<dt><var>$s</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="CheckPageBreak" id="_CheckPageBreak">
-
-		<td class="attributes"><code>
-			 protected 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_CheckPageBreak">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#1067-1078" title="Go to source code">CheckPageBreak</a>( <span>integer <var>$h</var></span> )</code>
-
-		<div class="description short">
-			<p>ตรวจสอบความสูงของตาราง ถ้าความสูงของตารางเกินหน้า
-จะขึ้นหน้าใหม่.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ตรวจสอบความสูงของตาราง ถ้าความสูงของตารางเกินหน้า
-จะขึ้นหน้าใหม่.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$h</var></dt>
-					<dd>ความสูงของตาราง</dd>
-				</dl></div>
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="Ln" id="_Ln">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_Ln">#</a>
-		<code><a href="source-class-Kotchasan.Pdf.html#1080-1092" title="Go to source code">Ln</a>( <span>integer <var>$h</var> = <span class="php-keyword1">null</span></span> )</code>
-
-		<div class="description short">
-			<p>ขึ้นบรรทัดใหม่.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ขึ้นบรรทัดใหม่.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$h</var></dt>
-					<dd>line-height ถ้าไม่กำหนดจะใช้ค่าล่าสุด</dd>
-				</dl></div>
-
-
-
-
-				<h4>Overrides</h4>
-				<div class="list"><code><a href="class-PDF.FPDF.html#_Ln">PDF\FPDF::Ln()</a></code></div>
 
 		</div>
 		</div></td>
@@ -1217,64 +1221,14 @@
 
 	<table class="summary properties" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="fontSize" id="$fontSize">
-		<td class="attributes"><code>
-			protected  
-			
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Pdf.html#22" title="Go to source code"><var>$fontSize</var></a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$fontSize" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="lineHeight" id="$lineHeight">
-		<td class="attributes"><code>
-			protected  
-			integer
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Pdf.html#23" title="Go to source code"><var>$lineHeight</var></a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$lineHeight" class="anchor">#</a>
-				<code><span class="php-num">5</span></code>
-			</div>
-		</td>
-	</tr>
 	<tr data-order="B" id="$B">
 		<td class="attributes"><code>
 			protected  
-			
+			mixed
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Pdf.html#24" title="Go to source code"><var>$B</var></a>
+				<a href="source-class-Kotchasan.Pdf.html#22-25" title="Go to source code"><var>$B</var></a>
 
 			<div class="description short">
 				
@@ -1295,11 +1249,11 @@
 	<tr data-order="I" id="$I">
 		<td class="attributes"><code>
 			protected  
-			
+			mixed
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Pdf.html#25" title="Go to source code"><var>$I</var></a>
+				<a href="source-class-Kotchasan.Pdf.html#27-30" title="Go to source code"><var>$I</var></a>
 
 			<div class="description short">
 				
@@ -1320,11 +1274,11 @@
 	<tr data-order="U" id="$U">
 		<td class="attributes"><code>
 			protected  
-			
+			mixed
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Pdf.html#26" title="Go to source code"><var>$U</var></a>
+				<a href="source-class-Kotchasan.Pdf.html#32-35" title="Go to source code"><var>$U</var></a>
 
 			<div class="description short">
 				
@@ -1342,89 +1296,14 @@
 			</div>
 		</td>
 	</tr>
-	<tr data-order="unit" id="$unit">
-		<td class="attributes"><code>
-			protected  
-			
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Pdf.html#27" title="Go to source code"><var>$unit</var></a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$unit" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="link" id="$link">
-		<td class="attributes"><code>
-			protected  
-			
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Pdf.html#28" title="Go to source code"><var>$link</var></a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$link" class="anchor">#</a>
-				<code><span class="php-keyword1">null</span></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="lastBlock" id="$lastBlock">
-		<td class="attributes"><code>
-			protected  
-			boolean
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Pdf.html#29" title="Go to source code"><var>$lastBlock</var></a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$lastBlock" class="anchor">#</a>
-				<code><span class="php-keyword1">true</span></code>
-			</div>
-		</td>
-	</tr>
 	<tr data-order="css" id="$css">
 		<td class="attributes"><code>
 			protected  
-			
+			mixed
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Pdf.html#30" title="Go to source code"><var>$css</var></a>
+				<a href="source-class-Kotchasan.Pdf.html#37-40" title="Go to source code"><var>$css</var></a>
 
 			<div class="description short">
 				
@@ -1445,11 +1324,11 @@
 	<tr data-order="cssClass" id="$cssClass">
 		<td class="attributes"><code>
 			protected  
-			
+			mixed
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Pdf.html#31" title="Go to source code"><var>$cssClass</var></a>
+				<a href="source-class-Kotchasan.Pdf.html#42-45" title="Go to source code"><var>$cssClass</var></a>
 
 			<div class="description short">
 				
@@ -1463,6 +1342,131 @@
 		<td class="value">
 			<div>
 				<a href="#$cssClass" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="fontSize" id="$fontSize">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Pdf.html#47-50" title="Go to source code"><var>$fontSize</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$fontSize" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="lastBlock" id="$lastBlock">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Pdf.html#52-55" title="Go to source code"><var>$lastBlock</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$lastBlock" class="anchor">#</a>
+				<code><span class="php-keyword1">true</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="lineHeight" id="$lineHeight">
+		<td class="attributes"><code>
+			protected  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Pdf.html#57-60" title="Go to source code"><var>$lineHeight</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$lineHeight" class="anchor">#</a>
+				<code><span class="php-num">5</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="link" id="$link">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Pdf.html#62-65" title="Go to source code"><var>$link</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$link" class="anchor">#</a>
+				<code><span class="php-keyword1">null</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="unit" id="$unit">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Pdf.html#67-70" title="Go to source code"><var>$unit</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$unit" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>

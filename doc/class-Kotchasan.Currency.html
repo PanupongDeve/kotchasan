@@ -219,7 +219,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Currency.html#13-317" title="Go to source code">Kotchasan/Currency.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Currency.html#13-319" title="Go to source code">Kotchasan/Currency.php</a>
 		<br>
 	</div>
 
@@ -227,99 +227,6 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="format" id="_format">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_format">#</a>
-		<code><a href="source-class-Kotchasan.Currency.html#22-33" title="Go to source code">format</a>( <span>float <var>$amount</var></span>, <span>string <var>$thousands_sep</var> = <span class="php-quote">','</span></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่น แปลงตัวเลขเป็นจำนวนเงิน.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น แปลงตัวเลขเป็นจำนวนเงิน.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$amount</var></dt>
-					<dd>จำนวนเงิน</dd>
-					<dt><var>$thousands_sep</var></dt>
-					<dd>(optional) เครื่องหมายหลักพัน (default ,)</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string<br>คืนค่าข้อความจำนวนเงิน
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="calcVat" id="_calcVat">
-
-		<td class="attributes"><code>
-			 public static
-
-			float
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_calcVat">#</a>
-		<code><a href="source-class-Kotchasan.Currency.html#35-58" title="Go to source code">calcVat</a>( <span>float <var>$amount</var></span>, <span>float <var>$vat</var></span>, <span>boolean <var>$vat_ex</var> = <span class="php-keyword1">true</span></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นคำนวณภาษี
-$vat_ex = true ราคาสินค้ารวม VAT เช่น ราคาสินค้า 100 + VAT 7 = ราคาขาย 107
-$vat_ex = false ราคาสินค้ารวม VAT เช่น ราคาขาย 100 = ราคาสินค้า 93 + VAT 7.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นคำนวณภาษี
-$vat_ex = true ราคาสินค้ารวม VAT เช่น ราคาสินค้า 100 + VAT 7 = ราคาขาย 107
-$vat_ex = false ราคาสินค้ารวม VAT เช่น ราคาขาย 100 = ราคาสินค้า 93 + VAT 7.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$amount</var></dt>
-					<dd>ราคาขาย</dd>
-					<dt><var>$vat</var></dt>
-					<dd>VAT</dd>
-					<dt><var>$vat_ex</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					float<br>คืนค่า VAT จากราคาขาย
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						(1000, 7, true) [==] 70<br>
-						(1000, 7, false) [==] 65.420560747663558<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="bahtEng" id="_bahtEng">
 
 		<td class="attributes"><code>
@@ -332,7 +239,7 @@ $vat_ex = false ราคาสินค้ารวม VAT เช่น รา�
 
 		<td class="name"><div>
 		<a class="anchor" href="#_bahtEng">#</a>
-		<code><a href="source-class-Kotchasan.Currency.html#60-87" title="Go to source code">bahtEng</a>( <span>string <var>$thb</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Currency.html#22-49" title="Go to source code">bahtEng</a>( <span>string <var>$thb</var></span> )</code>
 
 		<div class="description short">
 			<p>แปลงจำนวนเงินเป็นตัวหนังสือ.</p>
@@ -381,7 +288,7 @@ $vat_ex = false ราคาสินค้ารวม VAT เช่น รา�
 
 		<td class="name"><div>
 		<a class="anchor" href="#_bahtThai">#</a>
-		<code><a href="source-class-Kotchasan.Currency.html#89-177" title="Go to source code">bahtThai</a>( <span>string <var>$thb</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Currency.html#51-139" title="Go to source code">bahtThai</a>( <span>string <var>$thb</var></span> )</code>
 
 		<div class="description short">
 			<p>ตัวเลขเป็นตัวหนังสือ (ไทย).</p>
@@ -413,6 +320,103 @@ $vat_ex = false ราคาสินค้ารวม VAT เช่น รา�
 						(-1000000050) [==] 'ลบหนึ่งพันล้านห้าสิบบาทถ้วน'<br>
 						(10000000050.25) [==] 'หนึ่งหมื่นล้านห้าสิบบาทยี่สิบห้าสตางค์'<br>
 				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="calcVat" id="_calcVat">
+
+		<td class="attributes"><code>
+			 public static
+
+			float
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_calcVat">#</a>
+		<code><a href="source-class-Kotchasan.Currency.html#141-165" title="Go to source code">calcVat</a>( <span>float <var>$amount</var></span>, <span>float <var>$vat</var></span>, <span>boolean <var>$vat_ex</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นคำนวณภาษี
+$vat_ex = true ราคาสินค้ารวม VAT เช่น ราคาสินค้า 100 + VAT 7 = ราคาขาย 107
+$vat_ex = false ราคาสินค้ารวม VAT เช่น ราคาขาย 100 = ราคาสินค้า 93 + VAT 7.
+คืนค่า VAT จากราคาขาย.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นคำนวณภาษี
+$vat_ex = true ราคาสินค้ารวม VAT เช่น ราคาสินค้า 100 + VAT 7 = ราคาขาย 107
+$vat_ex = false ราคาสินค้ารวม VAT เช่น ราคาขาย 100 = ราคาสินค้า 93 + VAT 7.
+คืนค่า VAT จากราคาขาย.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$amount</var></dt>
+					<dd>ราคาขาย</dd>
+					<dt><var>$vat</var></dt>
+					<dd>VAT</dd>
+					<dt><var>$vat_ex</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					float
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						(1000, 7, true) [==] 70<br>
+						(1000, 7, false) [==] 65.420560747663558<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="format" id="_format">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_format">#</a>
+		<code><a href="source-class-Kotchasan.Currency.html#167-179" title="Go to source code">format</a>( <span>float <var>$amount</var></span>, <span>string <var>$thousands_sep</var> = <span class="php-quote">','</span></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่น แปลงตัวเลขเป็นจำนวนเงิน
+คืนค่าข้อความจำนวนเงิน.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่น แปลงตัวเลขเป็นจำนวนเงิน
+คืนค่าข้อความจำนวนเงิน.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$amount</var></dt>
+					<dd>จำนวนเงิน</dd>
+					<dt><var>$thousands_sep</var></dt>
+					<dd>(optional) เครื่องหมายหลักพัน (default ,)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
 
 
 		</div>

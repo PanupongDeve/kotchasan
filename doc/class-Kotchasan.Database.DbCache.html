@@ -181,7 +181,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Database.DbCache.html#17-173" title="Go to source code">Kotchasan/Database/DbCache.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Database.DbCache.html#17-178" title="Go to source code">Kotchasan/Database/DbCache.php</a>
 		<br>
 	</div>
 
@@ -189,6 +189,79 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="cacheOn" id="_cacheOn">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_cacheOn">#</a>
+		<code><a href="source-class-Kotchasan.Database.DbCache.html#48-57" title="Go to source code">cacheOn</a>( <span>boolean <var>$auto_save</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			<p>เปิดการใช้งานแคช
+จะมีการตรวจสอบจากแคชก่อนการสอบถามข้อมูล.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>เปิดการใช้งานแคช
+จะมีการตรวจสอบจากแคชก่อนการสอบถามข้อมูล.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$auto_save</var></dt>
+					<dd>(options) true (default) บันทึกผลลัพท์อัตโนมัติ, false ต้องบันทึกแคชเอง</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="clear" id="_clear">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_clear">#</a>
+		<code><a href="source-class-Kotchasan.Database.DbCache.html#59-68" title="Go to source code">clear</a>( )</code>
+
+		<div class="description short">
+			<p>เคลียร์แคช
+คืนค่า true ถ้าลบเรียบร้อย, หรือ array ของรายการที่ไม่สำเร็จ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>เคลียร์แคช
+คืนค่า true ถ้าลบเรียบร้อย, หรือ array ของรายการที่ไม่สำเร็จ.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="create" id="_create">
 
 		<td class="attributes"><code>
@@ -201,7 +274,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Kotchasan.Database.DbCache.html#54-66" title="Go to source code">create</a>( )</code>
+		<code><a href="source-class-Kotchasan.Database.DbCache.html#70-82" title="Go to source code">create</a>( )</code>
 
 		<div class="description short">
 			<p>Create Class (Singleton).</p>
@@ -223,6 +296,87 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="get" id="_get">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get">#</a>
+		<code><a href="source-class-Kotchasan.Database.DbCache.html#84-95" title="Go to source code">get</a>( <span><code><a href="class-Kotchasan.Cache.CacheItem.html">Kotchasan\Cache\CacheItem</a></code> <var>$item</var></span> )</code>
+
+		<div class="description short">
+			<p>อ่านข้อมูลจากแคช
+คืนค่าข้อมูลหรือ false ถ้าไม่มีแคช.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>อ่านข้อมูลจากแคช
+คืนค่าข้อมูลหรือ false ถ้าไม่มีแคช.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$item</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getAction" id="_getAction">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getAction">#</a>
+		<code><a href="source-class-Kotchasan.Database.DbCache.html#97-108" title="Go to source code">getAction</a>( )</code>
+
+		<div class="description short">
+			<p>อ่านสถานะของแคช
+0 ไม่ใช้แคช
+1 โหลดและบันทึกแคชอัตโนมัติ
+2 โหลดข้อมูลจากแคชได้ แต่ไม่บันทึกแคชอัตโนมัติ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>อ่านสถานะของแคช
+0 ไม่ใช้แคช
+1 โหลดและบันทึกแคชอัตโนมัติ
+2 โหลดข้อมูลจากแคชได้ แต่ไม่บันทึกแคชอัตโนมัติ.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="init" id="_init">
 
 		<td class="attributes"><code>
@@ -235,7 +389,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_init">#</a>
-		<code><a href="source-class-Kotchasan.Database.DbCache.html#68-79" title="Go to source code">init</a>( <span>string <var>$sql</var></span>, <span>array <var>$values</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.DbCache.html#110-121" title="Go to source code">init</a>( <span>string <var>$sql</var></span>, <span>array <var>$values</var></span> )</code>
 
 		<div class="description short">
 			<p>กำหนดคีย์ของแคชจาก query.</p>
@@ -264,45 +418,6 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="get" id="_get">
-
-		<td class="attributes"><code>
-			 public 
-
-			mixed
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-Kotchasan.Database.DbCache.html#81-91" title="Go to source code">get</a>( <span><code><a href="class-Kotchasan.Cache.CacheItem.html">Kotchasan\Cache\CacheItem</a></code> <var>$item</var></span> )</code>
-
-		<div class="description short">
-			<p>อ่านข้อมูลจากแคช.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่านข้อมูลจากแคช.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$item</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					mixed<br>คืนค่าข้อมูลหรือ false ถ้าไม่มีแคช
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="save" id="_save">
 
 		<td class="attributes"><code>
@@ -315,18 +430,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save">#</a>
-		<code><a href="source-class-Kotchasan.Database.DbCache.html#93-109" title="Go to source code">save</a>( <span><code><a href="class-Kotchasan.Cache.CacheItem.html">Kotchasan\Cache\CacheItem</a></code> <var>$item</var></span>, <span>array <var>$datas</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.DbCache.html#123-140" title="Go to source code">save</a>( <span><code><a href="class-Kotchasan.Cache.CacheItem.html">Kotchasan\Cache\CacheItem</a></code> <var>$item</var></span>, <span>array <var>$datas</var></span> )</code>
 
 		<div class="description short">
 			<p>บันทึก cache เมื่อบันทึกแล้วจะปิดการใช้งาน cache อัตโนมัติ
 จะใช้คำสั่งนี้เมื่อมีการเรียกใช้แคชด้วยคำสั่ง cacheOn(false) เท่านั้น
-query ครั้งต่อไปถ้าจะใช้ cache ต้อง เปิดการใช้งาน cache ก่อนทุกครั้ง.</p>
+query ครั้งต่อไปถ้าจะใช้ cache ต้อง เปิดการใช้งาน cache ก่อนทุกครั้ง
+สำเร็จคืนค่า true ไม่สำเร็จคืนค่า false.</p>
 		</div>
 
 		<div class="description detailed hidden">
 			<p>บันทึก cache เมื่อบันทึกแล้วจะปิดการใช้งาน cache อัตโนมัติ
 จะใช้คำสั่งนี้เมื่อมีการเรียกใช้แคชด้วยคำสั่ง cacheOn(false) เท่านั้น
-query ครั้งต่อไปถ้าจะใช้ cache ต้อง เปิดการใช้งาน cache ก่อนทุกครั้ง.</p>
+query ครั้งต่อไปถ้าจะใช้ cache ต้อง เปิดการใช้งาน cache ก่อนทุกครั้ง
+สำเร็จคืนค่า true ไม่สำเร็จคืนค่า false.</p>
 
 
 				<h4>Parameters</h4>
@@ -339,157 +456,7 @@ query ครั้งต่อไปถ้าจะใช้ cache ต้อง 
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>สำเร็จคืนค่า true ไม่สำเร็จคืนค่า false
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="cacheOn" id="_cacheOn">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_cacheOn">#</a>
-		<code><a href="source-class-Kotchasan.Database.DbCache.html#111-120" title="Go to source code">cacheOn</a>( <span>boolean <var>$auto_save</var> = <span class="php-keyword1">true</span></span> )</code>
-
-		<div class="description short">
-			<p>เปิดการใช้งานแคช
-จะมีการตรวจสอบจากแคชก่อนการสอบถามข้อมูล.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>เปิดการใช้งานแคช
-จะมีการตรวจสอบจากแคชก่อนการสอบถามข้อมูล.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$auto_save</var></dt>
-					<dd>(options) true (default) บันทึกผลลัพท์อัตโนมัติ, false ต้องบันทึกแคชเอง</dd>
-				</dl></div>
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="usedCache" id="_usedCache">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_usedCache">#</a>
-		<code><a href="source-class-Kotchasan.Database.DbCache.html#122-132" title="Go to source code">usedCache</a>( <span><code><a href="class-Kotchasan.Cache.CacheItem.html">Kotchasan\Cache\CacheItem</a></code> <var>$item</var></span> )</code>
-
-		<div class="description short">
-			<p>ตรวจสอบว่าข้อมูลมาจาก cache หรือไม่.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ตรวจสอบว่าข้อมูลมาจาก cache หรือไม่.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$item</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
 					boolean
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="clear" id="_clear">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_clear">#</a>
-		<code><a href="source-class-Kotchasan.Database.DbCache.html#134-142" title="Go to source code">clear</a>( )</code>
-
-		<div class="description short">
-			<p>เคลียร์แคช.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>เคลียร์แคช.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>true ถ้าลบเรียบร้อย, หรือ array ของรายการที่ไม่สำเร็จ
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getAction" id="_getAction">
-
-		<td class="attributes"><code>
-			 public 
-
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getAction">#</a>
-		<code><a href="source-class-Kotchasan.Database.DbCache.html#144-155" title="Go to source code">getAction</a>( )</code>
-
-		<div class="description short">
-			<p>อ่านสถานะของแคช
-0 ไม่ใช้แคช
-1 โหลดและบันทึกแคชอัตโนมัติ
-2 โหลดข้อมูลจากแคชได้ แต่ไม่บันทึกแคชอัตโนมัติ.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่านสถานะของแคช
-0 ไม่ใช้แคช
-1 โหลดและบันทึกแคชอัตโนมัติ
-2 โหลดข้อมูลจากแคชได้ แต่ไม่บันทึกแคชอัตโนมัติ.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer
 				</div>
 
 
@@ -510,7 +477,7 @@ query ครั้งต่อไปถ้าจะใช้ cache ต้อง 
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setAction">#</a>
-		<code><a href="source-class-Kotchasan.Database.DbCache.html#157-172" title="Go to source code">setAction</a>( <span>type <var>$value</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.DbCache.html#142-157" title="Go to source code">setAction</a>( <span>type <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>กำหนดสถานะของแคช
@@ -535,6 +502,45 @@ query ครั้งต่อไปถ้าจะใช้ cache ต้อง 
 				<h4>Returns</h4>
 				<div class="list">
 					static
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="usedCache" id="_usedCache">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_usedCache">#</a>
+		<code><a href="source-class-Kotchasan.Database.DbCache.html#159-169" title="Go to source code">usedCache</a>( <span><code><a href="class-Kotchasan.Cache.CacheItem.html">Kotchasan\Cache\CacheItem</a></code> <var>$item</var></span> )</code>
+
+		<div class="description short">
+			<p>ตรวจสอบว่าข้อมูลมาจาก cache หรือไม่.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ตรวจสอบว่าข้อมูลมาจาก cache หรือไม่.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$item</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
 				</div>
 
 

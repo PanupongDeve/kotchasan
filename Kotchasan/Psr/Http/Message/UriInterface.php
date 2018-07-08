@@ -25,21 +25,30 @@ namespace Psr\Http\Message;
 interface UriInterface
 {
     /**
-     * Retrieve the scheme component of the URI.
+     * Return the string representation as a URI reference.
      *
-     * If no scheme is present, this method MUST return an empty string.
+     * Depending on which components of the URI are present, the resulting
+     * string is either a full URI or relative reference according to RFC 3986,
+     * Section 4.1. The method concatenates the various components of the URI,
+     * using the appropriate delimiters:
      *
-     * The value returned MUST be normalized to lowercase, per RFC 3986
-     * Section 3.1.
+     * - If a scheme is present, it MUST be suffixed by ":".
+     * - If an authority is present, it MUST be prefixed by "//".
+     * - The path can be concatenated without delimiters. But there are two
+     *   cases where the path has to be adjusted to make the URI reference
+     *   valid as PHP does not allow to throw an exception in __toString():
+     *     - If the path is rootless and an authority is present, the path MUST
+     *       be prefixed by "/".
+     *     - If the path is starting with more than one "/" and no authority is
+     *       present, the starting slashes MUST be reduced to one.
+     * - If a query is present, it MUST be prefixed by "?".
+     * - If a fragment is present, it MUST be prefixed by "#".
      *
-     * The trailing ":" character is not part of the scheme and MUST NOT be
-     * added.
+     * @see http://tools.ietf.org/html/rfc3986#section-4.1
      *
-     * @see https://tools.ietf.org/html/rfc3986#section-3.1
-     *
-     * @return string the URI scheme
+     * @return string
      */
-    public function getScheme();
+    public function __toString();
 
     /**
      * Retrieve the authority component of the URI.
@@ -63,21 +72,23 @@ interface UriInterface
     public function getAuthority();
 
     /**
-     * Retrieve the user information component of the URI.
+     * Retrieve the fragment component of the URI.
      *
-     * If no user information is present, this method MUST return an empty
-     * string.
+     * If no fragment is present, this method MUST return an empty string.
      *
-     * If a user is present in the URI, this will return that value;
-     * additionally, if the password is also present, it will be appended to the
-     * user value, with a colon (":") separating the values.
+     * The leading "#" character is not part of the fragment and MUST NOT be
+     * added.
      *
-     * The trailing "@" character is not part of the user information and MUST
-     * NOT be added.
+     * The value returned MUST be percent-encoded, but MUST NOT double-encode
+     * any characters. To determine what characters to encode, please refer to
+     * RFC 3986, Sections 2 and 3.5.
      *
-     * @return string the URI user information, in "username[:password]" format
+     * @see https://tools.ietf.org/html/rfc3986#section-2
+     * @see https://tools.ietf.org/html/rfc3986#section-3.5
+     *
+     * @return string the URI fragment
      */
-    public function getUserInfo();
+    public function getFragment();
 
     /**
      * Retrieve the host component of the URI.
@@ -92,23 +103,6 @@ interface UriInterface
      * @return string the URI host
      */
     public function getHost();
-
-    /**
-     * Retrieve the port component of the URI.
-     *
-     * If a port is present, and it is non-standard for the current scheme,
-     * this method MUST return it as an integer. If the port is the standard port
-     * used with the current scheme, this method SHOULD return null.
-     *
-     * If no port is present, and no scheme is present, this method MUST return
-     * a null value.
-     *
-     * If no port is present, but a scheme is present, this method MAY return
-     * the standard port for that scheme, but SHOULD return null.
-     *
-     * @return null|int the URI port
-     */
-    public function getPort();
 
     /**
      * Retrieve the path component of the URI.
@@ -139,6 +133,23 @@ interface UriInterface
     public function getPath();
 
     /**
+     * Retrieve the port component of the URI.
+     *
+     * If a port is present, and it is non-standard for the current scheme,
+     * this method MUST return it as an integer. If the port is the standard port
+     * used with the current scheme, this method SHOULD return null.
+     *
+     * If no port is present, and no scheme is present, this method MUST return
+     * a null value.
+     *
+     * If no port is present, but a scheme is present, this method MAY return
+     * the standard port for that scheme, but SHOULD return null.
+     *
+     * @return null|int the URI port
+     */
+    public function getPort();
+
+    /**
      * Retrieve the query string of the URI.
      *
      * If no query string is present, this method MUST return an empty string.
@@ -162,59 +173,55 @@ interface UriInterface
     public function getQuery();
 
     /**
-     * Retrieve the fragment component of the URI.
+     * Retrieve the scheme component of the URI.
      *
-     * If no fragment is present, this method MUST return an empty string.
+     * If no scheme is present, this method MUST return an empty string.
      *
-     * The leading "#" character is not part of the fragment and MUST NOT be
+     * The value returned MUST be normalized to lowercase, per RFC 3986
+     * Section 3.1.
+     *
+     * The trailing ":" character is not part of the scheme and MUST NOT be
      * added.
      *
-     * The value returned MUST be percent-encoded, but MUST NOT double-encode
-     * any characters. To determine what characters to encode, please refer to
-     * RFC 3986, Sections 2 and 3.5.
+     * @see https://tools.ietf.org/html/rfc3986#section-3.1
      *
-     * @see https://tools.ietf.org/html/rfc3986#section-2
-     * @see https://tools.ietf.org/html/rfc3986#section-3.5
-     *
-     * @return string the URI fragment
+     * @return string the URI scheme
      */
-    public function getFragment();
+    public function getScheme();
 
     /**
-     * Return an instance with the specified scheme.
+     * Retrieve the user information component of the URI.
      *
-     * This method MUST retain the state of the current instance, and return
-     * an instance that contains the specified scheme.
+     * If no user information is present, this method MUST return an empty
+     * string.
      *
-     * Implementations MUST support the schemes "http" and "https" case
-     * insensitively, and MAY accommodate other schemes if required.
+     * If a user is present in the URI, this will return that value;
+     * additionally, if the password is also present, it will be appended to the
+     * user value, with a colon (":") separating the values.
      *
-     * An empty scheme is equivalent to removing the scheme.
+     * The trailing "@" character is not part of the user information and MUST
+     * NOT be added.
      *
-     * @param string $scheme the scheme to use with the new instance
-     *
-     * @return self a new instance with the specified scheme
-     *
-     * @throws \InvalidArgumentException for invalid or unsupported schemes
+     * @return string the URI user information, in "username[:password]" format
      */
-    public function withScheme($scheme);
+    public function getUserInfo();
 
     /**
-     * Return an instance with the specified user information.
+     * Return an instance with the specified URI fragment.
      *
      * This method MUST retain the state of the current instance, and return
-     * an instance that contains the specified user information.
+     * an instance that contains the specified URI fragment.
      *
-     * Password is optional, but the user information MUST include the
-     * user; an empty string for the user is equivalent to removing user
-     * information.
+     * Users can provide both encoded and decoded fragment characters.
+     * Implementations ensure the correct encoding as outlined in getFragment().
      *
-     * @param string      $user     the user name to use for authority
-     * @param null|string $password the password associated with $user
+     * An empty fragment value is equivalent to removing the fragment.
      *
-     * @return self a new instance with the specified user information
+     * @param string $fragment the fragment to use with the new instance
+     *
+     * @return self a new instance with the specified fragment
      */
-    public function withUserInfo($user, $password = null);
+    public function withFragment($fragment);
 
     /**
      * Return an instance with the specified host.
@@ -226,32 +233,11 @@ interface UriInterface
      *
      * @param string $host the hostname to use with the new instance
      *
-     * @return self a new instance with the specified host
-     *
      * @throws \InvalidArgumentException for invalid hostnames
+     *
+     * @return self a new instance with the specified host
      */
     public function withHost($host);
-
-    /**
-     * Return an instance with the specified port.
-     *
-     * This method MUST retain the state of the current instance, and return
-     * an instance that contains the specified port.
-     *
-     * Implementations MUST raise an exception for ports outside the
-     * established TCP and UDP port ranges.
-     *
-     * A null value provided for the port is equivalent to removing the port
-     * information.
-     *
-     * @param null|int $port the port to use with the new instance; a null value
-     *                       removes the port information
-     *
-     * @return self a new instance with the specified port
-     *
-     * @throws \InvalidArgumentException for invalid ports
-     */
-    public function withPort($port);
 
     /**
      * Return an instance with the specified path.
@@ -273,11 +259,33 @@ interface UriInterface
      *
      * @param string $path the path to use with the new instance
      *
-     * @return self a new instance with the specified path
-     *
      * @throws \InvalidArgumentException for invalid paths
+     *
+     * @return self a new instance with the specified path
      */
     public function withPath($path);
+
+    /**
+     * Return an instance with the specified port.
+     *
+     * This method MUST retain the state of the current instance, and return
+     * an instance that contains the specified port.
+     *
+     * Implementations MUST raise an exception for ports outside the
+     * established TCP and UDP port ranges.
+     *
+     * A null value provided for the port is equivalent to removing the port
+     * information.
+     *
+     *                       removes the port information
+     *
+     * @param null|int $port the port to use with the new instance; a null value
+     *
+     * @throws \InvalidArgumentException for invalid ports
+     *
+     * @return self a new instance with the specified port
+     */
+    public function withPort($port);
 
     /**
      * Return an instance with the specified query string.
@@ -292,52 +300,45 @@ interface UriInterface
      *
      * @param string $query the query string to use with the new instance
      *
-     * @return self a new instance with the specified query string
-     *
      * @throws \InvalidArgumentException for invalid query strings
+     *
+     * @return self a new instance with the specified query string
      */
     public function withQuery($query);
 
     /**
-     * Return an instance with the specified URI fragment.
+     * Return an instance with the specified scheme.
      *
      * This method MUST retain the state of the current instance, and return
-     * an instance that contains the specified URI fragment.
+     * an instance that contains the specified scheme.
      *
-     * Users can provide both encoded and decoded fragment characters.
-     * Implementations ensure the correct encoding as outlined in getFragment().
+     * Implementations MUST support the schemes "http" and "https" case
+     * insensitively, and MAY accommodate other schemes if required.
      *
-     * An empty fragment value is equivalent to removing the fragment.
+     * An empty scheme is equivalent to removing the scheme.
      *
-     * @param string $fragment the fragment to use with the new instance
+     * @param string $scheme the scheme to use with the new instance
      *
-     * @return self a new instance with the specified fragment
+     * @throws \InvalidArgumentException for invalid or unsupported schemes
+     *
+     * @return self a new instance with the specified scheme
      */
-    public function withFragment($fragment);
+    public function withScheme($scheme);
 
     /**
-     * Return the string representation as a URI reference.
+     * Return an instance with the specified user information.
      *
-     * Depending on which components of the URI are present, the resulting
-     * string is either a full URI or relative reference according to RFC 3986,
-     * Section 4.1. The method concatenates the various components of the URI,
-     * using the appropriate delimiters:
+     * This method MUST retain the state of the current instance, and return
+     * an instance that contains the specified user information.
      *
-     * - If a scheme is present, it MUST be suffixed by ":".
-     * - If an authority is present, it MUST be prefixed by "//".
-     * - The path can be concatenated without delimiters. But there are two
-     *   cases where the path has to be adjusted to make the URI reference
-     *   valid as PHP does not allow to throw an exception in __toString():
-     *     - If the path is rootless and an authority is present, the path MUST
-     *       be prefixed by "/".
-     *     - If the path is starting with more than one "/" and no authority is
-     *       present, the starting slashes MUST be reduced to one.
-     * - If a query is present, it MUST be prefixed by "?".
-     * - If a fragment is present, it MUST be prefixed by "#".
+     * Password is optional, but the user information MUST include the
+     * user; an empty string for the user is equivalent to removing user
+     * information.
      *
-     * @see http://tools.ietf.org/html/rfc3986#section-4.1
+     * @param string      $user     the user name to use for authority
+     * @param null|string $password the password associated with $user
      *
-     * @return string
+     * @return self a new instance with the specified user information
      */
-    public function __toString();
+    public function withUserInfo($user, $password = null);
 }

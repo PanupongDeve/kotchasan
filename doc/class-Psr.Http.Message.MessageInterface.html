@@ -197,7 +197,7 @@ message and return an instance that contains the changed state.</p>
 				http://www.ietf.org/rfc/rfc7230.txt<br>
 				<b>See:</b>
 				http://www.ietf.org/rfc/rfc7231.txt<br>
-			<b>Located at</b> <a href="source-class-Psr.Http.Message.MessageInterface.html#5-198" title="Go to source code">Kotchasan/Psr/Http/Message/MessageInterface.php</a>
+			<b>Located at</b> <a href="source-class-Psr.Http.Message.MessageInterface.html#5-202" title="Go to source code">Kotchasan/Psr/Http/Message/MessageInterface.php</a>
 		<br>
 	</div>
 
@@ -205,6 +205,182 @@ message and return an instance that contains the changed state.</p>
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="getBody" id="_getBody">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Psr.Http.Message.StreamInterface.html">Psr\Http\Message\StreamInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getBody">#</a>
+		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#19-24" title="Go to source code">getBody</a>( )</code>
+
+		<div class="description short">
+			<p>Gets the body of the message.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets the body of the message.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Psr.Http.Message.StreamInterface.html">Psr\Http\Message\StreamInterface</a></code><br>returns the body as a stream
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getHeader" id="_getHeader">
+
+		<td class="attributes"><code>
+			 public 
+
+			string[]
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getHeader">#</a>
+		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#26-42" title="Go to source code">getHeader</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>Retrieves a message header value by the given case-insensitive name.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieves a message header value by the given case-insensitive name.</p>
+
+<p>This method returns an array of all the header values of the given
+case-insensitive header name.</p>
+
+<p>If the header does not appear in the message, this method MUST return an
+empty array.</p>
+
+<p>header. If the header does not appear in the message, this method MUST
+return an empty array.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>case-insensitive header field name</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string[]<br>An array of string values as provided for the given
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getHeaderLine" id="_getHeaderLine">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getHeaderLine">#</a>
+		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#44-65" title="Go to source code">getHeaderLine</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>Retrieves a comma-separated string of the values for a single header.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieves a comma-separated string of the values for a single header.</p>
+
+<p>This method returns all of the header values of the given
+case-insensitive header name as a string concatenated together using
+a comma.</p>
+
+<p>NOTE: Not all header values may be appropriately represented using
+comma concatenation. For such headers, use getHeader() instead
+and supply your own delimiter when concatenating.</p>
+
+<p>If the header does not appear in the message, this method MUST return
+an empty string.
+ concatenated together using a comma. If the header does not appear in the message, this method MUST return an empty string.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>case-insensitive header field name</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>A string of values as provided for the given header
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getHeaders" id="_getHeaders">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getHeaders">#</a>
+		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#67-93" title="Go to source code">getHeaders</a>( )</code>
+
+		<div class="description short">
+			<p>Retrieves all message header values.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieves all message header values.</p>
+
+<p>The keys represent the header name as it will be sent over the wire, and
+each value is an array of strings associated with the header.
+ // Represent the headers as a string foreach ($message->getHeaders() as $name => $values) { echo $name . ": " . implode(", ", $values); }
+ // Emit headers iteratively: foreach ($message->getHeaders() as $name => $values) { foreach ($values as $value) { header(sprintf('%s: %s', $name, $value), false); } }</p>
+
+<p>While header names are not case-sensitive, getHeaders() will preserve the
+exact case in which headers were originally specified.
+ key MUST be a header name, and each value MUST be an array of strings for that header.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>Returns an associative array of the message's headers. Each
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="getProtocolVersion" id="_getProtocolVersion">
 
 		<td class="attributes"><code>
@@ -217,7 +393,7 @@ message and return an instance that contains the changed state.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getProtocolVersion">#</a>
-		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#19-26" title="Go to source code">getProtocolVersion</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#95-102" title="Go to source code">getProtocolVersion</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieves the HTTP protocol version as a string.</p>
@@ -241,96 +417,6 @@ message and return an instance that contains the changed state.</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="withProtocolVersion" id="_withProtocolVersion">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-Psr.Http.Message.MessageInterface.html">Psr\Http\Message\MessageInterface</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_withProtocolVersion">#</a>
-		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#28-42" title="Go to source code">withProtocolVersion</a>( <span>string <var>$version</var></span> )</code>
-
-		<div class="description short">
-			<p>Return an instance with the specified HTTP protocol version.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Return an instance with the specified HTTP protocol version.</p>
-
-<p>The version string MUST contain only the HTTP version number (e.g.,
-"1.1", "1.0").</p>
-
-<p>This method MUST be implemented in such a way as to retain the
-immutability of the message, and MUST return an instance that has the
-new protocol version.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$version</var></dt>
-					<dd>HTTP protocol version</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-Psr.Http.Message.MessageInterface.html">Psr\Http\Message\MessageInterface</a></code>
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getHeaders" id="_getHeaders">
-
-		<td class="attributes"><code>
-			 public 
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getHeaders">#</a>
-		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#44-69" title="Go to source code">getHeaders</a>( )</code>
-
-		<div class="description short">
-			<p>Retrieves all message header values.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Retrieves all message header values.</p>
-
-<p>The keys represent the header name as it will be sent over the wire, and
-each value is an array of strings associated with the header.
- // Represent the headers as a string foreach ($message->getHeaders() as $name => $values) { echo $name . ": " . implode(", ", $values); }
- // Emit headers iteratively: foreach ($message->getHeaders() as $name => $values) { foreach ($values as $value) { header(sprintf('%s: %s', $name, $value), false); } }</p>
-
-<p>While header names are not case-sensitive, getHeaders() will preserve the
-exact case in which headers were originally specified.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					array<br><p>Returns an associative array of the message's headers. Each
-              key MUST be a header name, and each value MUST be an array of strings
-              for that header.</p>
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="hasHeader" id="_hasHeader">
 
 		<td class="attributes"><code>
@@ -343,7 +429,7 @@ exact case in which headers were originally specified.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_hasHeader">#</a>
-		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#71-80" title="Go to source code">hasHeader</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#104-114" title="Go to source code">hasHeader</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>Checks if a header exists by the given case-insensitive name.</p>
@@ -352,52 +438,7 @@ exact case in which headers were originally specified.</p>
 		<div class="description detailed hidden">
 			<p>Checks if a header exists by the given case-insensitive name.</p>
 
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$name</var></dt>
-					<dd>case-insensitive header field name</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br><p>Returns true if any header names match the given header
-             name using a case-insensitive string comparison. Returns false if
-             no matching header name is found in the message.</p>
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getHeader" id="_getHeader">
-
-		<td class="attributes"><code>
-			 public 
-
-			string[]
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getHeader">#</a>
-		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#82-97" title="Go to source code">getHeader</a>( <span>string <var>$name</var></span> )</code>
-
-		<div class="description short">
-			<p>Retrieves a message header value by the given case-insensitive name.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Retrieves a message header value by the given case-insensitive name.</p>
-
-<p>This method returns an array of all the header values of the given
-case-insensitive header name.</p>
-
-<p>If the header does not appear in the message, this method MUST return an
-empty array.</p>
+<p>name using a case-insensitive string comparison. Returns false if no matching header name is found in the message.</p>
 
 
 				<h4>Parameters</h4>
@@ -408,115 +449,9 @@ empty array.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					string[]<br><p>An array of string values as provided for the given
-                 header. If the header does not appear in the message, this method MUST
-                 return an empty array.</p>
+					boolean<br>Returns true if any header names match the given header
 				</div>
 
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getHeaderLine" id="_getHeaderLine">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getHeaderLine">#</a>
-		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#99-119" title="Go to source code">getHeaderLine</a>( <span>string <var>$name</var></span> )</code>
-
-		<div class="description short">
-			<p>Retrieves a comma-separated string of the values for a single header.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Retrieves a comma-separated string of the values for a single header.</p>
-
-<p>This method returns all of the header values of the given
-case-insensitive header name as a string concatenated together using
-a comma.</p>
-
-<p>NOTE: Not all header values may be appropriately represented using
-comma concatenation. For such headers, use getHeader() instead
-and supply your own delimiter when concatenating.</p>
-
-<p>If the header does not appear in the message, this method MUST return
-an empty string.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$name</var></dt>
-					<dd>case-insensitive header field name</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string<br><p>A string of values as provided for the given header
-               concatenated together using a comma. If the header does not appear in
-               the message, this method MUST return an empty string.</p>
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="withHeader" id="_withHeader">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-Psr.Http.Message.MessageInterface.html">Psr\Http\Message\MessageInterface</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_withHeader">#</a>
-		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#121-138" title="Go to source code">withHeader</a>( <span>string <var>$name</var></span>, <span>string|string[] <var>$value</var></span> )</code>
-
-		<div class="description short">
-			<p>Return an instance with the provided value replacing the specified header.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Return an instance with the provided value replacing the specified header.</p>
-
-<p>While header names are case-insensitive, the casing of the header will
-be preserved by this function, and returned from getHeaders().</p>
-
-<p>This method MUST be implemented in such a way as to retain the
-immutability of the message, and MUST return an instance that has the
-new and/or updated header and value.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$name</var></dt>
-					<dd>case-insensitive header field name</dd>
-					<dt><var>$value</var></dt>
-					<dd>header value(s)</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-Psr.Http.Message.MessageInterface.html">Psr\Http\Message\MessageInterface</a></code>
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>for invalid header names or values
-				</div>
 
 
 
@@ -535,7 +470,7 @@ new and/or updated header and value.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withAddedHeader">#</a>
-		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#140-158" title="Go to source code">withAddedHeader</a>( <span>string <var>$name</var></span>, <span>string|string[] <var>$value</var></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#116-134" title="Go to source code">withAddedHeader</a>( <span>string <var>$name</var></span>, <span>string|string[] <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>Return an instance with the specified header appended with the given value.</p>
@@ -576,85 +511,6 @@ new header and/or value.</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="withoutHeader" id="_withoutHeader">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-Psr.Http.Message.MessageInterface.html">Psr\Http\Message\MessageInterface</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_withoutHeader">#</a>
-		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#160-173" title="Go to source code">withoutHeader</a>( <span>string <var>$name</var></span> )</code>
-
-		<div class="description short">
-			<p>Return an instance without the specified header.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Return an instance without the specified header.</p>
-
-<p>Header resolution MUST be done without case-sensitivity.</p>
-
-<p>This method MUST be implemented in such a way as to retain the
-immutability of the message, and MUST return an instance that removes
-the named header.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$name</var></dt>
-					<dd>case-insensitive header field name to remove</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-Psr.Http.Message.MessageInterface.html">Psr\Http\Message\MessageInterface</a></code>
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getBody" id="_getBody">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-Psr.Http.Message.StreamInterface.html">Psr\Http\Message\StreamInterface</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getBody">#</a>
-		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#175-180" title="Go to source code">getBody</a>( )</code>
-
-		<div class="description short">
-			<p>Gets the body of the message.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Gets the body of the message.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-Psr.Http.Message.StreamInterface.html">Psr\Http\Message\StreamInterface</a></code><br>returns the body as a stream
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="withBody" id="_withBody">
 
 		<td class="attributes"><code>
@@ -667,7 +523,7 @@ the named header.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withBody">#</a>
-		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#182-197" title="Go to source code">withBody</a>( <span><code><a href="class-Psr.Http.Message.StreamInterface.html">Psr\Http\Message\StreamInterface</a></code> <var>$body</var></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#136-151" title="Go to source code">withBody</a>( <span><code><a href="class-Psr.Http.Message.StreamInterface.html">Psr\Http\Message\StreamInterface</a></code> <var>$body</var></span> )</code>
 
 		<div class="description short">
 			<p>Return an instance with the specified message body.</p>
@@ -698,6 +554,149 @@ new body stream.</p>
 				<div class="list">
 					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>when the body is not valid
 				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="withHeader" id="_withHeader">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Psr.Http.Message.MessageInterface.html">Psr\Http\Message\MessageInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_withHeader">#</a>
+		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#153-170" title="Go to source code">withHeader</a>( <span>string <var>$name</var></span>, <span>string|string[] <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Return an instance with the provided value replacing the specified header.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return an instance with the provided value replacing the specified header.</p>
+
+<p>While header names are case-insensitive, the casing of the header will
+be preserved by this function, and returned from getHeaders().</p>
+
+<p>This method MUST be implemented in such a way as to retain the
+immutability of the message, and MUST return an instance that has the
+new and/or updated header and value.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>case-insensitive header field name</dd>
+					<dt><var>$value</var></dt>
+					<dd>header value(s)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Psr.Http.Message.MessageInterface.html">Psr\Http\Message\MessageInterface</a></code>
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>for invalid header names or values
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="withProtocolVersion" id="_withProtocolVersion">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Psr.Http.Message.MessageInterface.html">Psr\Http\Message\MessageInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_withProtocolVersion">#</a>
+		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#172-186" title="Go to source code">withProtocolVersion</a>( <span>string <var>$version</var></span> )</code>
+
+		<div class="description short">
+			<p>Return an instance with the specified HTTP protocol version.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return an instance with the specified HTTP protocol version.</p>
+
+<p>The version string MUST contain only the HTTP version number (e.g.,
+"1.1", "1.0").</p>
+
+<p>This method MUST be implemented in such a way as to retain the
+immutability of the message, and MUST return an instance that has the
+new protocol version.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$version</var></dt>
+					<dd>HTTP protocol version</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Psr.Http.Message.MessageInterface.html">Psr\Http\Message\MessageInterface</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="withoutHeader" id="_withoutHeader">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Psr.Http.Message.MessageInterface.html">Psr\Http\Message\MessageInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_withoutHeader">#</a>
+		<code><a href="source-class-Psr.Http.Message.MessageInterface.html#188-201" title="Go to source code">withoutHeader</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>Return an instance without the specified header.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return an instance without the specified header.</p>
+
+<p>Header resolution MUST be done without case-sensitivity.</p>
+
+<p>This method MUST be implemented in such a way as to retain the
+immutability of the message, and MUST return an instance that removes
+the named header.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>case-insensitive header field name to remove</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Psr.Http.Message.MessageInterface.html">Psr\Http\Message\MessageInterface</a></code>
+				</div>
+
 
 
 

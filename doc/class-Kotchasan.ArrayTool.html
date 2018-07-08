@@ -219,7 +219,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.ArrayTool.html#13-369" title="Go to source code">Kotchasan/ArrayTool.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.ArrayTool.html#13-371" title="Go to source code">Kotchasan/ArrayTool.php</a>
 		<br>
 	</div>
 
@@ -227,98 +227,6 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="sort" id="_sort">
-
-		<td class="attributes"><code>
-			 public static
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_sort">#</a>
-		<code><a href="source-class-Kotchasan.ArrayTool.html#22-61" title="Go to source code">sort</a>( <span>array <var>$array</var></span>, <span>string <var>$sort_key</var> = <span class="php-quote">'id'</span></span>, <span>boolean <var>$sort_desc</var> = <span class="php-keyword1">false</span></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่น เรียงลำดับ array ตามชื่อฟิลด์.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น เรียงลำดับ array ตามชื่อฟิลด์.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$array</var></dt>
-					<dd>แอเรย์ที่ต้องการเรียงลำดับ</dd>
-					<dt><var>$sort_key</var></dt>
-					<dd>(optional) คืย์ของ $array ที่ต้องการในการเรียง (default id)</dd>
-					<dt><var>$sort_desc</var></dt>
-					<dd>true=เรียงจากมากไปหาน้อย, false=เรียงจากน้อยไปหามาก (default false)</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					array
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						(array(array('id' => 2, 'value' => 'two'), array('id' => 3, 'value' => 'three'), array('id' => 1, 'value' => 'one'))) [==] array(array('id' => 1, 'value' => 'one'), array('id' => 2, 'value' => 'two'), array('id' => 3, 'value' => 'three'))<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="filter" id="_filter">
-
-		<td class="attributes"><code>
-			 public static
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_filter">#</a>
-		<code><a href="source-class-Kotchasan.ArrayTool.html#63-87" title="Go to source code">filter</a>( <span>array <var>$array</var></span>, <span>string <var>$search</var></span> )</code>
-
-		<div class="description short">
-			<p>เลือกรายการ array ที่มีข้อมูลที่กำหนด.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>เลือกรายการ array ที่มีข้อมูลที่กำหนด.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$array</var></dt>
-					<dd></dd>
-					<dt><var>$search</var></dt>
-					<dd>ข้อมูลที่ต้องการ</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					array
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						(array('one', 'One', 'two'), 'one') [==] array('one', 'One')<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="columns" id="_columns">
 
 		<td class="attributes"><code>
@@ -331,7 +239,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_columns">#</a>
-		<code><a href="source-class-Kotchasan.ArrayTool.html#89-119" title="Go to source code">columns</a>( <span>array <var>$array</var></span>, <span>string <var>$column_key</var></span>, <span>mixed <var>$index_key</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.ArrayTool.html#22-52" title="Go to source code">columns</a>( <span>array <var>$array</var></span>, <span>string <var>$column_key</var></span>, <span>mixed <var>$index_key</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>คืนค่ารายการที่มีคอลัมน์ตามที่กำหนด.</p>
@@ -367,101 +275,6 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="search" id="_search">
-
-		<td class="attributes"><code>
-			 public static
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_search">#</a>
-		<code><a href="source-class-Kotchasan.ArrayTool.html#121-144" title="Go to source code">search</a>( <span>array <var>$input</var></span>, <span>mixed <var>$key</var></span>, <span>mixed <var>$search</var></span> )</code>
-
-		<div class="description short">
-			<p>ค้นหาแอเรย์ จากคอลัมน์
-คืนค่า index ตาม array ต้นฉบับ.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ค้นหาแอเรย์ จากคอลัมน์
-คืนค่า index ตาม array ต้นฉบับ.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$input</var></dt>
-					<dd>ข้อมูลแอเรย์</dd>
-					<dt><var>$key</var></dt>
-					<dd>คอลัมน์ที่ต้องการค้นหา</dd>
-					<dt><var>$search</var></dt>
-					<dd>ข้อความค้นหา</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					array<br>คืนค่าทุกรายการที่พบ และ คืนค่าแอเรย์ว่างถ้าไม่พบ
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						(array(array('id' => 1, 'name' => 'one'), array('id' => 2, 'name' => 'two'), array('id' => 3, 'name' => 'one')), 'name', 'one') [==] array(0 => array('id' => 1, 'name' => 'one'), 2 => array('id' => 3, 'name' => 'one'))<br>
-						(array(array('id' => 1, 'name' => 'one'), array('id' => 2, 'name' => 'two'), array('id' => 3, 'name' => 'one')), 'id', 'one') [==] array()<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="toString" id="_toString">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_toString">#</a>
-		<code><a href="source-class-Kotchasan.ArrayTool.html#146-172" title="Go to source code">toString</a>( <span>string <var>$glue</var></span>, <span>array <var>$array</var></span> )</code>
-
-		<div class="description short">
-			<p>แปลงแอเรย์ $array เป็น string คั่นด้วย $glue.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>แปลงแอเรย์ $array เป็น string คั่นด้วย $glue.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$glue</var></dt>
-					<dd>ตัวคั่นข้อมูล</dd>
-					<dt><var>$array</var></dt>
-					<dd>แอเรย์ที่ต้องการนำมาเชื่อม</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						('|', array('a' => 'A', 'b' => array('b', 'B'), 'c' => array('c' => array('c', 'C')))) [==] "A|b|B|c|C"<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="delete" id="_delete">
 
 		<td class="attributes"><code>
@@ -474,16 +287,18 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete">#</a>
-		<code><a href="source-class-Kotchasan.ArrayTool.html#174-196" title="Go to source code">delete</a>( <span>array <var>$array</var></span>, <span>string <var>$ids</var></span> )</code>
+		<code><a href="source-class-Kotchasan.ArrayTool.html#54-77" title="Go to source code">delete</a>( <span>array <var>$array</var></span>, <span>string <var>$ids</var></span> )</code>
 
 		<div class="description short">
 			<p>ลบรายการที่ id สามารถลบได้หลายรายการโดยคั่นแต่ละรายการด้วย ,
-รักษาคีย์ของรายการเดิมไว้.</p>
+รักษาคีย์ของรายการเดิมไว้
+คืนค่า array ใหม่หลังจากลบแล้ว.</p>
 		</div>
 
 		<div class="description detailed hidden">
 			<p>ลบรายการที่ id สามารถลบได้หลายรายการโดยคั่นแต่ละรายการด้วย ,
-รักษาคีย์ของรายการเดิมไว้.</p>
+รักษาคีย์ของรายการเดิมไว้
+คืนค่า array ใหม่หลังจากลบแล้ว.</p>
 
 
 				<h4>Parameters</h4>
@@ -496,7 +311,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					array<br>คืนค่า array ใหม่หลังจากลบแล้ว
+					array
 				</div>
 
 
@@ -521,7 +336,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_extract">#</a>
-		<code><a href="source-class-Kotchasan.ArrayTool.html#198-215" title="Go to source code">extract</a>( <span>array <var>$array</var></span>, <span>array <var>&amp; $keys</var></span>, <span>array <var>&amp; $values</var></span> )</code>
+		<code><a href="source-class-Kotchasan.ArrayTool.html#79-96" title="Go to source code">extract</a>( <span>array <var>$array</var></span>, <span>array <var>&amp; $keys</var></span>, <span>array <var>&amp; $values</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นแยก $key และ $value ออกจาก array รองรับข้อมูลรูปแบบแอเรย์ย่อยๆ.</p>
@@ -548,7 +363,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="replace" id="_replace">
+	<tr data-order="filter" id="_filter">
 
 		<td class="attributes"><code>
 			 public static
@@ -559,23 +374,23 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_replace">#</a>
-		<code><a href="source-class-Kotchasan.ArrayTool.html#217-234" title="Go to source code">replace</a>( <span>array <var>$source</var></span>, <span>array|object <var>$replace</var></span> )</code>
+		<a class="anchor" href="#_filter">#</a>
+		<code><a href="source-class-Kotchasan.ArrayTool.html#98-122" title="Go to source code">filter</a>( <span>array <var>$array</var></span>, <span>string <var>$search</var></span> )</code>
 
 		<div class="description short">
-			<p>ฟังก์ชั่นรวมแอเรย์ รักษาแอเรย์ต้นฉบับไว้ และแทนที่ข้อมูลด้วยข้อมูลใหม่.</p>
+			<p>เลือกรายการ array ที่มีข้อมูลที่กำหนด.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นรวมแอเรย์ รักษาแอเรย์ต้นฉบับไว้ และแทนที่ข้อมูลด้วยข้อมูลใหม่.</p>
+			<p>เลือกรายการ array ที่มีข้อมูลที่กำหนด.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$source</var></dt>
-					<dd>แอเร์ยต้นฉบับ</dd>
-					<dt><var>$replace</var></dt>
-					<dd>ข้อมูลที่จะนำมาแทนที่ลงในแอเร์ยต้นฉบับ</dd>
+					<dt><var>$array</var></dt>
+					<dd></dd>
+					<dt><var>$search</var></dt>
+					<dd>ข้อมูลที่ต้องการ</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -586,59 +401,7 @@
 
 				<h4>Assert</h4>
 				<div class="list">
-						(array(1 => 1, 2 => 2, 3 => 'three'), array(1 => 'one', 2 => 'two')) [==] array(1 => 'one', 2 => 'two', 3 => 'three')<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="unserialize" id="_unserialize">
-
-		<td class="attributes"><code>
-			 public static
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_unserialize">#</a>
-		<code><a href="source-class-Kotchasan.ArrayTool.html#236-265" title="Go to source code">unserialize</a>( <span>string <var>$str</var></span>, <span>array <var>$source</var> = <span class="php-keyword1">array</span>()</span>, <span>boolean <var>$replace</var> = <span class="php-keyword1">true</span></span> )</code>
-
-		<div class="description short">
-			<p>ฟังก์ชั่นแปลงข้อความ serialize เป็นแอเรย์
-และรวมข้อมูลเข้ากับ $source.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นแปลงข้อความ serialize เป็นแอเรย์
-และรวมข้อมูลเข้ากับ $source.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$str</var></dt>
-					<dd>ข้อมูล serialize</dd>
-					<dt><var>$source</var></dt>
-					<dd>ข้อมูลตั้งต้น ถ้าใช้ฟังก์ชั่นนี้ในการแปลงข้อมูล ค่านี้จะเป็นแอเรย์ว่าง (ค่าเริ่มต้น)</dd>
-					<dt><var>$replace</var></dt>
-					<dd>true (default) แทนที่ข้อมูลเดิม, false เก็บข้อมูลเดิมไว้</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					array
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						('') [==] array()<br>
-						(serialize(array(1, 2, 3))) [==] array(1, 2, 3)<br>
-						(serialize(array(1 => 'One', 2 => 'Two', 3 => 'Three')), array(3 => 3, 4 => 'Four'), true) [==] array(1 => 'One', 2 => 'Two', 3 => 'Three', 4 => 'Four')<br>
-						(serialize(array(1 => 'One', 2 => 'Two', 3 => 'Three')), array(3 => 3, 4 => 'Four'), false) [==] array(1 => 'One', 2 => 'Two', 3 => 3, 4 => 'Four')<br>
+						(array('one', 'One', 'two'), 'one') [==] array('one', 'One')<br>
 				</div>
 
 
@@ -657,7 +420,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getFirstKey">#</a>
-		<code><a href="source-class-Kotchasan.ArrayTool.html#267-279" title="Go to source code">getFirstKey</a>( <span>array <var>$array</var></span> )</code>
+		<code><a href="source-class-Kotchasan.ArrayTool.html#124-136" title="Go to source code">getFirstKey</a>( <span>array <var>$array</var></span> )</code>
 
 		<div class="description short">
 			<p>อ่านคีย์รายการแรก</p>
@@ -684,59 +447,6 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="insertBefore" id="_insertBefore">
-
-		<td class="attributes"><code>
-			 public static
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_insertBefore">#</a>
-		<code><a href="source-class-Kotchasan.ArrayTool.html#281-311" title="Go to source code">insertBefore</a>( <span>array <var>$source</var></span>, <span>integer|string <var>$find</var></span>, <span>integer|string <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
-
-		<div class="description short">
-			<p>แทรกข้อมูลลงในแอเรย์ ข้อมูลที่จะนำมาแทรกอยู่ก่อน
-ถ้าไม่พบ $find ข้อมูลจะแทรกรายการสุดท้าย.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>แทรกข้อมูลลงในแอเรย์ ข้อมูลที่จะนำมาแทรกอยู่ก่อน
-ถ้าไม่พบ $find ข้อมูลจะแทรกรายการสุดท้าย.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$source</var></dt>
-					<dd>แอเรย์ต้นฉบับ</dd>
-					<dt><var>$find</var></dt>
-					<dd>คีย์ของแอเรย์ต้นฉบับจุดที่จะแทรก ข้อมูลต้องเป็นชนิดเดียวกันกับคีย์ของแอเรย์ต้นฉบับ</dd>
-					<dt><var>$key</var></dt>
-					<dd>คีย์ของข้อมูลที่จะนำมาแทรก</dd>
-					<dt><var>$value</var></dt>
-					<dd>ข้อมูลที่จะนำมาแทรก</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					array
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						(array('one' => 1, 'three' => 3), 'three', 'two', 2) [==] array('one' => 1, 'two' => 2, 'three' => 3)<br>
-						(array(1 => 'one', 3 => 'three'), 3, 2, 'two') [==] array(1 => 'one', 2 => 'two', 3 => 'three')<br>
-						(array(1 => 'one', 3 => 'three'), 2, 2, 'two') [==] array(1 => 'one', 3 => 'three', 2 => 'two')<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="insertAfter" id="_insertAfter">
 
 		<td class="attributes"><code>
@@ -749,7 +459,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_insertAfter">#</a>
-		<code><a href="source-class-Kotchasan.ArrayTool.html#313-343" title="Go to source code">insertAfter</a>( <span>array <var>$source</var></span>, <span>integer|string <var>$find</var></span>, <span>integer|string <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-Kotchasan.ArrayTool.html#138-168" title="Go to source code">insertAfter</a>( <span>array <var>$source</var></span>, <span>integer|string <var>$find</var></span>, <span>integer|string <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>แทรกข้อมูลลงในแอเรย์ ข้อมูลที่จะนำมาแทรกอยู่ถัดไป
@@ -790,6 +500,154 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="insertBefore" id="_insertBefore">
+
+		<td class="attributes"><code>
+			 public static
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_insertBefore">#</a>
+		<code><a href="source-class-Kotchasan.ArrayTool.html#170-200" title="Go to source code">insertBefore</a>( <span>array <var>$source</var></span>, <span>integer|string <var>$find</var></span>, <span>integer|string <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>แทรกข้อมูลลงในแอเรย์ ข้อมูลที่จะนำมาแทรกอยู่ก่อน
+ถ้าไม่พบ $find ข้อมูลจะแทรกรายการสุดท้าย.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>แทรกข้อมูลลงในแอเรย์ ข้อมูลที่จะนำมาแทรกอยู่ก่อน
+ถ้าไม่พบ $find ข้อมูลจะแทรกรายการสุดท้าย.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$source</var></dt>
+					<dd>แอเรย์ต้นฉบับ</dd>
+					<dt><var>$find</var></dt>
+					<dd>คีย์ของแอเรย์ต้นฉบับจุดที่จะแทรก ข้อมูลต้องเป็นชนิดเดียวกันกับคีย์ของแอเรย์ต้นฉบับ</dd>
+					<dt><var>$key</var></dt>
+					<dd>คีย์ของข้อมูลที่จะนำมาแทรก</dd>
+					<dt><var>$value</var></dt>
+					<dd>ข้อมูลที่จะนำมาแทรก</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						(array('one' => 1, 'three' => 3), 'three', 'two', 2) [==] array('one' => 1, 'two' => 2, 'three' => 3)<br>
+						(array(1 => 'one', 3 => 'three'), 3, 2, 'two') [==] array(1 => 'one', 2 => 'two', 3 => 'three')<br>
+						(array(1 => 'one', 3 => 'three'), 2, 2, 'two') [==] array(1 => 'one', 3 => 'three', 2 => 'two')<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="replace" id="_replace">
+
+		<td class="attributes"><code>
+			 public static
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_replace">#</a>
+		<code><a href="source-class-Kotchasan.ArrayTool.html#202-219" title="Go to source code">replace</a>( <span>array <var>$source</var></span>, <span>array|object <var>$replace</var></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นรวมแอเรย์ รักษาแอเรย์ต้นฉบับไว้ และแทนที่ข้อมูลด้วยข้อมูลใหม่.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นรวมแอเรย์ รักษาแอเรย์ต้นฉบับไว้ และแทนที่ข้อมูลด้วยข้อมูลใหม่.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$source</var></dt>
+					<dd>แอเร์ยต้นฉบับ</dd>
+					<dt><var>$replace</var></dt>
+					<dd>ข้อมูลที่จะนำมาแทนที่ลงในแอเร์ยต้นฉบับ</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						(array(1 => 1, 2 => 2, 3 => 'three'), array(1 => 'one', 2 => 'two')) [==] array(1 => 'one', 2 => 'two', 3 => 'three')<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="search" id="_search">
+
+		<td class="attributes"><code>
+			 public static
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_search">#</a>
+		<code><a href="source-class-Kotchasan.ArrayTool.html#221-244" title="Go to source code">search</a>( <span>array <var>$input</var></span>, <span>mixed <var>$key</var></span>, <span>mixed <var>$search</var></span> )</code>
+
+		<div class="description short">
+			<p>ค้นหาแอเรย์ จากคอลัมน์
+คืนค่าทุกรายการที่พบ รักษา index ตาม array ของต้นฉบับและ คืนค่าแอเรย์ว่างถ้าไม่พบ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ค้นหาแอเรย์ จากคอลัมน์
+คืนค่าทุกรายการที่พบ รักษา index ตาม array ของต้นฉบับและ คืนค่าแอเรย์ว่างถ้าไม่พบ.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$input</var></dt>
+					<dd>ข้อมูลแอเรย์</dd>
+					<dt><var>$key</var></dt>
+					<dd>คอลัมน์ที่ต้องการค้นหา</dd>
+					<dt><var>$search</var></dt>
+					<dd>ข้อความค้นหา</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						(array(array('id' => 1, 'name' => 'one'), array('id' => 2, 'name' => 'two'), array('id' => 3, 'name' => 'one')), 'name', 'one') [==] array(0 => array('id' => 1, 'name' => 'one'), 2 => array('id' => 3, 'name' => 'one'))<br>
+						(array(array('id' => 1, 'name' => 'one'), array('id' => 2, 'name' => 'two'), array('id' => 3, 'name' => 'one')), 'id', 'one') [==] array()<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="shift" id="_shift">
 
 		<td class="attributes"><code>
@@ -802,14 +660,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_shift">#</a>
-		<code><a href="source-class-Kotchasan.ArrayTool.html#345-368" title="Go to source code">shift</a>( <span>array <var>$source</var></span>, <span>string|integer <var>$key</var></span> )</code>
+		<code><a href="source-class-Kotchasan.ArrayTool.html#246-270" title="Go to source code">shift</a>( <span>array <var>$source</var></span>, <span>string|integer <var>$key</var></span> )</code>
 
 		<div class="description short">
-			<p>ตัดแอเรย์ตั้งแต่เริ่มต้นจนถึงตำแหน่งที่กำหนด.</p>
+			<p>ตัดแอเรย์ตั้งแต่เริ่มต้นจนถึงตำแหน่งที่กำหนด
+คืนค่าแอเรย์ถัดจากรายการที่ตัด ไม่พบคืนค่าเดิม</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ตัดแอเรย์ตั้งแต่เริ่มต้นจนถึงตำแหน่งที่กำหนด.</p>
+			<p>ตัดแอเรย์ตั้งแต่เริ่มต้นจนถึงตำแหน่งที่กำหนด
+คืนค่าแอเรย์ถัดจากรายการที่ตัด ไม่พบคืนค่าเดิม</p>
 
 
 				<h4>Parameters</h4>
@@ -822,7 +682,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					array<br>คืนค่าแอเรย์ถัดจากรายการที่ตัด ไม่พบคืนค่าเดิม
+					array
 				</div>
 
 
@@ -830,6 +690,150 @@
 				<div class="list">
 						(array('one' => 1, 'two' => 2, 'three' => 3), 'two') [==] array('three' => 3)<br>
 						(array('one' => 1, 'two' => 2, 'three' => 3), 1) [==] array('one' => 1, 'two' => 2, 'three' => 3)<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sort" id="_sort">
+
+		<td class="attributes"><code>
+			 public static
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sort">#</a>
+		<code><a href="source-class-Kotchasan.ArrayTool.html#272-311" title="Go to source code">sort</a>( <span>array <var>$array</var></span>, <span>string <var>$sort_key</var> = <span class="php-quote">'id'</span></span>, <span>boolean <var>$sort_desc</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่น เรียงลำดับ array ตามชื่อฟิลด์.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่น เรียงลำดับ array ตามชื่อฟิลด์.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd>แอเรย์ที่ต้องการเรียงลำดับ</dd>
+					<dt><var>$sort_key</var></dt>
+					<dd>(optional) คืย์ของ $array ที่ต้องการในการเรียง (default id)</dd>
+					<dt><var>$sort_desc</var></dt>
+					<dd>true=เรียงจากมากไปหาน้อย, false=เรียงจากน้อยไปหามาก (default false)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						(array(array('id' => 2, 'value' => 'two'), array('id' => 3, 'value' => 'three'), array('id' => 1, 'value' => 'one'))) [==] array(array('id' => 1, 'value' => 'one'), array('id' => 2, 'value' => 'two'), array('id' => 3, 'value' => 'three'))<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="toString" id="_toString">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_toString">#</a>
+		<code><a href="source-class-Kotchasan.ArrayTool.html#313-339" title="Go to source code">toString</a>( <span>string <var>$glue</var></span>, <span>array <var>$array</var></span> )</code>
+
+		<div class="description short">
+			<p>แปลงแอเรย์ $array เป็น string คั่นด้วย $glue.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>แปลงแอเรย์ $array เป็น string คั่นด้วย $glue.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$glue</var></dt>
+					<dd>ตัวคั่นข้อมูล</dd>
+					<dt><var>$array</var></dt>
+					<dd>แอเรย์ที่ต้องการนำมาเชื่อม</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						('|', array('a' => 'A', 'b' => array('b', 'B'), 'c' => array('c' => array('c', 'C')))) [==] "A|b|B|c|C"<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="unserialize" id="_unserialize">
+
+		<td class="attributes"><code>
+			 public static
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_unserialize">#</a>
+		<code><a href="source-class-Kotchasan.ArrayTool.html#341-370" title="Go to source code">unserialize</a>( <span>string <var>$str</var></span>, <span>array <var>$source</var> = <span class="php-keyword1">array</span>()</span>, <span>boolean <var>$replace</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นแปลงข้อความ serialize เป็นแอเรย์
+และรวมข้อมูลเข้ากับ $source.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นแปลงข้อความ serialize เป็นแอเรย์
+และรวมข้อมูลเข้ากับ $source.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$str</var></dt>
+					<dd>ข้อมูล serialize</dd>
+					<dt><var>$source</var></dt>
+					<dd>ข้อมูลตั้งต้น ถ้าใช้ฟังก์ชั่นนี้ในการแปลงข้อมูล ค่านี้จะเป็นแอเรย์ว่าง (ค่าเริ่มต้น)</dd>
+					<dt><var>$replace</var></dt>
+					<dd>true (default) แทนที่ข้อมูลเดิม, false เก็บข้อมูลเดิมไว้</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						('') [==] array()<br>
+						(serialize(array(1, 2, 3))) [==] array(1, 2, 3)<br>
+						(serialize(array(1 => 'One', 2 => 'Two', 3 => 'Three')), array(3 => 3, 4 => 'Four'), true) [==] array(1 => 'One', 2 => 'Two', 3 => 'Three', 4 => 'Four')<br>
+						(serialize(array(1 => 'One', 2 => 'Two', 3 => 'Three')), array(3 => 3, 4 => 'Four'), false) [==] array(1 => 'One', 2 => 'Two', 3 => 3, 4 => 'Four')<br>
 				</div>
 
 

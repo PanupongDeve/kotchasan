@@ -24,6 +24,13 @@ namespace Psr\Http\Message;
 interface RequestInterface extends MessageInterface
 {
     /**
+     * Retrieves the HTTP method of the request.
+     *
+     * @return string returns the request method
+     */
+    public function getMethod();
+
+    /**
      * Retrieves the message's request target.
      *
      * Retrieves the message's request-target either as it will appear (for
@@ -42,32 +49,17 @@ interface RequestInterface extends MessageInterface
     public function getRequestTarget();
 
     /**
-     * Return an instance with the specific request-target.
+     * Retrieves the URI instance.
      *
-     * If the request needs a non-origin-form request-target — e.g., for
-     * specifying an absolute-form, authority-form, or asterisk-form —
-     * this method may be used to create an instance with the specified
-     * request-target, verbatim.
+     * This method MUST return a UriInterface instance.
      *
-     * This method MUST be implemented in such a way as to retain the
-     * immutability of the message, and MUST return an instance that has the
-     * changed request target.
+     *                      representing the URI of the request
      *
-     * @see http://tools.ietf.org/html/rfc7230#section-2.7 (for the various
-     *     request-target forms allowed in request messages)
+     * @see http://tools.ietf.org/html/rfc3986#section-4.3
      *
-     * @param mixed $requestTarget
-     *
-     * @return self
+     * @return UriInterface returns a UriInterface instance
      */
-    public function withRequestTarget($requestTarget);
-
-    /**
-     * Retrieves the HTTP method of the request.
-     *
-     * @return string returns the request method
-     */
-    public function getMethod();
+    public function getUri();
 
     /**
      * Return an instance with the provided HTTP method.
@@ -82,23 +74,33 @@ interface RequestInterface extends MessageInterface
      *
      * @param string $method case-sensitive method
      *
-     * @return self
-     *
      * @throws \InvalidArgumentException for invalid HTTP methods
+     *
+     * @return self
      */
     public function withMethod($method);
 
     /**
-     * Retrieves the URI instance.
+     * Return an instance with the specific request-target.
      *
-     * This method MUST return a UriInterface instance.
+     * If the request needs a non-origin-form request-target — e.g., for
+     * specifying an absolute-form, authority-form, or asterisk-form —
+     * this method may be used to create an instance with the specified
+     * request-target, verbatim.
      *
-     * @see http://tools.ietf.org/html/rfc3986#section-4.3
+     * This method MUST be implemented in such a way as to retain the
+     * immutability of the message, and MUST return an instance that has the
+     * changed request target.
      *
-     * @return UriInterface returns a UriInterface instance
-     *                      representing the URI of the request
+     *     request-target forms allowed in request messages)
+     *
+     * @see http://tools.ietf.org/html/rfc7230#section-2.7 (for the various
+     *
+     * @param mixed $requestTarget
+     *
+     * @return self
      */
-    public function getUri();
+    public function withRequestTarget($requestTarget);
 
     /**
      * Returns an instance with the provided URI.

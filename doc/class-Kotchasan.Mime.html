@@ -219,7 +219,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Mime.html#13-1078" title="Go to source code">Kotchasan/Mime.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Mime.html#13-1081" title="Go to source code">Kotchasan/Mime.php</a>
 		<br>
 	</div>
 
@@ -269,14 +269,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-Kotchasan.Mime.html#1008-1034" title="Go to source code">get</a>( <span>string|array <var>$exts</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Mime.html#1008-1035" title="Go to source code">get</a>( <span>string|array <var>$exts</var></span> )</code>
 
 		<div class="description short">
-			<p>Get the MIME type for a file extension.</p>
+			<p>Get the MIME type for a file extension
+คืนค่า null ถ้าไม่พบ.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Get the MIME type for a file extension.</p>
+			<p>Get the MIME type for a file extension
+คืนค่า null ถ้าไม่พบ.</p>
 
 
 				<h4>Parameters</h4>
@@ -287,7 +289,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					string|array|null<br>คืนค่า null ถ้าไม่พบ
+					string|array|null
 				</div>
 
 
@@ -313,16 +315,18 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_check">#</a>
-		<code><a href="source-class-Kotchasan.Mime.html#1036-1056" title="Go to source code">check</a>( <span>array <var>$typies</var></span>, <span>string <var>$mime</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Mime.html#1037-1058" title="Go to source code">check</a>( <span>array <var>$typies</var></span>, <span>string <var>$mime</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่น ตรวจสอบ $typies ว่าตรงกับ $mime หรือไม่
-ใช้สำหรับการตรวจสอบไฟล์อัปโหลด.</p>
+ใช้สำหรับการตรวจสอบไฟล์อัปโหลด
+คืนค่า true หาก $mime และ $typies สอดคล้องกัน.</p>
 		</div>
 
 		<div class="description detailed hidden">
 			<p>ฟังก์ชั่น ตรวจสอบ $typies ว่าตรงกับ $mime หรือไม่
-ใช้สำหรับการตรวจสอบไฟล์อัปโหลด.</p>
+ใช้สำหรับการตรวจสอบไฟล์อัปโหลด
+คืนค่า true หาก $mime และ $typies สอดคล้องกัน.</p>
 
 
 				<h4>Parameters</h4>
@@ -335,7 +339,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>คืนค่า true หาก $mime และ $typies สอดคล้องกัน
+					boolean
 				</div>
 
 
@@ -360,14 +364,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getAccept">#</a>
-		<code><a href="source-class-Kotchasan.Mime.html#1058-1077" title="Go to source code">getAccept</a>( <span>array <var>$typies</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Mime.html#1060-1080" title="Go to source code">getAccept</a>( <span>array <var>$typies</var></span> )</code>
 
 		<div class="description short">
-			<p>ฟังก์ชั่น อ่าน mimetype ของไฟล์ สำหรับส่งให้ input ชนิด file.</p>
+			<p>ฟังก์ชั่น อ่าน mimetype ของไฟล์ สำหรับส่งให้ input ชนิด file
+คืนค่า mimetype ของไฟล์ คั่นแต่ละรายการด้วย , เช่น image/jpeg,image/png,image/gif.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ฟังก์ชั่น อ่าน mimetype ของไฟล์ สำหรับส่งให้ input ชนิด file.</p>
+			<p>ฟังก์ชั่น อ่าน mimetype ของไฟล์ สำหรับส่งให้ input ชนิด file
+คืนค่า mimetype ของไฟล์ คั่นแต่ละรายการด้วย , เช่น image/jpeg,image/png,image/gif.</p>
 
 
 				<h4>Parameters</h4>
@@ -378,7 +384,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					string<br>คืนค่า mimetype ของไฟล์ คั่นแต่ละรายการด้วย , เช่น image/jpeg,image/png,image/gif
+					string
 				</div>
 
 

@@ -198,7 +198,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Cache.Cache.html#17-89" title="Go to source code">Kotchasan/Cache/Cache.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Cache.Cache.html#18-93" title="Go to source code">Kotchasan/Cache/Cache.php</a>
 		<br>
 	</div>
 
@@ -206,6 +206,91 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="commit" id="_commit">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_commit">#</a>
+		<code><a href="source-class-Kotchasan.Cache.Cache.html#34-50" title="Go to source code">commit</a>( )</code>
+
+		<div class="description short">
+			<p>บันทึกรายการแคชในคิว
+คืนค่า true ถ้าสำเร็จ, ถ้ามีบางรายการไม่สำเร็จคืนค่า false.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>บันทึกรายการแคชในคิว
+คืนค่า true ถ้าสำเร็จ, ถ้ามีบางรายการไม่สำเร็จคืนค่า false.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Cache.CacheItemPoolInterface.html#_commit">Psr\Cache\CacheItemPoolInterface::commit()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteItem" id="_deleteItem">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteItem">#</a>
+		<code><a href="source-class-Kotchasan.Cache.Cache.html#52-63" title="Go to source code">deleteItem</a>( <span>string <var>$key</var></span> )</code>
+
+		<div class="description short">
+			<p>ลบแคช
+คืนค่า true ถ้าสำเร็จ, false ถ้าไม่สำเร็จ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ลบแคช
+คืนค่า true ถ้าสำเร็จ, false ถ้าไม่สำเร็จ.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					invalidArgumentException
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Cache.CacheItemPoolInterface.html#_deleteItem">Psr\Cache\CacheItemPoolInterface::deleteItem()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="getItem" id="_getItem">
 
 		<td class="attributes"><code>
@@ -218,7 +303,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getItem">#</a>
-		<code><a href="source-class-Kotchasan.Cache.Cache.html#33-45" title="Go to source code">getItem</a>( <span>string <var>$key</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Cache.Cache.html#65-77" title="Go to source code">getItem</a>( <span>string <var>$key</var></span> )</code>
 
 		<div class="description short">
 			<p>อ่านแคช.</p>
@@ -241,60 +326,13 @@
 
 				<h4>Throws</h4>
 				<div class="list">
-					invalidArgumentException<br><p>If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
-                                 MUST be thrown</p>
+					invalidArgumentException
 				</div>
 
 
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Psr.Cache.CacheItemPoolInterface.html#_getItem">Psr\Cache\CacheItemPoolInterface::getItem()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="deleteItem" id="_deleteItem">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_deleteItem">#</a>
-		<code><a href="source-class-Kotchasan.Cache.Cache.html#47-57" title="Go to source code">deleteItem</a>( <span>string <var>$key</var></span> )</code>
-
-		<div class="description short">
-			<p>ลบแคช.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ลบแคช.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$key</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>true ถ้าสำเร็จ, false ถ้าไม่สำเร็จ
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					invalidArgumentException<br><p>If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
-                                 MUST be thrown</p>
-				</div>
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Cache.CacheItemPoolInterface.html#_deleteItem">Psr\Cache\CacheItemPoolInterface::deleteItem()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -310,14 +348,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_saveDeferred">#</a>
-		<code><a href="source-class-Kotchasan.Cache.Cache.html#59-71" title="Go to source code">saveDeferred</a>( <span><code><a href="class-Psr.Cache.CacheItemInterface.html">Psr\Cache\CacheItemInterface</a></code> <var>$item</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Cache.Cache.html#79-92" title="Go to source code">saveDeferred</a>( <span><code><a href="class-Psr.Cache.CacheItemInterface.html">Psr\Cache\CacheItemInterface</a></code> <var>$item</var></span> )</code>
 
 		<div class="description short">
-			<p>กำหนดรายการแคชสำหรับบันทึกในภายหลัง.</p>
+			<p>กำหนดรายการแคชสำหรับบันทึกในภายหลัง
+คืนค่า false ถ้าไม่มีรายการในคิว.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>กำหนดรายการแคชสำหรับบันทึกในภายหลัง.</p>
+			<p>กำหนดรายการแคชสำหรับบันทึกในภายหลัง
+คืนค่า false ถ้าไม่มีรายการในคิว.</p>
 
 
 				<h4>Parameters</h4>
@@ -328,7 +368,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>false ถ้าไม่มีรายการในคิว
+					boolean
 				</div>
 
 
@@ -336,42 +376,6 @@
 
 				<h4>Implementation of</h4>
 				<div class="list"><code><a href="class-Psr.Cache.CacheItemPoolInterface.html#_saveDeferred">Psr\Cache\CacheItemPoolInterface::saveDeferred()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="commit" id="_commit">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_commit">#</a>
-		<code><a href="source-class-Kotchasan.Cache.Cache.html#73-88" title="Go to source code">commit</a>( )</code>
-
-		<div class="description short">
-			<p>บันทึกรายการแคชในคิว.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>บันทึกรายการแคชในคิว.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>ถ้ามีบางรายการไม่สำเร็จคืนค่า false
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Cache.CacheItemPoolInterface.html#_commit">Psr\Cache\CacheItemPoolInterface::commit()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -409,7 +413,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Cache.Cache.html#26-31" title="Go to source code"><var>$deferred</var></a>
+				<a href="source-class-Kotchasan.Cache.Cache.html#27-32" title="Go to source code"><var>$deferred</var></a>
 
 			<div class="description short">
 				<p>รายการแคชรอบันทึก</p>

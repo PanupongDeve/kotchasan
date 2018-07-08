@@ -205,7 +205,7 @@ message and return an instance that contains the changed state.</p>
 		<b>Namespace:</b> <a href="namespace-Psr.html">Psr</a>\<a href="namespace-Psr.Http.html">Http</a>\<a href="namespace-Psr.Http.Message.html">Message</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Psr.Http.Message.RequestInterface.html#5-136" title="Go to source code">Kotchasan/Psr/Http/Message/RequestInterface.php</a>
+			<b>Located at</b> <a href="source-class-Psr.Http.Message.RequestInterface.html#5-138" title="Go to source code">Kotchasan/Psr/Http/Message/RequestInterface.php</a>
 		<br>
 	</div>
 
@@ -213,6 +213,40 @@ message and return an instance that contains the changed state.</p>
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="getMethod" id="_getMethod">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getMethod">#</a>
+		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#26-31" title="Go to source code">getMethod</a>( )</code>
+
+		<div class="description short">
+			<p>Retrieves the HTTP method of the request.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieves the HTTP method of the request.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>returns the request method
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="getRequestTarget" id="_getRequestTarget">
 
 		<td class="attributes"><code>
@@ -225,7 +259,7 @@ message and return an instance that contains the changed state.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getRequestTarget">#</a>
-		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#26-42" title="Go to source code">getRequestTarget</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#33-49" title="Go to source code">getRequestTarget</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieves the message's request target.</p>
@@ -258,88 +292,42 @@ provided, this method MUST return the string "/".</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="withRequestTarget" id="_withRequestTarget">
+	<tr data-order="getUri" id="_getUri">
 
 		<td class="attributes"><code>
 			 public 
 
-			<code><a href="class-Psr.Http.Message.RequestInterface.html">Psr\Http\Message\RequestInterface</a></code>
+			<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_withRequestTarget">#</a>
-		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#44-63" title="Go to source code">withRequestTarget</a>( <span>mixed <var>$requestTarget</var></span> )</code>
+		<a class="anchor" href="#_getUri">#</a>
+		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#51-62" title="Go to source code">getUri</a>( )</code>
 
 		<div class="description short">
-			<p>Return an instance with the specific request-target.</p>
+			<p>Retrieves the URI instance.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Return an instance with the specific request-target.</p>
+			<p>Retrieves the URI instance.</p>
 
-<p>If the request needs a non-origin-form request-target — e.g., for
-specifying an absolute-form, authority-form, or asterisk-form —
-this method may be used to create an instance with the specified
-request-target, verbatim.</p>
-
-<p>This method MUST be implemented in such a way as to retain the
-immutability of the message, and MUST return an instance that has the
-changed request target.</p>
+<p>This method MUST return a UriInterface instance.
+ representing the URI of the request</p>
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$requestTarget</var></dt>
-					<dd></dd>
-				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Psr.Http.Message.RequestInterface.html">Psr\Http\Message\RequestInterface</a></code>
+					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br>returns a UriInterface instance
 				</div>
 
 
 				<h4>See</h4>
 				<div class="list">
-						<p>http://tools.ietf.org/html/rfc7230#section-2.7 (for the various
-    request-target forms allowed in request messages)</p><br>
+						http://tools.ietf.org/html/rfc3986#section-4.3<br>
 				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getMethod" id="_getMethod">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getMethod">#</a>
-		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#65-70" title="Go to source code">getMethod</a>( )</code>
-
-		<div class="description short">
-			<p>Retrieves the HTTP method of the request.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Retrieves the HTTP method of the request.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string<br>returns the request method
-				</div>
-
-
 
 
 		</div>
@@ -357,7 +345,7 @@ changed request target.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withMethod">#</a>
-		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#72-89" title="Go to source code">withMethod</a>( <span>string <var>$method</var></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#64-81" title="Go to source code">withMethod</a>( <span>string <var>$method</var></span> )</code>
 
 		<div class="description short">
 			<p>Return an instance with the provided HTTP method.</p>
@@ -396,41 +384,53 @@ changed request method.</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getUri" id="_getUri">
+	<tr data-order="withRequestTarget" id="_withRequestTarget">
 
 		<td class="attributes"><code>
 			 public 
 
-			<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code>
+			<code><a href="class-Psr.Http.Message.RequestInterface.html">Psr\Http\Message\RequestInterface</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getUri">#</a>
-		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#91-101" title="Go to source code">getUri</a>( )</code>
+		<a class="anchor" href="#_withRequestTarget">#</a>
+		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#83-103" title="Go to source code">withRequestTarget</a>( <span>mixed <var>$requestTarget</var></span> )</code>
 
 		<div class="description short">
-			<p>Retrieves the URI instance.</p>
+			<p>Return an instance with the specific request-target.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Retrieves the URI instance.</p>
+			<p>Return an instance with the specific request-target.</p>
 
-<p>This method MUST return a UriInterface instance.</p>
+<p>If the request needs a non-origin-form request-target — e.g., for
+specifying an absolute-form, authority-form, or asterisk-form —
+this method may be used to create an instance with the specified
+request-target, verbatim.</p>
+
+<p>This method MUST be implemented in such a way as to retain the
+immutability of the message, and MUST return an instance that has the
+changed request target.
+ request-target forms allowed in request messages)</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$requestTarget</var></dt>
+					<dd></dd>
+				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br><p>returns a UriInterface instance
-                     representing the URI of the request</p>
+					<code><a href="class-Psr.Http.Message.RequestInterface.html">Psr\Http\Message\RequestInterface</a></code>
 				</div>
 
 
 				<h4>See</h4>
 				<div class="list">
-						http://tools.ietf.org/html/rfc3986#section-4.3<br>
+						http://tools.ietf.org/html/rfc7230#section-2.7 (for the various<br>
 				</div>
 
 
@@ -449,7 +449,7 @@ changed request method.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withUri">#</a>
-		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#103-135" title="Go to source code">withUri</a>( <span><code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code> <var>$uri</var></span>, <span>boolean <var>$preserveHost</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.RequestInterface.html#105-137" title="Go to source code">withUri</a>( <span><code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code> <var>$uri</var></span>, <span>boolean <var>$preserveHost</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			<p>Returns an instance with the provided URI.</p>

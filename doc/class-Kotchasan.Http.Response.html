@@ -207,7 +207,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Http.Response.html#15-240" title="Go to source code">Kotchasan/Http/Response.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Http.Response.html#15-243" title="Go to source code">Kotchasan/Http/Response.php</a>
 		<br>
 	</div>
 
@@ -227,7 +227,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Kotchasan.Http.Response.html#106-116" title="Go to source code">__construct</a>( <span>integer <var>$code</var> = <span class="php-num">200</span></span>, <span>string||null <var>$reasonPhrase</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.Response.html#109-119" title="Go to source code">__construct</a>( <span>integer <var>$code</var> = <span class="php-num">200</span></span>, <span>string||null <var>$reasonPhrase</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>create Response.</p>
@@ -252,6 +252,81 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="getContent" id="_getContent">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getContent">#</a>
+		<code><a href="source-class-Kotchasan.Http.Response.html#121-129" title="Go to source code">getContent</a>( )</code>
+
+		<div class="description short">
+			<p>คืนค่าเนื้อหาของ Response.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>คืนค่าเนื้อหาของ Response.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getReasonPhrase" id="_getReasonPhrase">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getReasonPhrase">#</a>
+		<code><a href="source-class-Kotchasan.Http.Response.html#131-149" title="Go to source code">getReasonPhrase</a>( )</code>
+
+		<div class="description short">
+			<p>Gets the response reason phrase associated with the status code.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets the response reason phrase associated with the status code.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						http://tools.ietf.org/html/rfc7231#section-6<br>
+						http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml<br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Psr.Http.Message.ResponseInterface.html#_getReasonPhrase">Psr\Http\Message\ResponseInterface::getReasonPhrase()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="getStatusCode" id="_getStatusCode">
 
 		<td class="attributes"><code>
@@ -264,7 +339,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getStatusCode">#</a>
-		<code><a href="source-class-Kotchasan.Http.Response.html#118-126" title="Go to source code">getStatusCode</a>( )</code>
+		<code><a href="source-class-Kotchasan.Http.Response.html#151-159" title="Go to source code">getStatusCode</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่า Response Status.</p>
@@ -288,6 +363,83 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="send" id="_send">
+
+		<td class="attributes"><code>
+			 public 
+
+			static
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_send">#</a>
+		<code><a href="source-class-Kotchasan.Http.Response.html#161-172" title="Go to source code">send</a>( )</code>
+
+		<div class="description short">
+			<p>Sends HTTP headers and content.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Sends HTTP headers and content.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					static
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="withContent" id="_withContent">
+
+		<td class="attributes"><code>
+			 public 
+
+			static
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_withContent">#</a>
+		<code><a href="source-class-Kotchasan.Http.Response.html#174-191" title="Go to source code">withContent</a>( <span>mixed <var>$content</var></span> )</code>
+
+		<div class="description short">
+			<p>กำหนดเนื้อหาให้กับ  Response.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>กำหนดเนื้อหาให้กับ  Response.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$content</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					static
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>ถ้า $content ไม่ใช่ string
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="withStatus" id="_withStatus">
 
 		<td class="attributes"><code>
@@ -300,7 +452,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withStatus">#</a>
-		<code><a href="source-class-Kotchasan.Http.Response.html#128-143" title="Go to source code">withStatus</a>( <span>integer <var>$code</var></span>, <span>string <var>$reasonPhrase</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Http.Response.html#193-208" title="Go to source code">withStatus</a>( <span>integer <var>$code</var></span>, <span>string <var>$reasonPhrase</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			<p>กำหนดค่า status code.</p>
@@ -335,10 +487,10 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="withContent" id="_withContent">
+	<tr data-order="sendContent" id="_sendContent">
 
 		<td class="attributes"><code>
-			 public 
+			 protected 
 
 			static
 			
@@ -346,133 +498,15 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_withContent">#</a>
-		<code><a href="source-class-Kotchasan.Http.Response.html#145-162" title="Go to source code">withContent</a>( <span>mixed <var>$content</var></span> )</code>
+		<a class="anchor" href="#_sendContent">#</a>
+		<code><a href="source-class-Kotchasan.Http.Response.html#210-222" title="Go to source code">sendContent</a>( )</code>
 
 		<div class="description short">
-			<p>กำหนดเนื้อหาให้กับ  Response.</p>
+			<p>ส่งออกเนื้อหา.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>กำหนดเนื้อหาให้กับ  Response.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$content</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					static
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>ถ้า $content ไม่ใช่ string
-				</div>
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getContent" id="_getContent">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getContent">#</a>
-		<code><a href="source-class-Kotchasan.Http.Response.html#164-172" title="Go to source code">getContent</a>( )</code>
-
-		<div class="description short">
-			<p>อ่านเนื้อหาของ Response.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่านเนื้อหาของ Response.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string<br>Content
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getReasonPhrase" id="_getReasonPhrase">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getReasonPhrase">#</a>
-		<code><a href="source-class-Kotchasan.Http.Response.html#174-192" title="Go to source code">getReasonPhrase</a>( )</code>
-
-		<div class="description short">
-			<p>Gets the response reason phrase associated with the status code.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Gets the response reason phrase associated with the status code.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>See</h4>
-				<div class="list">
-						http://tools.ietf.org/html/rfc7231#section-6<br>
-						http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml<br>
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Psr.Http.Message.ResponseInterface.html#_getReasonPhrase">Psr\Http\Message\ResponseInterface::getReasonPhrase()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="send" id="_send">
-
-		<td class="attributes"><code>
-			 public 
-
-			static
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_send">#</a>
-		<code><a href="source-class-Kotchasan.Http.Response.html#194-205" title="Go to source code">send</a>( )</code>
-
-		<div class="description short">
-			<p>Sends HTTP headers and content.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Sends HTTP headers and content.</p>
+			<p>ส่งออกเนื้อหา.</p>
 
 
 
@@ -499,7 +533,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_sendHeaders">#</a>
-		<code><a href="source-class-Kotchasan.Http.Response.html#207-225" title="Go to source code">sendHeaders</a>( )</code>
+		<code><a href="source-class-Kotchasan.Http.Response.html#224-242" title="Go to source code">sendHeaders</a>( )</code>
 
 		<div class="description short">
 			<p>ส่งออก HTTP headers.</p>
@@ -507,40 +541,6 @@
 
 		<div class="description detailed hidden">
 			<p>ส่งออก HTTP headers.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					static
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="sendContent" id="_sendContent">
-
-		<td class="attributes"><code>
-			 protected 
-
-			static
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_sendContent">#</a>
-		<code><a href="source-class-Kotchasan.Http.Response.html#227-239" title="Go to source code">sendContent</a>( )</code>
-
-		<div class="description short">
-			<p>ส่งออกเนื้อหา.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ส่งออกเนื้อหา.</p>
 
 
 
@@ -590,53 +590,89 @@
 
 	<table class="summary properties" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="statusCode" id="$statusCode">
+	<tr data-order="statusTexts" id="$statusTexts">
 		<td class="attributes"><code>
-			protected  
-			integer
+			public static 
+			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Http.Response.html#24-27" title="Go to source code"><var>$statusCode</var></a>
+				<a href="source-class-Kotchasan.Http.Response.html#24-90" title="Go to source code"><var>$statusTexts</var></a>
 
 			<div class="description short">
-				
+				<p>Status codes.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Status codes.</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$statusCode" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="reasonPhrase" id="$reasonPhrase">
-		<td class="attributes"><code>
-			protected  
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Kotchasan.Http.Response.html#28-31" title="Go to source code"><var>$reasonPhrase</var></a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$reasonPhrase" class="anchor">#</a>
-				<code></code>
+				<a href="#$statusTexts" class="anchor">#</a>
+				<code><span class="php-keyword1">array</span>(
+    <span class="php-num">100</span> =&gt; <span class="php-quote">'Continue'</span>,
+    <span class="php-num">101</span> =&gt; <span class="php-quote">'Switching Protocols'</span>,
+    <span class="php-num">102</span> =&gt; <span class="php-quote">'Processing'</span>, <span class="php-comment">// RFC2518</span>
+    <span class="php-num">200</span> =&gt; <span class="php-quote">'OK'</span>,
+    <span class="php-num">201</span> =&gt; <span class="php-quote">'Created'</span>,
+    <span class="php-num">202</span> =&gt; <span class="php-quote">'Accepted'</span>,
+    <span class="php-num">203</span> =&gt; <span class="php-quote">'Non-Authoritative Information'</span>,
+    <span class="php-num">204</span> =&gt; <span class="php-quote">'No Content'</span>,
+    <span class="php-num">205</span> =&gt; <span class="php-quote">'Reset Content'</span>,
+    <span class="php-num">206</span> =&gt; <span class="php-quote">'Partial Content'</span>,
+    <span class="php-num">207</span> =&gt; <span class="php-quote">'Multi-Status'</span>, <span class="php-comment">// RFC4918</span>
+    <span class="php-num">208</span> =&gt; <span class="php-quote">'Already Reported'</span>, <span class="php-comment">// RFC5842</span>
+    <span class="php-num">226</span> =&gt; <span class="php-quote">'IM Used'</span>, <span class="php-comment">// RFC3229</span>
+    <span class="php-num">300</span> =&gt; <span class="php-quote">'Multiple Choices'</span>,
+    <span class="php-num">301</span> =&gt; <span class="php-quote">'Moved Permanently'</span>,
+    <span class="php-num">302</span> =&gt; <span class="php-quote">'Found'</span>,
+    <span class="php-num">303</span> =&gt; <span class="php-quote">'See Other'</span>,
+    <span class="php-num">304</span> =&gt; <span class="php-quote">'Not Modified'</span>,
+    <span class="php-num">305</span> =&gt; <span class="php-quote">'Use Proxy'</span>,
+    <span class="php-num">306</span> =&gt; <span class="php-quote">'Reserved'</span>,
+    <span class="php-num">307</span> =&gt; <span class="php-quote">'Temporary Redirect'</span>,
+    <span class="php-num">308</span> =&gt; <span class="php-quote">'Permanent Redirect'</span>, <span class="php-comment">// RFC7238</span>
+    <span class="php-num">400</span> =&gt; <span class="php-quote">'Bad Request'</span>,
+    <span class="php-num">401</span> =&gt; <span class="php-quote">'Unauthorized'</span>,
+    <span class="php-num">402</span> =&gt; <span class="php-quote">'Payment Required'</span>,
+    <span class="php-num">403</span> =&gt; <span class="php-quote">'Forbidden'</span>,
+    <span class="php-num">404</span> =&gt; <span class="php-quote">'Not Found'</span>,
+    <span class="php-num">405</span> =&gt; <span class="php-quote">'Method Not Allowed'</span>,
+    <span class="php-num">406</span> =&gt; <span class="php-quote">'Not Acceptable'</span>,
+    <span class="php-num">407</span> =&gt; <span class="php-quote">'Proxy Authentication Required'</span>,
+    <span class="php-num">408</span> =&gt; <span class="php-quote">'Request Timeout'</span>,
+    <span class="php-num">409</span> =&gt; <span class="php-quote">'Conflict'</span>,
+    <span class="php-num">410</span> =&gt; <span class="php-quote">'Gone'</span>,
+    <span class="php-num">411</span> =&gt; <span class="php-quote">'Length Required'</span>,
+    <span class="php-num">412</span> =&gt; <span class="php-quote">'Precondition Failed'</span>,
+    <span class="php-num">413</span> =&gt; <span class="php-quote">'Request Entity Too Large'</span>,
+    <span class="php-num">414</span> =&gt; <span class="php-quote">'Request-URI Too Long'</span>,
+    <span class="php-num">415</span> =&gt; <span class="php-quote">'Unsupported Media Type'</span>,
+    <span class="php-num">416</span> =&gt; <span class="php-quote">'Requested Range Not Satisfiable'</span>,
+    <span class="php-num">417</span> =&gt; <span class="php-quote">'Expectation Failed'</span>,
+    <span class="php-num">418</span> =&gt; <span class="php-quote">'I\'m a teapot'</span>, <span class="php-comment">// RFC2324</span>
+    <span class="php-num">422</span> =&gt; <span class="php-quote">'Unprocessable Entity'</span>, <span class="php-comment">// RFC4918</span>
+    <span class="php-num">423</span> =&gt; <span class="php-quote">'Locked'</span>, <span class="php-comment">// RFC4918</span>
+    <span class="php-num">424</span> =&gt; <span class="php-quote">'Failed Dependency'</span>, <span class="php-comment">// RFC4918</span>
+    <span class="php-num">425</span> =&gt; <span class="php-quote">'Reserved for WebDAV advanced collections expired proposal'</span>, <span class="php-comment">// RFC2817</span>
+    <span class="php-num">426</span> =&gt; <span class="php-quote">'Upgrade Required'</span>, <span class="php-comment">// RFC2817</span>
+    <span class="php-num">428</span> =&gt; <span class="php-quote">'Precondition Required'</span>, <span class="php-comment">// RFC6585</span>
+    <span class="php-num">429</span> =&gt; <span class="php-quote">'Too Many Requests'</span>, <span class="php-comment">// RFC6585</span>
+    <span class="php-num">431</span> =&gt; <span class="php-quote">'Request Header Fields Too Large'</span>, <span class="php-comment">// RFC6585</span>
+    <span class="php-num">500</span> =&gt; <span class="php-quote">'Internal Server Error'</span>,
+    <span class="php-num">501</span> =&gt; <span class="php-quote">'Not Implemented'</span>,
+    <span class="php-num">502</span> =&gt; <span class="php-quote">'Bad Gateway'</span>,
+    <span class="php-num">503</span> =&gt; <span class="php-quote">'Service Unavailable'</span>,
+    <span class="php-num">504</span> =&gt; <span class="php-quote">'Gateway Timeout'</span>,
+    <span class="php-num">505</span> =&gt; <span class="php-quote">'HTTP Version Not Supported'</span>,
+    <span class="php-num">506</span> =&gt; <span class="php-quote">'Variant Also Negotiates (Experimental)'</span>, <span class="php-comment">// RFC2295</span>
+    <span class="php-num">507</span> =&gt; <span class="php-quote">'Insufficient Storage'</span>, <span class="php-comment">// RFC4918</span>
+    <span class="php-num">508</span> =&gt; <span class="php-quote">'Loop Detected'</span>, <span class="php-comment">// RFC5842</span>
+    <span class="php-num">510</span> =&gt; <span class="php-quote">'Not Extended'</span>, <span class="php-comment">// RFC2774</span>
+    <span class="php-num">511</span> =&gt; <span class="php-quote">'Network Authentication Required'</span>, <span class="php-comment">// RFC6585</span>
+)</code>
 			</div>
 		</td>
 	</tr>
@@ -647,7 +683,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Http.Response.html#32-37" title="Go to source code"><var>$content</var></a>
+				<a href="source-class-Kotchasan.Http.Response.html#92-97" title="Go to source code"><var>$content</var></a>
 
 			<div class="description short">
 				<p>เนื้อหา.</p>
@@ -665,89 +701,53 @@
 			</div>
 		</td>
 	</tr>
-	<tr data-order="statusTexts" id="$statusTexts">
+	<tr data-order="reasonPhrase" id="$reasonPhrase">
 		<td class="attributes"><code>
-			public static 
-			array
+			protected  
+			string
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Http.Response.html#38-104" title="Go to source code"><var>$statusTexts</var></a>
+				<a href="source-class-Kotchasan.Http.Response.html#99-102" title="Go to source code"><var>$reasonPhrase</var></a>
 
 			<div class="description short">
-				<p>Status codes.</p>
+				
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Status codes.</p>
+				
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$statusTexts" class="anchor">#</a>
-				<code><span class="php-keyword1">array</span>(
-<span class="php-num">100</span> =&gt; <span class="php-quote">'Continue'</span>,
-<span class="php-num">101</span> =&gt; <span class="php-quote">'Switching Protocols'</span>,
-<span class="php-num">102</span> =&gt; <span class="php-quote">'Processing'</span>, <span class="php-comment">// RFC2518</span>
-<span class="php-num">200</span> =&gt; <span class="php-quote">'OK'</span>,
-<span class="php-num">201</span> =&gt; <span class="php-quote">'Created'</span>,
-<span class="php-num">202</span> =&gt; <span class="php-quote">'Accepted'</span>,
-<span class="php-num">203</span> =&gt; <span class="php-quote">'Non-Authoritative Information'</span>,
-<span class="php-num">204</span> =&gt; <span class="php-quote">'No Content'</span>,
-<span class="php-num">205</span> =&gt; <span class="php-quote">'Reset Content'</span>,
-<span class="php-num">206</span> =&gt; <span class="php-quote">'Partial Content'</span>,
-<span class="php-num">207</span> =&gt; <span class="php-quote">'Multi-Status'</span>, <span class="php-comment">// RFC4918</span>
-<span class="php-num">208</span> =&gt; <span class="php-quote">'Already Reported'</span>, <span class="php-comment">// RFC5842</span>
-<span class="php-num">226</span> =&gt; <span class="php-quote">'IM Used'</span>, <span class="php-comment">// RFC3229</span>
-<span class="php-num">300</span> =&gt; <span class="php-quote">'Multiple Choices'</span>,
-<span class="php-num">301</span> =&gt; <span class="php-quote">'Moved Permanently'</span>,
-<span class="php-num">302</span> =&gt; <span class="php-quote">'Found'</span>,
-<span class="php-num">303</span> =&gt; <span class="php-quote">'See Other'</span>,
-<span class="php-num">304</span> =&gt; <span class="php-quote">'Not Modified'</span>,
-<span class="php-num">305</span> =&gt; <span class="php-quote">'Use Proxy'</span>,
-<span class="php-num">306</span> =&gt; <span class="php-quote">'Reserved'</span>,
-<span class="php-num">307</span> =&gt; <span class="php-quote">'Temporary Redirect'</span>,
-<span class="php-num">308</span> =&gt; <span class="php-quote">'Permanent Redirect'</span>, <span class="php-comment">// RFC7238</span>
-<span class="php-num">400</span> =&gt; <span class="php-quote">'Bad Request'</span>,
-<span class="php-num">401</span> =&gt; <span class="php-quote">'Unauthorized'</span>,
-<span class="php-num">402</span> =&gt; <span class="php-quote">'Payment Required'</span>,
-<span class="php-num">403</span> =&gt; <span class="php-quote">'Forbidden'</span>,
-<span class="php-num">404</span> =&gt; <span class="php-quote">'Not Found'</span>,
-<span class="php-num">405</span> =&gt; <span class="php-quote">'Method Not Allowed'</span>,
-<span class="php-num">406</span> =&gt; <span class="php-quote">'Not Acceptable'</span>,
-<span class="php-num">407</span> =&gt; <span class="php-quote">'Proxy Authentication Required'</span>,
-<span class="php-num">408</span> =&gt; <span class="php-quote">'Request Timeout'</span>,
-<span class="php-num">409</span> =&gt; <span class="php-quote">'Conflict'</span>,
-<span class="php-num">410</span> =&gt; <span class="php-quote">'Gone'</span>,
-<span class="php-num">411</span> =&gt; <span class="php-quote">'Length Required'</span>,
-<span class="php-num">412</span> =&gt; <span class="php-quote">'Precondition Failed'</span>,
-<span class="php-num">413</span> =&gt; <span class="php-quote">'Request Entity Too Large'</span>,
-<span class="php-num">414</span> =&gt; <span class="php-quote">'Request-URI Too Long'</span>,
-<span class="php-num">415</span> =&gt; <span class="php-quote">'Unsupported Media Type'</span>,
-<span class="php-num">416</span> =&gt; <span class="php-quote">'Requested Range Not Satisfiable'</span>,
-<span class="php-num">417</span> =&gt; <span class="php-quote">'Expectation Failed'</span>,
-<span class="php-num">418</span> =&gt; <span class="php-quote">'I\'m a teapot'</span>, <span class="php-comment">// RFC2324</span>
-<span class="php-num">422</span> =&gt; <span class="php-quote">'Unprocessable Entity'</span>, <span class="php-comment">// RFC4918</span>
-<span class="php-num">423</span> =&gt; <span class="php-quote">'Locked'</span>, <span class="php-comment">// RFC4918</span>
-<span class="php-num">424</span> =&gt; <span class="php-quote">'Failed Dependency'</span>, <span class="php-comment">// RFC4918</span>
-<span class="php-num">425</span> =&gt; <span class="php-quote">'Reserved for WebDAV advanced collections expired proposal'</span>, <span class="php-comment">// RFC2817</span>
-<span class="php-num">426</span> =&gt; <span class="php-quote">'Upgrade Required'</span>, <span class="php-comment">// RFC2817</span>
-<span class="php-num">428</span> =&gt; <span class="php-quote">'Precondition Required'</span>, <span class="php-comment">// RFC6585</span>
-<span class="php-num">429</span> =&gt; <span class="php-quote">'Too Many Requests'</span>, <span class="php-comment">// RFC6585</span>
-<span class="php-num">431</span> =&gt; <span class="php-quote">'Request Header Fields Too Large'</span>, <span class="php-comment">// RFC6585</span>
-<span class="php-num">500</span> =&gt; <span class="php-quote">'Internal Server Error'</span>,
-<span class="php-num">501</span> =&gt; <span class="php-quote">'Not Implemented'</span>,
-<span class="php-num">502</span> =&gt; <span class="php-quote">'Bad Gateway'</span>,
-<span class="php-num">503</span> =&gt; <span class="php-quote">'Service Unavailable'</span>,
-<span class="php-num">504</span> =&gt; <span class="php-quote">'Gateway Timeout'</span>,
-<span class="php-num">505</span> =&gt; <span class="php-quote">'HTTP Version Not Supported'</span>,
-<span class="php-num">506</span> =&gt; <span class="php-quote">'Variant Also Negotiates (Experimental)'</span>, <span class="php-comment">// RFC2295</span>
-<span class="php-num">507</span> =&gt; <span class="php-quote">'Insufficient Storage'</span>, <span class="php-comment">// RFC4918</span>
-<span class="php-num">508</span> =&gt; <span class="php-quote">'Loop Detected'</span>, <span class="php-comment">// RFC5842</span>
-<span class="php-num">510</span> =&gt; <span class="php-quote">'Not Extended'</span>, <span class="php-comment">// RFC2774</span>
-<span class="php-num">511</span> =&gt; <span class="php-quote">'Network Authentication Required'</span>, <span class="php-comment">// RFC6585</span>
-  )</code>
+				<a href="#$reasonPhrase" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="statusCode" id="$statusCode">
+		<td class="attributes"><code>
+			protected  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.Http.Response.html#104-107" title="Go to source code"><var>$statusCode</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$statusCode" class="anchor">#</a>
+				<code></code>
 			</div>
 		</td>
 	</tr>

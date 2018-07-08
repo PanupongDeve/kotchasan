@@ -13,6 +13,66 @@ namespace Psr\Http\Message;
 interface UploadedFileInterface
 {
     /**
+     * Retrieve the filename sent by the client.
+     *
+     * Do not trust the value returned by this method. A client could send
+     * a malicious filename with the intention to corrupt or hack your
+     * application.
+     *
+     * Implementations SHOULD return the value stored in the "name" key of
+     * the file in the $_FILES array.
+     *
+     * was provided
+     *
+     * @return string|null the filename sent by the client or null if none
+     */
+    public function getClientFilename();
+
+    /**
+     * Retrieve the media type sent by the client.
+     *
+     * Do not trust the value returned by this method. A client could send
+     * a malicious media type with the intention to corrupt or hack your
+     * application.
+     *
+     * Implementations SHOULD return the value stored in the "type" key of
+     * the file in the $_FILES array.
+     *
+     * was provided
+     *
+     * @return string|null the media type sent by the client or null if none
+     */
+    public function getClientMediaType();
+
+    /**
+     * Retrieve the error associated with the uploaded file.
+     *
+     * The return value MUST be one of PHP's UPLOAD_ERR_XXX constants.
+     *
+     * If the file was uploaded successfully, this method MUST return
+     * UPLOAD_ERR_OK.
+     *
+     * Implementations SHOULD return the value stored in the "error" key of
+     * the file in the $_FILES array.
+     *
+     * @see http://php.net/manual/en/features.file-upload.errors.php
+     *
+     * @return int one of PHP's UPLOAD_ERR_XXX constants
+     */
+    public function getError();
+
+    /**
+     * Retrieve the file size.
+     *
+     * Implementations SHOULD return the value stored in the "size" key of
+     * the file in the $_FILES array if available, as PHP calculates this based
+     * on the actual size transmitted.
+     *
+     * @return int|null the file size in bytes or null if unknown
+     */
+    public function getSize();
+
+    /**
      * Retrieve a stream representing the uploaded file.
      *
      * This method MUST return a StreamInterface instance, representing the
@@ -24,10 +84,11 @@ interface UploadedFileInterface
      * If the moveTo() method has been called previously, this method MUST raise
      * an exception.
      *
-     * @return StreamInterface stream representation of the uploaded file
+     *       created
      *
      * @throws \RuntimeException in cases when no stream is available or can be
-     *                           created
+     *
+     * @return StreamInterface stream representation of the uploaded file
      */
     public function getStream();
 
@@ -56,6 +117,8 @@ interface UploadedFileInterface
      * If you wish to move to a stream, use getStream(), as SAPI operations
      * cannot guarantee writing to stream destinations.
      *
+     * the second or subsequent call to the method
+     *
      * @see http://php.net/is_uploaded_file
      * @see http://php.net/move_uploaded_file
      *
@@ -63,65 +126,6 @@ interface UploadedFileInterface
      *
      * @throws \InvalidArgumentException if the $path specified is invalid
      * @throws \RuntimeException         on any error during the move operation, or on
-     *                                   the second or subsequent call to the method
      */
     public function moveTo($targetPath);
-
-    /**
-     * Retrieve the file size.
-     *
-     * Implementations SHOULD return the value stored in the "size" key of
-     * the file in the $_FILES array if available, as PHP calculates this based
-     * on the actual size transmitted.
-     *
-     * @return int|null the file size in bytes or null if unknown
-     */
-    public function getSize();
-
-    /**
-     * Retrieve the error associated with the uploaded file.
-     *
-     * The return value MUST be one of PHP's UPLOAD_ERR_XXX constants.
-     *
-     * If the file was uploaded successfully, this method MUST return
-     * UPLOAD_ERR_OK.
-     *
-     * Implementations SHOULD return the value stored in the "error" key of
-     * the file in the $_FILES array.
-     *
-     * @see http://php.net/manual/en/features.file-upload.errors.php
-     *
-     * @return int one of PHP's UPLOAD_ERR_XXX constants
-     */
-    public function getError();
-
-    /**
-     * Retrieve the filename sent by the client.
-     *
-     * Do not trust the value returned by this method. A client could send
-     * a malicious filename with the intention to corrupt or hack your
-     * application.
-     *
-     * Implementations SHOULD return the value stored in the "name" key of
-     * the file in the $_FILES array.
-     *
-     * @return string|null the filename sent by the client or null if none
-     *                     was provided
-     */
-    public function getClientFilename();
-
-    /**
-     * Retrieve the media type sent by the client.
-     *
-     * Do not trust the value returned by this method. A client could send
-     * a malicious media type with the intention to corrupt or hack your
-     * application.
-     *
-     * Implementations SHOULD return the value stored in the "type" key of
-     * the file in the $_FILES array.
-     *
-     * @return string|null the media type sent by the client or null if none
-     *                     was provided
-     */
-    public function getClientMediaType();
 }

@@ -233,7 +233,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Language.html#13-436" title="Go to source code">Kotchasan/Language.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Language.html#13-439" title="Go to source code">Kotchasan/Language.php</a>
 		<br>
 	</div>
 
@@ -241,235 +241,51 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="languageFolder" id="_languageFolder">
+	<tr data-order="find" id="_find">
 
 		<td class="attributes"><code>
 			 public static
 
-			string
+			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_languageFolder">#</a>
-		<code><a href="source-class-Kotchasan.Language.html#132-140" title="Go to source code">languageFolder</a>( )</code>
+		<a class="anchor" href="#_find">#</a>
+		<code><a href="source-class-Kotchasan.Language.html#43-68" title="Go to source code">find</a>( <span>string <var>$key</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$value_key</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
-			<p>ฟังก์ชั่นอ่านชื่อโฟลเดอร์เก็บไฟล์ภาษา.</p>
+			<p>ค้นหาข้อความภาษาที่ต้องการ ถ้าไม่พบคืนค่า $default
+ถ้าไม่ระบุ $default (null) คืนค่า $key
+ถ้าระบุ $value_key มาด้วยและ ค่าของภาษาเป็นแอเรย์ จะคืนค่า แอเรย์ของภาษาที่ $value_key
+ถ้าไม่พบข้อมูลที่เลือกคืนค่า null.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ฟังก์ชั่นอ่านชื่อโฟลเดอร์เก็บไฟล์ภาษา.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="installedLanguage" id="_installedLanguage">
-
-		<td class="attributes"><code>
-			 public static
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_installedLanguage">#</a>
-		<code><a href="source-class-Kotchasan.Language.html#142-161" title="Go to source code">installedLanguage</a>( )</code>
-
-		<div class="description short">
-			<p>รายชื่อภาษาที่ติดตั้ง.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>รายชื่อภาษาที่ติดตั้ง.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					array
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="installed" id="_installed">
-
-		<td class="attributes"><code>
-			 public static
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_installed">#</a>
-		<code><a href="source-class-Kotchasan.Language.html#163-210" title="Go to source code">installed</a>( <span>string <var>$type</var></span> )</code>
-
-		<div class="description short">
-			<p>โหลดไฟล์ภาษาทั้งหมดที่ติดตั้ง
-คืนค่าข้อมูลภาษาทั้งหมด.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>โหลดไฟล์ภาษาทั้งหมดที่ติดตั้ง
-คืนค่าข้อมูลภาษาทั้งหมด.</p>
+			<p>ค้นหาข้อความภาษาที่ต้องการ ถ้าไม่พบคืนค่า $default
+ถ้าไม่ระบุ $default (null) คืนค่า $key
+ถ้าระบุ $value_key มาด้วยและ ค่าของภาษาเป็นแอเรย์ จะคืนค่า แอเรย์ของภาษาที่ $value_key
+ถ้าไม่พบข้อมูลที่เลือกคืนค่า null.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$type</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					array
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="keyExists" id="_keyExists">
-
-		<td class="attributes"><code>
-			 public static
-
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_keyExists">#</a>
-		<code><a href="source-class-Kotchasan.Language.html#212-233" title="Go to source code">keyExists</a>( <span>array <var>$languages</var></span>, <span>string <var>$key</var></span> )</code>
-
-		<div class="description short">
-			<p>ตรวจสอบคีย์ของภาษาซ้ำ.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ตรวจสอบคีย์ของภาษาซ้ำ.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$languages</var></dt>
-					<dd>ข้อมูลภาษาที่ต้องการตรวจสอบ</dd>
 					<dt><var>$key</var></dt>
-					<dd>รายการที่ต้องการตรวจสอบ</dd>
+					<dd></dd>
+					<dt><var>$default</var></dt>
+					<dd></dd>
+					<dt><var>$value_key</var></dt>
+					<dd></dd>
 				</dl></div>
 
-				<h4>Returns</h4>
-				<div class="list">
-					integer<br>คืนค่าลำดับที่พบ (รายการแรกคือ 0), คืนค่า -1 ถ้าไม่พบ
-				</div>
 
 
 				<h4>Assert</h4>
 				<div class="list">
-						(array(array('id' => 0, 'key' => 'One'), array('id' => 100, 'key' => 'Two')), 'One') [==] 0<br>
-						(array(array('id' => 0, 'key' => 'One'), array('id' => 100, 'key' => 'Two')), 'two') [==] 100<br>
-						(array(array('id' => 0, 'key' => 'One'), array('id' => 100, 'key' => 'Two')), 'O') [==] -1<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="save" id="_save">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_save">#</a>
-		<code><a href="source-class-Kotchasan.Language.html#235-301" title="Go to source code">save</a>( <span>array <var>$languages</var></span>, <span>string <var>$type</var></span> )</code>
-
-		<div class="description short">
-			<p>บันทึกไฟล์ภาษา.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>บันทึกไฟล์ภาษา.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$languages</var></dt>
-					<dd></dd>
-					<dt><var>$type</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="name" id="_name">
-
-		<td class="attributes"><code>
-			 public static
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_name">#</a>
-		<code><a href="source-class-Kotchasan.Language.html#303-317" title="Go to source code">name</a>( )</code>
-
-		<div class="description short">
-			<p>อ่านชื่อภาษาที่กำลังใช้งานอยู่.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>อ่านชื่อภาษาที่กำลังใช้งานอยู่.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						() [==] 'th'<br>
+						('YEAR_OFFSET') [==] 543<br>
+						('DATE_LONG', null, 0) [==] 'อาทิตย์'<br>
+						('not found', 'default') [==] 'default'<br>
 				</div>
 
 
@@ -488,7 +304,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-Kotchasan.Language.html#319-335" title="Go to source code">get</a>( <span>string <var>$key</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Language.html#70-86" title="Go to source code">get</a>( <span>string <var>$key</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นอ่านภาษา.</p>
@@ -519,6 +335,241 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="getItems" id="_getItems">
+
+		<td class="attributes"><code>
+			 public static
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getItems">#</a>
+		<code><a href="source-class-Kotchasan.Language.html#88-106" title="Go to source code">getItems</a>( <span>array <var>$keys</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			<p>อ่านภาษาหลายรายการ ตามที่กำหนดโดย $keys.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>อ่านภาษาหลายรายการ ตามที่กำหนดโดย $keys.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$keys</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="installed" id="_installed">
+
+		<td class="attributes"><code>
+			 public static
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_installed">#</a>
+		<code><a href="source-class-Kotchasan.Language.html#108-155" title="Go to source code">installed</a>( <span>string <var>$type</var></span> )</code>
+
+		<div class="description short">
+			<p>โหลดไฟล์ภาษาทั้งหมดที่ติดตั้ง
+คืนค่าข้อมูลภาษาทั้งหมด.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>โหลดไฟล์ภาษาทั้งหมดที่ติดตั้ง
+คืนค่าข้อมูลภาษาทั้งหมด.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="installedLanguage" id="_installedLanguage">
+
+		<td class="attributes"><code>
+			 public static
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_installedLanguage">#</a>
+		<code><a href="source-class-Kotchasan.Language.html#157-176" title="Go to source code">installedLanguage</a>( )</code>
+
+		<div class="description short">
+			<p>รายชื่อภาษาที่ติดตั้ง.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>รายชื่อภาษาที่ติดตั้ง.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="keyExists" id="_keyExists">
+
+		<td class="attributes"><code>
+			 public static
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_keyExists">#</a>
+		<code><a href="source-class-Kotchasan.Language.html#178-200" title="Go to source code">keyExists</a>( <span>array <var>$languages</var></span>, <span>string <var>$key</var></span> )</code>
+
+		<div class="description short">
+			<p>ตรวจสอบคีย์ของภาษาซ้ำ
+คืนค่าลำดับที่พบ (รายการแรกคือ 0), คืนค่า -1 ถ้าไม่พบ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ตรวจสอบคีย์ของภาษาซ้ำ
+คืนค่าลำดับที่พบ (รายการแรกคือ 0), คืนค่า -1 ถ้าไม่พบ.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$languages</var></dt>
+					<dd>ข้อมูลภาษาที่ต้องการตรวจสอบ</dd>
+					<dt><var>$key</var></dt>
+					<dd>รายการที่ต้องการตรวจสอบ</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						(array(array('id' => 0, 'key' => 'One'), array('id' => 100, 'key' => 'Two')), 'One') [==] 0<br>
+						(array(array('id' => 0, 'key' => 'One'), array('id' => 100, 'key' => 'Two')), 'two') [==] 100<br>
+						(array(array('id' => 0, 'key' => 'One'), array('id' => 100, 'key' => 'Two')), 'O') [==] -1<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="languageFolder" id="_languageFolder">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_languageFolder">#</a>
+		<code><a href="source-class-Kotchasan.Language.html#202-210" title="Go to source code">languageFolder</a>( )</code>
+
+		<div class="description short">
+			<p>ฟังก์ชั่นอ่านชื่อโฟลเดอร์เก็บไฟล์ภาษา.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ฟังก์ชั่นอ่านชื่อโฟลเดอร์เก็บไฟล์ภาษา.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="name" id="_name">
+
+		<td class="attributes"><code>
+			 public static
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_name">#</a>
+		<code><a href="source-class-Kotchasan.Language.html#212-226" title="Go to source code">name</a>( )</code>
+
+		<div class="description short">
+			<p>อ่านชื่อภาษาที่กำลังใช้งานอยู่.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>อ่านชื่อภาษาที่กำลังใช้งานอยู่.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						() [==] 'th'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="parse" id="_parse">
 
 		<td class="attributes"><code>
@@ -531,7 +582,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_parse">#</a>
-		<code><a href="source-class-Kotchasan.Language.html#337-349" title="Go to source code">parse</a>( <span>array <var>$match</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Language.html#228-240" title="Go to source code">parse</a>( <span>array <var>$match</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นแปลภาษาที่รับค่ามาจากการ parse Theme.</p>
@@ -574,7 +625,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_replace">#</a>
-		<code><a href="source-class-Kotchasan.Language.html#351-372" title="Go to source code">replace</a>( <span>string <var>$key</var></span>, <span>array <var>$replace</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Language.html#242-263" title="Go to source code">replace</a>( <span>string <var>$key</var></span>, <span>array <var>$replace</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นอ่านภาษา.</p>
@@ -607,91 +658,42 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getItems" id="_getItems">
+	<tr data-order="save" id="_save">
 
 		<td class="attributes"><code>
 			 public static
 
-			array
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getItems">#</a>
-		<code><a href="source-class-Kotchasan.Language.html#374-392" title="Go to source code">getItems</a>( <span>array <var>$keys</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<a class="anchor" href="#_save">#</a>
+		<code><a href="source-class-Kotchasan.Language.html#265-331" title="Go to source code">save</a>( <span>array <var>$languages</var></span>, <span>string <var>$type</var></span> )</code>
 
 		<div class="description short">
-			<p>อ่านภาษาหลายรายการ ตามที่กำหนดโดย $keys.</p>
+			<p>บันทึกไฟล์ภาษา.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>อ่านภาษาหลายรายการ ตามที่กำหนดโดย $keys.</p>
+			<p>บันทึกไฟล์ภาษา.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$keys</var></dt>
+					<dt><var>$languages</var></dt>
+					<dd></dd>
+					<dt><var>$type</var></dt>
 					<dd></dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					array
+					string
 				</div>
 
 
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="find" id="_find">
-
-		<td class="attributes"><code>
-			 public static
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_find">#</a>
-		<code><a href="source-class-Kotchasan.Language.html#394-419" title="Go to source code">find</a>( <span>string <var>$key</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$value_key</var> = <span class="php-keyword1">null</span></span> )</code>
-
-		<div class="description short">
-			<p>ค้นหาข้อความภาษาที่ต้องการ ถ้าไม่พบคืนค่า $default
-ถ้าไม่ระบุ $default (null) คืนค่า $key
-ถ้าระบุ $value_key มาด้วยและ ค่าของภาษาเป็นแอเรย์ จะคืนค่า แอเรย์ของภาษาที่ $value_key
-ถ้าไม่พบข้อมูลที่เลือกคืนค่า null.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ค้นหาข้อความภาษาที่ต้องการ ถ้าไม่พบคืนค่า $default
-ถ้าไม่ระบุ $default (null) คืนค่า $key
-ถ้าระบุ $value_key มาด้วยและ ค่าของภาษาเป็นแอเรย์ จะคืนค่า แอเรย์ของภาษาที่ $value_key
-ถ้าไม่พบข้อมูลที่เลือกคืนค่า null.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$key</var></dt>
-					<dd></dd>
-					<dt><var>$default</var></dt>
-					<dd></dd>
-					<dt><var>$value_key</var></dt>
-					<dd></dd>
-				</dl></div>
-
-
-
-				<h4>Assert</h4>
-				<div class="list">
-						('YEAR_OFFSET') [==] 543<br>
-						('DATE_LONG', null, 0) [==] 'อาทิตย์'<br>
-						('not found', 'default') [==] 'default'<br>
-				</div>
 
 
 		</div>
@@ -709,7 +711,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_trans">#</a>
-		<code><a href="source-class-Kotchasan.Language.html#421-435" title="Go to source code">trans</a>( <span>string <var>$content</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Language.html#333-347" title="Go to source code">trans</a>( <span>string <var>$content</var></span> )</code>
 
 		<div class="description short">
 			<p>แปลภาษา.</p>

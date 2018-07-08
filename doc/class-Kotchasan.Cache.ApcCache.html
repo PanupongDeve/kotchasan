@@ -200,7 +200,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Cache.ApcCache.html#16-110" title="Go to source code">Kotchasan/Cache/ApcCache.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Cache.ApcCache.html#17-115" title="Go to source code">Kotchasan/Cache/ApcCache.php</a>
 		<br>
 	</div>
 
@@ -220,7 +220,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#25-33" title="Go to source code">__construct</a>( )</code>
+		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#26-34" title="Go to source code">__construct</a>( )</code>
 
 		<div class="description short">
 			<p>Class constructor.</p>
@@ -232,6 +232,87 @@
 
 
 
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="clear" id="_clear">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_clear">#</a>
+		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#36-45" title="Go to source code">clear</a>( )</code>
+
+		<div class="description short">
+			<p>เคลียร์แคช
+คืนค่า true ถ้าลบเรียบร้อย, หรือ false ถ้าไม่สำเร็จ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>เคลียร์แคช
+คืนค่า true ถ้าลบเรียบร้อย, หรือ false ถ้าไม่สำเร็จ.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteItems" id="_deleteItems">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteItems">#</a>
+		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#47-64" title="Go to source code">deleteItems</a>( <span>array <var>$keys</var></span> )</code>
+
+		<div class="description short">
+			<p>ลบแคชหลายๆรายการ
+คืนค่า true ถ้าสำเร็จ, false ถ้าไม่สำเร็จ.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>ลบแคชหลายๆรายการ
+คืนค่า true ถ้าสำเร็จ, false ถ้าไม่สำเร็จ.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$keys</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					invalidArgumentException
+				</div>
 
 
 
@@ -250,7 +331,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getItems">#</a>
-		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#35-55" title="Go to source code">getItems</a>( <span>array <var>$keys</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#66-86" title="Go to source code">getItems</a>( <span>array <var>$keys</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			<p>อ่านแคชหลายรายการ.</p>
@@ -273,8 +354,7 @@
 
 				<h4>Throws</h4>
 				<div class="list">
-					invalidArgumentException<br><p>If any of the keys in $keys are not a legal value a \Psr\Cache\InvalidArgumentException
-                                 MUST be thrown</p>
+					invalidArgumentException
 				</div>
 
 
@@ -294,14 +374,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_hasItem">#</a>
-		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#57-67" title="Go to source code">hasItem</a>( <span>string <var>$key</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#88-99" title="Go to source code">hasItem</a>( <span>string <var>$key</var></span> )</code>
 
 		<div class="description short">
-			<p>ตรวจสอบแคช.</p>
+			<p>ตรวจสอบแคช
+คืนค่า true ถ้ามี.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ตรวจสอบแคช.</p>
+			<p>ตรวจสอบแคช
+คืนค่า true ถ้ามี.</p>
 
 
 				<h4>Parameters</h4>
@@ -312,91 +394,12 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>true ถ้ามี
+					boolean
 				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
-					invalidArgumentException<br><p>If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
-                                 MUST be thrown</p>
-				</div>
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="clear" id="_clear">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_clear">#</a>
-		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#69-77" title="Go to source code">clear</a>( )</code>
-
-		<div class="description short">
-			<p>เคลียร์แคช.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>เคลียร์แคช.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>true ถ้าลบเรียบร้อย, หรือ false ถ้าไม่สำเร็จ
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="deleteItems" id="_deleteItems">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_deleteItems">#</a>
-		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#79-95" title="Go to source code">deleteItems</a>( <span>array <var>$keys</var></span> )</code>
-
-		<div class="description short">
-			<p>ลบแคชหลายๆรายการ.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>ลบแคชหลายๆรายการ.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$keys</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean<br>true ถ้าสำเร็จ, false ถ้าไม่สำเร็จ
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					invalidArgumentException<br><p>If any of the keys in $keys are not a legal value a \Psr\Cache\InvalidArgumentException
-                                 MUST be thrown</p>
+					invalidArgumentException
 				</div>
 
 
@@ -416,14 +419,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save">#</a>
-		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#97-109" title="Go to source code">save</a>( <span><code><a href="class-Psr.Cache.CacheItemInterface.html">Psr\Cache\CacheItemInterface</a></code> <var>$item</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#101-114" title="Go to source code">save</a>( <span><code><a href="class-Psr.Cache.CacheItemInterface.html">Psr\Cache\CacheItemInterface</a></code> <var>$item</var></span> )</code>
 
 		<div class="description short">
-			<p>บันทึกแคช.</p>
+			<p>บันทึกแคช
+สำเร็จคืนค่า true ไม่สำเร็จคืนค่า false.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>บันทึกแคช.</p>
+			<p>บันทึกแคช
+สำเร็จคืนค่า true ไม่สำเร็จคืนค่า false.</p>
 
 
 				<h4>Parameters</h4>
@@ -434,7 +439,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean<br>สำเร็จคืนค่า true ไม่สำเร็จคืนค่า false
+					boolean
 				</div>
 
 				<h4>Throws</h4>
