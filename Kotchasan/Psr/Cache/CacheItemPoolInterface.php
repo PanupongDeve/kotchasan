@@ -1,5 +1,4 @@
 <?php
-
 namespace Psr\Cache;
 
 /**
@@ -7,134 +6,127 @@ namespace Psr\Cache;
  */
 interface CacheItemPoolInterface
 {
-    /**
-     * Deletes all items in the pool.
-     *
-     * True if the pool was successfully cleared. False if there was an error.
-     *
-     * @return bool
-     */
-    public function clear();
 
-    /**
-     * Persists any deferred cache items.
-     *
-     * True if all not-yet-saved items were successfully saved or there were none. False otherwise.
-     *
-     * @return bool
-     */
-    public function commit();
+  /**
+   * Returns a Cache Item representing the specified key.
+   *
+   * This method must always return a CacheItemInterface object, even in case of
+   * a cache miss. It MUST NOT return null.
+   *
+   * @param string $key
+   *   The key for which to return the corresponding Cache Item.
+   *
+   * @throws InvalidArgumentException
+   *   If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
+   *   MUST be thrown.
+   *
+   * @return CacheItemInterface
+   *   The corresponding Cache Item.
+   */
+  public function getItem($key);
 
-    /**
-     * Removes the item from the pool.
-     * The key for which to delete
-     * If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
-     * MUST be thrown
-     * True if the item was successfully removed. False if there was an error.
-     *
-     * @param string $key
-     *
-     * @throws invalidArgumentException
-     *
-     * @return bool
-     */
-    public function deleteItem($key);
+  /**
+   * Returns a traversable set of cache items.
+   *
+   * @param array $keys
+   * An indexed array of keys of items to retrieve.
+   *
+   * @throws InvalidArgumentException
+   *   If any of the keys in $keys are not a legal value a \Psr\Cache\InvalidArgumentException
+   *   MUST be thrown.
+   *
+   * @return array|\Traversable
+   *   A traversable collection of Cache Items keyed by the cache keys of
+   *   each item. A Cache item will be returned for each key, even if that
+   *   key is not found. However, if no keys are specified then an empty
+   *   traversable MUST be returned instead.
+   */
+  public function getItems(array $keys = array());
 
-    /**
-     * Removes multiple items from the pool.
-     *
-     * An array of keys that should be removed from the pool.
-     * If any of the keys in $keys are not a legal value a \Psr\Cache\InvalidArgumentException
-     * MUST be thrown
-     * True if the items were successfully removed. False if there was an error.
-     *
-     * @param array $keys
-     *
-     * @throws invalidArgumentException
-     *
-     * @return bool
-     */
-    public function deleteItems(array $keys);
+  /**
+   * Confirms if the cache contains specified cache item.
+   *
+   * Note: This method MAY avoid retrieving the cached value for performance reasons.
+   * This could result in a race condition with CacheItemInterface::get(). To avoid
+   * such situation use CacheItemInterface::isHit() instead.
+   *
+   * @param string $key
+   *    The key for which to check existence.
+   *
+   * @throws InvalidArgumentException
+   *   If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
+   *   MUST be thrown.
+   *
+   * @return bool
+   *  True if item exists in the cache, false otherwise.
+   */
+  public function hasItem($key);
 
-    /**
-     * Returns a Cache Item representing the specified key.
-     *
-     * This method must always return a CacheItemInterface object, even in case of
-     * a cache miss. It MUST NOT return null.
-     *
-     * The key for which to return the corresponding Cache Item
-     * If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
-     * MUST be thrown
-     * The corresponding Cache Item
-     *
-     * @param string $key
-     *
-     * @throws invalidArgumentException
-     *
-     * @return cacheItemInterface
-     */
-    public function getItem($key);
+  /**
+   * Deletes all items in the pool.
+   *
+   * @return bool
+   *   True if the pool was successfully cleared. False if there was an error.
+   */
+  public function clear();
 
-    /**
-     * Returns a traversable set of cache items.
-     *
-     * An indexed array of keys of items to retrieve
-     * If any of the keys in $keys are not a legal value a \Psr\Cache\InvalidArgumentException
-     * MUST be thrown
-     * A traversable collection of Cache Items keyed by the cache keys of
-     * each item. A Cache item will be returned for each key, even if that
-     * key is not found. However, if no keys are specified then an empty
-     * traversable MUST be returned instead.
-     *
-     * @param array $keys
-     *
-     * @throws invalidArgumentException
-     *
-     * @return array|\Traversable
-     */
-    public function getItems(array $keys = array());
+  /**
+   * Removes the item from the pool.
+   *
+   * @param string $key
+   *   The key for which to delete
+   *
+   * @throws InvalidArgumentException
+   *   If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
+   *   MUST be thrown.
+   *
+   * @return bool
+   *   True if the item was successfully removed. False if there was an error.
+   */
+  public function deleteItem($key);
 
-    /**
-     * Confirms if the cache contains specified cache item.
-     *
-     * Note: This method MAY avoid retrieving the cached value for performance reasons.
-     * This could result in a race condition with CacheItemInterface::get(). To avoid
-     * such situation use CacheItemInterface::isHit() instead.
-     *
-     * The key for which to check existence
-     * If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
-     * MUST be thrown
-     * True if item exists in the cache, false otherwise
-     *
-     * @param string $key
-     *
-     * @throws invalidArgumentException
-     *
-     * @return bool
-     */
-    public function hasItem($key);
+  /**
+   * Removes multiple items from the pool.
+   *
+   * @param array $keys
+   *   An array of keys that should be removed from the pool.
 
-    /**
-     * Persists a cache item immediately.
-     *
-     * The cache item to save
-     * True if the item was successfully persisted. False if there was an error.
-     *
-     * @param cacheItemInterface $item
-     *
-     * @return bool
-     */
-    public function save(CacheItemInterface $item);
+   * @throws InvalidArgumentException
+   *   If any of the keys in $keys are not a legal value a \Psr\Cache\InvalidArgumentException
+   *   MUST be thrown.
+   *
+   * @return bool
+   *   True if the items were successfully removed. False if there was an error.
+   */
+  public function deleteItems(array $keys);
 
-    /**
-     * Sets a cache item to be persisted later.
-     *
-     * The cache item to save
-     * False if the item could not be queued or if a commit was attempted and failed. True otherwise.
-     *
-     * @param cacheItemInterface $item
-     *
-     * @return bool
-     */
-    public function saveDeferred(CacheItemInterface $item);
+  /**
+   * Persists a cache item immediately.
+   *
+   * @param CacheItemInterface $item
+   *   The cache item to save.
+   *
+   * @return bool
+   *   True if the item was successfully persisted. False if there was an error.
+   */
+  public function save(CacheItemInterface $item);
+
+  /**
+   * Sets a cache item to be persisted later.
+   *
+   * @param CacheItemInterface $item
+   *   The cache item to save.
+   *
+   * @return bool
+   *   False if the item could not be queued or if a commit was attempted and failed. True otherwise.
+   */
+  public function saveDeferred(CacheItemInterface $item);
+
+  /**
+   * Persists any deferred cache items.
+   *
+   * @return bool
+   *   True if all not-yet-saved items were successfully saved or there were none. False otherwise.
+   */
+  public function commit();
 }

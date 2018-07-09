@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @filesource  Kotchasan/Cache/ApcCache.php
  *

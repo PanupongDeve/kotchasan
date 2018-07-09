@@ -1,5 +1,4 @@
 <?php
-
 namespace Psr\Log;
 
 /**
@@ -7,19 +6,12 @@ namespace Psr\Log;
  */
 class LogLevel
 {
-    const ALERT = 'alert';
-
-    const CRITICAL = 'critical';
-
-    const DEBUG = 'debug';
-
-    const EMERGENCY = 'emergency';
-
-    const ERROR = 'error';
-
-    const INFO = 'info';
-
-    const NOTICE = 'notice';
-
-    const WARNING = 'warning';
+  const EMERGENCY = 'emergency';
+  const ALERT = 'alert';
+  const CRITICAL = 'critical';
+  const ERROR = 'error';
+  const WARNING = 'warning';
+  const NOTICE = 'notice';
+  const INFO = 'info';
+  const DEBUG = 'debug';
 }

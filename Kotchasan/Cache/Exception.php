@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @filesource Kotchasan/Cache/Exception.php
  *
