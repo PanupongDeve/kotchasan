@@ -1,5 +1,5 @@
 /**
- * Javascript Libraly for Kotchasan Framework
+ * Javascript Library for Kotchasan Framework
  *
  * @filesource js/gajax.js
  * @link http://www.kotchasan.com/
