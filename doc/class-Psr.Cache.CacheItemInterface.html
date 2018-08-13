@@ -171,7 +171,7 @@
 		<b>Namespace:</b> <a href="namespace-Psr.html">Psr</a>\<a href="namespace-Psr.Cache.html">Cache</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Psr.Cache.CacheItemInterface.html#5-91" title="Go to source code">Kotchasan/Psr/Cache/CacheItemInterface.php</a>
+			<b>Located at</b> <a href="source-class-Psr.Cache.CacheItemInterface.html#4-89" title="Go to source code">Kotchasan/Psr/Cache/CacheItemInterface.php</a>
 		<br>
 	</div>
 
@@ -179,98 +179,35 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="expiresAfter" id="_expiresAfter">
+	<tr data-order="getKey" id="_getKey">
 
 		<td class="attributes"><code>
 			 public 
 
-			static
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_expiresAfter">#</a>
-		<code><a href="source-class-Psr.Cache.CacheItemInterface.html#10-23" title="Go to source code">expiresAfter</a>( <span>integer|<code><a href="class-DateInterval.html">DateInterval</a></code> <var>$time</var></span> )</code>
+		<a class="anchor" href="#_getKey">#</a>
+		<code><a href="source-class-Psr.Cache.CacheItemInterface.html#10-19" title="Go to source code">getKey</a>( )</code>
 
 		<div class="description short">
-			<p>Sets the expiration time for this cache item.
-The period of time from the present after which the item MUST be considered
-expired. An integer parameter is understood to be the time in seconds until
-expiration. If null is passed explicitly, a default value MAY be used.
-If none is set, the value should be stored permanently or for as long as the
-implementation allows.
-The called object.</p>
+			<p>Returns the key for the current cache item.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Sets the expiration time for this cache item.
-The period of time from the present after which the item MUST be considered
-expired. An integer parameter is understood to be the time in seconds until
-expiration. If null is passed explicitly, a default value MAY be used.
-If none is set, the value should be stored permanently or for as long as the
-implementation allows.
-The called object.</p>
+			<p>Returns the key for the current cache item.</p>
+
+<p>The key is loaded by the Implementing Library, but should be available to
+the higher level callers when needed.</p>
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$time</var></dt>
-					<dd></dd>
-				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					static
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="expiresAt" id="_expiresAt">
-
-		<td class="attributes"><code>
-			 public 
-
-			static
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_expiresAt">#</a>
-		<code><a href="source-class-Psr.Cache.CacheItemInterface.html#25-37" title="Go to source code">expiresAt</a>( <span><code><a href="class-DateTimeInterface.html">DateTimeInterface</a></code> <var>$expiration</var></span> )</code>
-
-		<div class="description short">
-			<p>Sets the expiration time for this cache item.
-The point in time after which the item MUST be considered expired.
-If null is passed explicitly, a default value MAY be used. If none is set,
-the value should be stored permanently or for as long as the
-implementation allows.
-The called object.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Sets the expiration time for this cache item.
-The point in time after which the item MUST be considered expired.
-If null is passed explicitly, a default value MAY be used. If none is set,
-the value should be stored permanently or for as long as the
-implementation allows.
-The called object.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$expiration</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					static
+					string<br>The key string for this cache item.
 				</div>
 
 
@@ -291,69 +228,26 @@ The called object.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-Psr.Cache.CacheItemInterface.html#39-50" title="Go to source code">get</a>( )</code>
+		<code><a href="source-class-Psr.Cache.CacheItemInterface.html#21-33" title="Go to source code">get</a>( )</code>
 
 		<div class="description short">
-			<p>Retrieves the value of the item from the cache associated with this object's key.
-The value returned must be identical to the value originally stored by set().
-If isHit() returns false, this method MUST return null. Note that null
-is a legitimate cached value, so the isHit() method SHOULD be used to
-differentiate between "null value was found" and "no value was found.".</p>
+			<p>Retrieves the value of the item from the cache associated with this object's key.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Retrieves the value of the item from the cache associated with this object's key.
-The value returned must be identical to the value originally stored by set().
-If isHit() returns false, this method MUST return null. Note that null
-is a legitimate cached value, so the isHit() method SHOULD be used to
-differentiate between "null value was found" and "no value was found.".</p>
+			<p>Retrieves the value of the item from the cache associated with this object's key.</p>
 
-<p>The value corresponding to this cache item's key, or null if not found</p>
+<p>The value returned must be identical to the value originally stored by set().</p>
+
+<p>If isHit() returns false, this method MUST return null. Note that null
+is a legitimate cached value, so the isHit() method SHOULD be used to
+differentiate between "null value was found" and "no value was found."</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					mixed
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getKey" id="_getKey">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getKey">#</a>
-		<code><a href="source-class-Psr.Cache.CacheItemInterface.html#52-62" title="Go to source code">getKey</a>( )</code>
-
-		<div class="description short">
-			<p>Returns the key for the current cache item.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Returns the key for the current cache item.</p>
-
-<p>The key is loaded by the Implementing Library, but should be available to
-the higher level callers when needed.</p>
-
-<p>The key string for this cache item</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
+					mixed<br>The value corresponding to this cache item's key, or null if not found.
 				</div>
 
 
@@ -374,7 +268,7 @@ the higher level callers when needed.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isHit">#</a>
-		<code><a href="source-class-Psr.Cache.CacheItemInterface.html#64-74" title="Go to source code">isHit</a>( )</code>
+		<code><a href="source-class-Psr.Cache.CacheItemInterface.html#35-44" title="Go to source code">isHit</a>( )</code>
 
 		<div class="description short">
 			<p>Confirms if the cache item lookup resulted in a cache hit.</p>
@@ -386,13 +280,11 @@ the higher level callers when needed.</p>
 <p>Note: This method MUST NOT have a race condition between calling isHit()
 and calling get().</p>
 
-<p>True if the request resulted in a cache hit. False otherwise.</p>
-
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean
+					boolean<br>True if the request resulted in a cache hit. False otherwise.
 				</div>
 
 
@@ -413,7 +305,7 @@ and calling get().</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set">#</a>
-		<code><a href="source-class-Psr.Cache.CacheItemInterface.html#76-90" title="Go to source code">set</a>( <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-Psr.Cache.CacheItemInterface.html#46-59" title="Go to source code">set</a>( <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>Sets the value represented by this cache item.</p>
@@ -426,19 +318,101 @@ and calling get().</p>
 although the method of serialization is left up to the Implementing
 Library.</p>
 
-<p>The serializable value to be stored
-The invoked object</p>
-
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$value</var></dt>
-					<dd></dd>
+					<dd>The serializable value to be stored.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					static
+					static<br>The invoked object.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="expiresAt" id="_expiresAt">
+
+		<td class="attributes"><code>
+			 public 
+
+			static
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_expiresAt">#</a>
+		<code><a href="source-class-Psr.Cache.CacheItemInterface.html#61-73" title="Go to source code">expiresAt</a>( <span><code><a href="class-DateTimeInterface.html">DateTimeInterface</a></code> <var>$expiration</var></span> )</code>
+
+		<div class="description short">
+			<p>Sets the expiration time for this cache item.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Sets the expiration time for this cache item.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$expiration</var></dt>
+					<dd><p>The point in time after which the item MUST be considered expired.
+  If null is passed explicitly, a default value MAY be used. If none is set,
+  the value should be stored permanently or for as long as the
+  implementation allows.</p></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					static<br>The called object.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="expiresAfter" id="_expiresAfter">
+
+		<td class="attributes"><code>
+			 public 
+
+			static
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_expiresAfter">#</a>
+		<code><a href="source-class-Psr.Cache.CacheItemInterface.html#75-88" title="Go to source code">expiresAfter</a>( <span>integer|<code><a href="class-DateInterval.html">DateInterval</a></code> <var>$time</var></span> )</code>
+
+		<div class="description short">
+			<p>Sets the expiration time for this cache item.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Sets the expiration time for this cache item.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$time</var></dt>
+					<dd><p>The period of time from the present after which the item MUST be considered
+  expired. An integer parameter is understood to be the time in seconds until
+  expiration. If null is passed explicitly, a default value MAY be used.
+  If none is set, the value should be stored permanently or for as long as the
+  implementation allows.</p></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					static<br>The called object.
 				</div>
 
 

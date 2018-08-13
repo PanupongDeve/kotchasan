@@ -82,32 +82,6 @@ class RouterTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-   * Generated from @assert ('/module/1/2.html', array()) [==] array('module' => 'module', 'cat' => 1, 'id' => 2).
-   *
-   * @covers Kotchasan\Router::parseRoutes
-   */
-  public function testParseRoutes5()
-  {
-
-    $this->assertEquals(
-      array('module' => 'module', 'cat' => 1, 'id' => 2), $this->object->parseRoutes('/module/1/2.html', array())
-    );
-  }
-
-  /**
-   * Generated from @assert ('/module/1.html', array()) [==] array('module' => 'module', 'cat' => 1).
-   *
-   * @covers Kotchasan\Router::parseRoutes
-   */
-  public function testParseRoutes6()
-  {
-
-    $this->assertEquals(
-      array('module' => 'module', 'cat' => 1), $this->object->parseRoutes('/module/1.html', array())
-    );
-  }
-
-  /**
    * Generated from @assert ('/module/ทดสอบ.html', array()) [==] array('alias' => 'ทดสอบ', 'module' => 'module').
    *
    * @covers Kotchasan\Router::parseRoutes
@@ -156,32 +130,6 @@ class RouterTest extends \PHPUnit_Framework_TestCase
 
     $this->assertEquals(
       array('alias' => 'ทดสอบ', 'module' => 'test'), $this->object->parseRoutes('/ทดสอบ.html', array('module' => 'test'))
-    );
-  }
-
-  /**
-   * Generated from @assert ('/docs/1/ทดสอบ.html', array('module' => 'test')) [==] array('alias' => 'ทดสอบ', 'module' => 'docs', 'cat' => 1).
-   *
-   * @covers Kotchasan\Router::parseRoutes
-   */
-  public function testParseRoutes11()
-  {
-
-    $this->assertEquals(
-      array('alias' => 'ทดสอบ', 'module' => 'docs', 'cat' => 1), $this->object->parseRoutes('/docs/1/ทดสอบ.html', array('module' => 'test'))
-    );
-  }
-
-  /**
-   * Generated from @assert ('/docs/1/ทดสอบ.html', array()) [==] array('alias' => 'ทดสอบ', 'module' => 'docs', 'cat' => 1).
-   *
-   * @covers Kotchasan\Router::parseRoutes
-   */
-  public function testParseRoutes12()
-  {
-
-    $this->assertEquals(
-      array('alias' => 'ทดสอบ', 'module' => 'docs', 'cat' => 1), $this->object->parseRoutes('/docs/1/ทดสอบ.html', array())
     );
   }
 

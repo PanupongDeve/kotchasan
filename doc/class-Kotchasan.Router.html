@@ -233,7 +233,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Router.html#13-133" title="Go to source code">Kotchasan/Router.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Router.html#13-124" title="Go to source code">Kotchasan/Router.php</a>
 		<br>
 	</div>
 
@@ -253,7 +253,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_init">#</a>
-		<code><a href="source-class-Kotchasan.Router.html#42-80" title="Go to source code">init</a>( <span>string <var>$className</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Router.html#40-78" title="Go to source code">init</a>( <span>string <var>$className</var></span> )</code>
 
 		<div class="description short">
 			<p>Initial Router.</p>
@@ -296,7 +296,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_parseRoutes">#</a>
-		<code><a href="source-class-Kotchasan.Router.html#82-132" title="Go to source code">parseRoutes</a>( <span>string <var>$path</var></span>, <span>array <var>$modules</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Router.html#80-123" title="Go to source code">parseRoutes</a>( <span>string <var>$path</var></span>, <span>array <var>$modules</var></span> )</code>
 
 		<div class="description short">
 			<p>แยก path คืนค่าเป็น query string.</p>
@@ -326,14 +326,10 @@
 						('/index/model/updateprofile.php', array()) [==] array( '_mvc' => 'model', '_dir' => 'updateprofile', 'module' => 'index')<br>
 						('/index.php/alias/model/admin/settings/save', array()) [==] array('module' => 'alias', '_mvc' => 'model', '_dir' => 'admin/settings', '_method' => 'save')<br>
 						('/css/view/index.php', array()) [==] array('module' => 'css', '_mvc' => 'view', '_dir' => 'index')<br>
-						('/module/1/2.html', array()) [==] array('module' => 'module', 'cat' => 1, 'id' => 2)<br>
-						('/module/1.html', array()) [==] array('module' => 'module', 'cat' => 1)<br>
 						('/module/ทดสอบ.html', array()) [==] array('alias' => 'ทดสอบ', 'module' => 'module')<br>
 						('/module.html', array()) [==] array('module' => 'module')<br>
 						('/ทดสอบ.html', array()) [==] array('alias' => 'ทดสอบ')<br>
 						('/ทดสอบ.html', array('module' => 'test')) [==] array('alias' => 'ทดสอบ', 'module' => 'test')<br>
-						('/docs/1/ทดสอบ.html', array('module' => 'test')) [==] array('alias' => 'ทดสอบ', 'module' => 'docs', 'cat' => 1)<br>
-						('/docs/1/ทดสอบ.html', array()) [==] array('alias' => 'ทดสอบ', 'module' => 'docs', 'cat' => 1)<br>
 						('/index.php', array('_action' => 'one')) [==] array('_action' => 'one')<br>
 						('/admin_index.php', array('_action' => 'one')) [==] array('_action' => 'one', 'module' => 'admin_index')<br>
 				</div>
@@ -364,7 +360,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Router.html#22-40" title="Go to source code"><var>$rules</var></a>
+				<a href="source-class-Kotchasan.Router.html#22-38" title="Go to source code"><var>$rules</var></a>
 
 			<div class="description short">
 				<p>กฏของ Router สำหรับการแยกหน้าเว็บไซต์.</p>
@@ -383,10 +379,8 @@
     <span class="php-quote">'/^[a-z0-9]+\.php\/([a-z]+)\/(model)(\/([\/a-z0-9_]+)\/([a-z0-9_]+))?$/i'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'module'</span>, <span class="php-quote">'_mvc'</span>, <span class="php-quote">''</span>, <span class="php-quote">'_dir'</span>, <span class="php-quote">'_method'</span>),
     <span class="php-comment">// index/model/_dir</span>
     <span class="php-quote">'/([a-z]+)\/(model|controller|view)\/([a-z0-9_]+)/i'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'module'</span>, <span class="php-quote">'_mvc'</span>, <span class="php-quote">'_dir'</span>),
-    <span class="php-comment">// module/cat/id</span>
-    <span class="php-quote">'/^([a-z]+)\/([0-9]+)\/([0-9]+)$/'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'module'</span>, <span class="php-quote">'cat'</span>, <span class="php-quote">'id'</span>),
-    <span class="php-comment">// module/cat module/alias, module/cat/alias</span>
-    <span class="php-quote">'/^([a-z]+)(\/([0-9]+))?(\/(.*))?$/'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'module'</span>, <span class="php-quote">''</span>, <span class="php-quote">'cat'</span>, <span class="php-quote">''</span>, <span class="php-quote">'alias'</span>),
+    <span class="php-comment">// module/alias</span>
+    <span class="php-quote">'/^([a-z]+)\/(.*)$/'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'module'</span>, <span class="php-quote">'alias'</span>),
     <span class="php-comment">// module, module.php</span>
     <span class="php-quote">'/^([a-z0-9_]+)(\.php)?$/'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'module'</span>),
     <span class="php-comment">// alias</span>

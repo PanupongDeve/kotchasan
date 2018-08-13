@@ -200,7 +200,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Cache.ApcCache.html#17-115" title="Go to source code">Kotchasan/Cache/ApcCache.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Cache.ApcCache.html#16-114" title="Go to source code">Kotchasan/Cache/ApcCache.php</a>
 		<br>
 	</div>
 
@@ -220,7 +220,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#26-34" title="Go to source code">__construct</a>( )</code>
+		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#25-33" title="Go to source code">__construct</a>( )</code>
 
 		<div class="description short">
 			<p>Class constructor.</p>
@@ -250,7 +250,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_clear">#</a>
-		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#36-45" title="Go to source code">clear</a>( )</code>
+		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#35-44" title="Go to source code">clear</a>( )</code>
 
 		<div class="description short">
 			<p>เคลียร์แคช
@@ -286,7 +286,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_deleteItems">#</a>
-		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#47-64" title="Go to source code">deleteItems</a>( <span>array <var>$keys</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#46-63" title="Go to source code">deleteItems</a>( <span>array <var>$keys</var></span> )</code>
 
 		<div class="description short">
 			<p>ลบแคชหลายๆรายการ
@@ -311,7 +311,8 @@
 
 				<h4>Throws</h4>
 				<div class="list">
-					invalidArgumentException
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br><p>If any of the keys in $keys are not a legal value a \Psr\Cache\InvalidArgumentException
+  MUST be thrown.</p>
 				</div>
 
 
@@ -331,7 +332,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getItems">#</a>
-		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#66-86" title="Go to source code">getItems</a>( <span>array <var>$keys</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#65-85" title="Go to source code">getItems</a>( <span>array <var>$keys</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			<p>อ่านแคชหลายรายการ.</p>
@@ -354,7 +355,8 @@
 
 				<h4>Throws</h4>
 				<div class="list">
-					invalidArgumentException
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br><p>If any of the keys in $keys are not a legal value a \Psr\Cache\InvalidArgumentException
+  MUST be thrown.</p>
 				</div>
 
 
@@ -374,7 +376,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_hasItem">#</a>
-		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#88-99" title="Go to source code">hasItem</a>( <span>string <var>$key</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#87-98" title="Go to source code">hasItem</a>( <span>string <var>$key</var></span> )</code>
 
 		<div class="description short">
 			<p>ตรวจสอบแคช
@@ -399,7 +401,8 @@
 
 				<h4>Throws</h4>
 				<div class="list">
-					invalidArgumentException
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br><p>If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
+  MUST be thrown.</p>
 				</div>
 
 
@@ -419,7 +422,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save">#</a>
-		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#101-114" title="Go to source code">save</a>( <span><code><a href="class-Psr.Cache.CacheItemInterface.html">Psr\Cache\CacheItemInterface</a></code> <var>$item</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Cache.ApcCache.html#100-113" title="Go to source code">save</a>( <span><code><a href="class-Psr.Cache.CacheItemInterface.html">Psr\Cache\CacheItemInterface</a></code> <var>$item</var></span> )</code>
 
 		<div class="description short">
 			<p>บันทึกแคช

@@ -181,7 +181,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Database.Sql.html#13-816" title="Go to source code">Kotchasan/Database/Sql.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Database.Sql.html#13-836" title="Go to source code">Kotchasan/Database/Sql.php</a>
 		<br>
 	</div>
 
@@ -201,7 +201,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_AVG">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#36-50" title="Go to source code">AVG</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$distinct</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#35-49" title="Go to source code">AVG</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$distinct</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			<p>หาค่าเฉลี่ยของคอลัมน์ที่เลือก</p>
@@ -248,7 +248,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_BETWEEN">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#52-67" title="Go to source code">BETWEEN</a>( <span>string <var>$column_name1</var></span>, <span>string <var>$column_name2</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#51-68" title="Go to source code">BETWEEN</a>( <span>string <var>$column_name</var></span>, <span>string <var>$min</var></span>, <span>string <var>$max</var></span> )</code>
 
 		<div class="description short">
 			<p>สร้างคำสั่ง BETWEEN ... AND ...</p>
@@ -260,9 +260,11 @@
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$column_name1</var></dt>
+					<dt><var>$column_name</var></dt>
 					<dd></dd>
-					<dt><var>$column_name2</var></dt>
+					<dt><var>$min</var></dt>
+					<dd></dd>
+					<dt><var>$max</var></dt>
 					<dd></dd>
 				</dl></div>
 
@@ -274,9 +276,10 @@
 
 				<h4>Assert</h4>
 				<div class="list">
-						('create_date', 'U.create_date')->text() [==] "BETWEEN <code>create_date</code> AND U.<code>create_date</code>"<br>
-						('table_name.field_name', 'U.<code>create_date</code>')->text() [==] "BETWEEN <code>table_name</code>.<code>field_name</code> AND U.<code>create_date</code>"<br>
-						('<code>database</code>.<code>table</code>', '12-1-1')->text() [==] "BETWEEN <code>database</code>.<code>table</code> AND '12-1-1'"<br>
+						('create_date', 'create_date', 'U.create_date')->text() [==] "<code>create_date</code> BETWEEN <code>create_date</code> AND U.<code>create_date</code>"<br>
+						('create_date', 'table_name.field_name', 'U.<code>create_date</code>')->text() [==] "<code>create_date</code> BETWEEN <code>table_name</code>.<code>field_name</code> AND U.<code>create_date</code>"<br>
+						('create_date', '<code>database</code>.<code>table</code>', '12-1-1')->text() [==] "<code>create_date</code> BETWEEN <code>database</code>.<code>table</code> AND '12-1-1'"<br>
+						('create_date', 0, 1)->text() [==] "<code>create_date</code> BETWEEN 0 AND 1"<br>
 				</div>
 
 
@@ -295,7 +298,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_CONCAT">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#69-96" title="Go to source code">CONCAT</a>( <span>array <var>$fields</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$separator</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#70-97" title="Go to source code">CONCAT</a>( <span>array <var>$fields</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$separator</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>สร้างคำสั่ง CONCAT หรือ CONCAT_WS.</p>
@@ -348,7 +351,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_COUNT">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#98-114" title="Go to source code">COUNT</a>( <span>string <var>$column_name</var> = <span class="php-quote">'*'</span></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$distinct</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#99-115" title="Go to source code">COUNT</a>( <span>string <var>$column_name</var> = <span class="php-quote">'*'</span></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$distinct</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			<p>นับจำนวนเร็คคอร์ดของคอลัมน์ที่เลือก</p>
@@ -395,7 +398,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_DATE">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#116-130" title="Go to source code">DATE</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#117-131" title="Go to source code">DATE</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>แยกวันที่ออกจากคอลัมน์ชนิด DATETIME.</p>
@@ -441,7 +444,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_DATEDIFF">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#132-147" title="Go to source code">DATEDIFF</a>( <span>string <var>$column_name1</var></span>, <span>string <var>$column_name2</var></span>, <span>string <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#133-148" title="Go to source code">DATEDIFF</a>( <span>string <var>$column_name1</var></span>, <span>string <var>$column_name2</var></span>, <span>string <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>หาความแตกต่างระหว่างวัน (คืนค่าเป็นจำนวนวันที่แตกต่างกัน).</p>
@@ -489,7 +492,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_DATE_FORMAT">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#149-164" title="Go to source code">DATE_FORMAT</a>( <span>string <var>$column_name</var></span>, <span>string <var>$format</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#150-165" title="Go to source code">DATE_FORMAT</a>( <span>string <var>$column_name</var></span>, <span>string <var>$format</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>จัดรูปแบบของวันที่ตอนแสดงผล.</p>
@@ -537,7 +540,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_DAY">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#166-180" title="Go to source code">DAY</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#167-181" title="Go to source code">DAY</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>แยกวันที่ออกจากคอลัมน์ชนิด DATE DATETIME.</p>
@@ -583,7 +586,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_DISTINCT">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#182-194" title="Go to source code">DISTINCT</a>( <span>string <var>$column_name</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#183-195" title="Go to source code">DISTINCT</a>( <span>string <var>$column_name</var></span> )</code>
 
 		<div class="description short">
 			<p>คืนค่าข้ออมูลที่ไม่ซ้ำกัน.</p>
@@ -626,7 +629,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_FORMAT">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#196-211" title="Go to source code">FORMAT</a>( <span>string <var>$column_name</var></span>, <span>string <var>$format</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#197-212" title="Go to source code">FORMAT</a>( <span>string <var>$column_name</var></span>, <span>string <var>$format</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>จัดรูปแบบของคอลัมน์ตอนแสดงผล.</p>
@@ -674,7 +677,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_GROUP_CONCAT">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#213-241" title="Go to source code">GROUP_CONCAT</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$separator</var> = <span class="php-quote">','</span></span>, <span>boolean <var>$distinct</var> = <span class="php-keyword1">false</span></span>, <span>string|array <var>$order</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#214-242" title="Go to source code">GROUP_CONCAT</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$separator</var> = <span class="php-quote">','</span></span>, <span>boolean <var>$distinct</var> = <span class="php-keyword1">false</span></span>, <span>string|array <var>$order</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>สร้างคำสั่ง GROUP_CONCAT.</p>
@@ -725,7 +728,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_HOUR">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#243-257" title="Go to source code">HOUR</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#244-258" title="Go to source code">HOUR</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>แยกชั่วโมงออกจากคอลัมน์ชนิด DATETIME.</p>
@@ -771,7 +774,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_IFNULL">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#259-274" title="Go to source code">IFNULL</a>( <span>string <var>$column_name1</var></span>, <span>string <var>$column_name2</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#260-275" title="Go to source code">IFNULL</a>( <span>string <var>$column_name1</var></span>, <span>string <var>$column_name2</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสร้างคำสั่ง IFNULL.</p>
@@ -819,7 +822,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ISNOTNULL">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#276-288" title="Go to source code">ISNOTNULL</a>( <span>string <var>$column_name</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#277-289" title="Go to source code">ISNOTNULL</a>( <span>string <var>$column_name</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสร้างคำสั่ง IS NOT NULL.</p>
@@ -862,7 +865,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_ISNULL">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#290-302" title="Go to source code">ISNULL</a>( <span>string <var>$column_name</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#291-303" title="Go to source code">ISNULL</a>( <span>string <var>$column_name</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสร้างคำสั่ง IS NULL.</p>
@@ -905,7 +908,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_MAX">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#304-317" title="Go to source code">MAX</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#305-318" title="Go to source code">MAX</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>หาค่าสูงสุด.</p>
@@ -950,7 +953,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_MIN">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#319-332" title="Go to source code">MIN</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#320-333" title="Go to source code">MIN</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>หาค่าต่ำสุด.</p>
@@ -995,7 +998,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_MINUTE">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#334-348" title="Go to source code">MINUTE</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#335-349" title="Go to source code">MINUTE</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>แยกนาทีออกจากคอลัมน์ชนิด DATETIME.</p>
@@ -1041,7 +1044,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_MONTH">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#350-364" title="Go to source code">MONTH</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#351-365" title="Go to source code">MONTH</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>แยกเดือนออกจากคอลัมน์ชนิด DATE DATETIME.</p>
@@ -1087,7 +1090,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_NEXT">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#366-399" title="Go to source code">NEXT</a>( <span>string <var>$field</var></span>, <span>string <var>$table_name</var></span>, <span>mixed <var>$condition</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$operator</var> = <span class="php-quote">'AND'</span></span>, <span>string <var>$id</var> = <span class="php-quote">'id'</span></span>, <span>string <var>$id</var>,…</span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#367-400" title="Go to source code">NEXT</a>( <span>string <var>$field</var></span>, <span>string <var>$table_name</var></span>, <span>mixed <var>$condition</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$operator</var> = <span class="php-quote">'AND'</span></span>, <span>string <var>$id</var> = <span class="php-quote">'id'</span></span>, <span>string <var>$id</var>,…</span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสร้าง SQL สำหรับหาค่าสูงสุด + 1
@@ -1146,7 +1149,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_NOW">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#401-414" title="Go to source code">NOW</a>( <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#402-415" title="Go to source code">NOW</a>( <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>คืนค่าวันที่และเวลาปัจจุบัน.</p>
@@ -1190,7 +1193,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_POSITION">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#416-434" title="Go to source code">POSITION</a>( <span>string <var>$substr</var></span>, <span>string <var>$str</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$pos</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#417-435" title="Go to source code">POSITION</a>( <span>string <var>$substr</var></span>, <span>string <var>$str</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$pos</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			<p>ค้นหาข้อความ ไม่พบคืนค่า 0, ตัวแรกคือ 1.</p>
@@ -1239,7 +1242,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_RAND">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#436-450" title="Go to source code">RAND</a>( <span>string <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$alias</var>,…</span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#437-451" title="Go to source code">RAND</a>( <span>string <var>$alias</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$alias</var>,…</span> )</code>
 
 		<div class="description short">
 			<p>สุ่มตัวเลข</p>
@@ -1285,7 +1288,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_SECOND">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#452-466" title="Go to source code">SECOND</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#453-467" title="Go to source code">SECOND</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>แยกวินาทีออกจากคอลัมน์ชนิด DATETIME.</p>
@@ -1331,7 +1334,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_SUM">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#468-485" title="Go to source code">SUM</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-quote">''</span></span>, <span>boolean <var>$distinct</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#469-486" title="Go to source code">SUM</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-quote">''</span></span>, <span>boolean <var>$distinct</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			<p>ผลรวมของคอลัมน์ที่เลือก</p>
@@ -1381,7 +1384,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_TIMEDIFF">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#487-502" title="Go to source code">TIMEDIFF</a>( <span>string <var>$column_name1</var></span>, <span>string <var>$column_name2</var></span>, <span>string <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#488-503" title="Go to source code">TIMEDIFF</a>( <span>string <var>$column_name1</var></span>, <span>string <var>$column_name2</var></span>, <span>string <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>หาความแตกต่างระหว่างเวลา (คืนค่าเป็น H:m:i ที่แตกต่างกัน).</p>
@@ -1429,7 +1432,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_WHERE">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#504-541" title="Go to source code">WHERE</a>( <span>mixed <var>$condition</var></span>, <span>string <var>$operator</var> = <span class="php-quote">'AND'</span></span>, <span>string <var>$id</var> = <span class="php-quote">'id'</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#505-542" title="Go to source code">WHERE</a>( <span>mixed <var>$condition</var></span>, <span>string <var>$operator</var> = <span class="php-quote">'AND'</span></span>, <span>string <var>$id</var> = <span class="php-quote">'id'</span></span> )</code>
 
 		<div class="description short">
 			<p>สร้างคำสั่ง WHERE.</p>
@@ -1477,7 +1480,7 @@
 						WHERE(array(array('id', array('', 'th'))))->text() [==] "<code>id</code> IN ('', 'th')"<br>
 						WHERE(array(Sql::YEAR('create_date'), Sql::YEAR('<code>create_date</code>')))->text() [==] "YEAR(<code>create_date</code>) = YEAR(<code>create_date</code>)"<br>
 						WHERE(array('ip', 'NOT IN', array('', '192.168.1.2')))->text() [==] "<code>ip</code> NOT IN ('', '192.168.1.2')"<br>
-						(array(1, 1))->text() [==] "1 = 1"<br>
+						WHERE(array(1, 1))->text() [==] "1 = 1"<br>
 				</div>
 
 
@@ -1496,7 +1499,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_YEAR">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#543-557" title="Go to source code">YEAR</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#544-558" title="Go to source code">YEAR</a>( <span>string <var>$column_name</var></span>, <span>string|null <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>แยกปีออกจากคอลัมน์ชนิด DATE DATETIME.</p>
@@ -1542,7 +1545,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#559-568" title="Go to source code">__construct</a>( <span>string <var>$sql</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#560-569" title="Go to source code">__construct</a>( <span>string <var>$sql</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>class constructer.</p>
@@ -1577,7 +1580,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#570-578" title="Go to source code">create</a>( <span>string <var>$sql</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#571-579" title="Go to source code">create</a>( <span>string <var>$sql</var></span> )</code>
 
 		<div class="description short">
 			<p>สร้าง Object Sql.</p>
@@ -1612,7 +1615,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_fieldName">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#580-630" title="Go to source code">fieldName</a>( <span>string <var>$column_name</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#581-631" title="Go to source code">fieldName</a>( <span>string <var>$column_name</var></span> )</code>
 
 		<div class="description short">
 			<p>ใส่ `` ครอบชื่อคอลัมน์
@@ -1676,7 +1679,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getValues">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#632-649" title="Go to source code">getValues</a>( <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#633-650" title="Go to source code">getValues</a>( <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			<p>คืนค่าแอเร์ยเก็บพารามิเตอร์สำหรับการ bind รวมกับ $values.</p>
@@ -1715,7 +1718,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_quoteValue">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#651-732" title="Go to source code">quoteValue</a>( <span>mixed <var>$column_name</var></span>, <span>array <var>$value</var></span>, <span> <var>&amp; $values</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#652-733" title="Go to source code">quoteValue</a>( <span>mixed <var>$column_name</var></span>, <span>array <var>$value</var></span>, <span> <var>&amp; $values</var></span> )</code>
 
 		<div class="description short">
 			<p>แปลงค่า Value สำหรับใช้ใน query.</p>
@@ -1784,7 +1787,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_strValue">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#734-745" title="Go to source code">strValue</a>( <span>string <var>$value</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#735-746" title="Go to source code">strValue</a>( <span>string <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสำหรับรับค่าเป็นสตริงค์เท่านั้น
@@ -1825,7 +1828,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_text">#</a>
-		<code><a href="source-class-Kotchasan.Database.Sql.html#747-766" title="Go to source code">text</a>( <span>string <var>$key</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.Sql.html#748-767" title="Go to source code">text</a>( <span>string <var>$key</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>คืนค่าคำสั่ง SQL เป็น string
@@ -1901,7 +1904,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.Database.Sql.html#29-34" title="Go to source code"><var>$values</var></a>
+				<a href="source-class-Kotchasan.Database.Sql.html#28-33" title="Go to source code"><var>$values</var></a>
 
 			<div class="description short">
 				<p>ตัวแปรเก็บพารามิเตอร์สำหรับการ bind.</p>

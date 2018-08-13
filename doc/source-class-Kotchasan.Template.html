@@ -407,126 +407,127 @@
 </span><span id="140" class="l"><a href="#140">140: </a>    }
 </span><span id="141" class="l"><a href="#141">141: </a>
 </span><span id="142" class="l"><a href="#142">142: </a>    <span class="php-comment">/**
-</span></span><span id="143" class="l"><a href="#143">143: </a><span class="php-comment">     * ฟังก์ชั่นตรวจสอบว่ามีการ add ข้อมูลมาหรือเปล่า.
-</span></span><span id="144" class="l"><a href="#144">144: </a><span class="php-comment">     *
-</span></span><span id="145" class="l"><a href="#145">145: </a><span class="php-comment">     * @return bool คืนค่า true ถ้ามีการเรียกใช้คำสั่ง add มาก่อนหน้า, หรือ false ถ้าไม่ใช่
-</span></span><span id="146" class="l"><a href="#146">146: </a><span class="php-comment">     */</span>
-</span><span id="147" class="l"><a href="#147">147: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> hasItem()
-</span><span id="148" class="l"><a href="#148">148: </a>    {
-</span><span id="149" class="l"><a href="#149">149: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;items) ? <span class="php-keyword1">false</span> : <span class="php-keyword1">true</span>;
-</span><span id="150" class="l"><a href="#150">150: </a>    }
-</span><span id="151" class="l"><a href="#151">151: </a>
-</span><span id="152" class="l"><a href="#152">152: </a>    <span class="php-comment">/**
-</span></span><span id="153" class="l"><a href="#153">153: </a><span class="php-comment">     * กำหนด template ที่ต้องการ.
-</span></span><span id="154" class="l"><a href="#154">154: </a><span class="php-comment">     *
-</span></span><span id="155" class="l"><a href="#155">155: </a><span class="php-comment">     * @param string $skin ไดเร็คทอรี่ของ template ตั้งแต่ DOCUMENT_ROOT ไม่ต้องมี / ปิดท้าย เช่น skin/default
-</span></span><span id="156" class="l"><a href="#156">156: </a><span class="php-comment">     */</span>
-</span><span id="157" class="l"><a href="#157">157: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> init(<span class="php-var">$skin</span>)
-</span><span id="158" class="l"><a href="#158">158: </a>    {
-</span><span id="159" class="l"><a href="#159">159: </a>        self::<span class="php-var">$src</span> = <span class="php-var">$skin</span> == <span class="php-quote">''</span> ? <span class="php-quote">''</span> : <span class="php-var">$skin</span>.<span class="php-quote">'/'</span>;
-</span><span id="160" class="l"><a href="#160">160: </a>    }
-</span><span id="161" class="l"><a href="#161">161: </a>
-</span><span id="162" class="l"><a href="#162">162: </a>    <span class="php-comment">/**
-</span></span><span id="163" class="l"><a href="#163">163: </a><span class="php-comment">     * ฟังก์ชั่นใส่ HTML ลงใน template ตรงๆ
-</span></span><span id="164" class="l"><a href="#164">164: </a><span class="php-comment">     * ใช้สำหรับแทรก HTML ลงระหว่างแต่ละรายการ.
-</span></span><span id="165" class="l"><a href="#165">165: </a><span class="php-comment">     *
-</span></span><span id="166" class="l"><a href="#166">166: </a><span class="php-comment">     * @param string $html โค้ด HTML
-</span></span><span id="167" class="l"><a href="#167">167: </a><span class="php-comment">     *
-</span></span><span id="168" class="l"><a href="#168">168: </a><span class="php-comment">     * @return \static
-</span></span><span id="169" class="l"><a href="#169">169: </a><span class="php-comment">     */</span>
-</span><span id="170" class="l"><a href="#170">170: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> insertHTML(<span class="php-var">$html</span>)
-</span><span id="171" class="l"><a href="#171">171: </a>    {
-</span><span id="172" class="l"><a href="#172">172: </a>        <span class="php-var">$this</span>-&gt;items[] = <span class="php-var">$html</span>;
-</span><span id="173" class="l"><a href="#173">173: </a>
-</span><span id="174" class="l"><a href="#174">174: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
-</span><span id="175" class="l"><a href="#175">175: </a>    }
-</span><span id="176" class="l"><a href="#176">176: </a>
-</span><span id="177" class="l"><a href="#177">177: </a>    <span class="php-comment">/**
-</span></span><span id="178" class="l"><a href="#178">178: </a><span class="php-comment">     * ตรวจสอบว่ามีไฟล์ Template ถูกเลือกหรือไม่
-</span></span><span id="179" class="l"><a href="#179">179: </a><span class="php-comment">     * คืนค่า true ถ้าไม่พบไฟล์ Template หรือ Template ว่างเปล่า, อื่นๆคืนค่า False.
-</span></span><span id="180" class="l"><a href="#180">180: </a><span class="php-comment">     *
-</span></span><span id="181" class="l"><a href="#181">181: </a><span class="php-comment">     * @return bool
-</span></span><span id="182" class="l"><a href="#182">182: </a><span class="php-comment">     */</span>
-</span><span id="183" class="l"><a href="#183">183: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> isEmpty()
-</span><span id="184" class="l"><a href="#184">184: </a>    {
-</span><span id="185" class="l"><a href="#185">185: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;skin == <span class="php-quote">''</span>;
-</span><span id="186" class="l"><a href="#186">186: </a>    }
-</span><span id="187" class="l"><a href="#187">187: </a>
-</span><span id="188" class="l"><a href="#188">188: </a>    <span class="php-comment">/**
-</span></span><span id="189" class="l"><a href="#189">189: </a><span class="php-comment">     * โหลด template
-</span></span><span id="190" class="l"><a href="#190">190: </a><span class="php-comment">     * ครั้งแรกจะตรวจสอบไฟล์จาก $module ถ้าไม่พบ จะใช้ไฟล์จาก $owner
-</span></span><span id="191" class="l"><a href="#191">191: </a><span class="php-comment">     * ถ้าไม่พบคืนค่าว่าง.
-</span></span><span id="192" class="l"><a href="#192">192: </a><span class="php-comment">     *
-</span></span><span id="193" class="l"><a href="#193">193: </a><span class="php-comment">     * @param string $owner  ชื่อโมดูลที่ติดตั้ง
-</span></span><span id="194" class="l"><a href="#194">194: </a><span class="php-comment">     * @param string $module ชื่อโมดูลที่ลงทะเบียน
-</span></span><span id="195" class="l"><a href="#195">195: </a><span class="php-comment">     * @param string $name   ชื่อ template ไม่ต้องระบุนามสกุลของไฟล์
-</span></span><span id="196" class="l"><a href="#196">196: </a><span class="php-comment">     *
-</span></span><span id="197" class="l"><a href="#197">197: </a><span class="php-comment">     * @return string
-</span></span><span id="198" class="l"><a href="#198">198: </a><span class="php-comment">     */</span>
-</span><span id="199" class="l"><a href="#199">199: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> load(<span class="php-var">$owner</span>, <span class="php-var">$module</span>, <span class="php-var">$name</span>)
-</span><span id="200" class="l"><a href="#200">200: </a>    {
-</span><span id="201" class="l"><a href="#201">201: </a>        <span class="php-var">$src</span> = APP_PATH.self::<span class="php-var">$src</span>;
-</span><span id="202" class="l"><a href="#202">202: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$module</span> != <span class="php-quote">''</span> &amp;&amp; <span class="php-keyword2">is_file</span>(<span class="php-var">$src</span>.<span class="php-var">$module</span>.<span class="php-quote">'/'</span>.<span class="php-var">$name</span>.<span class="php-quote">'.html'</span>)) {
-</span><span id="203" class="l"><a href="#203">203: </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">file_get_contents</span>(<span class="php-var">$src</span>.<span class="php-var">$module</span>.<span class="php-quote">'/'</span>.<span class="php-var">$name</span>.<span class="php-quote">'.html'</span>);
-</span><span id="204" class="l"><a href="#204">204: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$owner</span> != <span class="php-quote">''</span> &amp;&amp; <span class="php-keyword2">is_file</span>(<span class="php-var">$src</span>.<span class="php-var">$owner</span>.<span class="php-quote">'/'</span>.<span class="php-var">$name</span>.<span class="php-quote">'.html'</span>)) {
-</span><span id="205" class="l"><a href="#205">205: </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">file_get_contents</span>(<span class="php-var">$src</span>.<span class="php-var">$owner</span>.<span class="php-quote">'/'</span>.<span class="php-var">$name</span>.<span class="php-quote">'.html'</span>);
-</span><span id="206" class="l"><a href="#206">206: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">is_file</span>(<span class="php-var">$src</span>.<span class="php-var">$name</span>.<span class="php-quote">'.html'</span>)) {
-</span><span id="207" class="l"><a href="#207">207: </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">file_get_contents</span>(<span class="php-var">$src</span>.<span class="php-var">$name</span>.<span class="php-quote">'.html'</span>);
-</span><span id="208" class="l"><a href="#208">208: </a>        }
-</span><span id="209" class="l"><a href="#209">209: </a>
-</span><span id="210" class="l"><a href="#210">210: </a>        <span class="php-keyword1">return</span> <span class="php-quote">''</span>;
-</span><span id="211" class="l"><a href="#211">211: </a>    }
-</span><span id="212" class="l"><a href="#212">212: </a>
-</span><span id="213" class="l"><a href="#213">213: </a>    <span class="php-comment">/**
-</span></span><span id="214" class="l"><a href="#214">214: </a><span class="php-comment">     * ฟังก์ชั่น preg_replace รองรับถึง PHP7.
-</span></span><span id="215" class="l"><a href="#215">215: </a><span class="php-comment">     *
-</span></span><span id="216" class="l"><a href="#216">216: </a><span class="php-comment">     * @assert ('/{TITLE}/', 'Title', '&lt;b&gt;{TITLE}&lt;/b&gt;') [==] '&lt;b&gt;Title&lt;/b&gt;'
-</span></span><span id="217" class="l"><a href="#217">217: </a><span class="php-comment">     * @assert ('/{LNG_([\w\s\.\-\'\(\),%\/:&amp;\#;]+)}/e', '\Kotchasan\Language::parse(array(1=&gt;&quot;$1&quot;))', '&lt;b&gt;{LNG_Language test}&lt;/b&gt;') [==] '&lt;b&gt;Language test&lt;/b&gt;'
-</span></span><span id="218" class="l"><a href="#218">218: </a><span class="php-comment">     *
-</span></span><span id="219" class="l"><a href="#219">219: </a><span class="php-comment">     * @param array  $patt    คีย์ใน template
-</span></span><span id="220" class="l"><a href="#220">220: </a><span class="php-comment">     * @param array  $replace ข้อความที่จะถูกแทนที่ลงในคีย์
-</span></span><span id="221" class="l"><a href="#221">221: </a><span class="php-comment">     * @param string $skin    template
-</span></span><span id="222" class="l"><a href="#222">222: </a><span class="php-comment">     *
-</span></span><span id="223" class="l"><a href="#223">223: </a><span class="php-comment">     * @return string
-</span></span><span id="224" class="l"><a href="#224">224: </a><span class="php-comment">     */</span>
-</span><span id="225" class="l"><a href="#225">225: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> pregReplace(<span class="php-var">$patt</span>, <span class="php-var">$replace</span>, <span class="php-var">$skin</span>)
-</span><span id="226" class="l"><a href="#226">226: </a>    {
-</span><span id="227" class="l"><a href="#227">227: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword2">is_array</span>(<span class="php-var">$patt</span>)) {
-</span><span id="228" class="l"><a href="#228">228: </a>            <span class="php-var">$patt</span> = <span class="php-keyword1">array</span>(<span class="php-var">$patt</span>);
-</span><span id="229" class="l"><a href="#229">229: </a>        }
-</span><span id="230" class="l"><a href="#230">230: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword2">is_array</span>(<span class="php-var">$replace</span>)) {
-</span><span id="231" class="l"><a href="#231">231: </a>            <span class="php-var">$replace</span> = <span class="php-keyword1">array</span>(<span class="php-var">$replace</span>);
-</span><span id="232" class="l"><a href="#232">232: </a>        }
-</span><span id="233" class="l"><a href="#233">233: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$patt</span> <span class="php-keyword1">as</span> <span class="php-var">$i</span> =&gt; <span class="php-var">$item</span>) {
-</span><span id="234" class="l"><a href="#234">234: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/(.*\/(.*?))[e](.*?)$/'</span>, <span class="php-var">$item</span>, <span class="php-var">$patt</span>) &amp;&amp; <span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^([\\\\a-z0-9]+)::([a-z0-9_\\\\]+).*/i'</span>, <span class="php-var">$replace</span>[<span class="php-var">$i</span>], <span class="php-var">$func</span>)) {
-</span><span id="235" class="l"><a href="#235">235: </a>                <span class="php-var">$skin</span> = <span class="php-keyword2">preg_replace_callback</span>(<span class="php-var">$patt</span>[<span class="php-num">1</span>].<span class="php-var">$patt</span>[<span class="php-num">3</span>], <span class="php-keyword1">array</span>(<span class="php-var">$func</span>[<span class="php-num">1</span>], <span class="php-var">$func</span>[<span class="php-num">2</span>]), <span class="php-var">$skin</span>);
-</span><span id="236" class="l"><a href="#236">236: </a>            } <span class="php-keyword1">else</span> {
-</span><span id="237" class="l"><a href="#237">237: </a>                <span class="php-var">$skin</span> = <span class="php-keyword2">preg_replace</span>(<span class="php-var">$item</span>, <span class="php-var">$replace</span>[<span class="php-var">$i</span>], <span class="php-var">$skin</span>);
-</span><span id="238" class="l"><a href="#238">238: </a>            }
-</span><span id="239" class="l"><a href="#239">239: </a>        }
-</span><span id="240" class="l"><a href="#240">240: </a>
-</span><span id="241" class="l"><a href="#241">241: </a>        <span class="php-keyword1">return</span> <span class="php-var">$skin</span>;
-</span><span id="242" class="l"><a href="#242">242: </a>    }
-</span><span id="243" class="l"><a href="#243">243: </a>
-</span><span id="244" class="l"><a href="#244">244: </a>    <span class="php-comment">/**
-</span></span><span id="245" class="l"><a href="#245">245: </a><span class="php-comment">     * คืนค่า HTML.
-</span></span><span id="246" class="l"><a href="#246">246: </a><span class="php-comment">     *
-</span></span><span id="247" class="l"><a href="#247">247: </a><span class="php-comment">     * @return string
-</span></span><span id="248" class="l"><a href="#248">248: </a><span class="php-comment">     */</span>
-</span><span id="249" class="l"><a href="#249">249: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> render()
-</span><span id="250" class="l"><a href="#250">250: </a>    {
-</span><span id="251" class="l"><a href="#251">251: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;cols === <span class="php-num">0</span>) {
-</span><span id="252" class="l"><a href="#252">252: </a>            <span class="php-comment">// template</span>
-</span><span id="253" class="l"><a href="#253">253: </a>            <span class="php-keyword1">return</span> <span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;items) ? <span class="php-var">$this</span>-&gt;skin : <span class="php-keyword2">implode</span>(<span class="php-quote">&quot;\n&quot;</span>, <span class="php-var">$this</span>-&gt;items);
-</span><span id="254" class="l"><a href="#254">254: </a>        } <span class="php-keyword1">elseif</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;items)) {
-</span><span id="255" class="l"><a href="#255">255: </a>            <span class="php-comment">// grid</span>
-</span><span id="256" class="l"><a href="#256">256: </a>            <span class="php-keyword1">return</span> <span class="php-quote">&quot;&lt;div class=row&gt;\n&quot;</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">&quot;\n&quot;</span>, <span class="php-var">$this</span>-&gt;items).<span class="php-quote">&quot;\n&lt;/div&gt;&quot;</span>;
-</span><span id="257" class="l"><a href="#257">257: </a>        }
-</span><span id="258" class="l"><a href="#258">258: </a>
-</span><span id="259" class="l"><a href="#259">259: </a>        <span class="php-keyword1">return</span> <span class="php-quote">''</span>;
-</span><span id="260" class="l"><a href="#260">260: </a>    }
-</span><span id="261" class="l"><a href="#261">261: </a>}
-</span><span id="262" class="l"><a href="#262">262: </a></span></code></pre>
+</span></span><span id="143" class="l"><a href="#143">143: </a><span class="php-comment">     * ฟังก์ชั่นตรวจสอบว่ามีการ add ข้อมูลมาหรือเปล่า
+</span></span><span id="144" class="l"><a href="#144">144: </a><span class="php-comment">     * คืนค่า true ถ้ามีการเรียกใช้คำสั่ง add มาก่อนหน้า, หรือ false ถ้าไม่ใช่.
+</span></span><span id="145" class="l"><a href="#145">145: </a><span class="php-comment">     *
+</span></span><span id="146" class="l"><a href="#146">146: </a><span class="php-comment">     * @return bool
+</span></span><span id="147" class="l"><a href="#147">147: </a><span class="php-comment">     */</span>
+</span><span id="148" class="l"><a href="#148">148: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> hasItem()
+</span><span id="149" class="l"><a href="#149">149: </a>    {
+</span><span id="150" class="l"><a href="#150">150: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;items) ? <span class="php-keyword1">false</span> : <span class="php-keyword1">true</span>;
+</span><span id="151" class="l"><a href="#151">151: </a>    }
+</span><span id="152" class="l"><a href="#152">152: </a>
+</span><span id="153" class="l"><a href="#153">153: </a>    <span class="php-comment">/**
+</span></span><span id="154" class="l"><a href="#154">154: </a><span class="php-comment">     * กำหนด template ที่ต้องการ.
+</span></span><span id="155" class="l"><a href="#155">155: </a><span class="php-comment">     *
+</span></span><span id="156" class="l"><a href="#156">156: </a><span class="php-comment">     * @param string $skin ไดเร็คทอรี่ของ template ตั้งแต่ DOCUMENT_ROOT ไม่ต้องมี / ปิดท้าย เช่น skin/default
+</span></span><span id="157" class="l"><a href="#157">157: </a><span class="php-comment">     */</span>
+</span><span id="158" class="l"><a href="#158">158: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> init(<span class="php-var">$skin</span>)
+</span><span id="159" class="l"><a href="#159">159: </a>    {
+</span><span id="160" class="l"><a href="#160">160: </a>        self::<span class="php-var">$src</span> = <span class="php-var">$skin</span> == <span class="php-quote">''</span> ? <span class="php-quote">''</span> : <span class="php-var">$skin</span>.<span class="php-quote">'/'</span>;
+</span><span id="161" class="l"><a href="#161">161: </a>    }
+</span><span id="162" class="l"><a href="#162">162: </a>
+</span><span id="163" class="l"><a href="#163">163: </a>    <span class="php-comment">/**
+</span></span><span id="164" class="l"><a href="#164">164: </a><span class="php-comment">     * ฟังก์ชั่นใส่ HTML ลงใน template ตรงๆ
+</span></span><span id="165" class="l"><a href="#165">165: </a><span class="php-comment">     * ใช้สำหรับแทรก HTML ลงระหว่างแต่ละรายการ.
+</span></span><span id="166" class="l"><a href="#166">166: </a><span class="php-comment">     *
+</span></span><span id="167" class="l"><a href="#167">167: </a><span class="php-comment">     * @param string $html โค้ด HTML
+</span></span><span id="168" class="l"><a href="#168">168: </a><span class="php-comment">     *
+</span></span><span id="169" class="l"><a href="#169">169: </a><span class="php-comment">     * @return \static
+</span></span><span id="170" class="l"><a href="#170">170: </a><span class="php-comment">     */</span>
+</span><span id="171" class="l"><a href="#171">171: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> insertHTML(<span class="php-var">$html</span>)
+</span><span id="172" class="l"><a href="#172">172: </a>    {
+</span><span id="173" class="l"><a href="#173">173: </a>        <span class="php-var">$this</span>-&gt;items[] = <span class="php-var">$html</span>;
+</span><span id="174" class="l"><a href="#174">174: </a>
+</span><span id="175" class="l"><a href="#175">175: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
+</span><span id="176" class="l"><a href="#176">176: </a>    }
+</span><span id="177" class="l"><a href="#177">177: </a>
+</span><span id="178" class="l"><a href="#178">178: </a>    <span class="php-comment">/**
+</span></span><span id="179" class="l"><a href="#179">179: </a><span class="php-comment">     * ตรวจสอบว่ามีไฟล์ Template ถูกเลือกหรือไม่
+</span></span><span id="180" class="l"><a href="#180">180: </a><span class="php-comment">     * คืนค่า true ถ้าไม่พบไฟล์ Template หรือ Template ว่างเปล่า, อื่นๆคืนค่า False.
+</span></span><span id="181" class="l"><a href="#181">181: </a><span class="php-comment">     *
+</span></span><span id="182" class="l"><a href="#182">182: </a><span class="php-comment">     * @return bool
+</span></span><span id="183" class="l"><a href="#183">183: </a><span class="php-comment">     */</span>
+</span><span id="184" class="l"><a href="#184">184: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> isEmpty()
+</span><span id="185" class="l"><a href="#185">185: </a>    {
+</span><span id="186" class="l"><a href="#186">186: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;skin == <span class="php-quote">''</span>;
+</span><span id="187" class="l"><a href="#187">187: </a>    }
+</span><span id="188" class="l"><a href="#188">188: </a>
+</span><span id="189" class="l"><a href="#189">189: </a>    <span class="php-comment">/**
+</span></span><span id="190" class="l"><a href="#190">190: </a><span class="php-comment">     * โหลด template
+</span></span><span id="191" class="l"><a href="#191">191: </a><span class="php-comment">     * ครั้งแรกจะตรวจสอบไฟล์จาก $module ถ้าไม่พบ จะใช้ไฟล์จาก $owner
+</span></span><span id="192" class="l"><a href="#192">192: </a><span class="php-comment">     * ถ้าไม่พบคืนค่าว่าง.
+</span></span><span id="193" class="l"><a href="#193">193: </a><span class="php-comment">     *
+</span></span><span id="194" class="l"><a href="#194">194: </a><span class="php-comment">     * @param string $owner  ชื่อโมดูลที่ติดตั้ง
+</span></span><span id="195" class="l"><a href="#195">195: </a><span class="php-comment">     * @param string $module ชื่อโมดูลที่ลงทะเบียน
+</span></span><span id="196" class="l"><a href="#196">196: </a><span class="php-comment">     * @param string $name   ชื่อ template ไม่ต้องระบุนามสกุลของไฟล์
+</span></span><span id="197" class="l"><a href="#197">197: </a><span class="php-comment">     *
+</span></span><span id="198" class="l"><a href="#198">198: </a><span class="php-comment">     * @return string
+</span></span><span id="199" class="l"><a href="#199">199: </a><span class="php-comment">     */</span>
+</span><span id="200" class="l"><a href="#200">200: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> load(<span class="php-var">$owner</span>, <span class="php-var">$module</span>, <span class="php-var">$name</span>)
+</span><span id="201" class="l"><a href="#201">201: </a>    {
+</span><span id="202" class="l"><a href="#202">202: </a>        <span class="php-var">$src</span> = APP_PATH.self::<span class="php-var">$src</span>;
+</span><span id="203" class="l"><a href="#203">203: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$module</span> != <span class="php-quote">''</span> &amp;&amp; <span class="php-keyword2">is_file</span>(<span class="php-var">$src</span>.<span class="php-var">$module</span>.<span class="php-quote">'/'</span>.<span class="php-var">$name</span>.<span class="php-quote">'.html'</span>)) {
+</span><span id="204" class="l"><a href="#204">204: </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">file_get_contents</span>(<span class="php-var">$src</span>.<span class="php-var">$module</span>.<span class="php-quote">'/'</span>.<span class="php-var">$name</span>.<span class="php-quote">'.html'</span>);
+</span><span id="205" class="l"><a href="#205">205: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$owner</span> != <span class="php-quote">''</span> &amp;&amp; <span class="php-keyword2">is_file</span>(<span class="php-var">$src</span>.<span class="php-var">$owner</span>.<span class="php-quote">'/'</span>.<span class="php-var">$name</span>.<span class="php-quote">'.html'</span>)) {
+</span><span id="206" class="l"><a href="#206">206: </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">file_get_contents</span>(<span class="php-var">$src</span>.<span class="php-var">$owner</span>.<span class="php-quote">'/'</span>.<span class="php-var">$name</span>.<span class="php-quote">'.html'</span>);
+</span><span id="207" class="l"><a href="#207">207: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">is_file</span>(<span class="php-var">$src</span>.<span class="php-var">$name</span>.<span class="php-quote">'.html'</span>)) {
+</span><span id="208" class="l"><a href="#208">208: </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">file_get_contents</span>(<span class="php-var">$src</span>.<span class="php-var">$name</span>.<span class="php-quote">'.html'</span>);
+</span><span id="209" class="l"><a href="#209">209: </a>        }
+</span><span id="210" class="l"><a href="#210">210: </a>
+</span><span id="211" class="l"><a href="#211">211: </a>        <span class="php-keyword1">return</span> <span class="php-quote">''</span>;
+</span><span id="212" class="l"><a href="#212">212: </a>    }
+</span><span id="213" class="l"><a href="#213">213: </a>
+</span><span id="214" class="l"><a href="#214">214: </a>    <span class="php-comment">/**
+</span></span><span id="215" class="l"><a href="#215">215: </a><span class="php-comment">     * ฟังก์ชั่น preg_replace รองรับถึง PHP7.
+</span></span><span id="216" class="l"><a href="#216">216: </a><span class="php-comment">     *
+</span></span><span id="217" class="l"><a href="#217">217: </a><span class="php-comment">     * @assert ('/{TITLE}/', 'Title', '&lt;b&gt;{TITLE}&lt;/b&gt;') [==] '&lt;b&gt;Title&lt;/b&gt;'
+</span></span><span id="218" class="l"><a href="#218">218: </a><span class="php-comment">     * @assert ('/{LNG_([\w\s\.\-\'\(\),%\/:&amp;\#;]+)}/e', '\Kotchasan\Language::parse(array(1=&gt;&quot;$1&quot;))', '&lt;b&gt;{LNG_Language test}&lt;/b&gt;') [==] '&lt;b&gt;Language test&lt;/b&gt;'
+</span></span><span id="219" class="l"><a href="#219">219: </a><span class="php-comment">     *
+</span></span><span id="220" class="l"><a href="#220">220: </a><span class="php-comment">     * @param array  $patt    คีย์ใน template
+</span></span><span id="221" class="l"><a href="#221">221: </a><span class="php-comment">     * @param array  $replace ข้อความที่จะถูกแทนที่ลงในคีย์
+</span></span><span id="222" class="l"><a href="#222">222: </a><span class="php-comment">     * @param string $skin    template
+</span></span><span id="223" class="l"><a href="#223">223: </a><span class="php-comment">     *
+</span></span><span id="224" class="l"><a href="#224">224: </a><span class="php-comment">     * @return string
+</span></span><span id="225" class="l"><a href="#225">225: </a><span class="php-comment">     */</span>
+</span><span id="226" class="l"><a href="#226">226: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> pregReplace(<span class="php-var">$patt</span>, <span class="php-var">$replace</span>, <span class="php-var">$skin</span>)
+</span><span id="227" class="l"><a href="#227">227: </a>    {
+</span><span id="228" class="l"><a href="#228">228: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword2">is_array</span>(<span class="php-var">$patt</span>)) {
+</span><span id="229" class="l"><a href="#229">229: </a>            <span class="php-var">$patt</span> = <span class="php-keyword1">array</span>(<span class="php-var">$patt</span>);
+</span><span id="230" class="l"><a href="#230">230: </a>        }
+</span><span id="231" class="l"><a href="#231">231: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword2">is_array</span>(<span class="php-var">$replace</span>)) {
+</span><span id="232" class="l"><a href="#232">232: </a>            <span class="php-var">$replace</span> = <span class="php-keyword1">array</span>(<span class="php-var">$replace</span>);
+</span><span id="233" class="l"><a href="#233">233: </a>        }
+</span><span id="234" class="l"><a href="#234">234: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$patt</span> <span class="php-keyword1">as</span> <span class="php-var">$i</span> =&gt; <span class="php-var">$item</span>) {
+</span><span id="235" class="l"><a href="#235">235: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/(.*\/(.*?))[e](.*?)$/'</span>, <span class="php-var">$item</span>, <span class="php-var">$patt</span>) &amp;&amp; <span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^([\\\\a-z0-9]+)::([a-z0-9_\\\\]+).*/i'</span>, <span class="php-var">$replace</span>[<span class="php-var">$i</span>], <span class="php-var">$func</span>)) {
+</span><span id="236" class="l"><a href="#236">236: </a>                <span class="php-var">$skin</span> = <span class="php-keyword2">preg_replace_callback</span>(<span class="php-var">$patt</span>[<span class="php-num">1</span>].<span class="php-var">$patt</span>[<span class="php-num">3</span>], <span class="php-keyword1">array</span>(<span class="php-var">$func</span>[<span class="php-num">1</span>], <span class="php-var">$func</span>[<span class="php-num">2</span>]), <span class="php-var">$skin</span>);
+</span><span id="237" class="l"><a href="#237">237: </a>            } <span class="php-keyword1">else</span> {
+</span><span id="238" class="l"><a href="#238">238: </a>                <span class="php-var">$skin</span> = <span class="php-keyword2">preg_replace</span>(<span class="php-var">$item</span>, <span class="php-var">$replace</span>[<span class="php-var">$i</span>], <span class="php-var">$skin</span>);
+</span><span id="239" class="l"><a href="#239">239: </a>            }
+</span><span id="240" class="l"><a href="#240">240: </a>        }
+</span><span id="241" class="l"><a href="#241">241: </a>
+</span><span id="242" class="l"><a href="#242">242: </a>        <span class="php-keyword1">return</span> <span class="php-var">$skin</span>;
+</span><span id="243" class="l"><a href="#243">243: </a>    }
+</span><span id="244" class="l"><a href="#244">244: </a>
+</span><span id="245" class="l"><a href="#245">245: </a>    <span class="php-comment">/**
+</span></span><span id="246" class="l"><a href="#246">246: </a><span class="php-comment">     * คืนค่า HTML ถ้าไม่พบ template คืนค่าว่าง.
+</span></span><span id="247" class="l"><a href="#247">247: </a><span class="php-comment">     *
+</span></span><span id="248" class="l"><a href="#248">248: </a><span class="php-comment">     * @return string
+</span></span><span id="249" class="l"><a href="#249">249: </a><span class="php-comment">     */</span>
+</span><span id="250" class="l"><a href="#250">250: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> render()
+</span><span id="251" class="l"><a href="#251">251: </a>    {
+</span><span id="252" class="l"><a href="#252">252: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;cols === <span class="php-num">0</span>) {
+</span><span id="253" class="l"><a href="#253">253: </a>            <span class="php-comment">// template</span>
+</span><span id="254" class="l"><a href="#254">254: </a>            <span class="php-keyword1">return</span> <span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;items) ? <span class="php-var">$this</span>-&gt;skin : <span class="php-keyword2">implode</span>(<span class="php-quote">&quot;\n&quot;</span>, <span class="php-var">$this</span>-&gt;items);
+</span><span id="255" class="l"><a href="#255">255: </a>        } <span class="php-keyword1">elseif</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;items)) {
+</span><span id="256" class="l"><a href="#256">256: </a>            <span class="php-comment">// grid</span>
+</span><span id="257" class="l"><a href="#257">257: </a>            <span class="php-keyword1">return</span> <span class="php-quote">&quot;&lt;div class=row&gt;\n&quot;</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">&quot;\n&quot;</span>, <span class="php-var">$this</span>-&gt;items).<span class="php-quote">&quot;\n&lt;/div&gt;&quot;</span>;
+</span><span id="258" class="l"><a href="#258">258: </a>        }
+</span><span id="259" class="l"><a href="#259">259: </a>
+</span><span id="260" class="l"><a href="#260">260: </a>        <span class="php-keyword1">return</span> <span class="php-quote">''</span>;
+</span><span id="261" class="l"><a href="#261">261: </a>    }
+</span><span id="262" class="l"><a href="#262">262: </a>}
+</span><span id="263" class="l"><a href="#263">263: </a></span></code></pre>
 
 	<div id="footer">
 		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>

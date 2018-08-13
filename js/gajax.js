@@ -1,5 +1,5 @@
 /**
- * Javascript Libraly for Kotchasan Framework
+ * Javascript Library for Kotchasan Framework
  *
  * @filesource js/gajax.js
  * @link http://www.kotchasan.com/
@@ -345,6 +345,21 @@ window.$K = (function() {
       return val;
     }
   };
+  window.debug = function(val) {
+    var p = document.createElement("p"),
+      div = $E("gdebug");
+    if (!div) {
+      div = document.createElement("div");
+      div.id = "gdebug";
+      document.body.appendChild(div);
+      div.style.cssText =
+        "left:0;bottom:0;width:100%;height:100px;color:#F00;background-color:#FFF;position:fixed;line-height:1;padding:10px;overflow:auto;";
+    }
+    p.style.cssText = "margin:0;";
+    p.innerText = val;
+    div.appendChild(p);
+    div.scrollTop = div.scrollHeight;
+  };
   Function.prototype.bind = function(o) {
     var __method = this;
     return function() {
@@ -377,6 +392,8 @@ window.$K = (function() {
         return (this.getMonth() + 1).toString().leftPad(2, "0");
       case "M":
         return Date.monthNames[this.getMonth()];
+      case "F":
+        return Date.longMonthNames[this.getMonth()];
       case "H":
         return this.getHours()
           .toString()
@@ -453,13 +470,13 @@ window.$K = (function() {
       month = d.getMonth();
       year = d.getFullYear();
     }
-    var dateStr = this.getDate();
-    var monthStr = this.getMonth();
-    var yearStr = this.getFullYear();
-    var theYear = yearStr - year;
-    var theMonth = monthStr - month;
-    var theDate = dateStr - date;
-    var days = "";
+    var dateStr = this.getDate(),
+      monthStr = this.getMonth(),
+      yearStr = this.getFullYear(),
+      theYear = yearStr - year,
+      theMonth = monthStr - month,
+      theDate = dateStr - date,
+      days = 0;
     if (
       monthStr == 0 ||
       monthStr == 2 ||
@@ -502,11 +519,12 @@ window.$K = (function() {
     } else if (date == dateStr) {
       inDays = 0;
     }
-    var result = ["day", "month", "year"];
-    result.day = inDays;
-    result.month = inMonths;
-    result.year = inYears;
-    return result;
+    return {
+      day: inDays,
+      month: inMonths,
+      year: inYears,
+      days: Math.round((this - d) / 86400000)
+    };
   };
   Date.monthNames = [
     "Jan.",
@@ -4322,23 +4340,30 @@ window.$K = (function() {
       }
     },
     show: function(obj, fullscreen) {
-      this.overlay();
-      this.zoom.className = fullscreen ? "btnnav zoomin" : "btnnav zoomout";
-      this.zoom.title = trans(fullscreen ? "fit screen" : "full image");
       var img,
         title,
         self = this;
+      if (obj.href) {
+        img = obj.href;
+        title = obj.title;
+      } else if (obj.src) {
+        img = obj.src;
+        title = obj.alt;
+      } else {
+        img = obj.style.backgroundImage.substr(
+          5,
+          obj.style.backgroundImage.length - 7
+        );
+        title = obj.title;
+        console.log(img);
+      }
+      this.overlay();
+      this.zoom.className = fullscreen ? "btnnav zoomin" : "btnnav zoomout";
+      this.zoom.title = trans(fullscreen ? "fit screen" : "full image");
       this.loading.className = this.loadingClass + " show";
       this.prev.className = this.currentId == 0 ? "hidden" : "btnnav prev";
       this.next.className =
         this.currentId == this.imgs.length - 1 ? "hidden" : "btnnav next";
-      if (obj.href) {
-        img = obj.href;
-        title = obj.title;
-      } else {
-        img = obj.src;
-        title = obj.alt;
-      }
       new preload(img, function() {
         self.loading.className = self.loadingClass;
         self.img.src = this.src;
@@ -4454,9 +4479,8 @@ window.$K = (function() {
   window.callClick = function(input, func) {
     var doKeyDown = function(e) {
       if (GEvent.keyCode(e) == 13 || e.key == "Enter") {
-        var tmp = e;
         if (func.call(this, e) !== true) {
-          GEvent.stop(tmp);
+          GEvent.stop(e);
           return false;
         }
       }

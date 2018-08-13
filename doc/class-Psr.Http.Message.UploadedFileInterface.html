@@ -181,7 +181,7 @@ changed state.</p>
 		<b>Namespace:</b> <a href="namespace-Psr.html">Psr</a>\<a href="namespace-Psr.Http.html">Http</a>\<a href="namespace-Psr.Http.Message.html">Message</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Psr.Http.Message.UploadedFileInterface.html#5-131" title="Go to source code">Kotchasan/Psr/Http/Message/UploadedFileInterface.php</a>
+			<b>Located at</b> <a href="source-class-Psr.Http.Message.UploadedFileInterface.html#4-123" title="Go to source code">Kotchasan/Psr/Http/Message/UploadedFileInterface.php</a>
 		<br>
 	</div>
 
@@ -189,176 +189,6 @@ changed state.</p>
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="getClientFilename" id="_getClientFilename">
-
-		<td class="attributes"><code>
-			 public 
-
-			string|null
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getClientFilename">#</a>
-		<code><a href="source-class-Psr.Http.Message.UploadedFileInterface.html#15-29" title="Go to source code">getClientFilename</a>( )</code>
-
-		<div class="description short">
-			<p>Retrieve the filename sent by the client.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Retrieve the filename sent by the client.</p>
-
-<p>Do not trust the value returned by this method. A client could send
-a malicious filename with the intention to corrupt or hack your
-application.</p>
-
-<p>Implementations SHOULD return the value stored in the "name" key of
-the file in the $_FILES array.</p>
-
-<p>was provided</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string|null<br>the filename sent by the client or null if none
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getClientMediaType" id="_getClientMediaType">
-
-		<td class="attributes"><code>
-			 public 
-
-			string|null
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getClientMediaType">#</a>
-		<code><a href="source-class-Psr.Http.Message.UploadedFileInterface.html#31-45" title="Go to source code">getClientMediaType</a>( )</code>
-
-		<div class="description short">
-			<p>Retrieve the media type sent by the client.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Retrieve the media type sent by the client.</p>
-
-<p>Do not trust the value returned by this method. A client could send
-a malicious media type with the intention to corrupt or hack your
-application.</p>
-
-<p>Implementations SHOULD return the value stored in the "type" key of
-the file in the $_FILES array.</p>
-
-<p>was provided</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					string|null<br>the media type sent by the client or null if none
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getError" id="_getError">
-
-		<td class="attributes"><code>
-			 public 
-
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getError">#</a>
-		<code><a href="source-class-Psr.Http.Message.UploadedFileInterface.html#47-62" title="Go to source code">getError</a>( )</code>
-
-		<div class="description short">
-			<p>Retrieve the error associated with the uploaded file.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Retrieve the error associated with the uploaded file.</p>
-
-<p>The return value MUST be one of PHP's UPLOAD_ERR_XXX constants.</p>
-
-<p>If the file was uploaded successfully, this method MUST return
-UPLOAD_ERR_OK.</p>
-
-<p>Implementations SHOULD return the value stored in the "error" key of
-the file in the $_FILES array.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer<br>one of PHP's UPLOAD_ERR_XXX constants
-				</div>
-
-
-				<h4>See</h4>
-				<div class="list">
-						http://php.net/manual/en/features.file-upload.errors.php<br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getSize" id="_getSize">
-
-		<td class="attributes"><code>
-			 public 
-
-			integer|null
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getSize">#</a>
-		<code><a href="source-class-Psr.Http.Message.UploadedFileInterface.html#64-73" title="Go to source code">getSize</a>( )</code>
-
-		<div class="description short">
-			<p>Retrieve the file size.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Retrieve the file size.</p>
-
-<p>Implementations SHOULD return the value stored in the "size" key of
-the file in the $_FILES array if available, as PHP calculates this based
-on the actual size transmitted.</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer|null<br>the file size in bytes or null if unknown
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="getStream" id="_getStream">
 
 		<td class="attributes"><code>
@@ -371,7 +201,7 @@ on the actual size transmitted.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getStream">#</a>
-		<code><a href="source-class-Psr.Http.Message.UploadedFileInterface.html#75-93" title="Go to source code">getStream</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.UploadedFileInterface.html#15-31" title="Go to source code">getStream</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve a stream representing the uploaded file.</p>
@@ -387,19 +217,19 @@ stream_copy_to_stream() (though the result will need to be decorated in a
 native PHP stream wrapper to work with such functions).</p>
 
 <p>If the moveTo() method has been called previously, this method MUST raise
-an exception.
- created</p>
+an exception.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Psr.Http.Message.StreamInterface.html">Psr\Http\Message\StreamInterface</a></code><br>stream representation of the uploaded file
+					<code><a href="class-Psr.Http.Message.StreamInterface.html">Psr\Http\Message\StreamInterface</a></code><br>Stream representation of the uploaded file.
 				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>in cases when no stream is available or can be
+					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br><p>in cases when no stream is available or can be
+    created.</p>
 				</div>
 
 
@@ -419,7 +249,7 @@ an exception.
 
 		<td class="name"><div>
 		<a class="anchor" href="#_moveTo">#</a>
-		<code><a href="source-class-Psr.Http.Message.UploadedFileInterface.html#95-130" title="Go to source code">moveTo</a>( <span>string <var>$targetPath</var></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.UploadedFileInterface.html#33-65" title="Go to source code">moveTo</a>( <span>string <var>$targetPath</var></span> )</code>
 
 		<div class="description short">
 			<p>Move the uploaded file to a new location.</p>
@@ -450,20 +280,19 @@ used to ensure permissions and upload status are verified correctly.</p>
 <p>If you wish to move to a stream, use getStream(), as SAPI operations
 cannot guarantee writing to stream destinations.</p>
 
-<p>the second or subsequent call to the method</p>
-
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$targetPath</var></dt>
-					<dd>path to which to move the uploaded file</dd>
+					<dd>Path to which to move the uploaded file.</dd>
 				</dl></div>
 
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>if the $path specified is invalid<br>
-					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br>on any error during the move operation, or on
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>if the $path specified is invalid.<br>
+					<code><a href="class-RuntimeException.html">RuntimeException</a></code><br><p>on any error during the move operation, or on
+    the second or subsequent call to the method.</p>
 				</div>
 
 				<h4>See</h4>
@@ -471,6 +300,174 @@ cannot guarantee writing to stream destinations.</p>
 						http://php.net/is_uploaded_file<br>
 						http://php.net/move_uploaded_file<br>
 				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getSize" id="_getSize">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getSize">#</a>
+		<code><a href="source-class-Psr.Http.Message.UploadedFileInterface.html#67-76" title="Go to source code">getSize</a>( )</code>
+
+		<div class="description short">
+			<p>Retrieve the file size.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieve the file size.</p>
+
+<p>Implementations SHOULD return the value stored in the "size" key of
+the file in the $_FILES array if available, as PHP calculates this based
+on the actual size transmitted.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer|null<br>The file size in bytes or null if unknown.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getError" id="_getError">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getError">#</a>
+		<code><a href="source-class-Psr.Http.Message.UploadedFileInterface.html#78-92" title="Go to source code">getError</a>( )</code>
+
+		<div class="description short">
+			<p>Retrieve the error associated with the uploaded file.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieve the error associated with the uploaded file.</p>
+
+<p>The return value MUST be one of PHP's UPLOAD_ERR_XXX constants.</p>
+
+<p>If the file was uploaded successfully, this method MUST return
+UPLOAD_ERR_OK.</p>
+
+<p>Implementations SHOULD return the value stored in the "error" key of
+the file in the $_FILES array.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer<br>One of PHP's UPLOAD_ERR_XXX constants.
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						http://php.net/manual/en/features.file-upload.errors.php<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getClientFilename" id="_getClientFilename">
+
+		<td class="attributes"><code>
+			 public 
+
+			string|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getClientFilename">#</a>
+		<code><a href="source-class-Psr.Http.Message.UploadedFileInterface.html#94-107" title="Go to source code">getClientFilename</a>( )</code>
+
+		<div class="description short">
+			<p>Retrieve the filename sent by the client.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieve the filename sent by the client.</p>
+
+<p>Do not trust the value returned by this method. A client could send
+a malicious filename with the intention to corrupt or hack your
+application.</p>
+
+<p>Implementations SHOULD return the value stored in the "name" key of
+the file in the $_FILES array.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string|null<br><p>The filename sent by the client or null if none
+    was provided.</p>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getClientMediaType" id="_getClientMediaType">
+
+		<td class="attributes"><code>
+			 public 
+
+			string|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getClientMediaType">#</a>
+		<code><a href="source-class-Psr.Http.Message.UploadedFileInterface.html#109-122" title="Go to source code">getClientMediaType</a>( )</code>
+
+		<div class="description short">
+			<p>Retrieve the media type sent by the client.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieve the media type sent by the client.</p>
+
+<p>Do not trust the value returned by this method. A client could send
+a malicious media type with the intention to corrupt or hack your
+application.</p>
+
+<p>Implementations SHOULD return the value stored in the "type" key of
+the file in the $_FILES array.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string|null<br><p>The media type sent by the client or null if none
+    was provided.</p>
+				</div>
+
+
 
 
 		</div>

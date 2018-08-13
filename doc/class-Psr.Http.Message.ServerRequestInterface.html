@@ -220,7 +220,7 @@ message and return an instance that contains the changed state.</p>
 		<b>Namespace:</b> <a href="namespace-Psr.html">Psr</a>\<a href="namespace-Psr.Http.html">Http</a>\<a href="namespace-Psr.Http.Message.html">Message</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Psr.Http.Message.ServerRequestInterface.html#5-277" title="Go to source code">Kotchasan/Psr/Http/Message/ServerRequestInterface.php</a>
+			<b>Located at</b> <a href="source-class-Psr.Http.Message.ServerRequestInterface.html#4-261" title="Go to source code">Kotchasan/Psr/Http/Message/ServerRequestInterface.php</a>
 		<br>
 	</div>
 
@@ -228,59 +228,7 @@ message and return an instance that contains the changed state.</p>
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="getAttribute" id="_getAttribute">
-
-		<td class="attributes"><code>
-			 public 
-
-			mixed
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getAttribute">#</a>
-		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#45-62" title="Go to source code">getAttribute</a>( <span>string <var>$name</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
-
-		<div class="description short">
-			<p>Retrieve a single derived request attribute.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Retrieve a single derived request attribute.</p>
-
-<p>Retrieves a single derived request attribute as described in
-getAttributes(). If the attribute has not been previously set, returns
-the default value as provided.</p>
-
-<p>This method obviates the need for a hasAttribute() method, as it allows
-specifying a default value to return if the attribute is not found.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$name</var></dt>
-					<dd>the attribute name</dd>
-					<dt><var>$default</var></dt>
-					<dd>default value to return if the attribute does not exist</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					mixed
-				</div>
-
-
-				<h4>See</h4>
-				<div class="list">
-						<code><a href="class-Psr.Http.Message.ServerRequestInterface.html#_getAttributes">Psr\Http\Message\ServerRequestInterface::getAttributes()</a></code><br>
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getAttributes" id="_getAttributes">
+	<tr data-order="getServerParams" id="_getServerParams">
 
 		<td class="attributes"><code>
 			 public 
@@ -291,27 +239,25 @@ specifying a default value to return if the attribute is not found.</p>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getAttributes">#</a>
-		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#64-75" title="Go to source code">getAttributes</a>( )</code>
+		<a class="anchor" href="#_getServerParams">#</a>
+		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#45-54" title="Go to source code">getServerParams</a>( )</code>
 
 		<div class="description short">
-			<p>Retrieve attributes derived from the request.</p>
+			<p>Retrieve server parameters.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Retrieve attributes derived from the request.</p>
+			<p>Retrieve server parameters.</p>
 
-<p>The request "attributes" may be used to allow injection of any
-parameters derived from the request: e.g., the results of path
-match operations; the results of decrypting cookies; the results of
-deserializing non-form-encoded message bodies; etc. Attributes
-will be application and request specific, and CAN be mutable.</p>
+<p>Retrieves data related to the incoming request environment,
+typically derived from PHP's $_SERVER superglobal. The data IS NOT
+REQUIRED to originate from $_SERVER.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					array<br>attributes derived from the request
+					array
 				</div>
 
 
@@ -332,7 +278,7 @@ will be application and request specific, and CAN be mutable.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getCookieParams">#</a>
-		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#77-87" title="Go to source code">getCookieParams</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#56-66" title="Go to source code">getCookieParams</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve cookies.</p>
@@ -359,42 +305,48 @@ superglobal.</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getParsedBody" id="_getParsedBody">
+	<tr data-order="withCookieParams" id="_withCookieParams">
 
 		<td class="attributes"><code>
 			 public 
 
-			null|array|object
+			<code><a href="class-Psr.Http.Message.ServerRequestInterface.html">Psr\Http\Message\ServerRequestInterface</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getParsedBody">#</a>
-		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#89-105" title="Go to source code">getParsedBody</a>( )</code>
+		<a class="anchor" href="#_withCookieParams">#</a>
+		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#68-85" title="Go to source code">withCookieParams</a>( <span>array <var>$cookies</var></span> )</code>
 
 		<div class="description short">
-			<p>Retrieve any parameters provided in the request body.</p>
+			<p>Return an instance with the specified cookies.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Retrieve any parameters provided in the request body.</p>
+			<p>Return an instance with the specified cookies.</p>
 
-<p>If the request Content-Type is either application/x-www-form-urlencoded
-or multipart/form-data, and the request method is POST, this method MUST
-return the contents of $_POST.</p>
+<p>The data IS NOT REQUIRED to come from the $_COOKIE superglobal, but MUST
+be compatible with the structure of $_COOKIE. Typically, this data will
+be injected at instantiation.</p>
 
-<p>Otherwise, this method may return any results of deserializing
-the request body content; as parsing returns structured content, the
-potential types MUST be arrays or objects only. A null value indicates
-the absence of body content.
- These will typically be an array or object.</p>
+<p>This method MUST NOT update the related Cookie header of the request
+instance, nor related values in the server params.</p>
+
+<p>This method MUST be implemented in such a way as to retain the
+immutability of the message, and MUST return an instance that has the
+updated cookie values.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$cookies</var></dt>
+					<dd>Array of key/value pairs representing cookies.</dd>
+				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					null|array|object<br>the deserialized body parameters, if any
+					<code><a href="class-Psr.Http.Message.ServerRequestInterface.html">Psr\Http\Message\ServerRequestInterface</a></code>
 				</div>
 
 
@@ -415,7 +367,7 @@ the absence of body content.
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getQueryParams">#</a>
-		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#107-119" title="Go to source code">getQueryParams</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#87-99" title="Go to source code">getQueryParams</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve query string arguments.</p>
@@ -444,36 +396,53 @@ or from the <code>QUERY_STRING</code> server param.</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getServerParams" id="_getServerParams">
+	<tr data-order="withQueryParams" id="_withQueryParams">
 
 		<td class="attributes"><code>
 			 public 
 
-			array
+			<code><a href="class-Psr.Http.Message.ServerRequestInterface.html">Psr\Http\Message\ServerRequestInterface</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getServerParams">#</a>
-		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#121-130" title="Go to source code">getServerParams</a>( )</code>
+		<a class="anchor" href="#_withQueryParams">#</a>
+		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#101-123" title="Go to source code">withQueryParams</a>( <span>array <var>$query</var></span> )</code>
 
 		<div class="description short">
-			<p>Retrieve server parameters.</p>
+			<p>Return an instance with the specified query string arguments.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Retrieve server parameters.</p>
+			<p>Return an instance with the specified query string arguments.</p>
 
-<p>Retrieves data related to the incoming request environment,
-typically derived from PHP's $_SERVER superglobal. The data IS NOT
-REQUIRED to originate from $_SERVER.</p>
+<p>These values SHOULD remain immutable over the course of the incoming
+request. They MAY be injected during instantiation, such as from PHP's
+$_GET superglobal, or MAY be derived from some other value such as the
+URI. In cases where the arguments are parsed from the URI, the data
+MUST be compatible with what PHP's parse_str() would return for
+purposes of how duplicate query parameters are handled, and how nested
+sets are handled.</p>
+
+<p>Setting query string arguments MUST NOT change the URI stored by the
+request, nor the values in the server params.</p>
+
+<p>This method MUST be implemented in such a way as to retain the
+immutability of the message, and MUST return an instance that has the
+updated query string arguments.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$query</var></dt>
+					<dd><p>Array of query string arguments, typically from
+    $_GET.</p></dd>
+				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					array
+					<code><a href="class-Psr.Http.Message.ServerRequestInterface.html">Psr\Http\Message\ServerRequestInterface</a></code>
 				</div>
 
 
@@ -494,7 +463,7 @@ REQUIRED to originate from $_SERVER.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getUploadedFiles">#</a>
-		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#132-145" title="Go to source code">getUploadedFiles</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#125-137" title="Go to source code">getUploadedFiles</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve normalized file upload data.</p>
@@ -507,14 +476,14 @@ REQUIRED to originate from $_SERVER.</p>
 an instance of Psr\Http\Message\UploadedFileInterface.</p>
 
 <p>These values MAY be prepared from $_FILES or the message body during
-instantiation, or MAY be injected via withUploadedFiles().
- array MUST be returned if no data is present</p>
+instantiation, or MAY be injected via withUploadedFiles().</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					array<br>an array tree of UploadedFileInterface instances; an empty
+					array<br><p>An array tree of UploadedFileInterface instances; an empty
+    array MUST be returned if no data is present.</p>
 				</div>
 
 
@@ -523,7 +492,7 @@ instantiation, or MAY be injected via withUploadedFiles().
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="withAttribute" id="_withAttribute">
+	<tr data-order="withUploadedFiles" id="_withUploadedFiles">
 
 		<td class="attributes"><code>
 			 public 
@@ -534,30 +503,25 @@ instantiation, or MAY be injected via withUploadedFiles().
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_withAttribute">#</a>
-		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#147-164" title="Go to source code">withAttribute</a>( <span>string <var>$name</var></span>, <span>mixed <var>$value</var></span> )</code>
+		<a class="anchor" href="#_withUploadedFiles">#</a>
+		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#139-150" title="Go to source code">withUploadedFiles</a>( <span>array <var>$uploadedFiles</var></span> )</code>
 
 		<div class="description short">
-			<p>Return an instance with the specified derived request attribute.</p>
+			<p>Create a new instance with the specified uploaded files.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Return an instance with the specified derived request attribute.</p>
-
-<p>This method allows setting a single derived request attribute as
-described in getAttributes().</p>
+			<p>Create a new instance with the specified uploaded files.</p>
 
 <p>This method MUST be implemented in such a way as to retain the
 immutability of the message, and MUST return an instance that has the
-updated attribute.</p>
+updated body parameters.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$name</var></dt>
-					<dd>the attribute name</dd>
-					<dt><var>$value</var></dt>
-					<dd>the value of the attribute</dd>
+					<dt><var>$uploadedFiles</var></dt>
+					<dd>array tree of UploadedFileInterface instances.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -565,58 +529,52 @@ updated attribute.</p>
 					<code><a href="class-Psr.Http.Message.ServerRequestInterface.html">Psr\Http\Message\ServerRequestInterface</a></code>
 				</div>
 
-
-				<h4>See</h4>
+				<h4>Throws</h4>
 				<div class="list">
-						<code><a href="class-Psr.Http.Message.ServerRequestInterface.html#_getAttributes">Psr\Http\Message\ServerRequestInterface::getAttributes()</a></code><br>
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>if an invalid structure is provided.
 				</div>
+
 
 
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="withCookieParams" id="_withCookieParams">
+	<tr data-order="getParsedBody" id="_getParsedBody">
 
 		<td class="attributes"><code>
 			 public 
 
-			<code><a href="class-Psr.Http.Message.ServerRequestInterface.html">Psr\Http\Message\ServerRequestInterface</a></code>
+			null|array|object
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_withCookieParams">#</a>
-		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#166-184" title="Go to source code">withCookieParams</a>( <span>array <var>$cookies</var></span> )</code>
+		<a class="anchor" href="#_getParsedBody">#</a>
+		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#152-167" title="Go to source code">getParsedBody</a>( )</code>
 
 		<div class="description short">
-			<p>Return an instance with the specified cookies.</p>
+			<p>Retrieve any parameters provided in the request body.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Return an instance with the specified cookies.</p>
+			<p>Retrieve any parameters provided in the request body.</p>
 
-<p>The data IS NOT REQUIRED to come from the $_COOKIE superglobal, but MUST
-be compatible with the structure of $_COOKIE. Typically, this data will
-be injected at instantiation.</p>
+<p>If the request Content-Type is either application/x-www-form-urlencoded
+or multipart/form-data, and the request method is POST, this method MUST
+return the contents of $_POST.</p>
 
-<p>This method MUST NOT update the related Cookie header of the request
-instance, nor related values in the server params.</p>
-
-<p>This method MUST be implemented in such a way as to retain the
-immutability of the message, and MUST return an instance that has the
-updated cookie values.</p>
+<p>Otherwise, this method may return any results of deserializing
+the request body content; as parsing returns structured content, the
+potential types MUST be arrays or objects only. A null value indicates
+the absence of body content.</p>
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$cookies</var></dt>
-					<dd>array of key/value pairs representing cookies</dd>
-				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Psr.Http.Message.ServerRequestInterface.html">Psr\Http\Message\ServerRequestInterface</a></code>
+					null|array|object<br><p>The deserialized body parameters, if any.
+    These will typically be an array or object.</p>
 				</div>
 
 
@@ -637,7 +595,7 @@ updated cookie values.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withParsedBody">#</a>
-		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#186-217" title="Go to source code">withParsedBody</a>( <span>null|array|object <var>$data</var></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#169-197" title="Go to source code">withParsedBody</a>( <span>null|array|object <var>$data</var></span> )</code>
 
 		<div class="description short">
 			<p>Return an instance with the specified body parameters.</p>
@@ -663,116 +621,14 @@ instance with the deserialized parameters.</p>
 
 <p>This method MUST be implemented in such a way as to retain the
 immutability of the message, and MUST return an instance that has the
-updated body parameters.
- typically be in an array or object. provided</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$data</var></dt>
-					<dd>The deserialized body data. This will</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-Psr.Http.Message.ServerRequestInterface.html">Psr\Http\Message\ServerRequestInterface</a></code>
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>if an unsupported argument type is
-				</div>
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="withQueryParams" id="_withQueryParams">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-Psr.Http.Message.ServerRequestInterface.html">Psr\Http\Message\ServerRequestInterface</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_withQueryParams">#</a>
-		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#219-243" title="Go to source code">withQueryParams</a>( <span>array <var>$query</var></span> )</code>
-
-		<div class="description short">
-			<p>Return an instance with the specified query string arguments.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Return an instance with the specified query string arguments.</p>
-
-<p>These values SHOULD remain immutable over the course of the incoming
-request. They MAY be injected during instantiation, such as from PHP's
-$_GET superglobal, or MAY be derived from some other value such as the
-URI. In cases where the arguments are parsed from the URI, the data
-MUST be compatible with what PHP's parse_str() would return for
-purposes of how duplicate query parameters are handled, and how nested
-sets are handled.</p>
-
-<p>Setting query string arguments MUST NOT change the URI stored by the
-request, nor the values in the server params.</p>
-
-<p>This method MUST be implemented in such a way as to retain the
-immutability of the message, and MUST return an instance that has the
-updated query string arguments.
- $_GET</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$query</var></dt>
-					<dd>array of query string arguments, typically from</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-Psr.Http.Message.ServerRequestInterface.html">Psr\Http\Message\ServerRequestInterface</a></code>
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="withUploadedFiles" id="_withUploadedFiles">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-Psr.Http.Message.ServerRequestInterface.html">Psr\Http\Message\ServerRequestInterface</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_withUploadedFiles">#</a>
-		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#245-258" title="Go to source code">withUploadedFiles</a>( <span>array <var>$uploadedFiles</var></span> )</code>
-
-		<div class="description short">
-			<p>Create a new instance with the specified uploaded files.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Create a new instance with the specified uploaded files.</p>
-
-<p>This method MUST be implemented in such a way as to retain the
-immutability of the message, and MUST return an instance that has the
 updated body parameters.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$uploadedFiles</var></dt>
-					<dd>array tree of UploadedFileInterface instances</dd>
+					<dt><var>$data</var></dt>
+					<dd><p>The deserialized body data. This will
+    typically be in an array or object.</p></dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -782,9 +638,154 @@ updated body parameters.</p>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>if an invalid structure is provided
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br><p>if an unsupported argument type is
+    provided.</p>
 				</div>
 
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getAttributes" id="_getAttributes">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getAttributes">#</a>
+		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#199-210" title="Go to source code">getAttributes</a>( )</code>
+
+		<div class="description short">
+			<p>Retrieve attributes derived from the request.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieve attributes derived from the request.</p>
+
+<p>The request "attributes" may be used to allow injection of any
+parameters derived from the request: e.g., the results of path
+match operations; the results of decrypting cookies; the results of
+deserializing non-form-encoded message bodies; etc. Attributes
+will be application and request specific, and CAN be mutable.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>Attributes derived from the request.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getAttribute" id="_getAttribute">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getAttribute">#</a>
+		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#212-227" title="Go to source code">getAttribute</a>( <span>string <var>$name</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Retrieve a single derived request attribute.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Retrieve a single derived request attribute.</p>
+
+<p>Retrieves a single derived request attribute as described in
+getAttributes(). If the attribute has not been previously set, returns
+the default value as provided.</p>
+
+<p>This method obviates the need for a hasAttribute() method, as it allows
+specifying a default value to return if the attribute is not found.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>The attribute name.</dd>
+					<dt><var>$default</var></dt>
+					<dd>Default value to return if the attribute does not exist.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><a href="class-Psr.Http.Message.ServerRequestInterface.html#_getAttributes">Psr\Http\Message\ServerRequestInterface::getAttributes()</a></code><br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="withAttribute" id="_withAttribute">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Psr.Http.Message.ServerRequestInterface.html">Psr\Http\Message\ServerRequestInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_withAttribute">#</a>
+		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#229-244" title="Go to source code">withAttribute</a>( <span>string <var>$name</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Return an instance with the specified derived request attribute.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return an instance with the specified derived request attribute.</p>
+
+<p>This method allows setting a single derived request attribute as
+described in getAttributes().</p>
+
+<p>This method MUST be implemented in such a way as to retain the
+immutability of the message, and MUST return an instance that has the
+updated attribute.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>The attribute name.</dd>
+					<dt><var>$value</var></dt>
+					<dd>The value of the attribute.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Psr.Http.Message.ServerRequestInterface.html">Psr\Http\Message\ServerRequestInterface</a></code>
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><a href="class-Psr.Http.Message.ServerRequestInterface.html#_getAttributes">Psr\Http\Message\ServerRequestInterface::getAttributes()</a></code><br>
+				</div>
 
 
 		</div>
@@ -802,7 +803,7 @@ updated body parameters.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withoutAttribute">#</a>
-		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#260-276" title="Go to source code">withoutAttribute</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.ServerRequestInterface.html#246-260" title="Go to source code">withoutAttribute</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>Return an instance that removes the specified derived request attribute.</p>
@@ -822,7 +823,7 @@ the attribute.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$name</var></dt>
-					<dd>the attribute name</dd>
+					<dd>The attribute name.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
