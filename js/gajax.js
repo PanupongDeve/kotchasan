@@ -2184,11 +2184,14 @@ window.$K = (function() {
     content: function() {
       return this.body;
     },
-    show: function(value) {
+    show: function(value, className) {
       this.body.style.height = "auto";
       this.body.style.width = "auto";
       this.body.setHTML(value);
       this.overlay();
+      if (className) {
+        this.div.className = className;
+      }
       this.div.style.display = "block";
       var self = this;
       window.setTimeout(function() {
@@ -2226,6 +2229,7 @@ window.$K = (function() {
       this.div.fadeOut();
       this.iframe.fadeOut(function() {
         self._hide.call(self);
+        self.div.className = "";
       });
       return this;
     },
