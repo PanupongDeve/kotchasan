@@ -1,17 +1,19 @@
 <?php
 /**
  * @filesource modules/index/controllers/index.php
- * @link http://www.kotchasan.com/
+ *
  * @copyright 2016 Goragod.com
  * @license http://www.kotchasan.com/license/
+ *
+ * @see http://www.kotchasan.com/
  */
 
 namespace Index\Index;
 
-use \Kotchasan\Http\Request;
+use Kotchasan\Http\Request;
 
 /**
- * default Controller
+ * default Controller.
  *
  * @author Goragod Wiriya <admin@goragod.com>
  *
@@ -19,14 +21,13 @@ use \Kotchasan\Http\Request;
  */
 class Controller extends \Kotchasan\Controller
 {
-
-  /**
-   * แสดงผล
-   *
-   * @param Request $request
-   */
-  public function index(Request $request)
-  {
-    createClass('Index\Index\View')->render();
-  }
+    /**
+     * แสดงผล.
+     *
+     * @param Request $request
+     */
+    public function index(Request $request)
+    {
+        createClass('Index\Index\View')->render();
+    }
 }
