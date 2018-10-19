@@ -1562,7 +1562,7 @@
 						where(Sql::create('<code>id</code>=1 OR (SELECT ....)'))->text() [==] " WHERE <code>id</code>=1 OR (SELECT ....)"<br>
 						where(array('id', '=', 1))->text() [==] " WHERE <code>id</code> = 1"<br>
 						where(array('id', 'IN', array(1, 2, '3')))->text() [==] " WHERE <code>id</code> IN (1, 2, '3')"<br>
-						where(array(array('fb', '0'), Sql::create('(...)')))->text() [==] " WHERE <code>fb</code> = '0' AND (...)"<br>
+						where(array(array('social', '0'), Sql::create('(...)')))->text() [==] " WHERE <code>social</code> = '0' AND (...)"<br>
 						where(array(array(Sql::MONTH('create_date'), 1), array(Sql::YEAR('create_date'), 1)))->text() [==] " WHERE MONTH(<code>create_date</code>) = 1 AND YEAR(<code>create_date</code>) = 1"<br>
 						where(array(array('id', array(1, 'a')), array('id', array('G.id', 'G.<code>id2</code>'))))->text() [==] " WHERE <code>id</code> IN (1, 'a') AND <code>id</code> IN (G.<code>id</code>, G.<code>id2</code>)"<br>
 						where(array(array('id', array(1, 'a')), array('id', array('', 'th'))))->text() [==] " WHERE <code>id</code> IN (1, 'a') AND <code>id</code> IN ('', 'th')"<br>

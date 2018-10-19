@@ -192,7 +192,6 @@
 				<li><a href="class-DateTimeInterface.html">DateTimeInterface</a></li>
 				<li><a href="class-Iterator.html">Iterator</a></li>
 				<li><a href="class-IteratorAggregate.html">IteratorAggregate</a></li>
-				<li><a href="class-Kotchasan.LoginInterface.html">Kotchasan\LoginInterface</a></li>
 				<li><a href="class-Psr.Cache.CacheItemInterface.html">Psr\Cache\CacheItemInterface</a></li>
 				<li><a href="class-Psr.Cache.CacheItemPoolInterface.html">Psr\Cache\CacheItemPoolInterface</a></li>
 				<li><a href="class-Psr.Http.Message.MessageInterface.html">Psr\Http\Message\MessageInterface</a></li>
@@ -741,7 +740,7 @@
 </span><span id="474" class="l"><a href="#474">474: </a>            }
 </span><span id="475" class="l"><a href="#475">475: </a>            <span class="php-var">$input</span> = <span class="php-quote">'&lt;div class=&quot;'</span>.<span class="php-var">$itemClass</span>.<span class="php-quote">'&quot;'</span>.(<span class="php-keyword1">empty</span>(<span class="php-var">$itemId</span>) ? <span class="php-quote">''</span> : <span class="php-quote">' id=&quot;'</span>.<span class="php-var">$itemId</span>.<span class="php-quote">'&quot;'</span>).<span class="php-quote">'&gt;'</span>;
 </span><span id="476" class="l"><a href="#476">476: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$type</span>) &amp;&amp; <span class="php-var">$type</span> === <span class="php-quote">'checkbox'</span>) {
-</span><span id="477" class="l"><a href="#477">477: </a>                <span class="php-var">$input</span> .= <span class="php-quote">'&lt;label'</span>.(<span class="php-keyword1">empty</span>(<span class="php-var">$labelClass</span>) ? <span class="php-quote">''</span> : <span class="php-quote">' class=&quot;'</span>.<span class="php-var">$labelClass</span>.<span class="php-quote">'&quot;'</span>).<span class="php-quote">'&gt;'</span>.<span class="php-var">$element</span>.<span class="php-quote">'&amp;nbsp;'</span>.<span class="php-var">$label</span>.<span class="php-quote">'&lt;/label&gt;'</span>;
+</span><span id="477" class="l"><a href="#477">477: </a>                <span class="php-var">$input</span> .= <span class="php-quote">'&lt;label'</span>.(<span class="php-keyword1">empty</span>(<span class="php-var">$labelClass</span>) ? <span class="php-quote">''</span> : <span class="php-quote">' class=&quot;'</span>.<span class="php-var">$labelClass</span>.<span class="php-quote">'&quot;'</span>).<span class="php-quote">'&gt;'</span>.<span class="php-var">$element</span>.<span class="php-quote">'&amp;nbsp;'</span>.(<span class="php-keyword1">isset</span>(<span class="php-var">$label</span>) ? <span class="php-var">$label</span> : <span class="php-quote">''</span>).<span class="php-quote">'&lt;/label&gt;'</span>;
 </span><span id="478" class="l"><a href="#478">478: </a>            } <span class="php-keyword1">else</span> {
 </span><span id="479" class="l"><a href="#479">479: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$dataPreview</span>)) {
 </span><span id="480" class="l"><a href="#480">480: </a>                    <span class="php-var">$input</span> .= <span class="php-quote">'&lt;div class=usericon&gt;&lt;span&gt;&lt;img src=&quot;'</span>.<span class="php-var">$previewSrc</span>.<span class="php-quote">'&quot; alt=&quot;Image preview&quot; id='</span>.<span class="php-var">$dataPreview</span>.<span class="php-quote">'&gt;&lt;/span&gt;&lt;/div&gt;'</span>;
@@ -917,6 +916,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?d5e073e0d9aeff5d1c117da94252465170b9904a"></script>
+<script src="elementlist.js?ba73eeb368f85dd7ac72073e538d9c950b441578"></script>
 </body>
 </html>

@@ -192,7 +192,6 @@
 				<li><a href="class-DateTimeInterface.html">DateTimeInterface</a></li>
 				<li><a href="class-Iterator.html">Iterator</a></li>
 				<li><a href="class-IteratorAggregate.html">IteratorAggregate</a></li>
-				<li><a href="class-Kotchasan.LoginInterface.html">Kotchasan\LoginInterface</a></li>
 				<li><a href="class-Psr.Cache.CacheItemInterface.html">Psr\Cache\CacheItemInterface</a></li>
 				<li><a href="class-Psr.Cache.CacheItemPoolInterface.html">Psr\Cache\CacheItemPoolInterface</a></li>
 				<li><a href="class-Psr.Http.Message.MessageInterface.html">Psr\Http\Message\MessageInterface</a></li>
@@ -1087,38 +1086,44 @@
 </span><span id="820" class="l"><a href="#820">820: </a>                        }
 </span><span id="821" class="l"><a href="#821">821: </a>                        <span class="php-var">$value</span> = self::quoteValue(<span class="php-var">$key</span>, <span class="php-var">$condition</span>[<span class="php-num">1</span>], <span class="php-var">$values</span>);
 </span><span id="822" class="l"><a href="#822">822: </a>                    }
-</span><span id="823" class="l"><a href="#823">823: </a>                } <span class="php-keyword1">elseif</span> (<span class="php-var">$condition</span>[<span class="php-num">2</span>] <span class="php-keyword1">instanceof</span> QueryBuilder) {
-</span><span id="824" class="l"><a href="#824">824: </a>                    <span class="php-var">$operator</span> = <span class="php-keyword2">trim</span>(<span class="php-var">$condition</span>[<span class="php-num">1</span>]);
-</span><span id="825" class="l"><a href="#825">825: </a>                    <span class="php-var">$value</span> = <span class="php-quote">'('</span>.<span class="php-var">$condition</span>[<span class="php-num">2</span>]-&gt;text().<span class="php-quote">')'</span>;
-</span><span id="826" class="l"><a href="#826">826: </a>                    <span class="php-var">$values</span> = <span class="php-var">$condition</span>[<span class="php-num">2</span>]-&gt;getValues(<span class="php-var">$values</span>);
-</span><span id="827" class="l"><a href="#827">827: </a>                } <span class="php-keyword1">elseif</span> (<span class="php-var">$condition</span>[<span class="php-num">2</span>] <span class="php-keyword1">instanceof</span> self) {
-</span><span id="828" class="l"><a href="#828">828: </a>                    <span class="php-var">$operator</span> = <span class="php-keyword2">trim</span>(<span class="php-var">$condition</span>[<span class="php-num">1</span>]);
-</span><span id="829" class="l"><a href="#829">829: </a>                    <span class="php-var">$value</span> = <span class="php-var">$condition</span>[<span class="php-num">2</span>]-&gt;text();
-</span><span id="830" class="l"><a href="#830">830: </a>                    <span class="php-var">$values</span> = <span class="php-var">$condition</span>[<span class="php-num">2</span>]-&gt;getValues(<span class="php-var">$values</span>);
-</span><span id="831" class="l"><a href="#831">831: </a>                } <span class="php-keyword1">else</span> {
-</span><span id="832" class="l"><a href="#832">832: </a>                    <span class="php-var">$operator</span> = <span class="php-keyword2">trim</span>(<span class="php-var">$condition</span>[<span class="php-num">1</span>]);
-</span><span id="833" class="l"><a href="#833">833: </a>                    <span class="php-keyword1">if</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$condition</span>[<span class="php-num">2</span>]) &amp;&amp; <span class="php-var">$operator</span> == <span class="php-quote">'='</span>) {
-</span><span id="834" class="l"><a href="#834">834: </a>                        <span class="php-var">$operator</span> = <span class="php-quote">'IN'</span>;
-</span><span id="835" class="l"><a href="#835">835: </a>                    }
-</span><span id="836" class="l"><a href="#836">836: </a>                    <span class="php-var">$value</span> = self::quoteValue(<span class="php-var">$key</span>, <span class="php-var">$condition</span>[<span class="php-num">2</span>], <span class="php-var">$values</span>);
-</span><span id="837" class="l"><a href="#837">837: </a>                }
-</span><span id="838" class="l"><a href="#838">838: </a>                <span class="php-var">$sql</span> = <span class="php-var">$key</span>.<span class="php-quote">' '</span>.<span class="php-var">$operator</span>.<span class="php-quote">' '</span>.<span class="php-var">$value</span>;
-</span><span id="839" class="l"><a href="#839">839: </a>            }
-</span><span id="840" class="l"><a href="#840">840: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$condition</span> <span class="php-keyword1">instanceof</span> QueryBuilder) {
-</span><span id="841" class="l"><a href="#841">841: </a>            <span class="php-var">$sql</span> = <span class="php-quote">'('</span>.<span class="php-var">$condition</span>-&gt;text().<span class="php-quote">')'</span>;
-</span><span id="842" class="l"><a href="#842">842: </a>            <span class="php-var">$values</span> = <span class="php-var">$condition</span>-&gt;getValues(<span class="php-var">$values</span>);
-</span><span id="843" class="l"><a href="#843">843: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$condition</span> <span class="php-keyword1">instanceof</span> self) {
-</span><span id="844" class="l"><a href="#844">844: </a>            <span class="php-var">$sql</span> = <span class="php-var">$condition</span>-&gt;text();
-</span><span id="845" class="l"><a href="#845">845: </a>            <span class="php-var">$values</span> = <span class="php-var">$condition</span>-&gt;getValues(<span class="php-var">$values</span>);
-</span><span id="846" class="l"><a href="#846">846: </a>        } <span class="php-keyword1">else</span> {
-</span><span id="847" class="l"><a href="#847">847: </a>            <span class="php-comment">// ใช้ $id เป็น column_name</span>
-</span><span id="848" class="l"><a href="#848">848: </a>            <span class="php-var">$sql</span> = self::fieldName(<span class="php-var">$id</span>).<span class="php-quote">' = '</span>.self::quoteValue(<span class="php-var">$id</span>, <span class="php-var">$condition</span>, <span class="php-var">$values</span>);
-</span><span id="849" class="l"><a href="#849">849: </a>        }
-</span><span id="850" class="l"><a href="#850">850: </a>
-</span><span id="851" class="l"><a href="#851">851: </a>        <span class="php-keyword1">return</span> <span class="php-var">$sql</span>;
-</span><span id="852" class="l"><a href="#852">852: </a>    }
-</span><span id="853" class="l"><a href="#853">853: </a>}
-</span><span id="854" class="l"><a href="#854">854: </a></span></code></pre>
+</span><span id="823" class="l"><a href="#823">823: </a>                } <span class="php-keyword1">elseif</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$condition</span>[<span class="php-num">2</span>])) {
+</span><span id="824" class="l"><a href="#824">824: </a>                    <span class="php-keyword1">if</span> (<span class="php-var">$condition</span>[<span class="php-num">2</span>] <span class="php-keyword1">instanceof</span> QueryBuilder) {
+</span><span id="825" class="l"><a href="#825">825: </a>                        <span class="php-var">$operator</span> = <span class="php-keyword2">trim</span>(<span class="php-var">$condition</span>[<span class="php-num">1</span>]);
+</span><span id="826" class="l"><a href="#826">826: </a>                        <span class="php-var">$value</span> = <span class="php-quote">'('</span>.<span class="php-var">$condition</span>[<span class="php-num">2</span>]-&gt;text().<span class="php-quote">')'</span>;
+</span><span id="827" class="l"><a href="#827">827: </a>                        <span class="php-var">$values</span> = <span class="php-var">$condition</span>[<span class="php-num">2</span>]-&gt;getValues(<span class="php-var">$values</span>);
+</span><span id="828" class="l"><a href="#828">828: </a>                    } <span class="php-keyword1">elseif</span> (<span class="php-var">$condition</span>[<span class="php-num">2</span>] <span class="php-keyword1">instanceof</span> self) {
+</span><span id="829" class="l"><a href="#829">829: </a>                        <span class="php-var">$operator</span> = <span class="php-keyword2">trim</span>(<span class="php-var">$condition</span>[<span class="php-num">1</span>]);
+</span><span id="830" class="l"><a href="#830">830: </a>                        <span class="php-var">$value</span> = <span class="php-var">$condition</span>[<span class="php-num">2</span>]-&gt;text();
+</span><span id="831" class="l"><a href="#831">831: </a>                        <span class="php-var">$values</span> = <span class="php-var">$condition</span>[<span class="php-num">2</span>]-&gt;getValues(<span class="php-var">$values</span>);
+</span><span id="832" class="l"><a href="#832">832: </a>                    } <span class="php-keyword1">else</span> {
+</span><span id="833" class="l"><a href="#833">833: </a>                        <span class="php-var">$operator</span> = <span class="php-keyword2">trim</span>(<span class="php-var">$condition</span>[<span class="php-num">1</span>]);
+</span><span id="834" class="l"><a href="#834">834: </a>                        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$condition</span>[<span class="php-num">2</span>]) &amp;&amp; <span class="php-var">$operator</span> == <span class="php-quote">'='</span>) {
+</span><span id="835" class="l"><a href="#835">835: </a>                            <span class="php-var">$operator</span> = <span class="php-quote">'IN'</span>;
+</span><span id="836" class="l"><a href="#836">836: </a>                        }
+</span><span id="837" class="l"><a href="#837">837: </a>                        <span class="php-var">$value</span> = self::quoteValue(<span class="php-var">$key</span>, <span class="php-var">$condition</span>[<span class="php-num">2</span>], <span class="php-var">$values</span>);
+</span><span id="838" class="l"><a href="#838">838: </a>                    }
+</span><span id="839" class="l"><a href="#839">839: </a>                }
+</span><span id="840" class="l"><a href="#840">840: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$value</span>)) {
+</span><span id="841" class="l"><a href="#841">841: </a>                    <span class="php-var">$sql</span> = <span class="php-var">$key</span>.<span class="php-quote">' '</span>.<span class="php-var">$operator</span>.<span class="php-quote">' '</span>.<span class="php-var">$value</span>;
+</span><span id="842" class="l"><a href="#842">842: </a>                } <span class="php-keyword1">else</span> {
+</span><span id="843" class="l"><a href="#843">843: </a>                    <span class="php-var">$sql</span> = <span class="php-var">$key</span>;
+</span><span id="844" class="l"><a href="#844">844: </a>                }
+</span><span id="845" class="l"><a href="#845">845: </a>            }
+</span><span id="846" class="l"><a href="#846">846: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$condition</span> <span class="php-keyword1">instanceof</span> QueryBuilder) {
+</span><span id="847" class="l"><a href="#847">847: </a>            <span class="php-var">$sql</span> = <span class="php-quote">'('</span>.<span class="php-var">$condition</span>-&gt;text().<span class="php-quote">')'</span>;
+</span><span id="848" class="l"><a href="#848">848: </a>            <span class="php-var">$values</span> = <span class="php-var">$condition</span>-&gt;getValues(<span class="php-var">$values</span>);
+</span><span id="849" class="l"><a href="#849">849: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$condition</span> <span class="php-keyword1">instanceof</span> self) {
+</span><span id="850" class="l"><a href="#850">850: </a>            <span class="php-var">$sql</span> = <span class="php-var">$condition</span>-&gt;text();
+</span><span id="851" class="l"><a href="#851">851: </a>            <span class="php-var">$values</span> = <span class="php-var">$condition</span>-&gt;getValues(<span class="php-var">$values</span>);
+</span><span id="852" class="l"><a href="#852">852: </a>        } <span class="php-keyword1">else</span> {
+</span><span id="853" class="l"><a href="#853">853: </a>            <span class="php-comment">// ใช้ $id เป็น column_name</span>
+</span><span id="854" class="l"><a href="#854">854: </a>            <span class="php-var">$sql</span> = self::fieldName(<span class="php-var">$id</span>).<span class="php-quote">' = '</span>.self::quoteValue(<span class="php-var">$id</span>, <span class="php-var">$condition</span>, <span class="php-var">$values</span>);
+</span><span id="855" class="l"><a href="#855">855: </a>        }
+</span><span id="856" class="l"><a href="#856">856: </a>
+</span><span id="857" class="l"><a href="#857">857: </a>        <span class="php-keyword1">return</span> <span class="php-var">$sql</span>;
+</span><span id="858" class="l"><a href="#858">858: </a>    }
+</span><span id="859" class="l"><a href="#859">859: </a>}
+</span><span id="860" class="l"><a href="#860">860: </a></span></code></pre>
 
 	<div id="footer">
 		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
@@ -1126,6 +1131,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?d5e073e0d9aeff5d1c117da94252465170b9904a"></script>
+<script src="elementlist.js?ba73eeb368f85dd7ac72073e538d9c950b441578"></script>
 </body>
 </html>

@@ -192,7 +192,6 @@
 				<li><a href="class-DateTimeInterface.html">DateTimeInterface</a></li>
 				<li><a href="class-Iterator.html">Iterator</a></li>
 				<li><a href="class-IteratorAggregate.html">IteratorAggregate</a></li>
-				<li><a href="class-Kotchasan.LoginInterface.html">Kotchasan\LoginInterface</a></li>
 				<li><a href="class-Psr.Cache.CacheItemInterface.html">Psr\Cache\CacheItemInterface</a></li>
 				<li><a href="class-Psr.Cache.CacheItemPoolInterface.html">Psr\Cache\CacheItemPoolInterface</a></li>
 				<li><a href="class-Psr.Http.Message.MessageInterface.html">Psr\Http\Message\MessageInterface</a></li>
@@ -1004,7 +1003,7 @@
 </span></span><span id="737" class="l"><a href="#737">737: </a><span class="php-comment">     * @assert where(Sql::create('`id`=1 OR (SELECT ....)'))-&gt;text() [==] &quot; WHERE `id`=1 OR (SELECT ....)&quot;
 </span></span><span id="738" class="l"><a href="#738">738: </a><span class="php-comment">     * @assert where(array('id', '=', 1))-&gt;text() [==] &quot; WHERE `id` = 1&quot;
 </span></span><span id="739" class="l"><a href="#739">739: </a><span class="php-comment">     * @assert where(array('id', 'IN', array(1, 2, '3')))-&gt;text() [==] &quot; WHERE `id` IN (1, 2, '3')&quot;
-</span></span><span id="740" class="l"><a href="#740">740: </a><span class="php-comment">     * @assert where(array(array('fb', '0'), Sql::create('(...)')))-&gt;text() [==] &quot; WHERE `fb` = '0' AND (...)&quot;
+</span></span><span id="740" class="l"><a href="#740">740: </a><span class="php-comment">     * @assert where(array(array('social', '0'), Sql::create('(...)')))-&gt;text() [==] &quot; WHERE `social` = '0' AND (...)&quot;
 </span></span><span id="741" class="l"><a href="#741">741: </a><span class="php-comment">     * @assert where(array(array(Sql::MONTH('create_date'), 1), array(Sql::YEAR('create_date'), 1)))-&gt;text() [==] &quot; WHERE MONTH(`create_date`) = 1 AND YEAR(`create_date`) = 1&quot;
 </span></span><span id="742" class="l"><a href="#742">742: </a><span class="php-comment">     * @assert where(array(array('id', array(1, 'a')), array('id', array('G.id', 'G.`id2`'))))-&gt;text() [==] &quot; WHERE `id` IN (1, 'a') AND `id` IN (G.`id`, G.`id2`)&quot;
 </span></span><span id="743" class="l"><a href="#743">743: </a><span class="php-comment">     * @assert where(array(array('id', array(1, 'a')), array('id', array('', 'th'))))-&gt;text() [==] &quot; WHERE `id` IN (1, 'a') AND `id` IN ('', 'th')&quot;
@@ -1039,6 +1038,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?d5e073e0d9aeff5d1c117da94252465170b9904a"></script>
+<script src="elementlist.js?ba73eeb368f85dd7ac72073e538d9c950b441578"></script>
 </body>
 </html>

@@ -192,7 +192,6 @@
 				<li><a href="class-DateTimeInterface.html">DateTimeInterface</a></li>
 				<li><a href="class-Iterator.html">Iterator</a></li>
 				<li><a href="class-IteratorAggregate.html">IteratorAggregate</a></li>
-				<li><a href="class-Kotchasan.LoginInterface.html">Kotchasan\LoginInterface</a></li>
 				<li><a href="class-Psr.Cache.CacheItemInterface.html">Psr\Cache\CacheItemInterface</a></li>
 				<li><a href="class-Psr.Cache.CacheItemPoolInterface.html">Psr\Cache\CacheItemPoolInterface</a></li>
 				<li><a href="class-Psr.Http.Message.MessageInterface.html">Psr\Http\Message\MessageInterface</a></li>
@@ -416,7 +415,7 @@
 </span><span id="149" class="l"><a href="#149">149: </a>    <span class="php-comment">/**
 </span></span><span id="150" class="l"><a href="#150">150: </a><span class="php-comment">     * รับค่าสำหรับ password อักขระทุกตัวไม่มีช่องว่าง.
 </span></span><span id="151" class="l"><a href="#151">151: </a><span class="php-comment">     *
-</span></span><span id="152" class="l"><a href="#152">152: </a><span class="php-comment">     * @assert (&quot; 0\n12   34\r\r6\t5 &quot;) [==] '0123465'
+</span></span><span id="152" class="l"><a href="#152">152: </a><span class="php-comment">     * @assert (&quot; 0\n12   34\r\r6\t5@#$&amp;{}! &quot;) [==] '0123465@#$&amp;{}!'
 </span></span><span id="153" class="l"><a href="#153">153: </a><span class="php-comment">     *
 </span></span><span id="154" class="l"><a href="#154">154: </a><span class="php-comment">     * @param string $text
 </span></span><span id="155" class="l"><a href="#155">155: </a><span class="php-comment">     *
@@ -424,7 +423,7 @@
 </span></span><span id="157" class="l"><a href="#157">157: </a><span class="php-comment">     */</span>
 </span><span id="158" class="l"><a href="#158">158: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> password(<span class="php-var">$text</span>)
 </span><span id="159" class="l"><a href="#159">159: </a>    {
-</span><span id="160" class="l"><a href="#160">160: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/[^\w]+/'</span>, <span class="php-quote">''</span>, <span class="php-var">$text</span>);
+</span><span id="160" class="l"><a href="#160">160: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/[^\w\@\#\$\&amp;\{\}\!]+/'</span>, <span class="php-quote">''</span>, <span class="php-var">$text</span>);
 </span><span id="161" class="l"><a href="#161">161: </a>    }
 </span><span id="162" class="l"><a href="#162">162: </a>
 </span><span id="163" class="l"><a href="#163">163: </a>    <span class="php-comment">/**
@@ -588,6 +587,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?d5e073e0d9aeff5d1c117da94252465170b9904a"></script>
+<script src="elementlist.js?ba73eeb368f85dd7ac72073e538d9c950b441578"></script>
 </body>
 </html>
