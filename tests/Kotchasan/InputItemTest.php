@@ -395,19 +395,6 @@ class InputItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Generated from @assert create(" 0\n12   34\r\r6\t5@#$&{}! ")->password() [==] '0123465@#$&{}!'.
-     *
-     * @covers Kotchasan\InputItem::password
-     */
-    public function testPassword()
-    {
-
-        $this->assertEquals(
-          '0123465@#$&{}!', $this->object->create(" 0\n12   34\r\r6\t5@#$&{}! ")->password()
-        );
-    }
-
-    /**
      * Generated from @assert create("ทด'สอบ")->quote() [==] "ทด&#39;สอบ".
      *
      * @covers Kotchasan\InputItem::quote
