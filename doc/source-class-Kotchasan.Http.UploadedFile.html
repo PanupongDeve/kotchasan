@@ -573,155 +573,147 @@
 </span><span id="307" class="l"><a href="#307">307: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> getUploadSize(<span class="php-var">$return_byte</span> = <span class="php-keyword1">false</span>)
 </span><span id="308" class="l"><a href="#308">308: </a>    {
 </span><span id="309" class="l"><a href="#309">309: </a>        <span class="php-var">$val</span> = <span class="php-keyword2">trim</span>(<span class="php-keyword2">ini_get</span>(<span class="php-quote">'upload_max_filesize'</span>));
-</span><span id="310" class="l"><a href="#310">310: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$return_byte</span>) {
-</span><span id="311" class="l"><a href="#311">311: </a>            <span class="php-var">$last</span> = <span class="php-keyword2">strtolower</span>(<span class="php-var">$val</span>[<span class="php-keyword2">strlen</span>(<span class="php-var">$val</span>) - <span class="php-num">1</span>]);
-</span><span id="312" class="l"><a href="#312">312: </a>            <span class="php-keyword1">switch</span> (<span class="php-var">$last</span>) {
-</span><span id="313" class="l"><a href="#313">313: </a>                <span class="php-comment">// The 'G' modifier is available since PHP 5.1.0</span>
-</span><span id="314" class="l"><a href="#314">314: </a>                <span class="php-keyword1">case</span> <span class="php-quote">'g'</span>:
-</span><span id="315" class="l"><a href="#315">315: </a>                    <span class="php-var">$val</span> *= <span class="php-num">1024</span>;
-</span><span id="316" class="l"><a href="#316">316: </a>                <span class="php-comment">// no break</span>
-</span><span id="317" class="l"><a href="#317">317: </a>                <span class="php-keyword1">case</span> <span class="php-quote">'m'</span>:
-</span><span id="318" class="l"><a href="#318">318: </a>                    <span class="php-var">$val</span> *= <span class="php-num">1024</span>;
-</span><span id="319" class="l"><a href="#319">319: </a>                <span class="php-comment">// no break</span>
-</span><span id="320" class="l"><a href="#320">320: </a>                <span class="php-keyword1">case</span> <span class="php-quote">'k'</span>:
-</span><span id="321" class="l"><a href="#321">321: </a>                    <span class="php-var">$val</span> *= <span class="php-num">1024</span>;
-</span><span id="322" class="l"><a href="#322">322: </a>            }
-</span><span id="323" class="l"><a href="#323">323: </a>        }
-</span><span id="324" class="l"><a href="#324">324: </a>
-</span><span id="325" class="l"><a href="#325">325: </a>        <span class="php-keyword1">return</span> <span class="php-var">$val</span>;
-</span><span id="326" class="l"><a href="#326">326: </a>    }
-</span><span id="327" class="l"><a href="#327">327: </a>
-</span><span id="328" class="l"><a href="#328">328: </a>    <span class="php-comment">/**
-</span></span><span id="329" class="l"><a href="#329">329: </a><span class="php-comment">     * ตรวจสอบว่ามีข้อผิดพลาดการอัปโหลดหรือไม่
-</span></span><span id="330" class="l"><a href="#330">330: </a><span class="php-comment">     * คืนค่า false ถ้าไม่มีไฟล์อัปโหลดหรืออัปโหลดสำเร็จ, คืนค่า true ถ้ามีข้อผิดพลาด.
-</span></span><span id="331" class="l"><a href="#331">331: </a><span class="php-comment">     *
-</span></span><span id="332" class="l"><a href="#332">332: </a><span class="php-comment">     * @return bool
-</span></span><span id="333" class="l"><a href="#333">333: </a><span class="php-comment">     */</span>
-</span><span id="334" class="l"><a href="#334">334: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> hasError()
-</span><span id="335" class="l"><a href="#335">335: </a>    {
-</span><span id="336" class="l"><a href="#336">336: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;error === <span class="php-keyword1">null</span> || <span class="php-var">$this</span>-&gt;error === UPLOAD_ERR_OK || <span class="php-var">$this</span>-&gt;error === UPLOAD_ERR_NO_FILE) {
-</span><span id="337" class="l"><a href="#337">337: </a>            <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
-</span><span id="338" class="l"><a href="#338">338: </a>        }
-</span><span id="339" class="l"><a href="#339">339: </a>
-</span><span id="340" class="l"><a href="#340">340: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>;
-</span><span id="341" class="l"><a href="#341">341: </a>    }
-</span><span id="342" class="l"><a href="#342">342: </a>
-</span><span id="343" class="l"><a href="#343">343: </a>    <span class="php-comment">/**
-</span></span><span id="344" class="l"><a href="#344">344: </a><span class="php-comment">     * ตรวจสอบไฟล์อัปโหลด
-</span></span><span id="345" class="l"><a href="#345">345: </a><span class="php-comment">     * คืนค่า true ถ้ามีไฟล์อัปโหลด.
-</span></span><span id="346" class="l"><a href="#346">346: </a><span class="php-comment">     *
-</span></span><span id="347" class="l"><a href="#347">347: </a><span class="php-comment">     * @return bool
-</span></span><span id="348" class="l"><a href="#348">348: </a><span class="php-comment">     */</span>
-</span><span id="349" class="l"><a href="#349">349: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> hasUploadFile()
-</span><span id="350" class="l"><a href="#350">350: </a>    {
-</span><span id="351" class="l"><a href="#351">351: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;error == UPLOAD_ERR_OK;
-</span><span id="352" class="l"><a href="#352">352: </a>    }
-</span><span id="353" class="l"><a href="#353">353: </a>
-</span><span id="354" class="l"><a href="#354">354: </a>    <span class="php-comment">/**
-</span></span><span id="355" class="l"><a href="#355">355: </a><span class="php-comment">     * ย้ายไฟล์อัปโหลดไปยังที่อยู่ใหม่
-</span></span><span id="356" class="l"><a href="#356">356: </a><span class="php-comment">     * คืนค่า true ถ้าอัปโหลดเรียบร้อย.
-</span></span><span id="357" class="l"><a href="#357">357: </a><span class="php-comment">     *
-</span></span><span id="358" class="l"><a href="#358">358: </a><span class="php-comment">     * @param string $targetPath ที่อยู่ปลายทางที่ต้องการย้าย
-</span></span><span id="359" class="l"><a href="#359">359: </a><span class="php-comment">     *
-</span></span><span id="360" class="l"><a href="#360">360: </a><span class="php-comment">     * @throws \InvalidArgumentException ข้อผิดพลาดหากที่อยู่ปลายทางไม่สามารถเขียนได้
-</span></span><span id="361" class="l"><a href="#361">361: </a><span class="php-comment">     * @throws \RuntimeException         ข้อผิดพลาดการอัปโหลด
-</span></span><span id="362" class="l"><a href="#362">362: </a><span class="php-comment">     *
-</span></span><span id="363" class="l"><a href="#363">363: </a><span class="php-comment">     * @return bool
-</span></span><span id="364" class="l"><a href="#364">364: </a><span class="php-comment">     */</span>
-</span><span id="365" class="l"><a href="#365">365: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> moveTo(<span class="php-var">$targetPath</span>)
-</span><span id="366" class="l"><a href="#366">366: </a>    {
-</span><span id="367" class="l"><a href="#367">367: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;isMoved) {
-</span><span id="368" class="l"><a href="#368">368: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \RuntimeException(<span class="php-keyword2">sprintf</span>(Language::get(<span class="php-quote">'Uploaded file %1s has already been moved'</span>), <span class="php-var">$this</span>-&gt;name));
-</span><span id="369" class="l"><a href="#369">369: </a>        }
-</span><span id="370" class="l"><a href="#370">370: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword2">is_writable</span>(<span class="php-keyword2">dirname</span>(<span class="php-var">$targetPath</span>))) {
-</span><span id="371" class="l"><a href="#371">371: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(Language::get(<span class="php-quote">'Target directory is not writable'</span>));
-</span><span id="372" class="l"><a href="#372">372: </a>        }
-</span><span id="373" class="l"><a href="#373">373: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">strpos</span>(<span class="php-var">$targetPath</span>, <span class="php-quote">'://'</span>) &gt; <span class="php-num">0</span>) {
-</span><span id="374" class="l"><a href="#374">374: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword2">copy</span>(<span class="php-var">$this</span>-&gt;tmp_name, <span class="php-var">$targetPath</span>)) {
-</span><span id="375" class="l"><a href="#375">375: </a>                <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \RuntimeException(<span class="php-keyword2">sprintf</span>(Language::get(<span class="php-quote">'Error moving uploaded file %1s to %2s'</span>), <span class="php-var">$this</span>-&gt;name, <span class="php-var">$targetPath</span>));
-</span><span id="376" class="l"><a href="#376">376: </a>            }
-</span><span id="377" class="l"><a href="#377">377: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword2">unlink</span>(<span class="php-var">$this</span>-&gt;tmp_name)) {
-</span><span id="378" class="l"><a href="#378">378: </a>                <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \RuntimeException(<span class="php-keyword2">sprintf</span>(Language::get(<span class="php-quote">'Error removing uploaded file %1s'</span>), <span class="php-var">$this</span>-&gt;name));
-</span><span id="379" class="l"><a href="#379">379: </a>            }
-</span><span id="380" class="l"><a href="#380">380: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$this</span>-&gt;sapi) {
-</span><span id="381" class="l"><a href="#381">381: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword2">move_uploaded_file</span>(<span class="php-var">$this</span>-&gt;tmp_name, <span class="php-var">$targetPath</span>)) {
-</span><span id="382" class="l"><a href="#382">382: </a>                <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \RuntimeException(<span class="php-keyword2">sprintf</span>(Language::get(<span class="php-quote">'Error moving uploaded file %1s to %2s'</span>), <span class="php-var">$this</span>-&gt;name, <span class="php-var">$targetPath</span>));
-</span><span id="383" class="l"><a href="#383">383: </a>            }
-</span><span id="384" class="l"><a href="#384">384: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">copy</span>(<span class="php-var">$this</span>-&gt;tmp_name, <span class="php-var">$targetPath</span>)) {
-</span><span id="385" class="l"><a href="#385">385: </a>            <span class="php-keyword2">unlink</span>(<span class="php-var">$this</span>-&gt;tmp_name);
-</span><span id="386" class="l"><a href="#386">386: </a>        } <span class="php-keyword1">else</span> {
-</span><span id="387" class="l"><a href="#387">387: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \RuntimeException(<span class="php-keyword2">sprintf</span>(Language::get(<span class="php-quote">'Error moving uploaded file %1s to %2s'</span>), <span class="php-var">$this</span>-&gt;name, <span class="php-var">$targetPath</span>));
-</span><span id="388" class="l"><a href="#388">388: </a>        }
-</span><span id="389" class="l"><a href="#389">389: </a>        <span class="php-var">$this</span>-&gt;isMoved = <span class="php-keyword1">true</span>;
-</span><span id="390" class="l"><a href="#390">390: </a>
-</span><span id="391" class="l"><a href="#391">391: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>;
-</span><span id="392" class="l"><a href="#392">392: </a>    }
-</span><span id="393" class="l"><a href="#393">393: </a>
-</span><span id="394" class="l"><a href="#394">394: </a>    <span class="php-comment">/**
-</span></span><span id="395" class="l"><a href="#395">395: </a><span class="php-comment">     * ปรับขนาดของรูปภาพอัปโหลด โดยรักษาอัตราส่วนของภาพตามความกว้างที่ต้องการ
-</span></span><span id="396" class="l"><a href="#396">396: </a><span class="php-comment">     * หากรูปภาพมีขนาดเล็กกว่าที่กำหนด จะเป็นการ copy file
-</span></span><span id="397" class="l"><a href="#397">397: </a><span class="php-comment">     * หากรูปภาพมีความสูง หรือความกว้างมากกว่า $width
-</span></span><span id="398" class="l"><a href="#398">398: </a><span class="php-comment">     * จะถูกปรับขนาดให้มีขนาดไม่เกิน $width (ทั้งความสูงและความกว้าง)
-</span></span><span id="399" class="l"><a href="#399">399: </a><span class="php-comment">     * และเปลี่ยนชนิดของภาพเป็น jpg
-</span></span><span id="400" class="l"><a href="#400">400: </a><span class="php-comment">     * คืนค่าแอเรย์ [name, width, height, mime] ของรูปภาพปลายทาง หรือ false ถ้าไม่สามารถดำเนินการได้.
-</span></span><span id="401" class="l"><a href="#401">401: </a><span class="php-comment">     *
-</span></span><span id="402" class="l"><a href="#402">402: </a><span class="php-comment">     * @param array  $exts      นามสกุลของไฟล์รูปภาพที่ยอมรับ เช่น [jpg, gif, png]
-</span></span><span id="403" class="l"><a href="#403">403: </a><span class="php-comment">     * @param string $target    path ของไฟล์รูปภาพปลายทาง
-</span></span><span id="404" class="l"><a href="#404">404: </a><span class="php-comment">     * @param string $name      ชื่อไฟล์ของรูปภาพปลายทาง
-</span></span><span id="405" class="l"><a href="#405">405: </a><span class="php-comment">     * @param int    $width     ขนาดสูงสุดของรูปภาพที่ต้องการ
-</span></span><span id="406" class="l"><a href="#406">406: </a><span class="php-comment">     * @param string $watermark (optional) ข้อความลายน้ำ
-</span></span><span id="407" class="l"><a href="#407">407: </a><span class="php-comment">     *
-</span></span><span id="408" class="l"><a href="#408">408: </a><span class="php-comment">     * @return array|bool
-</span></span><span id="409" class="l"><a href="#409">409: </a><span class="php-comment">     */</span>
-</span><span id="410" class="l"><a href="#410">410: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> resizeImage(<span class="php-var">$exts</span>, <span class="php-var">$target</span>, <span class="php-var">$name</span>, <span class="php-var">$width</span>, <span class="php-var">$watermark</span> = <span class="php-quote">''</span>)
-</span><span id="411" class="l"><a href="#411">411: </a>    {
-</span><span id="412" class="l"><a href="#412">412: </a>        <span class="php-var">$this</span>-&gt;check(<span class="php-var">$exts</span>, <span class="php-var">$target</span>);
-</span><span id="413" class="l"><a href="#413">413: </a>        <span class="php-var">$ret</span> = Image::resize(<span class="php-var">$this</span>-&gt;tmp_name, <span class="php-var">$target</span>, <span class="php-var">$name</span>, <span class="php-var">$width</span>, <span class="php-var">$watermark</span>);
-</span><span id="414" class="l"><a href="#414">414: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$ret</span> === <span class="php-keyword1">false</span>) {
-</span><span id="415" class="l"><a href="#415">415: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \RuntimeException(Language::get(<span class="php-quote">'Unable to create image'</span>));
-</span><span id="416" class="l"><a href="#416">416: </a>        } <span class="php-keyword1">else</span> {
-</span><span id="417" class="l"><a href="#417">417: </a>            <span class="php-keyword1">return</span> <span class="php-var">$ret</span>;
-</span><span id="418" class="l"><a href="#418">418: </a>        }
-</span><span id="419" class="l"><a href="#419">419: </a>    }
-</span><span id="420" class="l"><a href="#420">420: </a>
-</span><span id="421" class="l"><a href="#421">421: </a>    <span class="php-comment">/**
-</span></span><span id="422" class="l"><a href="#422">422: </a><span class="php-comment">     * ตรวจสอบนามสกุลของไฟล์อัปโหลด
-</span></span><span id="423" class="l"><a href="#423">423: </a><span class="php-comment">     * คืนค่า true ถ้านามสกุลของไฟล์อัปโหลดอยู่ใน $exts.
-</span></span><span id="424" class="l"><a href="#424">424: </a><span class="php-comment">     *
-</span></span><span id="425" class="l"><a href="#425">425: </a><span class="php-comment">     * @param array $exts รายการนามสกุลของไฟล์อัปโหลดที่ยอมรับ เช่น [jpg, gif, png]
-</span></span><span id="426" class="l"><a href="#426">426: </a><span class="php-comment">     *
-</span></span><span id="427" class="l"><a href="#427">427: </a><span class="php-comment">     * @return bool
-</span></span><span id="428" class="l"><a href="#428">428: </a><span class="php-comment">     */</span>
-</span><span id="429" class="l"><a href="#429">429: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> validFileExt(<span class="php-var">$exts</span>)
-</span><span id="430" class="l"><a href="#430">430: </a>    {
-</span><span id="431" class="l"><a href="#431">431: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">in_array</span>(<span class="php-var">$this</span>-&gt;getClientFileExt(), <span class="php-var">$exts</span>);
-</span><span id="432" class="l"><a href="#432">432: </a>    }
-</span><span id="433" class="l"><a href="#433">433: </a>
-</span><span id="434" class="l"><a href="#434">434: </a>    <span class="php-comment">/**
-</span></span><span id="435" class="l"><a href="#435">435: </a><span class="php-comment">     * ฟังชั่นตรวจสอบไฟล์อัปโหลด
-</span></span><span id="436" class="l"><a href="#436">436: </a><span class="php-comment">     * คืนค่า true ถ้าสามารถอัปโหลดได้.
-</span></span><span id="437" class="l"><a href="#437">437: </a><span class="php-comment">     *
-</span></span><span id="438" class="l"><a href="#438">438: </a><span class="php-comment">     * @param array  $exts      นามสกุลของไฟล์รูปภาพที่ยอมรับ เช่น [jpg, gif, png]
-</span></span><span id="439" class="l"><a href="#439">439: </a><span class="php-comment">     * @param string $targetDir ไดเรคทอรี่ปลายทาง
-</span></span><span id="440" class="l"><a href="#440">440: </a><span class="php-comment">     *
-</span></span><span id="441" class="l"><a href="#441">441: </a><span class="php-comment">     * @throws \RuntimeException         ถ้าชนิดของไฟล์อัปโหลดไม่ถูกต้อง
-</span></span><span id="442" class="l"><a href="#442">442: </a><span class="php-comment">     * @throws \InvalidArgumentException ถ้าไดเร็คทอรี่ไม่สามารถเขียนได้
-</span></span><span id="443" class="l"><a href="#443">443: </a><span class="php-comment">     *
-</span></span><span id="444" class="l"><a href="#444">444: </a><span class="php-comment">     * @return bool
-</span></span><span id="445" class="l"><a href="#445">445: </a><span class="php-comment">     */</span>
-</span><span id="446" class="l"><a href="#446">446: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> check(<span class="php-var">$exts</span>, <span class="php-var">$targetDir</span>)
-</span><span id="447" class="l"><a href="#447">447: </a>    {
-</span><span id="448" class="l"><a href="#448">448: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$this</span>-&gt;validFileExt(<span class="php-var">$exts</span>)) {
-</span><span id="449" class="l"><a href="#449">449: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \RuntimeException(Language::get(<span class="php-quote">'The type of file is invalid'</span>));
-</span><span id="450" class="l"><a href="#450">450: </a>        }
-</span><span id="451" class="l"><a href="#451">451: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword2">is_writable</span>(<span class="php-var">$targetDir</span>)) {
-</span><span id="452" class="l"><a href="#452">452: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(Language::get(<span class="php-quote">'Target directory is not writable'</span>));
-</span><span id="453" class="l"><a href="#453">453: </a>        }
-</span><span id="454" class="l"><a href="#454">454: </a>
-</span><span id="455" class="l"><a href="#455">455: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>;
-</span><span id="456" class="l"><a href="#456">456: </a>    }
-</span><span id="457" class="l"><a href="#457">457: </a>}
-</span><span id="458" class="l"><a href="#458">458: </a></span></code></pre>
+</span><span id="310" class="l"><a href="#310">310: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_numeric</span>(<span class="php-var">$val</span>)) {
+</span><span id="311" class="l"><a href="#311">311: </a>            <span class="php-keyword1">return</span> <span class="php-var">$val</span>;
+</span><span id="312" class="l"><a href="#312">312: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$return_byte</span> &amp;&amp; <span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^([0-9]+)([gmk])$/'</span>, <span class="php-keyword2">strtolower</span>(<span class="php-var">$val</span>), <span class="php-var">$match</span>)) {
+</span><span id="313" class="l"><a href="#313">313: </a>            <span class="php-var">$units</span> = <span class="php-keyword1">array</span>(<span class="php-quote">'k'</span> =&gt; <span class="php-num">1024</span>, <span class="php-quote">'m'</span> =&gt; <span class="php-num">1048576</span>, <span class="php-quote">'g'</span> =&gt; <span class="php-num">1073741824</span>);
+</span><span id="314" class="l"><a href="#314">314: </a>            <span class="php-var">$val</span> = (int) <span class="php-var">$match</span>[<span class="php-num">1</span>] * <span class="php-var">$units</span>[<span class="php-var">$match</span>[<span class="php-num">2</span>]];
+</span><span id="315" class="l"><a href="#315">315: </a>        }
+</span><span id="316" class="l"><a href="#316">316: </a>
+</span><span id="317" class="l"><a href="#317">317: </a>        <span class="php-keyword1">return</span> <span class="php-var">$val</span>;
+</span><span id="318" class="l"><a href="#318">318: </a>    }
+</span><span id="319" class="l"><a href="#319">319: </a>
+</span><span id="320" class="l"><a href="#320">320: </a>    <span class="php-comment">/**
+</span></span><span id="321" class="l"><a href="#321">321: </a><span class="php-comment">     * ตรวจสอบว่ามีข้อผิดพลาดการอัปโหลดหรือไม่
+</span></span><span id="322" class="l"><a href="#322">322: </a><span class="php-comment">     * คืนค่า false ถ้าไม่มีไฟล์อัปโหลดหรืออัปโหลดสำเร็จ, คืนค่า true ถ้ามีข้อผิดพลาด.
+</span></span><span id="323" class="l"><a href="#323">323: </a><span class="php-comment">     *
+</span></span><span id="324" class="l"><a href="#324">324: </a><span class="php-comment">     * @return bool
+</span></span><span id="325" class="l"><a href="#325">325: </a><span class="php-comment">     */</span>
+</span><span id="326" class="l"><a href="#326">326: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> hasError()
+</span><span id="327" class="l"><a href="#327">327: </a>    {
+</span><span id="328" class="l"><a href="#328">328: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;error === <span class="php-keyword1">null</span> || <span class="php-var">$this</span>-&gt;error === UPLOAD_ERR_OK || <span class="php-var">$this</span>-&gt;error === UPLOAD_ERR_NO_FILE) {
+</span><span id="329" class="l"><a href="#329">329: </a>            <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
+</span><span id="330" class="l"><a href="#330">330: </a>        }
+</span><span id="331" class="l"><a href="#331">331: </a>
+</span><span id="332" class="l"><a href="#332">332: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>;
+</span><span id="333" class="l"><a href="#333">333: </a>    }
+</span><span id="334" class="l"><a href="#334">334: </a>
+</span><span id="335" class="l"><a href="#335">335: </a>    <span class="php-comment">/**
+</span></span><span id="336" class="l"><a href="#336">336: </a><span class="php-comment">     * ตรวจสอบไฟล์อัปโหลด
+</span></span><span id="337" class="l"><a href="#337">337: </a><span class="php-comment">     * คืนค่า true ถ้ามีไฟล์อัปโหลด.
+</span></span><span id="338" class="l"><a href="#338">338: </a><span class="php-comment">     *
+</span></span><span id="339" class="l"><a href="#339">339: </a><span class="php-comment">     * @return bool
+</span></span><span id="340" class="l"><a href="#340">340: </a><span class="php-comment">     */</span>
+</span><span id="341" class="l"><a href="#341">341: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> hasUploadFile()
+</span><span id="342" class="l"><a href="#342">342: </a>    {
+</span><span id="343" class="l"><a href="#343">343: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;error == UPLOAD_ERR_OK;
+</span><span id="344" class="l"><a href="#344">344: </a>    }
+</span><span id="345" class="l"><a href="#345">345: </a>
+</span><span id="346" class="l"><a href="#346">346: </a>    <span class="php-comment">/**
+</span></span><span id="347" class="l"><a href="#347">347: </a><span class="php-comment">     * ย้ายไฟล์อัปโหลดไปยังที่อยู่ใหม่
+</span></span><span id="348" class="l"><a href="#348">348: </a><span class="php-comment">     * คืนค่า true ถ้าอัปโหลดเรียบร้อย.
+</span></span><span id="349" class="l"><a href="#349">349: </a><span class="php-comment">     *
+</span></span><span id="350" class="l"><a href="#350">350: </a><span class="php-comment">     * @param string $targetPath ที่อยู่ปลายทางที่ต้องการย้าย
+</span></span><span id="351" class="l"><a href="#351">351: </a><span class="php-comment">     *
+</span></span><span id="352" class="l"><a href="#352">352: </a><span class="php-comment">     * @throws \InvalidArgumentException ข้อผิดพลาดหากที่อยู่ปลายทางไม่สามารถเขียนได้
+</span></span><span id="353" class="l"><a href="#353">353: </a><span class="php-comment">     * @throws \RuntimeException         ข้อผิดพลาดการอัปโหลด
+</span></span><span id="354" class="l"><a href="#354">354: </a><span class="php-comment">     *
+</span></span><span id="355" class="l"><a href="#355">355: </a><span class="php-comment">     * @return bool
+</span></span><span id="356" class="l"><a href="#356">356: </a><span class="php-comment">     */</span>
+</span><span id="357" class="l"><a href="#357">357: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> moveTo(<span class="php-var">$targetPath</span>)
+</span><span id="358" class="l"><a href="#358">358: </a>    {
+</span><span id="359" class="l"><a href="#359">359: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;isMoved) {
+</span><span id="360" class="l"><a href="#360">360: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \RuntimeException(<span class="php-keyword2">sprintf</span>(Language::get(<span class="php-quote">'Uploaded file %1s has already been moved'</span>), <span class="php-var">$this</span>-&gt;name));
+</span><span id="361" class="l"><a href="#361">361: </a>        }
+</span><span id="362" class="l"><a href="#362">362: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword2">is_writable</span>(<span class="php-keyword2">dirname</span>(<span class="php-var">$targetPath</span>))) {
+</span><span id="363" class="l"><a href="#363">363: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(Language::get(<span class="php-quote">'Target directory is not writable'</span>));
+</span><span id="364" class="l"><a href="#364">364: </a>        }
+</span><span id="365" class="l"><a href="#365">365: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">strpos</span>(<span class="php-var">$targetPath</span>, <span class="php-quote">'://'</span>) &gt; <span class="php-num">0</span>) {
+</span><span id="366" class="l"><a href="#366">366: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword2">copy</span>(<span class="php-var">$this</span>-&gt;tmp_name, <span class="php-var">$targetPath</span>)) {
+</span><span id="367" class="l"><a href="#367">367: </a>                <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \RuntimeException(<span class="php-keyword2">sprintf</span>(Language::get(<span class="php-quote">'Error moving uploaded file %1s to %2s'</span>), <span class="php-var">$this</span>-&gt;name, <span class="php-var">$targetPath</span>));
+</span><span id="368" class="l"><a href="#368">368: </a>            }
+</span><span id="369" class="l"><a href="#369">369: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword2">unlink</span>(<span class="php-var">$this</span>-&gt;tmp_name)) {
+</span><span id="370" class="l"><a href="#370">370: </a>                <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \RuntimeException(<span class="php-keyword2">sprintf</span>(Language::get(<span class="php-quote">'Error removing uploaded file %1s'</span>), <span class="php-var">$this</span>-&gt;name));
+</span><span id="371" class="l"><a href="#371">371: </a>            }
+</span><span id="372" class="l"><a href="#372">372: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$this</span>-&gt;sapi) {
+</span><span id="373" class="l"><a href="#373">373: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword2">move_uploaded_file</span>(<span class="php-var">$this</span>-&gt;tmp_name, <span class="php-var">$targetPath</span>)) {
+</span><span id="374" class="l"><a href="#374">374: </a>                <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \RuntimeException(<span class="php-keyword2">sprintf</span>(Language::get(<span class="php-quote">'Error moving uploaded file %1s to %2s'</span>), <span class="php-var">$this</span>-&gt;name, <span class="php-var">$targetPath</span>));
+</span><span id="375" class="l"><a href="#375">375: </a>            }
+</span><span id="376" class="l"><a href="#376">376: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">copy</span>(<span class="php-var">$this</span>-&gt;tmp_name, <span class="php-var">$targetPath</span>)) {
+</span><span id="377" class="l"><a href="#377">377: </a>            <span class="php-keyword2">unlink</span>(<span class="php-var">$this</span>-&gt;tmp_name);
+</span><span id="378" class="l"><a href="#378">378: </a>        } <span class="php-keyword1">else</span> {
+</span><span id="379" class="l"><a href="#379">379: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \RuntimeException(<span class="php-keyword2">sprintf</span>(Language::get(<span class="php-quote">'Error moving uploaded file %1s to %2s'</span>), <span class="php-var">$this</span>-&gt;name, <span class="php-var">$targetPath</span>));
+</span><span id="380" class="l"><a href="#380">380: </a>        }
+</span><span id="381" class="l"><a href="#381">381: </a>        <span class="php-var">$this</span>-&gt;isMoved = <span class="php-keyword1">true</span>;
+</span><span id="382" class="l"><a href="#382">382: </a>
+</span><span id="383" class="l"><a href="#383">383: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>;
+</span><span id="384" class="l"><a href="#384">384: </a>    }
+</span><span id="385" class="l"><a href="#385">385: </a>
+</span><span id="386" class="l"><a href="#386">386: </a>    <span class="php-comment">/**
+</span></span><span id="387" class="l"><a href="#387">387: </a><span class="php-comment">     * ปรับขนาดของรูปภาพอัปโหลด โดยรักษาอัตราส่วนของภาพตามความกว้างที่ต้องการ
+</span></span><span id="388" class="l"><a href="#388">388: </a><span class="php-comment">     * หากรูปภาพมีขนาดเล็กกว่าที่กำหนด จะเป็นการ copy file
+</span></span><span id="389" class="l"><a href="#389">389: </a><span class="php-comment">     * หากรูปภาพมีความสูง หรือความกว้างมากกว่า $width
+</span></span><span id="390" class="l"><a href="#390">390: </a><span class="php-comment">     * จะถูกปรับขนาดให้มีขนาดไม่เกิน $width (ทั้งความสูงและความกว้าง)
+</span></span><span id="391" class="l"><a href="#391">391: </a><span class="php-comment">     * และเปลี่ยนชนิดของภาพเป็น jpg
+</span></span><span id="392" class="l"><a href="#392">392: </a><span class="php-comment">     * คืนค่าแอเรย์ [name, width, height, mime] ของรูปภาพปลายทาง หรือ false ถ้าไม่สามารถดำเนินการได้.
+</span></span><span id="393" class="l"><a href="#393">393: </a><span class="php-comment">     *
+</span></span><span id="394" class="l"><a href="#394">394: </a><span class="php-comment">     * @param array  $exts      นามสกุลของไฟล์รูปภาพที่ยอมรับ เช่น [jpg, gif, png]
+</span></span><span id="395" class="l"><a href="#395">395: </a><span class="php-comment">     * @param string $target    path ของไฟล์รูปภาพปลายทาง
+</span></span><span id="396" class="l"><a href="#396">396: </a><span class="php-comment">     * @param string $name      ชื่อไฟล์ของรูปภาพปลายทาง
+</span></span><span id="397" class="l"><a href="#397">397: </a><span class="php-comment">     * @param int    $width     ขนาดสูงสุดของรูปภาพที่ต้องการ
+</span></span><span id="398" class="l"><a href="#398">398: </a><span class="php-comment">     * @param string $watermark (optional) ข้อความลายน้ำ
+</span></span><span id="399" class="l"><a href="#399">399: </a><span class="php-comment">     *
+</span></span><span id="400" class="l"><a href="#400">400: </a><span class="php-comment">     * @return array|bool
+</span></span><span id="401" class="l"><a href="#401">401: </a><span class="php-comment">     */</span>
+</span><span id="402" class="l"><a href="#402">402: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> resizeImage(<span class="php-var">$exts</span>, <span class="php-var">$target</span>, <span class="php-var">$name</span>, <span class="php-var">$width</span>, <span class="php-var">$watermark</span> = <span class="php-quote">''</span>)
+</span><span id="403" class="l"><a href="#403">403: </a>    {
+</span><span id="404" class="l"><a href="#404">404: </a>        <span class="php-var">$this</span>-&gt;check(<span class="php-var">$exts</span>, <span class="php-var">$target</span>);
+</span><span id="405" class="l"><a href="#405">405: </a>        <span class="php-var">$ret</span> = Image::resize(<span class="php-var">$this</span>-&gt;tmp_name, <span class="php-var">$target</span>, <span class="php-var">$name</span>, <span class="php-var">$width</span>, <span class="php-var">$watermark</span>);
+</span><span id="406" class="l"><a href="#406">406: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$ret</span> === <span class="php-keyword1">false</span>) {
+</span><span id="407" class="l"><a href="#407">407: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \RuntimeException(Language::get(<span class="php-quote">'Unable to create image'</span>));
+</span><span id="408" class="l"><a href="#408">408: </a>        } <span class="php-keyword1">else</span> {
+</span><span id="409" class="l"><a href="#409">409: </a>            <span class="php-keyword1">return</span> <span class="php-var">$ret</span>;
+</span><span id="410" class="l"><a href="#410">410: </a>        }
+</span><span id="411" class="l"><a href="#411">411: </a>    }
+</span><span id="412" class="l"><a href="#412">412: </a>
+</span><span id="413" class="l"><a href="#413">413: </a>    <span class="php-comment">/**
+</span></span><span id="414" class="l"><a href="#414">414: </a><span class="php-comment">     * ตรวจสอบนามสกุลของไฟล์อัปโหลด
+</span></span><span id="415" class="l"><a href="#415">415: </a><span class="php-comment">     * คืนค่า true ถ้านามสกุลของไฟล์อัปโหลดอยู่ใน $exts.
+</span></span><span id="416" class="l"><a href="#416">416: </a><span class="php-comment">     *
+</span></span><span id="417" class="l"><a href="#417">417: </a><span class="php-comment">     * @param array $exts รายการนามสกุลของไฟล์อัปโหลดที่ยอมรับ เช่น [jpg, gif, png]
+</span></span><span id="418" class="l"><a href="#418">418: </a><span class="php-comment">     *
+</span></span><span id="419" class="l"><a href="#419">419: </a><span class="php-comment">     * @return bool
+</span></span><span id="420" class="l"><a href="#420">420: </a><span class="php-comment">     */</span>
+</span><span id="421" class="l"><a href="#421">421: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> validFileExt(<span class="php-var">$exts</span>)
+</span><span id="422" class="l"><a href="#422">422: </a>    {
+</span><span id="423" class="l"><a href="#423">423: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">in_array</span>(<span class="php-var">$this</span>-&gt;getClientFileExt(), <span class="php-var">$exts</span>);
+</span><span id="424" class="l"><a href="#424">424: </a>    }
+</span><span id="425" class="l"><a href="#425">425: </a>
+</span><span id="426" class="l"><a href="#426">426: </a>    <span class="php-comment">/**
+</span></span><span id="427" class="l"><a href="#427">427: </a><span class="php-comment">     * ฟังชั่นตรวจสอบไฟล์อัปโหลด
+</span></span><span id="428" class="l"><a href="#428">428: </a><span class="php-comment">     * คืนค่า true ถ้าสามารถอัปโหลดได้.
+</span></span><span id="429" class="l"><a href="#429">429: </a><span class="php-comment">     *
+</span></span><span id="430" class="l"><a href="#430">430: </a><span class="php-comment">     * @param array  $exts      นามสกุลของไฟล์รูปภาพที่ยอมรับ เช่น [jpg, gif, png]
+</span></span><span id="431" class="l"><a href="#431">431: </a><span class="php-comment">     * @param string $targetDir ไดเรคทอรี่ปลายทาง
+</span></span><span id="432" class="l"><a href="#432">432: </a><span class="php-comment">     *
+</span></span><span id="433" class="l"><a href="#433">433: </a><span class="php-comment">     * @throws \RuntimeException         ถ้าชนิดของไฟล์อัปโหลดไม่ถูกต้อง
+</span></span><span id="434" class="l"><a href="#434">434: </a><span class="php-comment">     * @throws \InvalidArgumentException ถ้าไดเร็คทอรี่ไม่สามารถเขียนได้
+</span></span><span id="435" class="l"><a href="#435">435: </a><span class="php-comment">     *
+</span></span><span id="436" class="l"><a href="#436">436: </a><span class="php-comment">     * @return bool
+</span></span><span id="437" class="l"><a href="#437">437: </a><span class="php-comment">     */</span>
+</span><span id="438" class="l"><a href="#438">438: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> check(<span class="php-var">$exts</span>, <span class="php-var">$targetDir</span>)
+</span><span id="439" class="l"><a href="#439">439: </a>    {
+</span><span id="440" class="l"><a href="#440">440: </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$this</span>-&gt;validFileExt(<span class="php-var">$exts</span>)) {
+</span><span id="441" class="l"><a href="#441">441: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \RuntimeException(Language::get(<span class="php-quote">'The type of file is invalid'</span>));
+</span><span id="442" class="l"><a href="#442">442: </a>        }
+</span><span id="443" class="l"><a href="#443">443: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword2">is_writable</span>(<span class="php-var">$targetDir</span>)) {
+</span><span id="444" class="l"><a href="#444">444: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(Language::get(<span class="php-quote">'Target directory is not writable'</span>));
+</span><span id="445" class="l"><a href="#445">445: </a>        }
+</span><span id="446" class="l"><a href="#446">446: </a>
+</span><span id="447" class="l"><a href="#447">447: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>;
+</span><span id="448" class="l"><a href="#448">448: </a>    }
+</span><span id="449" class="l"><a href="#449">449: </a>}
+</span><span id="450" class="l"><a href="#450">450: </a></span></code></pre>
 
 	<div id="footer">
 		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>

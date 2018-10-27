@@ -496,7 +496,7 @@
 </span></span><span id="230" class="l"><a href="#230">230: </a><span class="php-comment"> */</span>
 </span><span id="231" class="l"><a href="#231">231: </a><span class="php-keyword1">function</span> getClassPath(<span class="php-var">$className</span>)
 </span><span id="232" class="l"><a href="#232">232: </a>{
-</span><span id="233" class="l"><a href="#233">233: </a>    <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match_all</span>(<span class="php-quote">'/([\/\\])([a-zA-Z]+)/'</span>, <span class="php-var">$className</span>, <span class="php-var">$match</span>)) {
+</span><span id="233" class="l"><a href="#233">233: </a>    <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match_all</span>(<span class="php-quote">'/([\/\\])([a-zA-Z0-9]+)/'</span>, <span class="php-var">$className</span>, <span class="php-var">$match</span>)) {
 </span><span id="234" class="l"><a href="#234">234: </a>        <span class="php-var">$className</span> = <span class="php-keyword2">implode</span>(DIRECTORY_SEPARATOR, <span class="php-var">$match</span>[<span class="php-num">1</span>]).<span class="php-quote">'.php'</span>;
 </span><span id="235" class="l"><a href="#235">235: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_file</span>(ROOT_PATH.<span class="php-var">$className</span>)) {
 </span><span id="236" class="l"><a href="#236">236: </a>            <span class="php-keyword1">return</span> ROOT_PATH.<span class="php-var">$className</span>;

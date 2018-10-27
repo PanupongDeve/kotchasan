@@ -432,7 +432,7 @@
 </span><span id="166" class="l"><a href="#166">166: </a>            <span class="php-var">$files</span> = <span class="php-keyword1">array</span>();
 </span><span id="167" class="l"><a href="#167">167: </a>            <span class="php-keyword2">File</span>::listFiles(<span class="php-var">$language_folder</span>, <span class="php-var">$files</span>);
 </span><span id="168" class="l"><a href="#168">168: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$files</span> <span class="php-keyword1">as</span> <span class="php-var">$file</span>) {
-</span><span id="169" class="l"><a href="#169">169: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/(.*\/([a-z]{2,2}))\.(php|js)/'</span>, <span class="php-var">$file</span>, <span class="php-var">$match</span>)) {
+</span><span id="169" class="l"><a href="#169">169: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/(.*\/([a-z]{2,2}))\.(php|js)$/'</span>, <span class="php-var">$file</span>, <span class="php-var">$match</span>)) {
 </span><span id="170" class="l"><a href="#170">170: </a>                    self::<span class="php-var">$installed_languages</span>[<span class="php-var">$match</span>[<span class="php-num">2</span>]] = <span class="php-var">$match</span>[<span class="php-num">2</span>];
 </span><span id="171" class="l"><a href="#171">171: </a>                }
 </span><span id="172" class="l"><a href="#172">172: </a>            }
