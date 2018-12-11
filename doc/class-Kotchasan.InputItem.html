@@ -215,7 +215,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.InputItem.html#13-470" title="Go to source code">Kotchasan/InputItem.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.InputItem.html#13-498" title="Go to source code">Kotchasan/InputItem.php</a>
 		<br>
 	</div>
 
@@ -427,6 +427,56 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="time" id="_time">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_time">#</a>
+		<code><a href="source-class-Kotchasan.InputItem.html#119-145" title="Go to source code">time</a>( <span>boolean <var>$strict</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			<p>เวลา
+คืนค่า null ถ้าข้อมูลเวลาว่างเปล่า หรือเท่าบ --:--.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>เวลา
+คืนค่า null ถ้าข้อมูลเวลาว่างเปล่า หรือเท่าบ --:--.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$strict</var></dt>
+					<dd>true ตรวจสอบความถูกต้องของวันที่ด้วย, false (default) ไม่ต้องตรวจสอบ</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+				<h4>Assert</h4>
+				<div class="list">
+						create('20:20:20')->time() [==] '20:20:20'<br>
+						create('--:--')->time() [==] null<br>
+						create('')->time() [==] null<br>
+						create('20:20:20')->time() [==] '20:20:20'<br>
+						create('20:20')->time() [==] '20:20'<br>
+						create('20:20')->time(true) [==] '20:20:00'<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="description" id="_description">
 
 		<td class="attributes"><code>
@@ -439,7 +489,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_description">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#119-160" title="Go to source code">description</a>( <span>integer <var>$len</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#147-188" title="Go to source code">description</a>( <span>integer <var>$len</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			<p>ลบ tag, BBCode ออก ให้เหลือแต่ข้อความล้วน
@@ -497,7 +547,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_detail">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#162-173" title="Go to source code">detail</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#190-201" title="Go to source code">detail</a>( )</code>
 
 		<div class="description short">
 			<p>ลบ PHP tag และแปลง \ เป็น $#92; ใช้รับข้อมูลจาก editor
@@ -537,7 +587,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_exists">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#175-184" title="Go to source code">exists</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#203-212" title="Go to source code">exists</a>( )</code>
 
 		<div class="description short">
 			<p>ตรวจสอบว่ามีตัวแปรส่งมาหรือไม่
@@ -573,7 +623,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_filter">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#186-200" title="Go to source code">filter</a>( <span>string <var>$format</var></span>, <span>string <var>$replace</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#214-228" title="Go to source code">filter</a>( <span>string <var>$format</var></span>, <span>string <var>$replace</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นแทนที่อักขระที่ไม่ต้องการ.</p>
@@ -619,7 +669,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isCookie">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#202-211" title="Go to source code">isCookie</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#230-239" title="Go to source code">isCookie</a>( )</code>
 
 		<div class="description short">
 			<p>ตรวจสอบว่ามาจาก $_COOKIE หรือไม่
@@ -655,7 +705,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isGet">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#213-222" title="Go to source code">isGet</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#241-250" title="Go to source code">isGet</a>( )</code>
 
 		<div class="description short">
 			<p>ตรวจสอบว่ามาจาก $_GET หรือไม่
@@ -691,7 +741,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isPost">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#224-233" title="Go to source code">isPost</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#252-261" title="Go to source code">isPost</a>( )</code>
 
 		<div class="description short">
 			<p>ตรวจสอบว่ามาจาก $_POST หรือไม่
@@ -727,7 +777,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isSession">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#235-244" title="Go to source code">isSession</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#263-272" title="Go to source code">isSession</a>( )</code>
 
 		<div class="description short">
 			<p>ตรวจสอบว่ามาจาก $_SESSION หรือไม่
@@ -763,7 +813,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_keywords">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#246-262" title="Go to source code">keywords</a>( <span>integer <var>$len</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#274-290" title="Go to source code">keywords</a>( <span>integer <var>$len</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			<p>ลบ tags และ ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
@@ -810,7 +860,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_number">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#264-276" title="Go to source code">number</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#292-304" title="Go to source code">number</a>( )</code>
 
 		<div class="description short">
 			<p>ตัวเลข</p>
@@ -850,7 +900,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_password">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#278-286" title="Go to source code">password</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#306-314" title="Go to source code">password</a>( )</code>
 
 		<div class="description short">
 			<p>รับค่าสำหรับ password อักขระทุกตัวไม่มีช่องว่าง.</p>
@@ -884,7 +934,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_quote">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#288-300" title="Go to source code">quote</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#316-328" title="Go to source code">quote</a>( )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นรับข้อความ ยอมรับอักขระทั้งหมด
@@ -926,7 +976,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_text">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#302-314" title="Go to source code">text</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#330-342" title="Go to source code">text</a>( )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่น แปลง &amp; " ' &lt; > \ เป็น HTML entities
@@ -968,7 +1018,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_textarea">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#316-328" title="Go to source code">textarea</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#344-356" title="Go to source code">textarea</a>( )</code>
 
 		<div class="description short">
 			<p>แปลง &lt; > \ { } เป็น HTML entities และแปลง \n เป็น <br>
@@ -1010,7 +1060,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toBoolean">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#330-344" title="Go to source code">toBoolean</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#358-372" title="Go to source code">toBoolean</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น boolean.</p>
@@ -1052,7 +1102,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toDouble">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#346-357" title="Go to source code">toDouble</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#374-385" title="Go to source code">toDouble</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น double.</p>
@@ -1091,7 +1141,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toFloat">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#359-370" title="Go to source code">toFloat</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#387-398" title="Go to source code">toFloat</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น float.</p>
@@ -1130,7 +1180,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toInt">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#372-383" title="Go to source code">toInt</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#400-411" title="Go to source code">toInt</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น integer.</p>
@@ -1169,7 +1219,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toObject">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#385-395" title="Go to source code">toObject</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#413-423" title="Go to source code">toObject</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น Object.</p>
@@ -1207,7 +1257,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toString">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#397-410" title="Go to source code">toString</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#425-438" title="Go to source code">toString</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าเป็น string หรือ null.</p>
@@ -1248,7 +1298,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_topic">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#412-423" title="Go to source code">topic</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#440-451" title="Go to source code">topic</a>( )</code>
 
 		<div class="description short">
 			<p>แปลง tag และ ลบช่องว่างไม่เกิน 1 ช่อง ไม่ขึ้นบรรทัดใหม่
@@ -1288,7 +1338,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_url">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#425-439" title="Go to source code">url</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#453-467" title="Go to source code">url</a>( )</code>
 
 		<div class="description short">
 			<p>แปลง tag ไม่แปลง &amp;
@@ -1332,7 +1382,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_username">#</a>
-		<code><a href="source-class-Kotchasan.InputItem.html#441-452" title="Go to source code">username</a>( )</code>
+		<code><a href="source-class-Kotchasan.InputItem.html#469-480" title="Go to source code">username</a>( )</code>
 
 		<div class="description short">
 			<p>รับค่าอีเมลและหมายเลขโทรศัพท์เท่านั้น.</p>

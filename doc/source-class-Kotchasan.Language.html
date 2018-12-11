@@ -661,7 +661,7 @@
 </span><span id="395" class="l"><a href="#395">395: </a>                        self::<span class="php-var">$languages</span> = (object) <span class="php-var">$language</span>;
 </span><span id="396" class="l"><a href="#396">396: </a>                        self::<span class="php-var">$language_name</span> = <span class="php-var">$item</span>;
 </span><span id="397" class="l"><a href="#397">397: </a>                        <span class="php-comment">// บันทึกภาษาที่กำลังใช้งานอยู่ลงใน cookie</span>
-</span><span id="398" class="l"><a href="#398">398: </a>                        <span class="php-keyword2">setcookie</span>(<span class="php-quote">'my_lang'</span>, <span class="php-var">$item</span>, <span class="php-keyword2">time</span>() + <span class="php-num">2592000</span>, <span class="php-quote">'/'</span>, <span class="php-keyword1">null</span>, HOST, <span class="php-keyword1">true</span>);
+</span><span id="398" class="l"><a href="#398">398: </a>                        <span class="php-keyword2">setcookie</span>(<span class="php-quote">'my_lang'</span>, <span class="php-var">$item</span>, <span class="php-keyword2">time</span>() + <span class="php-num">2592000</span>, <span class="php-quote">'/'</span>, HOST, HTTPS, <span class="php-keyword1">true</span>);
 </span><span id="399" class="l"><a href="#399">399: </a>                        <span class="php-keyword1">break</span>;
 </span><span id="400" class="l"><a href="#400">400: </a>                    }
 </span><span id="401" class="l"><a href="#401">401: </a>                }

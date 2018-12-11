@@ -1,11 +1,12 @@
 <?php
 /**
- * tests/bootstrap.php
+ * tests/bootstrap.php.
  *
  * @author Goragod Wiriya <admin@goragod.com>
- * @link http://www.kotchasan.com/
  * @copyright 2015 Goragod.com
  * @license http://www.kotchasan.com/license/
+ *
+ * @see http://www.kotchasan.com/
  */
 $_SERVER['HTTP_HOST'] = 'localhost';
 $_SERVER['DOCUMENT_ROOT'] = dirname(dirname(__FILE__)).'/';
