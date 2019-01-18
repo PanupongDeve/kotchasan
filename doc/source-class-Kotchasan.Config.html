@@ -181,7 +181,9 @@
 				<li><a href="class-Kotchasan.View.html">Kotchasan\View</a></li>
 				<li><a href="class-PDF.FPDF.html">PDF\FPDF</a></li>
 				<li><a href="class-PHPMailer.html">PHPMailer</a></li>
+				<li><a href="class-Psr.Log.AbstractLogger.html">Psr\Log\AbstractLogger</a></li>
 				<li><a href="class-Psr.Log.LogLevel.html">Psr\Log\LogLevel</a></li>
+				<li><a href="class-Psr.Log.NullLogger.html">Psr\Log\NullLogger</a></li>
 				<li><a href="class-SMTP.html">SMTP</a></li>
 			</ul>
 
@@ -201,6 +203,7 @@
 				<li><a href="class-Psr.Http.Message.StreamInterface.html">Psr\Http\Message\StreamInterface</a></li>
 				<li><a href="class-Psr.Http.Message.UploadedFileInterface.html">Psr\Http\Message\UploadedFileInterface</a></li>
 				<li><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></li>
+				<li><a href="class-Psr.Log.LoggerAwareInterface.html">Psr\Log\LoggerAwareInterface</a></li>
 				<li><a href="class-Psr.Log.LoggerInterface.html">Psr\Log\LoggerInterface</a></li>
 				<li><a href="class-SeekableIterator.html">SeekableIterator</a></li>
 				<li><a href="class-Serializable.html">Serializable</a></li>
@@ -503,39 +506,41 @@
 </span><span id="237" class="l"><a href="#237">237: </a>            }
 </span><span id="238" class="l"><a href="#238">238: </a>            <span class="php-keyword2">fwrite</span>(<span class="php-var">$f</span>, <span class="php-quote">'&lt;'</span>.<span class="php-quote">&quot;?php\n/* </span><span class="php-var">$match</span><span class="php-quote">[1].php */\nreturn &quot;</span>.<span class="php-keyword2">var_export</span>((<span class="php-keyword1">array</span>) <span class="php-var">$config</span>, <span class="php-keyword1">true</span>).<span class="php-quote">';'</span>);
 </span><span id="239" class="l"><a href="#239">239: </a>            <span class="php-keyword2">fclose</span>(<span class="php-var">$f</span>);
-</span><span id="240" class="l"><a href="#240">240: </a>
-</span><span id="241" class="l"><a href="#241">241: </a>            <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>;
-</span><span id="242" class="l"><a href="#242">242: </a>        } <span class="php-keyword1">else</span> {
-</span><span id="243" class="l"><a href="#243">243: </a>            <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
-</span><span id="244" class="l"><a href="#244">244: </a>        }
-</span><span id="245" class="l"><a href="#245">245: </a>    }
-</span><span id="246" class="l"><a href="#246">246: </a>
-</span><span id="247" class="l"><a href="#247">247: </a>    <span class="php-comment">/**
-</span></span><span id="248" class="l"><a href="#248">248: </a><span class="php-comment">     * เรียกใช้งาน Class แบบสามารถเรียกได้ครั้งเดียวเท่านั้น.
-</span></span><span id="249" class="l"><a href="#249">249: </a><span class="php-comment">     *
-</span></span><span id="250" class="l"><a href="#250">250: </a><span class="php-comment">     * @return \static
-</span></span><span id="251" class="l"><a href="#251">251: </a><span class="php-comment">     */</span>
-</span><span id="252" class="l"><a href="#252">252: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> __construct()
-</span><span id="253" class="l"><a href="#253">253: </a>    {
-</span><span id="254" class="l"><a href="#254">254: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_file</span>(ROOT_PATH.<span class="php-quote">'settings/config.php'</span>)) {
-</span><span id="255" class="l"><a href="#255">255: </a>            <span class="php-var">$config</span> = <span class="php-keyword1">include</span> ROOT_PATH.<span class="php-quote">'settings/config.php'</span>;
-</span><span id="256" class="l"><a href="#256">256: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$config</span>)) {
-</span><span id="257" class="l"><a href="#257">257: </a>                <span class="php-keyword1">foreach</span> (<span class="php-var">$config</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
-</span><span id="258" class="l"><a href="#258">258: </a>                    <span class="php-var">$this</span>-&gt;{<span class="php-var">$key</span>} = <span class="php-var">$value</span>;
-</span><span id="259" class="l"><a href="#259">259: </a>                }
-</span><span id="260" class="l"><a href="#260">260: </a>            }
-</span><span id="261" class="l"><a href="#261">261: </a>        }
-</span><span id="262" class="l"><a href="#262">262: </a>        <span class="php-keyword1">if</span> (ROOT_PATH != APP_PATH &amp;&amp; <span class="php-keyword2">is_file</span>(APP_PATH.<span class="php-quote">'settings/config.php'</span>)) {
-</span><span id="263" class="l"><a href="#263">263: </a>            <span class="php-var">$config</span> = <span class="php-keyword1">include</span> APP_PATH.<span class="php-quote">'settings/config.php'</span>;
-</span><span id="264" class="l"><a href="#264">264: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$config</span>)) {
-</span><span id="265" class="l"><a href="#265">265: </a>                <span class="php-keyword1">foreach</span> (<span class="php-var">$config</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
-</span><span id="266" class="l"><a href="#266">266: </a>                    <span class="php-var">$this</span>-&gt;{<span class="php-var">$key</span>} = <span class="php-var">$value</span>;
-</span><span id="267" class="l"><a href="#267">267: </a>                }
-</span><span id="268" class="l"><a href="#268">268: </a>            }
-</span><span id="269" class="l"><a href="#269">269: </a>        }
-</span><span id="270" class="l"><a href="#270">270: </a>    }
-</span><span id="271" class="l"><a href="#271">271: </a>}
-</span><span id="272" class="l"><a href="#272">272: </a></span></code></pre>
+</span><span id="240" class="l"><a href="#240">240: </a>            <span class="php-comment">// หน่วงเวลาเล็กน้อย</span>
+</span><span id="241" class="l"><a href="#241">241: </a>            <span class="php-keyword2">sleep</span>(<span class="php-num">1</span>);
+</span><span id="242" class="l"><a href="#242">242: </a>
+</span><span id="243" class="l"><a href="#243">243: </a>            <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>;
+</span><span id="244" class="l"><a href="#244">244: </a>        } <span class="php-keyword1">else</span> {
+</span><span id="245" class="l"><a href="#245">245: </a>            <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
+</span><span id="246" class="l"><a href="#246">246: </a>        }
+</span><span id="247" class="l"><a href="#247">247: </a>    }
+</span><span id="248" class="l"><a href="#248">248: </a>
+</span><span id="249" class="l"><a href="#249">249: </a>    <span class="php-comment">/**
+</span></span><span id="250" class="l"><a href="#250">250: </a><span class="php-comment">     * เรียกใช้งาน Class แบบสามารถเรียกได้ครั้งเดียวเท่านั้น.
+</span></span><span id="251" class="l"><a href="#251">251: </a><span class="php-comment">     *
+</span></span><span id="252" class="l"><a href="#252">252: </a><span class="php-comment">     * @return \static
+</span></span><span id="253" class="l"><a href="#253">253: </a><span class="php-comment">     */</span>
+</span><span id="254" class="l"><a href="#254">254: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> __construct()
+</span><span id="255" class="l"><a href="#255">255: </a>    {
+</span><span id="256" class="l"><a href="#256">256: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_file</span>(ROOT_PATH.<span class="php-quote">'settings/config.php'</span>)) {
+</span><span id="257" class="l"><a href="#257">257: </a>            <span class="php-var">$config</span> = <span class="php-keyword1">include</span> ROOT_PATH.<span class="php-quote">'settings/config.php'</span>;
+</span><span id="258" class="l"><a href="#258">258: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$config</span>)) {
+</span><span id="259" class="l"><a href="#259">259: </a>                <span class="php-keyword1">foreach</span> (<span class="php-var">$config</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
+</span><span id="260" class="l"><a href="#260">260: </a>                    <span class="php-var">$this</span>-&gt;{<span class="php-var">$key</span>} = <span class="php-var">$value</span>;
+</span><span id="261" class="l"><a href="#261">261: </a>                }
+</span><span id="262" class="l"><a href="#262">262: </a>            }
+</span><span id="263" class="l"><a href="#263">263: </a>        }
+</span><span id="264" class="l"><a href="#264">264: </a>        <span class="php-keyword1">if</span> (ROOT_PATH != APP_PATH &amp;&amp; <span class="php-keyword2">is_file</span>(APP_PATH.<span class="php-quote">'settings/config.php'</span>)) {
+</span><span id="265" class="l"><a href="#265">265: </a>            <span class="php-var">$config</span> = <span class="php-keyword1">include</span> APP_PATH.<span class="php-quote">'settings/config.php'</span>;
+</span><span id="266" class="l"><a href="#266">266: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$config</span>)) {
+</span><span id="267" class="l"><a href="#267">267: </a>                <span class="php-keyword1">foreach</span> (<span class="php-var">$config</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
+</span><span id="268" class="l"><a href="#268">268: </a>                    <span class="php-var">$this</span>-&gt;{<span class="php-var">$key</span>} = <span class="php-var">$value</span>;
+</span><span id="269" class="l"><a href="#269">269: </a>                }
+</span><span id="270" class="l"><a href="#270">270: </a>            }
+</span><span id="271" class="l"><a href="#271">271: </a>        }
+</span><span id="272" class="l"><a href="#272">272: </a>    }
+</span><span id="273" class="l"><a href="#273">273: </a>}
+</span><span id="274" class="l"><a href="#274">274: </a></span></code></pre>
 
 	<div id="footer">
 		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
@@ -543,6 +548,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?ba73eeb368f85dd7ac72073e538d9c950b441578"></script>
+<script src="elementlist.js?a7f19e71a5315fc537e208b8028895ca15f67e62"></script>
 </body>
 </html>
