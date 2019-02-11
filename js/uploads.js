@@ -48,6 +48,7 @@
           onProgress: doProgress,
           contentType: null
         });
+
         function _upload(files, i) {
           var total = 0;
           if (temp.uploading && i < files.length) {
@@ -68,15 +69,15 @@
                 if (ds) {
                   if (ds.alert) {
                     $G("result_" + temp.prefix + "_" + index).addClass(
-                      "invalid"
-                    ).innerHTML =
+                        "invalid"
+                      ).innerHTML =
                       ds.alert;
                     temp.error.push(ds.alert);
                   }
                 } else if (xhr.responseText != "") {
                   $G("result_" + temp.prefix + "_" + index).addClass(
-                    "invalid"
-                  ).innerHTML =
+                      "invalid"
+                    ).innerHTML =
                     xhr.responseText;
                   temp.error.push(xhr.responseText);
                 } else {
@@ -283,6 +284,7 @@
     }
   };
 })();
+
 function initGUploads(form_id, id, model) {
   var patt = /^(preview|delete|cover)_([0-9]+)(_([0-9]+))?$/,
     form = $G(form_id);
@@ -311,11 +313,11 @@ function initGUploads(form_id, id, model) {
     ) {
       _action(
         "action=deletep&mid=" +
-          $E("module_id").value +
-          "&aid=" +
-          id +
-          "&id=" +
-          cs.join(",")
+        $E("module_id").value +
+        "&aid=" +
+        id +
+        "&id=" +
+        cs.join(",")
       );
     }
   };
@@ -330,15 +332,16 @@ function initGUploads(form_id, id, model) {
     ) {
       _action(
         "action=cover&mid=" +
-          $E("module_id").value +
-          "&aid=" +
-          id +
-          "&id=" +
-          hs[2]
+        $E("module_id").value +
+        "&aid=" +
+        id +
+        "&id=" +
+        hs[2]
       );
     }
     return false;
   };
+
   function _action(q) {
     send("index.php/" + model, q, doFormSubmit);
   }

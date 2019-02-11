@@ -25,7 +25,6 @@ class ListItem
      * @var array
      */
     public $datas;
-
     /**
      * ที่อยู่ไฟล์ที่โหลดมา.
      *

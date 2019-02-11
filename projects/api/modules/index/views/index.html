@@ -22,11 +22,13 @@
   <div id="demo_result"></div>
   <script>
     // button click
-    $G('demo_send').addEvent('click', function () {
+    $G('demo_send').addEvent('click', function() {
       // ข้อมูลสำหรับส่งไป
       var q = 'method=getTime&id=' + $E('demo_txt').value;
       // send Ajax
-      new GAjax({method: 'get'}).send('api.php', q, function (xhr) {
+      new GAjax({
+        method: 'get'
+      }).send('api.php', q, function(xhr) {
         // ค่าตอบกลับ แปลงเป็น JSON
         var ds = xhr.responseText.toJSON();
         if (ds) {

@@ -30,7 +30,6 @@ class QueryBuilder extends \Kotchasan\Database\Query
      * @var bool
      */
     protected $toArray = false;
-
     /**
      * ตัวแปรเก็บพารามิเตอร์สำหรับการ bind.
      *

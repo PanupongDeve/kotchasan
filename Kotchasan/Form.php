@@ -26,7 +26,6 @@ class Form extends \Kotchasan\KBase
      * @var bool
      */
     public $ajax;
-
     /**
      * ตัวแปรบอกว่ามีการใช้งานฟอร์มร่วมกับ GForm หรือไม่
      * ถ้าใช้งานต้องมีการเรียกใช้ GAjax ด้วย.
@@ -34,21 +33,18 @@ class Form extends \Kotchasan\KBase
      * @var bool
      */
     public $gform;
-
     /**
      * Javascript.
      *
      * @var string
      */
     public $javascript;
-
     /**
      * tag attributes.
      *
      * @var array
      */
     private $attributes;
-
     /**
      * ชื่อ tag.
      *

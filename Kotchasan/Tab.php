@@ -23,17 +23,14 @@ class Tab
      * @var mixed
      */
     private $datas;
-
     /**
      * @var mixed
      */
     private $id;
-
     /**
      * @var mixed
      */
     private $select;
-
     /**
      * @var mixed
      */

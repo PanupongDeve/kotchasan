@@ -168,6 +168,7 @@ if (!defined('TOKEN_LIMIT')) {
 if (!defined('TOKEN_AGE')) {
     define('TOKEN_AGE', 3600);
 }
+
 /**
  * ฟังก์ชั่นใช้สำหรับสร้างคลาส.
  *

@@ -25,35 +25,30 @@ class Field extends \Kotchasan\Database\Db
      * @var string
      */
     public $table_alias;
-
     /**
      * ชื่อตาราง.
      *
      * @var string
      */
     public $table_name;
-
     /**
      * ชื่อของการเชื่อมต่อ ใช้สำหรับโหลด config จาก settings/database.php.
      *
      * @var string
      */
     protected $conn = 'mysql';
-
     /**
      * true ถ้ามาจากการ query, false ถ้าเป็นรายการใหม่.
      *
      * @var bool
      */
     protected $exists;
-
     /**
      * ชื่อฟิลด์ที่จะใช้เป็น Primary Key INT(11) AUTO_INCREMENT.
      *
      * @var string
      */
     protected $primaryKey = 'id';
-
     /**
      * ชื่อตาราง.
      *

@@ -7,19 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://www.kotchasan.com/js/gajax.js"></script>
   <link rel=stylesheet href="https://www.kotchasan.com/skin/gcss.css">
-  <style> /* style ของรูปรอโหลด */
-      #loading {
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 100px;
-        height: 100px;
-        position: absolute;
-        top: -100%;
-      }
-      #loading.wait {
-        background-image: url('loading.gif');
-      }
-    </style>
+  <style>
+    /* style ของรูปรอโหลด */
+    
+    #loading {
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: -100%;
+    }
+    
+    #loading.wait {
+      background-image: url('loading.gif');
+    }
+  </style>
 </head>
 
 <body>
@@ -38,7 +41,7 @@
   <div id="demo_result"></div>
   <script>
     // button click
-    $G('demo_send').addEvent('click', function (e) {
+    $G('demo_send').addEvent('click', function(e) {
       // ข้อมูลสำหรับส่งไป
       var q = 'url=' + $E('demo_txt').value;
       // create GAjax
@@ -46,7 +49,7 @@
       // กำหนดการแสดงรูปรอโหลดกลางจอ
       req.initLoading('loading', true);
       // เรียกข้อมูลด้วย Ajax โดยการส่งค่า url ที่ต้องการไปยัง Index\Web\Model->web()
-      req.send('index.php/index/model/index/web', q, function (xhr) {
+      req.send('index.php/index/model/index/web', q, function(xhr) {
         // นำ HTML ที่รับมาจาก Ajax ใส่ลงใน div#demo_result เพื่อแสดงผลลัพท์
         $E('demo_result').innerHTML = xhr.responseText;
       });

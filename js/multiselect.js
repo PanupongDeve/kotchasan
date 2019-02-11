@@ -43,8 +43,8 @@
             var select = self.selects[sel];
             qs.push(
               select.id.replace(self.prefix, "") +
-                "=" +
-                encodeURIComponent(select.value)
+              "=" +
+              encodeURIComponent(select.value)
             );
           }
           temp.addClass("wait");

@@ -25,7 +25,6 @@ class InputItem
      * @var string|null
      */
     protected $type;
-
     /**
      * ตัวแปรเก็บค่าของ Object.
      *

@@ -30,7 +30,7 @@
   <aside class='message'>ตัวอย่างนี้ต้องมีการกำหนดค่าฐานข้อมูลด้วย ดังนั้นก่อนการทดสอบตัวอย่างจะต้องแก้ไข settings/database.php ให้ตรงตามฐานข้อมูลที่มีอยู่ด้วย (ใช้ฐานข้อมุลใดก็ได้เนื่องจากสคริปต์ต้องการแค่การเชื่อมต่อฐานข้อมูล)</aside>
   <script>
     // ฟังก์ชั่นรับค่าจากการคลิก
-    var doClick = function (e) {
+    var doClick = function(e) {
       if (this.type == 'radio') {
         // Radio
         send(this.name + '=' + this.value);
@@ -46,7 +46,7 @@
       // กำหนดการแสดงรูปรอโหลดไปที่ปุ่มกด
       req.initLoading('demo_txt');
       // เรียกข้อมูลด้วย Ajax โดยการส่งค่า url ที่ต้องการไปยัง Index\Web\Model->save()
-      req.send('index.php/index/model/index/save', q, function (xhr) {
+      req.send('index.php/index/model/index/save', q, function(xhr) {
         // แปลงข้อความที่ตอบกลับมาจาก Server เป็น JSON
         var ds = xhr.responseText.toJSON();
         if (ds) {
@@ -69,7 +69,7 @@
       });
     }
     // วนลูปอ่าน tag ทั้งหมดใน div_elem
-    forEach($G('div_elem').elems('*'), function () {
+    forEach($G('div_elem').elems('*'), function() {
       // ใช้ RegExp ตรวจสอบ name ของ tag ว่าเป็นรายการที่ต้องการหรือไม่ (test1-test4 และ submit)
       if (/(submit|test)/.test(this.name)) {
         // ถ้าใช่ตัวที่กำหนด ให้ดักจับอีเว้นต์ click

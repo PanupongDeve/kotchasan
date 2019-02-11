@@ -31,42 +31,36 @@ abstract class Driver extends Query
      * @var Cache
      */
     protected $cache;
-
     /**
      * Cacheitem.
      *
      * @var Item
      */
     protected $cache_item;
-
     /**
      * database connection.
      *
      * @var resource
      */
     protected $connection = null;
-
     /**
      * database error message.
      *
      * @var string
      */
     protected $error_message = '';
-
     /**
      * นับจำนวนการ query.
      *
      * @var int
      */
     protected static $query_count = 0;
-
     /**
      * เก็บ Object ที่เป็นผลลัพท์จากการ query.
      *
      * @var resource|object
      */
     protected $result_id;
-
     /**
      * ตัวแปรเก็บ query สำหรับการ execute.
      *

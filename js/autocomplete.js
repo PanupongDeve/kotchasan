@@ -45,6 +45,7 @@
       display.style.position = "absolute";
       display.style.display = "block";
       display.style.zIndex = 9999;
+
       function _movehighlight(id) {
         listindex = Math.max(0, id);
         listindex = Math.min(list.length - 1, listindex);
@@ -59,6 +60,7 @@
         });
         return selItem;
       }
+
       function onSelect() {
         if (showing) {
           _hide();
@@ -78,6 +80,7 @@
       var _mousemove = function() {
         _movehighlight(this.itemindex);
       };
+
       function _populateitems(datas) {
         display.innerHTML = "";
         var f, i, r, p;
@@ -98,6 +101,7 @@
         }
         _movehighlight(0);
       }
+
       function _hide() {
         self.input.removeClass(options.loadingClass);
         display.style.left = "-100000px";
@@ -135,11 +139,7 @@
                   if (vp.left + dd.width > cw) {
                     display.style.width = cw - vp.left - 5 + "px";
                   }
-                  if (
-                    vp.top + dm.height + 5 + dd.height >=
-                    document.viewport.getHeight() +
-                      document.viewport.getscrollTop()
-                  ) {
+                  if (vp.top + dm.height + 5 + dd.height >= document.viewport.getHeight() + document.viewport.getscrollTop()) {
                     display.style.top = vp.top - dd.height - 5 + "px";
                   } else {
                     display.style.top = vp.top + dm.height + 5 + "px";
@@ -156,6 +156,7 @@
         }
         cancelEvent = false;
       };
+
       function _showitem(item) {
         if (item) {
           var top = item.getTop() - display.getTop();
@@ -167,6 +168,7 @@
           }
         }
       }
+
       function _dokeydown(evt) {
         var key = GEvent.keyCode(evt);
         if (key == 40) {
@@ -224,9 +226,11 @@
     }
   };
 })();
+
 function initAutoComplete(id, link, displayFields, icon, options) {
   var obj,
     df = displayFields.split(",");
+
   function doGetQuery() {
     var q = null,
       value = $E(id).value;
@@ -235,12 +239,14 @@ function initAutoComplete(id, link, displayFields, icon, options) {
     }
     return q;
   }
+
   function doCallBack() {
     for (var prop in this) {
       $G(prop).setValue(this[prop] === null ? "" : this[prop]);
     }
     obj.valid();
   }
+
   function doPopulate() {
     if ($E(id)) {
       var datas = new Array();
@@ -250,24 +256,13 @@ function initAutoComplete(id, link, displayFields, icon, options) {
         }
       }
       var row = datas.join(" ").unentityify();
-      forEach(
-        $E(id)
-          .value.replace(/[\s]+/, " ")
-          .split(" "),
-        function() {
-          if (this.length > 0) {
-            var patt = new RegExp("(" + this.preg_quote() + ")", "gi");
-            row = row.replace(patt, "<em>$1</em>");
-          }
+      forEach($E(id).value.replace(/[\s]+/, " ").split(" "), function() {
+        if (this.length > 0) {
+          var patt = new RegExp("(" + this.preg_quote() + ")", "gi");
+          row = row.replace(patt, "<em>$1</em>");
         }
-      );
-      return (
-        '<p><span class="icon-' +
-        (icon || this.icon || "search") +
-        '">' +
-        row +
-        "</span></p>"
-      );
+      });
+      return '<p><span class="icon-' + (icon || this.icon || "search") + '">' + row + "</span></p>";
     }
   }
   var o = {

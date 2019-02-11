@@ -8,19 +8,22 @@
   <script src="https://www.kotchasan.com/js/gajax.js"></script>
   <script src="https://www.kotchasan.com/js/clock.js"></script>
   <link rel=stylesheet href="https://www.kotchasan.com/skin/gcss.css">
-  <style> /* style ของรูปรอโหลด */
-      #loading {
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 100px;
-        height: 100px;
-        position: absolute;
-        top: -100%;
-      }
-      #loading.wait {
-        background-image: url('loading.gif');
-      }
-    </style>
+  <style>
+    /* style ของรูปรอโหลด */
+    
+    #loading {
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: -100%;
+    }
+    
+    #loading.wait {
+      background-image: url('loading.gif');
+    }
+  </style>
 </head>
 
 <body>
@@ -35,7 +38,7 @@
   </header>
   <script>
     // ฟังก์ชั่น Ajax อ่านข้อมูลจาก Server เป็นระยะ
-    new GAjax().initLoading('demo_txt').autoupdate('index.php/index/model/index/time', 60, null, function (xhr) {
+    new GAjax().initLoading('demo_txt').autoupdate('index.php/index/model/index/time', 60, null, function(xhr) {
       $E('demo_txt').value = xhr.responseText;
     });
     // เริ่มต้นจับเวลาด้วย Javascript
