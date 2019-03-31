@@ -232,6 +232,7 @@
 			<h3>Functions</h3>
 			<ul>
 				<li><a href="function-createClass.html">createClass</a></li>
+				<li><a href="function-debug.html">debug</a></li>
 				<li><a href="function-getClassPath.html">getClassPath</a></li>
 			</ul>
 		</div>
@@ -966,7 +967,7 @@
 </span><span id="697" class="l"><a href="#697">697: </a>                <span class="php-var">$sql</span> = <span class="php-quote">&quot;'</span><span class="php-var">$value</span><span class="php-quote">'&quot;</span>;
 </span><span id="698" class="l"><a href="#698">698: </a>            } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/0x[0-9]+/is'</span>, <span class="php-var">$value</span>)) {
 </span><span id="699" class="l"><a href="#699">699: </a>                <span class="php-comment">// 0x</span>
-</span><span id="700" class="l"><a href="#700">700: </a>                <span class="php-var">$sql</span> = <span class="php-quote">':'</span>.<span class="php-keyword2">strtolower</span>(<span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/[`\.\s\-_]+/'</span>, <span class="php-quote">''</span>, <span class="php-var">$column_name</span>)).<span class="php-keyword2">sizeof</span>(<span class="php-var">$values</span>);
+</span><span id="700" class="l"><a href="#700">700: </a>                <span class="php-var">$sql</span> = <span class="php-quote">':'</span>.<span class="php-keyword2">strtolower</span>(<span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/[`\.\s\-_]+/'</span>, <span class="php-quote">''</span>, <span class="php-var">$column_name</span>)).<span class="php-keyword2">count</span>(<span class="php-var">$values</span>);
 </span><span id="701" class="l"><a href="#701">701: </a>                <span class="php-var">$values</span>[<span class="php-var">$sql</span>] = <span class="php-var">$value</span>;
 </span><span id="702" class="l"><a href="#702">702: </a>            } <span class="php-keyword1">else</span> {
 </span><span id="703" class="l"><a href="#703">703: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^(([A-Z0-9]{1,2})|`([a-zA-Z0-9_]+)`)\.`?([a-zA-Z0-9_]+)`?$/'</span>, <span class="php-var">$value</span>, <span class="php-var">$match</span>)) {
@@ -979,7 +980,7 @@
 </span><span id="710" class="l"><a href="#710">710: </a>                    <span class="php-comment">// ข้อความที่ไม่มีช่องว่างหรือรหัสที่อาจเป็น SQL</span>
 </span><span id="711" class="l"><a href="#711">711: </a>                    <span class="php-var">$sql</span> = <span class="php-quote">&quot;'</span><span class="php-var">$value</span><span class="php-quote">'&quot;</span>;
 </span><span id="712" class="l"><a href="#712">712: </a>                } <span class="php-keyword1">else</span> {
-</span><span id="713" class="l"><a href="#713">713: </a>                    <span class="php-var">$sql</span> = <span class="php-quote">':'</span>.<span class="php-keyword2">strtolower</span>(<span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/[`\.\s\-_]+/'</span>, <span class="php-quote">''</span>, <span class="php-var">$column_name</span>)).<span class="php-keyword2">sizeof</span>(<span class="php-var">$values</span>);
+</span><span id="713" class="l"><a href="#713">713: </a>                    <span class="php-var">$sql</span> = <span class="php-quote">':'</span>.<span class="php-keyword2">strtolower</span>(<span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/[`\.\s\-_]+/'</span>, <span class="php-quote">''</span>, <span class="php-var">$column_name</span>)).<span class="php-keyword2">count</span>(<span class="php-var">$values</span>);
 </span><span id="714" class="l"><a href="#714">714: </a>                    <span class="php-var">$values</span>[<span class="php-var">$sql</span>] = <span class="php-var">$value</span>;
 </span><span id="715" class="l"><a href="#715">715: </a>                }
 </span><span id="716" class="l"><a href="#716">716: </a>            }
@@ -1073,7 +1074,7 @@
 </span><span id="804" class="l"><a href="#804">804: </a>                } <span class="php-keyword1">else</span> {
 </span><span id="805" class="l"><a href="#805">805: </a>                    <span class="php-var">$key</span> = self::fieldName(<span class="php-var">$condition</span>[<span class="php-num">0</span>]);
 </span><span id="806" class="l"><a href="#806">806: </a>                }
-</span><span id="807" class="l"><a href="#807">807: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword2">sizeof</span>(<span class="php-var">$condition</span>) == <span class="php-num">2</span>) {
+</span><span id="807" class="l"><a href="#807">807: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword2">count</span>(<span class="php-var">$condition</span>) == <span class="php-num">2</span>) {
 </span><span id="808" class="l"><a href="#808">808: </a>                    <span class="php-keyword1">if</span> (<span class="php-var">$condition</span>[<span class="php-num">1</span>] <span class="php-keyword1">instanceof</span> QueryBuilder) {
 </span><span id="809" class="l"><a href="#809">809: </a>                        <span class="php-var">$operator</span> = <span class="php-quote">'='</span>;
 </span><span id="810" class="l"><a href="#810">810: </a>                        <span class="php-var">$value</span> = <span class="php-quote">'('</span>.<span class="php-var">$condition</span>[<span class="php-num">1</span>]-&gt;text().<span class="php-quote">')'</span>;
@@ -1134,6 +1135,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?a7f19e71a5315fc537e208b8028895ca15f67e62"></script>
+<script src="elementlist.js?27279f611ed1cfb38fc774c3c1db7307897f92b9"></script>
 </body>
 </html>

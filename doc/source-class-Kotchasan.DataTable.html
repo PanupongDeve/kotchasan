@@ -232,6 +232,7 @@
 			<h3>Functions</h3>
 			<ul>
 				<li><a href="function-createClass.html">createClass</a></li>
+				<li><a href="function-debug.html">debug</a></li>
 				<li><a href="function-getClassPath.html">getClassPath</a></li>
 			</ul>
 		</div>
@@ -827,7 +828,7 @@
 </span><span id="558" class="l"><a href="#558"> 558: </a>            }
 </span><span id="559" class="l"><a href="#559"> 559: </a>        } <span class="php-keyword1">elseif</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;datas)) {
 </span><span id="560" class="l"><a href="#560"> 560: </a>            <span class="php-comment">// จำนวนข้อมูลทั้งหมดจาก array</span>
-</span><span id="561" class="l"><a href="#561"> 561: </a>            <span class="php-var">$count</span> = <span class="php-keyword2">sizeof</span>(<span class="php-var">$this</span>-&gt;datas);
+</span><span id="561" class="l"><a href="#561"> 561: </a>            <span class="php-var">$count</span> = <span class="php-keyword2">count</span>(<span class="php-var">$this</span>-&gt;datas);
 </span><span id="562" class="l"><a href="#562"> 562: </a>        } <span class="php-keyword1">else</span> {
 </span><span id="563" class="l"><a href="#563"> 563: </a>            <span class="php-comment">// ไม่มีข้อมูล</span>
 </span><span id="564" class="l"><a href="#564"> 564: </a>            <span class="php-var">$count</span> = <span class="php-num">0</span>;
@@ -934,7 +935,7 @@
 </span><span id="665" class="l"><a href="#665"> 665: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;fullWidth) {
 </span><span id="666" class="l"><a href="#666"> 666: </a>            <span class="php-var">$c</span>[] = <span class="php-quote">'fullwidth'</span>;
 </span><span id="667" class="l"><a href="#667"> 667: </a>        }
-</span><span id="668" class="l"><a href="#668"> 668: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">sizeof</span>(<span class="php-var">$c</span>) &gt; <span class="php-num">0</span>) {
+</span><span id="668" class="l"><a href="#668"> 668: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">count</span>(<span class="php-var">$c</span>) &gt; <span class="php-num">0</span>) {
 </span><span id="669" class="l"><a href="#669"> 669: </a>            <span class="php-var">$prop</span>[] = <span class="php-quote">' class=&quot;'</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$c</span>).<span class="php-quote">'&quot;'</span>;
 </span><span id="670" class="l"><a href="#670"> 670: </a>        }
 </span><span id="671" class="l"><a href="#671"> 671: </a>        <span class="php-comment">// table</span>
@@ -1364,33 +1365,44 @@
 </span><span id="1095" class="l"><a href="#1095">1095: </a>    {
 </span><span id="1096" class="l"><a href="#1096">1096: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'type'</span>])) {
 </span><span id="1097" class="l"><a href="#1097">1097: </a>            <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>();
-</span><span id="1098" class="l"><a href="#1098">1098: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
-</span><span id="1099" class="l"><a href="#1099">1099: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$key</span> != <span class="php-quote">'text'</span> &amp;&amp; <span class="php-var">$key</span> != <span class="php-quote">'default'</span>) {
-</span><span id="1100" class="l"><a href="#1100">1100: </a>                    <span class="php-var">$prop</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="1101" class="l"><a href="#1101">1101: </a>                }
-</span><span id="1102" class="l"><a href="#1102">1102: </a>            }
-</span><span id="1103" class="l"><a href="#1103">1103: </a>            <span class="php-var">$row</span> = <span class="php-quote">'&lt;fieldset&gt;&lt;label&gt;'</span>.(<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'text'</span>]) ? <span class="php-var">$item</span>[<span class="php-quote">'text'</span>] : <span class="php-quote">''</span>).<span class="php-quote">' &lt;input '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;&lt;/label&gt;&lt;/fieldset&gt;'</span>;
-</span><span id="1104" class="l"><a href="#1104">1104: </a>        } <span class="php-keyword1">else</span> {
-</span><span id="1105" class="l"><a href="#1105">1105: </a>            <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>();
-</span><span id="1106" class="l"><a href="#1106">1106: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
-</span><span id="1107" class="l"><a href="#1107">1107: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$key</span> != <span class="php-quote">'options'</span> &amp;&amp; <span class="php-var">$key</span> != <span class="php-quote">'value'</span> &amp;&amp; <span class="php-var">$key</span> != <span class="php-quote">'text'</span> &amp;&amp; <span class="php-var">$key</span> != <span class="php-quote">'default'</span>) {
-</span><span id="1108" class="l"><a href="#1108">1108: </a>                    <span class="php-var">$prop</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="1109" class="l"><a href="#1109">1109: </a>                }
-</span><span id="1110" class="l"><a href="#1110">1110: </a>            }
-</span><span id="1111" class="l"><a href="#1111">1111: </a>            <span class="php-var">$row</span> = <span class="php-quote">'&lt;fieldset&gt;&lt;label&gt;'</span>.(<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'text'</span>]) ? <span class="php-var">$item</span>[<span class="php-quote">'text'</span>] : <span class="php-quote">''</span>).<span class="php-quote">' &lt;select '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;'</span>;
-</span><span id="1112" class="l"><a href="#1112">1112: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$item</span>[<span class="php-quote">'options'</span>])) {
-</span><span id="1113" class="l"><a href="#1113">1113: </a>                <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span>[<span class="php-quote">'options'</span>] <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$text</span>) {
-</span><span id="1114" class="l"><a href="#1114">1114: </a>                    <span class="php-var">$sel</span> = <span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'value'</span>]) &amp;&amp; (string) <span class="php-var">$key</span> == <span class="php-var">$item</span>[<span class="php-quote">'value'</span>] ? <span class="php-quote">' selected'</span> : <span class="php-quote">''</span>;
-</span><span id="1115" class="l"><a href="#1115">1115: </a>                    <span class="php-var">$row</span> .= <span class="php-quote">'&lt;option value=&quot;'</span>.<span class="php-var">$key</span>.<span class="php-quote">'&quot;'</span>.<span class="php-var">$sel</span>.<span class="php-quote">'&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/option&gt;'</span>;
-</span><span id="1116" class="l"><a href="#1116">1116: </a>                }
-</span><span id="1117" class="l"><a href="#1117">1117: </a>            }
-</span><span id="1118" class="l"><a href="#1118">1118: </a>            <span class="php-var">$row</span> .= <span class="php-quote">'&lt;/select&gt;&lt;/label&gt;&lt;/fieldset&gt;'</span>;
-</span><span id="1119" class="l"><a href="#1119">1119: </a>        }
-</span><span id="1120" class="l"><a href="#1120">1120: </a>
-</span><span id="1121" class="l"><a href="#1121">1121: </a>        <span class="php-keyword1">return</span> <span class="php-var">$row</span>;
-</span><span id="1122" class="l"><a href="#1122">1122: </a>    }
-</span><span id="1123" class="l"><a href="#1123">1123: </a>}
-</span><span id="1124" class="l"><a href="#1124">1124: </a></span></code></pre>
+</span><span id="1098" class="l"><a href="#1098">1098: </a>            <span class="php-var">$datalist</span> = <span class="php-quote">''</span>;
+</span><span id="1099" class="l"><a href="#1099">1099: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
+</span><span id="1100" class="l"><a href="#1100">1100: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$key</span> == <span class="php-quote">'datalist'</span>) {
+</span><span id="1101" class="l"><a href="#1101">1101: </a>                    <span class="php-keyword1">foreach</span> (<span class="php-var">$value</span> <span class="php-keyword1">as</span> <span class="php-var">$k</span> =&gt; <span class="php-var">$v</span>) {
+</span><span id="1102" class="l"><a href="#1102">1102: </a>                        <span class="php-var">$datalist</span> .= <span class="php-quote">'&lt;option value=&quot;'</span>.<span class="php-var">$k</span>.<span class="php-quote">'&quot;&gt;'</span>.<span class="php-var">$v</span>.<span class="php-quote">'&lt;/option&gt;'</span>;
+</span><span id="1103" class="l"><a href="#1103">1103: </a>                    }
+</span><span id="1104" class="l"><a href="#1104">1104: </a>                } <span class="php-keyword1">elseif</span> (<span class="php-var">$key</span> != <span class="php-quote">'text'</span> &amp;&amp; <span class="php-var">$key</span> != <span class="php-quote">'default'</span>) {
+</span><span id="1105" class="l"><a href="#1105">1105: </a>                    <span class="php-var">$prop</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="1106" class="l"><a href="#1106">1106: </a>                }
+</span><span id="1107" class="l"><a href="#1107">1107: </a>            }
+</span><span id="1108" class="l"><a href="#1108">1108: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$datalist</span> != <span class="php-quote">''</span> &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'name'</span>])) {
+</span><span id="1109" class="l"><a href="#1109">1109: </a>                <span class="php-var">$prop</span>[<span class="php-quote">'list'</span>] = <span class="php-quote">'list=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'name'</span>].<span class="php-quote">'-datalist&quot;'</span>;
+</span><span id="1110" class="l"><a href="#1110">1110: </a>                <span class="php-var">$datalist</span> = <span class="php-quote">'&lt;datalist id=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'name'</span>].<span class="php-quote">'-datalist&quot;&gt;'</span>.<span class="php-var">$datalist</span>.<span class="php-quote">'&lt;/datalist&gt;'</span>;
+</span><span id="1111" class="l"><a href="#1111">1111: </a>            } <span class="php-keyword1">else</span> {
+</span><span id="1112" class="l"><a href="#1112">1112: </a>                <span class="php-var">$datalist</span> = <span class="php-quote">''</span>;
+</span><span id="1113" class="l"><a href="#1113">1113: </a>            }
+</span><span id="1114" class="l"><a href="#1114">1114: </a>            <span class="php-var">$row</span> = <span class="php-quote">'&lt;fieldset&gt;&lt;label&gt;'</span>.(<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'text'</span>]) ? <span class="php-var">$item</span>[<span class="php-quote">'text'</span>] : <span class="php-quote">''</span>).<span class="php-quote">' &lt;input '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;'</span>.<span class="php-var">$datalist</span>.<span class="php-quote">'&lt;/label&gt;&lt;/fieldset&gt;'</span>;
+</span><span id="1115" class="l"><a href="#1115">1115: </a>        } <span class="php-keyword1">else</span> {
+</span><span id="1116" class="l"><a href="#1116">1116: </a>            <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>();
+</span><span id="1117" class="l"><a href="#1117">1117: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
+</span><span id="1118" class="l"><a href="#1118">1118: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$key</span> != <span class="php-quote">'options'</span> &amp;&amp; <span class="php-var">$key</span> != <span class="php-quote">'value'</span> &amp;&amp; <span class="php-var">$key</span> != <span class="php-quote">'text'</span> &amp;&amp; <span class="php-var">$key</span> != <span class="php-quote">'default'</span>) {
+</span><span id="1119" class="l"><a href="#1119">1119: </a>                    <span class="php-var">$prop</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="1120" class="l"><a href="#1120">1120: </a>                }
+</span><span id="1121" class="l"><a href="#1121">1121: </a>            }
+</span><span id="1122" class="l"><a href="#1122">1122: </a>            <span class="php-var">$row</span> = <span class="php-quote">'&lt;fieldset&gt;&lt;label&gt;'</span>.(<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'text'</span>]) ? <span class="php-var">$item</span>[<span class="php-quote">'text'</span>] : <span class="php-quote">''</span>).<span class="php-quote">' &lt;select '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;'</span>;
+</span><span id="1123" class="l"><a href="#1123">1123: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$item</span>[<span class="php-quote">'options'</span>])) {
+</span><span id="1124" class="l"><a href="#1124">1124: </a>                <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span>[<span class="php-quote">'options'</span>] <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$text</span>) {
+</span><span id="1125" class="l"><a href="#1125">1125: </a>                    <span class="php-var">$sel</span> = <span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'value'</span>]) &amp;&amp; (string) <span class="php-var">$key</span> == <span class="php-var">$item</span>[<span class="php-quote">'value'</span>] ? <span class="php-quote">' selected'</span> : <span class="php-quote">''</span>;
+</span><span id="1126" class="l"><a href="#1126">1126: </a>                    <span class="php-var">$row</span> .= <span class="php-quote">'&lt;option value=&quot;'</span>.<span class="php-var">$key</span>.<span class="php-quote">'&quot;'</span>.<span class="php-var">$sel</span>.<span class="php-quote">'&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/option&gt;'</span>;
+</span><span id="1127" class="l"><a href="#1127">1127: </a>                }
+</span><span id="1128" class="l"><a href="#1128">1128: </a>            }
+</span><span id="1129" class="l"><a href="#1129">1129: </a>            <span class="php-var">$row</span> .= <span class="php-quote">'&lt;/select&gt;&lt;/label&gt;&lt;/fieldset&gt;'</span>;
+</span><span id="1130" class="l"><a href="#1130">1130: </a>        }
+</span><span id="1131" class="l"><a href="#1131">1131: </a>
+</span><span id="1132" class="l"><a href="#1132">1132: </a>        <span class="php-keyword1">return</span> <span class="php-var">$row</span>;
+</span><span id="1133" class="l"><a href="#1133">1133: </a>    }
+</span><span id="1134" class="l"><a href="#1134">1134: </a>}
+</span><span id="1135" class="l"><a href="#1135">1135: </a></span></code></pre>
 
 	<div id="footer">
 		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
@@ -1398,6 +1410,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?a7f19e71a5315fc537e208b8028895ca15f67e62"></script>
+<script src="elementlist.js?27279f611ed1cfb38fc774c3c1db7307897f92b9"></script>
 </body>
 </html>

@@ -232,6 +232,7 @@
 			<h3>Functions</h3>
 			<ul>
 				<li><a href="function-createClass.html">createClass</a></li>
+				<li><a href="function-debug.html">debug</a></li>
 				<li><a href="function-getClassPath.html">getClassPath</a></li>
 			</ul>
 		</div>
@@ -527,7 +528,7 @@
 </span><span id="258" class="l"><a href="#258">258: </a>                    <span class="php-var">$qs</span>[] = <span class="php-quote">'`'</span>.<span class="php-var">$match</span>[<span class="php-num">1</span>].<span class="php-quote">'`'</span>.(<span class="php-keyword1">empty</span>(<span class="php-var">$match</span>[<span class="php-num">2</span>]) ? <span class="php-quote">''</span> : <span class="php-quote">' '</span>.<span class="php-var">$match</span>[<span class="php-num">2</span>]);
 </span><span id="259" class="l"><a href="#259">259: </a>                }
 </span><span id="260" class="l"><a href="#260">260: </a>            }
-</span><span id="261" class="l"><a href="#261">261: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">sizeof</span>(<span class="php-var">$qs</span>) &gt; <span class="php-num">0</span>) {
+</span><span id="261" class="l"><a href="#261">261: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">count</span>(<span class="php-var">$qs</span>) &gt; <span class="php-num">0</span>) {
 </span><span id="262" class="l"><a href="#262">262: </a>                <span class="php-var">$sql</span> .= <span class="php-quote">' ORDER BY '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">', '</span>, <span class="php-var">$qs</span>);
 </span><span id="263" class="l"><a href="#263">263: </a>            }
 </span><span id="264" class="l"><a href="#264">264: </a>        }
@@ -576,7 +577,7 @@
 </span><span id="307" class="l"><a href="#307">307: </a>                <span class="php-var">$sets</span>[] = <span class="php-quote">'`'</span>.<span class="php-var">$key</span>.<span class="php-quote">'` = '</span>.<span class="php-var">$value</span>-&gt;text();
 </span><span id="308" class="l"><a href="#308">308: </a>                <span class="php-var">$values</span> = <span class="php-var">$value</span>-&gt;getValues(<span class="php-var">$values</span>);
 </span><span id="309" class="l"><a href="#309">309: </a>            } <span class="php-keyword1">else</span> {
-</span><span id="310" class="l"><a href="#310">310: </a>                <span class="php-var">$k</span> = <span class="php-quote">':'</span>.<span class="php-var">$key</span>.<span class="php-keyword2">sizeof</span>(<span class="php-var">$values</span>);
+</span><span id="310" class="l"><a href="#310">310: </a>                <span class="php-var">$k</span> = <span class="php-quote">':'</span>.<span class="php-var">$key</span>.<span class="php-keyword2">count</span>(<span class="php-var">$values</span>);
 </span><span id="311" class="l"><a href="#311">311: </a>                <span class="php-var">$sets</span>[] = <span class="php-quote">'`'</span>.<span class="php-var">$key</span>.<span class="php-quote">'` = '</span>.<span class="php-var">$k</span>;
 </span><span id="312" class="l"><a href="#312">312: </a>                <span class="php-var">$values</span>[<span class="php-var">$k</span>] = <span class="php-var">$value</span>;
 </span><span id="313" class="l"><a href="#313">313: </a>            }
@@ -708,6 +709,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?a7f19e71a5315fc537e208b8028895ca15f67e62"></script>
+<script src="elementlist.js?27279f611ed1cfb38fc774c3c1db7307897f92b9"></script>
 </body>
 </html>

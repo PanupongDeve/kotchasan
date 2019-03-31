@@ -191,9 +191,9 @@ server parameters.</p>
 		<b>Namespace:</b> <a href="namespace-Psr.html">Psr</a>\<a href="namespace-Psr.Http.html">Http</a>\<a href="namespace-Psr.Http.Message.html">Message</a><br>
 		
 
-				<b>Link:</b>
-				<a href="http://tools.ietf.org/html/rfc3986">(the URI specification)</a><br>
-			<b>Located at</b> <a href="source-class-Psr.Http.Message.UriInterface.html#4-324" title="Go to source code">Kotchasan/Psr/Http/Message/UriInterface.php</a>
+				<b>See:</b>
+				http://tools.ietf.org/html/rfc3986 (the URI specification)<br>
+			<b>Located at</b> <a href="source-class-Psr.Http.Message.UriInterface.html#5-344" title="Go to source code">Kotchasan/Psr/Http/Message/UriInterface.php</a>
 		<br>
 	</div>
 
@@ -213,7 +213,7 @@ server parameters.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getScheme">#</a>
-		<code><a href="source-class-Psr.Http.Message.UriInterface.html#27-41" title="Go to source code">getScheme</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.UriInterface.html#27-42" title="Go to source code">getScheme</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve the scheme component of the URI.</p>
@@ -234,7 +234,7 @@ added.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					string<br>The URI scheme.
+					string<br>the URI scheme
 				</div>
 
 
@@ -259,7 +259,7 @@ added.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getAuthority">#</a>
-		<code><a href="source-class-Psr.Http.Message.UriInterface.html#43-61" title="Go to source code">getAuthority</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.UriInterface.html#44-63" title="Go to source code">getAuthority</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve the authority component of the URI.</p>
@@ -282,7 +282,7 @@ scheme, it SHOULD NOT be included.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					string<br>The URI authority, in "[user-info@]host[:port]" format.
+					string<br>the URI authority, in "[user-info@]host[:port]" format
 				</div>
 
 
@@ -307,7 +307,7 @@ scheme, it SHOULD NOT be included.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getUserInfo">#</a>
-		<code><a href="source-class-Psr.Http.Message.UriInterface.html#63-78" title="Go to source code">getUserInfo</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.UriInterface.html#65-80" title="Go to source code">getUserInfo</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve the user information component of the URI.</p>
@@ -330,7 +330,7 @@ NOT be added.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					string<br>The URI user information, in "username[:password]" format.
+					string<br>the URI user information, in "username[:password]" format
 				</div>
 
 
@@ -351,7 +351,7 @@ NOT be added.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getHost">#</a>
-		<code><a href="source-class-Psr.Http.Message.UriInterface.html#80-91" title="Go to source code">getHost</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.UriInterface.html#82-94" title="Go to source code">getHost</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve the host component of the URI.</p>
@@ -369,7 +369,7 @@ Section 3.2.2.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					string<br>The URI host.
+					string<br>the URI host
 				</div>
 
 
@@ -394,7 +394,7 @@ Section 3.2.2.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getPort">#</a>
-		<code><a href="source-class-Psr.Http.Message.UriInterface.html#93-108" title="Go to source code">getPort</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.UriInterface.html#96-111" title="Go to source code">getPort</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve the port component of the URI.</p>
@@ -417,7 +417,7 @@ the standard port for that scheme, but SHOULD return null.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					null|integer<br>The URI port.
+					null|integer<br>the URI port
 				</div>
 
 
@@ -438,7 +438,7 @@ the standard port for that scheme, but SHOULD return null.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getPath">#</a>
-		<code><a href="source-class-Psr.Http.Message.UriInterface.html#110-135" title="Go to source code">getPath</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.UriInterface.html#113-139" title="Go to source code">getPath</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve the path component of the URI.</p>
@@ -469,7 +469,7 @@ form (e.g., "%2F") to the instance.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					string<br>The URI path.
+					string<br>the URI path
 				</div>
 
 
@@ -495,7 +495,7 @@ form (e.g., "%2F") to the instance.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getQuery">#</a>
-		<code><a href="source-class-Psr.Http.Message.UriInterface.html#137-157" title="Go to source code">getQuery</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.UriInterface.html#141-162" title="Go to source code">getQuery</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve the query string of the URI.</p>
@@ -521,7 +521,7 @@ that value MUST be passed in encoded form (e.g., "%26") to the instance.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					string<br>The URI query string.
+					string<br>the URI query string
 				</div>
 
 
@@ -547,7 +547,7 @@ that value MUST be passed in encoded form (e.g., "%26") to the instance.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getFragment">#</a>
-		<code><a href="source-class-Psr.Http.Message.UriInterface.html#159-175" title="Go to source code">getFragment</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.UriInterface.html#164-181" title="Go to source code">getFragment</a>( )</code>
 
 		<div class="description short">
 			<p>Retrieve the fragment component of the URI.</p>
@@ -569,7 +569,7 @@ RFC 3986, Sections 2 and 3.5.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					string<br>The URI fragment.
+					string<br>the URI fragment
 				</div>
 
 
@@ -595,7 +595,7 @@ RFC 3986, Sections 2 and 3.5.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withScheme">#</a>
-		<code><a href="source-class-Psr.Http.Message.UriInterface.html#177-192" title="Go to source code">withScheme</a>( <span>string <var>$scheme</var></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.UriInterface.html#183-200" title="Go to source code">withScheme</a>( <span>string <var>$scheme</var></span> )</code>
 
 		<div class="description short">
 			<p>Return an instance with the specified scheme.</p>
@@ -616,17 +616,17 @@ insensitively, and MAY accommodate other schemes if required.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$scheme</var></dt>
-					<dd>The scheme to use with the new instance.</dd>
+					<dd>the scheme to use with the new instance</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br>A new instance with the specified scheme.
+					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br>a new instance with the specified scheme
 				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>for invalid or unsupported schemes.
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>for invalid or unsupported schemes
 				</div>
 
 
@@ -646,7 +646,7 @@ insensitively, and MAY accommodate other schemes if required.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withUserInfo">#</a>
-		<code><a href="source-class-Psr.Http.Message.UriInterface.html#194-208" title="Go to source code">withUserInfo</a>( <span>string <var>$user</var></span>, <span>null|string <var>$password</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.UriInterface.html#202-217" title="Go to source code">withUserInfo</a>( <span>string <var>$user</var></span>, <span>null|string <var>$password</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Return an instance with the specified user information.</p>
@@ -666,14 +666,14 @@ information.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$user</var></dt>
-					<dd>The user name to use for authority.</dd>
+					<dd>the user name to use for authority</dd>
 					<dt><var>$password</var></dt>
-					<dd>The password associated with $user.</dd>
+					<dd>the password associated with $user</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br>A new instance with the specified user information.
+					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br>a new instance with the specified user information
 				</div>
 
 
@@ -694,7 +694,7 @@ information.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withHost">#</a>
-		<code><a href="source-class-Psr.Http.Message.UriInterface.html#210-222" title="Go to source code">withHost</a>( <span>string <var>$host</var></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.UriInterface.html#219-233" title="Go to source code">withHost</a>( <span>string <var>$host</var></span> )</code>
 
 		<div class="description short">
 			<p>Return an instance with the specified host.</p>
@@ -712,17 +712,17 @@ an instance that contains the specified host.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$host</var></dt>
-					<dd>The hostname to use with the new instance.</dd>
+					<dd>the hostname to use with the new instance</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br>A new instance with the specified host.
+					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br>a new instance with the specified host
 				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>for invalid hostnames.
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>for invalid hostnames
 				</div>
 
 
@@ -742,7 +742,7 @@ an instance that contains the specified host.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withPort">#</a>
-		<code><a href="source-class-Psr.Http.Message.UriInterface.html#224-241" title="Go to source code">withPort</a>( <span>null|integer <var>$port</var></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.UriInterface.html#235-255" title="Go to source code">withPort</a>( <span>null|integer <var>$port</var></span> )</code>
 
 		<div class="description short">
 			<p>Return an instance with the specified port.</p>
@@ -758,24 +758,24 @@ an instance that contains the specified port.</p>
 established TCP and UDP port ranges.</p>
 
 <p>A null value provided for the port is equivalent to removing the port
-information.</p>
+information.
+ removes the port information.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$port</var></dt>
-					<dd><p>The port to use with the new instance; a null value
-    removes the port information.</p></dd>
+					<dd>The port to use with the new instance; a null value</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br>A new instance with the specified port.
+					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br>a new instance with the specified port
 				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>for invalid ports.
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>for invalid ports
 				</div>
 
 
@@ -795,7 +795,7 @@ information.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withPath">#</a>
-		<code><a href="source-class-Psr.Http.Message.UriInterface.html#243-265" title="Go to source code">withPath</a>( <span>string <var>$path</var></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.UriInterface.html#257-281" title="Go to source code">withPath</a>( <span>string <var>$path</var></span> )</code>
 
 		<div class="description short">
 			<p>Return an instance with the specified path.</p>
@@ -823,17 +823,17 @@ Implementations ensure the correct encoding as outlined in getPath().</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$path</var></dt>
-					<dd>The path to use with the new instance.</dd>
+					<dd>the path to use with the new instance</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br>A new instance with the specified path.
+					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br>a new instance with the specified path
 				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>for invalid paths.
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>for invalid paths
 				</div>
 
 
@@ -853,7 +853,7 @@ Implementations ensure the correct encoding as outlined in getPath().</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withQuery">#</a>
-		<code><a href="source-class-Psr.Http.Message.UriInterface.html#267-282" title="Go to source code">withQuery</a>( <span>string <var>$query</var></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.UriInterface.html#283-300" title="Go to source code">withQuery</a>( <span>string <var>$query</var></span> )</code>
 
 		<div class="description short">
 			<p>Return an instance with the specified query string.</p>
@@ -874,17 +874,17 @@ Implementations ensure the correct encoding as outlined in getQuery().</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$query</var></dt>
-					<dd>The query string to use with the new instance.</dd>
+					<dd>the query string to use with the new instance</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br>A new instance with the specified query string.
+					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br>a new instance with the specified query string
 				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>for invalid query strings.
+					<code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code><br>for invalid query strings
 				</div>
 
 
@@ -904,7 +904,7 @@ Implementations ensure the correct encoding as outlined in getQuery().</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_withFragment">#</a>
-		<code><a href="source-class-Psr.Http.Message.UriInterface.html#284-298" title="Go to source code">withFragment</a>( <span>string <var>$fragment</var></span> )</code>
+		<code><a href="source-class-Psr.Http.Message.UriInterface.html#302-317" title="Go to source code">withFragment</a>( <span>string <var>$fragment</var></span> )</code>
 
 		<div class="description short">
 			<p>Return an instance with the specified URI fragment.</p>
@@ -925,12 +925,12 @@ Implementations ensure the correct encoding as outlined in getFragment().</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$fragment</var></dt>
-					<dd>The fragment to use with the new instance.</dd>
+					<dd>the fragment to use with the new instance</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br>A new instance with the specified fragment.
+					<code><a href="class-Psr.Http.Message.UriInterface.html">Psr\Http\Message\UriInterface</a></code><br>a new instance with the specified fragment
 				</div>
 
 
@@ -951,7 +951,7 @@ Implementations ensure the correct encoding as outlined in getFragment().</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___toString">#</a>
-		<code><a href="source-class-Psr.Http.Message.UriInterface.html#300-323" title="Go to source code">__toString</a>( )</code>
+		<code><a href="source-class-Psr.Http.Message.UriInterface.html#319-343" title="Go to source code">__toString</a>( )</code>
 
 		<div class="description short">
 			<p>Return the string representation as a URI reference.</p>

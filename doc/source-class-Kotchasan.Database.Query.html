@@ -232,6 +232,7 @@
 			<h3>Functions</h3>
 			<ul>
 				<li><a href="function-createClass.html">createClass</a></li>
+				<li><a href="function-debug.html">debug</a></li>
 				<li><a href="function-getClassPath.html">getClassPath</a></li>
 			</ul>
 		</div>
@@ -515,7 +516,7 @@
 </span><span id="246" class="l"><a href="#246">246: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> buildValue(<span class="php-var">$params</span>)
 </span><span id="247" class="l"><a href="#247">247: </a>    {
 </span><span id="248" class="l"><a href="#248">248: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$params</span>)) {
-</span><span id="249" class="l"><a href="#249">249: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">sizeof</span>(<span class="php-var">$params</span>) == <span class="php-num">2</span>) {
+</span><span id="249" class="l"><a href="#249">249: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">count</span>(<span class="php-var">$params</span>) == <span class="php-num">2</span>) {
 </span><span id="250" class="l"><a href="#250">250: </a>                <span class="php-var">$params</span> = <span class="php-keyword1">array</span>(<span class="php-var">$params</span>[<span class="php-num">0</span>], <span class="php-quote">'='</span>, <span class="php-var">$params</span>[<span class="php-num">1</span>]);
 </span><span id="251" class="l"><a href="#251">251: </a>            } <span class="php-keyword1">else</span> {
 </span><span id="252" class="l"><a href="#252">252: </a>                <span class="php-var">$params</span> = <span class="php-keyword1">array</span>(<span class="php-var">$params</span>[<span class="php-num">0</span>], <span class="php-keyword2">trim</span>(<span class="php-var">$params</span>[<span class="php-num">1</span>]), <span class="php-var">$params</span>[<span class="php-num">2</span>]);
@@ -643,7 +644,7 @@
 </span><span id="374" class="l"><a href="#374">374: </a>            } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">strpos</span>(<span class="php-var">$condition</span>[<span class="php-num">0</span>], <span class="php-quote">'('</span>) !== <span class="php-keyword1">false</span>) {
 </span><span id="375" class="l"><a href="#375">375: </a>                <span class="php-var">$condition</span> = <span class="php-var">$condition</span>[<span class="php-num">0</span>];
 </span><span id="376" class="l"><a href="#376">376: </a>            } <span class="php-keyword1">else</span> {
-</span><span id="377" class="l"><a href="#377">377: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword2">sizeof</span>(<span class="php-var">$condition</span>) == <span class="php-num">2</span>) {
+</span><span id="377" class="l"><a href="#377">377: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword2">count</span>(<span class="php-var">$condition</span>) == <span class="php-num">2</span>) {
 </span><span id="378" class="l"><a href="#378">378: </a>                    <span class="php-var">$condition</span> = <span class="php-keyword1">array</span>(<span class="php-var">$condition</span>[<span class="php-num">0</span>], <span class="php-quote">'='</span>, <span class="php-var">$condition</span>[<span class="php-num">1</span>]);
 </span><span id="379" class="l"><a href="#379">379: </a>                } <span class="php-keyword1">else</span> {
 </span><span id="380" class="l"><a href="#380">380: </a>                    <span class="php-var">$condition</span>[<span class="php-num">1</span>] = <span class="php-keyword2">strtoupper</span>(<span class="php-keyword2">trim</span>(<span class="php-var">$condition</span>[<span class="php-num">1</span>]));
@@ -826,7 +827,7 @@
 </span><span id="557" class="l"><a href="#557">557: </a>    {
 </span><span id="558" class="l"><a href="#558">558: </a>        <span class="php-var">$result</span> = <span class="php-keyword1">array</span>();
 </span><span id="559" class="l"><a href="#559">559: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$params</span>)) {
-</span><span id="560" class="l"><a href="#560">560: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">sizeof</span>(<span class="php-var">$params</span>) == <span class="php-num">2</span>) {
+</span><span id="560" class="l"><a href="#560">560: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">count</span>(<span class="php-var">$params</span>) == <span class="php-num">2</span>) {
 </span><span id="561" class="l"><a href="#561">561: </a>                <span class="php-var">$operator</span> = <span class="php-quote">'='</span>;
 </span><span id="562" class="l"><a href="#562">562: </a>                <span class="php-var">$value</span> = <span class="php-var">$params</span>[<span class="php-num">1</span>];
 </span><span id="563" class="l"><a href="#563">563: </a>            } <span class="php-keyword1">else</span> {
@@ -928,6 +929,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?a7f19e71a5315fc537e208b8028895ca15f67e62"></script>
+<script src="elementlist.js?27279f611ed1cfb38fc774c3c1db7307897f92b9"></script>
 </body>
 </html>

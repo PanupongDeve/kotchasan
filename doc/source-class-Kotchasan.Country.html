@@ -232,6 +232,7 @@
 			<h3>Functions</h3>
 			<ul>
 				<li><a href="function-createClass.html">createClass</a></li>
+				<li><a href="function-debug.html">debug</a></li>
 				<li><a href="function-getClassPath.html">getClassPath</a></li>
 			</ul>
 		</div>
@@ -271,10 +272,10 @@
 </span><span id="2" class="l"><a href="#2">  2: </a><span class="php-comment">/**
 </span></span><span id="3" class="l"><a href="#3">  3: </a><span class="php-comment"> * @filesource Kotchasan/Country.php
 </span></span><span id="4" class="l"><a href="#4">  4: </a><span class="php-comment"> *
-</span></span><span id="5" class="l"><a href="#5">  5: </a><span class="php-comment"> * @see http://www.kotchasan.com/
-</span></span><span id="6" class="l"><a href="#6">  6: </a><span class="php-comment"> *
-</span></span><span id="7" class="l"><a href="#7">  7: </a><span class="php-comment"> * @copyright 2016 Goragod.com
-</span></span><span id="8" class="l"><a href="#8">  8: </a><span class="php-comment"> * @license http://www.kotchasan.com/license/
+</span></span><span id="5" class="l"><a href="#5">  5: </a><span class="php-comment"> * @copyright 2016 Goragod.com
+</span></span><span id="6" class="l"><a href="#6">  6: </a><span class="php-comment"> * @license http://www.kotchasan.com/license/
+</span></span><span id="7" class="l"><a href="#7">  7: </a><span class="php-comment"> *
+</span></span><span id="8" class="l"><a href="#8">  8: </a><span class="php-comment"> * @see http://www.kotchasan.com/
 </span></span><span id="9" class="l"><a href="#9">  9: </a><span class="php-comment"> */</span>
 </span><span id="10" class="l"><a href="#10"> 10: </a>
 </span><span id="11" class="l"><a href="#11"> 11: </a><span class="php-keyword1">namespace</span> Kotchasan;
@@ -559,43 +560,44 @@
 </span></span><span id="290" class="l"><a href="#290">290: </a><span class="php-comment">     * อ่านชื่อประเทศจาก ISO ตามภาษา (ถ้าไม่มีใช้ภาษาอังกฤษ)
 </span></span><span id="291" class="l"><a href="#291">291: </a><span class="php-comment">     * คืนค่าว่างถ้าไม่พบ.
 </span></span><span id="292" class="l"><a href="#292">292: </a><span class="php-comment">     *
-</span></span><span id="293" class="l"><a href="#293">293: </a><span class="php-comment">     * @param int $iso
+</span></span><span id="293" class="l"><a href="#293">293: </a><span class="php-comment">     * @assert ('TH') [==] 'ไทย'
 </span></span><span id="294" class="l"><a href="#294">294: </a><span class="php-comment">     *
-</span></span><span id="295" class="l"><a href="#295">295: </a><span class="php-comment">     * @return string
-</span></span><span id="296" class="l"><a href="#296">296: </a><span class="php-comment">     * @assert ('TH') [==] 'ไทย'
-</span></span><span id="297" class="l"><a href="#297">297: </a><span class="php-comment">     */</span>
-</span><span id="298" class="l"><a href="#298">298: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> get(<span class="php-var">$iso</span>)
-</span><span id="299" class="l"><a href="#299">299: </a>    {
-</span><span id="300" class="l"><a href="#300">300: </a>        <span class="php-var">$datas</span> = self::init();
-</span><span id="301" class="l"><a href="#301">301: </a>        <span class="php-var">$language</span> = Language::name();
-</span><span id="302" class="l"><a href="#302">302: </a>        <span class="php-var">$language</span> = <span class="php-keyword2">in_array</span>(<span class="php-var">$language</span>, <span class="php-keyword2">array_keys</span>(<span class="php-keyword2">reset</span>(<span class="php-var">$datas</span>))) ? <span class="php-var">$language</span> : <span class="php-quote">'en'</span>;
-</span><span id="303" class="l"><a href="#303">303: </a>
-</span><span id="304" class="l"><a href="#304">304: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">isset</span>(<span class="php-var">$datas</span>[<span class="php-var">$iso</span>]) ? <span class="php-var">$datas</span>[<span class="php-var">$iso</span>][<span class="php-var">$language</span>] : <span class="php-quote">''</span>;
-</span><span id="305" class="l"><a href="#305">305: </a>    }
-</span><span id="306" class="l"><a href="#306">306: </a>
-</span><span id="307" class="l"><a href="#307">307: </a>    <span class="php-comment">/**
-</span></span><span id="308" class="l"><a href="#308">308: </a><span class="php-comment">     * list รายชื่อประเทศทั้งหมด  ตามภาษา (ถ้าไม่มีใช้ภาษาอังกฤษ)
-</span></span><span id="309" class="l"><a href="#309">309: </a><span class="php-comment">     * สามารถนำไปใช้โดย Form ได้ทันที.
-</span></span><span id="310" class="l"><a href="#310">310: </a><span class="php-comment">     *
-</span></span><span id="311" class="l"><a href="#311">311: </a><span class="php-comment">     * @return array
-</span></span><span id="312" class="l"><a href="#312">312: </a><span class="php-comment">     */</span>
-</span><span id="313" class="l"><a href="#313">313: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> all()
-</span><span id="314" class="l"><a href="#314">314: </a>    {
-</span><span id="315" class="l"><a href="#315">315: </a>        <span class="php-var">$datas</span> = self::init();
-</span><span id="316" class="l"><a href="#316">316: </a>        <span class="php-var">$language</span> = Language::name();
-</span><span id="317" class="l"><a href="#317">317: </a>        <span class="php-var">$language</span> = <span class="php-keyword2">in_array</span>(<span class="php-var">$language</span>, <span class="php-keyword2">array_keys</span>(<span class="php-keyword2">reset</span>(<span class="php-var">$datas</span>))) ? <span class="php-var">$language</span> : <span class="php-quote">'en'</span>;
-</span><span id="318" class="l"><a href="#318">318: </a>        <span class="php-var">$result</span> = <span class="php-keyword1">array</span>();
-</span><span id="319" class="l"><a href="#319">319: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$datas</span> <span class="php-keyword1">as</span> <span class="php-var">$iso</span> =&gt; <span class="php-var">$values</span>) {
-</span><span id="320" class="l"><a href="#320">320: </a>            <span class="php-var">$result</span>[<span class="php-var">$iso</span>] = <span class="php-var">$values</span>[<span class="php-var">$language</span>].(<span class="php-var">$values</span>[<span class="php-var">$language</span>] == <span class="php-var">$values</span>[<span class="php-quote">'local'</span>] ? <span class="php-quote">''</span> : <span class="php-quote">' ('</span>.<span class="php-var">$values</span>[<span class="php-quote">'local'</span>].<span class="php-quote">')'</span>);
-</span><span id="321" class="l"><a href="#321">321: </a>        }
-</span><span id="322" class="l"><a href="#322">322: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$language</span> == <span class="php-quote">'en'</span>) {
-</span><span id="323" class="l"><a href="#323">323: </a>            <span class="php-keyword2">asort</span>(<span class="php-var">$result</span>);
-</span><span id="324" class="l"><a href="#324">324: </a>        }
-</span><span id="325" class="l"><a href="#325">325: </a>
-</span><span id="326" class="l"><a href="#326">326: </a>        <span class="php-keyword1">return</span> <span class="php-var">$result</span>;
-</span><span id="327" class="l"><a href="#327">327: </a>    }
-</span><span id="328" class="l"><a href="#328">328: </a>}
-</span><span id="329" class="l"><a href="#329">329: </a></span></code></pre>
+</span></span><span id="295" class="l"><a href="#295">295: </a><span class="php-comment">     * @param int $iso
+</span></span><span id="296" class="l"><a href="#296">296: </a><span class="php-comment">     *
+</span></span><span id="297" class="l"><a href="#297">297: </a><span class="php-comment">     * @return string
+</span></span><span id="298" class="l"><a href="#298">298: </a><span class="php-comment">     */</span>
+</span><span id="299" class="l"><a href="#299">299: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> get(<span class="php-var">$iso</span>)
+</span><span id="300" class="l"><a href="#300">300: </a>    {
+</span><span id="301" class="l"><a href="#301">301: </a>        <span class="php-var">$datas</span> = self::init();
+</span><span id="302" class="l"><a href="#302">302: </a>        <span class="php-var">$language</span> = Language::name();
+</span><span id="303" class="l"><a href="#303">303: </a>        <span class="php-var">$language</span> = <span class="php-keyword2">in_array</span>(<span class="php-var">$language</span>, <span class="php-keyword2">array_keys</span>(<span class="php-keyword2">reset</span>(<span class="php-var">$datas</span>))) ? <span class="php-var">$language</span> : <span class="php-quote">'en'</span>;
+</span><span id="304" class="l"><a href="#304">304: </a>
+</span><span id="305" class="l"><a href="#305">305: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">isset</span>(<span class="php-var">$datas</span>[<span class="php-var">$iso</span>]) ? <span class="php-var">$datas</span>[<span class="php-var">$iso</span>][<span class="php-var">$language</span>] : <span class="php-quote">''</span>;
+</span><span id="306" class="l"><a href="#306">306: </a>    }
+</span><span id="307" class="l"><a href="#307">307: </a>
+</span><span id="308" class="l"><a href="#308">308: </a>    <span class="php-comment">/**
+</span></span><span id="309" class="l"><a href="#309">309: </a><span class="php-comment">     * list รายชื่อประเทศทั้งหมด  ตามภาษา (ถ้าไม่มีใช้ภาษาอังกฤษ)
+</span></span><span id="310" class="l"><a href="#310">310: </a><span class="php-comment">     * สามารถนำไปใช้โดย Form ได้ทันที.
+</span></span><span id="311" class="l"><a href="#311">311: </a><span class="php-comment">     *
+</span></span><span id="312" class="l"><a href="#312">312: </a><span class="php-comment">     * @return array
+</span></span><span id="313" class="l"><a href="#313">313: </a><span class="php-comment">     */</span>
+</span><span id="314" class="l"><a href="#314">314: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> all()
+</span><span id="315" class="l"><a href="#315">315: </a>    {
+</span><span id="316" class="l"><a href="#316">316: </a>        <span class="php-var">$datas</span> = self::init();
+</span><span id="317" class="l"><a href="#317">317: </a>        <span class="php-var">$language</span> = Language::name();
+</span><span id="318" class="l"><a href="#318">318: </a>        <span class="php-var">$language</span> = <span class="php-keyword2">in_array</span>(<span class="php-var">$language</span>, <span class="php-keyword2">array_keys</span>(<span class="php-keyword2">reset</span>(<span class="php-var">$datas</span>))) ? <span class="php-var">$language</span> : <span class="php-quote">'en'</span>;
+</span><span id="319" class="l"><a href="#319">319: </a>        <span class="php-var">$result</span> = <span class="php-keyword1">array</span>();
+</span><span id="320" class="l"><a href="#320">320: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$datas</span> <span class="php-keyword1">as</span> <span class="php-var">$iso</span> =&gt; <span class="php-var">$values</span>) {
+</span><span id="321" class="l"><a href="#321">321: </a>            <span class="php-var">$result</span>[<span class="php-var">$iso</span>] = <span class="php-var">$values</span>[<span class="php-var">$language</span>].(<span class="php-var">$values</span>[<span class="php-var">$language</span>] == <span class="php-var">$values</span>[<span class="php-quote">'local'</span>] ? <span class="php-quote">''</span> : <span class="php-quote">' ('</span>.<span class="php-var">$values</span>[<span class="php-quote">'local'</span>].<span class="php-quote">')'</span>);
+</span><span id="322" class="l"><a href="#322">322: </a>        }
+</span><span id="323" class="l"><a href="#323">323: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$language</span> == <span class="php-quote">'en'</span>) {
+</span><span id="324" class="l"><a href="#324">324: </a>            <span class="php-keyword2">asort</span>(<span class="php-var">$result</span>);
+</span><span id="325" class="l"><a href="#325">325: </a>        }
+</span><span id="326" class="l"><a href="#326">326: </a>
+</span><span id="327" class="l"><a href="#327">327: </a>        <span class="php-keyword1">return</span> <span class="php-var">$result</span>;
+</span><span id="328" class="l"><a href="#328">328: </a>    }
+</span><span id="329" class="l"><a href="#329">329: </a>}
+</span><span id="330" class="l"><a href="#330">330: </a></span></code></pre>
 
 	<div id="footer">
 		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
@@ -603,6 +605,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?a7f19e71a5315fc537e208b8028895ca15f67e62"></script>
+<script src="elementlist.js?27279f611ed1cfb38fc774c3c1db7307897f92b9"></script>
 </body>
 </html>
