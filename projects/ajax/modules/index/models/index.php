@@ -36,11 +36,14 @@ class Model
             //print_r($_POST);
             // รับค่า URL ที่ส่งมา
             $url = $request->post('url')->url();
-            if ($url != '') {
+            if ($url != '' && preg_match('/^https?:\/\/.*/', $url)) {
                 // โหลด URL ที่ส่งมา
                 $content = file_get_contents($url);
                 // คืนค่า HTML ไปยัง Ajax
                 echo $content;
+            } else {
+                // ไม่ใช่ http
+                echo $url;
             }
         }
     }

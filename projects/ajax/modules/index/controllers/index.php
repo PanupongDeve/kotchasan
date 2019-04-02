@@ -29,7 +29,7 @@ class Controller extends \Kotchasan\Controller
     public function index(Request $request)
     {
         // รับค่า URL ที่ต้องการ ถ้าไม่มีใช้ index
-        $module = $request->get('module', 'index')->toString();
+        $module = $request->get('module', 'index')->filter('a-z');
         // ตรวจสอบ template ที่เลือก
         if (file_exists('modules/index/views/'.$module.'.html')) {
             // โหลด $module.html
