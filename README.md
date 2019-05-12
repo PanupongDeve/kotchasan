@@ -35,14 +35,14 @@
 ส่วนโปรเจ็ค recordset มีการเรียกใช้ฐานข้อมูลร่วมด้วย ต้องกำหนดค่าฐานข้อมูลที่ settings/database.php ให้ถูกต้องก่อน
 และต้องสร้างตารางฐานข้อมูลด้วย ตามใน projects/orm/modules/index/models/world.php
 
-* http://projects.kotchasan.com/welcome/ หน้าต้อนรับของคชสาร
-* http://projects.kotchasan.com/site/ สร้างเว็บไซต์ด้วย template และมีเมนู แบบง่ายๆ
-* http://projects.kotchasan.com/recordset/ ตัวอย่างการใช้งานฐานข้อมูล (Recordset)
-* http://projects.kotchasan.com/admin/ ตัวอย่างการใช้งานฟอร์ม Login
-* http://projects.kotchasan.com/youtube/ ตัวอย่างการใช้งาน Youtube API
-* http://projects.kotchasan.com/api/ ตัวอย่างการสร้างและเรียกใช้ API ด้วยคชสาร
-* http://projects.kotchasan.com/pdf/ ตัวอย่างการแปลง HTML เป็น PDF
-* http://workshop.kotchasan.com/office/admin/ ตัวอย่างการสร้างแอพพลิเคชั่นอย่างง่าย มีระบบสมาชิกและการ Login
+* https://projects.kotchasan.com/welcome/ หน้าต้อนรับของคชสาร
+* https://projects.kotchasan.com/site/ สร้างเว็บไซต์ด้วย template และมีเมนู แบบง่ายๆ
+* https://projects.kotchasan.com/recordset/ ตัวอย่างการใช้งานฐานข้อมูล (Recordset)
+* https://projects.kotchasan.com/admin/ ตัวอย่างการใช้งานฟอร์ม Login
+* https://projects.kotchasan.com/youtube/ ตัวอย่างการใช้งาน Youtube API
+* https://projects.kotchasan.com/api/ ตัวอย่างการสร้างและเรียกใช้ API ด้วยคชสาร
+* https://projects.kotchasan.com/pdf/ ตัวอย่างการแปลง HTML เป็น PDF
+* https://workshop.kotchasan.com/office/admin/ ตัวอย่างการสร้างแอพพลิเคชั่นอย่างง่าย มีระบบสมาชิกและการ Login
 
 ## ขอขอบคุณ
 * CKEditor https://ckeditor.com/
