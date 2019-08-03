@@ -213,7 +213,7 @@
 				$driver = new PdoMysqlDriver;<br>
 				<b>Setup:</b>
 				$this = $driver->createQuery();<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.Database.QueryBuilder.html#15-774" title="Go to source code">Kotchasan/Database/QueryBuilder.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.Database.QueryBuilder.html#15-779" title="Go to source code">Kotchasan/Database/QueryBuilder.php</a>
 		<br>
 	</div>
 
@@ -550,7 +550,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_exists">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#183-206" title="Go to source code">exists</a>( <span>string <var>$table</var></span>, <span>mixed <var>$condition</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#183-209" title="Go to source code">exists</a>( <span>string <var>$table</var></span>, <span>mixed <var>$condition</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสร้าง SQL EXISTS.</p>
@@ -574,6 +574,11 @@
 				</div>
 
 
+				<h4>Assert</h4>
+				<div class="list">
+						select()->from('user U')->exists('useronline', array('member_id', 'U.id'))->text() [==] 'SELECT * FROM <code>user</code> AS U WHERE  EXISTS (SELECT * FROM <code>useronline</code> WHERE <code>member_id</code> = U.<code>id</code>)'<br>
+						select()->from('user U')->where(array('U.id', 1))->exists('useronline', array('member_id', 'U.id'))->text() [==] 'SELECT * FROM <code>user</code> AS U WHERE U.<code>id</code> = 1 AND EXISTS (SELECT * FROM <code>useronline</code> WHERE <code>member_id</code> = U.<code>id</code>)'<br>
+				</div>
 
 
 		</div>
@@ -591,7 +596,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_explain">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#208-218" title="Go to source code">explain</a>( )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#211-221" title="Go to source code">explain</a>( )</code>
 
 		<div class="description short">
 			<p>คำสั่งสำหรับดูรายละเอียดการ Query.</p>
@@ -625,7 +630,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_first">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#220-245" title="Go to source code">first</a>( <span>string <var>$fields</var> = <span class="php-quote">'*'</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#223-248" title="Go to source code">first</a>( <span>string <var>$fields</var> = <span class="php-quote">'*'</span></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นประมวลผลคำสั่ง SQL ข้อมูลต้องการผลลัพท์เพียงรายการเดียว
@@ -666,7 +671,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_from">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#247-268" title="Go to source code">from</a>( <span>string <var>$tables</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#250-271" title="Go to source code">from</a>( <span>string <var>$tables</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสร้างคำสั่ง FROM.</p>
@@ -710,7 +715,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getValues">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#270-287" title="Go to source code">getValues</a>( <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#273-290" title="Go to source code">getValues</a>( <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			<p>คืนค่าแอเร์ยเก็บพารามิเตอร์สำหรับการ bind รวมกับ $values.</p>
@@ -749,7 +754,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_groupBy">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#289-318" title="Go to source code">groupBy</a>( <span>string <var>$fields</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#292-321" title="Go to source code">groupBy</a>( <span>string <var>$fields</var></span> )</code>
 
 		<div class="description short">
 			<p>GROUP BY.</p>
@@ -794,7 +799,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_having">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#320-339" title="Go to source code">having</a>( <span>mixed <var>$condition</var></span>, <span>string <var>$oprator</var> = <span class="php-quote">'AND'</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#323-344" title="Go to source code">having</a>( <span>mixed <var>$condition</var></span>, <span>string <var>$oprator</var> = <span class="php-quote">'AND'</span></span> )</code>
 
 		<div class="description short">
 			<p>HAVING.</p>
@@ -835,7 +840,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_insert">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#341-366" title="Go to source code">insert</a>( <span>string <var>$table</var></span>, <span>array <var>$datas</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#346-371" title="Go to source code">insert</a>( <span>string <var>$table</var></span>, <span>array <var>$datas</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสร้างคำสั่ง INSERT INTO
@@ -882,7 +887,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_insertOrUpdate">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#368-388" title="Go to source code">insertOrUpdate</a>( <span>string <var>$table</var></span>, <span>array <var>$datas</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#373-393" title="Go to source code">insertOrUpdate</a>( <span>string <var>$table</var></span>, <span>array <var>$datas</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสร้างคำสั่ง INSERT INTO
@@ -929,7 +934,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_join">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#390-417" title="Go to source code">join</a>( <span>string <var>$table</var></span>, <span>string|array <var>$type</var></span>, <span>string <var>$on</var></span>, <span>mixed <var>$on</var>,…</span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#395-422" title="Go to source code">join</a>( <span>string <var>$table</var></span>, <span>string|array <var>$type</var></span>, <span>string <var>$on</var></span>, <span>mixed <var>$on</var>,…</span> )</code>
 
 		<div class="description short">
 			<p>สร้างคำสั่ง JOIN.</p>
@@ -982,7 +987,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_limit">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#419-440" title="Go to source code">limit</a>( <span>integer <var>$count</var></span>, <span>integer <var>$start</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#424-445" title="Go to source code">limit</a>( <span>integer <var>$count</var></span>, <span>integer <var>$start</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			<p>จำกัดผลลัพท์ และกำหนดรายการเริ่มต้น.</p>
@@ -1028,7 +1033,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_notExists">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#442-460" title="Go to source code">notExists</a>( <span>string <var>$table</var></span>, <span>mixed <var>$condition</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#447-465" title="Go to source code">notExists</a>( <span>string <var>$table</var></span>, <span>mixed <var>$condition</var></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสร้าง SQL NOT EXISTS.</p>
@@ -1069,7 +1074,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_orWhere">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#462-488" title="Go to source code">orWhere</a>( <span>mixed <var>$condition</var></span>, <span>string <var>$oprator</var> = <span class="php-quote">'AND'</span></span>, <span>string <var>$id</var> = <span class="php-quote">'id'</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#467-493" title="Go to source code">orWhere</a>( <span>mixed <var>$condition</var></span>, <span>string <var>$oprator</var> = <span class="php-quote">'AND'</span></span>, <span>string <var>$id</var> = <span class="php-quote">'id'</span></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสร้างคำสั่ง WHERE ถ้ามีข้อมูล Where ก่อนหน้าจะ OR กับข้อมูลก่อนหน้า.</p>
@@ -1118,7 +1123,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_order">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#490-511" title="Go to source code">order</a>( <span>mixed <var>$sorts</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#495-516" title="Go to source code">order</a>( <span>mixed <var>$sorts</var></span> )</code>
 
 		<div class="description short">
 			<p>สร้าง query เรียงลำดับ.</p>
@@ -1164,7 +1169,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_select">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#513-553" title="Go to source code">select</a>( <span>string <var>$fields</var> = <span class="php-quote">'*'</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#518-558" title="Go to source code">select</a>( <span>string <var>$fields</var> = <span class="php-quote">'*'</span></span> )</code>
 
 		<div class="description short">
 			<p>SELECT <code>field1</code>, <code>field2</code>, <code>field3</code>, ....</p>
@@ -1220,7 +1225,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_selectCount">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#555-581" title="Go to source code">selectCount</a>( <span>mixed <var>$fileds</var> = <span class="php-quote">'* count'</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#560-586" title="Go to source code">selectCount</a>( <span>mixed <var>$fileds</var> = <span class="php-quote">'* count'</span></span> )</code>
 
 		<div class="description short">
 			<p>สร้าง query สำหรับการนับจำนวน record.</p>
@@ -1265,7 +1270,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_selectDistinct">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#583-598" title="Go to source code">selectDistinct</a>( <span>string <var>$fields</var> = <span class="php-quote">'*'</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#588-603" title="Go to source code">selectDistinct</a>( <span>string <var>$fields</var> = <span class="php-quote">'*'</span></span> )</code>
 
 		<div class="description short">
 			<p>SELECT DISTINCT <code>field1</code>, <code>field2</code>, <code>field3</code>, ....</p>
@@ -1308,7 +1313,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#600-643" title="Go to source code">set</a>( <span>array|string <var>$datas</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#605-648" title="Go to source code">set</a>( <span>array|string <var>$datas</var></span> )</code>
 
 		<div class="description short">
 			<p>UPDATE ..... SET.</p>
@@ -1358,7 +1363,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toArray">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#645-656" title="Go to source code">toArray</a>( )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#650-661" title="Go to source code">toArray</a>( )</code>
 
 		<div class="description short">
 			<p>คืนค่าข้อมูลเป็น Array
@@ -1394,7 +1399,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_union">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#658-684" title="Go to source code">union</a>( <span>array <var>$querys</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#663-689" title="Go to source code">union</a>( <span>array <var>$querys</var></span> )</code>
 
 		<div class="description short">
 			<p>UNION.</p>
@@ -1438,7 +1443,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_unionAll">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#686-712" title="Go to source code">unionAll</a>( <span>array <var>$querys</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#691-717" title="Go to source code">unionAll</a>( <span>array <var>$querys</var></span> )</code>
 
 		<div class="description short">
 			<p>UNION ALL.</p>
@@ -1482,7 +1487,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#714-729" title="Go to source code">update</a>( <span>string <var>$table</var></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#719-734" title="Go to source code">update</a>( <span>string <var>$table</var></span> )</code>
 
 		<div class="description short">
 			<p>UPDATE.</p>
@@ -1525,7 +1530,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_where">#</a>
-		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#731-773" title="Go to source code">where</a>( <span>mixed <var>$condition</var></span>, <span>string <var>$oprator</var> = <span class="php-quote">'AND'</span></span>, <span>string <var>$id</var> = <span class="php-quote">'id'</span></span> )</code>
+		<code><a href="source-class-Kotchasan.Database.QueryBuilder.html#736-778" title="Go to source code">where</a>( <span>mixed <var>$condition</var></span>, <span>string <var>$oprator</var> = <span class="php-quote">'AND'</span></span>, <span>string <var>$id</var> = <span class="php-quote">'id'</span></span> )</code>
 
 		<div class="description short">
 			<p>ฟังก์ชั่นสร้างคำสั่ง WHERE.</p>

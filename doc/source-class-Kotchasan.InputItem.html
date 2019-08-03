@@ -457,16 +457,16 @@
 </span><span id="187" class="l"><a href="#187">187: </a>    }
 </span><span id="188" class="l"><a href="#188">188: </a>
 </span><span id="189" class="l"><a href="#189">189: </a>    <span class="php-comment">/**
-</span></span><span id="190" class="l"><a href="#190">190: </a><span class="php-comment">     * ลบ PHP tag และแปลง \ เป็น $#92; ใช้รับข้อมูลจาก editor
+</span></span><span id="190" class="l"><a href="#190">190: </a><span class="php-comment">     * ลบ PHP tag และแปลง \ { } สำหรับใช้รับข้อมูลจาก editor
 </span></span><span id="191" class="l"><a href="#191">191: </a><span class="php-comment">     * เช่นเนื้อหาของบทความ
 </span></span><span id="192" class="l"><a href="#192">192: </a><span class="php-comment">     *
-</span></span><span id="193" class="l"><a href="#193">193: </a><span class="php-comment">     * @assert create('ทด\/สอบ&lt;?php echo &quot;555&quot;?&gt;')-&gt;detail() [==] 'ทด&amp;#92;/สอบ'
+</span></span><span id="193" class="l"><a href="#193">193: </a><span class="php-comment">     * @assert create('{ทด\/สอบ&lt;?php echo &quot;555&quot;?&gt;}')-&gt;detail() [==] '&amp;#x007B;ทด&amp;#92;/สอบ&amp;#x007D;'
 </span></span><span id="194" class="l"><a href="#194">194: </a><span class="php-comment">     *
 </span></span><span id="195" class="l"><a href="#195">195: </a><span class="php-comment">     * @return string|array
 </span></span><span id="196" class="l"><a href="#196">196: </a><span class="php-comment">     */</span>
 </span><span id="197" class="l"><a href="#197">197: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> detail()
 </span><span id="198" class="l"><a href="#198">198: </a>    {
-</span><span id="199" class="l"><a href="#199">199: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">preg_replace</span>(<span class="php-keyword1">array</span>(<span class="php-quote">'/&lt;\?(.*?)\?&gt;/su'</span>, <span class="php-quote">'/\\\/'</span>), <span class="php-keyword1">array</span>(<span class="php-quote">''</span>, <span class="php-quote">'&amp;#92;'</span>), <span class="php-var">$this</span>-&gt;value);
+</span><span id="199" class="l"><a href="#199">199: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">preg_replace</span>(<span class="php-keyword1">array</span>(<span class="php-quote">'/&lt;\?(.*?)\?&gt;/su'</span>, <span class="php-quote">'/\{/'</span>, <span class="php-quote">'/\}/'</span>, <span class="php-quote">'/\\\/'</span>), <span class="php-keyword1">array</span>(<span class="php-quote">''</span>, <span class="php-quote">'&amp;#x007B;'</span>, <span class="php-quote">'&amp;#x007D;'</span>, <span class="php-quote">'&amp;#92;'</span>), <span class="php-var">$this</span>-&gt;value);
 </span><span id="200" class="l"><a href="#200">200: </a>    }
 </span><span id="201" class="l"><a href="#201">201: </a>
 </span><span id="202" class="l"><a href="#202">202: </a>    <span class="php-comment">/**
@@ -615,13 +615,13 @@
 </span></span><span id="345" class="l"><a href="#345">345: </a><span class="php-comment">     * และลบช่องว่างหัวท้าย
 </span></span><span id="346" class="l"><a href="#346">346: </a><span class="php-comment">     * ใช้รับข้อมูลที่มาจาก textarea.
 </span></span><span id="347" class="l"><a href="#347">347: </a><span class="php-comment">     *
-</span></span><span id="348" class="l"><a href="#348">348: </a><span class="php-comment">     * @assert create(&quot;ทด\/สอบ\n&lt;?php echo '555'?&gt;&quot;)-&gt;textarea() [==] &quot;ทด&amp;#92;/สอบ\n&amp;lt;?php echo '555'?&amp;gt;&quot;
+</span></span><span id="348" class="l"><a href="#348">348: </a><span class="php-comment">     * @assert create(&quot;ทด\/สอบ\n&lt;?php echo '$555'?&gt;&quot;)-&gt;textarea() [==] &quot;ทด&amp;#92;/สอบ\n&amp;lt;?php echo '&amp;#36;555'?&amp;gt;&quot;
 </span></span><span id="349" class="l"><a href="#349">349: </a><span class="php-comment">     *
 </span></span><span id="350" class="l"><a href="#350">350: </a><span class="php-comment">     * @return string|array
 </span></span><span id="351" class="l"><a href="#351">351: </a><span class="php-comment">     */</span>
 </span><span id="352" class="l"><a href="#352">352: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> textarea()
 </span><span id="353" class="l"><a href="#353">353: </a>    {
-</span><span id="354" class="l"><a href="#354">354: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">trim</span>(<span class="php-keyword2">preg_replace</span>(<span class="php-keyword1">array</span>(<span class="php-quote">'/&lt;/s'</span>, <span class="php-quote">'/&gt;/s'</span>, <span class="php-quote">'/\\\/s'</span>, <span class="php-quote">'/\{/'</span>, <span class="php-quote">'/\}/'</span>), <span class="php-keyword1">array</span>(<span class="php-quote">'&amp;lt;'</span>, <span class="php-quote">'&amp;gt;'</span>, <span class="php-quote">'&amp;#92;'</span>, <span class="php-quote">'&amp;#x007B;'</span>, <span class="php-quote">'&amp;#x007D;'</span>), <span class="php-var">$this</span>-&gt;value));
+</span><span id="354" class="l"><a href="#354">354: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">trim</span>(<span class="php-keyword2">preg_replace</span>(<span class="php-keyword1">array</span>(<span class="php-quote">'/&lt;/s'</span>, <span class="php-quote">'/&gt;/s'</span>, <span class="php-quote">'/\\\/s'</span>, <span class="php-quote">'/\{/'</span>, <span class="php-quote">'/\}/'</span>, <span class="php-quote">'/\$/'</span>), <span class="php-keyword1">array</span>(<span class="php-quote">'&amp;lt;'</span>, <span class="php-quote">'&amp;gt;'</span>, <span class="php-quote">'&amp;#92;'</span>, <span class="php-quote">'&amp;#x007B;'</span>, <span class="php-quote">'&amp;#x007D;'</span>, <span class="php-quote">'&amp;#36;'</span>), <span class="php-var">$this</span>-&gt;value));
 </span><span id="355" class="l"><a href="#355">355: </a>    }
 </span><span id="356" class="l"><a href="#356">356: </a>
 </span><span id="357" class="l"><a href="#357">357: </a>    <span class="php-comment">/**

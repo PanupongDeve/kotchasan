@@ -550,12 +550,12 @@
 		<code><a href="source-class-Kotchasan.InputItem.html#189-200" title="Go to source code">detail</a>( )</code>
 
 		<div class="description short">
-			<p>ลบ PHP tag และแปลง \ เป็น $#92; ใช้รับข้อมูลจาก editor
+			<p>ลบ PHP tag และแปลง \ { } สำหรับใช้รับข้อมูลจาก editor
 เช่นเนื้อหาของบทความ</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>ลบ PHP tag และแปลง \ เป็น $#92; ใช้รับข้อมูลจาก editor
+			<p>ลบ PHP tag และแปลง \ { } สำหรับใช้รับข้อมูลจาก editor
 เช่นเนื้อหาของบทความ</p>
 
 
@@ -568,7 +568,7 @@
 
 				<h4>Assert</h4>
 				<div class="list">
-						create('ทด\/สอบ<?php echo "555"?>')->detail() [==] 'ทด&#92;/สอบ'<br>
+						create('{ทด\/สอบ<?php echo "555"?>}')->detail() [==] '&#x007B;ทด&#92;/สอบ&#x007D;'<br>
 				</div>
 
 
@@ -1041,7 +1041,7 @@
 
 				<h4>Assert</h4>
 				<div class="list">
-						create("ทด\/สอบ\n<?php echo '555'?>")->textarea() [==] "ทด&#92;/สอบ\n&lt;?php echo '555'?&gt;"<br>
+						create("ทด\/สอบ\n<?php echo '$555'?>")->textarea() [==] "ทด&#92;/สอบ\n&lt;?php echo '&#36;555'?&gt;"<br>
 				</div>
 
 

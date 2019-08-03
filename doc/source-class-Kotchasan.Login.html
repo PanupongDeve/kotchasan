@@ -382,7 +382,7 @@
 </span><span id="112" class="l"><a href="#112">112: </a>            self::<span class="php-var">$login_params</span>[<span class="php-quote">'password'</span>] = self::<span class="php-var">$request</span>-&gt;post(<span class="php-quote">'login_password'</span>)-&gt;password();
 </span><span id="113" class="l"><a href="#113">113: </a>            self::<span class="php-var">$from_submit</span> = <span class="php-keyword1">true</span>;
 </span><span id="114" class="l"><a href="#114">114: </a>        }
-</span><span id="115" class="l"><a href="#115">115: </a>        <span class="php-var">$action</span> = self::<span class="php-var">$request</span>-&gt;get(<span class="php-quote">'action'</span>)-&gt;toString();
+</span><span id="115" class="l"><a href="#115">115: </a>        <span class="php-var">$action</span> = self::<span class="php-var">$request</span>-&gt;request(<span class="php-quote">'action'</span>)-&gt;toString();
 </span><span id="116" class="l"><a href="#116">116: </a>        <span class="php-comment">// ตรวจสอบการ login</span>
 </span><span id="117" class="l"><a href="#117">117: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$action</span> === <span class="php-quote">'logout'</span> &amp;&amp; !self::<span class="php-var">$from_submit</span>) {
 </span><span id="118" class="l"><a href="#118">118: </a>            <span class="php-comment">// logout ลบ session และ cookie</span>
