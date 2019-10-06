@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="robots" content="noindex">
 
-	<title>File Kotchasan/Database/Sql.php | kotchasan</title>
+	<title>File .history/Kotchasan/Database/Sql_20191006093733.php | kotchasan</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -109,7 +109,6 @@
 				<li><a href="class-DOMNode.html">DOMNode</a></li>
 				<li><a href="class-Kotchasan.html">Kotchasan</a></li>
 				<li><a href="class-Kotchasan.Accordion.html">Kotchasan\Accordion</a></li>
-				<li><a href="class-Kotchasan.Antispam.html">Kotchasan\Antispam</a></li>
 				<li><a href="class-Kotchasan.ArrayTool.html">Kotchasan\ArrayTool</a></li>
 				<li><a href="class-Kotchasan.Cache.ApcCache.html">Kotchasan\Cache\ApcCache</a></li>
 				<li><a href="class-Kotchasan.Cache.Cache.html">Kotchasan\Cache\Cache</a></li>
@@ -131,7 +130,7 @@
 				<li><a href="class-Kotchasan.Database.Query.html">Kotchasan\Database\Query</a></li>
 				<li><a href="class-Kotchasan.Database.QueryBuilder.html">Kotchasan\Database\QueryBuilder</a></li>
 				<li><a href="class-Kotchasan.Database.Schema.html">Kotchasan\Database\Schema</a></li>
-				<li><a href="class-Kotchasan.Database.Sql.html">Kotchasan\Database\Sql</a></li>
+				<li><a href="class-Kotchasan.Database.Sql.html" class="invalid">Kotchasan\Database\Sql</a></li>
 				<li><a href="class-Kotchasan.DataTable.html">Kotchasan\DataTable</a></li>
 				<li><a href="class-Kotchasan.Date.html">Kotchasan\Date</a></li>
 				<li><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></li>
@@ -207,7 +206,6 @@
 				<li><a href="class-Psr.Log.LoggerInterface.html">Psr\Log\LoggerInterface</a></li>
 				<li><a href="class-SeekableIterator.html">SeekableIterator</a></li>
 				<li><a href="class-Serializable.html">Serializable</a></li>
-				<li><a href="class-Throwable.html">Throwable</a></li>
 				<li><a href="class-Traversable.html">Traversable</a></li>
 			</ul>
 
@@ -876,26 +874,26 @@
 </span></span><span id="606" class="l"><a href="#606">606: </a><span class="php-comment">     */</span>
 </span><span id="607" class="l"><a href="#607">607: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> fieldName(<span class="php-var">$column_name</span>)
 </span><span id="608" class="l"><a href="#608">608: </a>    {
-</span><span id="609" class="l"><a href="#609">609: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_numeric</span>(<span class="php-var">$column_name</span>)) {
-</span><span id="610" class="l"><a href="#610">610: </a>            <span class="php-comment">// ตัวเลขเท่านั้น</span>
-</span><span id="611" class="l"><a href="#611">611: </a>            <span class="php-keyword1">return</span> <span class="php-var">$column_name</span>;
-</span><span id="612" class="l"><a href="#612">612: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$column_name</span> <span class="php-keyword1">instanceof</span> self) {
-</span><span id="613" class="l"><a href="#613">613: </a>            <span class="php-comment">// Sql</span>
-</span><span id="614" class="l"><a href="#614">614: </a>            <span class="php-keyword1">return</span> <span class="php-var">$column_name</span>-&gt;text();
-</span><span id="615" class="l"><a href="#615">615: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$column_name</span> <span class="php-keyword1">instanceof</span> QueryBuilder) {
-</span><span id="616" class="l"><a href="#616">616: </a>            <span class="php-comment">// QueryBuilder</span>
-</span><span id="617" class="l"><a href="#617">617: </a>            <span class="php-keyword1">return</span> <span class="php-quote">'('</span>.<span class="php-var">$column_name</span>-&gt;text().<span class="php-quote">')'</span>;
-</span><span id="618" class="l"><a href="#618">618: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$column_name</span>)) {
-</span><span id="619" class="l"><a href="#619">619: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^(([A-Z0-9]{1,2})\.)?`?([a-zA-Z0-9_]+)`?(\s(ASC|DESC|asc|desc))?$/'</span>, <span class="php-var">$column_name</span>, <span class="php-var">$match</span>)) {
-</span><span id="620" class="l"><a href="#620">620: </a>                <span class="php-comment">// U.id, U.`id`, U1.id, U1.`id`, field_name, `field_name`</span>
-</span><span id="621" class="l"><a href="#621">621: </a>                <span class="php-keyword1">return</span> (<span class="php-var">$match</span>[<span class="php-num">2</span>] == <span class="php-quote">''</span> ? <span class="php-quote">&quot;`</span><span class="php-var">$match</span><span class="php-quote">[3]`&quot;</span> : <span class="php-quote">&quot;</span><span class="php-var">$match</span><span class="php-quote">[2].`</span><span class="php-var">$match</span><span class="php-quote">[3]`&quot;</span>).(<span class="php-keyword1">empty</span>(<span class="php-var">$match</span>[<span class="php-num">5</span>]) ? <span class="php-quote">''</span> : <span class="php-var">$match</span>[<span class="php-num">4</span>]);
-</span><span id="622" class="l"><a href="#622">622: </a>            } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^`?([a-zA-Z0-9_]+)`?\.`?([a-zA-Z0-9_]+)`?(\s(ASC|DESC|asc|desc))?$/'</span>, <span class="php-var">$column_name</span>, <span class="php-var">$match</span>)) {
-</span><span id="623" class="l"><a href="#623">623: </a>                <span class="php-comment">// table_name.field_name, table_name.`field_name`, `table_name`.field_name, `table_name`.`field_name`</span>
-</span><span id="624" class="l"><a href="#624">624: </a>                <span class="php-keyword1">return</span> (<span class="php-quote">&quot;`</span><span class="php-var">$match</span><span class="php-quote">[1]`.`</span><span class="php-var">$match</span><span class="php-quote">[2]`&quot;</span>).(<span class="php-keyword1">empty</span>(<span class="php-var">$match</span>[<span class="php-num">4</span>]) ? <span class="php-quote">''</span> : <span class="php-var">$match</span>[<span class="php-num">3</span>]);
-</span><span id="625" class="l"><a href="#625">625: </a>            } <span class="php-keyword1">else</span> {
-</span><span id="626" class="l"><a href="#626">626: </a>                <span class="php-comment">// อื่นๆ คืนค่าเป็นข้อความภายใต้เครื่องหมาย ' (อัญประกาศเดี่ยว)</span>
-</span><span id="627" class="l"><a href="#627">627: </a>                <span class="php-keyword1">return</span> <span class="php-quote">&quot;'</span><span class="php-var">$column_name</span><span class="php-quote">'&quot;</span>;
-</span><span id="628" class="l"><a href="#628">628: </a>            }
+</span><span id="609" class="l"><a href="#609">609: </a>       <span class="php-keyword1">if</span> (<span class="php-var">$column_name</span> <span class="php-keyword1">instanceof</span> self) {
+</span><span id="610" class="l"><a href="#610">610: </a>            <span class="php-comment">// Sql</span>
+</span><span id="611" class="l"><a href="#611">611: </a>            <span class="php-keyword1">return</span> <span class="php-var">$column_name</span>-&gt;text();
+</span><span id="612" class="l"><a href="#612">612: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$column_name</span> <span class="php-keyword1">instanceof</span> QueryBuilder) {
+</span><span id="613" class="l"><a href="#613">613: </a>            <span class="php-comment">// QueryBuilder</span>
+</span><span id="614" class="l"><a href="#614">614: </a>            <span class="php-keyword1">return</span> <span class="php-quote">'('</span>.<span class="php-var">$column_name</span>-&gt;text().<span class="php-quote">')'</span>;
+</span><span id="615" class="l"><a href="#615">615: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$column_name</span>)) {
+</span><span id="616" class="l"><a href="#616">616: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^(([A-Z0-9]{1,2})\.)?`?([a-zA-Z0-9_]+)`?(\s(ASC|DESC|asc|desc))?$/'</span>, <span class="php-var">$column_name</span>, <span class="php-var">$match</span>)) {
+</span><span id="617" class="l"><a href="#617">617: </a>                <span class="php-comment">// U.id, U.`id`, U1.id, U1.`id`, field_name, `field_name`</span>
+</span><span id="618" class="l"><a href="#618">618: </a>                <span class="php-keyword1">return</span> (<span class="php-var">$match</span>[<span class="php-num">2</span>] == <span class="php-quote">''</span> ? <span class="php-quote">&quot;`</span><span class="php-var">$match</span><span class="php-quote">[3]`&quot;</span> : <span class="php-quote">&quot;</span><span class="php-var">$match</span><span class="php-quote">[2].`</span><span class="php-var">$match</span><span class="php-quote">[3]`&quot;</span>).(<span class="php-keyword1">empty</span>(<span class="php-var">$match</span>[<span class="php-num">5</span>]) ? <span class="php-quote">''</span> : <span class="php-var">$match</span>[<span class="php-num">4</span>]);
+</span><span id="619" class="l"><a href="#619">619: </a>            } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^`?([a-zA-Z0-9_]+)`?\.`?([a-zA-Z0-9_]+)`?(\s(ASC|DESC|asc|desc))?$/'</span>, <span class="php-var">$column_name</span>, <span class="php-var">$match</span>)) {
+</span><span id="620" class="l"><a href="#620">620: </a>                <span class="php-comment">// table_name.field_name, table_name.`field_name`, `table_name`.field_name, `table_name`.`field_name`</span>
+</span><span id="621" class="l"><a href="#621">621: </a>                <span class="php-keyword1">return</span> (<span class="php-quote">&quot;`</span><span class="php-var">$match</span><span class="php-quote">[1]`.`</span><span class="php-var">$match</span><span class="php-quote">[2]`&quot;</span>).(<span class="php-keyword1">empty</span>(<span class="php-var">$match</span>[<span class="php-num">4</span>]) ? <span class="php-quote">''</span> : <span class="php-var">$match</span>[<span class="php-num">3</span>]);
+</span><span id="622" class="l"><a href="#622">622: </a>            } <span class="php-keyword1">else</span> {
+</span><span id="623" class="l"><a href="#623">623: </a>                <span class="php-comment">// อื่นๆ คืนค่าเป็นข้อความภายใต้เครื่องหมาย ' (อัญประกาศเดี่ยว)</span>
+</span><span id="624" class="l"><a href="#624">624: </a>                <span class="php-keyword1">return</span> <span class="php-quote">&quot;'</span><span class="php-var">$column_name</span><span class="php-quote">'&quot;</span>;
+</span><span id="625" class="l"><a href="#625">625: </a>            }
+</span><span id="626" class="l"><a href="#626">626: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">is_numeric</span>(<span class="php-var">$column_name</span>)) {
+</span><span id="627" class="l"><a href="#627">627: </a>               <span class="php-comment">// ตัวเลขเท่านั้น</span>
+</span><span id="628" class="l"><a href="#628">628: </a>            <span class="php-keyword1">return</span> <span class="php-var">$column_name</span>;
 </span><span id="629" class="l"><a href="#629">629: </a>        }
 </span><span id="630" class="l"><a href="#630">630: </a>        <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-quote">'Invalid arguments in fieldName'</span>);
 </span><span id="631" class="l"><a href="#631">631: </a>    }
@@ -1135,6 +1133,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?27279f611ed1cfb38fc774c3c1db7307897f92b9"></script>
+<script src="elementlist.js?f1739e581889d4a108f3b1149a49da8bb80e2b2c"></script>
 </body>
 </html>

@@ -43,7 +43,7 @@ class Controller extends \Kotchasan\Controller
             $query->updated_at = Date::mktimeToSqlDateTime();
             $query->save();
         }
-        // อัปเดททุก record
+        // อัปเดตทุก record
         $rs->updateAll(array('created_at' => Date::mktimeToSqlDateTime()));
         // อ่านจำนวนข้อมูลทั้งหมดในตาราง
         echo 'All '.$rs->count().' records.<br>';

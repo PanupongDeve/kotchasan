@@ -109,7 +109,6 @@
 				<li><a href="class-DOMNode.html">DOMNode</a></li>
 				<li><a href="class-Kotchasan.html">Kotchasan</a></li>
 				<li><a href="class-Kotchasan.Accordion.html">Kotchasan\Accordion</a></li>
-				<li><a href="class-Kotchasan.Antispam.html">Kotchasan\Antispam</a></li>
 				<li><a href="class-Kotchasan.ArrayTool.html">Kotchasan\ArrayTool</a></li>
 				<li><a href="class-Kotchasan.Cache.ApcCache.html">Kotchasan\Cache\ApcCache</a></li>
 				<li><a href="class-Kotchasan.Cache.Cache.html">Kotchasan\Cache\Cache</a></li>
@@ -131,7 +130,7 @@
 				<li><a href="class-Kotchasan.Database.Query.html">Kotchasan\Database\Query</a></li>
 				<li><a href="class-Kotchasan.Database.QueryBuilder.html">Kotchasan\Database\QueryBuilder</a></li>
 				<li><a href="class-Kotchasan.Database.Schema.html">Kotchasan\Database\Schema</a></li>
-				<li><a href="class-Kotchasan.Database.Sql.html">Kotchasan\Database\Sql</a></li>
+				<li><a href="class-Kotchasan.Database.Sql.html" class="invalid">Kotchasan\Database\Sql</a></li>
 				<li><a href="class-Kotchasan.DataTable.html">Kotchasan\DataTable</a></li>
 				<li><a href="class-Kotchasan.Date.html">Kotchasan\Date</a></li>
 				<li><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></li>
@@ -207,7 +206,6 @@
 				<li><a href="class-Psr.Log.LoggerInterface.html">Psr\Log\LoggerInterface</a></li>
 				<li><a href="class-SeekableIterator.html">SeekableIterator</a></li>
 				<li><a href="class-Serializable.html">Serializable</a></li>
-				<li><a href="class-Throwable.html">Throwable</a></li>
 				<li><a href="class-Traversable.html">Traversable</a></li>
 			</ul>
 
@@ -1156,282 +1154,287 @@
 </span><span id="886" class="l"><a href="#886"> 886: </a>                    }
 </span><span id="887" class="l"><a href="#887"> 887: </a>                    <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;buttons)) {
 </span><span id="888" class="l"><a href="#888"> 888: </a>                        <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$buttons</span>)) {
-</span><span id="889" class="l"><a href="#889"> 889: </a>                            <span class="php-var">$module_id</span> = <span class="php-keyword1">isset</span>(<span class="php-var">$items</span>[<span class="php-quote">'module_id'</span>]) ? <span class="php-var">$items</span>[<span class="php-quote">'module_id'</span>] : <span class="php-num">0</span>;
-</span><span id="890" class="l"><a href="#890"> 890: </a>                            <span class="php-var">$patt</span> = <span class="php-keyword1">array</span>();
-</span><span id="891" class="l"><a href="#891"> 891: </a>                            <span class="php-var">$replace</span> = <span class="php-keyword1">array</span>();
-</span><span id="892" class="l"><a href="#892"> 892: </a>                            <span class="php-var">$keys</span> = <span class="php-keyword2">array_keys</span>(<span class="php-var">$src_items</span>);
-</span><span id="893" class="l"><a href="#893"> 893: </a>                            <span class="php-keyword2">rsort</span>(<span class="php-var">$keys</span>);
-</span><span id="894" class="l"><a href="#894"> 894: </a>                            <span class="php-keyword1">foreach</span> (<span class="php-var">$keys</span> <span class="php-keyword1">as</span> <span class="php-var">$k</span>) {
-</span><span id="895" class="l"><a href="#895"> 895: </a>                                <span class="php-keyword1">if</span> (!<span class="php-keyword2">is_array</span>(<span class="php-var">$src_items</span>[<span class="php-var">$k</span>])) {
-</span><span id="896" class="l"><a href="#896"> 896: </a>                                    <span class="php-var">$patt</span>[] = <span class="php-quote">&quot;:</span><span class="php-var">$k</span><span class="php-quote">&quot;</span>;
-</span><span id="897" class="l"><a href="#897"> 897: </a>                                    <span class="php-var">$replace</span>[] = <span class="php-var">$src_items</span>[<span class="php-var">$k</span>];
-</span><span id="898" class="l"><a href="#898"> 898: </a>                                }
-</span><span id="899" class="l"><a href="#899"> 899: </a>                            }
-</span><span id="900" class="l"><a href="#900"> 900: </a>                            <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>(<span class="php-quote">'class'</span> =&gt; <span class="php-quote">'buttons'</span>);
-</span><span id="901" class="l"><a href="#901"> 901: </a>                            <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;cols[<span class="php-quote">'buttons'</span>]) &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;cols[<span class="php-quote">'buttons'</span>][<span class="php-quote">'class'</span>])) {
-</span><span id="902" class="l"><a href="#902"> 902: </a>                                <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>(<span class="php-quote">'class'</span> =&gt; <span class="php-var">$this</span>-&gt;cols[<span class="php-quote">'buttons'</span>][<span class="php-quote">'class'</span>].<span class="php-quote">' buttons'</span>);
-</span><span id="903" class="l"><a href="#903"> 903: </a>                            }
-</span><span id="904" class="l"><a href="#904"> 904: </a>                            <span class="php-var">$row</span>[] = <span class="php-keyword2">str_replace</span>(<span class="php-var">$patt</span>, <span class="php-var">$replace</span>, <span class="php-var">$this</span>-&gt;td(<span class="php-var">$id</span>, <span class="php-var">$i</span>, <span class="php-var">$prop</span>, <span class="php-keyword2">implode</span>(<span class="php-quote">''</span>, <span class="php-var">$buttons</span>), <span class="php-quote">''</span>));
-</span><span id="905" class="l"><a href="#905"> 905: </a>                        } <span class="php-keyword1">else</span> {
-</span><span id="906" class="l"><a href="#906"> 906: </a>                            <span class="php-var">$row</span>[] = <span class="php-var">$this</span>-&gt;td(<span class="php-var">$id</span>, <span class="php-var">$i</span>, <span class="php-keyword1">array</span>(), <span class="php-quote">''</span>, <span class="php-quote">''</span>);
-</span><span id="907" class="l"><a href="#907"> 907: </a>                        }
-</span><span id="908" class="l"><a href="#908"> 908: </a>                    }
-</span><span id="909" class="l"><a href="#909"> 909: </a>                    <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;pmButton) {
-</span><span id="910" class="l"><a href="#910"> 910: </a>                        <span class="php-var">$row</span>[] = <span class="php-quote">'&lt;td class=&quot;icons&quot;&gt;&lt;div&gt;&lt;a class=&quot;icon-plus&quot; title=&quot;'</span>.Language::get(<span class="php-quote">'Add'</span>).<span class="php-quote">'&quot;&gt;&lt;/a&gt;&lt;a class=&quot;icon-minus&quot; title=&quot;'</span>.Language::get(<span class="php-quote">'Remove'</span>).<span class="php-quote">'&quot;&gt;&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;'</span>;
-</span><span id="911" class="l"><a href="#911"> 911: </a>                    }
-</span><span id="912" class="l"><a href="#912"> 912: </a>                }
-</span><span id="913" class="l"><a href="#913"> 913: </a>                <span class="php-var">$row</span>[] = <span class="php-quote">'&lt;/tr&gt;'</span>;
-</span><span id="914" class="l"><a href="#914"> 914: </a>            }
-</span><span id="915" class="l"><a href="#915"> 915: </a>            ++<span class="php-var">$n</span>;
-</span><span id="916" class="l"><a href="#916"> 916: </a>        }
-</span><span id="917" class="l"><a href="#917"> 917: </a>
-</span><span id="918" class="l"><a href="#918"> 918: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">implode</span>(<span class="php-quote">&quot;\n&quot;</span>, <span class="php-var">$row</span>);
-</span><span id="919" class="l"><a href="#919"> 919: </a>    }
-</span><span id="920" class="l"><a href="#920"> 920: </a>
-</span><span id="921" class="l"><a href="#921"> 921: </a>    <span class="php-comment">/**
-</span></span><span id="922" class="l"><a href="#922"> 922: </a><span class="php-comment">     * render th.
-</span></span><span id="923" class="l"><a href="#923"> 923: </a><span class="php-comment">     *
-</span></span><span id="924" class="l"><a href="#924"> 924: </a><span class="php-comment">     * @param int    $i          ลำดับคอลัมน์
-</span></span><span id="925" class="l"><a href="#925"> 925: </a><span class="php-comment">     * @param string $column     ชื่อคอลัมน์
-</span></span><span id="926" class="l"><a href="#926"> 926: </a><span class="php-comment">     * @param array  $properties properties ของ th
-</span></span><span id="927" class="l"><a href="#927"> 927: </a><span class="php-comment">     *
-</span></span><span id="928" class="l"><a href="#928"> 928: </a><span class="php-comment">     * @return string
-</span></span><span id="929" class="l"><a href="#929"> 929: </a><span class="php-comment">     */</span>
-</span><span id="930" class="l"><a href="#930"> 930: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> th(<span class="php-var">$i</span>, <span class="php-var">$column</span>, <span class="php-var">$properties</span>)
-</span><span id="931" class="l"><a href="#931"> 931: </a>    {
-</span><span id="932" class="l"><a href="#932"> 932: </a>        <span class="php-var">$c</span> = <span class="php-keyword1">array</span>();
-</span><span id="933" class="l"><a href="#933"> 933: </a>        <span class="php-var">$c</span>[<span class="php-quote">'id'</span>] = <span class="php-quote">'id=&quot;c'</span>.<span class="php-var">$i</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="934" class="l"><a href="#934"> 934: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$properties</span>[<span class="php-quote">'sort'</span>])) {
-</span><span id="935" class="l"><a href="#935"> 935: </a>            <span class="php-var">$sort</span> = <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;sorts[<span class="php-var">$properties</span>[<span class="php-quote">'sort'</span>]]) ? <span class="php-var">$this</span>-&gt;sorts[<span class="php-var">$properties</span>[<span class="php-quote">'sort'</span>]] : <span class="php-quote">'none'</span>;
-</span><span id="936" class="l"><a href="#936"> 936: </a>            <span class="php-var">$properties</span>[<span class="php-quote">'class'</span>] = <span class="php-quote">'sort_'</span>.<span class="php-var">$sort</span>.<span class="php-quote">' col_'</span>.<span class="php-var">$column</span>.(<span class="php-keyword1">empty</span>(<span class="php-var">$properties</span>[<span class="php-quote">'class'</span>]) ? <span class="php-quote">''</span> : <span class="php-quote">' '</span>.<span class="php-var">$properties</span>[<span class="php-quote">'class'</span>]);
-</span><span id="937" class="l"><a href="#937"> 937: </a>        }
-</span><span id="938" class="l"><a href="#938"> 938: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$properties</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
-</span><span id="939" class="l"><a href="#939"> 939: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$key</span> !== <span class="php-quote">'sort'</span> &amp;&amp; <span class="php-var">$key</span> !== <span class="php-quote">'text'</span>) {
-</span><span id="940" class="l"><a href="#940"> 940: </a>                <span class="php-var">$c</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="941" class="l"><a href="#941"> 941: </a>            }
-</span><span id="942" class="l"><a href="#942"> 942: </a>        }
-</span><span id="943" class="l"><a href="#943"> 943: </a>
-</span><span id="944" class="l"><a href="#944"> 944: </a>        <span class="php-keyword1">return</span> <span class="php-quote">'&lt;th '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$c</span>).<span class="php-quote">'&gt;'</span>.(<span class="php-keyword1">isset</span>(<span class="php-var">$properties</span>[<span class="php-quote">'text'</span>]) ? <span class="php-var">$properties</span>[<span class="php-quote">'text'</span>] : <span class="php-var">$column</span>).<span class="php-quote">'&lt;/th&gt;'</span>;
-</span><span id="945" class="l"><a href="#945"> 945: </a>    }
-</span><span id="946" class="l"><a href="#946"> 946: </a>
-</span><span id="947" class="l"><a href="#947"> 947: </a>    <span class="php-comment">/**
-</span></span><span id="948" class="l"><a href="#948"> 948: </a><span class="php-comment">     * render td.
-</span></span><span id="949" class="l"><a href="#949"> 949: </a><span class="php-comment">     *
-</span></span><span id="950" class="l"><a href="#950"> 950: </a><span class="php-comment">     * @param int    $id         id ของ แถว
-</span></span><span id="951" class="l"><a href="#951"> 951: </a><span class="php-comment">     * @param int    $i          ลำดับคอลัมน์
-</span></span><span id="952" class="l"><a href="#952"> 952: </a><span class="php-comment">     * @param array  $properties ชื่อคอลัมน์
-</span></span><span id="953" class="l"><a href="#953"> 953: </a><span class="php-comment">     * @param string $text       ข้อความใน td
-</span></span><span id="954" class="l"><a href="#954"> 954: </a><span class="php-comment">     *
-</span></span><span id="955" class="l"><a href="#955"> 955: </a><span class="php-comment">     * @return string
-</span></span><span id="956" class="l"><a href="#956"> 956: </a><span class="php-comment">     */</span>
-</span><span id="957" class="l"><a href="#957"> 957: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> td(<span class="php-var">$id</span>, <span class="php-var">$i</span>, <span class="php-var">$properties</span>, <span class="php-var">$text</span>, <span class="php-var">$th</span>)
-</span><span id="958" class="l"><a href="#958"> 958: </a>    {
-</span><span id="959" class="l"><a href="#959"> 959: </a>        <span class="php-var">$c</span> = <span class="php-keyword1">array</span>(<span class="php-quote">'data-text'</span> =&gt; <span class="php-quote">'data-text=&quot;'</span>.<span class="php-var">$th</span>.<span class="php-quote">'&quot;'</span>);
-</span><span id="960" class="l"><a href="#960"> 960: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$properties</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
-</span><span id="961" class="l"><a href="#961"> 961: </a>            <span class="php-var">$c</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="962" class="l"><a href="#962"> 962: </a>        }
-</span><span id="963" class="l"><a href="#963"> 963: </a>        <span class="php-var">$c</span> = <span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$c</span>);
-</span><span id="964" class="l"><a href="#964"> 964: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$i</span> == <span class="php-num">0</span>) {
-</span><span id="965" class="l"><a href="#965"> 965: </a>            <span class="php-var">$c</span> .= <span class="php-quote">' id=&quot;r'</span>.<span class="php-var">$id</span>.<span class="php-quote">'&quot; headers=&quot;c'</span>.<span class="php-var">$i</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="966" class="l"><a href="#966"> 966: </a>
-</span><span id="967" class="l"><a href="#967"> 967: </a>            <span class="php-keyword1">return</span> <span class="php-quote">'&lt;th '</span>.<span class="php-var">$c</span>.<span class="php-quote">'&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/th&gt;'</span>;
-</span><span id="968" class="l"><a href="#968"> 968: </a>        } <span class="php-keyword1">else</span> {
-</span><span id="969" class="l"><a href="#969"> 969: </a>            <span class="php-var">$c</span> .= <span class="php-quote">' headers=&quot;c'</span>.<span class="php-var">$i</span>.<span class="php-quote">' r'</span>.<span class="php-var">$id</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="970" class="l"><a href="#970"> 970: </a>
-</span><span id="971" class="l"><a href="#971"> 971: </a>            <span class="php-keyword1">return</span> <span class="php-quote">'&lt;td '</span>.<span class="php-var">$c</span>.<span class="php-quote">'&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/td&gt;'</span>;
-</span><span id="972" class="l"><a href="#972"> 972: </a>        }
-</span><span id="973" class="l"><a href="#973"> 973: </a>    }
-</span><span id="974" class="l"><a href="#974"> 974: </a>
-</span><span id="975" class="l"><a href="#975"> 975: </a>    <span class="php-comment">/**
-</span></span><span id="976" class="l"><a href="#976"> 976: </a><span class="php-comment">     * render button.
-</span></span><span id="977" class="l"><a href="#977"> 977: </a><span class="php-comment">     *
-</span></span><span id="978" class="l"><a href="#978"> 978: </a><span class="php-comment">     * @param array $properties properties ของ button
-</span></span><span id="979" class="l"><a href="#979"> 979: </a><span class="php-comment">     *
-</span></span><span id="980" class="l"><a href="#980"> 980: </a><span class="php-comment">     * @return string
-</span></span><span id="981" class="l"><a href="#981"> 981: </a><span class="php-comment">     */</span>
-</span><span id="982" class="l"><a href="#982"> 982: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> button(<span class="php-var">$btn</span>, <span class="php-var">$properties</span>)
-</span><span id="983" class="l"><a href="#983"> 983: </a>    {
-</span><span id="984" class="l"><a href="#984"> 984: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$properties</span>[<span class="php-quote">'submenus'</span>])) {
-</span><span id="985" class="l"><a href="#985"> 985: </a>            <span class="php-var">$innerHTML</span> = <span class="php-quote">''</span>;
-</span><span id="986" class="l"><a href="#986"> 986: </a>            <span class="php-var">$li</span> = <span class="php-quote">''</span>;
-</span><span id="987" class="l"><a href="#987"> 987: </a>            <span class="php-var">$attributes</span> = <span class="php-keyword1">array</span>();
-</span><span id="988" class="l"><a href="#988"> 988: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$properties</span> <span class="php-keyword1">as</span> <span class="php-var">$name</span> =&gt; <span class="php-var">$item</span>) {
-</span><span id="989" class="l"><a href="#989"> 989: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$name</span> == <span class="php-quote">'submenus'</span>) {
-</span><span id="990" class="l"><a href="#990"> 990: </a>                    <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span> <span class="php-keyword1">as</span> <span class="php-var">$menu</span>) {
-</span><span id="991" class="l"><a href="#991"> 991: </a>                        <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>();
-</span><span id="992" class="l"><a href="#992"> 992: </a>                        <span class="php-var">$text</span> = <span class="php-quote">''</span>;
-</span><span id="993" class="l"><a href="#993"> 993: </a>                        <span class="php-keyword1">foreach</span> (<span class="php-var">$menu</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
-</span><span id="994" class="l"><a href="#994"> 994: </a>                            <span class="php-keyword1">if</span> (<span class="php-var">$key</span> == <span class="php-quote">'text'</span>) {
-</span><span id="995" class="l"><a href="#995"> 995: </a>                                <span class="php-var">$text</span> = <span class="php-var">$value</span>;
-</span><span id="996" class="l"><a href="#996"> 996: </a>                            } <span class="php-keyword1">else</span> {
-</span><span id="997" class="l"><a href="#997"> 997: </a>                                <span class="php-var">$prop</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="998" class="l"><a href="#998"> 998: </a>                            }
-</span><span id="999" class="l"><a href="#999"> 999: </a>                        }
-</span><span id="1000" class="l"><a href="#1000">1000: </a>                        <span class="php-var">$li</span> .= <span class="php-quote">'&lt;li&gt;&lt;a '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/a&gt;&lt;/li&gt;'</span>;
-</span><span id="1001" class="l"><a href="#1001">1001: </a>                    }
-</span><span id="1002" class="l"><a href="#1002">1002: </a>                } <span class="php-keyword1">elseif</span> (<span class="php-var">$name</span> == <span class="php-quote">'value'</span>) {
-</span><span id="1003" class="l"><a href="#1003">1003: </a>                    <span class="php-var">$innerHTML</span> = <span class="php-var">$item</span>;
-</span><span id="1004" class="l"><a href="#1004">1004: </a>                } <span class="php-keyword1">elseif</span> (<span class="php-var">$name</span> == <span class="php-quote">'class'</span>) {
-</span><span id="1005" class="l"><a href="#1005">1005: </a>                    <span class="php-var">$attributes</span>[<span class="php-quote">'class'</span>] = <span class="php-quote">'class=&quot;'</span>.<span class="php-var">$item</span>.<span class="php-quote">' menubutton&quot;'</span>;
-</span><span id="1006" class="l"><a href="#1006">1006: </a>                } <span class="php-keyword1">else</span> {
-</span><span id="1007" class="l"><a href="#1007">1007: </a>                    <span class="php-var">$attributes</span>[<span class="php-var">$name</span>] = <span class="php-var">$name</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$item</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="1008" class="l"><a href="#1008">1008: </a>                }
-</span><span id="1009" class="l"><a href="#1009">1009: </a>            }
-</span><span id="1010" class="l"><a href="#1010">1010: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword1">isset</span>(<span class="php-var">$attributes</span>[<span class="php-quote">'class'</span>])) {
-</span><span id="1011" class="l"><a href="#1011">1011: </a>                <span class="php-var">$attributes</span>[<span class="php-quote">'class'</span>] = <span class="php-quote">'class=&quot;menubutton&quot;'</span>;
-</span><span id="1012" class="l"><a href="#1012">1012: </a>            }
-</span><span id="1013" class="l"><a href="#1013">1013: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword1">isset</span>(<span class="php-var">$attributes</span>[<span class="php-quote">'tabindex'</span>])) {
-</span><span id="1014" class="l"><a href="#1014">1014: </a>                <span class="php-var">$attributes</span>[<span class="php-quote">'tabindex'</span>] = <span class="php-quote">'tabindex=&quot;0&quot;'</span>;
-</span><span id="1015" class="l"><a href="#1015">1015: </a>            }
-</span><span id="1016" class="l"><a href="#1016">1016: </a>
-</span><span id="1017" class="l"><a href="#1017">1017: </a>            <span class="php-keyword1">return</span> <span class="php-quote">'&lt;div '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$attributes</span>).<span class="php-quote">'&gt;'</span>.<span class="php-var">$innerHTML</span>.<span class="php-quote">'&lt;ul&gt;'</span>.<span class="php-var">$li</span>.<span class="php-quote">'&lt;/ul&gt;&lt;/div&gt;'</span>;
-</span><span id="1018" class="l"><a href="#1018">1018: </a>        } <span class="php-keyword1">else</span> {
-</span><span id="1019" class="l"><a href="#1019">1019: </a>            <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>();
-</span><span id="1020" class="l"><a href="#1020">1020: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$properties</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
-</span><span id="1021" class="l"><a href="#1021">1021: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$key</span> === <span class="php-quote">'id'</span>) {
-</span><span id="1022" class="l"><a href="#1022">1022: </a>                    <span class="php-var">$prop</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$btn</span>.<span class="php-quote">'_'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="1023" class="l"><a href="#1023">1023: </a>                } <span class="php-keyword1">elseif</span> (<span class="php-var">$key</span> !== <span class="php-quote">'text'</span>) {
-</span><span id="1024" class="l"><a href="#1024">1024: </a>                    <span class="php-var">$prop</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="1025" class="l"><a href="#1025">1025: </a>                }
-</span><span id="1026" class="l"><a href="#1026">1026: </a>            }
-</span><span id="1027" class="l"><a href="#1027">1027: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$properties</span>[<span class="php-quote">'class'</span>]) &amp;&amp; <span class="php-keyword2">preg_match</span>(<span class="php-quote">'/(.*)\s?(icon\-[a-z0-9\-_]+)($|\s(.*))/'</span>, <span class="php-var">$properties</span>[<span class="php-quote">'class'</span>], <span class="php-var">$match</span>)) {
-</span><span id="1028" class="l"><a href="#1028">1028: </a>                <span class="php-var">$class</span> = <span class="php-keyword1">array</span>();
-</span><span id="1029" class="l"><a href="#1029">1029: </a>                <span class="php-keyword1">foreach</span> (<span class="php-keyword1">array</span>(<span class="php-num">1</span>, <span class="php-num">4</span>) <span class="php-keyword1">as</span> <span class="php-var">$i</span>) {
-</span><span id="1030" class="l"><a href="#1030">1030: </a>                    <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$match</span>[<span class="php-var">$i</span>])) {
-</span><span id="1031" class="l"><a href="#1031">1031: </a>                        <span class="php-var">$class</span>[] = <span class="php-var">$match</span>[<span class="php-var">$i</span>];
-</span><span id="1032" class="l"><a href="#1032">1032: </a>                    }
-</span><span id="1033" class="l"><a href="#1033">1033: </a>                }
-</span><span id="1034" class="l"><a href="#1034">1034: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword1">empty</span>(<span class="php-var">$properties</span>[<span class="php-quote">'text'</span>])) {
-</span><span id="1035" class="l"><a href="#1035">1035: </a>                    <span class="php-var">$class</span>[] = <span class="php-quote">'notext'</span>;
-</span><span id="1036" class="l"><a href="#1036">1036: </a>                    <span class="php-var">$prop</span>[<span class="php-quote">'class'</span>] = <span class="php-quote">'class=&quot;'</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$class</span>).<span class="php-quote">'&quot;'</span>;
-</span><span id="1037" class="l"><a href="#1037">1037: </a>
-</span><span id="1038" class="l"><a href="#1038">1038: </a>                    <span class="php-keyword1">return</span> <span class="php-quote">'&lt;a '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;&lt;span class=&quot;'</span>.<span class="php-var">$match</span>[<span class="php-num">2</span>].<span class="php-quote">'&quot;&gt;&lt;/span&gt;&lt;/a&gt;'</span>;
-</span><span id="1039" class="l"><a href="#1039">1039: </a>                } <span class="php-keyword1">else</span> {
-</span><span id="1040" class="l"><a href="#1040">1040: </a>                    <span class="php-var">$prop</span>[<span class="php-quote">'class'</span>] = <span class="php-quote">'class=&quot;'</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$class</span>).<span class="php-quote">'&quot;'</span>;
-</span><span id="1041" class="l"><a href="#1041">1041: </a>
-</span><span id="1042" class="l"><a href="#1042">1042: </a>                    <span class="php-keyword1">return</span> <span class="php-quote">'&lt;a '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;&lt;span class=&quot;'</span>.<span class="php-var">$match</span>[<span class="php-num">2</span>].<span class="php-quote">' button_w_text&quot;&gt;&lt;span class=mobile&gt;'</span>.<span class="php-var">$properties</span>[<span class="php-quote">'text'</span>].<span class="php-quote">'&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;'</span>;
-</span><span id="1043" class="l"><a href="#1043">1043: </a>                }
-</span><span id="1044" class="l"><a href="#1044">1044: </a>            } <span class="php-keyword1">else</span> {
-</span><span id="1045" class="l"><a href="#1045">1045: </a>                <span class="php-keyword1">return</span> <span class="php-quote">'&lt;a'</span>.(<span class="php-keyword1">empty</span>(<span class="php-var">$prop</span>) ? <span class="php-quote">''</span> : <span class="php-quote">' '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>)).<span class="php-quote">'&gt;&lt;/a&gt;'</span>;
-</span><span id="1046" class="l"><a href="#1046">1046: </a>            }
-</span><span id="1047" class="l"><a href="#1047">1047: </a>        }
-</span><span id="1048" class="l"><a href="#1048">1048: </a>    }
-</span><span id="1049" class="l"><a href="#1049">1049: </a>
-</span><span id="1050" class="l"><a href="#1050">1050: </a>    <span class="php-comment">/**
-</span></span><span id="1051" class="l"><a href="#1051">1051: </a><span class="php-comment">     * สร้าง select หรือ button ด้านล่างตาราง (actions).
-</span></span><span id="1052" class="l"><a href="#1052">1052: </a><span class="php-comment">     *
-</span></span><span id="1053" class="l"><a href="#1053">1053: </a><span class="php-comment">     * @param array $item
-</span></span><span id="1054" class="l"><a href="#1054">1054: </a><span class="php-comment">     *
-</span></span><span id="1055" class="l"><a href="#1055">1055: </a><span class="php-comment">     * @return string
-</span></span><span id="1056" class="l"><a href="#1056">1056: </a><span class="php-comment">     */</span>
-</span><span id="1057" class="l"><a href="#1057">1057: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> addAction(<span class="php-var">$item</span>)
-</span><span id="1058" class="l"><a href="#1058">1058: </a>    {
-</span><span id="1059" class="l"><a href="#1059">1059: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'class'</span>]) &amp;&amp; <span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^((.*)\s+)?(icon-[a-z0-9\-_]+)(\s+(.*))?$/'</span>, <span class="php-var">$item</span>[<span class="php-quote">'class'</span>], <span class="php-var">$match</span>)) {
-</span><span id="1060" class="l"><a href="#1060">1060: </a>            <span class="php-var">$match</span>[<span class="php-num">2</span>] = <span class="php-keyword2">trim</span>(<span class="php-var">$match</span>[<span class="php-num">2</span>].<span class="php-quote">' '</span>.(<span class="php-keyword1">isset</span>(<span class="php-var">$match</span>[<span class="php-num">5</span>]) ? <span class="php-var">$match</span>[<span class="php-num">5</span>] : <span class="php-quote">''</span>));
-</span><span id="1061" class="l"><a href="#1061">1061: </a>        }
-</span><span id="1062" class="l"><a href="#1062">1062: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'options'</span>])) {
-</span><span id="1063" class="l"><a href="#1063">1063: </a>            <span class="php-comment">// select</span>
-</span><span id="1064" class="l"><a href="#1064">1064: </a>            <span class="php-var">$rows</span> = <span class="php-keyword1">array</span>();
-</span><span id="1065" class="l"><a href="#1065">1065: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span>[<span class="php-quote">'options'</span>] <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$text</span>) {
-</span><span id="1066" class="l"><a href="#1066">1066: </a>                <span class="php-var">$rows</span>[] = <span class="php-quote">'&lt;option value=&quot;'</span>.<span class="php-var">$key</span>.<span class="php-quote">'&quot;&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/option&gt;'</span>;
-</span><span id="1067" class="l"><a href="#1067">1067: </a>            }
-</span><span id="1068" class="l"><a href="#1068">1068: </a>
-</span><span id="1069" class="l"><a href="#1069">1069: </a>            <span class="php-keyword1">return</span> <span class="php-quote">'&lt;fieldset&gt;&lt;select id=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'id'</span>].<span class="php-quote">'&quot;&gt;'</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">''</span>, <span class="php-var">$rows</span>).<span class="php-quote">'&lt;/select&gt;&lt;label for=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'id'</span>].<span class="php-quote">'&quot; class=&quot;button '</span>.<span class="php-var">$item</span>[<span class="php-quote">'class'</span>].<span class="php-quote">' action&quot;&gt;&lt;span&gt;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'text'</span>].<span class="php-quote">'&lt;/span&gt;&lt;/label&gt;&lt;/fieldset&gt;'</span>;
-</span><span id="1070" class="l"><a href="#1070">1070: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'type'</span>])) {
-</span><span id="1071" class="l"><a href="#1071">1071: </a>            <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>(
-</span><span id="1072" class="l"><a href="#1072">1072: </a>                <span class="php-quote">'type=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'type'</span>].<span class="php-quote">'&quot;'</span>,
-</span><span id="1073" class="l"><a href="#1073">1073: </a>            );
-</span><span id="1074" class="l"><a href="#1074">1074: </a>            <span class="php-var">$prop2</span> = <span class="php-keyword1">array</span>(
-</span><span id="1075" class="l"><a href="#1075">1075: </a>                <span class="php-quote">'button'</span> =&gt; <span class="php-quote">'class=&quot;button action&quot;'</span>,
-</span><span id="1076" class="l"><a href="#1076">1076: </a>            );
-</span><span id="1077" class="l"><a href="#1077">1077: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
-</span><span id="1078" class="l"><a href="#1078">1078: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$key</span> == <span class="php-quote">'id'</span>) {
-</span><span id="1079" class="l"><a href="#1079">1079: </a>                    <span class="php-var">$prop</span>[] = <span class="php-quote">'id=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="1080" class="l"><a href="#1080">1080: </a>                    <span class="php-var">$prop2</span>[] = <span class="php-quote">'for=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="1081" class="l"><a href="#1081">1081: </a>                } <span class="php-keyword1">elseif</span> (<span class="php-var">$key</span> == <span class="php-quote">'class'</span>) {
-</span><span id="1082" class="l"><a href="#1082">1082: </a>                    <span class="php-var">$prop2</span>[<span class="php-quote">'button'</span>] = <span class="php-quote">'class=&quot;button '</span>.<span class="php-var">$value</span>.<span class="php-quote">' action&quot;'</span>;
-</span><span id="1083" class="l"><a href="#1083">1083: </a>                } <span class="php-keyword1">elseif</span> (!<span class="php-keyword2">in_array</span>(<span class="php-var">$key</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'type'</span>, <span class="php-quote">'text'</span>))) {
-</span><span id="1084" class="l"><a href="#1084">1084: </a>                    <span class="php-var">$prop</span>[] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="1085" class="l"><a href="#1085">1085: </a>                }
-</span><span id="1086" class="l"><a href="#1086">1086: </a>            }
-</span><span id="1087" class="l"><a href="#1087">1087: </a>
-</span><span id="1088" class="l"><a href="#1088">1088: </a>            <span class="php-keyword1">return</span> <span class="php-quote">'&lt;fieldset&gt;&lt;input '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;&lt;label '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop2</span>).<span class="php-quote">'&gt;&lt;span&gt;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'text'</span>].<span class="php-quote">'&lt;/span&gt;&lt;/label&gt;&lt;/fieldset&gt;'</span>;
-</span><span id="1089" class="l"><a href="#1089">1089: </a>        } <span class="php-keyword1">else</span> {
-</span><span id="1090" class="l"><a href="#1090">1090: </a>            <span class="php-comment">// link, button</span>
-</span><span id="1091" class="l"><a href="#1091">1091: </a>            <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>();
-</span><span id="1092" class="l"><a href="#1092">1092: </a>            <span class="php-var">$text</span> = <span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'text'</span>]) ? <span class="php-var">$item</span>[<span class="php-quote">'text'</span>] : <span class="php-quote">''</span>;
-</span><span id="1093" class="l"><a href="#1093">1093: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'class'</span>])) {
-</span><span id="1094" class="l"><a href="#1094">1094: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword1">empty</span>(<span class="php-var">$match</span>[<span class="php-num">3</span>])) {
-</span><span id="1095" class="l"><a href="#1095">1095: </a>                    <span class="php-var">$prop</span>[] = <span class="php-quote">'class=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'class'</span>].<span class="php-quote">'&quot;'</span>;
-</span><span id="1096" class="l"><a href="#1096">1096: </a>                } <span class="php-keyword1">else</span> {
-</span><span id="1097" class="l"><a href="#1097">1097: </a>                    <span class="php-var">$text</span> = <span class="php-quote">'&lt;span class=&quot;'</span>.<span class="php-var">$match</span>[<span class="php-num">3</span>].<span class="php-quote">'&quot;&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/span&gt;'</span>;
-</span><span id="1098" class="l"><a href="#1098">1098: </a>                    <span class="php-var">$prop</span>[] = <span class="php-quote">'class=&quot;'</span>.<span class="php-var">$match</span>[<span class="php-num">2</span>].<span class="php-quote">'&quot;'</span>;
-</span><span id="1099" class="l"><a href="#1099">1099: </a>                }
-</span><span id="1100" class="l"><a href="#1100">1100: </a>            }
-</span><span id="1101" class="l"><a href="#1101">1101: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span> <span class="php-keyword1">as</span> <span class="php-var">$k</span> =&gt; <span class="php-var">$v</span>) {
-</span><span id="1102" class="l"><a href="#1102">1102: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$k</span> != <span class="php-quote">'class'</span> &amp;&amp; <span class="php-var">$k</span> != <span class="php-quote">'text'</span>) {
-</span><span id="1103" class="l"><a href="#1103">1103: </a>                    <span class="php-var">$prop</span>[] = <span class="php-var">$k</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$v</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="1104" class="l"><a href="#1104">1104: </a>                }
-</span><span id="1105" class="l"><a href="#1105">1105: </a>            }
-</span><span id="1106" class="l"><a href="#1106">1106: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'href'</span>])) {
-</span><span id="1107" class="l"><a href="#1107">1107: </a>                <span class="php-comment">// link</span>
-</span><span id="1108" class="l"><a href="#1108">1108: </a>                <span class="php-keyword1">return</span> <span class="php-quote">'&lt;a '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/a&gt;'</span>;
-</span><span id="1109" class="l"><a href="#1109">1109: </a>            } <span class="php-keyword1">else</span> {
-</span><span id="1110" class="l"><a href="#1110">1110: </a>                <span class="php-comment">// button</span>
-</span><span id="1111" class="l"><a href="#1111">1111: </a>                <span class="php-keyword1">return</span> <span class="php-quote">'&lt;button '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">' type=&quot;button&quot;&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/button&gt;'</span>;
-</span><span id="1112" class="l"><a href="#1112">1112: </a>            }
-</span><span id="1113" class="l"><a href="#1113">1113: </a>        }
-</span><span id="1114" class="l"><a href="#1114">1114: </a>    }
-</span><span id="1115" class="l"><a href="#1115">1115: </a>
-</span><span id="1116" class="l"><a href="#1116">1116: </a>    <span class="php-comment">/**
-</span></span><span id="1117" class="l"><a href="#1117">1117: </a><span class="php-comment">     * สร้าง select ด้านบนตาราง (filters).
-</span></span><span id="1118" class="l"><a href="#1118">1118: </a><span class="php-comment">     *
-</span></span><span id="1119" class="l"><a href="#1119">1119: </a><span class="php-comment">     * @param array $item
-</span></span><span id="1120" class="l"><a href="#1120">1120: </a><span class="php-comment">     *
-</span></span><span id="1121" class="l"><a href="#1121">1121: </a><span class="php-comment">     * @return string
-</span></span><span id="1122" class="l"><a href="#1122">1122: </a><span class="php-comment">     */</span>
-</span><span id="1123" class="l"><a href="#1123">1123: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> addFilter(<span class="php-var">$item</span>)
-</span><span id="1124" class="l"><a href="#1124">1124: </a>    {
-</span><span id="1125" class="l"><a href="#1125">1125: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'type'</span>])) {
-</span><span id="1126" class="l"><a href="#1126">1126: </a>            <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>();
-</span><span id="1127" class="l"><a href="#1127">1127: </a>            <span class="php-var">$datalist</span> = <span class="php-quote">''</span>;
-</span><span id="1128" class="l"><a href="#1128">1128: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
-</span><span id="1129" class="l"><a href="#1129">1129: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$key</span> == <span class="php-quote">'datalist'</span>) {
-</span><span id="1130" class="l"><a href="#1130">1130: </a>                    <span class="php-keyword1">foreach</span> (<span class="php-var">$value</span> <span class="php-keyword1">as</span> <span class="php-var">$k</span> =&gt; <span class="php-var">$v</span>) {
-</span><span id="1131" class="l"><a href="#1131">1131: </a>                        <span class="php-var">$datalist</span> .= <span class="php-quote">'&lt;option value=&quot;'</span>.<span class="php-var">$k</span>.<span class="php-quote">'&quot;&gt;'</span>.<span class="php-var">$v</span>.<span class="php-quote">'&lt;/option&gt;'</span>;
-</span><span id="1132" class="l"><a href="#1132">1132: </a>                    }
-</span><span id="1133" class="l"><a href="#1133">1133: </a>                } <span class="php-keyword1">elseif</span> (<span class="php-var">$key</span> != <span class="php-quote">'text'</span> &amp;&amp; <span class="php-var">$key</span> != <span class="php-quote">'default'</span>) {
-</span><span id="1134" class="l"><a href="#1134">1134: </a>                    <span class="php-var">$prop</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="1135" class="l"><a href="#1135">1135: </a>                }
-</span><span id="1136" class="l"><a href="#1136">1136: </a>            }
-</span><span id="1137" class="l"><a href="#1137">1137: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$datalist</span> != <span class="php-quote">''</span> &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'name'</span>])) {
-</span><span id="1138" class="l"><a href="#1138">1138: </a>                <span class="php-var">$prop</span>[<span class="php-quote">'list'</span>] = <span class="php-quote">'list=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'name'</span>].<span class="php-quote">'-datalist&quot;'</span>;
-</span><span id="1139" class="l"><a href="#1139">1139: </a>                <span class="php-var">$datalist</span> = <span class="php-quote">'&lt;datalist id=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'name'</span>].<span class="php-quote">'-datalist&quot;&gt;'</span>.<span class="php-var">$datalist</span>.<span class="php-quote">'&lt;/datalist&gt;'</span>;
-</span><span id="1140" class="l"><a href="#1140">1140: </a>            } <span class="php-keyword1">else</span> {
-</span><span id="1141" class="l"><a href="#1141">1141: </a>                <span class="php-var">$datalist</span> = <span class="php-quote">''</span>;
-</span><span id="1142" class="l"><a href="#1142">1142: </a>            }
-</span><span id="1143" class="l"><a href="#1143">1143: </a>            <span class="php-var">$row</span> = <span class="php-quote">'&lt;fieldset&gt;&lt;label&gt;'</span>.(<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'text'</span>]) ? <span class="php-var">$item</span>[<span class="php-quote">'text'</span>] : <span class="php-quote">''</span>).<span class="php-quote">' &lt;input '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;'</span>.<span class="php-var">$datalist</span>.<span class="php-quote">'&lt;/label&gt;&lt;/fieldset&gt;'</span>;
-</span><span id="1144" class="l"><a href="#1144">1144: </a>        } <span class="php-keyword1">else</span> {
-</span><span id="1145" class="l"><a href="#1145">1145: </a>            <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>();
-</span><span id="1146" class="l"><a href="#1146">1146: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
-</span><span id="1147" class="l"><a href="#1147">1147: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$key</span> != <span class="php-quote">'options'</span> &amp;&amp; <span class="php-var">$key</span> != <span class="php-quote">'value'</span> &amp;&amp; <span class="php-var">$key</span> != <span class="php-quote">'text'</span> &amp;&amp; <span class="php-var">$key</span> != <span class="php-quote">'default'</span>) {
-</span><span id="1148" class="l"><a href="#1148">1148: </a>                    <span class="php-var">$prop</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
-</span><span id="1149" class="l"><a href="#1149">1149: </a>                }
-</span><span id="1150" class="l"><a href="#1150">1150: </a>            }
-</span><span id="1151" class="l"><a href="#1151">1151: </a>            <span class="php-var">$row</span> = <span class="php-quote">'&lt;fieldset&gt;&lt;label&gt;'</span>.(<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'text'</span>]) ? <span class="php-var">$item</span>[<span class="php-quote">'text'</span>] : <span class="php-quote">''</span>).<span class="php-quote">' &lt;select '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;'</span>;
-</span><span id="1152" class="l"><a href="#1152">1152: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$item</span>[<span class="php-quote">'options'</span>])) {
-</span><span id="1153" class="l"><a href="#1153">1153: </a>                <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span>[<span class="php-quote">'options'</span>] <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$text</span>) {
-</span><span id="1154" class="l"><a href="#1154">1154: </a>                    <span class="php-var">$sel</span> = <span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'value'</span>]) &amp;&amp; (string) <span class="php-var">$key</span> == <span class="php-var">$item</span>[<span class="php-quote">'value'</span>] ? <span class="php-quote">' selected'</span> : <span class="php-quote">''</span>;
-</span><span id="1155" class="l"><a href="#1155">1155: </a>                    <span class="php-var">$row</span> .= <span class="php-quote">'&lt;option value=&quot;'</span>.<span class="php-var">$key</span>.<span class="php-quote">'&quot;'</span>.<span class="php-var">$sel</span>.<span class="php-quote">'&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/option&gt;'</span>;
-</span><span id="1156" class="l"><a href="#1156">1156: </a>                }
-</span><span id="1157" class="l"><a href="#1157">1157: </a>            }
-</span><span id="1158" class="l"><a href="#1158">1158: </a>            <span class="php-var">$row</span> .= <span class="php-quote">'&lt;/select&gt;&lt;/label&gt;&lt;/fieldset&gt;'</span>;
-</span><span id="1159" class="l"><a href="#1159">1159: </a>        }
-</span><span id="1160" class="l"><a href="#1160">1160: </a>
-</span><span id="1161" class="l"><a href="#1161">1161: </a>        <span class="php-keyword1">return</span> <span class="php-var">$row</span>;
-</span><span id="1162" class="l"><a href="#1162">1162: </a>    }
-</span><span id="1163" class="l"><a href="#1163">1163: </a>}
-</span><span id="1164" class="l"><a href="#1164">1164: </a></span></code></pre>
+</span><span id="889" class="l"><a href="#889"> 889: </a>                            <span class="php-var">$patt</span> = <span class="php-keyword1">array</span>();
+</span><span id="890" class="l"><a href="#890"> 890: </a>                            <span class="php-var">$replace</span> = <span class="php-keyword1">array</span>();
+</span><span id="891" class="l"><a href="#891"> 891: </a>                            <span class="php-var">$keys</span> = <span class="php-keyword2">array_keys</span>(<span class="php-var">$src_items</span>);
+</span><span id="892" class="l"><a href="#892"> 892: </a>                            <span class="php-keyword2">rsort</span>(<span class="php-var">$keys</span>);
+</span><span id="893" class="l"><a href="#893"> 893: </a>                            <span class="php-keyword1">foreach</span> (<span class="php-var">$keys</span> <span class="php-keyword1">as</span> <span class="php-var">$k</span>) {
+</span><span id="894" class="l"><a href="#894"> 894: </a>                                <span class="php-keyword1">if</span> (!<span class="php-keyword2">is_array</span>(<span class="php-var">$src_items</span>[<span class="php-var">$k</span>])) {
+</span><span id="895" class="l"><a href="#895"> 895: </a>                                    <span class="php-var">$patt</span>[] = <span class="php-quote">&quot;:</span><span class="php-var">$k</span><span class="php-quote">&quot;</span>;
+</span><span id="896" class="l"><a href="#896"> 896: </a>                                    <span class="php-var">$replace</span>[] = <span class="php-var">$src_items</span>[<span class="php-var">$k</span>];
+</span><span id="897" class="l"><a href="#897"> 897: </a>                                }
+</span><span id="898" class="l"><a href="#898"> 898: </a>                            }
+</span><span id="899" class="l"><a href="#899"> 899: </a>                            <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>(<span class="php-quote">'class'</span> =&gt; <span class="php-quote">'buttons'</span>);
+</span><span id="900" class="l"><a href="#900"> 900: </a>                            <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;cols[<span class="php-quote">'buttons'</span>]) &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;cols[<span class="php-quote">'buttons'</span>][<span class="php-quote">'class'</span>])) {
+</span><span id="901" class="l"><a href="#901"> 901: </a>                                <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>(<span class="php-quote">'class'</span> =&gt; <span class="php-var">$this</span>-&gt;cols[<span class="php-quote">'buttons'</span>][<span class="php-quote">'class'</span>].<span class="php-quote">' buttons'</span>);
+</span><span id="902" class="l"><a href="#902"> 902: </a>                            }
+</span><span id="903" class="l"><a href="#903"> 903: </a>                            <span class="php-var">$row</span>[] = <span class="php-keyword2">str_replace</span>(<span class="php-var">$patt</span>, <span class="php-var">$replace</span>, <span class="php-var">$this</span>-&gt;td(<span class="php-var">$id</span>, <span class="php-var">$i</span>, <span class="php-var">$prop</span>, <span class="php-keyword2">implode</span>(<span class="php-quote">''</span>, <span class="php-var">$buttons</span>), <span class="php-quote">''</span>));
+</span><span id="904" class="l"><a href="#904"> 904: </a>                        } <span class="php-keyword1">else</span> {
+</span><span id="905" class="l"><a href="#905"> 905: </a>                            <span class="php-var">$row</span>[] = <span class="php-var">$this</span>-&gt;td(<span class="php-var">$id</span>, <span class="php-var">$i</span>, <span class="php-keyword1">array</span>(), <span class="php-quote">''</span>, <span class="php-quote">''</span>);
+</span><span id="906" class="l"><a href="#906"> 906: </a>                        }
+</span><span id="907" class="l"><a href="#907"> 907: </a>                    }
+</span><span id="908" class="l"><a href="#908"> 908: </a>                    <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;pmButton) {
+</span><span id="909" class="l"><a href="#909"> 909: </a>                        <span class="php-var">$row</span>[] = <span class="php-quote">'&lt;td class=&quot;icons&quot;&gt;&lt;div&gt;&lt;a class=&quot;icon-plus&quot; title=&quot;'</span>.Language::get(<span class="php-quote">'Add'</span>).<span class="php-quote">'&quot;&gt;&lt;/a&gt;&lt;a class=&quot;icon-minus&quot; title=&quot;'</span>.Language::get(<span class="php-quote">'Remove'</span>).<span class="php-quote">'&quot;&gt;&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;'</span>;
+</span><span id="910" class="l"><a href="#910"> 910: </a>                    }
+</span><span id="911" class="l"><a href="#911"> 911: </a>                }
+</span><span id="912" class="l"><a href="#912"> 912: </a>                <span class="php-var">$row</span>[] = <span class="php-quote">'&lt;/tr&gt;'</span>;
+</span><span id="913" class="l"><a href="#913"> 913: </a>            }
+</span><span id="914" class="l"><a href="#914"> 914: </a>            ++<span class="php-var">$n</span>;
+</span><span id="915" class="l"><a href="#915"> 915: </a>        }
+</span><span id="916" class="l"><a href="#916"> 916: </a>
+</span><span id="917" class="l"><a href="#917"> 917: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">implode</span>(<span class="php-quote">&quot;\n&quot;</span>, <span class="php-var">$row</span>);
+</span><span id="918" class="l"><a href="#918"> 918: </a>    }
+</span><span id="919" class="l"><a href="#919"> 919: </a>
+</span><span id="920" class="l"><a href="#920"> 920: </a>    <span class="php-comment">/**
+</span></span><span id="921" class="l"><a href="#921"> 921: </a><span class="php-comment">     * render th.
+</span></span><span id="922" class="l"><a href="#922"> 922: </a><span class="php-comment">     *
+</span></span><span id="923" class="l"><a href="#923"> 923: </a><span class="php-comment">     * @param int    $i          ลำดับคอลัมน์
+</span></span><span id="924" class="l"><a href="#924"> 924: </a><span class="php-comment">     * @param string $column     ชื่อคอลัมน์
+</span></span><span id="925" class="l"><a href="#925"> 925: </a><span class="php-comment">     * @param array  $properties properties ของ th
+</span></span><span id="926" class="l"><a href="#926"> 926: </a><span class="php-comment">     *
+</span></span><span id="927" class="l"><a href="#927"> 927: </a><span class="php-comment">     * @return string
+</span></span><span id="928" class="l"><a href="#928"> 928: </a><span class="php-comment">     */</span>
+</span><span id="929" class="l"><a href="#929"> 929: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> th(<span class="php-var">$i</span>, <span class="php-var">$column</span>, <span class="php-var">$properties</span>)
+</span><span id="930" class="l"><a href="#930"> 930: </a>    {
+</span><span id="931" class="l"><a href="#931"> 931: </a>        <span class="php-var">$c</span> = <span class="php-keyword1">array</span>();
+</span><span id="932" class="l"><a href="#932"> 932: </a>        <span class="php-var">$c</span>[<span class="php-quote">'id'</span>] = <span class="php-quote">'id=&quot;c'</span>.<span class="php-var">$i</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="933" class="l"><a href="#933"> 933: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$properties</span>[<span class="php-quote">'sort'</span>])) {
+</span><span id="934" class="l"><a href="#934"> 934: </a>            <span class="php-var">$sort</span> = <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;sorts[<span class="php-var">$properties</span>[<span class="php-quote">'sort'</span>]]) ? <span class="php-var">$this</span>-&gt;sorts[<span class="php-var">$properties</span>[<span class="php-quote">'sort'</span>]] : <span class="php-quote">'none'</span>;
+</span><span id="935" class="l"><a href="#935"> 935: </a>            <span class="php-var">$properties</span>[<span class="php-quote">'class'</span>] = <span class="php-quote">'sort_'</span>.<span class="php-var">$sort</span>.<span class="php-quote">' col_'</span>.<span class="php-var">$column</span>.(<span class="php-keyword1">empty</span>(<span class="php-var">$properties</span>[<span class="php-quote">'class'</span>]) ? <span class="php-quote">''</span> : <span class="php-quote">' '</span>.<span class="php-var">$properties</span>[<span class="php-quote">'class'</span>]);
+</span><span id="936" class="l"><a href="#936"> 936: </a>        }
+</span><span id="937" class="l"><a href="#937"> 937: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$properties</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
+</span><span id="938" class="l"><a href="#938"> 938: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$key</span> !== <span class="php-quote">'sort'</span> &amp;&amp; <span class="php-var">$key</span> !== <span class="php-quote">'text'</span>) {
+</span><span id="939" class="l"><a href="#939"> 939: </a>                <span class="php-var">$c</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="940" class="l"><a href="#940"> 940: </a>            }
+</span><span id="941" class="l"><a href="#941"> 941: </a>        }
+</span><span id="942" class="l"><a href="#942"> 942: </a>
+</span><span id="943" class="l"><a href="#943"> 943: </a>        <span class="php-keyword1">return</span> <span class="php-quote">'&lt;th '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$c</span>).<span class="php-quote">'&gt;'</span>.(<span class="php-keyword1">isset</span>(<span class="php-var">$properties</span>[<span class="php-quote">'text'</span>]) ? <span class="php-var">$properties</span>[<span class="php-quote">'text'</span>] : <span class="php-var">$column</span>).<span class="php-quote">'&lt;/th&gt;'</span>;
+</span><span id="944" class="l"><a href="#944"> 944: </a>    }
+</span><span id="945" class="l"><a href="#945"> 945: </a>
+</span><span id="946" class="l"><a href="#946"> 946: </a>    <span class="php-comment">/**
+</span></span><span id="947" class="l"><a href="#947"> 947: </a><span class="php-comment">     * render td.
+</span></span><span id="948" class="l"><a href="#948"> 948: </a><span class="php-comment">     *
+</span></span><span id="949" class="l"><a href="#949"> 949: </a><span class="php-comment">     * @param int    $id         id ของ แถว
+</span></span><span id="950" class="l"><a href="#950"> 950: </a><span class="php-comment">     * @param int    $i          ลำดับคอลัมน์
+</span></span><span id="951" class="l"><a href="#951"> 951: </a><span class="php-comment">     * @param array  $properties ชื่อคอลัมน์
+</span></span><span id="952" class="l"><a href="#952"> 952: </a><span class="php-comment">     * @param string $text       ข้อความใน td
+</span></span><span id="953" class="l"><a href="#953"> 953: </a><span class="php-comment">     *
+</span></span><span id="954" class="l"><a href="#954"> 954: </a><span class="php-comment">     * @return string
+</span></span><span id="955" class="l"><a href="#955"> 955: </a><span class="php-comment">     */</span>
+</span><span id="956" class="l"><a href="#956"> 956: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> td(<span class="php-var">$id</span>, <span class="php-var">$i</span>, <span class="php-var">$properties</span>, <span class="php-var">$text</span>, <span class="php-var">$th</span>)
+</span><span id="957" class="l"><a href="#957"> 957: </a>    {
+</span><span id="958" class="l"><a href="#958"> 958: </a>        <span class="php-var">$c</span> = <span class="php-keyword1">array</span>(<span class="php-quote">'data-text'</span> =&gt; <span class="php-quote">'data-text=&quot;'</span>.<span class="php-var">$th</span>.<span class="php-quote">'&quot;'</span>);
+</span><span id="959" class="l"><a href="#959"> 959: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$properties</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
+</span><span id="960" class="l"><a href="#960"> 960: </a>            <span class="php-var">$c</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="961" class="l"><a href="#961"> 961: </a>        }
+</span><span id="962" class="l"><a href="#962"> 962: </a>        <span class="php-var">$c</span> = <span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$c</span>);
+</span><span id="963" class="l"><a href="#963"> 963: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$i</span> == <span class="php-num">0</span>) {
+</span><span id="964" class="l"><a href="#964"> 964: </a>            <span class="php-var">$c</span> .= <span class="php-quote">' id=&quot;r'</span>.<span class="php-var">$id</span>.<span class="php-quote">'&quot; headers=&quot;c'</span>.<span class="php-var">$i</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="965" class="l"><a href="#965"> 965: </a>
+</span><span id="966" class="l"><a href="#966"> 966: </a>            <span class="php-keyword1">return</span> <span class="php-quote">'&lt;th '</span>.<span class="php-var">$c</span>.<span class="php-quote">'&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/th&gt;'</span>;
+</span><span id="967" class="l"><a href="#967"> 967: </a>        } <span class="php-keyword1">else</span> {
+</span><span id="968" class="l"><a href="#968"> 968: </a>            <span class="php-var">$c</span> .= <span class="php-quote">' headers=&quot;c'</span>.<span class="php-var">$i</span>.<span class="php-quote">' r'</span>.<span class="php-var">$id</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="969" class="l"><a href="#969"> 969: </a>
+</span><span id="970" class="l"><a href="#970"> 970: </a>            <span class="php-keyword1">return</span> <span class="php-quote">'&lt;td '</span>.<span class="php-var">$c</span>.<span class="php-quote">'&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/td&gt;'</span>;
+</span><span id="971" class="l"><a href="#971"> 971: </a>        }
+</span><span id="972" class="l"><a href="#972"> 972: </a>    }
+</span><span id="973" class="l"><a href="#973"> 973: </a>
+</span><span id="974" class="l"><a href="#974"> 974: </a>    <span class="php-comment">/**
+</span></span><span id="975" class="l"><a href="#975"> 975: </a><span class="php-comment">     * render button.
+</span></span><span id="976" class="l"><a href="#976"> 976: </a><span class="php-comment">     *
+</span></span><span id="977" class="l"><a href="#977"> 977: </a><span class="php-comment">     * @param array $properties properties ของ button
+</span></span><span id="978" class="l"><a href="#978"> 978: </a><span class="php-comment">     *
+</span></span><span id="979" class="l"><a href="#979"> 979: </a><span class="php-comment">     * @return string
+</span></span><span id="980" class="l"><a href="#980"> 980: </a><span class="php-comment">     */</span>
+</span><span id="981" class="l"><a href="#981"> 981: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> button(<span class="php-var">$btn</span>, <span class="php-var">$properties</span>)
+</span><span id="982" class="l"><a href="#982"> 982: </a>    {
+</span><span id="983" class="l"><a href="#983"> 983: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$properties</span>[<span class="php-quote">'submenus'</span>])) {
+</span><span id="984" class="l"><a href="#984"> 984: </a>            <span class="php-var">$innerHTML</span> = <span class="php-quote">''</span>;
+</span><span id="985" class="l"><a href="#985"> 985: </a>            <span class="php-var">$li</span> = <span class="php-quote">''</span>;
+</span><span id="986" class="l"><a href="#986"> 986: </a>            <span class="php-var">$attributes</span> = <span class="php-keyword1">array</span>();
+</span><span id="987" class="l"><a href="#987"> 987: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$properties</span> <span class="php-keyword1">as</span> <span class="php-var">$name</span> =&gt; <span class="php-var">$item</span>) {
+</span><span id="988" class="l"><a href="#988"> 988: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$name</span> == <span class="php-quote">'submenus'</span>) {
+</span><span id="989" class="l"><a href="#989"> 989: </a>                    <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span> <span class="php-keyword1">as</span> <span class="php-var">$menu</span>) {
+</span><span id="990" class="l"><a href="#990"> 990: </a>                        <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>();
+</span><span id="991" class="l"><a href="#991"> 991: </a>                        <span class="php-var">$text</span> = <span class="php-quote">''</span>;
+</span><span id="992" class="l"><a href="#992"> 992: </a>                        <span class="php-keyword1">foreach</span> (<span class="php-var">$menu</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
+</span><span id="993" class="l"><a href="#993"> 993: </a>                            <span class="php-keyword1">if</span> (<span class="php-var">$key</span> == <span class="php-quote">'text'</span>) {
+</span><span id="994" class="l"><a href="#994"> 994: </a>                                <span class="php-var">$text</span> = <span class="php-var">$value</span>;
+</span><span id="995" class="l"><a href="#995"> 995: </a>                            } <span class="php-keyword1">else</span> {
+</span><span id="996" class="l"><a href="#996"> 996: </a>                                <span class="php-var">$prop</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="997" class="l"><a href="#997"> 997: </a>                            }
+</span><span id="998" class="l"><a href="#998"> 998: </a>                        }
+</span><span id="999" class="l"><a href="#999"> 999: </a>                        <span class="php-var">$li</span> .= <span class="php-quote">'&lt;li&gt;&lt;a '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/a&gt;&lt;/li&gt;'</span>;
+</span><span id="1000" class="l"><a href="#1000">1000: </a>                    }
+</span><span id="1001" class="l"><a href="#1001">1001: </a>                } <span class="php-keyword1">elseif</span> (<span class="php-var">$name</span> == <span class="php-quote">'value'</span>) {
+</span><span id="1002" class="l"><a href="#1002">1002: </a>                    <span class="php-var">$innerHTML</span> = <span class="php-var">$item</span>;
+</span><span id="1003" class="l"><a href="#1003">1003: </a>                } <span class="php-keyword1">elseif</span> (<span class="php-var">$name</span> == <span class="php-quote">'class'</span>) {
+</span><span id="1004" class="l"><a href="#1004">1004: </a>                    <span class="php-var">$attributes</span>[<span class="php-quote">'class'</span>] = <span class="php-quote">'class=&quot;'</span>.<span class="php-var">$item</span>.<span class="php-quote">' menubutton&quot;'</span>;
+</span><span id="1005" class="l"><a href="#1005">1005: </a>                } <span class="php-keyword1">else</span> {
+</span><span id="1006" class="l"><a href="#1006">1006: </a>                    <span class="php-var">$attributes</span>[<span class="php-var">$name</span>] = <span class="php-var">$name</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$item</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="1007" class="l"><a href="#1007">1007: </a>                }
+</span><span id="1008" class="l"><a href="#1008">1008: </a>            }
+</span><span id="1009" class="l"><a href="#1009">1009: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword1">isset</span>(<span class="php-var">$attributes</span>[<span class="php-quote">'class'</span>])) {
+</span><span id="1010" class="l"><a href="#1010">1010: </a>                <span class="php-var">$attributes</span>[<span class="php-quote">'class'</span>] = <span class="php-quote">'class=&quot;menubutton&quot;'</span>;
+</span><span id="1011" class="l"><a href="#1011">1011: </a>            }
+</span><span id="1012" class="l"><a href="#1012">1012: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword1">isset</span>(<span class="php-var">$attributes</span>[<span class="php-quote">'tabindex'</span>])) {
+</span><span id="1013" class="l"><a href="#1013">1013: </a>                <span class="php-var">$attributes</span>[<span class="php-quote">'tabindex'</span>] = <span class="php-quote">'tabindex=&quot;0&quot;'</span>;
+</span><span id="1014" class="l"><a href="#1014">1014: </a>            }
+</span><span id="1015" class="l"><a href="#1015">1015: </a>
+</span><span id="1016" class="l"><a href="#1016">1016: </a>            <span class="php-keyword1">return</span> <span class="php-quote">'&lt;div '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$attributes</span>).<span class="php-quote">'&gt;'</span>.<span class="php-var">$innerHTML</span>.<span class="php-quote">'&lt;ul&gt;'</span>.<span class="php-var">$li</span>.<span class="php-quote">'&lt;/ul&gt;&lt;/div&gt;'</span>;
+</span><span id="1017" class="l"><a href="#1017">1017: </a>        } <span class="php-keyword1">else</span> {
+</span><span id="1018" class="l"><a href="#1018">1018: </a>            <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>();
+</span><span id="1019" class="l"><a href="#1019">1019: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$properties</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
+</span><span id="1020" class="l"><a href="#1020">1020: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$key</span> === <span class="php-quote">'id'</span>) {
+</span><span id="1021" class="l"><a href="#1021">1021: </a>                    <span class="php-var">$prop</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$btn</span>.<span class="php-quote">'_'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="1022" class="l"><a href="#1022">1022: </a>                } <span class="php-keyword1">elseif</span> (<span class="php-var">$key</span> !== <span class="php-quote">'text'</span>) {
+</span><span id="1023" class="l"><a href="#1023">1023: </a>                    <span class="php-var">$prop</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="1024" class="l"><a href="#1024">1024: </a>                }
+</span><span id="1025" class="l"><a href="#1025">1025: </a>            }
+</span><span id="1026" class="l"><a href="#1026">1026: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$properties</span>[<span class="php-quote">'class'</span>]) &amp;&amp; <span class="php-keyword2">preg_match</span>(<span class="php-quote">'/(.*)\s?(icon\-[a-z0-9\-_]+)($|\s(.*))/'</span>, <span class="php-var">$properties</span>[<span class="php-quote">'class'</span>], <span class="php-var">$match</span>)) {
+</span><span id="1027" class="l"><a href="#1027">1027: </a>                <span class="php-var">$class</span> = <span class="php-keyword1">array</span>();
+</span><span id="1028" class="l"><a href="#1028">1028: </a>                <span class="php-keyword1">foreach</span> (<span class="php-keyword1">array</span>(<span class="php-num">1</span>, <span class="php-num">4</span>) <span class="php-keyword1">as</span> <span class="php-var">$i</span>) {
+</span><span id="1029" class="l"><a href="#1029">1029: </a>                    <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$match</span>[<span class="php-var">$i</span>])) {
+</span><span id="1030" class="l"><a href="#1030">1030: </a>                        <span class="php-var">$class</span>[] = <span class="php-var">$match</span>[<span class="php-var">$i</span>];
+</span><span id="1031" class="l"><a href="#1031">1031: </a>                    }
+</span><span id="1032" class="l"><a href="#1032">1032: </a>                }
+</span><span id="1033" class="l"><a href="#1033">1033: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword1">empty</span>(<span class="php-var">$properties</span>[<span class="php-quote">'text'</span>])) {
+</span><span id="1034" class="l"><a href="#1034">1034: </a>                    <span class="php-var">$class</span>[] = <span class="php-quote">'notext'</span>;
+</span><span id="1035" class="l"><a href="#1035">1035: </a>                    <span class="php-var">$prop</span>[<span class="php-quote">'class'</span>] = <span class="php-quote">'class=&quot;'</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$class</span>).<span class="php-quote">'&quot;'</span>;
+</span><span id="1036" class="l"><a href="#1036">1036: </a>
+</span><span id="1037" class="l"><a href="#1037">1037: </a>                    <span class="php-keyword1">return</span> <span class="php-quote">'&lt;a '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;&lt;span class=&quot;'</span>.<span class="php-var">$match</span>[<span class="php-num">2</span>].<span class="php-quote">'&quot;&gt;&lt;/span&gt;&lt;/a&gt;'</span>;
+</span><span id="1038" class="l"><a href="#1038">1038: </a>                } <span class="php-keyword1">else</span> {
+</span><span id="1039" class="l"><a href="#1039">1039: </a>                    <span class="php-var">$prop</span>[<span class="php-quote">'class'</span>] = <span class="php-quote">'class=&quot;'</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$class</span>).<span class="php-quote">'&quot;'</span>;
+</span><span id="1040" class="l"><a href="#1040">1040: </a>
+</span><span id="1041" class="l"><a href="#1041">1041: </a>                    <span class="php-keyword1">return</span> <span class="php-quote">'&lt;a '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;&lt;span class=&quot;'</span>.<span class="php-var">$match</span>[<span class="php-num">2</span>].<span class="php-quote">' button_w_text&quot;&gt;&lt;span class=mobile&gt;'</span>.<span class="php-var">$properties</span>[<span class="php-quote">'text'</span>].<span class="php-quote">'&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;'</span>;
+</span><span id="1042" class="l"><a href="#1042">1042: </a>                }
+</span><span id="1043" class="l"><a href="#1043">1043: </a>            } <span class="php-keyword1">else</span> {
+</span><span id="1044" class="l"><a href="#1044">1044: </a>                <span class="php-keyword1">return</span> <span class="php-quote">'&lt;a'</span>.(<span class="php-keyword1">empty</span>(<span class="php-var">$prop</span>) ? <span class="php-quote">''</span> : <span class="php-quote">' '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>)).<span class="php-quote">'&gt;&lt;/a&gt;'</span>;
+</span><span id="1045" class="l"><a href="#1045">1045: </a>            }
+</span><span id="1046" class="l"><a href="#1046">1046: </a>        }
+</span><span id="1047" class="l"><a href="#1047">1047: </a>    }
+</span><span id="1048" class="l"><a href="#1048">1048: </a>
+</span><span id="1049" class="l"><a href="#1049">1049: </a>    <span class="php-comment">/**
+</span></span><span id="1050" class="l"><a href="#1050">1050: </a><span class="php-comment">     * สร้าง select หรือ button ด้านล่างตาราง (actions).
+</span></span><span id="1051" class="l"><a href="#1051">1051: </a><span class="php-comment">     *
+</span></span><span id="1052" class="l"><a href="#1052">1052: </a><span class="php-comment">     * @param array $item
+</span></span><span id="1053" class="l"><a href="#1053">1053: </a><span class="php-comment">     *
+</span></span><span id="1054" class="l"><a href="#1054">1054: </a><span class="php-comment">     * @return string
+</span></span><span id="1055" class="l"><a href="#1055">1055: </a><span class="php-comment">     */</span>
+</span><span id="1056" class="l"><a href="#1056">1056: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> addAction(<span class="php-var">$item</span>)
+</span><span id="1057" class="l"><a href="#1057">1057: </a>    {
+</span><span id="1058" class="l"><a href="#1058">1058: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'class'</span>]) &amp;&amp; <span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^((.*)\s+)?(icon-[a-z0-9\-_]+)(\s+(.*))?$/'</span>, <span class="php-var">$item</span>[<span class="php-quote">'class'</span>], <span class="php-var">$match</span>)) {
+</span><span id="1059" class="l"><a href="#1059">1059: </a>            <span class="php-var">$match</span>[<span class="php-num">2</span>] = <span class="php-keyword2">trim</span>(<span class="php-var">$match</span>[<span class="php-num">2</span>].<span class="php-quote">' '</span>.(<span class="php-keyword1">isset</span>(<span class="php-var">$match</span>[<span class="php-num">5</span>]) ? <span class="php-var">$match</span>[<span class="php-num">5</span>] : <span class="php-quote">''</span>));
+</span><span id="1060" class="l"><a href="#1060">1060: </a>        }
+</span><span id="1061" class="l"><a href="#1061">1061: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'options'</span>])) {
+</span><span id="1062" class="l"><a href="#1062">1062: </a>            <span class="php-comment">// select</span>
+</span><span id="1063" class="l"><a href="#1063">1063: </a>            <span class="php-var">$rows</span> = <span class="php-keyword1">array</span>();
+</span><span id="1064" class="l"><a href="#1064">1064: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span>[<span class="php-quote">'options'</span>] <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$text</span>) {
+</span><span id="1065" class="l"><a href="#1065">1065: </a>                <span class="php-var">$rows</span>[] = <span class="php-quote">'&lt;option value=&quot;'</span>.<span class="php-var">$key</span>.<span class="php-quote">'&quot;&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/option&gt;'</span>;
+</span><span id="1066" class="l"><a href="#1066">1066: </a>            }
+</span><span id="1067" class="l"><a href="#1067">1067: </a>
+</span><span id="1068" class="l"><a href="#1068">1068: </a>            <span class="php-keyword1">return</span> <span class="php-quote">'&lt;fieldset&gt;&lt;select id=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'id'</span>].<span class="php-quote">'&quot;&gt;'</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">''</span>, <span class="php-var">$rows</span>).<span class="php-quote">'&lt;/select&gt;&lt;label for=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'id'</span>].<span class="php-quote">'&quot; class=&quot;button '</span>.<span class="php-var">$item</span>[<span class="php-quote">'class'</span>].<span class="php-quote">' action&quot;&gt;&lt;span&gt;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'text'</span>].<span class="php-quote">'&lt;/span&gt;&lt;/label&gt;&lt;/fieldset&gt;'</span>;
+</span><span id="1069" class="l"><a href="#1069">1069: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'type'</span>])) {
+</span><span id="1070" class="l"><a href="#1070">1070: </a>            <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>(
+</span><span id="1071" class="l"><a href="#1071">1071: </a>                <span class="php-quote">'type=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'type'</span>].<span class="php-quote">'&quot;'</span>,
+</span><span id="1072" class="l"><a href="#1072">1072: </a>            );
+</span><span id="1073" class="l"><a href="#1073">1073: </a>            <span class="php-var">$prop2</span> = <span class="php-keyword1">array</span>(
+</span><span id="1074" class="l"><a href="#1074">1074: </a>                <span class="php-quote">'button'</span> =&gt; <span class="php-quote">'class=&quot;button action&quot;'</span>,
+</span><span id="1075" class="l"><a href="#1075">1075: </a>            );
+</span><span id="1076" class="l"><a href="#1076">1076: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
+</span><span id="1077" class="l"><a href="#1077">1077: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$key</span> == <span class="php-quote">'id'</span>) {
+</span><span id="1078" class="l"><a href="#1078">1078: </a>                    <span class="php-var">$prop</span>[] = <span class="php-quote">'id=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="1079" class="l"><a href="#1079">1079: </a>                    <span class="php-var">$prop2</span>[] = <span class="php-quote">'for=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="1080" class="l"><a href="#1080">1080: </a>                } <span class="php-keyword1">elseif</span> (<span class="php-var">$key</span> == <span class="php-quote">'class'</span>) {
+</span><span id="1081" class="l"><a href="#1081">1081: </a>                    <span class="php-var">$prop2</span>[<span class="php-quote">'button'</span>] = <span class="php-quote">'class=&quot;button '</span>.<span class="php-var">$value</span>.<span class="php-quote">' action&quot;'</span>;
+</span><span id="1082" class="l"><a href="#1082">1082: </a>                } <span class="php-keyword1">elseif</span> (!<span class="php-keyword2">in_array</span>(<span class="php-var">$key</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'type'</span>, <span class="php-quote">'text'</span>))) {
+</span><span id="1083" class="l"><a href="#1083">1083: </a>                    <span class="php-var">$prop</span>[] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="1084" class="l"><a href="#1084">1084: </a>                }
+</span><span id="1085" class="l"><a href="#1085">1085: </a>            }
+</span><span id="1086" class="l"><a href="#1086">1086: </a>
+</span><span id="1087" class="l"><a href="#1087">1087: </a>            <span class="php-keyword1">return</span> <span class="php-quote">'&lt;fieldset&gt;&lt;input '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;&lt;label '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop2</span>).<span class="php-quote">'&gt;&lt;span&gt;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'text'</span>].<span class="php-quote">'&lt;/span&gt;&lt;/label&gt;&lt;/fieldset&gt;'</span>;
+</span><span id="1088" class="l"><a href="#1088">1088: </a>        } <span class="php-keyword1">else</span> {
+</span><span id="1089" class="l"><a href="#1089">1089: </a>            <span class="php-comment">// link, button</span>
+</span><span id="1090" class="l"><a href="#1090">1090: </a>            <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>();
+</span><span id="1091" class="l"><a href="#1091">1091: </a>            <span class="php-var">$text</span> = <span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'text'</span>]) ? <span class="php-var">$item</span>[<span class="php-quote">'text'</span>] : <span class="php-quote">''</span>;
+</span><span id="1092" class="l"><a href="#1092">1092: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'class'</span>])) {
+</span><span id="1093" class="l"><a href="#1093">1093: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword1">empty</span>(<span class="php-var">$match</span>[<span class="php-num">3</span>])) {
+</span><span id="1094" class="l"><a href="#1094">1094: </a>                    <span class="php-var">$prop</span>[] = <span class="php-quote">'class=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'class'</span>].<span class="php-quote">'&quot;'</span>;
+</span><span id="1095" class="l"><a href="#1095">1095: </a>                } <span class="php-keyword1">else</span> {
+</span><span id="1096" class="l"><a href="#1096">1096: </a>                    <span class="php-var">$text</span> = <span class="php-quote">'&lt;span class=&quot;'</span>.<span class="php-var">$match</span>[<span class="php-num">3</span>].<span class="php-quote">'&quot;&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/span&gt;'</span>;
+</span><span id="1097" class="l"><a href="#1097">1097: </a>                    <span class="php-var">$prop</span>[] = <span class="php-quote">'class=&quot;'</span>.<span class="php-var">$match</span>[<span class="php-num">2</span>].<span class="php-quote">'&quot;'</span>;
+</span><span id="1098" class="l"><a href="#1098">1098: </a>                }
+</span><span id="1099" class="l"><a href="#1099">1099: </a>            }
+</span><span id="1100" class="l"><a href="#1100">1100: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span> <span class="php-keyword1">as</span> <span class="php-var">$k</span> =&gt; <span class="php-var">$v</span>) {
+</span><span id="1101" class="l"><a href="#1101">1101: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$k</span> != <span class="php-quote">'class'</span> &amp;&amp; <span class="php-var">$k</span> != <span class="php-quote">'text'</span>) {
+</span><span id="1102" class="l"><a href="#1102">1102: </a>                    <span class="php-var">$prop</span>[] = <span class="php-var">$k</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$v</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="1103" class="l"><a href="#1103">1103: </a>                }
+</span><span id="1104" class="l"><a href="#1104">1104: </a>            }
+</span><span id="1105" class="l"><a href="#1105">1105: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'href'</span>])) {
+</span><span id="1106" class="l"><a href="#1106">1106: </a>                <span class="php-comment">// link</span>
+</span><span id="1107" class="l"><a href="#1107">1107: </a>                <span class="php-keyword1">return</span> <span class="php-quote">'&lt;a '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/a&gt;'</span>;
+</span><span id="1108" class="l"><a href="#1108">1108: </a>            } <span class="php-keyword1">else</span> {
+</span><span id="1109" class="l"><a href="#1109">1109: </a>                <span class="php-comment">// button</span>
+</span><span id="1110" class="l"><a href="#1110">1110: </a>                <span class="php-keyword1">return</span> <span class="php-quote">'&lt;button '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">' type=&quot;button&quot;&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/button&gt;'</span>;
+</span><span id="1111" class="l"><a href="#1111">1111: </a>            }
+</span><span id="1112" class="l"><a href="#1112">1112: </a>        }
+</span><span id="1113" class="l"><a href="#1113">1113: </a>    }
+</span><span id="1114" class="l"><a href="#1114">1114: </a>
+</span><span id="1115" class="l"><a href="#1115">1115: </a>    <span class="php-comment">/**
+</span></span><span id="1116" class="l"><a href="#1116">1116: </a><span class="php-comment">     * สร้าง select ด้านบนตาราง (filters).
+</span></span><span id="1117" class="l"><a href="#1117">1117: </a><span class="php-comment">     *
+</span></span><span id="1118" class="l"><a href="#1118">1118: </a><span class="php-comment">     * @param array $item
+</span></span><span id="1119" class="l"><a href="#1119">1119: </a><span class="php-comment">     *
+</span></span><span id="1120" class="l"><a href="#1120">1120: </a><span class="php-comment">     * @return string
+</span></span><span id="1121" class="l"><a href="#1121">1121: </a><span class="php-comment">     */</span>
+</span><span id="1122" class="l"><a href="#1122">1122: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> addFilter(<span class="php-var">$item</span>)
+</span><span id="1123" class="l"><a href="#1123">1123: </a>    {
+</span><span id="1124" class="l"><a href="#1124">1124: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'type'</span>])) {
+</span><span id="1125" class="l"><a href="#1125">1125: </a>            <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>();
+</span><span id="1126" class="l"><a href="#1126">1126: </a>            <span class="php-var">$datalist</span> = <span class="php-quote">''</span>;
+</span><span id="1127" class="l"><a href="#1127">1127: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
+</span><span id="1128" class="l"><a href="#1128">1128: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$key</span> == <span class="php-quote">'datalist'</span>) {
+</span><span id="1129" class="l"><a href="#1129">1129: </a>                    <span class="php-keyword1">foreach</span> (<span class="php-var">$value</span> <span class="php-keyword1">as</span> <span class="php-var">$k</span> =&gt; <span class="php-var">$v</span>) {
+</span><span id="1130" class="l"><a href="#1130">1130: </a>                        <span class="php-var">$datalist</span> .= <span class="php-quote">'&lt;option value=&quot;'</span>.<span class="php-var">$k</span>.<span class="php-quote">'&quot;&gt;'</span>.<span class="php-var">$v</span>.<span class="php-quote">'&lt;/option&gt;'</span>;
+</span><span id="1131" class="l"><a href="#1131">1131: </a>                    }
+</span><span id="1132" class="l"><a href="#1132">1132: </a>                } <span class="php-keyword1">elseif</span> (<span class="php-var">$key</span> != <span class="php-quote">'text'</span> &amp;&amp; <span class="php-var">$key</span> != <span class="php-quote">'default'</span> &amp;&amp; !<span class="php-keyword2">is_array</span>(<span class="php-var">$value</span>)) {
+</span><span id="1133" class="l"><a href="#1133">1133: </a>                    <span class="php-var">$prop</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="1134" class="l"><a href="#1134">1134: </a>                }
+</span><span id="1135" class="l"><a href="#1135">1135: </a>            }
+</span><span id="1136" class="l"><a href="#1136">1136: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$datalist</span> != <span class="php-quote">''</span> &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'name'</span>])) {
+</span><span id="1137" class="l"><a href="#1137">1137: </a>                <span class="php-keyword1">if</span> (!<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'id'</span>])) {
+</span><span id="1138" class="l"><a href="#1138">1138: </a>                    <span class="php-var">$item</span>[<span class="php-quote">'id'</span>] = <span class="php-var">$item</span>[<span class="php-quote">'name'</span>];
+</span><span id="1139" class="l"><a href="#1139">1139: </a>                    <span class="php-var">$prop</span>[<span class="php-quote">'id'</span>] = <span class="php-quote">'id=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'name'</span>].<span class="php-quote">'&quot;'</span>;
+</span><span id="1140" class="l"><a href="#1140">1140: </a>                }
+</span><span id="1141" class="l"><a href="#1141">1141: </a>                <span class="php-var">$prop</span>[<span class="php-quote">'autocomplete'</span>] = <span class="php-quote">'autocomplete=&quot;off&quot;'</span>;
+</span><span id="1142" class="l"><a href="#1142">1142: </a>                <span class="php-var">$this</span>-&gt;javascript[] = <span class="php-quote">'new Datalist(&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'id'</span>].<span class="php-quote">'&quot;);'</span>;
+</span><span id="1143" class="l"><a href="#1143">1143: </a>                <span class="php-var">$prop</span>[<span class="php-quote">'list'</span>] = <span class="php-quote">'list=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'name'</span>].<span class="php-quote">'-datalist&quot;'</span>;
+</span><span id="1144" class="l"><a href="#1144">1144: </a>                <span class="php-var">$datalist</span> = <span class="php-quote">'&lt;datalist id=&quot;'</span>.<span class="php-var">$item</span>[<span class="php-quote">'name'</span>].<span class="php-quote">'-datalist&quot;&gt;'</span>.<span class="php-var">$datalist</span>.<span class="php-quote">'&lt;/datalist&gt;'</span>;
+</span><span id="1145" class="l"><a href="#1145">1145: </a>            } <span class="php-keyword1">else</span> {
+</span><span id="1146" class="l"><a href="#1146">1146: </a>                <span class="php-var">$datalist</span> = <span class="php-quote">''</span>;
+</span><span id="1147" class="l"><a href="#1147">1147: </a>            }
+</span><span id="1148" class="l"><a href="#1148">1148: </a>            <span class="php-var">$row</span> = <span class="php-quote">'&lt;fieldset&gt;&lt;label&gt;'</span>.(<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'text'</span>]) ? <span class="php-var">$item</span>[<span class="php-quote">'text'</span>] : <span class="php-quote">''</span>).<span class="php-quote">' &lt;input '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;'</span>.<span class="php-var">$datalist</span>.<span class="php-quote">'&lt;/label&gt;&lt;/fieldset&gt;'</span>;
+</span><span id="1149" class="l"><a href="#1149">1149: </a>        } <span class="php-keyword1">else</span> {
+</span><span id="1150" class="l"><a href="#1150">1150: </a>            <span class="php-var">$prop</span> = <span class="php-keyword1">array</span>();
+</span><span id="1151" class="l"><a href="#1151">1151: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
+</span><span id="1152" class="l"><a href="#1152">1152: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$key</span> != <span class="php-quote">'options'</span> &amp;&amp; <span class="php-var">$key</span> != <span class="php-quote">'value'</span> &amp;&amp; <span class="php-var">$key</span> != <span class="php-quote">'text'</span> &amp;&amp; <span class="php-var">$key</span> != <span class="php-quote">'default'</span> &amp;&amp; !<span class="php-keyword2">is_array</span>(<span class="php-var">$value</span>)) {
+</span><span id="1153" class="l"><a href="#1153">1153: </a>                    <span class="php-var">$prop</span>[<span class="php-var">$key</span>] = <span class="php-var">$key</span>.<span class="php-quote">'=&quot;'</span>.<span class="php-var">$value</span>.<span class="php-quote">'&quot;'</span>;
+</span><span id="1154" class="l"><a href="#1154">1154: </a>                }
+</span><span id="1155" class="l"><a href="#1155">1155: </a>            }
+</span><span id="1156" class="l"><a href="#1156">1156: </a>            <span class="php-var">$row</span> = <span class="php-quote">'&lt;fieldset&gt;&lt;label&gt;'</span>.(<span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'text'</span>]) ? <span class="php-var">$item</span>[<span class="php-quote">'text'</span>] : <span class="php-quote">''</span>).<span class="php-quote">' &lt;select '</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$prop</span>).<span class="php-quote">'&gt;'</span>;
+</span><span id="1157" class="l"><a href="#1157">1157: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$item</span>[<span class="php-quote">'options'</span>])) {
+</span><span id="1158" class="l"><a href="#1158">1158: </a>                <span class="php-keyword1">foreach</span> (<span class="php-var">$item</span>[<span class="php-quote">'options'</span>] <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$text</span>) {
+</span><span id="1159" class="l"><a href="#1159">1159: </a>                    <span class="php-var">$sel</span> = <span class="php-keyword1">isset</span>(<span class="php-var">$item</span>[<span class="php-quote">'value'</span>]) &amp;&amp; (string) <span class="php-var">$key</span> == <span class="php-var">$item</span>[<span class="php-quote">'value'</span>] ? <span class="php-quote">' selected'</span> : <span class="php-quote">''</span>;
+</span><span id="1160" class="l"><a href="#1160">1160: </a>                    <span class="php-var">$row</span> .= <span class="php-quote">'&lt;option value=&quot;'</span>.<span class="php-var">$key</span>.<span class="php-quote">'&quot;'</span>.<span class="php-var">$sel</span>.<span class="php-quote">'&gt;'</span>.<span class="php-var">$text</span>.<span class="php-quote">'&lt;/option&gt;'</span>;
+</span><span id="1161" class="l"><a href="#1161">1161: </a>                }
+</span><span id="1162" class="l"><a href="#1162">1162: </a>            }
+</span><span id="1163" class="l"><a href="#1163">1163: </a>            <span class="php-var">$row</span> .= <span class="php-quote">'&lt;/select&gt;&lt;/label&gt;&lt;/fieldset&gt;'</span>;
+</span><span id="1164" class="l"><a href="#1164">1164: </a>        }
+</span><span id="1165" class="l"><a href="#1165">1165: </a>
+</span><span id="1166" class="l"><a href="#1166">1166: </a>        <span class="php-keyword1">return</span> <span class="php-var">$row</span>;
+</span><span id="1167" class="l"><a href="#1167">1167: </a>    }
+</span><span id="1168" class="l"><a href="#1168">1168: </a>}
+</span><span id="1169" class="l"><a href="#1169">1169: </a></span></code></pre>
 
 	<div id="footer">
 		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
@@ -1439,6 +1442,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?27279f611ed1cfb38fc774c3c1db7307897f92b9"></script>
+<script src="elementlist.js?f1739e581889d4a108f3b1149a49da8bb80e2b2c"></script>
 </body>
 </html>

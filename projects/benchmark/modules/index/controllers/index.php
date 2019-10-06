@@ -59,7 +59,7 @@ class Controller extends \Kotchasan\Controller
 
     /**
      * Recordset Performance (select and update)
-     * ทดสอบการเรียกข้อมูลและอัปเดทข้อมูลด้วย Recordset.
+     * ทดสอบการเรียกข้อมูลและอัปเดตข้อมูลด้วย Recordset.
      */
     public function recordset()
     {
@@ -77,7 +77,7 @@ class Controller extends \Kotchasan\Controller
 
     /**
      * Query Builder Performance
-     * ทดสอบการเรียกข้อมูลและอัปเดทข้อมูลด้วย Query Builder.
+     * ทดสอบการเรียกข้อมูลและอัปเดตข้อมูลด้วย Query Builder.
      */
     public function querybuilder()
     {
@@ -95,7 +95,7 @@ class Controller extends \Kotchasan\Controller
 
     /**
      * SQL Command Performance
-     * ทดสอบการเรียกข้อมูลและอัปเดทข้อมูลโดยใช้คำสั่ง SQL Command.
+     * ทดสอบการเรียกข้อมูลและอัปเดตข้อมูลโดยใช้คำสั่ง SQL Command.
      */
     public function sql()
     {

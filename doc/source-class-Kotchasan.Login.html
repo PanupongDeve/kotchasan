@@ -109,7 +109,6 @@
 				<li><a href="class-DOMNode.html">DOMNode</a></li>
 				<li><a href="class-Kotchasan.html">Kotchasan</a></li>
 				<li><a href="class-Kotchasan.Accordion.html">Kotchasan\Accordion</a></li>
-				<li><a href="class-Kotchasan.Antispam.html">Kotchasan\Antispam</a></li>
 				<li><a href="class-Kotchasan.ArrayTool.html">Kotchasan\ArrayTool</a></li>
 				<li><a href="class-Kotchasan.Cache.ApcCache.html">Kotchasan\Cache\ApcCache</a></li>
 				<li><a href="class-Kotchasan.Cache.Cache.html">Kotchasan\Cache\Cache</a></li>
@@ -131,7 +130,7 @@
 				<li><a href="class-Kotchasan.Database.Query.html">Kotchasan\Database\Query</a></li>
 				<li><a href="class-Kotchasan.Database.QueryBuilder.html">Kotchasan\Database\QueryBuilder</a></li>
 				<li><a href="class-Kotchasan.Database.Schema.html">Kotchasan\Database\Schema</a></li>
-				<li><a href="class-Kotchasan.Database.Sql.html">Kotchasan\Database\Sql</a></li>
+				<li><a href="class-Kotchasan.Database.Sql.html" class="invalid">Kotchasan\Database\Sql</a></li>
 				<li><a href="class-Kotchasan.DataTable.html">Kotchasan\DataTable</a></li>
 				<li><a href="class-Kotchasan.Date.html">Kotchasan\Date</a></li>
 				<li><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></li>
@@ -207,7 +206,6 @@
 				<li><a href="class-Psr.Log.LoggerInterface.html">Psr\Log\LoggerInterface</a></li>
 				<li><a href="class-SeekableIterator.html">SeekableIterator</a></li>
 				<li><a href="class-Serializable.html">Serializable</a></li>
-				<li><a href="class-Throwable.html">Throwable</a></li>
 				<li><a href="class-Traversable.html">Traversable</a></li>
 			</ul>
 
@@ -453,8 +451,37 @@
 </span><span id="183" class="l"><a href="#183">183: </a>    {
 </span><span id="184" class="l"><a href="#184">184: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">empty</span>(<span class="php-var">$_SESSION</span>[<span class="php-quote">'login'</span>]) ? <span class="php-keyword1">null</span> : <span class="php-var">$_SESSION</span>[<span class="php-quote">'login'</span>];
 </span><span id="185" class="l"><a href="#185">185: </a>    }
-</span><span id="186" class="l"><a href="#186">186: </a>}
-</span><span id="187" class="l"><a href="#187">187: </a></span></code></pre>
+</span><span id="186" class="l"><a href="#186">186: </a>
+</span><span id="187" class="l"><a href="#187">187: </a>    <span class="php-comment">/**
+</span></span><span id="188" class="l"><a href="#188">188: </a><span class="php-comment">     * ตรวจสอบสถานะสมาชิก
+</span></span><span id="189" class="l"><a href="#189">189: </a><span class="php-comment">     * แอดมินสูงสุด (status=1) ทำได้ทุกอย่าง
+</span></span><span id="190" class="l"><a href="#190">190: </a><span class="php-comment">     * คืนค่าข้อมูลสมาชิก (แอเรย์) ถ้าไม่สามารถทำรายการได้คืนค่า null.
+</span></span><span id="191" class="l"><a href="#191">191: </a><span class="php-comment">     *
+</span></span><span id="192" class="l"><a href="#192">192: </a><span class="php-comment">     * @param array        $login
+</span></span><span id="193" class="l"><a href="#193">193: </a><span class="php-comment">     * @param array|int $statuses
+</span></span><span id="194" class="l"><a href="#194">194: </a><span class="php-comment">     *
+</span></span><span id="195" class="l"><a href="#195">195: </a><span class="php-comment">     * @return array|null
+</span></span><span id="196" class="l"><a href="#196">196: </a><span class="php-comment">     */</span>
+</span><span id="197" class="l"><a href="#197">197: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> checkStatus(<span class="php-var">$login</span>, <span class="php-var">$statuses</span>)
+</span><span id="198" class="l"><a href="#198">198: </a>    {
+</span><span id="199" class="l"><a href="#199">199: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$login</span>)) {
+</span><span id="200" class="l"><a href="#200">200: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$login</span>[<span class="php-quote">'status'</span>] == <span class="php-num">1</span>) {
+</span><span id="201" class="l"><a href="#201">201: </a>                <span class="php-comment">// แอดมิน</span>
+</span><span id="202" class="l"><a href="#202">202: </a>                <span class="php-keyword1">return</span> <span class="php-var">$login</span>;
+</span><span id="203" class="l"><a href="#203">203: </a>            } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$statuses</span>)) {
+</span><span id="204" class="l"><a href="#204">204: </a>                <span class="php-keyword1">if</span> (<span class="php-keyword2">in_array</span>(<span class="php-var">$login</span>[<span class="php-quote">'status'</span>], <span class="php-var">$statuses</span>)) {
+</span><span id="205" class="l"><a href="#205">205: </a>                    <span class="php-keyword1">return</span> <span class="php-var">$login</span>;
+</span><span id="206" class="l"><a href="#206">206: </a>                }
+</span><span id="207" class="l"><a href="#207">207: </a>            } <span class="php-keyword1">elseif</span> (<span class="php-var">$login</span>[<span class="php-quote">'status'</span>] == <span class="php-var">$statuses</span>) {
+</span><span id="208" class="l"><a href="#208">208: </a>                <span class="php-keyword1">return</span> <span class="php-var">$login</span>;
+</span><span id="209" class="l"><a href="#209">209: </a>            }
+</span><span id="210" class="l"><a href="#210">210: </a>        }
+</span><span id="211" class="l"><a href="#211">211: </a>        <span class="php-comment">// ไม่มีสิทธิ</span>
+</span><span id="212" class="l"><a href="#212">212: </a>
+</span><span id="213" class="l"><a href="#213">213: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">null</span>;
+</span><span id="214" class="l"><a href="#214">214: </a>    }
+</span><span id="215" class="l"><a href="#215">215: </a>}
+</span><span id="216" class="l"><a href="#216">216: </a></span></code></pre>
 
 	<div id="footer">
 		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
@@ -462,6 +489,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?27279f611ed1cfb38fc774c3c1db7307897f92b9"></script>
+<script src="elementlist.js?f1739e581889d4a108f3b1149a49da8bb80e2b2c"></script>
 </body>
 </html>

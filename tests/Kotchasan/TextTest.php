@@ -143,7 +143,7 @@ class TextTest extends \PHPUnit_Framework_TestCase
     {
 
         $this->assertEquals(
-          '0123465@#$&{}!', \Kotchasan\Text::password(" 0\n12   34\r\r6\t5@#$&{}! ")
+          '0123465ทดสอบ@#$&{}!', \Kotchasan\Text::password(" 0\n12   34\r\r6\t5ทดสอบ@#$&{}! ")
         );
     }
 
