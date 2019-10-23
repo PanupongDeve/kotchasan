@@ -5,6 +5,6 @@
 .gitignore
 .vscode
 robots.txt
-/datas/*
-/settings/*
-/projects/test/*
+datas/
+settings/
+projects/test/
