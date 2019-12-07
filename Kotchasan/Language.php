@@ -64,12 +64,12 @@ final class Language extends \Kotchasan\KBase
                 if ($value_key !== null && isset($item[$value_key])) {
                     return $item[$value_key];
                 }
+            } else {
+                return $item;
             }
-
-            return $item;
         }
 
-        return $default;
+        return $default === null ? $key : $default;
     }
 
     /**
@@ -368,7 +368,7 @@ final class Language extends \Kotchasan\KBase
     public static function trans($content)
     {
         return preg_replace_callback('/{LNG_([^}]+)}/', function ($match) {
-            return Language::get($match[1]);
+            return static::get($match[1]);
         }, $content);
     }
 
