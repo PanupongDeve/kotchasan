@@ -130,7 +130,7 @@
 				<li><a href="class-Kotchasan.Database.Query.html">Kotchasan\Database\Query</a></li>
 				<li><a href="class-Kotchasan.Database.QueryBuilder.html">Kotchasan\Database\QueryBuilder</a></li>
 				<li><a href="class-Kotchasan.Database.Schema.html">Kotchasan\Database\Schema</a></li>
-				<li><a href="class-Kotchasan.Database.Sql.html" class="invalid">Kotchasan\Database\Sql</a></li>
+				<li><a href="class-Kotchasan.Database.Sql.html">Kotchasan\Database\Sql</a></li>
 				<li><a href="class-Kotchasan.DataTable.html">Kotchasan\DataTable</a></li>
 				<li><a href="class-Kotchasan.Date.html">Kotchasan\Date</a></li>
 				<li><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></li>
@@ -206,6 +206,7 @@
 				<li><a href="class-Psr.Log.LoggerInterface.html">Psr\Log\LoggerInterface</a></li>
 				<li><a href="class-SeekableIterator.html">SeekableIterator</a></li>
 				<li><a href="class-Serializable.html">Serializable</a></li>
+				<li><a href="class-Throwable.html">Throwable</a></li>
 				<li><a href="class-Traversable.html">Traversable</a></li>
 			</ul>
 
@@ -464,7 +465,7 @@
 </span><span id="196" class="l"><a href="#196">196: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> getParsedBody()
 </span><span id="197" class="l"><a href="#197">197: </a>    {
 </span><span id="198" class="l"><a href="#198">198: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;parsedBody === <span class="php-keyword1">null</span>) {
-</span><span id="199" class="l"><a href="#199">199: </a>            <span class="php-var">$this</span>-&gt;parsedBody = <span class="php-var">$this</span>-&gt;normalize(<span class="php-var">$_POST</span>);
+</span><span id="199" class="l"><a href="#199">199: </a>            <span class="php-var">$this</span>-&gt;parsedBody = <span class="php-var">$_POST</span>;
 </span><span id="200" class="l"><a href="#200">200: </a>        }
 </span><span id="201" class="l"><a href="#201">201: </a>
 </span><span id="202" class="l"><a href="#202">202: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;parsedBody;
@@ -478,7 +479,7 @@
 </span><span id="210" class="l"><a href="#210">210: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> getQueryParams()
 </span><span id="211" class="l"><a href="#211">211: </a>    {
 </span><span id="212" class="l"><a href="#212">212: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;queryParams === <span class="php-keyword1">null</span>) {
-</span><span id="213" class="l"><a href="#213">213: </a>            <span class="php-var">$this</span>-&gt;queryParams = <span class="php-var">$this</span>-&gt;normalize(<span class="php-var">$_GET</span>);
+</span><span id="213" class="l"><a href="#213">213: </a>            <span class="php-var">$this</span>-&gt;queryParams = <span class="php-var">$_GET</span>;
 </span><span id="214" class="l"><a href="#214">214: </a>        }
 </span><span id="215" class="l"><a href="#215">215: </a>
 </span><span id="216" class="l"><a href="#216">216: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;queryParams;
@@ -836,42 +837,8 @@
 </span><span id="568" class="l"><a href="#568">568: </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">is_array</span>(<span class="php-var">$default</span>) ? <span class="php-keyword1">new</span> \Kotchasan\Inputs(<span class="php-var">$default</span>) : <span class="php-keyword1">new</span> \Kotchasan\InputItem(<span class="php-var">$default</span>);
 </span><span id="569" class="l"><a href="#569">569: </a>        }
 </span><span id="570" class="l"><a href="#570">570: </a>    }
-</span><span id="571" class="l"><a href="#571">571: </a>
-</span><span id="572" class="l"><a href="#572">572: </a>    <span class="php-comment">/**
-</span></span><span id="573" class="l"><a href="#573">573: </a><span class="php-comment">     * remove slashes (/).
-</span></span><span id="574" class="l"><a href="#574">574: </a><span class="php-comment">     *
-</span></span><span id="575" class="l"><a href="#575">575: </a><span class="php-comment">     * @param array $vars ตัวแปร Global เช่น POST GET
-</span></span><span id="576" class="l"><a href="#576">576: </a><span class="php-comment">     */</span>
-</span><span id="577" class="l"><a href="#577">577: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> normalize(<span class="php-var">$vars</span>)
-</span><span id="578" class="l"><a href="#578">578: </a>    {
-</span><span id="579" class="l"><a href="#579">579: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">function_exists</span>(<span class="php-quote">'get_magic_quotes_gpc'</span>) &amp;&amp; <span class="php-keyword2">get_magic_quotes_gpc</span>()) {
-</span><span id="580" class="l"><a href="#580">580: </a>            <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;<span class="php-keyword2">stripSlashes</span>(<span class="php-var">$vars</span>);
-</span><span id="581" class="l"><a href="#581">581: </a>        }
-</span><span id="582" class="l"><a href="#582">582: </a>
-</span><span id="583" class="l"><a href="#583">583: </a>        <span class="php-keyword1">return</span> <span class="php-var">$vars</span>;
-</span><span id="584" class="l"><a href="#584">584: </a>    }
-</span><span id="585" class="l"><a href="#585">585: </a>
-</span><span id="586" class="l"><a href="#586">586: </a>    <span class="php-comment">/**
-</span></span><span id="587" class="l"><a href="#587">587: </a><span class="php-comment">     * ฟังก์ชั่น remove slashes (/).
-</span></span><span id="588" class="l"><a href="#588">588: </a><span class="php-comment">     *
-</span></span><span id="589" class="l"><a href="#589">589: </a><span class="php-comment">     * @param array $datas
-</span></span><span id="590" class="l"><a href="#590">590: </a><span class="php-comment">     *
-</span></span><span id="591" class="l"><a href="#591">591: </a><span class="php-comment">     * @return array
-</span></span><span id="592" class="l"><a href="#592">592: </a><span class="php-comment">     */</span>
-</span><span id="593" class="l"><a href="#593">593: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <span class="php-keyword2">stripSlashes</span>(<span class="php-var">$datas</span>)
-</span><span id="594" class="l"><a href="#594">594: </a>    {
-</span><span id="595" class="l"><a href="#595">595: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$datas</span>)) {
-</span><span id="596" class="l"><a href="#596">596: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$datas</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
-</span><span id="597" class="l"><a href="#597">597: </a>                <span class="php-var">$datas</span>[<span class="php-var">$key</span>] = <span class="php-var">$this</span>-&gt;<span class="php-keyword2">stripSlashes</span>(<span class="php-var">$value</span>);
-</span><span id="598" class="l"><a href="#598">598: </a>            }
-</span><span id="599" class="l"><a href="#599">599: </a>
-</span><span id="600" class="l"><a href="#600">600: </a>            <span class="php-keyword1">return</span> <span class="php-var">$datas</span>;
-</span><span id="601" class="l"><a href="#601">601: </a>        }
-</span><span id="602" class="l"><a href="#602">602: </a>
-</span><span id="603" class="l"><a href="#603">603: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">stripslashes</span>(<span class="php-var">$datas</span>);
-</span><span id="604" class="l"><a href="#604">604: </a>    }
-</span><span id="605" class="l"><a href="#605">605: </a>}
-</span><span id="606" class="l"><a href="#606">606: </a></span></code></pre>
+</span><span id="571" class="l"><a href="#571">571: </a>}
+</span><span id="572" class="l"><a href="#572">572: </a></span></code></pre>
 
 	<div id="footer">
 		kotchasan API documentation generated by <a href="http://apigen.org">ApiGen</a>
@@ -879,6 +846,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?f1739e581889d4a108f3b1149a49da8bb80e2b2c"></script>
+<script src="elementlist.js?820ab2e38b9bc381cd50d06d8e0c93f324b9d78d"></script>
 </body>
 </html>

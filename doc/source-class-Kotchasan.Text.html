@@ -130,7 +130,7 @@
 				<li><a href="class-Kotchasan.Database.Query.html">Kotchasan\Database\Query</a></li>
 				<li><a href="class-Kotchasan.Database.QueryBuilder.html">Kotchasan\Database\QueryBuilder</a></li>
 				<li><a href="class-Kotchasan.Database.Schema.html">Kotchasan\Database\Schema</a></li>
-				<li><a href="class-Kotchasan.Database.Sql.html" class="invalid">Kotchasan\Database\Sql</a></li>
+				<li><a href="class-Kotchasan.Database.Sql.html">Kotchasan\Database\Sql</a></li>
 				<li><a href="class-Kotchasan.DataTable.html">Kotchasan\DataTable</a></li>
 				<li><a href="class-Kotchasan.Date.html">Kotchasan\Date</a></li>
 				<li><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></li>
@@ -206,6 +206,7 @@
 				<li><a href="class-Psr.Log.LoggerInterface.html">Psr\Log\LoggerInterface</a></li>
 				<li><a href="class-SeekableIterator.html">SeekableIterator</a></li>
 				<li><a href="class-Serializable.html">Serializable</a></li>
+				<li><a href="class-Throwable.html">Throwable</a></li>
 				<li><a href="class-Traversable.html">Traversable</a></li>
 			</ul>
 
@@ -417,7 +418,7 @@
 </span><span id="149" class="l"><a href="#149">149: </a>    <span class="php-comment">/**
 </span></span><span id="150" class="l"><a href="#150">150: </a><span class="php-comment">     * รับค่าสำหรับ password อักขระทุกตัวไม่มีช่องว่าง.
 </span></span><span id="151" class="l"><a href="#151">151: </a><span class="php-comment">     *
-</span></span><span id="152" class="l"><a href="#152">152: </a><span class="php-comment">     * @assert (&quot; 0\n12   34\r\r6\t5ทดสอบ@#$&amp;{}! &quot;) [==] '0123465ทดสอบ@#$&amp;{}!'
+</span></span><span id="152" class="l"><a href="#152">152: </a><span class="php-comment">     * @assert (&quot; 0\n12   34\r\r6\t5ทดสอบ@#$&amp;{}!?+_- &quot;) [==] '0123465ทดสอบ@#$&amp;{}!?+_-='
 </span></span><span id="153" class="l"><a href="#153">153: </a><span class="php-comment">     *
 </span></span><span id="154" class="l"><a href="#154">154: </a><span class="php-comment">     * @param string $text
 </span></span><span id="155" class="l"><a href="#155">155: </a><span class="php-comment">     *
@@ -425,7 +426,7 @@
 </span></span><span id="157" class="l"><a href="#157">157: </a><span class="php-comment">     */</span>
 </span><span id="158" class="l"><a href="#158">158: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> password(<span class="php-var">$text</span>)
 </span><span id="159" class="l"><a href="#159">159: </a>    {
-</span><span id="160" class="l"><a href="#160">160: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/[^\w\@\#\$\&amp;\{\}\!ก-ฮ]+/'</span>, <span class="php-quote">''</span>, <span class="php-var">$text</span>);
+</span><span id="160" class="l"><a href="#160">160: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/[^\w\@\#\$\&amp;\{\}\!\?\+_\-=ก-ฮ]+/'</span>, <span class="php-quote">''</span>, <span class="php-var">$text</span>);
 </span><span id="161" class="l"><a href="#161">161: </a>    }
 </span><span id="162" class="l"><a href="#162">162: </a>
 </span><span id="163" class="l"><a href="#163">163: </a>    <span class="php-comment">/**
@@ -569,6 +570,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?f1739e581889d4a108f3b1149a49da8bb80e2b2c"></script>
+<script src="elementlist.js?820ab2e38b9bc381cd50d06d8e0c93f324b9d78d"></script>
 </body>
 </html>

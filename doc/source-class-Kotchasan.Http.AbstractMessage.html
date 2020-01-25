@@ -130,7 +130,7 @@
 				<li><a href="class-Kotchasan.Database.Query.html">Kotchasan\Database\Query</a></li>
 				<li><a href="class-Kotchasan.Database.QueryBuilder.html">Kotchasan\Database\QueryBuilder</a></li>
 				<li><a href="class-Kotchasan.Database.Schema.html">Kotchasan\Database\Schema</a></li>
-				<li><a href="class-Kotchasan.Database.Sql.html" class="invalid">Kotchasan\Database\Sql</a></li>
+				<li><a href="class-Kotchasan.Database.Sql.html">Kotchasan\Database\Sql</a></li>
 				<li><a href="class-Kotchasan.DataTable.html">Kotchasan\DataTable</a></li>
 				<li><a href="class-Kotchasan.Date.html">Kotchasan\Date</a></li>
 				<li><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></li>
@@ -206,6 +206,7 @@
 				<li><a href="class-Psr.Log.LoggerInterface.html">Psr\Log\LoggerInterface</a></li>
 				<li><a href="class-SeekableIterator.html">SeekableIterator</a></li>
 				<li><a href="class-Serializable.html">Serializable</a></li>
+				<li><a href="class-Throwable.html">Throwable</a></li>
 				<li><a href="class-Traversable.html">Traversable</a></li>
 			</ul>
 
@@ -525,7 +526,7 @@
 </span><span id="257" class="l"><a href="#257">257: </a>        <span class="php-var">$headers</span> = <span class="php-keyword1">array</span>();
 </span><span id="258" class="l"><a href="#258">258: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$_SERVER</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
 </span><span id="259" class="l"><a href="#259">259: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^HTTP_([A-Z0-9_]+)$/'</span>, <span class="php-var">$key</span>, <span class="php-var">$match</span>)) {
-</span><span id="260" class="l"><a href="#260">260: </a>                <span class="php-var">$headers</span>[<span class="php-keyword2">ucwords</span>(<span class="php-keyword2">strtolower</span>(<span class="php-keyword2">str_replace</span>(<span class="php-quote">'_'</span>, <span class="php-quote">'-'</span>, <span class="php-var">$match</span>[<span class="php-num">1</span>])), <span class="php-quote">'-'</span>)] = <span class="php-var">$value</span>;
+</span><span id="260" class="l"><a href="#260">260: </a>                <span class="php-var">$headers</span>[<span class="php-keyword2">str_replace</span>(<span class="php-quote">' '</span>, <span class="php-quote">'-'</span>, <span class="php-keyword2">ucwords</span>(<span class="php-keyword2">strtolower</span>(<span class="php-keyword2">str_replace</span>(<span class="php-keyword1">array</span>(<span class="php-quote">'_'</span>, <span class="php-quote">'-'</span>), <span class="php-quote">' '</span>, <span class="php-var">$match</span>[<span class="php-num">1</span>]))))] = <span class="php-var">$value</span>;
 </span><span id="261" class="l"><a href="#261">261: </a>            }
 </span><span id="262" class="l"><a href="#262">262: </a>        }
 </span><span id="263" class="l"><a href="#263">263: </a>
@@ -540,6 +541,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?f1739e581889d4a108f3b1149a49da8bb80e2b2c"></script>
+<script src="elementlist.js?820ab2e38b9bc381cd50d06d8e0c93f324b9d78d"></script>
 </body>
 </html>

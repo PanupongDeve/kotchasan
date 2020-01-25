@@ -228,7 +228,7 @@
 				Goragod Wiriya <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;">&#x61;&#100;&#x6d;&#105;&#x6e;&#64;&#x67;&#111;&#x72;&#97;&#x67;&#111;&#x64;&#46;&#x63;&#111;&#x6d;</a><br>
 				<b>Since:</b>
 				1.0<br>
-			<b>Located at</b> <a href="source-class-Kotchasan.DataTable.html#15-1168" title="Go to source code">Kotchasan/DataTable.php</a>
+			<b>Located at</b> <a href="source-class-Kotchasan.DataTable.html#15-1192" title="Go to source code">Kotchasan/DataTable.php</a>
 		<br>
 	</div>
 
@@ -248,7 +248,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Kotchasan.DataTable.html#331-427" title="Go to source code">__construct</a>( <span>array <var>$param</var></span> )</code>
+		<code><a href="source-class-Kotchasan.DataTable.html#343-441" title="Go to source code">__construct</a>( <span>array <var>$param</var></span> )</code>
 
 		<div class="description short">
 			<p>Initial Class.</p>
@@ -283,7 +283,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_script">#</a>
-		<code><a href="source-class-Kotchasan.DataTable.html#429-437" title="Go to source code">script</a>( <span>string <var>$script</var></span> )</code>
+		<code><a href="source-class-Kotchasan.DataTable.html#443-451" title="Go to source code">script</a>( <span>string <var>$script</var></span> )</code>
 
 		<div class="description short">
 			<p>กำหนด Javascript.</p>
@@ -318,7 +318,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_render">#</a>
-		<code><a href="source-class-Kotchasan.DataTable.html#439-817" title="Go to source code">render</a>( )</code>
+		<code><a href="source-class-Kotchasan.DataTable.html#453-830" title="Go to source code">render</a>( )</code>
 
 		<div class="description short">
 			<p>สร้างตาราง และเริ่มต้นทำงานตาราง
@@ -330,47 +330,6 @@
 คืนค่าเป็นโค้ด HTML ของ DataTable.</p>
 
 
-
-				<h4>Returns</h4>
-				<div class="list">
-					string
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="tbody" id="_tbody">
-
-		<td class="attributes"><code>
-			 public 
-
-			string
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_tbody">#</a>
-		<code><a href="source-class-Kotchasan.DataTable.html#819-918" title="Go to source code">tbody</a>( <span>integer <var>$start</var></span>, <span> <var>$end</var></span> )</code>
-
-		<div class="description short">
-			<p>render tbody.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>render tbody.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$start</var></dt>
-					<dd>ข้อมูลเริ่มต้น (เริ่มที่ 1)</dd>
-					<dt><var>$end</var></dt>
-					<dd></dd>
-				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
@@ -674,6 +633,31 @@ false ไม่ต้องแสดงฟอร์มค้นหา</p>
 			</div>
 		</td>
 	</tr>
+	<tr data-order="search" id="$search">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.DataTable.html#226-231" title="Go to source code"><var>$search</var></a>
+
+			<div class="description short">
+				<p>ข้อความค้นหา</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>ข้อความค้นหา</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$search" class="anchor">#</a>
+				<code><span class="php-quote">''</span></code>
+			</div>
+		</td>
+	</tr>
 	<tr data-order="perPage" id="$perPage">
 		<td class="attributes"><code>
 			public  
@@ -681,7 +665,7 @@ false ไม่ต้องแสดงฟอร์มค้นหา</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.DataTable.html#226-232" title="Go to source code"><var>$perPage</var></a>
+				<a href="source-class-Kotchasan.DataTable.html#232-238" title="Go to source code"><var>$perPage</var></a>
 
 			<div class="description short">
 				<p>จำนวนรายการต่อหน้า
@@ -701,6 +685,31 @@ false ไม่ต้องแสดงฟอร์มค้นหา</p>
 			</div>
 		</td>
 	</tr>
+	<tr data-order="page" id="$page">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Kotchasan.DataTable.html#239-244" title="Go to source code"><var>$page</var></a>
+
+			<div class="description short">
+				<p>หน้าที่กำลังแสดงผล</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>หน้าที่กำลังแสดงผล</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$page" class="anchor">#</a>
+				<code><span class="php-num">1</span></code>
+			</div>
+		</td>
+	</tr>
 	<tr data-order="sort" id="$sort">
 		<td class="attributes"><code>
 			public  
@@ -708,7 +717,7 @@ false ไม่ต้องแสดงฟอร์มค้นหา</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.DataTable.html#233-239" title="Go to source code"><var>$sort</var></a>
+				<a href="source-class-Kotchasan.DataTable.html#245-251" title="Go to source code"><var>$sort</var></a>
 
 			<div class="description short">
 				<p>ชื่อคอลัมน์ที่ใช้เรียงลำดับ
@@ -735,7 +744,7 @@ false ไม่ต้องแสดงฟอร์มค้นหา</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.DataTable.html#240-245" title="Go to source code"><var>$sorts</var></a>
+				<a href="source-class-Kotchasan.DataTable.html#252-257" title="Go to source code"><var>$sorts</var></a>
 
 			<div class="description short">
 				<p>ข้อมูลการเรียงลำดับที่กำลังใช้งานอยู่.</p>
@@ -760,7 +769,7 @@ false ไม่ต้องแสดงฟอร์มค้นหา</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.DataTable.html#246-251" title="Go to source code"><var>$buttons</var></a>
+				<a href="source-class-Kotchasan.DataTable.html#258-263" title="Go to source code"><var>$buttons</var></a>
 
 			<div class="description short">
 				<p>ปุ่มที่จะใส่ไว้ด้านหลังของแต่ละแถว.</p>
@@ -785,7 +794,7 @@ false ไม่ต้องแสดงฟอร์มค้นหา</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.DataTable.html#298-305" title="Go to source code"><var>$enableJavascript</var></a>
+				<a href="source-class-Kotchasan.DataTable.html#310-317" title="Go to source code"><var>$enableJavascript</var></a>
 
 			<div class="description short">
 				<p>เปิดใช้งาน Javascript ของตาราง
@@ -814,7 +823,7 @@ false ปิดใช้งาน GTable แต่ยังแทรก Javascri
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Kotchasan.DataTable.html#312-317" title="Go to source code"><var>$entriesList</var></a>
+				<a href="source-class-Kotchasan.DataTable.html#324-329" title="Go to source code"><var>$entriesList</var></a>
 
 			<div class="description short">
 				<p>ตัวเลือกจำนวนการแสดงผล.</p>

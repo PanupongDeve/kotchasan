@@ -130,7 +130,7 @@
 				<li><a href="class-Kotchasan.Database.Query.html">Kotchasan\Database\Query</a></li>
 				<li><a href="class-Kotchasan.Database.QueryBuilder.html">Kotchasan\Database\QueryBuilder</a></li>
 				<li><a href="class-Kotchasan.Database.Schema.html">Kotchasan\Database\Schema</a></li>
-				<li><a href="class-Kotchasan.Database.Sql.html" class="invalid">Kotchasan\Database\Sql</a></li>
+				<li><a href="class-Kotchasan.Database.Sql.html">Kotchasan\Database\Sql</a></li>
 				<li><a href="class-Kotchasan.DataTable.html">Kotchasan\DataTable</a></li>
 				<li><a href="class-Kotchasan.Date.html">Kotchasan\Date</a></li>
 				<li><a href="class-Kotchasan.DOMNode.html">Kotchasan\DOMNode</a></li>
@@ -206,6 +206,7 @@
 				<li><a href="class-Psr.Log.LoggerInterface.html">Psr\Log\LoggerInterface</a></li>
 				<li><a href="class-SeekableIterator.html">SeekableIterator</a></li>
 				<li><a href="class-Serializable.html">Serializable</a></li>
+				<li><a href="class-Throwable.html">Throwable</a></li>
 				<li><a href="class-Traversable.html">Traversable</a></li>
 			</ul>
 
@@ -303,7 +304,7 @@
 </span><span id="35" class="l"><a href="#35"> 35: </a>    {
 </span><span id="36" class="l"><a href="#36"> 36: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">function_exists</span>(<span class="php-quote">'idn_to_ascii'</span>) &amp;&amp; <span class="php-keyword2">preg_match</span>(<span class="php-quote">'/(.*)@(.*)/'</span>, <span class="php-var">$email</span>, <span class="php-var">$match</span>)) {
 </span><span id="37" class="l"><a href="#37"> 37: </a>            <span class="php-comment">// โดเมนภาษาไทย</span>
-</span><span id="38" class="l"><a href="#38"> 38: </a>            <span class="php-var">$email</span> = <span class="php-var">$match</span>[<span class="php-num">1</span>].<span class="php-quote">'@'</span>.<span class="php-keyword2">idn_to_ascii</span>(<span class="php-var">$match</span>[<span class="php-num">2</span>]);
+</span><span id="38" class="l"><a href="#38"> 38: </a>            <span class="php-var">$email</span> = <span class="php-var">$match</span>[<span class="php-num">1</span>].<span class="php-quote">'@'</span>.<span class="php-keyword2">idn_to_ascii</span>(<span class="php-var">$match</span>[<span class="php-num">2</span>], <span class="php-num">0</span>, INTL_IDNA_VARIANT_UTS46);
 </span><span id="39" class="l"><a href="#39"> 39: </a>        }
 </span><span id="40" class="l"><a href="#40"> 40: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match</span>(<span class="php-quote">'/^[a-zA-Z0-9\._\-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/sD'</span>, <span class="php-var">$email</span>)) {
 </span><span id="41" class="l"><a href="#41"> 41: </a>            <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>;
@@ -375,6 +376,6 @@
 </div>
 </div>
 <script src="resources/combined.js?c6c5d4c813dfe94e72641584f94c976e1af856b8"></script>
-<script src="elementlist.js?f1739e581889d4a108f3b1149a49da8bb80e2b2c"></script>
+<script src="elementlist.js?820ab2e38b9bc381cd50d06d8e0c93f324b9d78d"></script>
 </body>
 </html>
